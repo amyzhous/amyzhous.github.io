@@ -2,12 +2,14 @@
   "name": "mickelpickel",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://ayjzhou.github.io/",
   "dependencies": {
     "@material-ui/core": "^4.5.0",
     "@material-ui/icons": "^4.4.3",
     "@material/react-card": "^0.15.0",
     "@material/react-icon-button": "^0.15.0",
     "bootstrap": "^4.3.1",
+    "gh-pages": "^2.2.0",
     "json-loader": "^0.5.7",
     "node-sass": "^4.12.0",
     "react": "^16.1.1",
@@ -26,6 +28,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
