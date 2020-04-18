@@ -23,7 +23,7 @@ class MyNavBar extends React.Component{
                         <Col >
                             <Navbar collapseOnSelect expand="sm" sticky="top">
                                 <Link to= '/'>
-                                    <Navbar.Brand>amy zhou</Navbar.Brand>
+                                    <Navbar.Brand>Michael</Navbar.Brand>
                                 </Link>
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                                 <Navbar.Collapse id="responsive-navbar-nav">
