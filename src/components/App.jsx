@@ -36,56 +36,52 @@ class App extends React.Component {
     render() {
 
         return(
-            <Router>
-                <div>
-                    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"/>
-                    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
-                    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"/>
-                    <Switch>
-                        <Route path="/project_one">
-                            <MyNavBar show={false}/>
-                            <Ldpc/>
-                        </Route>
-                        <Route path="/project_two">
-                            <MyNavBar show={false}/>
-                            <Circles />
-                        </Route>
-                        <Route path="/project_three">
-                            <MyNavBar show={false}/>
-                            <Moodily />
-                        </Route>
-                        <Route path="/project_four">
-                            <MyNavBar show={false}/>
-                            <Parkit />
-                        </Route>
-                        <Route path="/project_five">
-                            <MyNavBar show={false}/>
-                            <Petco />
-                        </Route>
-                        <Route path="/">
-                            <MainPage/>
-                        </Route>
-                    </Switch>
+            <Router basename={process.env.PUBLIC_URL}>
+                <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"/>
+                <Route path="/project_one">
+                    <MyNavBar show={false}/>
+                    <Ldpc/>
+                </Route>
+                <Route path="/project_two">
+                    <MyNavBar show={false}/>
+                    <Circles />
+                </Route>
+                <Route path="/project_three">
+                    <MyNavBar show={false}/>
+                    <Moodily />
+                </Route>
+                <Route path="/project_four">
+                    <MyNavBar show={false}/>
+                    <Parkit />
+                </Route>
+                <Route path="/project_five">
+                    <MyNavBar show={false}/>
+                    <Petco />
+                </Route>
+                <Route path="/">
+                    <MainPage/>
+                </Route>
 
-                    <footer className="my-footer" id="contact">
-                        <div className={"my-contacts"}>
-                            <div className="footer-icon">
-                                <a target="_blank" href="mailto:ayjzhou@gmail.com" className="footer-icon-anchor">
-                                    <Card.Img src={email}  className="footer-icon-img hover-up" />
-                                </a>
-                                <a target="_blank" href="https://www.linkedin.com/in/amyyjzhou/" className="footer-icon-anchor">
-                                    <Card.Img src={linkedin}  className="footer-icon-img"/>
-                                </a>
-                                <a target="_blank" href="https://github.com/ayjzhou" className="footer-icon-anchor">
-                                    <Card.Img src={github} className="footer-icon-img"/>
-                                </a>
-                            </div>
+                <footer className="my-footer" id="contact">
+                    <div className={"my-contacts"}>
+                        <div className="footer-icon">
+                            <a target="_blank" href="mailto:ayjzhou@gmail.com" className="footer-icon-anchor">
+                                <Card.Img src={email}  className="footer-icon-img hover-up" />
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/amyyjzhou/" className="footer-icon-anchor">
+                                <Card.Img src={linkedin}  className="footer-icon-img"/>
+                            </a>
+                            <a target="_blank" href="https://github.com/ayjzhou" className="footer-icon-anchor">
+                                <Card.Img src={github} className="footer-icon-img"/>
+                            </a>
                         </div>
+                    </div>
 
-                        <p>Coded with lots of coffee and lots of love.</p>
-                        <img src={shiba} width="50px"/>
-                    </footer>
-                </div>
+                    <p>Coded with lots of coffee and lots of love.</p>
+                    <img src={shiba} width="50px"/>
+                </footer>
             </Router>
         )
     }

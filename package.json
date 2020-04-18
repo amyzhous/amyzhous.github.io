@@ -2,7 +2,7 @@
   "name": "mickelpickel",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ayjzhou.github.io/",
+  "homepage": "http://ayjzhou.github.io/ayjzhou.github.io",
   "dependencies": {
     "@material-ui/core": "^4.5.0",
     "@material-ui/icons": "^4.4.3",
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp build/index.html build/404.html",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test --env=jsdom",
