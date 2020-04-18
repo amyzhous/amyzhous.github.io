@@ -1,0 +1,59 @@
+.styles__user-card-header___36ARo{
+    height: 70%;
+}
+.styles__user-card-body___3p82e{
+    padding-top: 0;
+}
+.styles__card___2P_1t{
+    margin: 0 auto;
+}
+.my-card-wrapper{
+    width: 50%;
+    display: inline-block;
+}
+
+.my-card-wrapper{
+    width: 95%;
+    display: inline-block;
+    padding: 15px 2%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.hover-up{
+    top: 0px;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hover-up:hover{
+    top: -10px;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card{
+    width: 100%;
+    display: inline-block;
+    box-shadow: 0 10px 22px rgba(0,0,0,.1);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 0px!important;
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: 0 10px 22px rgba(0,0,0,.15);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 0px!important;
+}
+
+@media only screen and (min-width: 992px){
+    .my-card-wrapper{
+        width: 490px;
+        display: inline-block;
+        padding: 15px;
+        position: relative;
+        padding-top: 80px /* added padding to top of project -so it would be similar to about page */
+    }
+}

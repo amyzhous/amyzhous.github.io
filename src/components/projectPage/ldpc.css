@@ -1,0 +1,29 @@
+.landing{
+    /*height: 50vh;*/
+    background-color: white;
+    color: black;
+}
+
+.projectBanner{
+    width: 95%;
+}
+
+.statement{
+    border-left: 3px solid #6290C8;
+    padding-left: 20px;
+}
+@media only screen and (min-width: 576px){
+    .fidelity-mockups{
+        transform: translateX(-10%);
+    }
+}
+@media only screen and (min-width: 576px){
+    .journey-map{
+        transform: translateX(-3%);
+    }
+
+    .projectBanner{
+       width: 50%;
+    }
+}
+

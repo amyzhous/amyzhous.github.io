@@ -1,0 +1,13 @@
+.top-nav-bar{
+  padding: 3em 0 1em 0;
+  color: black;
+  font-family: poppins;
+}
+.top-nav-bar-button{
+  color: #696969;
+  padding: .5rem 1rem;
+}
+.top-nav-bar-button:hover{
+  color: grey;
+  text-decoration: none;
+}

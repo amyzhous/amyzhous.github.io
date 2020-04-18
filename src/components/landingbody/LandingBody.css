@@ -1,0 +1,38 @@
+.landing-body{
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 50vh);
+    margin: 10vh auto 0 auto;
+    width: 90%;
+}
+@media only screen and (min-width: 992px){
+    .landing-body{
+        width: 950px;
+    }
+}
+.typed-text-name{
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: block;
+}
+.typed-text-description{
+    font-size: 3.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.landing-body-img-wrapper{
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+    .landing-body-img-wrapper{
+        margin-left: auto;
+        margin-right: 10%;
+        width: 30%;
+        display: inline-block;
+    }
+}
+.landing-body-img{
+    /*border-radius: 50%;*/
+}
