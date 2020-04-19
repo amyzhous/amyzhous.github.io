@@ -25,6 +25,7 @@ class MyNavBar extends React.Component{
                                 <Link to= '/'>
                                     <Navbar.Brand>amy zhou</Navbar.Brand>
                                 </Link>
+
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                             {this.props.show &&
@@ -38,9 +39,6 @@ class MyNavBar extends React.Component{
                                     <Nav.Item>
                                         <AnchorLink href="#projects" className="top-nav-bar-button">Projects</AnchorLink>
                                     </Nav.Item>
-                                    {/*<Nav.Item>*/}
-                                    {/*    <AnchorLink href="#challenges" className="top-nav-bar-button">Challenges</AnchorLink>*/}
-                                    {/*</Nav.Item>*/}
                                     <Nav.Item>
                                         <AnchorLink href="#contact" className="top-nav-bar-button">Contact</AnchorLink>
                                     </Nav.Item>

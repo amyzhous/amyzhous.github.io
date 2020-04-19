@@ -37,7 +37,7 @@ class LandingBody extends React.Component{
                         className="typed-text-name"
                         id="myshit"
                         strings={[
-                            "Hey! I'm Amy,"]}
+                            "Hi there, I'm Amy."]}
                         typeSpeed={30}
                         ref = {this.titleRef}
                         onComplete={() => this.toggleCursor(this.titleRef, "0")}>
@@ -46,15 +46,16 @@ class LandingBody extends React.Component{
                         className="typed-text-description"
                         startDelay= {900}
                         strings={[
-                            'I research',
-                            'I design',
-                            "I iterate"]}
+                            'Nice to e-meet you!',
+                            'Check out some of my work.',
+                            ]}
                         typeSpeed={30}
                         backSpeed={30}
                         loop
                         ref ={this.titleReftwo}
                         preStringTyped={() => this.toggleCursor(this.titleReftwo, "1")}>
                     </Typed>
+
                 </div>
                 <div className="landing-body-img-wrapper">
                     <Card.Img variant="top"  className="landing-body-img" src={amy1} />

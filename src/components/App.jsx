@@ -79,8 +79,8 @@ class App extends React.Component {
                         </div>
                     </div>
 
-                    <p>Coded with lots of coffee and lots of love.</p>
-                    <img src={shiba} width="50px"/>
+                    <p>Coded with lots of ☕+ ❤️.</p>
+                    <img src={shiba} width="40px"/>
                 </footer>
             </Router>
         )

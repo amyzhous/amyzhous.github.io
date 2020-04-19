@@ -37,24 +37,24 @@ class MainPage extends React.Component{
                 <div className="cards-wrapper" id="projects">
                     {/*<Link to="/project_one">*/}
                     <a href="/project_one">
-                        <MyCard  imgSrc={banner} title="PC Express Search"/>
+                        <MyCard  imgSrc={banner} title="PC Express Search" subtitle="Product Management, UI Design" text="PC Express is a grocery click and collect app."/>
                     </a>
                     {/*</Link>*/}
                     <a href="/project_two">
-                        <MyCard imgSrc={circlesbanner1} title="Circles"/>
+                        <MyCard imgSrc={circlesbanner1} title="Circles" subtitle="UX/UI Design, Design Thinking" text="A social app to connect circles of individuals."/>
                     </a>
-                    <a href="/project_three">
-                        <MyCard imgSrc={moodilybanner} title="Moodily"/>
-                    </a>
-                    <a href="/project_four">
-                        <MyCard imgSrc={parkitbanner} title="Park It"/>
-                    </a>
-                    <a href="/project_five">
-                        <MyCard imgSrc={petcobanner} title="Pet&Co."/>
-                    </a>
-                    <a href="/project_six">
-                        <MyCard imgSrc={coupletcs} title="CoupLet"/>
-                    </a>
+                    {/*<a href="/project_three">*/}
+                    {/*    <MyCard imgSrc={moodilybanner} title="Moodily"/>*/}
+                    {/*</a>*/}
+                    {/*<a href="/project_four">*/}
+                    {/*    <MyCard imgSrc={parkitbanner} title="Park It"/>*/}
+                    {/*</a>*/}
+                    {/*<a href="/project_five">*/}
+                    {/*    <MyCard imgSrc={petcobanner} title="Pet&Co."/>*/}
+                    {/*</a>*/}
+                    {/*<a href="/project_six">*/}
+                    {/*    <MyCard imgSrc={coupletcs} title="CoupLet"/>*/}
+                    {/*</a>*/}
                 </div>
             </div>
 

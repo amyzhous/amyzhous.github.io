@@ -1,6 +1,6 @@
 .top-nav-bar{
   padding: 3em 0 1em 0;
-  color: black;
+  color: #696969;
   font-family: poppins;
 }
 .top-nav-bar-button{
@@ -8,6 +8,7 @@
   padding: .5rem 1rem;
 }
 .top-nav-bar-button:hover{
-  color: grey;
+  color: #aaaaaa;
   text-decoration: none;
 }
+

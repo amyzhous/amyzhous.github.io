@@ -14,7 +14,7 @@ class Intro extends React.Component{
             let hi = document.getElementById('header-text');
             hi.classList.remove("fadingAnimation");
             hi.classList.add("fadingAnimation");
-            hi.innerHTML = "Amy Here";
+            hi.innerHTML = "Amy Zhou";
             this.props.changeTransitionalState(1);
         }else if (this.props.transitionalState === 1 && new Date() - this.props.date >= 4000){
             this.props.changeTransitionalState(2);
