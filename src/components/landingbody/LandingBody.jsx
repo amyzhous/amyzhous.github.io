@@ -37,7 +37,7 @@ class LandingBody extends React.Component{
                         className="typed-text-name"
                         id="myshit"
                         strings={[
-                            "Hi there, I'm Amy."]}
+                            "Hi there, I'm Amy"]}
                         typeSpeed={30}
                         ref = {this.titleRef}
                         onComplete={() => this.toggleCursor(this.titleRef, "0")}>

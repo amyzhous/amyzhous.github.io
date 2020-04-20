@@ -40,29 +40,32 @@ class App extends React.Component {
                 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"/>
-                <Route path="/project_one">
-                    <MyNavBar show={false}/>
-                    <Ldpc/>
-                </Route>
-                <Route path="/project_two">
-                    <MyNavBar show={false}/>
-                    <Circles />
-                </Route>
-                <Route path="/project_three">
-                    <MyNavBar show={false}/>
-                    <Moodily />
-                </Route>
-                <Route path="/project_four">
-                    <MyNavBar show={false}/>
-                    <Parkit />
-                </Route>
-                <Route path="/project_five">
-                    <MyNavBar show={false}/>
-                    <Petco />
-                </Route>
-                <Route path="/">
-                    <MainPage/>
-                </Route>
+
+                <Switch>
+                    <Route path="/project_one">
+                        <MyNavBar show={false}/>
+                        <Ldpc/>
+                    </Route>
+                    <Route path="/project_two">
+                        <MyNavBar show={false}/>
+                        <Circles />
+                    </Route>
+                    <Route path="/project_three">
+                        <MyNavBar show={false}/>
+                        <Moodily />
+                    </Route>
+                    <Route path="/project_four">
+                        <MyNavBar show={false}/>
+                        <Parkit />
+                    </Route>
+                    <Route path="/project_five">
+                        <MyNavBar show={false}/>
+                        <Petco />
+                    </Route>
+                    <Route path="/">
+                        <MainPage/>
+                    </Route>
+                </Switch>
 
                 <footer className="my-footer" id="contact">
                     <div className={"my-contacts"}>
