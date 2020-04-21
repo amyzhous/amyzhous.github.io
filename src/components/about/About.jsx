@@ -35,9 +35,9 @@ class About extends React.Component{
                                     <p> I am a UX designer based in <div className="my-story-location">📍Toronto. </div></p>
 
                                     <p>I am looking for full-time opportunities to build my knowledge in product and design. Don't be a stranger, let's <a href="https://www.linkedin.com/in/amyyjzhou/">connect! </a>
-                                        {/*<span className="hot">*/}
+                                        <span className="hot">
                                             ☕
-                                        {/*</span>️*/}
+                                        </span>️
                                     </p>
                                 </div>
                                 {/*<div  style={{ marginTop: "2rem"}}>*/}
