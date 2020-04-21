@@ -26,10 +26,10 @@ class MyCard extends React.Component{
                 <Card style={{display: 'inline-block' }}>
                     <Card.Img variant="top" src={this.props.imgSrc} />
                     <Card.Body>
-                        <Card.Title style={{color: '#555555' ,fontSize:"24px", fontWeight:"bold", textAlign:"left", marginLeft:"30px", marginRight: "30px"}}>{this.props.title}</Card.Title>
-                        <Card.Subtitle style={{color: '#aaaaaa',fontSize:"14px",fontWeight:"bold", marginBottom: "10px", textAlign: "left", marginLeft:"30px", marginRight: "30px"}}>{this.props.subtitle}
+                        <Card.Title style={{color: '#555555' ,fontSize:"24px", fontWeight:"bold", textAlign:"left", marginLeft:"30px", marginRight: "30px", fontFamily: "poppins"}}>{this.props.title}</Card.Title>
+                        <Card.Subtitle style={{color: '#aaaaaa',fontSize:"14px",fontWeight:"bold", marginBottom: "10px", textAlign: "left", marginLeft:"30px", marginRight: "30px", fontFamily: "poppins"}}>{this.props.subtitle}
                         </Card.Subtitle>
-                        <Card.Text style={{color: '#555555',fontSize:"16px",textAlign: "left", marginLeft:"30px", marginRight: "30px"}}>{this.props.text}
+                        <Card.Text style={{color: '#555555',fontSize:"16px",textAlign: "left", marginLeft:"30px", marginRight: "30px", fontFamily: "poppins"}}>{this.props.text}
                             {/*{this.props.text || ""}*/}
                         </Card.Text>
                     </Card.Body>

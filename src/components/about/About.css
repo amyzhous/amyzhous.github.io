@@ -22,6 +22,7 @@ span.wave {
 
 .my-story{
     color: #696969;
+    font-family: "Nunito Sans";
 }
 .my-story-location{
     display: inline-block;
@@ -92,7 +93,9 @@ a:visited {
     color: #696969;
 }
 a:hover, a:active, a:focus {
-    color:#6290C8;
+    /*color:#6290C8;*/
+    color: #9F6BA0;
+
 }
 span.hot {
     animation-name: air-animation;

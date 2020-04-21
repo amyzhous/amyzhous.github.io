@@ -22,6 +22,7 @@ import Circles from "./projectPage/circles";
 import Moodily from "./projectPage/moodily";
 import Parkit from "./projectPage/parkit";
 import Petco from "./projectPage/petco";
+import amylogo2 from "../assets/img/amy2.jpg";
 
 
 class App extends React.Component {
@@ -82,8 +83,8 @@ class App extends React.Component {
                         </div>
                     </div>
 
-                    <p>Coded with lots of ☕+ ❤️.</p>
-                    <img src={shiba} width="40px"/>
+                    <p style={{fontFamily: "poppins"}}>Coded with lots of ☕+ ❤️.</p>
+                    <img src={amylogo2} width="50px"/>
                 </footer>
             </Router>
         )

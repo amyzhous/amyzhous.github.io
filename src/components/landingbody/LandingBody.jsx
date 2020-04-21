@@ -31,13 +31,14 @@ class LandingBody extends React.Component{
     render() {
         return(
             <div className="landing-body container">
+
                 <div>
                     <br/>
                     <Typed
                         className="typed-text-name"
                         id="myshit"
                         strings={[
-                            "Hi there, I'm Amy"]}
+                            "Hi I'm Amy!"]}
                         typeSpeed={30}
                         ref = {this.titleRef}
                         onComplete={() => this.toggleCursor(this.titleRef, "0")}>
@@ -46,8 +47,9 @@ class LandingBody extends React.Component{
                         className="typed-text-description"
                         startDelay= {900}
                         strings={[
-                            'Nice to e-meet you!',
-                            'Check out some of my work.',
+                            'I am a UX designer',
+                            'and a coffee lover.',
+                            'Check out some of my work!️ '
                             ]}
                         typeSpeed={30}
                         backSpeed={30}
@@ -58,7 +60,7 @@ class LandingBody extends React.Component{
 
                 </div>
                 <div className="landing-body-img-wrapper">
-                    <Card.Img variant="top"  className="landing-body-img" src={amy1} />
+                    {/*<Card.Img variant="top"  className="landing-body-img" src={amy1} />*/}
                 </div>
             </div>
 

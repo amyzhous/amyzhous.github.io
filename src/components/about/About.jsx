@@ -27,7 +27,7 @@ class About extends React.Component{
                         </Col>
                         <Col lg={7} md={12} className="about-bio-container">
                             <span className="about-bio">
-                                <h1>
+                                <h1 style={{color: '#242423', fontFamily: "poppins"}}>
                                     hello
                                    <span className="wave">  👋</span>
                                 </h1>
@@ -35,7 +35,9 @@ class About extends React.Component{
                                     <p> I am a UX designer based in <div className="my-story-location">📍Toronto. </div></p>
 
                                     <p>I am looking for full-time opportunities to build my knowledge in product and design. Don't be a stranger, let's <a href="https://www.linkedin.com/in/amyyjzhou/">connect! </a>
-                                        <span className="hot">☕</span>️
+                                        {/*<span className="hot">*/}
+                                            ☕
+                                        {/*</span>️*/}
                                     </p>
                                 </div>
                                 {/*<div  style={{ marginTop: "2rem"}}>*/}

@@ -14,11 +14,15 @@
     font-size: 3.5rem;
     font-weight: bold;
     display: block;
+    color: #242423;
+    font-family: "poppins";
 }
 .typed-text-description{
     font-size: 3.5rem;
     display: block;
     font-weight: bold;
+    font-family: "poppins";
+    color: #242423;
 }
 
 .landing-body-img-wrapper{

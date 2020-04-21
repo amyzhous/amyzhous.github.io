@@ -8,7 +8,8 @@
   padding: .5rem 1rem;
 }
 .top-nav-bar-button:hover{
-  color: #aaaaaa;
+  /*color: #aaaaaa;*/
+  color: #9F6BA0;
   text-decoration: none;
 }
 

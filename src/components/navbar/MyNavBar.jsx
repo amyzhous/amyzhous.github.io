@@ -23,7 +23,7 @@ class MyNavBar extends React.Component{
                         <Col >
                             <Navbar collapseOnSelect expand="sm" sticky="top">
                                 <Link to= '/'>
-                                    <Navbar.Brand>amy zhou</Navbar.Brand>
+                                    <Navbar.Brand style={{color: '#9F6BA0'}}>amy zhou</Navbar.Brand>
                                 </Link>
 
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -34,13 +34,13 @@ class MyNavBar extends React.Component{
                                     {/*    <AnchorLink href="#landing" className="top-nav-bar-button">Home</AnchorLink>*/}
                                     {/*</Nav.Item>*/}
                                     <Nav.Item>
-                                    <AnchorLink href="#about" className="top-nav-bar-button">About</AnchorLink>
+                                    <AnchorLink href="#about" className="top-nav-bar-button">about</AnchorLink>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <AnchorLink href="#projects" className="top-nav-bar-button">Projects</AnchorLink>
+                                        <AnchorLink href="#projects" className="top-nav-bar-button">projects</AnchorLink>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <AnchorLink href="#contact" className="top-nav-bar-button">Contact</AnchorLink>
+                                        <AnchorLink href="#contact" className="top-nav-bar-button">contact</AnchorLink>
                                     </Nav.Item>
                                 </Nav>
                             }
