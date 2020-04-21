@@ -43,9 +43,9 @@ class MainPage extends React.Component{
                     <a href="/project_two">
                         <MyCard imgSrc={circlesbanner1} title="Circles" subtitle="UX/UI Design, Design Thinking" text="A social app to connect circles of individuals."/>
                     </a>
-                    <a href="/project_three">
-                        <MyCard imgSrc={moodilybanner} title="Moodily"/>
-                    </a>
+                    {/*<a href="/project_three">*/}
+                    {/*    <MyCard imgSrc={moodilybanner} title="Moodily"/>*/}
+                    {/*</a>*/}
                     {/*<a href="/project_four">*/}
                     {/*    <MyCard imgSrc={parkitbanner} title="Park It"/>*/}
                     {/*</a>*/}

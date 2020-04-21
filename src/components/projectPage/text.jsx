@@ -25,13 +25,13 @@ class Text extends React.Component{
                     }
 
                     {this.props.title &&
-                        <h3 style={{fontSize: "1rem", fontWeight: "bold", fontFamily: "poppins", textAlign:"center", color:"#6290C8" +
+                        <h3 style={{fontSize: "1rem", fontWeight: "bold", fontFamily: "poppins", color:"#6290C8" +
                                 ""}}>
                             {this.props.title}
                         </h3>
                     }
                     {(this.props.content || this.props.children) &&
-                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "nunito sans"}} >
+                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "Avenir"}} >
                             {this.props.content}
                             {this.props.children}
                         </p>

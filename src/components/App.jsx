@@ -25,6 +25,7 @@ import Petco from "./projectPage/petco";
 import amylogo2 from "../assets/img/amy2.jpg";
 
 
+
 class App extends React.Component {
     constructor(props){
         super (props);
