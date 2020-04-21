@@ -402,6 +402,20 @@ class Ldpc extends React.Component{
                         </Col>
                     </Row>
                 </Container>
+
+                <Container  className="bottom-breadcrumbs">
+
+                    <nav style={{fontFamily: "poppins"}}>
+                        <ul className="breadcrumb justify-content-center">
+                            <li><a href="projects#">All</a></li>
+                            {/*<li><a href="project_one#">PC Express</a></li>*/}
+                            <li><a href="project_two#">Circles</a></li>
+                            <li style={{color:"#9F6BA0"}}>PC Express</li>
+                        </ul>
+                    </nav>
+
+                </Container>
+
             </div>
 
         )
