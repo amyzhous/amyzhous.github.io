@@ -37,7 +37,15 @@
         display: inline-block;
     }
 }
+
+@media only screen and (max-width: 991px){
+    .typed-text-name, .typed-text-description{
+        font-size: 2rem;
+    }
+}
 .landing-body-img{
     /*border-radius: 50%;*/
 }
+
+
 

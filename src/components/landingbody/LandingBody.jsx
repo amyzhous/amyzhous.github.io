@@ -7,6 +7,7 @@ import Typed from 'react-typed';
 import {Button, Nav, Container, Row, Col, Card} from 'react-bootstrap';
 import me3 from "../../assets/img/me3.svg";
 import amy1 from "../../assets/img/logo1.svg";
+import scrolldown from "../../assets/img/mousescroll.svg"
 
 
 class LandingBody extends React.Component{
@@ -32,7 +33,7 @@ class LandingBody extends React.Component{
         return(
             <div className="landing-body container">
 
-                <div>
+                <div style={{position: "absolute"}}>
                     <br/>
                     <Typed
                         className="typed-text-name"
@@ -59,6 +60,7 @@ class LandingBody extends React.Component{
                     </Typed>
 
                 </div>
+
                 <div className="landing-body-img-wrapper">
                     {/*<Card.Img variant="top"  className="landing-body-img" src={amy1} />*/}
                 </div>

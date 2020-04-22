@@ -23,6 +23,7 @@ span.wave {
 .my-story{
     color: #696969;
     font-family: "Avenir";
+    /*letter-spacing: 0.5px;*/
 }
 .my-story-location{
     display: inline-block;

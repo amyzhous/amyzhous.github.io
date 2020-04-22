@@ -61,7 +61,7 @@ const KpiOrderedList = () => {
 
 const TakeawaysUnorderedList = () => {
     return(
-        <ul style={{ paddingLeft: "15px"}}>
+        <ul style={{ paddingLeft: "15px", color:"#555555"}}>
             <li>When getting alignment from stakeholders; it is always good to demonstrate that you've done a thorough analysis by considering different options before narrowing down to one</li>
             {/*<li>Attaching key metrics into hypothesis that are comparative, ratio and behavior changing.</li>*/}
             <li>When designing an AI Chatbot, we need to consider the limitations and constraints in development</li>
@@ -73,7 +73,7 @@ const TakeawaysUnorderedList = () => {
 
 const NextStepUnorderedList = () => {
     return(
-        <ul style={{ paddingLeft: "15px"}}>
+        <ul style={{ paddingLeft: "15px" ,color:"#555555"}}>
             <li>Incorporating the feedback from the judging panel into our case</li>
             <li>Conduct usability testing on our prototype</li>
             <li>Gathering more insights about our users to validate the solution</li>
@@ -215,7 +215,7 @@ class Ldpc extends React.Component{
                             <div style={{ marginBottom: "4rem"}}>
                                 <Card.Img src={ep}/>
                             </div>
-                            <div style={{ marginBottom: "4rem"}}>
+                            <div style={{ marginBottom: "4rem",color:"#555555"}}>
                                 We define our users to be tech savvy and environmentally conscious. They work in the city and are making > $200K household income.
                             </div>
                             </Col>
@@ -247,7 +247,7 @@ class Ldpc extends React.Component{
                             <div style={{ marginBottom: "4rem"}}>
                             <Card.Img src={jm} className="journey-map"/>
                             </div>
-                            <div style={{ marginBottom: "4rem"}}>
+                            <div style={{ marginBottom: "4rem", color:"#555555"}}>
                                 Our users begins their journey by being aware. The users are aware they have a shortage of food and are unsure how much they need for the week. They go through the discovery phase where they attempt to look for grocery deals, but is overwhelmed by the amount of information given. In the purchase stage, users would like to checkout as fast as possible but still ensuring that their purchases meet their expectation.
                             </div>
                         </Col>
@@ -262,7 +262,7 @@ class Ldpc extends React.Component{
                             <div style={{ marginBottom: "4rem"}}>
                             <Card.Img src={idea}/>
                             </div>
-                            <div style={{ marginBottom: "4rem"}}>
+                            <div style={{ marginBottom: "4rem",color:"#555555"}}>
                             These were some of the ideas we came up with as a group. We settled on the AI Chatbot option after conducting some research of ways AI revolutionizes the Grocery Industry. Three ways AI is used in the grocery industry are: leveraging a wealth of customer data, assortment planning and replenishment, and reducing waste by advanced automation.
                             </div>
                         </Col>

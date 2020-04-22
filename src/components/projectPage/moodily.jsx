@@ -98,7 +98,7 @@ class Moodily extends React.Component{
 
                 <Container>
                     <Row>
-                        <Col sm={4}><Text title="OVERVIEW"/></Col>
+                        <Col sm={4} id="overview-3"><Text title="OVERVIEW" /></Col>
                         <Col sm={8}><Text content=""/></Col>
                     </Row>
                 </Container>
@@ -149,7 +149,7 @@ class Moodily extends React.Component{
 
                 <Container>
                     <Row>
-                        <Col sm={4}><Text title="THE PROCESS"/></Col>
+                        <Col sm={4} id="research-process-3"><Text title="THE PROCESS"/></Col>
                         <Col sm={8}><Text content=""/></Col>
                     </Row>
                 </Container>
@@ -178,7 +178,7 @@ class Moodily extends React.Component{
 
                 <Container>
                     <Row>
-                        <Col sm={4}><Text title="IDEATE"/></Col>
+                        <Col sm={4} id="deate-3"><Text title="IDEATE"/></Col>
                         <Col sm={8}></Col>
                     </Row>
                 </Container>
@@ -284,6 +284,68 @@ class Moodily extends React.Component{
 
                     </Container>
                 </footer>
+
+                <nav id="navbar-example3" className="navbar navbar-light">
+                    {/*<a className="navbar-brand" href="#">Navbar</a>*/}
+                    <nav className="nav nav-pills flex-column">
+                        <a className="nav-link" href="#overview-3">Overview</a>
+                        <nav className="nav nav-pills flex-column">
+                            <a className="nav-link ml-3 my-1" href="#item-1-1">Prompt</a>
+                            <a className="nav-link ml-3 my-1" href="#item-1-2">The Final Product</a>
+                            <a className="nav-link ml-3 my-1" href="#item-1-3">Invision Prototype</a>
+                        </nav>
+                        <a className="nav-link" href="#research-process-3">Research Process</a>
+                        <a className="nav-link ml-3 my-1" href="#item-2-1">User Interviews</a>
+                        <a className="nav-link ml-3 my-1" href="#item-2-2">Persona</a>
+                        <a className="nav-link ml-3 my-1" href="#item-2-3">Problem Statement</a>
+                        <nav className="nav nav-pills flex-column">
+                        <a className="nav-link" href="#deate-3">Ideate</a>
+                        <a className="nav-link ml-3 my-1" href="#item-3-1">Brainstorming</a>
+                        <a className="nav-link ml-3 my-1" href="#item-3-2">Goal</a>
+                        <a className="nav-link ml-3 my-1" href="#item-3-3">User Flow</a>
+                        <a className="nav-link ml-3 my-1" href="#item-3-4">User Story</a>
+                        {/*<nav className="nav nav-pills flex-column">*/}
+                        {/*</nav>*/}
+                            <a className="nav-link" href="#design-4">Design</a>
+                            <a className="nav-link ml-3 my-1" href="#item-4-1">Low Fidelity</a>
+                            <a className="nav-link ml-3 my-1" href="#item-4-2">High Fidelity</a>
+                            <a className="nav-link ml-3 my-1" href="#item-4-3">Visual Design</a>
+                            <a className="nav-link" href="#item-5">Usability Testing</a>
+                            <a className="nav-link" href="#item-5">Reflection</a>
+                            <a className="nav-link ml-3 my-1" href="#item-5-1">Conclusion</a>
+                            <a className="nav-link ml-3 my-1" href="#item-5-2">Next Steps</a>
+                        </nav>
+                    </nav>
+                </nav>
+
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                    <h4 id="overview-3">Overview</h4>
+                    <p>...</p>
+                    <h5 id="item-1-1">Prompt</h5>
+                    <p>...</p>
+                    <h5 id="item-1-2">The Final Product</h5>
+                    <p>...</p>
+                    <h5 id="item-1-2">The Final Product</h5>
+                    <p>...</p>
+                    <h5 id="item-1-2">The Final Product</h5>
+                    <p>...</p>
+                    <h4 id="research-process-3">Research Process</h4>
+                    <p>...</p>
+                    <h4 id="ideate-3">Ideate</h4>
+                    <p>...</p>
+                    <h5 id="item-3-1">Item 3-1</h5>
+                    <p>...</p>
+                    <h5 id="item-3-2">Item 3-2</h5>
+                    <p>...</p>
+                    <h4 id="design-4">Design</h4>
+                    <p>...</p>
+                    <h4 id="item-5">Usability Testing</h4>
+                    <p>...</p>
+                    <h4 id="item-6">Reflection</h4>
+                    <p>...</p>
+                </div>
+
+
 
             </div>
 

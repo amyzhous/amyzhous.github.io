@@ -19,19 +19,19 @@ class Text extends React.Component{
             <div style={{"marginBottom":"3rem"}}>
                 <Col style={{padding: "0 0"}}>
                     {this.props.header &&
-                        <h4 style={{fontWeight:"bold",fontFamily: "poppins"}}>
+                        <h4 style={{fontWeight:"bold",fontFamily: "poppins", color:"#555555", letterSpacing: "1px"}}>
                             {this.props.header}
                         </h4>
                     }
 
                     {this.props.title &&
-                        <h3 style={{fontSize: "1rem", fontWeight: "bold", fontFamily: "poppins", color:"#6290C8" +
+                        <h3 style={{fontSize: "1.2rem", fontWeight: "bold", fontFamily: "poppins", color:"#885A89" ,textTransform: "uppercase", letterSpacing: "2px"+
                                 ""}}>
                             {this.props.title}
                         </h3>
                     }
                     {(this.props.content || this.props.children) &&
-                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "Avenir"}} >
+                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "Avenir", color:"#555555", letterSpacing: "0.5px"}} >
                             {this.props.content}
                             {this.props.children}
                         </p>

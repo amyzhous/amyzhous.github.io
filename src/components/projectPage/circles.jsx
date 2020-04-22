@@ -36,7 +36,7 @@ import circlesutq2 from '../../assets/circles_f/circlesutq2.jpg';
 
 const InsightUnorderedList = () => {
     return(
-        <ul style={{ paddingLeft: "15px"}}>
+        <ul style={{ paddingLeft: "15px",color:"#555555"}}>
             <li>83% of our users said they like to shop with their eyes</li>
             <li>33% of our users search and filter based on identifying the brand they usually purchase</li>
             <li>25% of our users have tried shopping for groceries online</li>
@@ -47,7 +47,7 @@ const InsightUnorderedList = () => {
 };
 const KpiOrderedList = () => {
     return(
-        <ol style={{ paddingLeft: "15px"}}>
+        <ol style={{ paddingLeft: "15px", color:"#555555"}}>
             <li>Decreased time in full funnel conversion (e.g Entering the platform and purchasing at least 1 item [cohort X])</li>
             <li>Number of individuals from [cohort X] that make a return purchase within 3 weeks</li>
             <li>Decreased duration spent on platform within search functionality</li>
@@ -58,7 +58,7 @@ const KpiOrderedList = () => {
 
 const IdeasUnorderedList = () => {
     return(
-        <ul style={{ paddingLeft: "15px"}}>
+        <ul style={{ paddingLeft: "15px", color:"#555555"}}>
             <li>Social Meetup</li>
             <li>Advisor Helper</li>
             <li>Digital Mental Health Tool</li>
@@ -71,7 +71,7 @@ const IdeasUnorderedList = () => {
 
 const NextStepUnorderedList = () => {
     return(
-        <ul style={{ paddingLeft: "15px"}}>
+        <ul style={{ paddingLeft: "15px", color:"#555555"}}>
             <li>Conduct usability testing for MVP</li>
             <li>Determine the technical feasibility of certain features with developers</li>
             <li>Iterate MVP after gathering usability testing feedback</li>

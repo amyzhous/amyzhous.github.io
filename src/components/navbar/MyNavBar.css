@@ -104,3 +104,17 @@ ul.breadcrumb li a:hover {
 
 }
 
+/*CSS for Scollspy*/
+.scrollspy-navbar {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav nav-pill flex-column{
+  text-decoration: none;
+}
+

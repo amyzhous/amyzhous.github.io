@@ -4,7 +4,8 @@ button {
     width: 250px;
     height: 50px;
     border-radius: 20px 20px;
-    background-color: #6290C8;
+    /*background-color: #6290C8;*/
+    background-color: #9F6BA0;
     transform: translateY(4px);
     transition: transform 0.2s ease 0s;
 }

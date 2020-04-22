@@ -15,6 +15,7 @@ import parkitbanner from '../../assets/parkit/parkitbanner_.jpg';
 import petcobanner from '../../assets/petco/petcobanner.jpg';
 import {Button, Nav, Container, Row, Col, Card} from 'react-bootstrap';
 import coupletcs from '../../assets/img/coming_soon.svg';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 
 
@@ -25,11 +26,14 @@ class MainPage extends React.Component{
     render() {
         return(
             <div className="main-page-wrapper">
-                <MyNavBar show={true}/>
                 <div className="landing" id="landing">
+                    <MyNavBar show={true}/>
                     <Particles
                         params={particlesParams} />
                     <LandingBody/>
+                    <div id="landing-scroll">
+                        <AnchorLink id="landing-scroll-inner" href="#about"><span/></AnchorLink>
+                    </div>
                 </div>
                 <div className="about-wrapper">
                     <About/>
