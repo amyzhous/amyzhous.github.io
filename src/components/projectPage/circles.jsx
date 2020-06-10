@@ -58,7 +58,7 @@ const KpiOrderedList = () => {
 
 const IdeasUnorderedList = () => {
     return(
-        <ul style={{ paddingLeft: "15px", color:"#555555", fontFamily: "Source Sans Pro"}}>
+        <ul style={{ paddingLeft: "15px", color:"#555555", fontFamily: "Source Sans Pro", fontSize: "1.1rem"}}>
             <li>Social Meetup</li>
             <li>Advisor Helper</li>
             <li>Digital Mental Health Tool</li>

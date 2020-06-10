@@ -32,7 +32,7 @@ class About extends React.Component{
                                    <span className="wave">  👋</span>
                                 </h1>
                                 <div className="my-story" style={{fontSize: "18px"}}>
-                                    <p> I am a UX designer based in <div className="my-story-location">📍Toronto. </div></p>
+                                    <p> I am a product designer based in <div className="my-story-location">📍Toronto. </div></p>
 
                                     <p>I am looking for full-time opportunities to build my knowledge in product and design. Don't be a stranger, let's <a href="https://www.linkedin.com/in/amyyjzhou/">connect! </a>
                                         <span className="hot">

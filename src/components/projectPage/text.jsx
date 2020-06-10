@@ -31,7 +31,7 @@ class Text extends React.Component{
                         </h3>
                     }
                     {(this.props.content || this.props.children) &&
-                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "Source Sans Pro", color:"#555555", letterSpacing: "0.5px"}} >
+                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "Source Sans Pro", color:"#555555", letterSpacing: "0.5px", fontSize: "1.1rem"}} >
                             {this.props.content}
                             {this.props.children}
                         </p>
