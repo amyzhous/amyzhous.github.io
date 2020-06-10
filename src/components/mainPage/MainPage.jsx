@@ -28,11 +28,11 @@ class MainPage extends React.Component{
             <div className="main-page-wrapper">
                 <div className="landing" id="landing">
                     <MyNavBar show={true}/>
-                    <Particles
-                        params={particlesParams} />
+                    {/*<Particles*/}
+                    {/*    params={particlesParams} />*/}
                     <LandingBody/>
                     <div id="landing-scroll">
-                        <AnchorLink id="landing-scroll-inner" href="#about"><span/></AnchorLink>
+                        <AnchorLink id="landing-scroll-inner" href="#projects"><span/></AnchorLink>
                     </div>
                 </div>
                 <div className="about-wrapper">

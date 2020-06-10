@@ -3,7 +3,9 @@
     align-items: center;
     min-height: calc(100vh - 50vh);
     margin: 10vh auto 0 auto;
-    width: 90%;
+    /*width: 90%;*/
+
+
 }
 @media only screen and (min-width: 992px){
     .landing-body{
@@ -15,18 +17,19 @@
     font-weight: bold;
     display: block;
     color: #242423;
-    font-family: "poppins";
+    font-family: "open sans";
 }
 .typed-text-description{
     font-size: 3.5rem;
     display: block;
     font-weight: bold;
-    font-family: "poppins";
+    font-family: "open sans";
     color: #242423;
 }
 
 .landing-body-img-wrapper{
     display: none;
+    width: 0;
 }
 
 @media only screen and (min-width: 768px){
@@ -47,5 +50,17 @@
     /*border-radius: 50%;*/
 }
 
+.landing-body-hero-title{
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-family: "Source Sans Pro";
+    color: #2F274C;
+}
 
-
+.landing-body-hero-body {
+    text-align: center;
+    display: block;
+    font-family: "Source Sans Pro";
+    color: #696969;
+}

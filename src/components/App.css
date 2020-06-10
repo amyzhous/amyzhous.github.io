@@ -11,7 +11,7 @@
 
 .my-contacts {
     font-weight: 600;
-    color: black;
+    color: #2F274C;
     font-size: 18px;
     margin-bottom: 0;
     margin-top: 4em;
@@ -24,6 +24,7 @@
 .footer-icon{
     margin-bottom: 20px;
     margin-top: 20px;
+    color: #2F274C;
 
 }
 
@@ -45,6 +46,7 @@
 }
 .footer-icon-anchor{
     margin: 0 15px;
+
 }
 
 .my-project-footer{

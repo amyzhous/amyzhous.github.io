@@ -215,7 +215,7 @@ class Ldpc extends React.Component{
                             <div style={{ marginBottom: "4rem"}}>
                                 <Card.Img src={ep}/>
                             </div>
-                            <div style={{ marginBottom: "4rem",color:"#555555"}}>
+                            <div style={{ marginBottom: "4rem",color:"#555555", fontFamily:"Source Sans Pro"}}>
                                 We define our users to be tech savvy and environmentally conscious. They work in the city and are making > $200K household income.
                             </div>
                             </Col>
@@ -247,7 +247,7 @@ class Ldpc extends React.Component{
                             <div style={{ marginBottom: "4rem"}}>
                             <Card.Img src={jm} className="journey-map"/>
                             </div>
-                            <div style={{ marginBottom: "4rem", color:"#555555"}}>
+                            <div style={{ marginBottom: "4rem", color:"#555555", fontFamily:"Source Sans Pro"}}>
                                 Our users begins their journey by being aware. The users are aware they have a shortage of food and are unsure how much they need for the week. They go through the discovery phase where they attempt to look for grocery deals, but is overwhelmed by the amount of information given. In the purchase stage, users would like to checkout as fast as possible but still ensuring that their purchases meet their expectation.
                             </div>
                         </Col>
@@ -262,7 +262,7 @@ class Ldpc extends React.Component{
                             <div style={{ marginBottom: "4rem"}}>
                             <Card.Img src={idea}/>
                             </div>
-                            <div style={{ marginBottom: "4rem",color:"#555555"}}>
+                            <div style={{ marginBottom: "4rem",color:"#555555", fontFamily:"Source Sans Pro"}}>
                             These were some of the ideas we came up with as a group. We settled on the AI Chatbot option after conducting some research of ways AI revolutionizes the Grocery Industry. Three ways AI is used in the grocery industry are: leveraging a wealth of customer data, assortment planning and replenishment, and reducing waste by advanced automation.
                             </div>
                         </Col>
@@ -405,12 +405,13 @@ class Ldpc extends React.Component{
 
                 <Container  className="bottom-breadcrumbs">
 
-                    <nav style={{fontFamily: "poppins"}}>
+                    <nav style={{fontFamily: "open sans"}}>
                         <ul className="breadcrumb justify-content-center">
                             <li><a href="projects#">All</a></li>
                             {/*<li><a href="project_one#">PC Express</a></li>*/}
-                            <li><a href="project_two#">Circles</a></li>
                             <li style={{color:"#9F6BA0"}}>PC Express</li>
+                            <li><a href="project_two#">Circles</a></li>
+                            {/*<li style={{color:"#9F6BA0"}}>PC Express</li>*/}
                         </ul>
                     </nav>
 

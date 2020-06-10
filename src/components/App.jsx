@@ -6,10 +6,10 @@ import '@material/react-card/index.scss';
 import '@material/react-card/dist/card.css';
 import {Card} from 'react-bootstrap';
 import './App.css';
-import shiba from '../assets/img/favicon.gif';
-import email from '../assets/img/email.png';
-import linkedin from '../assets/img/linkedin.png';
-import github from '../assets/img/github.png';
+// import shiba from '../assets/img/favicon.gif';
+// import email from '../assets/img/email.png';
+// import linkedin from '../assets/img/linkedin.png';
+// import github from '../assets/img/github.png';
 import MyNavBar from './navbar/MyNavBar';
 import {
     BrowserRouter as Router,
@@ -23,6 +23,9 @@ import Moodily from "./projectPage/moodily";
 import Parkit from "./projectPage/parkit";
 import Petco from "./projectPage/petco";
 import amylogo2 from "../assets/img/amy2.jpg";
+import email from '../assets/img/gmail.svg';
+import linkedin from '../assets/img/linkedin.svg';
+import github from '../assets/img/github.svg';
 
 
 
@@ -84,7 +87,7 @@ class App extends React.Component {
                         </div>
                     </div>
 
-                    <p style={{fontFamily: "poppins"}}>Coded with lots of ☕+ ❤️.</p>
+                    <p style={{fontFamily: "open sans"}}>Coded with lots of ☕+ ❤️.</p>
                     <img src={amylogo2} width="50px"/>
                 </footer>
             </Router>

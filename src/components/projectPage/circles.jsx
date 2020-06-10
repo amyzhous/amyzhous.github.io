@@ -58,7 +58,7 @@ const KpiOrderedList = () => {
 
 const IdeasUnorderedList = () => {
     return(
-        <ul style={{ paddingLeft: "15px", color:"#555555"}}>
+        <ul style={{ paddingLeft: "15px", color:"#555555", fontFamily: "Source Sans Pro"}}>
             <li>Social Meetup</li>
             <li>Advisor Helper</li>
             <li>Digital Mental Health Tool</li>
@@ -71,7 +71,7 @@ const IdeasUnorderedList = () => {
 
 const NextStepUnorderedList = () => {
     return(
-        <ul style={{ paddingLeft: "15px", color:"#555555"}}>
+        <ul style={{ paddingLeft: "15px", color:"#555555",fontFamily: "Source Sans Pro"}}>
             <li>Conduct usability testing for MVP</li>
             <li>Determine the technical feasibility of certain features with developers</li>
             <li>Iterate MVP after gathering usability testing feedback</li>
@@ -366,7 +366,6 @@ class Circles extends React.Component{
                         <Col sm={4}>
                             <div style={{ marginBottom: "4rem"}}>
                                 <Card.Img src={circlesutq1}/>
-                                These were the post-task questions we asked our users after they completed some usability tasks with our live prototype. Insights will be coming soon!
                         </div>
                         </Col>
                         <Col sm={4}>
@@ -397,7 +396,7 @@ class Circles extends React.Component{
 
                 <Container  className="bottom-breadcrumbs">
 
-                    <nav style={{fontFamily: "poppins"}}>
+                    <nav style={{fontFamily: "open sans"}}>
                         <ul className="breadcrumb justify-content-center">
                             <li><a href="projects#">All</a></li>
                             <li><a href="project_one#">PC Express</a></li>

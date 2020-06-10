@@ -27,11 +27,11 @@ class About extends React.Component{
                         </Col>
                         <Col lg={7} md={12} className="about-bio-container">
                             <span className="about-bio">
-                                <h1 style={{color: '#242423', fontFamily: "poppins"}}>
+                                <h1 style={{color: '#2F274C', fontFamily: "open sans", fontWeight: "bold"}}>
                                     hello
                                    <span className="wave">  👋</span>
                                 </h1>
-                                <div className="my-story">
+                                <div className="my-story" style={{fontSize: "18px"}}>
                                     <p> I am a UX designer based in <div className="my-story-location">📍Toronto. </div></p>
 
                                     <p>I am looking for full-time opportunities to build my knowledge in product and design. Don't be a stranger, let's <a href="https://www.linkedin.com/in/amyyjzhou/">connect! </a>
