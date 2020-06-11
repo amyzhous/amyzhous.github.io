@@ -26,10 +26,10 @@ class About extends React.Component{
 
 
                     <Col lg={12} md={12} style={{textAlign: "center"}}>
-                                <h2 style={{color: '#2F274C', fontFamily: "open sans", fontWeight: "bold", textAlign:"center", marginBottom: "3em"}}>
+                                <h1 style={{color: '#2F274C', fontFamily: "open sans", fontWeight: "bold", textAlign:"center", marginBottom: "1em"}}>
                                    hello, welcome to my portfolio
                                       <span className="wave">  👋</span>
-                                </h2>
+                                </h1>
                     </Col>
 
                         <Col lg={5} md={12} className="about-image-container">

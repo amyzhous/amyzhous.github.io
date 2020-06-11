@@ -23,7 +23,7 @@ class MyNavBar extends React.Component{
                         <Col >
                             <Navbar collapseOnSelect expand="sm" sticky="top">
                                 <Link to= '/'>
-                                    <Navbar.Brand style={{color: '#2F274C', fontSize:"1.2rem", fontWeight:"bold"}}>amy zhou</Navbar.Brand>
+                                    <Navbar.Brand style={{color: '#2F274C', fontSize:"1.3rem", fontWeight:"bold"}}>amy zhou</Navbar.Brand>
                                 {/*    color: #9F6BA0*/}
                                 </Link>
 

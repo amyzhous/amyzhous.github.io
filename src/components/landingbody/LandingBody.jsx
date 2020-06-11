@@ -66,7 +66,7 @@ class LandingBody extends React.Component{
                         hi! i'm <span style={{color: "#885A89"}}>amy zhou,</span>
                     </h1>
                       <h4 className="landing-body-hero-body">
-                          an aspiring product designer based in 📍Toronto. Check out some of my work below.
+                          an aspiring product designer based in<div className="my-story-location">📍Toronto. </div> Check out some of my work below.
                       </h4>
                   </div>
 
