@@ -19,6 +19,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 
 
+
 class MainPage extends React.Component{
     constructor(props){
         super(props);
@@ -35,9 +36,11 @@ class MainPage extends React.Component{
                         <AnchorLink id="landing-scroll-inner" href="#projects"><span/></AnchorLink>
                     </div>
                 </div>
-                <div className="about-wrapper">
-                    <About/>
-                </div>
+                {/*<div className="about-wrapper">*/}
+                {/*    <a href="/about">*/}
+                {/*    </a>*/}
+                {/*    <About/>*/}
+                {/*</div>*/}
                 <div className="cards-wrapper" id="projects">
                     {/*<Link to="/project_one">*/}
                     <a href="/project_one">

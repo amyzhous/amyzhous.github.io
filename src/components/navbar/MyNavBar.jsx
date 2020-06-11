@@ -34,14 +34,17 @@ class MyNavBar extends React.Component{
                                     {/*<Nav.Item>*/}
                                     {/*    <AnchorLink href="#landing" className="top-nav-bar-button">Home</AnchorLink>*/}
                                     {/*</Nav.Item>*/}
-                                    <Nav.Item>
-                                    <AnchorLink href="#about" className="top-nav-bar-button">about</AnchorLink>
-                                    </Nav.Item>
+                                    {/*<Nav.Item>*/}
+                                    {/*<a href="/about" className="top-nav-bar-button">about</a>*/}
+                                    {/*</Nav.Item>*/}
                                     <Nav.Item>
                                         <AnchorLink href="#projects" className="top-nav-bar-button">projects</AnchorLink>
                                     </Nav.Item>
                                     <Nav.Item>
                                         <AnchorLink href="#contact" className="top-nav-bar-button">contact</AnchorLink>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <a href="/about" className="top-nav-bar-button">about</a>
                                     </Nav.Item>
                                 </Nav>
                             }

@@ -26,6 +26,7 @@ import amylogo2 from "../assets/img/amy2.jpg";
 import email from '../assets/img/gmail.svg';
 import linkedin from '../assets/img/linkedin.svg';
 import github from '../assets/img/github.svg';
+import About from './about/About';
 
 
 
@@ -48,24 +49,28 @@ class App extends React.Component {
 
                 <Switch>
                     <Route path="/project_one">
-                        <MyNavBar show={false}/>
+                        <MyNavBar show={true}/>
                         <Ldpc/>
                     </Route>
                     <Route path="/project_two">
-                        <MyNavBar show={false}/>
+                        <MyNavBar show={true}/>
                         <Circles />
                     </Route>
                     <Route path="/project_three">
                         <MyNavBar show={false}/>
                         <Moodily />
                     </Route>
-                    <Route path="/project_four">
+                    <Route path="/z">
                         <MyNavBar show={false}/>
                         <Parkit />
                     </Route>
                     <Route path="/project_five">
                         <MyNavBar show={false}/>
                         <Petco />
+                    </Route>
+                    <Route path="/about">
+                        <MyNavBar show={true}/>
+                        <About/>
                     </Route>
                     <Route path="/">
                         <MainPage/>
@@ -94,13 +99,13 @@ class App extends React.Component {
         )
     }
 }
-function About() {
-    return <h2>Home</h2>;
-}
-
-function Users() {
-    return <h2>About</h2>;
-}
+// function About() {
+//     return <h2>Home</h2>;
+// }
+//
+// function Users() {
+//     return <h2>About</h2>;
+// }
 
 
 export default App;

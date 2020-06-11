@@ -21,7 +21,7 @@ span.wave {
 }
 
 .my-story{
-    color: #696969;
+    color: #555555;
     font-family: "Source Sans Pro";
     /*letter-spacing: 0.5px;*/
 }
@@ -34,8 +34,12 @@ span.wave {
     align-items: center;
     min-height: calc(100vh - 50vh);
     margin: 0 auto;
-    width: 90%;
-    padding: 4rem 0
+    width: 100%;
+    padding: 4rem 0;
+    background-image: url("../../assets/img/abouthero.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
 }
 
 .about-image{
@@ -45,12 +49,19 @@ span.wave {
 
 .about-image-container{
     text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 3em;
+
 }
 
 .about-bio{
     display: table-cell;
     vertical-align: middle;
     padding: 0;
+
 }
 
 
