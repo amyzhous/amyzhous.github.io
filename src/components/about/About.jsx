@@ -43,7 +43,7 @@ class About extends React.Component{
                                 <div className="my-story" style={{fontSize: "18px"}}>
                                     <p> I am an aspiring product designer based in <div className="my-story-location">📍Toronto. </div></p>
 
-                                    <p> My journey into UX and product design stemmed from an interest in technology, applied psychology, and art during my last year of university. Product and UX design resonates with me as I have the ability to make a social impact. Similar to development, as a designer I am able to solve complex business problems and deliver tangible results. let's <a href="https://www.linkedin.com/in/amyyjzhou/">connect! </a>
+                                    <p> My journey into UX and product design stemmed from an interest in technology, applied psychology, and art during my last year of university. Product and UX design resonates with me as I have the ability to make a social impact. Similar to development, as a designer I am able to solve complex business problems and deliver tangible results.
                                     </p>
                                     <p>
                                         Coming from a non-traditional design background I have taught myself UX and a tad bit of front-end development with lots of coffee, Youtube videos, and wonderful individuals! With my economics background, I am able to understand the market. This is beneficial as a UX designer because I am able to cater my design strategy to reflect market sentiments. Given my multidisciplinary background, I am a designer driven to create better experiences and solutions by being empathetic, curious, and strategic.
