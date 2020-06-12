@@ -38,7 +38,14 @@ class MyNavBar extends React.Component{
                                     {/*<a href="/about" className="top-nav-bar-button">about</a>*/}
                                     {/*</Nav.Item>*/}
                                     <Nav.Item>
-                                        <AnchorLink href="#projects" className="top-nav-bar-button">projects</AnchorLink>
+                                        {this.props.redirectToProjectSection &&
+                                            <a href="/#projects" className="top-nav-bar-button">projects</a>
+                                        }
+                                        {
+                                            !this.props.redirectToProjectSection &&
+                                            <AnchorLink href="#projects" className="top-nav-bar-button">projects</AnchorLink>
+                                        }
+
                                     </Nav.Item>
                                     <Nav.Item>
                                         <AnchorLink href="#contact" className="top-nav-bar-button">contact</AnchorLink>

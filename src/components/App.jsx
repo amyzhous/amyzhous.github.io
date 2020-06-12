@@ -49,15 +49,15 @@ class App extends React.Component {
 
                 <Switch>
                     <Route path="/project_one">
-                        <MyNavBar show={true}/>
+                        <MyNavBar show={true} redirectToProjectSection={true}/>
                         <Ldpc/>
                     </Route>
                     <Route path="/project_two">
-                        <MyNavBar show={true}/>
+                        <MyNavBar show={true} redirectToProjectSection={true}/>
                         <Circles />
                     </Route>
                     <Route path="/project_three">
-                        <MyNavBar show={false}/>
+                        <MyNavBar show={false} redirectToProjectSection={true}/>
                         <Moodily />
                     </Route>
                     <Route path="/z">
@@ -65,11 +65,11 @@ class App extends React.Component {
                         <Parkit />
                     </Route>
                     <Route path="/project_five">
-                        <MyNavBar show={false}/>
+                        <MyNavBar show={false} redirectToProjectSection={true}/>
                         <Petco />
                     </Route>
                     <Route path="/about">
-                        <MyNavBar show={true}/>
+                        <MyNavBar show={true} redirectToProjectSection={true}/>
                         <About/>
                     </Route>
                     <Route path="/">
