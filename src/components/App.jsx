@@ -47,9 +47,9 @@ class App extends React.Component {
                 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"/>
                 {/*<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"/>*/}
-                <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" type="text/css"/>
                 {/*<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>*/}
-                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" type="text/css"/>
 
 
                 <Switch>
@@ -62,11 +62,11 @@ class App extends React.Component {
                         <Circles />
                     </Route>
                     <Route path="/project_three">
-                        <MyNavBar show={false} redirectToProjectSection={true}/>
+                        <MyNavBar show={true} redirectToProjectSection={true}/>
                         <Moodily />
                     </Route>
-                    <Route path="/z">
-                        <MyNavBar show={false}/>
+                    <Route path="/project_four">
+                        <MyNavBar show={true} redirectToProjectSection={true}/>
                         <Parkit />
                     </Route>
                     <Route path="/project_five">

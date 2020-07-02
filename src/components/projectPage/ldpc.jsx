@@ -11,7 +11,6 @@ import banner from "../../assets/pcexp/ldbanner_.jpg";
 import Text from "./text";
 import "./text.css";
 import ep from "../../assets/pcexp/empathy map.jpg";
-import jm from "../../assets/pcexp/jmap.png";
 import idea from "../../assets/pcexp/feature ideation.svg";
 import uf from "../../assets/pcexp/uf.png";
 import rough from "../../assets/pcexp/rough.jpg";
@@ -36,37 +35,55 @@ import search4 from "../../assets/pcexp/search4.svg"
 import search5 from "../../assets/pcexp/search5.svg"
 import search6 from "../../assets/pcexp/search6.svg"
 import designthinking from"../../assets/pcexp/designthinking6.jpg";
+import insightsld from"../../assets/pcexpss/Insights.svg";
+import mainpersona from"../../assets/pcexpss/James_Persona.svg";
+import morepersona from"../../assets/pcexpss/More_Personas.svg";
+import ideationld from"../../assets/pcexpss/Ideation.svg";
+import custreviews from"../../assets/pcexpss/customerreviews.svg";
+import emap from "../../assets/pcexpss/EmpathyMap.jpg";
+import jm from "../../assets/pcexpss/jmap.png";
+import process from "../../assets/pcexpss/theprocess.svg";
+import wfopp from "../../assets/pcexpss/CurrentFlow.svg";
+// import homepage from "../../assets/pcexpss/homepage.gif";
+import ldpc1 from "../../assets/pcexpss/ldpc1.gif";
+import ldpc2 from "../../assets/pcexpss/ldpc2.gif";
+import ldpc3 from "../../assets/pcexpss/ldpc3.gif";
+import homepage from "../../assets/pcexpss/ldpc4.gif";
+import ldpc5 from "../../assets/pcexpss/lpdc5.gif";
+import ldpc6 from "../../assets/pcexpss/ldpc6.gif";
+import ldpc7 from "../../assets/pcexpss/ldpc7.gif";
+import ldpc8 from "../../assets/pcexpss/ldpc8.gif";
+import ldpcnav from "../../assets/pcexpss/ldpcnav.gif";
 
-const InsightUnorderedList = () => {
-    return(
-        <ul style={{ paddingLeft: "15px"}}>
-            <li>83% of our users said they like to shop with their eyes</li>
-            <li>33% of our users search and filter based on identifying the brand they usually purchase</li>
-            <li>25% of our users have tried shopping for groceries online</li>
-            <li>Users would like to have information with regards to the expiry dates</li>
-            <li>When it comes to fruit and produce, users are worried about the quality of their products when shopping online</li>
-        </ul>
-    );
-};
+
+// const AssumpOrderedList = () => {
+//     return(
+//         <ol style={{ paddingLeft: "15px"}}>
+//             <li>It is hard for users to visualize the product size, colour, and quality.</li>
+//             <li>Users cannot attest to the freshness of the product through online shopping which makes them less confident in their purchase.</li>
+//             <li>The search process is confusing for prospective customers.</li>
+//         </ol>
+//     );
+// };
 const KpiOrderedList = () => {
     return(
-      <ol style={{ paddingLeft: "15px"}}>
-          <li>Decreased time in full funnel conversion (e.g Entering the platform and purchasing at least 1 item [cohort X])</li>
-          <li>Number of individuals from [cohort X] that make a return purchase within 3 weeks</li>
-          <li>Decreased duration spent on platform within search functionality</li>
-          <li>Decreased number of search terms within a session</li>
-      </ol>
+        <ol style={{ paddingLeft: "15px"}}>
+            <li>Decreased time in full funnel conversion (e.g Entering the platform and purchasing at least 1 item [cohort X])</li>
+            <li>Number of individuals from [cohort X] that make a return purchase within 3 weeks</li>
+            <li>Decreased duration spent on platform within search functionality</li>
+            <li>Decreased number of search terms within a session</li>
+        </ol>
     );
 };
 
 const TakeawaysUnorderedList = () => {
     return(
         <ul style={{ paddingLeft: "15px", color:"#555555"}}>
-            <li>When getting alignment from stakeholders; it is always good to demonstrate that you've done a thorough analysis by considering different options before narrowing down to one</li>
+            <li>Browse departments, sub departments and aisles were popular ways to filter and recreate the physical shopping experience</li>
             {/*<li>Attaching key metrics into hypothesis that are comparative, ratio and behavior changing.</li>*/}
-            <li>When designing an AI Chatbot, we need to consider the limitations and constraints in development</li>
+            <li>Allowing users to create a shopping list and searching multiple items on the list at a time</li>
             {/*<li>You will always find more problems you're able to fix</li>*/}
-            <li>As product managers, fall in love with the problem not the solution because you will always find more problems you're able to fix </li>
+            <li>Re-order items from previous purchases</li>
         </ul>
     );
 };
@@ -81,16 +98,43 @@ const NextStepUnorderedList = () => {
         </ul>
     );
 };
+const AssumpUnorderedList = () => {
+    return(
+        <ul style={{ paddingLeft: "15px" ,color:"#555555"}}>
+            <li>It is hard for users to visualize the product size, colour, and quality</li>
+            <li>Users cannot attest to the freshness of the product through online shopping which makes them less confident in their purchase</li>
+            <li>The search process is confusing for prospective customers</li>
+        </ul>
+    );
+};
+const UseCasesUnorderedList = () => {
+    return(
+        <ul style={{ paddingLeft: "15px" ,color:"#555555"}}>
+            <li>Quickly discover favourites</li>
+            <li>Find everyday products</li>
+            <li>Discover popular products</li>
+        </ul>
+    );
+};
 
+const InsightsUnorderedList = () => {
+    return(
+        <ul style={{ paddingLeft: "15px" ,color:"#555555"}}>
+            <li>Would like to have information on expiry dates for items</li>
+            <li>When it comes to fruit and produce, users are worried about the quality of their products when shopping online</li>
+            <li>Needs more refinement in search parameters</li>
+        </ul>
+    );
+};
 
 class Ldpc extends React.Component{
     constructor(props){
         super(props);
         this.projectInfoContent = [
-            {"title": "Duration", "content": "8 weeks"},
-            {"title": "Role", "content": "Interaction Design, User Journey Mapping, Ideation, Wireframes, High Fidelity, Product Management"},
-            {"title": "Team", "content": "Tony Cheng, William To"},
-            {"title": "Tools", "content": "Sketch, Figma, Pen + Paper"},
+            // {"title": "Overview", "content": "PC Express Search"},
+            // {"title": "Role", "content": "Product Management, UX Design"},
+            // {"title": "Tools", "content": "Balsamiq, Sketch, Invision"},
+            // {"title": "Timeline", "content": "8 weeks"},
         ];
     }
 
@@ -98,8 +142,6 @@ class Ldpc extends React.Component{
         return(
             <div>
                 <div style={{textAlign: "center", marginBottom: "7rem"}}>
-                    {/*<Particles params={particlesParams}/>*/}
-                    {/*<Card style={{display: 'inline-block', width: "40%", cursor: "default"}}>*/}
                     <Card className="projectBanner" style={{display: 'inline-block', cursor: "default"}}>
                         <Card.Img variant="top" src={banner} />
                     </Card>
@@ -109,299 +151,447 @@ class Ldpc extends React.Component{
 
                 <Container>
                     <Row>
-                        <Col sm={4}><Text title="OVERVIEW"/></Col>
-                        <Col sm={8}><Text content=""/></Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text header="Prompt"/></Col>
-                        <Col sm={8}><Text content="Our task was to implement design thinking and product management methodologies to a specific product area of a popular mobile app. Our group chose PC Express-Search by Loblaws Digital."/></Col>
-                        <Col sm={4}></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={designthinking}/>
-                            </div>
+                        <Col sm={12}>
+                            <Text Title="Grocery click and collect search system"/>
                         </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text header="PC Express"/></Col>
-                        <Col sm={8}><Text content="PC Express is grocery click and collect app which allows users to shop and pick up their groceries from convenient locations in the city. Customers can shop at their favourite grocery stores online and personal shoppers will fulfill their orders. PC Express is currently available on both IOS and Android."/></Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text header="Search"/></Col>
-                        <Col sm={8}><Text content="This is what the Search Function looks like on the PC Express App."/></Col>
-                    </Row>
-                </Container>
-
-                <Container>
-                    <Row>
-                        <Col sm={4}></Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={search1} className="fidelity-mockups"/>
-                            </div>
-                        </Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={search2} className="fidelity-mockups"/>
-                            </div>
-                        </Col>
-                        <Col sm={4}></Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={search3} className="fidelity-mockups"/>
-                            </div>
-                        </Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={search4} className="fidelity-mockups"/>
-                            </div>
-                        </Col>
-                        <Col sm={4}></Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={search5} className="fidelity-mockups"/>
-                            </div>
-                        </Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={search6} className="fidelity-mockups"/>
+                        <Col sm={12} >
+                            <div  style={{fontSize: "25px", fontStyle: "italic", fontFamily: "Source Sans Pro",  marginBottom:"4rem"}}>
+                                —discovering preferred products on PC Express
                             </div>
                         </Col>
                     </Row>
                 </Container>
 
                 <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                        <Col sm={4}><Text header="Goal"/></Col>
-                        <Col sm={8} >
-                            <div  style={{fontSize: "1.5rem"}}>
-                            <Text statement={true} content="To help Canadians conveniently pre-order groceries for pick up to save them time in their busy lives." />
+                    <Row style={{marginBottom:"4rem"}}>
+                        <Col sm={12}>
+                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem"}}>
+                                <b style={{color:"#885A89", fontFamily: "open sans"}}>Overview /</b> PC Express Search Exploration for Product Faculty
                             </div>
-                            </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text title="RESEARCH"/></Col>
-                        <Col sm={8}><Text content=""/></Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text header="User Interviews"/></Col>
-                        <Col sm={8}><Text content="We interviewed 12 users in total to identify the pain points our customers encountered when using the Search function on the PC Express app. After conducting the first few customer interviews, we realized that a portion of our interviewees have not used PC Express prior to this study. On that account, we decided to take a different approach to our problem. We determined collectively that our target audience will be first time online grocery shoppers instead."/></Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text header="Some Insights"/></Col>
-                        <Col sm={8}>
-                            <Text content="">
-                                <InsightUnorderedList/>
-                            </Text>
+                        </Col>
+                        <Col sm={12}>
+                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem"}}>
+                                <b style={{color:"#885A89",fontFamily: "open sans"}}>Role /</b> Product management, UX/UI Design
+                            </div>
+                        </Col>
+                        <Col sm={12}>
+                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem"}}>
+                                <b style={{ color:"#885A89", fontFamily: "open sans"}}>Tools /</b> Balsamiq, Sketch, Invision
+                            </div>
+                        </Col>
+                        <Col sm={12}>
+                            <div style={{fontFamily: "source sans pro",fontSize: "1.1rem" }}>
+                                <b style={{color:"#885A89", fontFamily: "open sans"}}>Timeline /</b> 8 weeks
+                            </div>
                         </Col>
                     </Row>
                 </Container>
+
+
+                <Container>
+                    <Row>
+                        <Col sm={12}>
+                            <Text title="Context"/>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Online grocery shopping space"/>
+                        </Col>
+
+                        <Col sm={12}>
+                            <Text content="Out of 1004 Canadians, 62% of these shoppers purchase their groceries online with eCommerce platforms like Amazon, Walmart and Loblaws. The online grocery market in Canada is expected to grow to $3.6 billion by 2019 which means businesses in this sector need to understand their shoppers’ wants and goals."/>
+                        </Col>
+
+                        <Col sm={12}>
+                            <Text header="PC Express Exploration"/>
+                        </Col>
+
+                        <Col sm={12}>
+                            <Text content="Loblaws' PC Express is a grocery click and collect platform that allows users to shop and pick up their groceries from convenient locations in the city. Customers can shop at their favourite grocery stores online and personal shoppers will fulfill their orders. Our task was to explore the search and discovery process on the app by applying design thinking and product management methodologies. At the end of the 8 week journey, we presented our findings and solution to a panel of stakeholders."/>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Current workflow and opportunities"/>
+                        </Col>
+                        <Col sm={12}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={wfopp}/>
+                                <Text Content="I evaluated the app alongside my teammates to determine the current workflow and opportunities we can leverage."/>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={12}>
+                            <Text title="the problem"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text header="A frustrating search process"/>
+                        </Col>
+                        <Col>
+                            <Text content="First time online grocery shoppers struggle with discovering preferred products within the PC Express platform which results in a decreased in retention and engagement with the app."/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="How might we..."/>
+                        </Col>
+                        <Col>
+                            <Text statement={true} content="For first time PC Express users, how might we support our users in the search process to give them confidence to purchase and decrease the number of incomplete orders."/>
+                        </Col>
+                    </Row>
+                </Container>
+
+
+                <Container>
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Assumptions"/>
+                        </Col>
+                        <Col sm={12}>
+                            <ul style={{ paddingLeft: "15px" ,color:"#555555",fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                                <li>It is hard for users to visualize the product size, colour, and quality</li>
+                                <li>Users cannot attest to the freshness of the product through online shopping which makes them less confident in their purchase</li>
+                                <li>The search process is confusing for prospective customers</li>
+                            </ul>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Constraints"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text content="Due to the time constraint of this project, we decided to focus solely on first-time users as the metric we picked as a team to focus and improve on is engagement and retention. "/>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="The Process"/>
+                        </Col>
+                        <Col sm={12}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={process}/>
+                                <Text Content="We followed a design thinking process and applied product management methodologies learned in class."/>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Some use cases for PC Express Search"/>
+                        </Col>
+                        <Col sm={12}>
+                            <ul style={{ paddingLeft: "15px" ,color:"#555555",fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"2rem"}}>
+                                <li>Quickly discover favourites</li>
+                                <li>Find everyday products</li>
+                                <li>Discover popular products</li>
+                            </ul>
+                        </Col>
+                        <Col sm={12}>
+                            <Text statement={true} content="At the core of the problem is the question: how do our first-time users discover products once they sign up?"/>
+                        </Col>
+                        {/*<Col sm={12}>*/}
+                        {/*    <Text header="Current workflow and opportunities"/>*/}
+                        {/*</Col>*/}
+                        {/*<Col sm={12}>*/}
+                        {/*    <div style={{ marginBottom: "4rem"}}>*/}
+                        {/*        <Card.Img src={wfopp}/>*/}
+                        {/*        <Text Content="I evaluated the app alongside my teammates to determine the current workflow and opportunities we can leverage."/>*/}
+                        {/*    </div>*/}
+                        {/*</Col>*/}
+                    </Row>
+                </Container>
+
+                <Container>
+                    <Row>
+                        <Col sm={12}>
+                            <Text title="research process"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text header="Customer Interviews"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text content="The purpose of conducting customer interviews is to gather some insights on our users’ thoughts of online grocery shopping, experiences, and emotions throughout their discovery-to-checkout journey."/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Primary Research"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text content="For our research, we interviewed 12 users in total. Their experiences of using online grocery apps varies. Majority are first time users, some have used PC Express in the past, while others have used competitor apps like Instacart. "/>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Insights on our users"/>
+                            <ul style={{ paddingLeft: "15px" ,color:"#555555", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                                <li>Would like to have information on <b>expiry dates</b> for items</li>
+                                <li>When it comes to fruit and produce, users are worried about the <b>quality of their products</b> when shopping online</li>
+                                <li>Needs more <b>refinement in search</b> parameters</li>
+                            </ul>
+                        </Col>
+                        <Col sm={12}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={insightsld}/>
+                            </div>
+                        </Col>
+
+                    </Row>
+
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="We often hear..."/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text content="“Navigating the app was a pain. There’s too much clicking around with no outcomes”-User A"/>
+                            <Text content="“Because online grocery doesn’t give me confidence in the quality of my products” -User B"/>
+                            <Text content="“It takes too long to compare items and lots of endless scrolling” -User C"/>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={custreviews}/>
+                                <Text Content="Reviews from current users."/>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="User Persona"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text content="James was created as our main persona from the customer interviews."/>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={mainpersona}/>
+                                <Text Content="Meet James a city-dwelling Product Manager."/>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Mapping out the process"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text header="Empathy Mapping"/>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={emap}/>
+                                <Text Content="As a team, we mapped out James' emapthy map."/>
+                            </div>
+                        </Col>
+                        {/*<Col sm={12}>*/}
+                        {/*    <Text title="Customer Journey Mapping"/>*/}
+                        {/*</Col>*/}
+                        {/*<div style={{ marginBottom: "4rem"}}>*/}
+                        {/*    <Card.Img src={jm}/>*/}
+                        {/*    <Text Content="Our initial customer search and discovery journey."/>*/}
+                        {/*</div>*/}
+                    </Row>
+                </Container>
+
+                <Container>
+                    <Row>
+                        <Col sm={12}>
+                            <Text header="Competitive Analysis"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text content="To gain a better understanding of the online grocery shopping space, I explored Instacart, Grocery Getaway, and Inabuggy."/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text header="Takeaways"/>
+                        </Col>
+                        <Col sm={12}>
+                            <ul style={{ paddingLeft: "15px" ,color:"#555555", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                                <li>Browse departments, sub departments and aisles were popular ways to filter and recreate the physical shopping experience</li>
+                                <li>Allowing users to create a shopping list and searching multiple items on the list at a time</li>
+                                <li>Re-order items from previous purchases</li>
+                            </ul>
+                        </Col>
+                    </Row>
+
+                </Container>
+
                 <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
                     <Row>
-                        <Col sm={4}><Text header="Empathy Map"/></Col>
-                        <Col sm={8}>
+                        <Col sm={12}>
+                            <Text header="Ideation"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text content="As a team, we evaluated the current flow of the PC Express Search function. Then, we proceeded to ideating possible solutions."/>
                             <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={ep}/>
+                                <Card.Img src={ideationld}/>
+                                <Text Content="Some ideas ranged from leveraging AI chatbots to simple additions to the app currently."/>
                             </div>
-                            <div style={{ marginBottom: "4rem",color:"#555555", fontFamily:"Source Sans Pro"}}>
-                                We define our users to be tech savvy and environmentally conscious. They work in the city and are making > $200K household income.
-                            </div>
-                            </Col>
+                        </Col>
                     </Row>
-                </Container>
 
-                <Container>
                     <Row>
-                        <Col sm={4}><Text title="DISCOVERY"/></Col>
-                        <Col sm={8}><Text content=""/></Col>
+                        <Col sm={12}>
+                            <Text header="Hypothesizing for success"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text content="By reducing the amount of time it takes for a new user to find their grocery items, it will result in a higher conversion rate and retention."/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text header="KPIs to consider"/>
+                            <ol style={{ paddingLeft: "15px" ,color:"#555555", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                                <li>Decreased time in full funnel conversion (e.g Entering the platform and purchasing at least 1 item [cohort X])</li>
+                                <li>Number of individuals from [cohort X] that make a return purchase within 3 weeks</li>
+                                <li>Decreased duration spent on platform within search functionality</li>
+                                <li>Decreased number of search terms within a session</li>
+                            </ol>
+                        </Col>
                     </Row>
-                </Container>
 
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text header="Problem Statement"/></Col>
-                        <Col sm={8}>
-                            <div  style={{fontSize: "1.5rem"}}>
-                            <Text statement={true} content="First time online grocery shoppers struggle with discovering preferred products within the PC Express platform which results in decreased retention and engagement."/>
-                            </div>
-                            </Col>
-                    </Row>
                 </Container>
 
                 <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
                     <Row>
-                        <Col sm={4}><Text header="Journey Map"/></Col>
-                        <Col sm={8}>
+                        <Col sm={12}>
+                            <Text title="Design Process"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text header="Design Explorations"/>
+                        </Col>
+                        <Col sm={5}>
                             <div style={{ marginBottom: "4rem"}}>
-                            <Card.Img src={jm} className="journey-map"/>
-                            </div>
-                            <div style={{ marginBottom: "4rem", color:"#555555", fontFamily:"Source Sans Pro"}}>
-                                Our users begins their journey by being aware. The users are aware they have a shortage of food and are unsure how much they need for the week. They go through the discovery phase where they attempt to look for grocery deals, but is overwhelmed by the amount of information given. In the purchase stage, users would like to checkout as fast as possible but still ensuring that their purchases meet their expectation.
+                                <Card.Img src={homepage}/>
                             </div>
                         </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text title="IDEATE"/></Col>
-                        <Col sm={8}></Col>
-                        <Col sm={4}><Text header="Feature Ideation"/></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                            <Card.Img src={idea}/>
-                            </div>
-                            <div style={{ marginBottom: "4rem",color:"#555555", fontFamily:"Source Sans Pro"}}>
-                            These were some of the ideas we came up with as a group. We settled on the AI Chatbot option after conducting some research of ways AI revolutionizes the Grocery Industry. Three ways AI is used in the grocery industry are: leveraging a wealth of customer data, assortment planning and replenishment, and reducing waste by advanced automation.
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
+                        <Col sm={7}>
 
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                        <Col sm={4}><Text header="User Flow"/></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                            <Card.Img src={uf}/>
-                            </div>
-                            <div style={{ marginBottom: "4rem"}}>
-                            </div>
-                            </Col>
-                    </Row>
-                </Container>
-                <Container >
-                    <Row>
-                        <Col sm={4}><Text title="HYPOTHESIS"/></Col>
-                        <Col sm={8}></Col>
-                        <Col sm={4}>
-                            <Text header="Our Hypothesis"/></Col>
-                        <Col sm={8}>
-                            <div  style={{fontSize: "1.5rem"}}>
-                                <Text statement={true} content="By reducing the amount of time it takes for a new user to find their grocery items, it will result in a higher conversion rate and retention."/>
-                            </div>
-                            </Col>
-                    </Row>
-                </Container>
-
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                        <Col sm={4}><Text header="KPIs for Success"/></Col>
-                        <Col sm={8}>
-
-                            <Text content="">
-                                <KpiOrderedList/>
-                            </Text>
+                            <Text title="Homepage"/>
+                            <Text content="Instead of populating random product cards in the homepage, for first time users, we wanted to display what is most important to them. For new users, the weekly sales card will display. For returning users, the past orders card will display before the weekly sales card"/>
                         </Col>
 
-
-                    </Row>
-                </Container>
-
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text title="DESIGN"/></Col>
-                        <Col sm={8}></Col>
-                        <Col sm={4}><Text header="Sketches"/></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                            <Card.Img src={rough}/>
-                            </div>
-                            </Col>
-                    </Row>
-                </Container>
-
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text header="Wireframes"/></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={wf1}/>
-                            </div>
+                        <Col sm={7}>
+                            <Text title="Navigation Bar"/>
+                            <Text content="Currently, PC Express has 5 options in their bottom navigation bar: Home, Departments, My Shop, Deals, Menu. Applying Hick’s Law, we want to reduce the choices our users need to make so they can focus on the shopping experience. Reducing the options down from 5 to 3, I moved departments and deals to the Browse tab and we decided as a team My Shops should be in the Menu options if users choose to use that option."/>
                         </Col>
-                        <Col sm={4}></Col>
-                        <Col sm={8}>
+                        <Col sm={5}>
                             <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={wf2}/>
-                            </div>
-                        </Col>
-                        <Col sm={4}></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={wf3}/>
+                                <Card.Img src={ldpcnav}/>
                             </div>
                         </Col>
                     </Row>
                 </Container>
 
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text header="High Fidelity Mockups"/></Col>
-                        <Col sm={4}><Card.Img src={sugg1} className="fidelity-mockups"/></Col>
-                        <Col sm={4}><Card.Img src={sugg2} className="fidelity-mockups"/></Col>
-                        <Col sm={4}></Col>
-                        <Col sm={8}><Text content="Here, we have the user initiating the conversation by asking the AI chatbot for search results of apples. The AI chatbot will then attempt to prompt the user to filter their results by the product searched. Users can then filter and sort based on the suggestions given by the chatbot. "/></Col>
-                        <Col sm={4}></Col>
-                        <Col sm={4}><Card.Img src={sugg3} className="fidelity-mockups"/></Col>
-                        <Col sm={4}><Card.Img src={sugg4} className="fidelity-mockups"/></Col>
-                        <Col sm={4}></Col>
-                        <Col sm={8}><Text content="AI chatbot will narrow down results based on filter, then return cards which allow the customers to shop with their eyes. We decided on a carousel scroll. Lastly, users can now click on the card for more information about the product. We included an add button to allow users to easily add the product into their shopping cart."/></Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}></Col>
-                        <Col sm={4}><Card.Img src={chat1} className="fidelity-mockups"/></Col>
-                        <Col sm={4}><Card.Img src={chat2} className="fidelity-mockups"/></Col>
-                        <Col sm={4}></Col>
-                        <Col sm={4}><Card.Img src={chat3} className="fidelity-mockups"/></Col>
-                        <Col sm={4}><Card.Img src={chat4} className="fidelity-mockups"/></Col>
-                        <Col sm={4}></Col>
-                        <Col sm={8}><Text content="AI chatbot simplifies the pickup or delivery process with suggested results based on given information."/></Col>
-                    </Row>
-                </Container>
                 <Container  style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
                     <Row>
-                        <Col sm={4}></Col>
-                        <Col sm={4}><Card.Img src={milk1} className="fidelity-mockups"/></Col>
-                        <Col sm={4}><Card.Img src={milk2} className="fidelity-mockups"/></Col>
-                        <Col sm={4}></Col>
-                        <Col sm={8}><Text content="Users also have the option of asking the AI chatbot to return search results given a picture of their search. AI chatbot will then return the actual product the user is looking for."/></Col>
+                        <Col sm={12}>
+                            <Text header="The search cases"/>
+                        </Col>
+                        <Col sm={5}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc1}/>
+                            </div>
+                        </Col>
+                        <Col sm={7}>
+                            <Text title="Categorizing products using Gestalt Principles"/>
+                            <Text content="Applying the Gestalt’s Principle of Similarity, we can group different types of apples into categories to organize and better support search. "/>
+                            <Text title="Error in spelling"/>
+                            <Text content="When the user inputs the wrong search term like an error in spelling. There should be an acceptance to the error in the spelling, returning the most relevant products for that input. E.g. aaples v. apples. If the variance in the error is too high, no results will display."/>
+                        </Col>
+
+
+                        <Col sm={5}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc7}/>
+                            </div>
+                        </Col>
+                        <Col sm={7}>
+                            <Text title="Generic Search"/>
+                            <Text content="When users input a generic search query (broad category) the search results would return the best match/ most relevant search results to the input term."/>
+                        </Col>
+
+                        <Col sm={5}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc8}/>
+                            </div>
+                        </Col>
+                        <Col sm={7}>
+
+                            <Text title="Exact Search"/>
+                            <Text content="Inputting the exact search term should display the same results as the generic search case. Relevancy should be determined by the ranking in terms of how close the strings of the query matches the data and popularity."/>
+                        </Col>
+
+                        <Col sm={5}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc6}/>
+                            </div>
+                        </Col>
+                        <Col sm={7}>
+
+                            <Text title="Browsing departments"/>
+                            <Text content="The current browse option lists all the departments available for the store. Since our users shop visually, we wanted to display department options with the correct visuals representing that department. Condensing the current navbar, I also placed ‘weekly flyer’ and ‘sale’ options in browse for easy browsing. "/>
+                        </Col>
+
                     </Row>
                 </Container>
-                <Container>
+
+                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
                     <Row>
-                        <Col sm={4}><Text title="REFLECTION"/></Col>
-                        <Col sm={8}><Text content=""/></Col>
-                        <Col sm={4}><Text header="Conclusion"/></Col>
-                        <Col sm={8}><Text content="By the end of the eight weeks, we presented our solution to a panel of product managers in Toronto. We were awarded the most imaginative solution and received some great feedback from the judges. This was my first time owning the whole design process which was a little daunting at first but my team was extremely helpful along the way. Overall, this experience has helped me grow as a designer and product manager. I was able to implement product thinking when coming up with solutions to our problem while discovering best practices along the way."/></Col>
-                    </Row>
-                    <Row>
-                        <Col sm={4}><Text header="Key Takeaways"/></Col>
-                        <Col sm={8}>
-                            <Text content="">
-                                <TakeawaysUnorderedList/>
-                            </Text>
+                        <Col sm={12}>
+                            <Text header="A familiar search experience  "/>
                         </Col>
-                        <Col sm={4}><Text header="Next Steps"/></Col>
-                        <Col sm={8}>
-                            <Text content="">
-                                <NextStepUnorderedList/>
-                            </Text>
+
+                        <Col sm={4}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc2}/>
+                                <Text Content="Filter and sorting"/>
+                            </div>
+                        </Col>
+
+                        <Col sm={4}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc3}/>
+                                <Text Content="Add to cart"/>
+                            </div>
+                        </Col>
+
+                        <Col sm={4}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc5}/>
+                                <Text Content="Using the barcode scanner to search"/>
+                            </div>
                         </Col>
                     </Row>
                 </Container>
+
+
+                <Container >
+                    <Col sm={12}>
+                        <Text header="User Testing"/>
+                    </Col>
+                    <Col sm={12}>
+                        <Text content="To be updated."/>
+                    </Col>
+
+                </Container>
+
+                {/*<Container>*/}
+
+                {/*</Container>*/}
+
+                {/*<Container>*/}
+
+                {/*</Container>*/}
+                {/*<Container>*/}
+
+                {/*</Container>*/}
+                {/*<Container  style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>*/}
+
+                {/*</Container>*/}
+                {/*<Container  style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>*/}
+
+                {/*</Container>*/}
+
+                {/*<Container>*/}
+
+                {/*</Container>*/}
 
                 <Container  className="bottom-breadcrumbs">
 

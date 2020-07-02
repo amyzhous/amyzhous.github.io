@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1680px" height="770px" viewBox="0 0 1680 770" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>the process</title>
+    <g id="the-process" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-15" transform="translate(395.000000, 143.000000)">
+            <circle id="Oval" fill-opacity="0.8" fill="#F7B500" cx="100" cy="100" r="100"></circle>
+            <text id="Define" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="40" font-weight="bold" letter-spacing="-1.45454548" fill="#000000" fill-opacity="0.85">
+                <tspan x="47" y="114">Define</tspan>
+            </text>
+        </g>
+        <g id="Group-16" transform="translate(50.000000, 143.000000)">
+            <circle id="Oval-Copy-4" fill-opacity="0.8" fill="#F7B500" cx="100" cy="100" r="100"></circle>
+            <text id="Empathize" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="40" font-weight="bold" letter-spacing="-1.45454548" fill="#000000" fill-opacity="0.85">
+                <tspan x="13" y="114">Empathize</tspan>
+            </text>
+        </g>
+        <g id="Group-14" transform="translate(740.000000, 143.000000)">
+            <circle id="Oval-Copy" fill-opacity="0.8" fill="#F7B500" cx="100" cy="100" r="100"></circle>
+            <text id="Ideate" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="40" font-weight="bold" letter-spacing="-1.45454548" fill="#000000" fill-opacity="0.85">
+                <tspan x="49" y="114">Ideate</tspan>
+            </text>
+        </g>
+        <g id="Group-13" transform="translate(1085.000000, 143.000000)">
+            <circle id="Oval-Copy-2" fill-opacity="0.8" fill="#F7B500" cx="100" cy="100" r="100"></circle>
+            <text id="Prototype" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="40" font-weight="bold" letter-spacing="-1.45454548" fill="#000000" fill-opacity="0.85">
+                <tspan x="19" y="114">Prototype</tspan>
+            </text>
+        </g>
+        <g id="Group-12" transform="translate(1430.000000, 143.000000)">
+            <circle id="Oval-Copy-3" fill-opacity="0.8" fill="#F7B500" cx="100" cy="100" r="100"></circle>
+            <text id="Test" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="40" font-weight="bold" letter-spacing="-1.45454548" fill="#000000" fill-opacity="0.85">
+                <tspan x="67" y="114">Test</tspan>
+            </text>
+        </g>
+        <g id="Group-8" transform="translate(690.000000, 538.000000)">
+            <rect id="Rectangle" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Wireframes" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="82.1195455" y="61">Wireframes</tspan>
+            </text>
+        </g>
+        <g id="Group-11" transform="translate(1380.000000, 408.000000)">
+            <rect id="Rectangle-Copy-8" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="User-Testing" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="122.781818" y="42">User </tspan>
+                <tspan x="107.378182" y="80">Testing</tspan>
+            </text>
+        </g>
+        <g id="Group-9" transform="translate(1035.000000, 408.000000)">
+            <rect id="Rectangle-Copy-9" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Low-fidelity" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="79.9304546" y="61">Low-fidelity</tspan>
+            </text>
+        </g>
+        <g id="Group-10" transform="translate(1035.000000, 538.000000)">
+            <rect id="Rectangle-Copy-10" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Hi-fidelity" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="91.7100001" y="61">Hi-fidelity</tspan>
+            </text>
+        </g>
+        <g id="Group-7" transform="translate(690.000000, 408.000000)">
+            <rect id="Rectangle-Copy" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="User-Flows" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="85.5095455" y="61">User Flows</tspan>
+            </text>
+        </g>
+        <g id="Group-5" transform="translate(345.000000, 408.000000)">
+            <rect id="Rectangle-Copy-2" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Problem-Statement" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="98.6481819" y="42">Problem </tspan>
+                <tspan x="87.679091" y="80">Statement</tspan>
+            </text>
+        </g>
+        <g id="Group-6" transform="translate(345.000000, 668.000000)">
+            <rect id="Rectangle-Copy-6" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Hypothesis" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="83.4695455" y="61">Hypothesis</tspan>
+            </text>
+        </g>
+        <g id="Group-4" transform="translate(345.000000, 539.000000)">
+            <rect id="Rectangle-Copy-7" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Identifying-Pain-Poi" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="85.6500001" y="42">Identifying </tspan>
+                <tspan x="84.0750001" y="80">Pain Points</tspan>
+            </text>
+        </g>
+        <g id="Group" transform="translate(0.000000, 408.000000)">
+            <rect id="Rectangle-Copy-3" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Interviews" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="87.5645455" y="61">Interviews</tspan>
+            </text>
+        </g>
+        <g id="Group-2" transform="translate(0.000000, 538.000000)">
+            <rect id="Rectangle-Copy-4" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Personas" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="95.5486364" y="61">Personas</tspan>
+            </text>
+        </g>
+        <g id="Group-3" transform="translate(0.000000, 668.000000)">
+            <rect id="Rectangle-Copy-5" stroke="#F7B500" stroke-width="2" x="0" y="0" width="300" height="100" rx="10"></rect>
+            <text id="Competitive-Analysis" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                <tspan x="77.4350001" y="42">Competitive </tspan>
+                <tspan x="102.003636" y="80">Analysis</tspan>
+            </text>
+        </g>
+        <text id="The-Process" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="40" font-weight="bold" letter-spacing="-1.45454548" fill="#000000" fill-opacity="0.85">
+            <tspan x="743" y="39">The Process</tspan>
+        </text>
+        <path id="Line-17" d="M150.5,507.5 L150.5,524.5 L156.5,524.5 L149.5,538.5 L142.5,524.5 L148.5,524.5 L148.5,507.5 L150.5,507.5 Z" fill-opacity="0.85" fill="#000000" fill-rule="nonzero"></path>
+        <path id="Line-17-Copy" d="M150,637 L150,654 L156,654 L149,668 L142,654 L148,654 L148,637 L150,637 Z" fill-opacity="0.85" fill="#000000" fill-rule="nonzero"></path>
+        <path id="Line-17-Copy-2" d="M496,508 L496,525 L502,525 L495,539 L488,525 L494,525 L494,508 L496,508 Z" fill-opacity="0.85" fill="#000000" fill-rule="nonzero"></path>
+        <path id="Line-17-Copy-3" d="M496,637 L496,654 L502,654 L495,668 L488,654 L494,654 L494,637 L496,637 Z" fill-opacity="0.85" fill="#000000" fill-rule="nonzero"></path>
+        <path id="Line-17-Copy-4" d="M841,507 L841,524 L847,524 L840,538 L833,524 L839,524 L839,507 L841,507 Z" fill-opacity="0.85" fill="#000000" fill-rule="nonzero"></path>
+        <path id="Line-17-Copy-5" d="M1186,508 L1186,525 L1192,525 L1185,539 L1178,525 L1184,525 L1184,508 L1186,508 Z" fill-opacity="0.85" fill="#000000" fill-rule="nonzero"></path>
+        <path id="Line-18" d="M1186,65 L1186,129 L1192,129 L1185,143 L1178,129 L1184,129 L1184,65 L1186,65 Z" fill-opacity="0.85" fill="#000000" fill-rule="nonzero"></path>
+        <rect id="Rectangle" fill-opacity="0.85" fill="#000000" x="1184" y="65" width="349" height="2"></rect>
+        <rect id="Rectangle" fill-opacity="0.85" fill="#000000" x="1531" y="67" width="2" height="70"></rect>
+        <text id="iterate" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="15" font-weight="500" letter-spacing="-0.545454554" fill="#000000" fill-opacity="0.85">
+            <tspan x="1339" y="55">iterate</tspan>
+        </text>
+    </g>
+</svg>

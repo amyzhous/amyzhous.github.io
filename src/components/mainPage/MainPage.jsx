@@ -51,10 +51,10 @@ class MainPage extends React.Component{
                         <MyCard imgSrc={circlesbanner1} title="Circles" subtitle="UX/UI Design, Design Thinking" text="A social app to connect circles of individuals."/>
                     </a>
                     {/*<a href="/project_three">*/}
-                    {/*    <MyCard imgSrc={moodilybanner} title="Memberfy" subtitle="UX/UI Design, Web Design" text="Memberfy is a platform that centralizes information to find folks for your favourite services."/>*/}
+                    {/*    <MyCard imgSrc={moodilybanner} title="Memberfy" subtitle="UX/UI Design, Web Design" text="Memberfy is a platform that centralizes information."/>*/}
                     {/*</a>*/}
                     {/*<a href="/project_four">*/}
-                    {/*    <MyCard imgSrc={parkitbanner} title="Park It"/>*/}
+                    {/*    <MyCard imgSrc={parkitbanner} title="eMERGE" subtitle="Business Design, UX Research" text="eMERGE is a climate change initiative in Guelph."/>*/}
                     {/*</a>*/}
                     {/*<a href="/project_five">*/}
                     {/*    <MyCard imgSrc={petcobanner} title="Pet&Co."/>*/}

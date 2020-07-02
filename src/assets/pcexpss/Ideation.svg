@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2767px" height="1202px" viewBox="0 0 2767 1202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Feature Ideation</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Feature-Ideation" transform="translate(-49.000000, -141.000000)">
+            <g id="Group" transform="translate(49.000000, 295.000000)">
+                <rect id="Rectangle" fill="#F5F5F5" x="0" y="0" width="520" height="1048" rx="50"></rect>
+                <text id="“Popular-Brands”-Sel" font-family="Poppins-SemiBold, Poppins" font-size="36" font-weight="500" letter-spacing="-1.30909093" fill="#363738">
+                    <tspan x="44" y="105">“Popular Brands” Selector</tspan>
+                </text>
+                <text id="A-banner-at-the-top" font-family="Poppins-Medium, Poppins" font-size="30" font-weight="400" letter-spacing="-1.09090911" fill="#363738">
+                    <tspan x="80" y="167">A banner at the top of the </tspan>
+                    <tspan x="80" y="210">search results that </tspan>
+                    <tspan x="80" y="253">recommends the most </tspan>
+                    <tspan x="80" y="296">popular brands given the </tspan>
+                    <tspan x="80" y="339">search.</tspan>
+                </text>
+                <text id="Pro:-Users-are-able" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#363738">
+                    <tspan x="80" y="469">Pro: </tspan>
+                    <tspan x="138.085454" y="469" font-family="Poppins-Regular, Poppins" font-weight="normal">Users are able to </tspan>
+                    <tspan x="80" y="512" font-family="Poppins-Regular, Poppins" font-weight="normal">quickly purchase from </tspan>
+                    <tspan x="80" y="555" font-family="Poppins-Regular, Poppins" font-weight="normal">brands they recognize.</tspan>
+                </text>
+                <text id="Con:-Users-are-unabl" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#363738">
+                    <tspan x="80" y="709">Con: </tspan>
+                    <tspan x="150.295454" y="709" font-family="Poppins-Regular, Poppins" font-weight="normal">Users are unable to </tspan>
+                    <tspan x="80" y="752" font-family="Poppins-Regular, Poppins" font-weight="normal">recognize brands and it </tspan>
+                    <tspan x="80" y="795" font-family="Poppins-Regular, Poppins" font-weight="normal">creates more confusion </tspan>
+                    <tspan x="80" y="838" font-family="Poppins-Regular, Poppins" font-weight="normal">on the results page.</tspan>
+                </text>
+            </g>
+            <g id="Group-2" transform="translate(611.000000, 295.000000)">
+                <rect id="Rectangle-Copy" fill="#F5F5F5" x="0" y="0" width="520" height="1048" rx="50"></rect>
+                <text id="AR-Product-Visualiza" font-family="Poppins-SemiBold, Poppins" font-size="36" font-weight="500" letter-spacing="-1.30909093" fill="#3E3F40">
+                    <tspan x="55" y="105">AR Product Visualization</tspan>
+                </text>
+                <text id="After-searching-for" font-family="Poppins-Medium, Poppins" font-size="30" font-weight="400" letter-spacing="-1.09090911" fill="#3E3F40">
+                    <tspan x="80" y="167">After searching for a </tspan>
+                    <tspan x="80" y="210">product, users are able to </tspan>
+                    <tspan x="80" y="253">visualize the product to </tspan>
+                    <tspan x="80" y="296">gauge size and other </tspan>
+                    <tspan x="80" y="339">physical properties.</tspan>
+                </text>
+                <text id="Pro:-Allows-users-to" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#3E3F40">
+                    <tspan x="80" y="469">Pro: </tspan>
+                    <tspan x="138.085454" y="469" font-family="Poppins-Regular, Poppins" font-weight="normal">Allows users to </tspan>
+                    <tspan x="80" y="512" font-family="Poppins-Regular, Poppins" font-weight="normal">understand what a </tspan>
+                    <tspan x="80" y="555" font-family="Poppins-Regular, Poppins" font-weight="normal">certain item will look like </tspan>
+                    <tspan x="80" y="598" font-family="Poppins-Regular, Poppins" font-weight="normal">and what the relative size </tspan>
+                    <tspan x="80" y="641" font-family="Poppins-Regular, Poppins" font-weight="normal">is compared to weight..</tspan>
+                </text>
+                <text id="Con:-Expensive-to-cr" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#3E3F40">
+                    <tspan x="80" y="709">Con: </tspan>
+                    <tspan x="150.295454" y="709" font-family="Poppins-Regular, Poppins" font-weight="normal">Expensive to create </tspan>
+                    <tspan x="80" y="752" font-family="Poppins-Regular, Poppins" font-weight="normal">models for items &amp; not </tspan>
+                    <tspan x="80" y="795" font-family="Poppins-Regular, Poppins" font-weight="normal">useful beyond produce.</tspan>
+                </text>
+            </g>
+            <g id="Group-3" transform="translate(1173.000000, 295.000000)">
+                <rect id="Rectangle-Copy-2" fill="#F5F5F5" x="0" y="0" width="520" height="1048" rx="50"></rect>
+                <text id="AI-Chatbot" font-family="Poppins-SemiBold, Poppins" font-size="36" font-weight="500" letter-spacing="-1.30909093" fill="#505153">
+                    <tspan x="167" y="105">AI Chatbot</tspan>
+                </text>
+                <text id="AI-chatbot-to-help-g" font-family="Poppins-Medium, Poppins" font-size="30" font-weight="400" letter-spacing="-1.09090911" fill="#474849">
+                    <tspan x="78" y="167">AI chatbot to help guide </tspan>
+                    <tspan x="78" y="210">new users in finding the </tspan>
+                    <tspan x="78" y="253">products they are looking </tspan>
+                    <tspan x="78" y="296">for.</tspan>
+                </text>
+                <text id="Pro:-Allows-for-guid" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#474849">
+                    <tspan x="78" y="469">Pro: </tspan>
+                    <tspan x="136.085454" y="469" font-family="Poppins-Regular, Poppins" font-weight="normal">Allows for guided </tspan>
+                    <tspan x="78" y="512" font-family="Poppins-Regular, Poppins" font-weight="normal">prompts to help the user </tspan>
+                    <tspan x="78" y="555" font-family="Poppins-Regular, Poppins" font-weight="normal">discover what products </tspan>
+                    <tspan x="78" y="598" font-family="Poppins-Regular, Poppins" font-weight="normal">to look for and help </tspan>
+                    <tspan x="78" y="641" font-family="Poppins-Regular, Poppins" font-weight="normal">narrow down their needs.</tspan>
+                </text>
+                <text id="Con:-Can-start-to-cr" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#505153">
+                    <tspan x="78" y="709">Con: </tspan>
+                    <tspan x="148.295454" y="709" font-family="Poppins-Regular, Poppins" font-weight="normal">Can start to create </tspan>
+                    <tspan x="78" y="752" font-family="Poppins-Regular, Poppins" font-weight="normal">friction because it will </tspan>
+                    <tspan x="78" y="795" font-family="Poppins-Regular, Poppins" font-weight="normal">require the user to have a </tspan>
+                    <tspan x="78" y="838" font-family="Poppins-Regular, Poppins" font-weight="normal">general idea of what they </tspan>
+                    <tspan x="78" y="881" font-family="Poppins-Regular, Poppins" font-weight="normal">want. Difficult to maintain </tspan>
+                    <tspan x="78" y="924" font-family="Poppins-Regular, Poppins" font-weight="normal">overtime and understand </tspan>
+                    <tspan x="78" y="967" font-family="Poppins-Regular, Poppins" font-weight="normal">grocery options.</tspan>
+                </text>
+            </g>
+            <g id="Group-4" transform="translate(1734.000000, 295.000000)">
+                <rect id="Rectangle-Copy-3" fill="#F5F5F5" x="0" y="0" width="520" height="1048" rx="50"></rect>
+                <text id="Personalizes-List" font-family="Poppins-SemiBold, Poppins" font-size="36" font-weight="500" letter-spacing="-1.30909093" fill="#5B5C5D">
+                    <tspan x="122" y="105">Personalizes List</tspan>
+                </text>
+                <text id="Similar-to-curated-l" font-family="Poppins-Medium, Poppins" font-size="30" font-weight="400" letter-spacing="-1.09090911" fill="#5B5C5D">
+                    <tspan x="79" y="173">Similar to curated list, but </tspan>
+                    <tspan x="79" y="216">based on customers </tspan>
+                    <tspan x="79" y="259">purchases. Generating </tspan>
+                    <tspan x="79" y="302">their shopping list of what </tspan>
+                    <tspan x="79" y="345">customers need to buy </tspan>
+                    <tspan x="79" y="388">from precious purchases.</tspan>
+                </text>
+                <text id="Pro:-Reduce-time-to" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#5B5C5D">
+                    <tspan x="79" y="469">Pro: </tspan>
+                    <tspan x="137.085454" y="469" font-family="Poppins-Regular, Poppins" font-weight="normal">Reduce time to think </tspan>
+                    <tspan x="79" y="512" font-family="Poppins-Regular, Poppins" font-weight="normal">about what you need to </tspan>
+                    <tspan x="79" y="555" font-family="Poppins-Regular, Poppins" font-weight="normal">buy.</tspan>
+                </text>
+                <text id="Con:-If-the-customer" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#5B5C5D">
+                    <tspan x="79" y="709">Con: </tspan>
+                    <tspan x="149.295454" y="709" font-family="Poppins-Regular, Poppins" font-weight="normal">If the customer had </tspan>
+                    <tspan x="79" y="752" font-family="Poppins-Regular, Poppins" font-weight="normal">a negative experience </tspan>
+                    <tspan x="79" y="795" font-family="Poppins-Regular, Poppins" font-weight="normal">with certain purchases </tspan>
+                    <tspan x="79" y="838" font-family="Poppins-Regular, Poppins" font-weight="normal">and if they want to try </tspan>
+                    <tspan x="79" y="881" font-family="Poppins-Regular, Poppins" font-weight="normal">something else.</tspan>
+                </text>
+            </g>
+            <g id="Group-5" transform="translate(2296.000000, 295.000000)">
+                <rect id="Rectangle-Copy-4" fill="#F5F5F5" x="0" y="0" width="520" height="1048" rx="50"></rect>
+                <text id="Quick-Find" font-family="Poppins-SemiBold, Poppins" font-size="36" font-weight="500" letter-spacing="-1.30909093" fill="#5B5C5D">
+                    <tspan x="172" y="105">Quick Find</tspan>
+                </text>
+                <text id="Have-the-ability-for" font-family="Poppins-Medium, Poppins" font-size="30" font-weight="400" letter-spacing="-1.09090911" fill="#5B5C5D">
+                    <tspan x="80" y="173">Have the ability for users </tspan>
+                    <tspan x="80" y="216">to take a photo of their </tspan>
+                    <tspan x="80" y="259">current items and fetch </tspan>
+                    <tspan x="80" y="302">the search results quickly </tspan>
+                    <tspan x="80" y="345">on the app.</tspan>
+                </text>
+                <text id="Pro:-Customers-finds" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#5B5C5D">
+                    <tspan x="80" y="469">Pro: </tspan>
+                    <tspan x="138.085454" y="469" font-family="Poppins-Regular, Poppins" font-weight="normal">Customers finds </tspan>
+                    <tspan x="80" y="512" font-family="Poppins-Regular, Poppins" font-weight="normal">exact items they want.</tspan>
+                </text>
+                <text id="Con:-When-the-custom" font-family="Poppins-SemiBold, Poppins" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#666769">
+                    <tspan x="80" y="709">Con: </tspan>
+                    <tspan x="150.295454" y="709" font-family="Poppins-Regular, Poppins" font-weight="normal">When the customer </tspan>
+                    <tspan x="80" y="752" font-family="Poppins-Regular, Poppins" font-weight="normal">does not have the item </tspan>
+                    <tspan x="80" y="795" font-family="Poppins-Regular, Poppins" font-weight="normal">on hand.</tspan>
+                </text>
+            </g>
+            <circle id="Oval" fill-opacity="0.7" fill="#F0CE71" cx="309" cy="241" r="100"></circle>
+            <circle id="Oval-Copy" fill-opacity="0.7" fill="#F0CE71" cx="871" cy="241" r="100"></circle>
+            <circle id="Oval-Copy-2" fill-opacity="0.7" fill="#F0CE71" cx="1436" cy="241" r="100"></circle>
+            <circle id="Oval-Copy-3" fill-opacity="0.7" fill="#F0CE71" cx="1994" cy="241" r="100"></circle>
+            <circle id="Oval-Copy-4" fill-opacity="0.7" fill="#F0CE71" cx="2556" cy="241" r="100"></circle>
+            <text id="1" opacity="0.903250558" font-family="Poppins-Medium, Poppins" font-size="100" font-weight="400" letter-spacing="-3.63636369" fill="#3E3F40">
+                <tspan x="295" y="276">1</tspan>
+            </text>
+            <text id="2" opacity="0.903250558" font-family="Poppins-Medium, Poppins" font-size="100" font-weight="400" letter-spacing="-3.63636369" fill="#474849">
+                <tspan x="844" y="276">2</tspan>
+            </text>
+            <text id="3" opacity="0.903250558" font-family="Poppins-Medium, Poppins" font-size="100" font-weight="400" letter-spacing="-3.63636369" fill="#474849">
+                <tspan x="1408" y="276">3</tspan>
+            </text>
+            <text id="4" opacity="0.903250558" font-family="Poppins-Medium, Poppins" font-size="100" font-weight="400" letter-spacing="-3.63636369" fill="#474849">
+                <tspan x="1964" y="276">4</tspan>
+            </text>
+            <text id="5" opacity="0.903250558" font-family="Poppins-Medium, Poppins" font-size="100" font-weight="400" letter-spacing="-3.63636369" fill="#474849">
+                <tspan x="2527" y="276">5</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
