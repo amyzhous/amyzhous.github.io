@@ -373,7 +373,7 @@ class Ldpc extends React.Component{
                     </Row>
                     <Row>
                         <Col sm={12}>
-                            <Text header="Mapping out the process"/>
+                            <Text title="Mapping out the process"/>
                         </Col>
                         <Col sm={12}>
                             <Text header="Empathy Mapping"/>
