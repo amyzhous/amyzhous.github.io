@@ -10,31 +10,9 @@ import particlesParams from "../mainPage/particle";
 import banner from "../../assets/pcexp/ldbanner_.jpg";
 import Text from "./text";
 import "./text.css";
-import ep from "../../assets/pcexp/empathy map.jpg";
-import idea from "../../assets/pcexp/feature ideation.svg";
-import uf from "../../assets/pcexp/uf.png";
-import rough from "../../assets/pcexp/rough.jpg";
-import wf1 from  "../../assets/pcexp/w1.svg";
-import wf2 from  "../../assets/pcexp/w2.svg";
-import wf3 from  "../../assets/pcexp/w3.svg";
-import chat1 from  "../../assets/pcexp/f_aichat1.png";
-import chat2 from  "../../assets/pcexp/f_aichat2.png";
-import chat3 from  "../../assets/pcexp/f_aichat3.png";
-import chat4 from  "../../assets/pcexp/f_aichat4.png";
-import sugg1 from  "../../assets/pcexp/f_sugg1a.png";
-import sugg2 from  "../../assets/pcexp/f_sugg1b.png";
-import sugg3 from  "../../assets/pcexp/f_sugg1c.png";
-import sugg4 from  "../../assets/pcexp/f_sugg1d.png";
-import milk1 from  "../../assets/pcexp/f_milk1.png";
-import milk2 from  "../../assets/pcexp/f_milk2.png";
+
 import ProjectInfo from "./projectInfo"
-import search1 from "../../assets/pcexp/search1.svg"
-import search2 from "../../assets/pcexp/search2.svg"
-import search3 from "../../assets/pcexp/search3.svg"
-import search4 from "../../assets/pcexp/search4.svg"
-import search5 from "../../assets/pcexp/search5.svg"
-import search6 from "../../assets/pcexp/search6.svg"
-import designthinking from"../../assets/pcexp/designthinking6.jpg";
+
 import insightsld from"../../assets/pcexpss/Insights.svg";
 import mainpersona from"../../assets/pcexpss/James_Persona.svg";
 import morepersona from"../../assets/pcexpss/More_Personas.svg";
@@ -54,7 +32,16 @@ import ldpc6 from "../../assets/pcexpss/ldpc6.gif";
 import ldpc7 from "../../assets/pcexpss/ldpc7.gif";
 import ldpc8 from "../../assets/pcexpss/ldpc8.gif";
 import ldpcnav from "../../assets/pcexpss/ldpcnav.gif";
-
+import iterationld from "../../assets/pcexpss/iterations.png";
+import ldbanner from "../../assets/pcexpss/ldbanner@4x.svg";
+import ldpcfinal from "../../assets/pcexpss/ldpcfinal.gif";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import ldpcteam from "../../assets/pcexpss/ldpcteam.png";
+import review1 from "../../assets/pcexpss/reviews1.svg";
+import review2 from "../../assets/pcexpss/reviews2.svg";
+import inabuggy from "../../assets/pcexpss/inabuggy.svg";
+import instacart from "../../assets/pcexpss/instacart.svg";
+import groceryget from "../../assets/pcexpss/groceryget.svg";
 
 // const AssumpOrderedList = () => {
 //     return(
@@ -143,7 +130,7 @@ class Ldpc extends React.Component{
             <div>
                 <div style={{textAlign: "center", marginBottom: "7rem"}}>
                     <Card className="projectBanner" style={{display: 'inline-block', cursor: "default"}}>
-                        <Card.Img variant="top" src={banner} />
+                        <Card.Img variant="top" src={ldbanner} />
                     </Card>
                 </div>
 
@@ -165,22 +152,27 @@ class Ldpc extends React.Component{
                 <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
                     <Row style={{marginBottom:"4rem"}}>
                         <Col sm={12}>
-                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem"}}>
+                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem", color: "1a1a1a"}}>
                                 <b style={{color:"#885A89", fontFamily: "open sans"}}>Overview /</b> PC Express Search Exploration for Product Faculty
                             </div>
                         </Col>
                         <Col sm={12}>
-                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem"}}>
+                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem", color: "1a1a1a"}}>
                                 <b style={{color:"#885A89",fontFamily: "open sans"}}>Role /</b> Product management, UX/UI Design
                             </div>
                         </Col>
                         <Col sm={12}>
-                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem"}}>
+                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem", color: "1a1a1a"}}>
+                                <b style={{color:"#885A89",fontFamily: "open sans"}}>Team /</b> Tony Cheng, William To
+                            </div>
+                        </Col>
+                        <Col sm={12}>
+                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem", color: "1a1a1a"}}>
                                 <b style={{ color:"#885A89", fontFamily: "open sans"}}>Tools /</b> Balsamiq, Sketch, Invision
                             </div>
                         </Col>
                         <Col sm={12}>
-                            <div style={{fontFamily: "source sans pro",fontSize: "1.1rem" }}>
+                            <div style={{fontFamily: "source sans pro",fontSize: "1.1rem",color: "1a1a1a" }}>
                                 <b style={{color:"#885A89", fontFamily: "open sans"}}>Timeline /</b> 8 weeks
                             </div>
                         </Col>
@@ -205,15 +197,48 @@ class Ldpc extends React.Component{
                         </Col>
 
                         <Col sm={12}>
-                            <Text header="PC Express Exploration"/>
+                            <Text header="PC Express exploration"/>
                         </Col>
 
                         <Col sm={12}>
-                            <Text content="Loblaws' PC Express is a grocery click and collect platform that allows users to shop and pick up their groceries from convenient locations in the city. Customers can shop at their favourite grocery stores online and personal shoppers will fulfill their orders. Our task was to explore the search and discovery process on the app by applying design thinking and product management methodologies. At the end of the 8 week journey, we presented our findings and solution to a panel of stakeholders."/>
+                            <Text content="Loblaws' PC Express is a grocery click and collect platform that allows users to shop and pick up their groceries from convenient locations in the city. Customers can shop at their favourite grocery stores online and personal shoppers will fulfill their orders. Our task was to explore the search and discovery process on the app by applying design thinking and product management methodologies."/>
+                        </Col>
+
+                        <Col sm={12}>
+                            <Text header="The Final Product"/>
+                        </Col>
+
+                        <Col sm={5}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpcfinal}/>
+                            </div>
+                        </Col>
+                        <Col sm={7}>
+                            <Text title="decoding the search process"/>
+                            <Text content="At the end of the 8 week journey, we presented our findings and solution to a panel of stakeholders."/>
+
+                            <a style={{ fontFamily: "source sans pro",fontSize: "1.1rem" ,marginBottom: "4rem",textTransform: "uppercase", letterSpacing: "3px",color: "1a1a1a", fontWeight:"bold"}} href="#lddesignprocess">Show me the design process 👇🏻</a>
+
+                              <div style={{marginBottom: "4rem", marginTop: "4rem"}}>
+                                <Card.Img src={ldpcteam}/>
+                                <Text Content="My team and I presenting our solution."/>
+                            </div>
+
                         </Col>
                     </Row>
+                </Container>
 
+                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
                     <Row>
+                        <Col sm={12}>
+                            <Text title="the problem"/>
+                        </Col>
+                        <Col sm={12}>
+                            <Text header="A frustrating search process"/>
+                        </Col>
+                        <Col>
+                            <Text content="First time online grocery shoppers struggle with discovering preferred products within the PC Express platform which results in a decreased in retention and engagement with the app."/>
+                        </Col>
                         <Col sm={12}>
                             <Text header="Current workflow and opportunities"/>
                         </Col>
@@ -226,33 +251,22 @@ class Ldpc extends React.Component{
                     </Row>
                     <Row>
                         <Col sm={12}>
-                            <Text title="the problem"/>
-                        </Col>
-                        <Col sm={12}>
-                            <Text header="A frustrating search process"/>
-                        </Col>
-                        <Col>
-                            <Text content="First time online grocery shoppers struggle with discovering preferred products within the PC Express platform which results in a decreased in retention and engagement with the app."/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm={12}>
                             <Text header="How might we..."/>
                         </Col>
                         <Col>
                             <Text statement={true} content="For first time PC Express users, how might we support our users in the search process to give them confidence to purchase and decrease the number of incomplete orders."/>
                         </Col>
                     </Row>
-                </Container>
+                {/*</Container>*/}
 
 
-                <Container>
+                {/*<Container>*/}
                     <Row>
                         <Col sm={12}>
                             <Text header="Assumptions"/>
                         </Col>
                         <Col sm={12}>
-                            <ul style={{ paddingLeft: "15px" ,color:"#555555",fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                            <ul style={{ paddingLeft: "15px" ,color: "1a1a1a",fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
                                 <li>It is hard for users to visualize the product size, colour, and quality</li>
                                 <li>Users cannot attest to the freshness of the product through online shopping which makes them less confident in their purchase</li>
                                 <li>The search process is confusing for prospective customers</li>
@@ -285,7 +299,7 @@ class Ldpc extends React.Component{
                             <Text header="Some use cases for PC Express Search"/>
                         </Col>
                         <Col sm={12}>
-                            <ul style={{ paddingLeft: "15px" ,color:"#555555",fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"2rem"}}>
+                            <ul style={{ paddingLeft: "15px" ,color: "1a1a1a",fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"2rem"}}>
                                 <li>Quickly discover favourites</li>
                                 <li>Find everyday products</li>
                                 <li>Discover popular products</li>
@@ -294,19 +308,11 @@ class Ldpc extends React.Component{
                         <Col sm={12}>
                             <Text statement={true} content="At the core of the problem is the question: how do our first-time users discover products once they sign up?"/>
                         </Col>
-                        {/*<Col sm={12}>*/}
-                        {/*    <Text header="Current workflow and opportunities"/>*/}
-                        {/*</Col>*/}
-                        {/*<Col sm={12}>*/}
-                        {/*    <div style={{ marginBottom: "4rem"}}>*/}
-                        {/*        <Card.Img src={wfopp}/>*/}
-                        {/*        <Text Content="I evaluated the app alongside my teammates to determine the current workflow and opportunities we can leverage."/>*/}
-                        {/*    </div>*/}
-                        {/*</Col>*/}
                     </Row>
                 </Container>
 
-                <Container>
+
+                <Container >
                     <Row>
                         <Col sm={12}>
                             <Text title="research process"/>
@@ -330,7 +336,7 @@ class Ldpc extends React.Component{
                     <Row>
                         <Col sm={12}>
                             <Text header="Insights on our users"/>
-                            <ul style={{ paddingLeft: "15px" ,color:"#555555", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                            <ul style={{ paddingLeft: "15px" ,color: "1a1a1a", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
                                 <li>Would like to have information on <b>expiry dates</b> for items</li>
                                 <li>When it comes to fruit and produce, users are worried about the <b>quality of their products</b> when shopping online</li>
                                 <li>Needs more <b>refinement in search</b> parameters</li>
@@ -352,9 +358,16 @@ class Ldpc extends React.Component{
                             <Text content="“Navigating the app was a pain. There’s too much clicking around with no outcomes”-User A"/>
                             <Text content="“Because online grocery doesn’t give me confidence in the quality of my products” -User B"/>
                             <Text content="“It takes too long to compare items and lots of endless scrolling” -User C"/>
+                        </Col>
+                        <Col sm={6}>
                             <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={custreviews}/>
+                                <Card.Img src={review1}/>
                                 <Text Content="Reviews from current users."/>
+                            </div>
+                        </Col>
+                        <Col sm={6}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={review2}/>
                             </div>
                         </Col>
                     </Row>
@@ -400,11 +413,32 @@ class Ldpc extends React.Component{
                         <Col sm={12}>
                             <Text content="To gain a better understanding of the online grocery shopping space, I explored Instacart, Grocery Getaway, and Inabuggy."/>
                         </Col>
+
+                        <Col sm={4}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={inabuggy}/>
+                                <Text Content="Inabuggy"/>
+                            </div>
+                        </Col>
+                        <Col sm={4}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={groceryget}/>
+                                <Text Content="Grocery Getaway"/>
+                            </div>
+                        </Col>
+                        <Col sm={4}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={instacart}/>
+                                <Text Content="Instacart"/>
+                            </div>
+                        </Col>
+
+
                         <Col sm={12}>
                             <Text header="Takeaways"/>
                         </Col>
                         <Col sm={12}>
-                            <ul style={{ paddingLeft: "15px" ,color:"#555555", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                            <ul style={{ paddingLeft: "15px" ,color: "1a1a1a", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
                                 <li>Browse departments, sub departments and aisles were popular ways to filter and recreate the physical shopping experience</li>
                                 <li>Allowing users to create a shopping list and searching multiple items on the list at a time</li>
                                 <li>Re-order items from previous purchases</li>
@@ -437,7 +471,7 @@ class Ldpc extends React.Component{
                         </Col>
                         <Col sm={12}>
                             <Text header="KPIs to consider"/>
-                            <ol style={{ paddingLeft: "15px" ,color:"#555555", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                            <ol style={{ paddingLeft: "15px" ,color: "1a1a1a", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
                                 <li>Decreased time in full funnel conversion (e.g Entering the platform and purchasing at least 1 item [cohort X])</li>
                                 <li>Number of individuals from [cohort X] that make a return purchase within 3 weeks</li>
                                 <li>Decreased duration spent on platform within search functionality</li>
@@ -450,7 +484,7 @@ class Ldpc extends React.Component{
 
                 <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
                     <Row>
-                        <Col sm={12}>
+                        <Col sm={12} id="lddesignprocess">
                             <Text title="Design Process"/>
                         </Col>
                         <Col sm={12}>
@@ -467,15 +501,15 @@ class Ldpc extends React.Component{
                             <Text content="Instead of populating random product cards in the homepage, for first time users, we wanted to display what is most important to them. For new users, the weekly sales card will display. For returning users, the past orders card will display before the weekly sales card"/>
                         </Col>
 
-                        <Col sm={7}>
-                            <Text title="Navigation Bar"/>
-                            <Text content="Currently, PC Express has 5 options in their bottom navigation bar: Home, Departments, My Shop, Deals, Menu. Applying Hick’s Law, we want to reduce the choices our users need to make so they can focus on the shopping experience. Reducing the options down from 5 to 3, I moved departments and deals to the Browse tab and we decided as a team My Shops should be in the Menu options if users choose to use that option."/>
-                        </Col>
-                        <Col sm={5}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={ldpcnav}/>
-                            </div>
-                        </Col>
+                        {/*<Col sm={7}>*/}
+                        {/*    <Text title="Navigation Bar"/>*/}
+                        {/*    <Text content="Currently, PC Express has 5 options in their bottom navigation bar: Home, Departments, My Shop, Deals, Menu. Applying Hick’s Law, we want to reduce the choices our users need to make so they can focus on the shopping experience."/>*/}
+                        {/*</Col>*/}
+                        {/*<Col sm={5}>*/}
+                        {/*    <div style={{ marginBottom: "4rem"}}>*/}
+                        {/*        <Card.Img src={ldpcnav}/>*/}
+                        {/*    </div>*/}
+                        {/*</Col>*/}
                     </Row>
                 </Container>
 
@@ -484,17 +518,20 @@ class Ldpc extends React.Component{
                         <Col sm={12}>
                             <Text header="The search cases"/>
                         </Col>
-                        <Col sm={5}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={ldpc1}/>
-                            </div>
-                        </Col>
+
                         <Col sm={7}>
                             <Text title="Categorizing products using Gestalt Principles"/>
                             <Text content="Applying the Gestalt’s Principle of Similarity, we can group different types of apples into categories to organize and better support search. "/>
                             <Text title="Error in spelling"/>
                             <Text content="When the user inputs the wrong search term like an error in spelling. There should be an acceptance to the error in the spelling, returning the most relevant products for that input. E.g. aaples v. apples. If the variance in the error is too high, no results will display."/>
                         </Col>
+
+                        <Col sm={5}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc1}/>
+                            </div>
+                        </Col>
+
 
 
                         <Col sm={5}>
@@ -507,16 +544,18 @@ class Ldpc extends React.Component{
                             <Text content="When users input a generic search query (broad category) the search results would return the best match/ most relevant search results to the input term."/>
                         </Col>
 
-                        <Col sm={5}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={ldpc8}/>
-                            </div>
-                        </Col>
+
                         <Col sm={7}>
 
                             <Text title="Exact Search"/>
                             <Text content="Inputting the exact search term should display the same results as the generic search case. Relevancy should be determined by the ranking in terms of how close the strings of the query matches the data and popularity."/>
                         </Col>
+                        <Col sm={5}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={ldpc8}/>
+                            </div>
+                        </Col>
+
 
                         <Col sm={5}>
                             <div style={{ marginBottom: "4rem"}}>
@@ -524,10 +563,10 @@ class Ldpc extends React.Component{
                             </div>
                         </Col>
                         <Col sm={7}>
-
                             <Text title="Browsing departments"/>
                             <Text content="The current browse option lists all the departments available for the store. Since our users shop visually, we wanted to display department options with the correct visuals representing that department. Condensing the current navbar, I also placed ‘weekly flyer’ and ‘sale’ options in browse for easy browsing. "/>
                         </Col>
+
 
                     </Row>
                 </Container>
@@ -563,13 +602,53 @@ class Ldpc extends React.Component{
 
 
                 <Container >
+                    <Row>
                     <Col sm={12}>
                         <Text header="User Testing"/>
                     </Col>
                     <Col sm={12}>
-                        <Text content="To be updated."/>
+                        <Text content="We gave our users a series of tasks to complete to determine the usability of our solution and test KPIs. We saw success in the addition of ‘past orders’ on the homepage. This allowed users to decrease their time spent on search and decreased the number of search terms within a session. The feedback we received from users was positive, with many noting the ease in navigation and simplicity of search. Due to the time constraint, we could not validate our hypothesis of whether individuals would make a purchase within 3 weeks."/>
                     </Col>
 
+                    <Col sm={12}>
+                        <Text header="Iteration"/>
+                    </Col>
+                    <Col sm={12}>
+                        <Text content="With testing, we uncovered that most users like to browse from previous orders before discovering new items. As well, users don’t just shop at one store. They would like their previous purchase items to appear in other stores they browse."/>
+                    </Col>
+                    <Col sm={12}>
+                        <div style={{ marginBottom: "4rem"}}>
+                            <Card.Img src={iterationld}/>
+                            <Text Content="Using the barcode scanner to search"/>
+                        </div>
+                    </Col>
+                    </Row>
+
+                </Container>
+
+                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
+                    <Row>
+                        <Col sm={12}>
+                            <Text title="Retrospective"/>
+                        </Col>
+
+                        <Col sm={12}>
+                            <Text header="Learnings"/>
+                            <ul style={{ paddingLeft: "15px" ,color: "1a1a1a", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                                <li>A crucial factor to consider when implementing solutions was technical feasibility. While AI chatbots and AR grocery shopping sounds great to have, there is a level of complexity.</li>
+                                <li>Consistency in the assets and images for grocery shopping is an important part of the process. It was difficult to maintain the consistency when handling masses of products since some will have multiple images while others will have none.</li>
+                            </ul>
+                        </Col>
+
+                        <Col sm={12}>
+                            <Text header="Next steps"/>
+                            <ul style={{ paddingLeft: "15px" ,color: "1a1a1a", fontFamily: "Source Sans Pro", fontSize:"1.1rem",letterSpacing: "0.5px", marginBottom:"4rem"}}>
+                                <li>Test and validate the remaining KPIs associated with our hypothesis</li>
+                                {/*<li>Would love to dive into the problem in-depth by considering the other ideas we explored</li>*/}
+                                <li>Explore other solutions and problems within this product area; there's always more problems to be solved</li>
+                            </ul>
+                        </Col>
+                    </Row>
                 </Container>
 
                 {/*<Container>*/}

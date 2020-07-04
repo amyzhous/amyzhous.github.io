@@ -9,13 +9,13 @@ import LandingBody from "../landingbody/LandingBody";
 import MyCard from "../mycard/MyCard";
 import About from "../about/About";
 import circlesbanner1 from '../../assets/circles_f/circlesbanner_.jpg';
-import banner from "../../assets/pcexp/ldbanner_.jpg";
 import moodilybanner from '../../assets/moodily/moodilybanner.png';
 import parkitbanner from '../../assets/parkit/parkitbanner_.jpg';
 import petcobanner from '../../assets/petco/petcobanner.jpg';
 import {Button, Nav, Container, Row, Col, Card} from 'react-bootstrap';
 import coupletcs from '../../assets/img/coming_soon.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import ldbanner from "../../assets/pcexpss/ldbanner@4x.svg";
 
 
 
@@ -44,11 +44,11 @@ class MainPage extends React.Component{
                 <div className="cards-wrapper" id="projects">
                     {/*<Link to="/project_one">*/}
                     <a href="/project_one">
-                        <MyCard  imgSrc={banner} title="PC Express Search" subtitle="Product Management, UI Design" text="PC Express is a grocery click and collect app."/>
+                        <MyCard  imgSrc={ldbanner} title="PC Express Search" subtitle="Product Management, UX/UI Design" text=""/>
                     </a>
                     {/*</Link>*/}
                     <a href="/project_two">
-                        <MyCard imgSrc={circlesbanner1} title="Circles" subtitle="UX/UI Design, Design Thinking" text="A social app to connect circles of individuals."/>
+                        <MyCard imgSrc={circlesbanner1} title="Circles" subtitle="UX/UI Design, Design Thinking"/>
                     </a>
                     {/*<a href="/project_three">*/}
                     {/*    <MyCard imgSrc={moodilybanner} title="Memberfy" subtitle="UX/UI Design, Web Design" text="Memberfy is a platform that centralizes information."/>*/}
