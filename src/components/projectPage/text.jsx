@@ -19,7 +19,7 @@ class Text extends React.Component{
             <div style={{"marginBottom":"3rem"}}>
                 <Col style={{padding: "0 0"}}>
                     {this.props.header &&
-                        <h4 style={{fontWeight:"bold",fontFamily: "open sans", color:"#1a1a1a", letterSpacing: "1px",fontSize: "1.5625rem"}}>
+                        <h4 style={{fontWeight:"500",fontFamily: "rubik", color:"#353839", letterSpacing: "0.5px",fontSize: "1.5rem"}}>
                             {this.props.header}
                         </h4>
                     }
@@ -31,29 +31,42 @@ class Text extends React.Component{
                     {/*    </h3>*/}
                     {/*}*/}
                     {this.props.title &&
-                    <h3 style={{fontSize: "1.1rem", fontWeight: "bold", fontFamily: "open sans", color:"#885A89" ,textTransform: "uppercase", letterSpacing: "3px"+
+                    <h3 style={{fontSize: "1.5rem", fontWeight: "500", fontFamily: "rubik", color:"#947BD3" ,letterSpacing: "0px"+
                             ""}}>
                         {this.props.title}
                     </h3>
                     }
                     {this.props.Title &&
-                    <h1 style={{ fontWeight: "bold", fontFamily: "open sans", color:"#1a1a1a" , letterSpacing: "2px"+
+                    <h1 style={{ fontWeight: "600", fontFamily: "rubik", color:"#353839" , fontSize:"2.5rem", letterSpacing: "0px"+
                             ""}}>
                         {this.props.Title}
                     </h1>
                     }
+                    {this.props.Titlee &&
+                    <h1 style={{ fontWeight: "600", fontFamily: "rubik", color:"#947BD3" , fontSize:"2.5rem", letterSpacing: "0px"+
+                            ""}}>
+                        {this.props.Titlee}
+                    </h1>
+                    }
                     {(this.props.content || this.props.children) &&
-                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "Source Sans Pro", color: "1a1a1a", letterSpacing: "0.5px", fontSize: "1.1rem"}} >
+                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "rubik", color: "#6A6C6D", letterSpacing: "0px", fontSize: "1rem", fontWeight:"400"}} >
                             {this.props.content}
                             {this.props.children}
                         </p>
                     }
+                    {(this.props.contentt || this.props.children) &&
+                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "rubik", color: "#6A6C6D", letterSpacing: "0px", fontSize: "1.125rem", fontWeight:"400", fontStyle:"italic"}} >
+                            {this.props.contentt}
+                            {this.props.children}
+                        </p>
+                    }
                     {(this.props.Content || this.props.children) &&
-                    <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "Source Sans Pro", color: "rgb(26,26,26,0.7)", letterSpacing: "0.5px", fontSize: "1.1rem", fontStyle:"italic", textAlign:"center", marginTop:"1rem"}} >
+                    <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "rubik", color: "#aaaaaa", letterSpacing: "0.5px", fontSize: "1rem", fontStyle:"italic", textAlign:"center", marginTop:"1rem"}} >
                         {this.props.Content}
                         {this.props.children}
                     </p>
                     }
+
                 </Col>
             </div>
 

@@ -6,7 +6,7 @@ const ProjectInfo = (props) => {
     const content = props.contents;
     return (
         <div>
-            <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
+            <Container style={{"marginBottom": "3em"}}>
                 <Row>
                     {content.map((c) =>
                         <Col sm={3}>

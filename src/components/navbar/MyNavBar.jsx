@@ -3,10 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@material/react-card/index.scss';
 
 import './MyNavBar.css';
+import navbarpic from "../../assets/img/navbar.svg";
 
-import {Button, Nav,Navbar, Container, Row, Col} from 'react-bootstrap';
+import {Button, Nav,Navbar, Container, Row, Col, Card} from 'react-bootstrap';
 import {Link} from "react-router-dom";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+
 
 
 class MyNavBar extends React.Component{
@@ -17,13 +19,15 @@ class MyNavBar extends React.Component{
 
     render() {
         return(
+            
             <div className="top-nav-bar">
-                <Container>
+                <Container className="nav-container">
                     <Row>
                         <Col >
                             <Navbar collapseOnSelect expand="sm" sticky="top">
                                 <Link to= '/'>
-                                    <Navbar.Brand style={{color: '#2F274C', fontSize:"1.3rem", fontWeight:"bold"}}>amy zhou</Navbar.Brand>
+                                    {/* <Navbar.Brand style={{color: '#585b5c', fontSize:"2.5rem", fontWeight:"600", fontFamily:"Sacramento"}}>amyzhou.</Navbar.Brand> */}
+                               <Navbar.Brand style={{color: '#585B5C', fontSize:"1.3rem", fontWeight:"400"}}>amy zhou</Navbar.Brand>
                                 {/*    color: #9F6BA0*/}
                                 </Link>
 

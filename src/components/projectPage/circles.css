@@ -5,7 +5,8 @@ button {
     height: 50px;
     border-radius: 20px 20px;
     /*background-color: #6290C8;*/
-    background-color: #9F6BA0;
+    background-color: #947BD3;
     transform: translateY(4px);
     transition: transform 0.2s ease 0s;
+    border: none;
 }

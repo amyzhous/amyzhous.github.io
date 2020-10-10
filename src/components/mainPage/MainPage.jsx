@@ -16,6 +16,7 @@ import {Button, Nav, Container, Row, Col, Card} from 'react-bootstrap';
 import coupletcs from '../../assets/img/coming_soon.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import ldbanner from "../../assets/pcexpss/ldbanner@4x.svg";
+import emergebanner from'../../assets/moodily/emergebanner.svg';
 
 
 
@@ -24,6 +25,8 @@ class MainPage extends React.Component{
     constructor(props){
         super(props);
     }
+
+
     render() {
         return(
             <div className="main-page-wrapper">
@@ -50,15 +53,18 @@ class MainPage extends React.Component{
                     <a href="/project_two">
                         <MyCard imgSrc={circlesbanner1} title="Circles" subtitle="UX/UI Design, Design Thinking"/>
                     </a>
-                    {/*<a href="/project_three">*/}
-                    {/*    <MyCard imgSrc={moodilybanner} title="Memberfy" subtitle="UX/UI Design, Web Design" text="Memberfy is a platform that centralizes information."/>*/}
+                     <a href="/project_three">
+                       <MyCard imgSrc={emergebanner} title="eMERGE" subtitle="Service Design, UX Research"/>
+                    </a>
+                    <a href="/project_three">
+                       <MyCard imgSrc={emergebanner} title="eMERGE" subtitle="Service Design, UX Research"/>
+                    </a>
+                    {/*<a href="/project_four">
+                    {/*    <MyCard imgSrc={parkitbanner} title="Daily UI" subtitle="UI Design, Motion Design"/>*/}
                     {/*</a>*/}
-                    {/*<a href="/project_four">*/}
-                    {/*    <MyCard imgSrc={parkitbanner} title="eMERGE" subtitle="Business Design, UX Research" text="eMERGE is a climate change initiative in Guelph."/>*/}
-                    {/*</a>*/}
-                    {/*<a href="/project_five">*/}
-                    {/*    <MyCard imgSrc={petcobanner} title="Pet&Co."/>*/}
-                    {/*</a>*/}
+                    {/* <a href="/project_five">
+                       <MyCard imgSrc={petcobanner} title="Pet&Co."/>
+                   </a>   */}
                     {/*<a href="/project_six">*/}
                     {/*    <MyCard imgSrc={coupletcs} title="CoupLet"/>*/}
                     {/*</a>*/}

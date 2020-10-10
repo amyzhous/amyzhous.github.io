@@ -21,8 +21,8 @@ span.wave {
 }
 
 .my-story{
-    color: #555555;
-    font-family: "Source Sans Pro";
+    color: #585B5C;
+    font-family: "rubik";
     /*letter-spacing: 0.5px;*/
 }
 .my-story-location{
@@ -105,7 +105,7 @@ a:visited {
 }
 a:hover, a:active, a:focus {
     /*color:#6290C8;*/
-    color: #9F6BA0;
+    color: #acc4ef;
 
 }
 span.hot {

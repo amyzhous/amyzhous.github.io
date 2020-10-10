@@ -7,9 +7,10 @@ import Typed from 'react-typed';
 
 import {Button, Nav, Container, Row, Col, Card} from 'react-bootstrap';
 import me3 from "../../assets/img/me3.svg";
-import amy1 from "../../assets/img/logo1.svg";
+
 import scrolldown from "../../assets/img/mousescroll.svg"
 import hifi3 from "../../assets/circles_f/circlesmockup/hifi3.svg";
+
 
 
 class LandingBody extends React.Component{
@@ -33,8 +34,10 @@ class LandingBody extends React.Component{
 
     render() {
         return(
+            
+        
             <div className="landing-body container" >
-
+    
 
                 {/*<div style={{position: "absolute"}}>*/}
                 {/*    <br/>*/}
@@ -61,20 +64,17 @@ class LandingBody extends React.Component{
                     {/*    ref ={this.titleReftwo}*/}
                     {/*    preStringTyped={() => this.toggleCursor(this.titleReftwo, "1")}>*/}
                     {/*</Typed>*/}
+                    {/*</div>*/}
                   <div>
-                    <h1 className="landing-body-hero-title">
-                        hi! i'm <span style={{color: "#885A89"}}>amy zhou,</span>
+                    <h1 className="landing-body-hero-title"  style={{ marginBottom: "1.5rem"}}>
+                       <span className="my-story-location" style={{color: "#947BD3"}}>amy zhou</span>—product designer based in <div className="my-story-location">📍toronto</div>
                     </h1>
-                      <h4 className="landing-body-hero-body">
-                          an aspiring product designer based in<div className="my-story-location">📍Toronto. </div> Check out some of my work below.
-                      </h4>
+                      <h3 className="landing-body-hero-body" style={{ lineHeight: "2.5rem"}}>
+                        currently designing at communitech✌🏼
+                      </h3>
                   </div>
-
-                {/*</div>*/}
-
-                {/*<div className="landing-body-img-wrapper">*/}
-                {/*    /!*<Card.Img variant="top"  className="landing-body-img" src={amy1} />*!/*/}
-                {/*</div>*/}
+        
+                
             </div>
 
         )

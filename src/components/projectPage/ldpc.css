@@ -6,12 +6,20 @@
 
 .projectBanner{
     width: 95%;
+    border: none;
+
 }
 
 .statement{
-    border-left: 3px solid #885A89;
+    border-left: 5px solid #947BD3;
     padding-left: 20px;
 }
+
+.mark {
+    background-color: blue;
+    color: #6c757d;
+  }
+
 @media only screen and (min-width: 576px){
     .fidelity-mockups{
         transform: translateX(-10%);
