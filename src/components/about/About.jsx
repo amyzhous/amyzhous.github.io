@@ -4,7 +4,7 @@ import '@material/react-card/index.scss';
 import './About.css'
 import cutebb from '../../assets/img/cutebb.png';
 import amy from '../../assets/img/amy.jpg';
-import meme from '../../assets/img/meme.JPG';
+import meme from '../../assets/img/meme3.jpg';
 import abouthero from '../../assets/img/abouthero.svg'
 
 
@@ -26,9 +26,9 @@ class About extends React.Component{
 
 
                     <Col lg={12} md={12} style={{textAlign: "center"}}>
-                                <h1 style={{color: '#353839', fontFamily: "rubik", fontWeight: "500", textAlign:"center", marginBottom: "1em"}}>
+                                <h1 style={{color: '#222222', fontFamily: "merriweather", fontWeight: "700", textAlign:"center", marginBottom: "1em"}}>
                                    hello, welcome to my portfolio
-                                      <span className="wave">  👋</span>
+                                      <span className="wave">  👋🏼</span>
                                 </h1>
                     </Col>
 
@@ -37,7 +37,7 @@ class About extends React.Component{
                         </Col>
                         <Col lg={12} md={12} className="about-bio-container">
                             <span className="about-bio">
-                                <h3 style={{color: '#d3887b', fontFamily: "rubik", fontWeight: "600"}}>
+                                <h3 style={{color: '#222222', fontFamily: "karla", fontWeight: "500"}}>
                                    — a coffee lover, UX enthusiast, and a self-starter
                                 </h3>
                                 <div className="my-story" style={{fontSize: "20px"}}>

@@ -51,19 +51,23 @@ class App extends React.Component {
         return(
             <Router basename={process.env.PUBLIC_URL}>
                 
-                <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
-                <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"/>
+                
                 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" type="text/css"/>
                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"type="text/css"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet"type="text/css"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"type="text/css"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"type="text/css"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"type="text/css"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"type="text/css"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"type="text/css"></link>
+        
+            
                 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"type="text/css"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"type="text/css"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" type="text/css"/>
+     
+                
+                <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" type="text/css"></link>
+                <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"type="text/css"></link>
+               
+                <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet"type="text/css"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" type="text/css"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" type="text/css"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"type="text/css"></link>
+
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rozha+One&display=swap" rel="stylesheet" type="text/css"></link>
 
 
                 <Switch>
@@ -99,7 +103,7 @@ class App extends React.Component {
                 <footer className="my-footer" id="contact">
                 
                     <div className={"my-contacts"}>
-                    <p style={{fontFamily: "rubik", fontWeight: "400"}}>Say hello at</p>
+                    <p style={{fontFamily: "karla", fontWeight: "400"}}>Say hello at</p>
                         <div className="footer-icon">
                             <a target="_blank" href="mailto:ayjzhou@gmail.com" className="footer-icon-anchor">
                                 <Card.Img src={email} className="footer-icon-img hover-up"  />
@@ -117,7 +121,7 @@ class App extends React.Component {
                         </div>
                     </div>
 
-                    <p style={{fontFamily: "rubik"}}>Coded with lots of ☕+ 🍰</p>
+                    <p style={{fontFamily: "karla", color: "#37373F"}}>Designed + developed by me powered with lots of ☕️.</p>
                     {/* <img src={amylogo2} width="50px"/> */}
                 </footer>
             </Router>

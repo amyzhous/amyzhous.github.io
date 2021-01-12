@@ -21,8 +21,8 @@ span.wave {
 }
 
 .my-story{
-    color: #585B5C;
-    font-family: "rubik";
+    color: #37373F;
+    font-family: "karla";
     /*letter-spacing: 0.5px;*/
 }
 .my-story-location{
@@ -98,14 +98,14 @@ body{
 }
 
 a {
-    color: #696969;
+    color: rgba(55,54,77,0.6);
 }
 a:visited {
-    color: #696969;
+    color: rgba(55,54,77,0.6);
 }
 a:hover, a:active, a:focus {
     /*color:#6290C8;*/
-    color: #acc4ef;
+    color: #947bd3;
 
 }
 span.hot {

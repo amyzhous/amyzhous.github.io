@@ -250,7 +250,7 @@ nav.stroke ul li a:hover:after {
 
 .landing{
     height: 100vh;
-    background-color: white;
+    background-color:#ffffff;
     color: black;
     background-image: url("../../assets/img/heropage_asset.svg");
     background-repeat: no-repeat;

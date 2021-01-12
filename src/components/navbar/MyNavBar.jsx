@@ -27,11 +27,11 @@ class MyNavBar extends React.Component{
                             <Navbar collapseOnSelect expand="sm" sticky="top">
                                 <Link to= '/'>
                                     {/* <Navbar.Brand style={{color: '#585b5c', fontSize:"2.5rem", fontWeight:"600", fontFamily:"Sacramento"}}>amyzhou.</Navbar.Brand> */}
-                               <Navbar.Brand style={{color: '#585B5C', fontSize:"1.3rem", fontWeight:"400"}}>amy zhou</Navbar.Brand>
+                               <Navbar.Brand style={{color: '#37373F', fontSize:"1.3rem", fontWeight:"400"}}>amy zhou</Navbar.Brand>
                                 {/*    color: #9F6BA0*/}
                                 </Link>
 
-                                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                                <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{width: '30%', border: '0'}}/>
                                 <Navbar.Collapse id="responsive-navbar-nav">
                             {this.props.show &&
                                 <Nav pullRight className="justify-content-end ml-auto" >
@@ -43,11 +43,11 @@ class MyNavBar extends React.Component{
                                     {/*</Nav.Item>*/}
                                     <Nav.Item>
                                         {this.props.redirectToProjectSection &&
-                                            <a href="/#projects" className="top-nav-bar-button">projects</a>
+                                            <a href="/#projects" className="top-nav-bar-button">work</a>
                                         }
                                         {
                                             !this.props.redirectToProjectSection &&
-                                            <AnchorLink href="#projects" className="top-nav-bar-button">projects</AnchorLink>
+                                            <AnchorLink href="#projects" className="top-nav-bar-button">work</AnchorLink>
                                         }
 
                                     </Nav.Item>

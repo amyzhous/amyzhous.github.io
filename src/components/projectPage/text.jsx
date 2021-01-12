@@ -19,7 +19,7 @@ class Text extends React.Component{
             <div style={{"marginBottom":"3rem"}}>
                 <Col style={{padding: "0 0"}}>
                     {this.props.header &&
-                        <h4 style={{fontWeight:"500",fontFamily: "rubik", color:"#353839", letterSpacing: "0.5px",fontSize: "1.5rem"}}>
+                        <h4 style={{fontWeight:"700",fontFamily: "karla", color:"#37373F", fontSize: "1.125rem"}}>
                             {this.props.header}
                         </h4>
                     }
@@ -31,37 +31,37 @@ class Text extends React.Component{
                     {/*    </h3>*/}
                     {/*}*/}
                     {this.props.title &&
-                    <h3 style={{fontSize: "1.5rem", fontWeight: "500", fontFamily: "rubik", color:"#947BD3" ,letterSpacing: "0px"+
+                    <h3 style={{fontSize: "1.5rem", fontWeight: "700", fontFamily: "merriweather", color:"#37373F" ,letterSpacing: "0px"+
                             ""}}>
                         {this.props.title}
                     </h3>
                     }
                     {this.props.Title &&
-                    <h1 style={{ fontWeight: "600", fontFamily: "rubik", color:"#353839" , fontSize:"2.5rem", letterSpacing: "0px"+
+                    <h1 style={{ fontWeight: "900", fontFamily: "Merriweather", color:"#222222" , fontSize:"2.25rem", letterSpacing: "0px"+
                             ""}}>
                         {this.props.Title}
                     </h1>
                     }
                     {this.props.Titlee &&
-                    <h1 style={{ fontWeight: "600", fontFamily: "rubik", color:"#947BD3" , fontSize:"2.5rem", letterSpacing: "0px"+
+                    <h1 style={{ fontWeight: "500", fontFamily: "rubik", color:"#947BD3" , fontSize:"2rem", letterSpacing: "0px"+
                             ""}}>
                         {this.props.Titlee}
                     </h1>
                     }
                     {(this.props.content || this.props.children) &&
-                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "rubik", color: "#6A6C6D", letterSpacing: "0px", fontSize: "1rem", fontWeight:"400"}} >
+                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "Karla", color: "#37373F", letterSpacing: "0px", fontSize: "1.125rem", fontWeight:"400"}} >
                             {this.props.content}
                             {this.props.children}
                         </p>
                     }
                     {(this.props.contentt || this.props.children) &&
-                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "rubik", color: "#6A6C6D", letterSpacing: "0px", fontSize: "1.125rem", fontWeight:"400", fontStyle:"italic"}} >
+                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "karla", color: "#37373F", letterSpacing: "0px", fontSize: "1.5rem", fontWeight:"400", fontStyle:"italic"}} >
                             {this.props.contentt}
                             {this.props.children}
                         </p>
                     }
                     {(this.props.Content || this.props.children) &&
-                    <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "rubik", color: "#aaaaaa", letterSpacing: "0.5px", fontSize: "1rem", fontStyle:"italic", textAlign:"center", marginTop:"1rem"}} >
+                    <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "karla", color: "#999999)", letterSpacing: "0.5px", fontSize: "1rem", fontStyle:"italic", textAlign:"center", marginTop:"1rem"}} >
                         {this.props.Content}
                         {this.props.children}
                     </p>

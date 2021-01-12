@@ -16,7 +16,9 @@ import {Button, Nav, Container, Row, Col, Card} from 'react-bootstrap';
 import coupletcs from '../../assets/img/coming_soon.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import ldbanner from "../../assets/pcexpss/ldbanner@4x.svg";
-import emergebanner from'../../assets/moodily/emergebanner.svg';
+import SGbanner from'../../assets/img/ui/SG.svg';
+import communitech from'../../assets/img/ui/Communitech.svg';
+import uibanner from'../../assets/img/ui/uihero.svg';
 
 
 
@@ -47,17 +49,20 @@ class MainPage extends React.Component{
                 <div className="cards-wrapper" id="projects">
                     {/*<Link to="/project_one">*/}
                     <a href="/project_one">
-                        <MyCard  imgSrc={ldbanner} title="PC Express Search" subtitle="Product Management, UX/UI Design" text=""/>
+                        <MyCard  imgSrc={ldbanner} title="PC Express Search" subtitle="A capstone project to explore and redefine search relevancy in the online grocery space." />
                     </a>
                     {/*</Link>*/}
-                    <a href="/project_two">
-                        <MyCard imgSrc={circlesbanner1} title="Circles" subtitle="UX/UI Design, Design Thinking"/>
-                    </a>
+                    {/* <a href="/project_two">
+                        <MyCard imgSrc={SGbanner} title="Communitech" subtitle="A collection of some of the visual designs I have worked on."/>
+                    </a> */}
                      <a href="/project_three">
-                       <MyCard imgSrc={emergebanner} title="eMERGE" subtitle="Service Design, UX Research"/>
+                       <MyCard imgSrc={SGbanner} title="Search and Gather" subtitle="Designing for growth and conversion."/>
                     </a>
-                    <a href="/project_three">
-                       <MyCard imgSrc={emergebanner} title="eMERGE" subtitle="Service Design, UX Research"/>
+                    {/* <a href="/project_four">
+                       <MyCard imgSrc={uibanner} title="UX Playground" subtitle="A collection mini design challenges or prompts I have worked on."/>
+                    </a> */}
+                    <a href="/project_five">
+                       <MyCard imgSrc={uibanner} title="UI Snippets" subtitle="A collection of visual designs I have worked on."/>
                     </a>
                     {/*<a href="/project_four">
                     {/*    <MyCard imgSrc={parkitbanner} title="Daily UI" subtitle="UI Design, Motion Design"/>*/}

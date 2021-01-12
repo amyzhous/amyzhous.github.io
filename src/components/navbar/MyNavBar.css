@@ -1,7 +1,7 @@
 .top-nav-bar{
   padding: 3em 0 1em 0;
-  color: #585B5C;
-  font-family: "rubik";
+  color: #37373F;
+  font-family: "karla";
 
 }
 /*.top-nav-bar-button{*/
@@ -17,8 +17,9 @@
 .top-nav-bar-button {
   text-decoration: none;
   position: relative;
-  color: #585B5C;
+  color:#37373F;
   padding: .5rem 1.5rem;
+  /* padding-left: 0; */
   /*display: block;*/
   /*padding: 16px 0;*/
   /*margin: 0 12px;*/
@@ -28,11 +29,11 @@
   /*color: #000;*/
 }
 .top-nav-bar-button:hover {
-  color: #947BD3;
+  color: #E8998D;
   text-decoration: none;
 }
 .top-nav-bar-button:focus, .top-nav-bar-button:active {
-  color: #947BD3;
+  color: #E8998D;
 }
 
 .top-nav-bar-button::before {
@@ -42,7 +43,7 @@
   top: 100%;
   height: 3px;
   width: 100%;
-  background-color: #947BD3;
+  background-color: #E8998D;
   -webkit-transform-origin: center top;
   transform-origin: center top;
   -webkit-transform: scale(0, 1);
@@ -53,7 +54,7 @@
 }
 
 .top-nav-bar-button:active::before {
-  background-color: #947BD3;
+  background-color: #E8998D;
 }
 
 .top-nav-bar-button:hover::before,
@@ -87,19 +88,19 @@ ul.breadcrumb li {
 /* Add a slash symbol (/) before/behind each list item */
 ul.breadcrumb li+li:before {
   padding: 10px;
-  color: #585B5C;
+  color: #37373F;
   content: "/\00a0";
 }
 
 /* Add a color to all links inside the list */
 ul.breadcrumb li a {
-  color: #585B5C;
+  color: #37373F;
   text-decoration: none;
 }
 
 /* Add a color on mouse-over */
 ul.breadcrumb li a:hover {
-  color: #947BD3;
+  color: #E8998D;
   /*text-decoration: underline;*/
 
 }

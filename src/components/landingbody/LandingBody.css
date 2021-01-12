@@ -14,16 +14,16 @@
 }
 .typed-text-name{
     font-size: 3.5rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     display: block;
     color: #585B5C;
-    font-family: "rubik";
+    font-family: "karla";
 }
 .typed-text-description{
     font-size: 3.5rem;
     display: block;
-    font-weight: bold;
-    font-family: "rubik";
+    /* font-weight: bold; */
+    font-family: "karla";
     color: #242423;
 }
 
@@ -43,7 +43,7 @@
 
 @media only screen and (max-width: 991px){
     .typed-text-name, .typed-text-description{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 .landing-body-img{
@@ -53,15 +53,15 @@
 .landing-body-hero-title{
     text-align: left;
     display: block;
-    font-weight: 500;
-    font-family: "rubik";
-    color: #353839;
+    font-weight: 400;
+    font-family: "merriweather";
+    color: #37373F;
 }
 
 .landing-body-hero-body {
     text-align: left;
     display: block;
     font-weight: 400;
-    font-family: "rubik";
-    color: #353839;
+    font-family: "karla";
+    color:#37373F;
 }

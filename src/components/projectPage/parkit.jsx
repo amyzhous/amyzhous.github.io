@@ -10,27 +10,22 @@ import "./text.css";
 import ProjectInfo from "./projectInfo";
 import affmap1 from "./../../assets/circles_f/affinity mapping 1.jpg";
 import affmap2 from "./../../assets/circles_f/affinity mapping 2.jpg";
-// import minapersona from "./../../assets/circles_f/persona.svg";
+/// import minapersona from "./../../assets/circles_f/persona.svg";
 import minapersona from "./../../assets/circles_f/minapersona.jpg";
-import comingsoon from '../../assets/img/coming_soon.svg';
-import designdiamond from '../../assets/circles_f/designdiamond.png';
+
 import hifi1 from'../../assets/circles_f/circlesmockup/hifi1.svg';
-import hifi2 from'../../assets/circles_f/circlesmockup/hifi2.svg';
-import hifi3 from'../../assets/circles_f/circlesmockup/hifi3.svg';
+
 import hifi4 from'../../assets/circles_f/circlesmockup/hifi4.svg';
-import hifi5 from'../../assets/circles_f/circlesmockup/hifi5.svg';
-import hifi6 from'../../assets/circles_f/circlesmockup/hifi6.svg';
-import hifi7 from'../../assets/circles_f/circlesmockup/hifi7.svg';
+
 import hifi8 from'../../assets/circles_f/circlesmockup/hifi8.svg';
-import cirsketch from '../../assets/circles_f/circles_sketches.svg';
-import circleuf from '../../assets/circles_f/Circles_user_flow.svg';
-import designsys from'../../assets/circles_f/designsystem.jpg';
-import circlesbanner1 from'../../assets/circles_f/circlesbanner_.jpg';
-import gif1 from'../../assets/circles_f/circles_gif1.gif';
-import gif2 from'../../assets/circles_f/circles_gif2.gif';
-import gif3 from'../../assets/circles_f/circles_gif3.gif';
-import circlesutq1 from '../../assets/circles_f/circesutq1.png';
-import circlesutq2 from '../../assets/circles_f/circlesutq2.jpg';
+
+import uibanner from'../../assets/img/ui/uihero.svg';
+import dui002 from'../../assets/img/ui/002_2.svg';
+import dui001 from'../../assets/img/ui/001.svg';
+import dui003 from'../../assets/img/ui/002_3.svg';
+import dui004 from'../../assets/img/ui/002_4.png';
+
+import Carousel from 'react-bootstrap/Carousel'
 
 
 
@@ -80,7 +75,7 @@ const NextStepUnorderedList = () => {
 };
 
 
-class Circles extends React.Component{
+class Parkit extends React.Component{
     constructor(props){
         super(props);
         this.projectInfoContent = [
@@ -98,374 +93,164 @@ class Circles extends React.Component{
                     {/*<Particles params={particlesParams}/>*/}
                     {/*<Card style={{display: 'inline-block', width: "40%", cursor: "default"}}>*/}
                     <Card className="projectBanner" style={{display: 'inline-block', cursor: "default"}}>
-                        <Card.Img variant="top" src={circlesbanner1} />
+                        <Card.Img variant="top" src={uibanner} />
                     </Card>
                 </div>
 
                 <ProjectInfo contents={this.projectInfoContent}/>
 
+                <Container className="nav-container">
                 <Container>
                     <Row>
                         <Col sm={12}>
-                            <Text Title="Circles"/>
+                            <Text Title="UI Snippets"/>
+                             
                         </Col>
-                        <Col sm={12} >
-                            <div  style={{fontSize: "25px", fontStyle: "italic", fontFamily: "Source Sans Pro",  marginBottom:"4rem"}}>
-                                —connecting students together to form meaningful connections
-                            </div>
-                        </Col>
+                        <Col sm={12}><Text content="This is a collection of some of the UI and visual design work over the years from hackathons to projects and practice."/></Col>
                     </Row>
-                </Container>
-
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row style={{marginBottom:"4rem"}}>
-                        <Col sm={12}>
-                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem", color: "1a1a1a"}}>
-                                <b style={{color:"#885A89", fontFamily: "open sans"}}>Overview /</b> Venture for user experience course
-                            </div>
-                        </Col>
-                        <Col sm={12}>
-                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem", color: "1a1a1a"}}>
-                                <b style={{color:"#885A89",fontFamily: "open sans"}}>Role /</b> UX Design, UX Research
-                            </div>
-                        </Col>
-                        {/*<Col sm={12}>*/}
-                        {/*    <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem", color: "1a1a1a"}}>*/}
-                        {/*        <b style={{color:"#885A89",fontFamily: "open sans"}}>Team /</b> Tony Cheng, William To*/}
-                        {/*    </div>*/}
-                        {/*</Col>*/}
-                        <Col sm={12}>
-                            <div style={{fontFamily: "source sans pro", marginBottom:"2rem", fontSize: "1.1rem", color: "1a1a1a"}}>
-                                <b style={{ color:"#885A89", fontFamily: "open sans"}}>Tools /</b> Invision Studio, Sketch
-                            </div>
-                        </Col>
-                        <Col sm={12}>
-                            <div style={{fontFamily: "source sans pro",fontSize: "1.1rem",color: "1a1a1a" }}>
-                                <b style={{color:"#885A89", fontFamily: "open sans"}}>Timeline /</b> 8 weeks
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-
-
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                        <Col sm={12}>
-                            <Text title="Research"/>
-                        </Col>
-                        <Col sm={12}>
-                            <Text title="Context"/>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col sm={12}>
-                            <Text header="Problem"/>
-                        </Col>
-
-                        <Col sm={12}>
-                            <Text content="hi explore social apps and stats"/>
-                        </Col>
-                        <Col sm={12}>
-                            <Text header="Goal"/>
-                        </Col>
-
-                        <Col sm={12}>
-                            <Text content=""/>
-                        </Col>
-                        <Col sm={12}>
-                            <Text header="The process"/>
-                        </Col>
-                        <Col sm={12}>
-                            <Text header="The final product"/>
-                        </Col>
-                        <Col sm={4}>
-                                <div style={{ marginBottom: "4rem"}}>
-                                    <Card.Img src={gif1} />
-                                </div>
-                        </Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={gif3} />
-                            </div>
-                        </Col>
-                        <Col sm={4}>
-                            <Text content="Invision Prototype"/>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <a style={{color: "white"}} href="https://projects.invisionapp.com/prototype/CIRCLES-ck51nilen001q2e01rg1nkhpn">
-                                    <button style={{color: "white"}}> View Invision Prototype </button>
-                                </a>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                       <Col sm={12}>
-                           <Text header="Target Users"/>
-                       </Col>
-                        <Col sm={12}>
-                            <Text content="Research"/>
-                        </Col>
-                        <Col sm={12}>
-                            <Text header="Competitive Analysis"/>
-                        </Col>
-                        <Col sm={12}>
-                            <Text content="Competitive Analysis"/>
-                        </Col>
-                    </Row>
-                    
                 </Container>
 
                 <Container>
                     <Row>
-                        <Col sm={4}><Text title="RESEARCH PROCESS"/></Col>
-                        <Col sm={8}><Text content=""/></Col>
+                        <Col sm={12}>
+                            {/* <Text Titlee="RESEARCH PROCESS"/> */}
+                            </Col>
                     </Row>
                 </Container>
                 <Container >
                     <Row>
-                        <Col sm={4}><Text header="User Interviews"/></Col>
-                        <Col sm={8}><Text content="Using the unprocessed data gathered from the user interviews I re-organized them once again in an affinity diagram as well as colour-coding them in Excel for traits or feelings our users had in common to see some re-occurring themes. Once I processed the data, I created a persona of Mina Li, a second year university student studying Mathematics at UW."/></Col>
-                        <Col sm={4}><Text header="Persona"/></Col>
-                        <Col sm={8}>
+                        <Col sm={12}><Text header="DAILY UI — E-Commerce App"/></Col>
+                        {/* <Col sm={12}><Text content=""/></Col> */}
+                        <Col sm={12}>
                             <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={minapersona}/>
+                                <Card.Img src={dui002}/>
                             </div>
                         </Col>
-                    </Row>
-                </Container>
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                        <Col sm={4}><Text header="Problem Statement"/></Col>
-                        <Col sm={8}>
-                            <div style={{fontSize: "1.5rem"}}>
-                                <Text statement={true} content="Despite being motivated individuals, our users face the challenge of finding other students on campus to listen and share advice with."/>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text title="IDEATE"/></Col>
-                        <Col sm={8}></Col>
-                        <Col sm={4}><Text header="Affinity Mapping"/></Col>
-                        <Col sm={4}>
-                            {/*    < div style={{ marginBottom: "4rem"}}>*/}
-                            {/*        <Card.Img src={affmap1}/>*/}
-                            {/*    </div></Col>*/}
-                            {/*<Col sm={4}></Col>*/}
-                            {/*<Col sm={8}>*/}
-                            {/*    < div style={{ marginBottom: "4rem"}}>*/}
-                            {/*        <Card.Img src={affmap2}/>*/}
-                            {/*    </div></Col>*/}
-                            < div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={affmap1}/>
-                            </div></Col>
-                        <Col sm={4}>
-                            < div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={affmap2}/>
-                            </div></Col>
-                        <Col sm={8}></Col>
+                        {/* <Col sm={12}><Text Content="Daily UI"/></Col> */}
+
                     </Row>
                 </Container>
 
-                <Container>
+                <Container >
                     <Row>
-                        <Col sm={4}><Text header="Brainstorming"/></Col>
-                        <Col sm={8}>
-                            <Text content="When brainstorming I aimed at producing quantity that can later be turned into quality. Here's some ideas I came up with:"/>
-                            <IdeasUnorderedList/>
-                            <Text content="I decided on an application that allows students to find a study buddy through a social meetup process. Circles, will represents a supportive social circle which allows students to find a (study) buddy to talk to. From the data, I noticed that our users value the connections they build at UW, which is an integral part of their university experience. Circles will be an outlet for students to make meaningful connections to build their supportive circle."/>
-                        </Col>
-
-                        <Col sm={4}><Text header="Goal"/></Col>
-                        <Col sm={8}>
-                            <div  style={{fontSize: "1.5rem"}}>
-                                <Text statement={true} content="Circles aims to provide UW students a way of finding and building their circle of connections."/>
+                        <Col sm={12}><Text header="DAILY UI — Delivery App"/></Col>
+                        {/* <Col sm={12}><Text content=""/></Col> */}
+                        <Col sm={12}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={dui004}/>
                             </div>
                         </Col>
+                        {/* <Col sm={12}><Text Content="Daily UI"/></Col> */}
+
+                    </Row>
+                </Container>
+
+                <Container >
+                    <Row>
+                        <Col sm={12}><Text header="DAILY UI — Receipe"/></Col>
+                        {/* <Col sm={12}><Text content=""/></Col> */}
+                        <Col sm={12}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={dui001}/>
+                            </div>
+                        </Col>
+                        {/* <Col sm={12}><Text Content="Daily UI"/></Col> */}
+
+                    </Row>
+                </Container>
+
+        
+
+                <Container >
+                    <Row>
+                        <Col sm={12}><Text header="HACKATHON — Motivation Screens for GDM Tracking App"/></Col>
+                        {/* <Col sm={12}><Text content=""/></Col> */}
+                        <Col sm={12}>
+                            <div style={{ marginBottom: "4rem"}}>
+                                <Card.Img src={dui003}/>
+                            </div>
+                        </Col>
+                        {/* <Col sm={12}><Text Content="Daily UI"/></Col> */}
+
                     </Row>
                 </Container>
 
 
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
+                <Container >
                     <Row>
-                        <Col sm={4}><Text header="User Flow"/></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={circleuf}/>
-                            </div>
-                            {/*<div style={{ marginBottom: "4rem"}}>*/}
-                            {/*</div>*/}
+                        <Col sm={12}><Text header="CIRCLES — a social app to build your circle of connections "/></Col>
+                        <Col sm={12}><Text content="As part of a user experience design course, we were tasked with designing a mobile app from end-to-end to solve a problem that students at the University of Waterloo might be facing."/></Col>
+                        <Col sm={12}>
+                        <div style={{ marginBottom: "4rem"}}>
+                        <Carousel>
+                    
+                            <Carousel.Item>
+                                <img
+                                className="d-block w-100"
+                                src={hifi1}
+                                alt="First slide"
+                                />
+                            
+                            </Carousel.Item>
+                            {/* <Carousel.Item>
+                                <img
+                                className="d-block w-100"
+                                src={hifi3}
+                                alt="Third slide"
+                                />
+                            </Carousel.Item> */}
+                            <Carousel.Item>
+                                <img
+                                className="d-block w-100"
+                                src={hifi4}
+                                alt="Third slide"
+                                />
+                            </Carousel.Item>
+                            {/* <Carousel.Item>
+                                <img
+                                className="d-block w-100"
+                                src={hifi5}
+                                alt="Third slide"
+                                />
+                            </Carousel.Item> */}
+                            <Carousel.Item>
+                                <img
+                                className="d-block w-100"
+                                src={hifi8}
+                                alt="Third slide"
+                                />
+                            </Carousel.Item>
+                            {/* <Carousel.Item>
+                                <img
+                                className="d-block w-100"
+                                src={designsys}
+                                alt="Third slide"
+                                />
+                            </Carousel.Item> */}
+                        </Carousel>   
+                        </div>                      
                         </Col>
+                       <Col sm={12}><Text Content="Capstone Project (Jan - Apr 2019)"/></Col>
 
-                        <Col sm={4}><Text header="User Story"/></Col>
-                        <Col sm={8}>
-                            <div  style={{fontSize: "1.5rem"}}>
-                                <Text statement={true} content="As a student at UW, I want to build connections with other individuals, so that I can enjoy being a student while still achieving my goals academically."/>
-                            </div>
-                        </Col>
                     </Row>
-                </Container>
-                {/*<Container >*/}
-                {/*    <Row>*/}
-                {/*        <Col sm={4}><Text title="HYPOTHESIS"/></Col>*/}
-                {/*        <Col sm={8}></Col>*/}
-                {/*        <Col sm={4}>*/}
-                {/*            <Text header="Our Hypothesis"/></Col>*/}
-                {/*        <Col sm={8}>*/}
-                {/*            <div  style={{fontSize: "1.5rem"}}>*/}
-                {/*                <Text statement={true} content="By reducing the amount of time it takes for a new user to find their grocery items, it will result in a higher conversion rate and retention."/>*/}
-                {/*            </div>*/}
-                {/*        </Col>*/}
-                {/*    </Row>*/}
-                {/*</Container>*/}
-
-                {/*<Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>*/}
-                {/*    <Row>*/}
-                {/*        <Col sm={4}><Text header="KPIs for Success"/></Col>*/}
-                {/*        <Col sm={8}>*/}
-
-                {/*            <Text content="">*/}
-                {/*                <KpiOrderedList/>*/}
-                {/*            </Text>*/}
-                {/*        </Col>*/}
-
-
-                {/*    </Row>*/}
-                {/*</Container>*/}
-
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text title="DESIGN"/></Col>
-                        <Col sm={8}></Col>
-                        <Col sm={4}><Text header="Low Fidelity Sketches"/></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={cirsketch}/>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-
-
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                        <Col sm={4}><Text header="High Fidelity Mockups"/></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={hifi1}/>
-                            </div>
-                        </Col>
-
-                        {/*<Col sm={4}></Col>*/}
-                        {/*<Col sm={8}>*/}
-                        {/*    <div style={{ marginBottom: "4rem"}}>*/}
-                        {/*        <Card.Img src={hifi2}/>*/}
-                        {/*    </div>*/}
-                        {/*</Col>*/}
-
-                        <Col sm={4}></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={hifi3}/>
-                            </div>
-                        </Col>
-
-                        <Col sm={4}></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={hifi4}/>
-                            </div>
-                        </Col>
-
-                        <Col sm={4}></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={hifi5}/>
-                            </div>
-                        </Col>
-
-                        {/*<Col sm={4}></Col>*/}
-                        {/*<Col sm={8}>*/}
-                        {/*    <div style={{ marginBottom: "4rem"}}>*/}
-                        {/*        <Card.Img src={hifi6}/>*/}
-                        {/*    </div>*/}
-                        {/*</Col>*/}
-
-                        {/*<Col sm={4}></Col>*/}
-                        {/*<Col sm={8}>*/}
-                        {/*    <div style={{ marginBottom: "4rem"}}>*/}
-                        {/*        <Card.Img src={hifi7}/>*/}
-                        {/*    </div>*/}
-                        {/*</Col>*/}
-
-                        <Col sm={4}></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={hifi8}/>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm={4}><Text header="Visual Design"/></Col>
-                        <Col sm={8}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={designsys}/>
-                            </div>
-                        </Col>
-                    </Row>
+            
                 </Container>
 
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                        <Col sm={4}><Text title="USABILITY TESTING"/></Col>
-                        <Col sm={8}></Col>
-                        <Col sm={4}><Text header="Usability Testing 1"/></Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={circlesutq1}/>
-                            </div>
-                        </Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={circlesutq2}/>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-
-                <Container>
-                    <Row>
-                        <Col sm={4}><Text title="REFLECTION"/></Col>
-                        <Col sm={8}><Text content=""/></Col>
-                        <Col sm={4}><Text header="Conclusion"/></Col>
-                        <Col sm={8}><Text content="It's really interesting to see how data that was gathered when we first did this capstone project can yield different solutions. I had a lot of fun exploring Invision Studio and researching about best practices with social meetup and dating apps. This exercise reminded that it is always important to revisit your work, even if you don't want to! I was able to design a solution that was completely different from the original one by considering the user's problem from a different perspective. I will be conducting usability testing on the prototype and updating as we move along!"/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm={4}><Text header="Next Steps"/></Col>
-                        <Col sm={8}>
-                            <Text content="">
-                                <NextStepUnorderedList/>
-                            </Text>
-                        </Col>
-                    </Row>
-                </Container>
+           
 
                 <Container  className="bottom-breadcrumbs">
 
-                    <nav style={{fontFamily: "open sans"}}>
+                    <nav style={{fontFamily: "karla"}}>
                         <ul className="breadcrumb justify-content-center">
-                            <li><a href="projects#">All</a></li>
-                            <li><a href="project_one#">PC Express</a></li>
-                            {/*<li><a href="project_two#">Circles</a></li>*/}
-                            <li style={{color:"#9F6BA0"}}>Circles</li>
+                            <li><a href="projects#">ALL</a></li>
+                            <li><a href="project_one#">PC EXPRESS</a></li>
+                            <li><a href="project_two#">COMMUNITECH</a></li>
+                            <li style={{color:"#E8998D"}}>UI SNIPPETS</li>
+                            {/* <li><a href="project_three#">eMERGE</a></li> */}
                         </ul>
                     </nav>
 
+                </Container>
                 </Container>
 
 
@@ -475,4 +260,4 @@ class Circles extends React.Component{
     }
 }
 
-export default Circles;
+export default Parkit;

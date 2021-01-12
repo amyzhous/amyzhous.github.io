@@ -8,29 +8,22 @@ import "./circles.css";
 import Text from "./text";
 import "./text.css";
 import ProjectInfo from "./projectInfo";
-import affmap1 from "./../../assets/circles_f/affinity mapping 1.jpg";
-import affmap2 from "./../../assets/circles_f/affinity mapping 2.jpg";
+
 // import minapersona from "./../../assets/circles_f/persona.svg";
 import minapersona from "./../../assets/circles_f/minapersona.jpg";
-import comingsoon from '../../assets/img/coming_soon.svg';
-import designdiamond from '../../assets/circles_f/designdiamond.png';
+
 import hifi1 from'../../assets/circles_f/circlesmockup/hifi1.svg';
-import hifi2 from'../../assets/circles_f/circlesmockup/hifi2.svg';
-import hifi3 from'../../assets/circles_f/circlesmockup/hifi3.svg';
+
 import hifi4 from'../../assets/circles_f/circlesmockup/hifi4.svg';
-import hifi5 from'../../assets/circles_f/circlesmockup/hifi5.svg';
-import hifi6 from'../../assets/circles_f/circlesmockup/hifi6.svg';
-import hifi7 from'../../assets/circles_f/circlesmockup/hifi7.svg';
+
 import hifi8 from'../../assets/circles_f/circlesmockup/hifi8.svg';
-import cirsketch from '../../assets/circles_f/circles_sketches.svg';
-import circleuf from '../../assets/circles_f/Circles_user_flow.svg';
-import designsys from'../../assets/circles_f/designsystem.jpg';
-import circlesbanner1 from'../../assets/circles_f/circlesbanner_.jpg';
-import gif1 from'../../assets/circles_f/circles_gif1.gif';
-import gif2 from'../../assets/circles_f/circles_gif2.gif';
-import gif3 from'../../assets/circles_f/circles_gif3.gif';
-import circlesutq1 from '../../assets/circles_f/circesutq1.png';
-import circlesutq2 from '../../assets/circles_f/circlesutq2.jpg';
+
+import SGbanner from'../../assets/img/ui/SG.svg';
+import dui002 from'../../assets/img/ui/002_2.svg';
+import dui001 from'../../assets/img/ui/001.svg';
+import dui003 from'../../assets/img/ui/002_3.svg';
+import dui004 from'../../assets/img/ui/002_4.png';
+
 import Carousel from 'react-bootstrap/Carousel'
 
 
@@ -99,7 +92,7 @@ class Circles extends React.Component{
                     {/*<Particles params={particlesParams}/>*/}
                     {/*<Card style={{display: 'inline-block', width: "40%", cursor: "default"}}>*/}
                     <Card className="projectBanner" style={{display: 'inline-block', cursor: "default"}}>
-                        <Card.Img variant="top" src={circlesbanner1} />
+                        <Card.Img variant="top" src={SGbanner} />
                     </Card>
                 </div>
 
@@ -109,307 +102,75 @@ class Circles extends React.Component{
                 <Container>
                     <Row>
                         <Col sm={12}>
-                            <Text Title="Circles —a social app to build your circle of connections"/>
-                           
+                            <Text Title="Designing for conversion and growth"/>
                         </Col>
-                    </Row>
-                </Container>
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
+                        <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
                     <Row style={{marginBottom:"4rem"}}>
+                      
                         <Col sm={12}>
-                            <div style={{fontFamily: "rubik", marginBottom:"2rem", fontSize: "1rem", color: "#6A6C6D"}}>
-                                <b style={{color:"#947BD3", fontFamily: "rubik", fontWeight:"500"}}>Overview /</b> Venture for user experience design course
+                            <div style={{fontFamily: "Karla", marginBottom:"2rem", fontSize: "1rem", color: "#666666"}}>
+                                <b style={{color:"#37373F",fontFamily: "karla", fontWeight:"700"}}>Role /</b> Digital Designer
                             </div>
                         </Col>
                         <Col sm={12}>
-                            <div style={{fontFamily: "rubik", marginBottom:"2rem", fontSize: "1rem", color: "#6A6C6D"}}>
-                                <b style={{color:"#947BD3",fontFamily: "rubik", fontWeight:"500"}}>Role /</b> UX/UI Design, Sole designer
-                            </div>
-                        </Col>
-                        {/* <Col sm={12}>
-                            <div style={{fontFamily: "rubik", marginBottom:"2rem", fontSize: "1rem", color: "#6A6C6D"}}>
-                                <b style={{color:"#947BD3",fontFamily: "rubik",fontWeight:"500"}}>Role /</b> Sole designer
-                            </div>
-                        </Col> */}
-                        <Col sm={12}>
-                            <div style={{fontFamily: "rubik", marginBottom:"2rem", fontSize: "1rem", color: "#6A6C6D"}}>
-                                <b style={{ color:"#947BD3", fontFamily: "rubik",fontWeight:"500"}}>Tools /</b> Sketch, Invision
+                            <div style={{fontFamily: "Karla", marginBottom:"2rem", fontSize: "1rem", color: "#666666"}}>
+                                <b style={{color:"#37373F",fontFamily: "karla",fontWeight:"700"}}>Duration /</b> Aug 2020 - Present
                             </div>
                         </Col>
                         <Col sm={12}>
-                            <div style={{fontFamily: "rubik",fontSize: "1rem",color: "#6A6C6D" }}>
-                                <b style={{color:"#947BD3", fontFamily: "rubik", fontWeight:"500"}}>Timeline /</b> 2 weeks
+                            <div style={{fontFamily: "Karla", marginBottom:"2rem", fontSize: "1rem", color: "##666666"}}>
+                                <b style={{ color:"#37373F", fontFamily: "karla",fontWeight:"700"}}>Work /</b> Under NDA, contact me at <a href="mailto:ayjzhou@gmail.com">ayjzhou@gmail.com</a> to learn more about my work!
                             </div>
                         </Col>
+                        <Col sm={12}>
+                            <div style={{fontFamily: "Karla", marginBottom:"2rem", fontSize: "1rem", color: "##666666"}}>
+                                <b style={{ color:"#37373F", fontFamily: "karla",fontWeight:"700"}}>Tools /</b> Figma, Sketch, Adobe CC, Unbounce, Asana
+                            </div>
+                        </Col>
+                       
                     </Row>
                 </Container>
 
-
-               
-               
-                <Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>
-                    <Row>
-                        <Col sm={12}><Text header="Prompt"/></Col>
-                        <Col sm={12}><Text content="The capstone project of DAC 309: Introduction to User Experience was to design a mobile app to solve a problem that a student at the University of Waterloo (UW) might be facing. The twelve week journey simulated a UX design cycle for a mobile app where we implemented design thinking to design a better online user experience for students at the university."/></Col>
-                        {/* <Col sm={4}></Col> */}
-                        <Col sm={12}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={designdiamond}/>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm={12}><Text header="The Final Product"/></Col>
-                        <Col sm={4}><Text content="Explore the final prototype on Invision."/>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <a style={{color: "white"}} href="https://projects.invisionapp.com/prototype/CIRCLES-ck51nilen001q2e01rg1nkhpn">
-                                    <button style={{color: "white"}}> View Invision Prototype </button>
-                                </a>
-                            </div>
-                        </Col>
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                            <Card.Img src={gif1} />
-                            </div>
-                        </Col>
-                        {/*<Col sm={4}>*/}
-                        {/*    <Card.Img src={gif2} />*/}
-                        {/*</Col>*/}
-                        <Col sm={4}>
-                            <div style={{ marginBottom: "4rem"}}>
-                            <Card.Img src={gif3} />
-                            </div>
-                        </Col>
-                        
+                        <Col sm={12}><Text content="Search + Gather is a digital marketing agency based in Toronto, Canada. Their clients range from small businesses to the best startups in Toronto and North America. The agency provides performance marketing with outstanding creatives and user experiences that drive conversions and growth for clients."/>
+</Col>
                     </Row>
                 </Container>
-
-                <Container>
-                    <Row>
-                        <Col sm={12}><Text Titlee="RESEARCH PROCESS"/></Col>
-                    </Row>
-                </Container>
-                <Container >
-                    <Row>
-                        <Col sm={12}><Text header="User Interviews"/></Col>
-                        <Col sm={12}><Text content="Using the unprocessed data gathered from the user interviews I re-organized them once again in an affinity diagram as well as colour-coding them in Excel for traits or feelings our users had in common to see some re-occurring themes. Once I processed the data, I created a persona of Mina Li, a second year university student studying Mathematics at UW."/></Col>
-                        <Col sm={12}><Text header="Our persona"/></Col>
-                        <Col sm={12}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={minapersona}/>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container >
-                    <Row>
-                        <Col sm={12}><Text header="Problem Statement"/></Col>
-                        <Col sm={12}>
-                            <div style={{fontSize: "1.5rem"}}>
-                                <Text statement={true} contentt="Despite being motivated individuals, our users face the challenge of finding other students on campus to listen and share advice with."/>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col sm={12}><Text Titlee="Ideation"/></Col>
-                        {/* <Col sm={12}></Col> */}
-                        <Col sm={12}><Text header="Affinity Mapping"/></Col>
-                        <Col sm={6}>
-                        {/*    < div style={{ marginBottom: "4rem"}}>*/}
-                        {/*        <Card.Img src={affmap1}/>*/}
-                        {/*    </div></Col>*/}
-                        {/*<Col sm={4}></Col>*/}
-                        {/*<Col sm={8}>*/}
-                        {/*    < div style={{ marginBottom: "4rem"}}>*/}
-                        {/*        <Card.Img src={affmap2}/>*/}
-                        {/*    </div></Col>*/}
-                            < div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={affmap1}/>
-                            </div></Col>
-                        <Col sm={6}>
-                            < div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={affmap2}/>
-                            </div></Col>
-                        {/* <Col sm={8}></Col> */}
-                    </Row>
-                </Container>
-
-                <Container>
-                    <Row>
-                        <Col sm={12}><Text header="Brainstorming"/></Col>
-                        <Col sm={12}>
-                            <Text content="When brainstorming I aimed at producing quantity that can later be turned into quality. Here's some ideas I came up with:"/></Col>
-                            <Col sm={12}>
-                            <ul style={{ paddingLeft: "15px" ,color: "#6A6C6D",fontFamily: "rubik", fontSize:"1rem", marginBottom:"2rem"}}>
-                                <li>Social meetup</li>
-                                <li>Advisor helper</li>
-                                <li>Digital mental health tool</li>
-                                <li>Simple student portal</li>
-                                <li>Newsfeed board</li>
-                                <li>Study budy</li>
-                            </ul>
-                        </Col>
-
-                        <Col sm={12}><Text header="Goal"/></Col>
-                        <Col sm={12}>
-                            <div  style={{fontSize: "1.5rem"}}>
-                                <Text statement={true} contentt="Circles aims to provide UW students a way of finding and building their circle of connections."/>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-
 
                 <Container >
                     <Row>
-                        <Col sm={12}><Text header="User Flow"/></Col>
-                        <Col sm={12}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={circleuf}/>
-                            </div>
-                            {/*<div style={{ marginBottom: "4rem"}}>*/}
-                            {/*</div>*/}
+                        <Col sm={12}><Text content="My role as the Digital Designer & Integration Specialist consists of designing creatives and solutions to landing page optimization. Rooted deep into marketing, I help optimized and drive conversion goals for user acquisition and improve customer experience through the use of data."/>
                         </Col>
-
-                        <Col sm={12}><Text header="User Story"/></Col>
-                        <Col sm={12}>
-                            <div  style={{fontSize: "1rem"}}>
-                            <Text statement={true} contentt="As a student at UW, I want to build connections with other individuals, so that I can enjoy being a student while still achieving my goals academically."/>
-                            </div>
-                            </Col>
+                        {/* <Col sm={12}><Text content=""/></Col> */}
                     </Row>
                 </Container>
-                {/*<Container >*/}
-                {/*    <Row>*/}
-                {/*        <Col sm={4}><Text title="HYPOTHESIS"/></Col>*/}
-                {/*        <Col sm={8}></Col>*/}
-                {/*        <Col sm={4}>*/}
-                {/*            <Text header="Our Hypothesis"/></Col>*/}
-                {/*        <Col sm={8}>*/}
-                {/*            <div  style={{fontSize: "1.5rem"}}>*/}
-                {/*                <Text statement={true} content="By reducing the amount of time it takes for a new user to find their grocery items, it will result in a higher conversion rate and retention."/>*/}
-                {/*            </div>*/}
-                {/*        </Col>*/}
-                {/*    </Row>*/}
-                {/*</Container>*/}
-
-                {/*<Container style={{"borderBottom": "2px solid rgba(230, 230, 233, 1)", "marginBottom": "3em"}}>*/}
-                {/*    <Row>*/}
-                {/*        <Col sm={4}><Text header="KPIs for Success"/></Col>*/}
-                {/*        <Col sm={8}>*/}
-
-                {/*            <Text content="">*/}
-                {/*                <KpiOrderedList/>*/}
-                {/*            </Text>*/}
-                {/*        </Col>*/}
-
-
-                {/*    </Row>*/}
-                {/*</Container>*/}
-
-                <Container>
-                    <Row>
-                        <Col sm={12}><Text Titlee="Design exploration"/></Col>
-                        {/* <Col sm={12}></Col> */}
-                        <Col sm={12}><Text header="Low Fidelity Sketches"/></Col>
-                        <Col sm={12}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={cirsketch}/>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-
 
                 <Container >
                     <Row>
-                        <Col sm={12}><Text header="High Fidelity Mockups"/></Col>
-                        <Col sm={12}>
-                        <div style={{ marginBottom: "4rem"}}>
-                        <Carousel>
-                    
-                            <Carousel.Item>
-                                <img
-                                className="d-block w-100"
-                                src={hifi1}
-                                alt="First slide"
-                                />
-                            
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                className="d-block w-100"
-                                src={hifi3}
-                                alt="Third slide"
-                                />
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                className="d-block w-100"
-                                src={hifi4}
-                                alt="Third slide"
-                                />
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                className="d-block w-100"
-                                src={hifi5}
-                                alt="Third slide"
-                                />
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                className="d-block w-100"
-                                src={hifi8}
-                                alt="Third slide"
-                                />
-                            </Carousel.Item>
-                            
-                        </Carousel>   
-                        </div>                      
+                        <Col sm={12}><Text content="Some of the clients I worked with within this role range from e-commerce companies to B2B and SaaS startups like HeyOrca, HiMama, Nix Color Sensors, Ipppinka, and Kritik to name a few."/>
                         </Col>
-
-                    </Row>
-                    <Row>
-                        <Col sm={12}><Text header="Visual Design"/></Col>
-                        <Col sm={12}>
-                            <div style={{ marginBottom: "4rem"}}>
-                                <Card.Img src={designsys}/>
-                            </div>
-                        </Col>
+                        {/* <Col sm={12}><Text content=""/></Col> */}
                     </Row>
                 </Container>
 
-                <Container>
+                <Container >
                     <Row>
-                        <Col sm={12}><Text title="REFLECTION"/></Col>
-                        <Col sm={12}><Text content=""/></Col>
-                        <Col sm={12}><Text header="Conclusion"/></Col>
-                        <Col sm={12}><Text content="It's really interesting to see how data that was gathered when we first did this capstone project can yield different solutions. I had a lot of fun exploring Invision Studio and researching about best practices with social meetup and dating apps. This exercise reminded me that it is always important to revisit your work, even if you don't want to! I was able to design a solution that was completely different from the original one by considering the user's problem from a different perspective. I will be conducting usability testing on the prototype and updating as we move along!"/>
+                        <Col sm={12}><Text content="My projects are currently under NDA, but if you are interested in learning more you feel free to email me."/> 
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col sm={12}><Text header="Next Steps"/></Col>
-                        <Col sm={12}>
-                            <ul style={{ paddingLeft: "15px" ,color: "#6A6C6D",fontFamily: "rubik", fontSize:"1rem", marginBottom:"2rem"}}>
-                                <li>Conduct usability testing for MVP</li>
-                                <li>Determine the technical feasibility of certain features with developers</li>
-                                <li>Iterate MVP after gathering usability testing feedback</li>
-                            </ul>
-                        </Col>
+                        {/* <Col sm={12}><Text content=""/></Col> */}
                     </Row>
                 </Container>
+           
 
                 <Container  className="bottom-breadcrumbs">
 
-                    <nav style={{fontFamily: "rubik "}}>
+                    <nav style={{fontFamily: "karla"}}>
                         <ul className="breadcrumb justify-content-center">
-                            <li><a href="projects#">All</a></li>
-                            <li><a href="project_one#">PC Express</a></li>
+                            <li><a href="projects#">ALL</a></li>
+                            <li><a href="project_one#">PC EXPRESS</a></li>
                             {/*<li><a href="project_two#">Circles</a></li>*/}
-                            <li style={{color:"#947BD3"}}>Circles</li>
+                            <li style={{color:"#E8998D"}}>COMMUNITECH</li>
+                            <li><a href="project_four#">UI SNIPPETS</a></li>
+                            <li><a href="project_five#">UX PLAYGROUND</a></li>
                             {/* <li><a href="project_three#">eMERGE</a></li> */}
                         </ul>
                     </nav>
