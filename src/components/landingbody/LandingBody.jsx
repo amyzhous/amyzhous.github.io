@@ -77,7 +77,7 @@ class LandingBody extends React.Component{
                       <br/>
                                             <Typed
                                             className="typed-text-name"
-                                            style={{color: "#222222", letterSpacing: "0px", fontFamily: "merriweather", fontWeight: "700"}}
+                                            style={{color: "#222222", letterSpacing: "0px", fontFamily: "dm sans", fontWeight: "500", marginBottom: "0.5em"}}
                                                 id="myshit"
                                             strings={[
                                                 "Hello, I'm Amy."]}
@@ -103,7 +103,7 @@ class LandingBody extends React.Component{
                                             onComplete={() => this.toggleCursor(this.titleRef, "0")}>
                                             </Typed>
                     */}
-                    A product designer passionate about crafting intuitive and accessible design to empower the people and world around me 🌱.
+                    I have experience taking products from 0 > 1 and evolving existing experiences. Currently designing recreational software management products at InnoSoft.
                       </h4>
                     
                   </div>

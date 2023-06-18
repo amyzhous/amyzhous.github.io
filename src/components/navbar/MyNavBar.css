@@ -1,7 +1,7 @@
 .top-nav-bar{
   padding: 3em 0 1em 0;
-  color: #37373F;
-  font-family: "karla";
+  color: #7F7F7F;
+  font-family: "dm sans";
 
 }
 /*.top-nav-bar-button{*/
@@ -17,7 +17,7 @@
 .top-nav-bar-button {
   text-decoration: none;
   position: relative;
-  color:#37373F;
+  color:#7F7F7F;
   padding: .5rem 1.5rem;
   /* padding-left: 0; */
   /*display: block;*/
@@ -29,11 +29,11 @@
   /*color: #000;*/
 }
 .top-nav-bar-button:hover {
-  color: #E8998D;
+  color: #101010;
   text-decoration: none;
 }
 .top-nav-bar-button:focus, .top-nav-bar-button:active {
-  color: #E8998D;
+  color: #101010;
 }
 
 .top-nav-bar-button::before {
@@ -43,7 +43,7 @@
   top: 100%;
   height: 3px;
   width: 100%;
-  background-color: #E8998D;
+  background-color: #101010;
   -webkit-transform-origin: center top;
   transform-origin: center top;
   -webkit-transform: scale(0, 1);
@@ -54,7 +54,7 @@
 }
 
 .top-nav-bar-button:active::before {
-  background-color: #E8998D;
+  background-color: #101010;
 }
 
 .top-nav-bar-button:hover::before,
@@ -88,19 +88,19 @@ ul.breadcrumb li {
 /* Add a slash symbol (/) before/behind each list item */
 ul.breadcrumb li+li:before {
   padding: 10px;
-  color: #37373F;
+  color: #7F7F7F;
   content: "/\00a0";
 }
 
 /* Add a color to all links inside the list */
 ul.breadcrumb li a {
-  color: #37373F;
+  color: #7F7F7F;
   text-decoration: none;
 }
 
 /* Add a color on mouse-over */
 ul.breadcrumb li a:hover {
-  color: #E8998D;
+  color: #101010;
   /*text-decoration: underline;*/
 
 }

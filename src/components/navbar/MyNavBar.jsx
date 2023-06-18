@@ -27,7 +27,7 @@ class MyNavBar extends React.Component{
                             <Navbar collapseOnSelect expand="sm" sticky="top">
                                 <Link to= '/'>
                                     {/* <Navbar.Brand style={{color: '#585b5c', fontSize:"2.5rem", fontWeight:"600", fontFamily:"Sacramento"}}>amyzhou.</Navbar.Brand> */}
-                               <Navbar.Brand style={{color: '#37373F', fontSize:"1.3rem", fontWeight:"400"}}>amy zhou</Navbar.Brand>
+                               <Navbar.Brand style={{color: '#37373F', fontSize:"1.3rem", fontWeight:"400"}}>Amy Zhou</Navbar.Brand>
                                 {/*    color: #9F6BA0*/}
                                 </Link>
 
@@ -43,19 +43,19 @@ class MyNavBar extends React.Component{
                                     {/*</Nav.Item>*/}
                                     <Nav.Item>
                                         {this.props.redirectToProjectSection &&
-                                            <a href="/#projects" className="top-nav-bar-button">work</a>
+                                            <a href="/#projects" className="top-nav-bar-button">Work</a>
                                         }
                                         {
                                             !this.props.redirectToProjectSection &&
-                                            <AnchorLink href="#projects" className="top-nav-bar-button">work</AnchorLink>
+                                            <AnchorLink href="#projects" className="top-nav-bar-button">Work</AnchorLink>
                                         }
 
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <AnchorLink href="#contact" className="top-nav-bar-button">contact</AnchorLink>
+                                        <AnchorLink href="#contact" className="top-nav-bar-button">Contact</AnchorLink>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <a href="/about" className="top-nav-bar-button">about</a>
+                                        <a href="/about" className="top-nav-bar-button">About</a>
                                     </Nav.Item>
                                 </Nav>
                             }

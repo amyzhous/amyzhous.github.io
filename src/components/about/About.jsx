@@ -8,6 +8,7 @@ import meme from '../../assets/img/meme3.jpg';
 import abouthero from '../../assets/img/abouthero.svg'
 
 
+
 import {Button, Image, Container, Row, Col, Nav} from 'react-bootstrap';
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
@@ -26,34 +27,32 @@ class About extends React.Component{
 
 
                     <Col lg={12} md={12} style={{textAlign: "center"}}>
-                                <h1 style={{color: '#222222', fontFamily: "merriweather", fontWeight: "700", textAlign:"center", marginBottom: "1em"}}>
-                                   hello, welcome to my portfolio
+                                <h1 style={{color: '#222222', fontFamily: "dm sans", fontWeight: "700", textAlign:"center", marginBottom: "1em"}}>
+                                   Welcome to my corner of the internet
                                       <span className="wave">  👋🏼</span>
                                 </h1>
                     </Col>
 
                         <Col lg={5} md={12} className="about-image-container">
-                            <Image src={meme} roundedCircle className="about-image"/>
+                            <Image src={amy} roundedCircle className="about-image"/>
                         </Col>
                         <Col lg={12} md={12} className="about-bio-container">
+
                             <span className="about-bio">
-                                <h3 style={{color: '#222222', fontFamily: "karla", fontWeight: "500"}}>
-                                   — a coffee lover, UX enthusiast, and a self-starter
+                                <h3 style={{color: '#222222', fontFamily: "dm sans", fontWeight: "500", marginBottom: "1em"}}>
+                                   — I'm a product designer based in <div className="my-story-location">📍Toronto. </div>
                                 </h3>
                                 <div className="my-story" style={{fontSize: "20px"}}>
-                                    <p> I am a product designer based in <div className="my-story-location">📍Toronto. </div></p>
-
-                                    <p> My journey into UX and product design stemmed from an interest in technology, applied psychology, and art during my last year of university. Product and UX design resonates with me as I have the ability to make a social impact. Similar to development, as a designer I am able to solve complex business problems and deliver tangible results.
+                                    
+                                    <p> As a designer, I've always been fascinated by the impact design has on our daily lives. From the products we use to the services we rely on, I've seen firsthand how good design can make a difference in the way we experience the world around us.
                                     </p>
                                     <p>
-                                        Coming from a non-traditional design background I have taught myself UX and a tad bit of front-end development with lots of coffee, Youtube videos, and wonderful individuals! Given my multidisciplinary background, I am a designer driven to create better experiences and solutions by being empathetic, curious, and strategic.
+                                    I am currently a product designer at InnoSoft, responsible for owning the 1 > 2 growth phase of Fusion Play. Prior to that, I worked on 0 > 1 solutions for a new business vertical and helped design for our core, Fusion. 
                                     </p>
                                     <p>
-                                        Since then, I have been looking for opportunities to practice UX/ UI to build my knowledge in design and provide a social impact. Outside of UX, I like to travel around 🗺️, try new cuisines 🍽, and read a nice book with a cup of coffee ☕. Recently, I have been swept into the world of digital illustration ✍🏼.
+                                    Outside of design, I've been exploring brunch restaurants 🥞, trying and failing climbing V2s and V3s at the gym 🧗🏻, and of course, travelling and immersing myself into the local culture 🗺️.
                                     </p>
-                                    <p>
-                                        Feel free to <a href="https://www.linkedin.com/in/amyyjzhou/">connect</a> with me or contact me at <a href="mailto:ayjzhou@gmail.com">ayjzhou@gmail.com</a> if you're interested in grabbing a coffee or chatting!
-                                    </p>
+                                    
                                 </div>
                                 {/*<div  style={{ marginTop: "2rem"}}>*/}
                                 {/*<a href="https://drive.google.com/file/d/1OThL8EtMv0QNwQyipVv-WowdD41SlzRG/view?usp=sharing">*/}

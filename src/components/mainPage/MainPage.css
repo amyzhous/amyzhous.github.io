@@ -252,10 +252,10 @@ nav.stroke ul li a:hover:after {
     height: 100vh;
     background-color:#ffffff;
     color: black;
-    background-image: url("../../assets/img/heropage_asset.svg");
+    /* background-image: url("../../assets/img/heropage_asset.svg");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto;
+    background-position: center; */
+    /* background-size: auto; */
 
 }
 .outer {

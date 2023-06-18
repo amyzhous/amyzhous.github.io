@@ -3,6 +3,8 @@
     align-items: center;
     min-height: calc(100vh - 50vh);
     margin: 10vh auto 0 auto;
+    line-height: 32px;
+
     /*width: 90%;*/
 
 
@@ -17,13 +19,13 @@
     /* font-weight: bold; */
     display: block;
     color: #585B5C;
-    font-family: "karla";
+    font-family: "dm sans";
 }
 .typed-text-description{
     font-size: 3.5rem;
     display: block;
     /* font-weight: bold; */
-    font-family: "karla";
+    font-family: "dm sans";
     color: #242423;
 }
 
@@ -54,7 +56,7 @@
     text-align: left;
     display: block;
     font-weight: 400;
-    font-family: "merriweather";
+    font-family: "dm sans";
     color: #37373F;
 }
 
@@ -62,6 +64,6 @@
     text-align: left;
     display: block;
     font-weight: 400;
-    font-family: "karla";
+    font-family: "dm sans";
     color:#37373F;
 }

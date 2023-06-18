@@ -22,7 +22,7 @@ span.wave {
 
 .my-story{
     color: #37373F;
-    font-family: "karla";
+    font-family: "dm sans";
     /*letter-spacing: 0.5px;*/
 }
 .my-story-location{
@@ -36,7 +36,8 @@ span.wave {
     margin: 0 auto;
     width: 100%;
     padding: 4rem 0;
-    background-image: url("../../assets/img/abouthero.svg");
+    line-height: 32px;
+    /* background-image: url("../../assets/img/abouthero.svg"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
@@ -44,7 +45,7 @@ span.wave {
 
 .about-image{
     max-width: 50%;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .about-image-container{
@@ -94,7 +95,7 @@ span.wave {
 
 }
 body{
-    font-family: muli !important;
+    font-family: dm sans !important;
 }
 
 a {

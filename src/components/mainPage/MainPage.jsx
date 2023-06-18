@@ -15,7 +15,7 @@ import petcobanner from '../../assets/petco/petcobanner.jpg';
 import {Button, Nav, Container, Row, Col, Card} from 'react-bootstrap';
 import coupletcs from '../../assets/img/coming_soon.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import ldbanner from "../../assets/pcexpss/ldbanner@4x.svg";
+import ldbanner from "../../assets/pcexpss/ldbanner.png";
 import SGbanner from'../../assets/img/ui/SG.svg';
 import communitech from'../../assets/img/ui/Communitech.svg';
 import uibanner from'../../assets/img/ui/uihero.svg';
@@ -34,8 +34,8 @@ class MainPage extends React.Component{
             <div className="main-page-wrapper">
                 <div className="landing" id="landing">
                     <MyNavBar show={true}/>
-                    {/*<Particles*/}
-                    {/*    params={particlesParams} />*/}
+                    <Particles
+                    params={particlesParams}></Particles>
                     <LandingBody/>
                     <div id="landing-scroll">
                         <AnchorLink id="landing-scroll-inner" href="#projects"><span/></AnchorLink>
@@ -48,25 +48,30 @@ class MainPage extends React.Component{
                 {/*</div>*/}
                 <div className="cards-wrapper" id="projects">
                     {/*<Link to="/project_one">*/}
+                   
+                    
                     <a href="/project_one">
-                        <MyCard  imgSrc={ldbanner} title="PC Express Search" subtitle="A capstone project to explore and redefine search relevancy in the online grocery space." />
+                        <MyCard  imgSrc={ldbanner} title="Admin Design System" subtitle="2022 - Ongoing" />
                     </a>
+                    
                     {/*</Link>*/}
                     {/* <a href="/project_two">
                         <MyCard imgSrc={SGbanner} title="Communitech" subtitle="A collection of some of the visual designs I have worked on."/>
                     </a> */}
+                    
                      <a href="/project_three">
-                       <MyCard imgSrc={SGbanner} title="Search and Gather" subtitle="Designing for growth and conversion."/>
+                       <MyCard imgSrc={SGbanner} title="Player authentication and onboarding" subtitle="Designing for growth and conversion."/>
                     </a>
+                    
                     {/* <a href="/project_four">
                        <MyCard imgSrc={uibanner} title="UX Playground" subtitle="A collection mini design challenges or prompts I have worked on."/>
                     </a> */}
                     <a href="/project_five">
-                       <MyCard imgSrc={uibanner} title="UI Snippets" subtitle="A collection of visual designs I have worked on."/>
+                       <MyCard imgSrc={uibanner} title="Mass Communication" subtitle="A collection of visual designs I have worked on."/>
                     </a>
-                    {/*<a href="/project_four">
-                    {/*    <MyCard imgSrc={parkitbanner} title="Daily UI" subtitle="UI Design, Motion Design"/>*/}
-                    {/*</a>*/}
+                    <a href="/project_four">
+                       <MyCard imgSrc={parkitbanner} title="Conflict Scheduling" subtitle="UI Design, Motion Design"/>
+                    </a>
                     {/* <a href="/project_five">
                        <MyCard imgSrc={petcobanner} title="Pet&Co."/>
                    </a>   */}
