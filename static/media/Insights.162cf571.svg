@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="719px" height="746px" viewBox="0 0 719 746" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard Copy 2</title>
+    <g id="Artboard-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chart-(3)" transform="translate(-85.000000, 0.000000)" fill-rule="nonzero">
+            <polygon id="Path" fill="#FFFFFF" points="0 0 402 0 402 249 0 249"></polygon>
+            <path d="M103,70.028708 C122.651727,34.2381492 160.207939,12 201,12 L201,67.985646 C180.603966,67.985646 161.825857,79.1047206 152,97 L103,70.028708 Z" id="Path" fill="#EFEFEF"></path>
+            <path d="M200.996662,13 C251.467618,13 295.702805,46.7608945 309.020736,95.4454414 C322.338667,144.129988 301.448419,195.708046 258.005946,221.401126 C214.56346,247.094219 159.30354,240.553441 123.059014,205.428312 C86.8145003,170.303198 78.5415252,115.273265 102.856095,71.043036 L151.926378,98.0209876 C139.769093,120.136106 143.905578,147.651075 162.027841,165.213629 C180.150104,182.77619 207.780061,186.046579 229.501294,173.200029 C251.222527,160.353492 261.667651,134.56446 255.008689,110.222184 C248.34974,85.8799135 226.232153,68.9994696 200.996662,68.9994696 L200.996662,13 Z" id="Path" fill="#F1C232"></path>
+        </g>
+        <g id="chart-(4)" transform="translate(-85.000000, 249.000000)" fill-rule="nonzero">
+            <polygon id="Path" fill="#FFFFFF" points="0 0 402 0 402 248 0 248"></polygon>
+            <path d="M201,13 C240.595018,13 277.247607,33.7857853 297.40309,67.6704653 C317.5586,101.555156 318.221369,143.502589 299.146339,178 L250.073169,151.177275 C259.610698,133.928566 259.279307,112.954846 249.201542,96.0125077 C239.12379,79.0701657 220.797499,68.6772717 201,68.6772717 L201,13 Z" id="Path" fill="#CC0000"></path>
+            <path d="M299,178.204327 C272.692649,225.875922 215.691279,247.673799 164.121286,229.783266 C112.551273,211.892727 81.4708716,159.537748 90.5776863,105.898986 C99.6845144,52.2602241 146.319391,13 200.926869,13 L200.926869,68.7462193 C173.623143,68.7462193 150.305695,88.376328 145.752281,115.195712 C141.198874,142.015096 156.739071,168.192579 182.524071,177.137852 C208.309084,186.083119 236.809756,175.18418 249.963434,151.348386 L299,178.204327 Z" id="Path" fill="#EFEFEF"></path>
+        </g>
+        <g id="chart-(5)" transform="translate(-85.000000, 497.000000)" fill-rule="nonzero">
+            <polygon id="Path" fill="#FFFFFF" points="0 0 402 0 402 249 0 249"></polygon>
+            <path d="M201,12 C262.855899,12 313,62.1441073 313,124 L257,124 C257,93.0720537 231.92794,68 201,68 L201,12 Z" id="Path" fill="#3D85C6"></path>
+            <path d="M313,125 C313,186.855899 262.855899,237 201,237 C139.144114,237 89,186.855899 89,125 C89,63.1441073 139.144114,13 201,13 L201,69 C170.072054,69 145,94.0720537 145,125 C145,155.927946 170.072054,181 201,181 C231.92794,181 257,155.927946 257,125 L313,125 Z" id="Path" fill="#EFEFEF"></path>
+        </g>
+        <g id="Group" transform="translate(198.000000, 90.000000)" stroke="#2F274C">
+            <line x1="4" y1="32" x2="85.6639344" y2="0.340425532" id="Line-2" stroke-width="5" stroke-linecap="square"></line>
+            <circle id="Oval" fill="#2F274C" cx="3.5" cy="31.5" r="3.5"></circle>
+        </g>
+        <g id="Group-Copy-2" transform="translate(198.000000, 338.000000)" stroke="#2F274C">
+            <line x1="4" y1="32" x2="85.6639344" y2="0.340425532" id="Line-2" stroke-width="5" stroke-linecap="square"></line>
+            <circle id="Oval" fill="#2F274C" cx="3.5" cy="31.5" r="3.5"></circle>
+        </g>
+        <g id="Group-Copy" transform="translate(172.000000, 535.000000)" stroke="#2F274C">
+            <line x1="2.77461035" y1="75.7591028" x2="117.106575" y2="32.9774874" id="Line-2" stroke-width="5" stroke-linecap="square" transform="translate(59.940593, 54.368295) rotate(41.942651) translate(-59.940593, -54.368295) "></line>
+            <circle id="Oval" fill="#2F274C" cx="3.5" cy="31.5" r="3.5"></circle>
+        </g>
+        <text id="83%-of-our-users-lik" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#363738">
+            <tspan x="297" y="107">83% of our users like to shop with </tspan>
+            <tspan x="297" y="145">their eyes</tspan>
+        </text>
+        <text id="33%-of-our-users-sea" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#363738">
+            <tspan x="297" y="356">33% of our users search and filter </tspan>
+            <tspan x="297" y="394">based on identifying the brand they </tspan>
+            <tspan x="297" y="432">usually purchase</tspan>
+        </text>
+        <text id="25%-of-our-users-hav" font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="30" font-weight="500" letter-spacing="-1.09090911" fill="#363738">
+            <tspan x="297" y="621">25% of our users have tried some </tspan>
+            <tspan x="297" y="659">form of shopping for groceries </tspan>
+            <tspan x="297" y="697">online</tspan>
+        </text>
+    </g>
+</svg>
