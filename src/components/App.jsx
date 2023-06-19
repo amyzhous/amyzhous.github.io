@@ -17,18 +17,20 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Ldpc from "./projectPage/ldpc";
-import Circles from "./projectPage/circles";
-import Emerge from "./projectPage/emerge";
-import Parkit from "./projectPage/parkit";
 import Petco from "./projectPage/petco";
-import amylogo2 from "../assets/img/amy2.jpg";
+import amylogo from "../assets/img/amylogo.svg";
 import email from '../assets/img/gmail.svg';
 import linkedin from '../assets/img/linkedin.svg';
 import github from '../assets/img/github.svg';
 import dribble from '../assets/img/dribble.svg';
 import About from './about/About'
 import ReactGA from 'react-ga';
+import Login from "./projectPage/login";
+import MassComm from "./projectPage/masscomm";
+import Designsystem from "./projectPage/designsystem";
+import ConflictSced from "./projectPage/conflictsched.jsx";
+
+
 
 
 
@@ -73,19 +75,19 @@ class App extends React.Component {
                 <Switch>
                     <Route path="/project_one">
                         <MyNavBar show={true} redirectToProjectSection={true}/>
-                        <Ldpc/>
+                        <Designsystem/>
                     </Route>
                     <Route path="/project_two">
                         <MyNavBar show={true} redirectToProjectSection={true}/>
-                        <Circles />
+                        <Login />
                     </Route>
                     <Route path="/project_three">
                         <MyNavBar show={true} redirectToProjectSection={true}/>
-                        <Emerge />
+                        <MassComm />
                     </Route>
                     <Route path="/project_four">
                         <MyNavBar show={true} redirectToProjectSection={true}/>
-                        <Parkit />
+                        <ConflictSced />
                     </Route>
                     <Route path="/project_five">
                         <MyNavBar show={false} redirectToProjectSection={true}/>
@@ -103,7 +105,7 @@ class App extends React.Component {
                 <footer className="my-footer" id="contact">
                 
                     <div className={"my-contacts"}>
-                    <p style={{fontFamily: "karla", fontWeight: "400"}}>Say hello at</p>
+                    <p style={{fontFamily: "dm sans", fontWeight: "400"}}>Say hello at</p>
                         <div className="footer-icon">
                             <a target="_blank" href="mailto:ayjzhou@gmail.com" className="footer-icon-anchor">
                                 <Card.Img src={email} className="footer-icon-img hover-up"  />
@@ -121,8 +123,8 @@ class App extends React.Component {
                         </div>
                     </div>
 
-                    <p style={{fontFamily: "karla", color: "#37373F"}}>Designed + developed by me powered with lots of ☕️.</p>
-                    {/* <img src={amylogo2} width="50px"/> */}
+                    <p style={{fontFamily: "dm sans", color: "#7A838B"}}>Powered with lots of ☕️.</p>
+                    <img src={amylogo} width="24px"/>
                 </footer>
             </Router>
         )

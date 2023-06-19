@@ -19,7 +19,8 @@ class Text extends React.Component{
             <div style={{"marginBottom":"3rem"}}>
                 <Col style={{padding: "0 0"}}>
                     {this.props.header &&
-                        <h4 style={{fontWeight:"700",fontFamily: "dm sans", color:"#37373F", fontSize: "1.125rem"}}>
+                        <h4 style={{fontWeight:"700",fontFamily: "dm sans", color:"#37373F", fontSize: "1.125rem", lineHeight: '32px',
+                    }}>
                             {this.props.header}
                         </h4>
                     }

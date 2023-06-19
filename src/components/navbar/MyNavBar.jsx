@@ -8,6 +8,8 @@ import navbarpic from "../../assets/img/navbar.svg";
 import {Button, Nav,Navbar, Container, Row, Col, Card} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import amylogo from "../../assets/img/amylogo.svg";
+
 
 
 
@@ -27,7 +29,9 @@ class MyNavBar extends React.Component{
                             <Navbar collapseOnSelect expand="sm" sticky="top">
                                 <Link to= '/'>
                                     {/* <Navbar.Brand style={{color: '#585b5c', fontSize:"2.5rem", fontWeight:"600", fontFamily:"Sacramento"}}>amyzhou.</Navbar.Brand> */}
-                               <Navbar.Brand style={{color: '#37373F', fontSize:"1.3rem", fontWeight:"400"}}>Amy Zhou</Navbar.Brand>
+                               <Navbar.Brand style={{color: '#1E2126', fontSize:"1.3rem", fontWeight:"400"}}> 
+                               <img src={amylogo} width="32px"/>
+                               </Navbar.Brand>
                                 {/*    color: #9F6BA0*/}
                                 </Link>
 
@@ -56,6 +60,9 @@ class MyNavBar extends React.Component{
                                     </Nav.Item>
                                     <Nav.Item>
                                         <a href="/about" className="top-nav-bar-button">About</a>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <a href="/about" className="top-nav-bar-button">Resume</a>
                                     </Nav.Item>
                                 </Nav>
                             }

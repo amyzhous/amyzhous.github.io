@@ -8,19 +8,13 @@ import MyNavBar from '../navbar/MyNavBar';
 import LandingBody from "../landingbody/LandingBody";
 import MyCard from "../mycard/MyCard";
 import About from "../about/About";
-import circlesbanner1 from '../../assets/circles_f/circlesbanner_.jpg';
-import moodilybanner from '../../assets/moodily/moodilybanner.png';
-import parkitbanner from '../../assets/parkit/parkitbanner_.jpg';
-import petcobanner from '../../assets/petco/petcobanner.jpg';
 import {Button, Nav, Container, Row, Col, Card} from 'react-bootstrap';
 import coupletcs from '../../assets/img/coming_soon.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import ldbanner from "../../assets/pcexpss/ldbanner.png";
-import SGbanner from'../../assets/img/ui/SG.svg';
-import communitech from'../../assets/img/ui/Communitech.svg';
-import uibanner from'../../assets/img/ui/uihero.svg';
-
-
+import cshero from '../../assets/conflictsched/cshero.png';
+import adminds from '../../assets/designsystem/adminds.png';
+import masscommhero from '../../assets/masscomm/masscommhero.png';
+import loginhero from '../../assets/login/loginhero.png';
 
 
 class MainPage extends React.Component{
@@ -46,31 +40,27 @@ class MainPage extends React.Component{
                 {/*    </a>*/}
                 {/*    <About/>*/}
                 {/*</div>*/}
+
                 <div className="cards-wrapper" id="projects">
                     {/*<Link to="/project_one">*/}
-                   
-                    
+                                      
                     <a href="/project_one">
-                        <MyCard  imgSrc={ldbanner} title="Admin Design System" subtitle="2022 - Ongoing" />
+                        <MyCard  imgSrc={adminds} title="Admin Design System" subtitle="Company's first admin design system" />
+                    </a> 
+                                    
+                     <a href="/project_two">
+                       <MyCard imgSrc={loginhero} title="External Login" subtitle="Account creation and onboarding"/>
                     </a>
-                    
-                    {/*</Link>*/}
-                    {/* <a href="/project_two">
-                        <MyCard imgSrc={SGbanner} title="Communitech" subtitle="A collection of some of the visual designs I have worked on."/>
-                    </a> */}
-                    
-                     <a href="/project_three">
-                       <MyCard imgSrc={SGbanner} title="Player authentication and onboarding" subtitle="Designing for growth and conversion."/>
-                    </a>
+                  
                     
                     {/* <a href="/project_four">
                        <MyCard imgSrc={uibanner} title="UX Playground" subtitle="A collection mini design challenges or prompts I have worked on."/>
                     </a> */}
-                    <a href="/project_five">
-                       <MyCard imgSrc={uibanner} title="Mass Communication" subtitle="A collection of visual designs I have worked on."/>
+                    <a href="/project_three">
+                       <MyCard imgSrc={masscommhero} title="Mass Communication" subtitle="Admin communication tools"/>
                     </a>
                     <a href="/project_four">
-                       <MyCard imgSrc={parkitbanner} title="Conflict Scheduling" subtitle="UI Design, Motion Design"/>
+                       <MyCard imgSrc={cshero} title="Conflict Scheduling" subtitle="Game and schedule checking"/>
                     </a>
                     {/* <a href="/project_five">
                        <MyCard imgSrc={petcobanner} title="Pet&Co."/>
@@ -78,7 +68,9 @@ class MainPage extends React.Component{
                     {/*<a href="/project_six">*/}
                     {/*    <MyCard imgSrc={coupletcs} title="CoupLet"/>*/}
                     {/*</a>*/}
+                  
                 </div>
+             
             </div>
 
         )

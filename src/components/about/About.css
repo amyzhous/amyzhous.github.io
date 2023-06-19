@@ -99,10 +99,10 @@ body{
 }
 
 a {
-    color: rgba(55,54,77,0.6);
+    color: #1E2126;
 }
 a:visited {
-    color: rgba(55,54,77,0.6);
+    color: #1E2126;
 }
 a:hover, a:active, a:focus {
     /*color:#6290C8;*/

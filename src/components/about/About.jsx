@@ -47,7 +47,7 @@ class About extends React.Component{
                                     <p> As a designer, I've always been fascinated by the impact design has on our daily lives. From the products we use to the services we rely on, I've seen firsthand how good design can make a difference in the way we experience the world around us.
                                     </p>
                                     <p>
-                                    I am currently a product designer at InnoSoft, responsible for owning the 1 > 2 growth phase of Fusion Play. Prior to that, I worked on 0 > 1 solutions for a new business vertical and helped design for our core, Fusion. 
+                                    I am currently a product designer at InnoSoft, responsible for owning the 1 > 2 growth phase of Fusion Play. Prior to that, I worked on 0 > 1 solutions for a new business vertical and helped design for our core product, Fusion. 
                                     </p>
                                     <p>
                                     Outside of design, I've been exploring brunch restaurants 🥞, trying and failing climbing V2s and V3s at the gym 🧗🏻, and of course, travelling and immersing myself into the local culture 🗺️.

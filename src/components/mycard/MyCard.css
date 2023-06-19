@@ -18,9 +18,9 @@
 .my-card-wrapper-mobile{
     /* width: 960px; */
     display: block;
-    padding: 15px;
+    padding: 16px;
     position: relative;
-    padding-top: 80px;
+    padding-top: 24px;
 }
 .my-card-wrapper{
     width: 95%;
@@ -43,7 +43,7 @@
 
 .card{
     width: 100%;
-    display: inline-block;
+    display: grid;
     /* box-shadow: 0 10px 22px rgba(0,0,0,.1); */
     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);

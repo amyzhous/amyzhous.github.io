@@ -30,7 +30,7 @@ html,body
 .greeting-text{
     font-size: 8vh;
     position: relative;
-    color: black;
+    color: 1E2126;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -84,7 +84,7 @@ html,body
     margin-top: -4vh;
     display: block;
     position: relative;
-    color: black;
+    color: 1E2126;
     white-space: nowrap;
 }
 
@@ -251,7 +251,7 @@ nav.stroke ul li a:hover:after {
 .landing{
     height: 100vh;
     background-color:#ffffff;
-    color: black;
+    color: 1E2126;
     /* background-image: url("../../assets/img/heropage_asset.svg");
     background-repeat: no-repeat;
     background-position: center; */
