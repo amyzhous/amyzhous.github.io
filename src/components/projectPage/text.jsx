@@ -24,6 +24,7 @@ class Text extends React.Component {
                                 fontFamily: "dm sans",
                                 color: "#37373F",
                                 fontSize: "1.125rem",
+                                lineHeight: "32px",
                             }}
                         >
                             {this.props.header}

@@ -21,7 +21,7 @@ class MyCard extends React.Component {
                     <Card
                         style={{
                             display: "inline-block",
-                            borderRadius: "8px",
+                            borderRadius: "4px",
                             border: "none",
                         }}
                     >
@@ -36,15 +36,14 @@ class MyCard extends React.Component {
                             <Card.Img
                                 // variant="top"
                                 src={this.props.imgSrc}
-                                style={{ borderRadius: "8px", height: "100%" }}
+                                style={{ borderRadius: "4px", height: "100%" }}
                             />
                         </Card>
-
                         <Card.Body>
                             <Card.Title
                                 style={{
-                                    color: "#101010",
-                                    fontSize: "24px",
+                                    color: "#1E2126",
+                                    fontSize: "1.3em",
                                     fontWeight: "500",
                                     textAlign: "center",
                                     marginLeft: "30px",
@@ -56,8 +55,8 @@ class MyCard extends React.Component {
                             </Card.Title>
                             <Card.Subtitle
                                 style={{
-                                    color: "#9E9FA0",
-                                    fontSize: "18px",
+                                    color: "#7A838B",
+                                    fontSize: "1.125rem",
                                     fontWeight: "400",
                                     marginBottom: "10px",
                                     textAlign: "center",
@@ -76,14 +75,18 @@ class MyCard extends React.Component {
                 </div>
                 <div className="my-card-wrapper-mobile hover-up container">
                     <Card
-                        style={{ display: "inline-block", borderRadius: "8px" }}
+                        style={{
+                            display: "inline-block",
+                            borderRadius: "4px",
+                            border: "7A838B",
+                        }}
                     >
                         <Card.Img
                             // variant="top"
                             src={this.props.imgSrc}
                             style={{
-                                borderTopLeftRadius: "8px",
-                                borderTopRightRadius: "0px",
+                                borderTopLeftRadius: "4px",
+                                borderTopRightRadius: "4px",
                                 borderBottomRightRadius: "0px",
                                 borderBottomLeftRadius: "0px",
                             }}
@@ -91,11 +94,11 @@ class MyCard extends React.Component {
                         <Card.Body>
                             <Card.Title
                                 style={{
-                                    color: "#37373F",
-                                    fontSize: "27px",
-                                    textAlign: "left",
-                                    marginLeft: "24px",
-                                    marginRight: "24px",
+                                    color: "#1E2126",
+                                    fontSize: "1em",
+                                    textAlign: "center",
+                                    marginLeft: "16px",
+                                    marginRight: "16px",
                                     fontWeight: "700",
                                     fontFamily: "dm sans",
                                 }}
@@ -104,31 +107,21 @@ class MyCard extends React.Component {
                             </Card.Title>
                             <Card.Subtitle
                                 style={{
-                                    color: "#666666",
-                                    fontSize: "16px",
+                                    color: "#7A838B",
+                                    fontSize: "0.8em",
                                     fontWeight: "400",
                                     marginBottom: "10px",
-                                    textAlign: "left",
-                                    marginLeft: "30px",
-                                    marginRight: "30px",
+                                    textAlign: "center",
+                                    marginLeft: "16px",
+                                    marginRight: "16px",
                                     fontFamily: "dm sans",
                                 }}
                             >
                                 {this.props.subtitle}
                             </Card.Subtitle>
-                            <Card.Text
-                                style={{
-                                    color: "#37373F",
-                                    fontSize: "12px",
-                                    textAlign: "left",
-                                    marginLeft: "24px",
-                                    marginRight: "24px",
-                                    fontFamily: "dm sans",
-                                }}
-                            >
-                                {this.props.text}
+                            {/* <Card.Text style={{color: '#1E2126',fontSize:"12px",textAlign: "left", marginLeft:"16px", marginRight: "16px", fontFamily: "dm sans"}}>{this.props.text}
                                 {this.props.text || ""}
-                            </Card.Text>
+                            </Card.Text> */}
                         </Card.Body>
                     </Card>
                 </div>

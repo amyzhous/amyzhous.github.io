@@ -103,9 +103,12 @@ class LandingBody extends React.Component {
                                             onComplete={() => this.toggleCursor(this.titleRef, "0")}>
                                             </Typed>
                     */}
-                        I have experience taking products from 0 > 1 and
-                        evolving existing experiences. Currently designing
-                        recreational software management products at InnoSoft.
+                        <p style={{ lineHeight: "36px" }}>
+                            I have experience taking products from 0 {">"} 1 and
+                            evolving existing experiences. Currently designing
+                            recreational software management products at
+                            InnoSoft. Check out some of my work below!
+                        </p>
                     </h4>
                 </div>
             </div>
