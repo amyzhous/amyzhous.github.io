@@ -2,6 +2,8 @@
   padding: 3em 0 1em 0;
   color: #1E2126;
   font-family: "dm sans";
+  font-size: 1.125rem;
+
 
 }
 /*.top-nav-bar-button{*/
@@ -19,6 +21,9 @@
   position: relative;
   color:#1E2126;
   padding: .5rem 1.5rem;
+  font-size: 1.125rem;
+
+
   /* padding-left: 0; */
   /*display: block;*/
   /*padding: 16px 0;*/
@@ -55,6 +60,8 @@
 
 .top-nav-bar-button:active::before {
   background-color: #1E2126;
+  font-size: 1.125rem;
+
 }
 
 .top-nav-bar-button:hover::before,
@@ -88,7 +95,7 @@ ul.breadcrumb li {
 /* Add a slash symbol (/) before/behind each list item */
 ul.breadcrumb li+li:before {
   padding: 10px;
-  color: #7F7F7F;
+  color: #1E2126;
   content: "/\00a0";
 }
 

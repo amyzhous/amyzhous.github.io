@@ -31,23 +31,24 @@ class MyNavBar extends React.Component {
                         <Col>
                             <Navbar collapseOnSelect expand="sm" sticky="top">
                                 <Link to="/">
-                                    {/* <Navbar.Brand style={{color: '#585b5c', fontSize:"2.5rem", fontWeight:"600", fontFamily:"Sacramento"}}>amyzhou.</Navbar.Brand> */}
-
                                     <Navbar.Brand
                                         style={{
                                             color: "#1E2126",
-                                            fontSize: "1.3rem",
+                                            fontSize: "1.125rem",
                                             fontWeight: "400",
                                         }}
                                     >
                                         <img src={amylogo} width="32px" />
                                     </Navbar.Brand>
-                                    {/*    color: #9F6BA0*/}
                                 </Link>
 
                                 <Navbar.Toggle
                                     aria-controls="responsive-navbar-nav"
-                                    style={{ width: "30%", border: "0" }}
+                                    style={{
+                                        width: "30%",
+                                        border: "0",
+                                        color: "#1E2126",
+                                    }}
                                 />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     {this.props.show && (
@@ -68,7 +69,7 @@ class MyNavBar extends React.Component {
                                                         href="/#projects"
                                                         className="top-nav-bar-button"
                                                     >
-                                                        Work
+                                                        work
                                                     </a>
                                                 )}
                                                 {!this.props
@@ -77,32 +78,29 @@ class MyNavBar extends React.Component {
                                                         href="#projects"
                                                         className="top-nav-bar-button"
                                                     >
-                                                        Work
+                                                        work
                                                     </AnchorLink>
                                                 )}
                                             </Nav.Item>
-                                            <Nav.Item>
-                                                <AnchorLink
-                                                    href="#contact"
-                                                    className="top-nav-bar-button"
-                                                >
-                                                    Contact
-                                                </AnchorLink>
-                                            </Nav.Item>
+                                            {/* <Nav.Item>
+                                        <AnchorLink href="#contact" className="top-nav-bar-button">Contact</AnchorLink>
+                                    </Nav.Item> */}
+
                                             <Nav.Item>
                                                 <a
-                                                    href="/about"
+                                                    href="https://drive.google.com/file/d/1IKD3dOwbi0zBaDKGtjiqVk3u80FFIggu/view?usp=sharing"
                                                     className="top-nav-bar-button"
                                                 >
-                                                    About
+                                                    resume
                                                 </a>
                                             </Nav.Item>
+
                                             <Nav.Item>
                                                 <a
                                                     href="/about"
                                                     className="top-nav-bar-button"
                                                 >
-                                                    Resume
+                                                    about
                                                 </a>
                                             </Nav.Item>
                                         </Nav>

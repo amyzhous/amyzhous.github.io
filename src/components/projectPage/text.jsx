@@ -18,17 +18,16 @@ class Text extends React.Component {
             <div style={{ marginBottom: "3rem" }}>
                 <Col style={{ padding: "0 0" }}>
                     {this.props.header && (
-                        <h4
+                        <h1
                             style={{
                                 fontWeight: "700",
                                 fontFamily: "dm sans",
-                                color: "#37373F",
-                                fontSize: "1.125rem",
-                                lineHeight: "32px",
+                                color: "#1E2126",
+                                fontSize: "1.5rem",
                             }}
                         >
                             {this.props.header}
-                        </h4>
+                        </h1>
                     )}
 
                     {/*{this.props.title &&*/}
@@ -37,45 +36,39 @@ class Text extends React.Component {
                     {/*        {this.props.title}*/}
                     {/*    </h3>*/}
                     {/*}*/}
+
                     {this.props.title && (
-                        <h3
+                        <h2
                             style={{
-                                fontSize: "1.5rem",
-                                fontWeight: "700",
+                                fontSize: "1.3rem",
+                                fontWeight: "500",
                                 fontFamily: "dm sans",
-                                color: "#37373F",
+                                color: "#1E2126",
                                 letterSpacing: "0px" + "",
                             }}
                         >
                             {this.props.title}
-                        </h3>
+                        </h2>
                     )}
                     {this.props.Title && (
                         <h1
                             style={{
                                 fontWeight: "900",
                                 fontFamily: "dm sans",
-                                color: "#222222",
-                                fontSize: "2.25rem",
+                                color: "#1E2126",
+                                fontSize: "2.5rem",
                                 letterSpacing: "0px" + "",
                             }}
                         >
                             {this.props.Title}
                         </h1>
                     )}
-                    {this.props.Titlee && (
-                        <h1
-                            style={{
-                                fontWeight: "500",
-                                fontFamily: "dm sans",
-                                color: "#947BD3",
-                                fontSize: "2rem",
-                                letterSpacing: "0px" + "",
-                            }}
-                        >
-                            {this.props.Titlee}
-                        </h1>
-                    )}
+                    {/* {this.props.Titlee &&
+                    <h1 style={{ fontWeight: "500", fontFamily: "dm sans", color:"#1E2126" , fontSize:"2rem", letterSpacing: "0px"+
+                            ""}}>
+                        {this.props.Titlee}
+                    </h1>
+                    } */}
                     {(this.props.content || this.props.children) && (
                         <p
                             className={
@@ -85,9 +78,9 @@ class Text extends React.Component {
                             }
                             style={{
                                 fontFamily: "dm sans",
-                                color: "#37373F",
+                                color: "#40474D",
                                 letterSpacing: "0px",
-                                fontSize: "1.125rem",
+                                fontSize: "1.1rem",
                                 fontWeight: "400",
                             }}
                         >
@@ -95,47 +88,18 @@ class Text extends React.Component {
                             {this.props.children}
                         </p>
                     )}
-                    {(this.props.contentt || this.props.children) && (
-                        <p
-                            className={
-                                this.statement &&
-                                this.statement === true &&
-                                "statement"
-                            }
-                            style={{
-                                fontFamily: "dm sans",
-                                color: "#37373F",
-                                letterSpacing: "0px",
-                                fontSize: "1.5rem",
-                                fontWeight: "400",
-                                fontStyle: "italic",
-                            }}
-                        >
+                    {/* {(this.props.contentt || this.props.children) &&
+                        <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "dm sans", color: "#37373F", letterSpacing: "0px", fontSize: "1.5rem", fontWeight:"400", fontStyle:"italic"}} >
                             {this.props.contentt}
                             {this.props.children}
                         </p>
-                    )}
-                    {(this.props.Content || this.props.children) && (
-                        <p
-                            className={
-                                this.statement &&
-                                this.statement === true &&
-                                "statement"
-                            }
-                            style={{
-                                fontFamily: "dm sans",
-                                color: "#999999)",
-                                letterSpacing: "0.5px",
-                                fontSize: "1rem",
-                                fontStyle: "italic",
-                                textAlign: "center",
-                                marginTop: "1rem",
-                            }}
-                        >
-                            {this.props.Content}
-                            {this.props.children}
-                        </p>
-                    )}
+                    } */}
+                    {/* {(this.props.Content || this.props.children) &&
+                    <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "dm sans", color: "#999999)", letterSpacing: "0.5px", fontSize: "1rem", fontStyle:"italic", textAlign:"center", marginTop:"1rem"}} >
+                        {this.props.Content}
+                        {this.props.children}
+                    </p>
+                    } */}
                 </Col>
             </div>
         );
