@@ -1,0 +1,38 @@
+.landing{
+    /*height: 50vh;*/
+    background-color: white;
+    color: black;
+}
+
+.projectBanner{
+    width: 90%;
+    border: none;
+    border-radius: 4px;
+
+}
+
+.statement{
+    border-left: 5px solid #E8998D;
+    padding-left: 20px;
+}
+
+.mark {
+    background-color: blue;
+    color: #6c757d;
+  }
+
+@media only screen and (min-width: 576px){
+    .fidelity-mockups{
+        transform: translateX(-10%);
+    }
+}
+@media only screen and (min-width: 576px){
+    .journey-map{
+        transform: translateX(-3%);
+    }
+
+    .projectBanner{
+       width: 50%;
+    }
+}
+

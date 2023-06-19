@@ -124,7 +124,7 @@ class App extends React.Component {
                     </div>
 
                     <p style={{fontFamily: "dm sans", color: "#7A838B"}}>Powered with lots of ☕️.</p>
-                    <img src={amylogo} width="24px"/>
+                    {/* <img src={amylogo} width="24px"/> */}
                 </footer>
             </Router>
         )
