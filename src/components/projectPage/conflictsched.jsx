@@ -17,6 +17,11 @@ import reviewlist from "../../assets/conflictsched/reviewlist.png";
 import bracketview from "../../assets/conflictsched/bracketview.png";
 import listview from "../../assets/conflictsched/listview.png";
 import stepper from "../../assets/conflictsched/stepper.png";
+import randoschedconflict from "../../assets/conflictsched/rando_sched_conflict.gif";
+import reviewconflict from "../../assets/conflictsched/review_conflict.gif";
+import oneoff from "../../assets/conflictsched/oneoff.gif";
+import doublelim from "../../assets/conflictsched/double_elim.gif";
+
 
 
 
@@ -92,27 +97,27 @@ In efforts with our product vision of having Fusion Play become a standalone app
                                 <Text header="Conflict checking" />
                                 <Text content="Conflicts only check for facilities and times." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={conflictmodal} />
+                                    <Card.Img src={randoschedconflict} />
                                     <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
                                 </div>
 
                                 <Text content="Admins can hover on the games with conflicts to delete or edit." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={editgame} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
-                                </div>
-
-
-                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
-                                <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={reviewlist} />
+                                    <Card.Img src={reviewconflict} />
                                     <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
                                 </div>
 
 
                                 <Text content="Admins can hover on the games with conflicts to delete or edit." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={editgame} />
+                                    <Card.Img src={oneoff} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+
+
+                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={doublelim} />
                                     <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
                                 </div>
 
