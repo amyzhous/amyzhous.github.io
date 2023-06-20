@@ -59,7 +59,7 @@ class About extends React.Component {
                                 </h3>
                                 <div
                                     className="my-story"
-                                    style={{ fontSize: "20px" }}
+                                    style={{ fontSize: "1.125rem" }}
                                 >
                                     <p>
                                         {" "}

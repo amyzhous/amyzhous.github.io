@@ -80,9 +80,6 @@ class App extends React.Component {
 
                 <footer className="my-footer" id="contact">
                     <div className={"my-contacts"}>
-                        <p style={{ fontFamily: "dm sans", fontWeight: "400" }}>
-                            Say hello at
-                        </p>
                         <div className="footer-icon">
                             <a
                                 target="_blank"
@@ -105,26 +102,6 @@ class App extends React.Component {
                                 />
                             </a>
 
-                            <a
-                                target="_blank"
-                                href="https://dribbble.com/amyjz"
-                                className="footer-icon-anchor"
-                            >
-                                <Card.Img
-                                    src={dribble}
-                                    className="footer-icon-img"
-                                />
-                            </a>
-                            <a
-                                target="_blank"
-                                href="https://github.com/ayjzhou"
-                                className="footer-icon-anchor"
-                            >
-                                <Card.Img
-                                    src={github}
-                                    className="footer-icon-img"
-                                />
-                            </a>
                         </div>
                     </div>
 

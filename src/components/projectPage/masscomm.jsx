@@ -10,93 +10,24 @@ import ProjectInfo from "./projectInfo";
 import SGbanner from "../../assets/img/ui/SG.svg";
 import loginhero from "../../assets/login/loginhero.png";
 import Carousel from "react-bootstrap/Carousel";
+import masscommhero from "../../assets/masscomm/masscommhero.png";
+import announcement from "../../assets/masscomm/announcement.png";
+import notification from "../../assets/masscomm/notification.png";
+import stepper1 from "../../assets/masscomm/stepper1.png";
+import editor from "../../assets/masscomm/editor.png";
+import createann from "../../assets/masscomm/createann.gif";
 
-const InsightUnorderedList = () => {
-    return (
-        <ul style={{ paddingLeft: "15px", color: "#555555" }}>
-            <li>83% of our users said they like to shop with their eyes</li>
-            <li>
-                33% of our users search and filter based on identifying the
-                brand they usually purchase
-            </li>
-            <li>25% of our users have tried shopping for groceries online</li>
-            <li>
-                Users would like to have information with regards to the expiry
-                dates
-            </li>
-            <li>
-                When it comes to fruit and produce, users are worried about the
-                quality of their products when shopping online
-            </li>
-        </ul>
-    );
-};
-const KpiOrderedList = () => {
-    return (
-        <ol style={{ paddingLeft: "15px", color: "#555555" }}>
-            <li>
-                Decreased time in full funnel conversion (e.g Entering the
-                platform and purchasing at least 1 item [cohort X])
-            </li>
-            <li>
-                Number of individuals from [cohort X] that make a return
-                purchase within 3 weeks
-            </li>
-            <li>
-                Decreased duration spent on platform within search functionality
-            </li>
-            <li>Decreased number of search terms within a session</li>
-        </ol>
-    );
-};
 
-const IdeasUnorderedList = () => {
-    return (
-        <ul
-            style={{
-                paddingLeft: "15px",
-                color: "#555555",
-                fontFamily: "Source Sans Pro",
-                fontSize: "1.1rem",
-            }}
-        >
-            <li>Social Meetup</li>
-            <li>Advisor Helper</li>
-            <li>Digital Mental Health Tool</li>
-            <li>Simple Student Portal</li>
-            <li>Newsfeed Board</li>
-            <li>Study Buddy</li>
-        </ul>
-    );
-};
 
-const NextStepUnorderedList = () => {
-    return (
-        <ul
-            style={{
-                paddingLeft: "15px",
-                color: "#555555",
-                fontFamily: "Source Sans Pro",
-            }}
-        >
-            <li>Conduct usability testing for MVP</li>
-            <li>
-                Determine the technical feasibility of certain features with
-                developers
-            </li>
-            <li>Iterate MVP after gathering usability testing feedback</li>
-        </ul>
-    );
-};
 
 class MassComm extends React.Component {
     constructor(props) {
         super(props);
         this.projectInfoContent = [
-            // {"title": "Duration", "content": "2 weeks"},
-            // {"title": "Role", "content": "Interaction Design, Ideation, Wireframes, High Fidelity, Product Management"},
-            // {"title": "Team", "content": "Sole Designer + Researcher"},
-            // {"title": "Tools", "content": "Invision Studio, Sketch, Pen + Paper"},
+            {"title": "Role", "content": "Lead Product Designer"},
+            {"title": "Platform", "content": "Web, Mobile"},
+            {"title": "Team", "content": "Product Manager, Lead Developer, 2 Developers"},
+            {"title": "Timeline", "content": "Shipped March 2023"},
         ];
     }
 
@@ -108,155 +39,111 @@ class MassComm extends React.Component {
                     {/*<Card style={{display: 'inline-block', width: "40%", cursor: "default"}}>*/}
                     <Card
                         className="projectBanner"
-                        style={{ display: "inline-block", cursor: "default" }}
+                        style={{
+                            display: "inline-block",
+                            cursor: "default",
+                            height: "100%",
+                            marginTop: "2em",
+                        }}
                     >
-                        <Card.Img variant="top" src={loginhero} />
+                        <Card.Img variant="top" src={masscommhero} />
                     </Card>
                 </div>
 
-                <ProjectInfo contents={this.projectInfoContent} />
 
                 <Container className="nav-container">
-                    <Container>
-                        <Row>
-                            <Col sm={12}>
-                                <Text Title="Designing for conversion and growth" />
-                            </Col>
-                            <Container
-                                style={{
-                                    borderBottom:
-                                        "2px solid rgba(230, 230, 233, 1)",
-                                    marginBottom: "3em",
-                                }}
-                            >
-                                <Row style={{ marginBottom: "4rem" }}>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "#666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Role /
-                                            </b>{" "}
-                                            Digital Designer
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "#666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Duration /
-                                            </b>{" "}
-                                            Aug 2020 - Present
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "##666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Work /
-                                            </b>{" "}
-                                            Under NDA, contact me at{" "}
-                                            <a
-                                                style={{ color: "#666666" }}
-                                                href="mailto:ayjzhou@gmail.com"
-                                            >
-                                                ayjzhou@gmail.com
-                                            </a>{" "}
-                                            to learn more about my work!
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "##666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Tools /
-                                            </b>{" "}
-                                            Figma, Sketch, Adobe CC, Unbounce,
-                                            Asana
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Container>
-
-                            <Col sm={12}>
-                                <Text content="Search + Gather is a digital marketing agency based in Toronto, Canada. Their clients range from small businesses to the best startups in Toronto and North America. The agency provides performance marketing with outstanding creatives and user experiences that drive conversions and growth for clients." />
-                            </Col>
-                        </Row>
-                    </Container>
+                    <Col sm={12}>
+                        <Text Title="Mass Communications" />
+                    </Col>
+                    <ProjectInfo contents={this.projectInfoContent} />
+                          
 
                     <Container>
                         <Row>
                             <Col sm={12}>
-                                <Text content="My role as the Digital Designer & Integration Specialist consists of designing creatives and solutions to landing page optimization. Rooted deep into marketing, I help optimized and drive conversion goals for user acquisition and improve customer experience through the use of data." />
+                                <Text header="Lack of tools" />
+                                <Text content="Historically, communication between League Admins and participants have been ineffective due to the lack of tools. This results in missed deadlines, confusion regarding scheduling and policy changes, and promotional marketing." />
+                                {/* <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={masscommhero} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div> */}
                             </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
+
+
+                            <Col sm={12}>
+                                <Text header="Effective and flexible communication" />
+                                <Text content="In an effort to remove this high friction point for our clients, our team launched a new communication tool within the Admin CMS in March 2023 to streamline the communication process." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={stepper1} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+                            </Col>
+
+                            <Col sm={12}>
+                                <Text header="Goals" />
+                            </Col>
+                            <Col sm={6}>
+                                <Text title="For the admins..." />
+                                <Text content="We want to provide Leagues with an easy-to-use set of communication tools that allow them share targeted updates regarding activities, leagues, schedules, and marketing to specific participant groups." />
+                            </Col>
+                            <Col sm={6}>   
+                                <Text title="For the participants..." />
+                                <Text content="We want to allow participants to receive targeted updates from their admins while filtering our irrelevant information."/>
+                            </Col>
+
+
+                            <Col sm={12}>
+                                <Text header="Admin CMS" />
+                                <Text title="Manage all communications" />
+                                <Text content="A Communication Center was introduced as it’s own tab which will allow League Admins to manage and create announcements to their participants." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={masscommhero} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+
+
+                                <Text title="Create announcements on the fly" />
+                                <Text content="League Admins can now easily create, save, or use a template to craft announcements on the fly for their participants." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={createann} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+                                <Text content= "A push notification can also be attached to an announcement." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={editor} />
+                                </div>
+                            </Col>
+
+
+                            <Col sm={12}>
+                                <Text header="Player App" />
+                                <Text title="Stay up-to-date with Announcements" />
+                                <Text content="Participants can now view announcements without having to go through their emails or team captain." />
+                                <Text content="To assist participants in organizing and filtering the most relevant information, we implemented an announcement expiry feature on the Admin CMS that automatically removes outdated announcements from the Player App." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={notification} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={announcement} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+                            </Col>
+
+
+                            <Col sm={12}>
+                                <Text header="Impacts" />
+                                <Text content="We released this in March 2023 as part of v1.3 and within a few days, we’ve seen a spike in usage of this tool and our clients have voiced their satisfactions with the flexibility it brings to their workflow. " />
+                                
+                            </Col>
+
                         </Row>
                     </Container>
 
-                    <Container>
-                        <Row>
-                            <Col sm={12}>
-                                <Text content="Some of the clients I worked with within this role range from e-commerce companies to B2B and SaaS startups like HeyOrca, HiMama, Nix Color Sensors, Ipppinka, and Kritik to name a few." />
-                            </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
-                        </Row>
-                    </Container>
+                    
+                   
 
-                    <Container>
-                        <Row>
-                            <Col sm={12}>
-                                <Text content="My projects are currently under NDA, but if you are interested in learning more you feel free to email me." />
-                            </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
-                        </Row>
-                    </Container>
 
                     <Container className="bottom-breadcrumbs">
                         <nav style={{ fontFamily: "karla" }}>
@@ -279,7 +166,8 @@ class MassComm extends React.Component {
                             </ul>
                         </nav>
                     </Container>
-                </Container>
+                 </Container>
+
             </div>
         );
     }
