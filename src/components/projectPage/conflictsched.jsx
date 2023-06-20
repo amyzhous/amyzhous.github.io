@@ -10,93 +10,24 @@ import ProjectInfo from "./projectInfo";
 import SGbanner from "../../assets/img/ui/SG.svg";
 import loginhero from "../../assets/login/loginhero.png";
 import Carousel from "react-bootstrap/Carousel";
+import cshero from "../../assets/conflictsched/cshero.png";
+import conflictmodal from "../../assets/conflictsched/conflictmodal.png";
+import editgame from "../../assets/conflictsched/editgame.png";
+import reviewlist from "../../assets/conflictsched/reviewlist.png";
+import bracketview from "../../assets/conflictsched/bracketview.png";
+import listview from "../../assets/conflictsched/listview.png";
+import stepper from "../../assets/conflictsched/stepper.png";
 
-const InsightUnorderedList = () => {
-    return (
-        <ul style={{ paddingLeft: "15px", color: "#555555" }}>
-            <li>83% of our users said they like to shop with their eyes</li>
-            <li>
-                33% of our users search and filter based on identifying the
-                brand they usually purchase
-            </li>
-            <li>25% of our users have tried shopping for groceries online</li>
-            <li>
-                Users would like to have information with regards to the expiry
-                dates
-            </li>
-            <li>
-                When it comes to fruit and produce, users are worried about the
-                quality of their products when shopping online
-            </li>
-        </ul>
-    );
-};
-const KpiOrderedList = () => {
-    return (
-        <ol style={{ paddingLeft: "15px", color: "#555555" }}>
-            <li>
-                Decreased time in full funnel conversion (e.g Entering the
-                platform and purchasing at least 1 item [cohort X])
-            </li>
-            <li>
-                Number of individuals from [cohort X] that make a return
-                purchase within 3 weeks
-            </li>
-            <li>
-                Decreased duration spent on platform within search functionality
-            </li>
-            <li>Decreased number of search terms within a session</li>
-        </ol>
-    );
-};
 
-const IdeasUnorderedList = () => {
-    return (
-        <ul
-            style={{
-                paddingLeft: "15px",
-                color: "#555555",
-                fontFamily: "Source Sans Pro",
-                fontSize: "1.1rem",
-            }}
-        >
-            <li>Social Meetup</li>
-            <li>Advisor Helper</li>
-            <li>Digital Mental Health Tool</li>
-            <li>Simple Student Portal</li>
-            <li>Newsfeed Board</li>
-            <li>Study Buddy</li>
-        </ul>
-    );
-};
-
-const NextStepUnorderedList = () => {
-    return (
-        <ul
-            style={{
-                paddingLeft: "15px",
-                color: "#555555",
-                fontFamily: "Source Sans Pro",
-            }}
-        >
-            <li>Conduct usability testing for MVP</li>
-            <li>
-                Determine the technical feasibility of certain features with
-                developers
-            </li>
-            <li>Iterate MVP after gathering usability testing feedback</li>
-        </ul>
-    );
-};
 
 class ConflictSced extends React.Component {
     constructor(props) {
         super(props);
         this.projectInfoContent = [
-            // {"title": "Duration", "content": "2 weeks"},
-            // {"title": "Role", "content": "Interaction Design, Ideation, Wireframes, High Fidelity, Product Management"},
-            // {"title": "Team", "content": "Sole Designer + Researcher"},
-            // {"title": "Tools", "content": "Invision Studio, Sketch, Pen + Paper"},
+            {"title": "Role", "content": "Lead Product Designer"},
+            {"title": "Platform", "content": "Web, Mobile"},
+            {"title": "Team", "content": "Product Manager, 4 Developers, Director of Product"},
+            {"title": "Tools", "content": "Releasing in V2 (Sept 2023)"},
         ];
     }
 
@@ -108,155 +39,119 @@ class ConflictSced extends React.Component {
                     {/*<Card style={{display: 'inline-block', width: "40%", cursor: "default"}}>*/}
                     <Card
                         className="projectBanner"
-                        style={{ display: "inline-block", cursor: "default" }}
+                        style={{
+                            display: "inline-block",
+                            cursor: "default",
+                            height: "100%",
+                            marginTop: "2em",
+                        }}
                     >
-                        <Card.Img variant="top" src={loginhero} />
+                        <Card.Img variant="top" src={cshero} />
                     </Card>
                 </div>
 
-                <ProjectInfo contents={this.projectInfoContent} />
-
                 <Container className="nav-container">
+                    <Col sm={12}>
+                        <Text Title="Conflict Scheduling" />
+                    </Col>
+                    <ProjectInfo contents={this.projectInfoContent} />
+
+
+
                     <Container>
                         <Row>
                             <Col sm={12}>
-                                <Text Title="Designing for conversion and growth" />
+                                <Text header="Overview" />
+                                <Text content="Fusion Play is a multi-platform league management software introduced in August 2022 as an upgraded and improved solution to our existing intramural software, Fusion IM. Both products are data depend on our core recreation management product, Fusion for imports.
+
+In efforts with our product vision of having Fusion Play become a standalone app in version 2, we had to address one of the main dependencies which is scheduling." />
                             </Col>
-                            <Container
-                                style={{
-                                    borderBottom:
-                                        "2px solid rgba(230, 230, 233, 1)",
-                                    marginBottom: "3em",
-                                }}
-                            >
-                                <Row style={{ marginBottom: "4rem" }}>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "#666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Role /
-                                            </b>{" "}
-                                            Digital Designer
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "#666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Duration /
-                                            </b>{" "}
-                                            Aug 2020 - Present
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "##666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Work /
-                                            </b>{" "}
-                                            Under NDA, contact me at{" "}
-                                            <a
-                                                style={{ color: "#666666" }}
-                                                href="mailto:ayjzhou@gmail.com"
-                                            >
-                                                ayjzhou@gmail.com
-                                            </a>{" "}
-                                            to learn more about my work!
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "##666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Tools /
-                                            </b>{" "}
-                                            Figma, Sketch, Adobe CC, Unbounce,
-                                            Asana
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Container>
+
 
                             <Col sm={12}>
-                                <Text content="Search + Gather is a digital marketing agency based in Toronto, Canada. Their clients range from small businesses to the best startups in Toronto and North America. The agency provides performance marketing with outstanding creatives and user experiences that drive conversions and growth for clients." />
+                                <Text header="Problem" />
+                                <Text content="Give League Admins the ability to quickly create games and schedules for leagues, while checking for conflicts." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={conflictmodal} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
                             </Col>
+
+
+                            <Col sm={12}>
+                                <Text header="Solution" />
+                                <Text content="Give League Admins the ability to quickly create games and schedules for leagues, while checking for conflicts." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={stepper} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+                            </Col>
+
+
+                            <Col sm={12}>
+                                <Text header="Conflict checking" />
+                                <Text content="Conflicts only check for facilities and times." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={conflictmodal} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+
+                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={editgame} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+
+
+                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={reviewlist} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+
+
+                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={editgame} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+
+
+                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={editgame} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+
+                                
+                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={editgame} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                </div>
+                            </Col>
+
+
+                            <Col sm={12}>
+                                <Text header="Outcome" />
+                                <Text content="This feature will be shipping to Fusion Play clients in September 2023 and we’ve already heard positive sentiments from clients in our special interest group." />
+                            </Col>
+
+
+
                         </Row>
                     </Container>
 
                     <Container>
                         <Row>
                             <Col sm={12}>
-                                <Text content="My role as the Digital Designer & Integration Specialist consists of designing creatives and solutions to landing page optimization. Rooted deep into marketing, I help optimized and drive conversion goals for user acquisition and improve customer experience through the use of data." />
+                                
                             </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
+                           
                         </Row>
                     </Container>
 
-                    <Container>
-                        <Row>
-                            <Col sm={12}>
-                                <Text content="Some of the clients I worked with within this role range from e-commerce companies to B2B and SaaS startups like HeyOrca, HiMama, Nix Color Sensors, Ipppinka, and Kritik to name a few." />
-                            </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
-                        </Row>
-                    </Container>
-
-                    <Container>
-                        <Row>
-                            <Col sm={12}>
-                                <Text content="My projects are currently under NDA, but if you are interested in learning more you feel free to email me." />
-                            </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
-                        </Row>
-                    </Container>
+                    
 
                     <Container className="bottom-breadcrumbs">
                         <nav style={{ fontFamily: "karla" }}>

@@ -12,94 +12,33 @@ import Carousel from "react-bootstrap/Carousel";
 import "./login.css";
 
 import breakdown from "../../assets/login/breakdowncurrent.png";
+import cmsorgcode from "../../assets/login/cms_org_code.png";
+import cmsorgused from "../../assets/login/org_code_used.png";
+import cmsorgfilled from "../../assets/login/cms_org_code_filled.png";
+import nickname from "../../assets/login/nickname.png";
+import nodownload from "../../assets/login/nodownload.png";
+import download from "../../assets/login/download.png";
+import leaguerestriction from "../../assets/login/leaguerestriction.png";
+import snackbar from "../../assets/login/snackbar.png";
+import profile from "../../assets/login/profile.png";
+import ideation from "../../assets/login/ideation.png";
+import update from "../../assets/login/update.png";
+import socialsso from "../../assets/login/socialsso.png";
+import cmsonboarding from "../../assets/login/cms_onboarding.png";
+import cmsonboardingactive from "../../assets/login/cms_onboarding_active.png";
+import solution from "../../assets/login/Solution.png";
+import multi from "../../assets/login/multi.png";
 
-const InsightUnorderedList = () => {
-    return (
-        <ul style={{ paddingLeft: "15px", color: "#555555" }}>
-            <li>83% of our users said they like to shop with their eyes</li>
-            <li>
-                33% of our users search and filter based on identifying the
-                brand they usually purchase
-            </li>
-            <li>25% of our users have tried shopping for groceries online</li>
-            <li>
-                Users would like to have information with regards to the expiry
-                dates
-            </li>
-            <li>
-                When it comes to fruit and produce, users are worried about the
-                quality of their products when shopping online
-            </li>
-        </ul>
-    );
-};
-const KpiOrderedList = () => {
-    return (
-        <ol style={{ paddingLeft: "15px", color: "#555555" }}>
-            <li>
-                Decreased time in full funnel conversion (e.g Entering the
-                platform and purchasing at least 1 item [cohort X])
-            </li>
-            <li>
-                Number of individuals from [cohort X] that make a return
-                purchase within 3 weeks
-            </li>
-            <li>
-                Decreased duration spent on platform within search functionality
-            </li>
-            <li>Decreased number of search terms within a session</li>
-        </ol>
-    );
-};
 
-const IdeasUnorderedList = () => {
-    return (
-        <ul
-            style={{
-                paddingLeft: "15px",
-                color: "#555555",
-                fontFamily: "Source Sans Pro",
-                fontSize: "1.1rem",
-            }}
-        >
-            <li>Social Meetup</li>
-            <li>Advisor Helper</li>
-            <li>Digital Mental Health Tool</li>
-            <li>Simple Student Portal</li>
-            <li>Newsfeed Board</li>
-            <li>Study Buddy</li>
-        </ul>
-    );
-};
-
-const NextStepUnorderedList = () => {
-    return (
-        <ul
-            style={{
-                paddingLeft: "15px",
-                color: "#555555",
-                fontFamily: "Source Sans Pro",
-            }}
-        >
-            <li>Conduct usability testing for MVP</li>
-            <li>
-                Determine the technical feasibility of certain features with
-                developers
-            </li>
-            <li>Iterate MVP after gathering usability testing feedback</li>
-        </ul>
-    );
-};
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.projectInfoContent = [
             { title: "Role", content: "Lead Product Designer" },
-            // {"title": "Platform", "content": "Web, Mobile, Tablet"},
-            {
-                title: "Team",
-                content: "Product Manager, 4 Developers, Director of Product",
+            {title: "Platform", "content": "Web, Mobile, Tablet"},
+            {title: "Team",
+            content: "Product Manager, 4 Developers, Director of Product",
             },
             { title: "Timeline", content: "Shipped June 2023" },
         ];
@@ -137,9 +76,9 @@ class Login extends React.Component {
                             </Col>
 
                             <Col sm={12}>
-                                <Text content="Fusion play is a multi-platform league platform product which includes an web-based Admin Content Management System (CMS), a tablet Staff App, and a mobile Player App." />
+                                <Text content="Fusion play is a multi-platform league platform product which includes an web-based Admin CMS (Content Management System), a tablet Staff App, and a mobile Player App." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={multi} />
                                 </div>
                                 <Text content="Presently, Fusion Play has various data dependencies on our core recreational management product, Fusion. The dependency on Fusion restricts account creation for Fusion Play participants on the mobile Player App. These obstacles create friction in the intramural experience, as League Admins must navigate between different products for different groups." />
                             </Col>
@@ -164,7 +103,8 @@ This process limits users who do not have an organization domain and clients lik
                             <Col sm={12}>
                                 <Text content="In order to better support the ongoing product-wide efforts to becoming a standalone product and streamline the process of account creation for non-SSO institutions, we introduced Social-Sign-On, Organization Codes, and Participant Onboarding." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={solution} />
+                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
                                 </div>
                             </Col>
 
@@ -222,19 +162,31 @@ This process limits users who do not have an organization domain and clients lik
                             <Col sm={12}>
                                 <Text content="Organization codes are a collection of codes created by League Admins which will be used for linking users to their organization." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={cmsorgcode} />
+                                    <Text Content= "New section in the Organization Settings page to create codes." />
                                 </div>
 
-                                <Text title="Cross-product-integration" />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={cmsorgused} />
+                                    <Text Content= "Codes are unique and can be used by one instituion at a time." />
+                                </div>
+                                
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={cmsorgfilled} />
+                                    <Text Content= "A deep link is generated when a code is created." />
+                                </div>
+
+                                {/* <Text title="Cross-product-integration" />
                                 <Text content="These codes can be customized, allowing League Admins to integrate it with our digital signage product, Fusion Wave, to help with their intramural marketing efforts." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={breakdown} />
-                                </div>
+                                </div> */}
 
                                 <Text title="Nicknames" />
                                 <Text content="In pair with the signage integration, we’ve also added Nicknames to help League Admins identify which code belongs to what group." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={nickname} />
+                                    <Text Content= "Creating an organization code." />
                                 </div>
                             </Col>
 
@@ -243,14 +195,16 @@ This process limits users who do not have an organization domain and clients lik
                             </Col>
                             <Col sm={12}>
                                 <Text title="Participants without Fusion Play installed" />
-                                <Text content="If participants have not downloaded the Fusion Play app from the App Store or Google Play Store, they can click on the dynamic deep link generated when the League Admins created the organization code." />
+                                <Text content="If participants have not downloaded the Fusion Play app from the App Store or Google Play Store, they can click on the dynamic deep link generated from the creation of the organization code." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={nodownload} />
+                                    <Text Content= "Organization codes ensure participants sign into the right organization." />
                                 </div>
                                 <Text title="Participants with Fusion Play installed" />
-                                <Text content="If participants have the Fusion Play app, they can choose to click on the dynamic link which will direct them to the account creation step." />
+                                <Text content="If participants have the Fusion Play app, they can choose to click on the dynamic link or input the organization code manually to connect to their organization." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={download} />
+                                    <Text Content= "School email domain or organization codes are used to link the user to the right organization." />
                                 </div>
                             </Col>
 
@@ -265,7 +219,7 @@ This process limits users who do not have an organization domain and clients lik
 If a user already has an account with their organization SSO but chooses to authenticate with Google SSO, we will link those accounts together in the database."
                                 />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={socialsso} />
                                 </div>
                             </Col>
 
@@ -280,37 +234,40 @@ If a user already has an account with their organization SSO but chooses to auth
 Another problem that came with importing from Fusion is that every state has different regulations on what information organizations can collect. We had to give our clients the flexibility to configure the fields they need to collect during onboarding in the CMS."
                                 />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={cmsonboarding} />
+                                </div>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={cmsonboardingactive} />
                                 </div>
 
                                 <Text title="Player App" />
                                 <Text content="Our initial thought with Player Onboarding is to prompt the questions after the account creation process, but we pivoted away from this method as our user goal is to get the participants playing right away." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={ideation} />
                                 </div>
 
                                 <Text title="Update Profile" />
                                 <Text content="After the user authenticates using their organization SSO or social SSO, we’ve added the option to update their profile before entering the app." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={update} />
                                 </div>
 
                                 <Text title="League Restrictions" />
-                                <Text content="If a user has not inputted any information that is required to register for the league, we will restrict access until the user inputs the info" />
+                                <Text content="If a user has not inputted any information that is required to register for the league, we will restrict access until the user inputs the required info." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={leaguerestriction} />
                                 </div>
 
-                                <Text title="Profile Pulse" />
-                                <Text content="Added pulse to the hamburger for new users to increase the discovery of where to manage their personal information." />
+                                <Text title="Direct to Profile" />
+                                <Text content="If users are missing any required information, we will direct them to the profile to add the missing fields." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={profile} />
                                 </div>
 
                                 <Text title="Snackbars" />
-                                <Text content="The use of snackbars to prompt for information as a new user." />
+                                <Text content="For new users, snackbar will be used to prompt them to add the missing information." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={breakdown} />
+                                    <Card.Img src={snackbar} />
                                 </div>
                             </Col>
 

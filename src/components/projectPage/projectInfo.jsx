@@ -9,7 +9,7 @@ const ProjectInfo = (props) => {
             <Container style={{"marginBottom": "3em"}}>
                 <Row>
                     {content.map((c) =>
-                        <Col sm={4}>
+                        <Col sm={3}>
                             <Text title={c["title"]}/>
                             <Text content={[c["content"]]}/>
                         </Col>

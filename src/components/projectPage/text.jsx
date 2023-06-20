@@ -94,12 +94,12 @@ class Text extends React.Component {
                             {this.props.children}
                         </p>
                     } */}
-                    {/* {(this.props.Content || this.props.children) &&
-                    <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "dm sans", color: "#999999)", letterSpacing: "0.5px", fontSize: "1rem", fontStyle:"italic", textAlign:"center", marginTop:"1rem"}} >
+                    {(this.props.Content || this.props.children) &&
+                    <p className={this.statement&&this.statement===true&&"statement"} style={{fontFamily: "dm sans", color: "#7A838B", letterSpacing: "0px", fontSize: "1rem", fontStyle:"italic", textAlign:"center", marginTop:"0.5rem"}} >
                         {this.props.Content}
                         {this.props.children}
                     </p>
-                    } */}
+                    }
                 </Col>
             </div>
         );
