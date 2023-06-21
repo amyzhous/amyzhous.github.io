@@ -159,23 +159,30 @@ In efforts with our product vision of having Fusion Play become a standalone app
                     
 
                     <Container className="bottom-breadcrumbs">
-                        <nav style={{ fontFamily: "karla" }}>
+                        <nav style={{ fontFamily: "dm sans" }}>
                             <ul className="breadcrumb justify-content-center">
-                                <li>
-                                    <a href="projects#">ALL</a>
+                            <li>
+                                    <a href="projects#">All Projects</a>
                                 </li>
                                 <li>
-                                    <a href="project_one#">PC EXPRESS</a>
+                                <a href="project_one#">
+                                   External Login
+                                   </a>
                                 </li>
-                                {/* <li><a href="project_two#">COMMUNITECH</a></li> */}
-                                <li style={{ color: "#E8998D" }}>
-                                    SEARCH AND GATHER
+
+                                <li><a href="project_two#">Admin CMS Design System</a>
                                 </li>
-                                <li>
-                                    <a href="project_four#">UI SNIPPETS</a>
+                               
+                                <li  style={{ color: "#7A838B" }}>
+                                <a href="project_three#">
+                                        Mass Communication
+                                        </a>
                                 </li>
-                                {/* <li><a href="project_five#">UX PLAYGROUND</a></li> */}
-                                {/* <li><a href="project_three#">eMERGE</a></li> */}
+                                <li style={{ color: "#7A838B" }}>
+                                  
+                                        Conflict Scheduling
+                                    
+                                </li>
                             </ul>
                         </nav>
                     </Container>

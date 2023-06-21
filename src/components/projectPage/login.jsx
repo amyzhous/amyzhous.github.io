@@ -284,17 +284,15 @@ Another problem that came with importing from Fusion is that every state has dif
                         <nav style={{ fontFamily: "dm sans" }}>
                             <ul className="breadcrumb justify-content-center">
                                 <li>
-                                    <a href="projects#">ALL</a>
+                                    <a href="projects#">All Projects</a>
                                 </li>
-                                <li>
-                                    <a href="project_one#">
-                                        Fusion CMS Design System
-                                    </a>
-                                </li>
-                                {/* <li><a href="project_two#">COMMUNITECH</a></li> */}
                                 <li style={{ color: "#7A838B" }}>
-                                    External Login
+                                   External Login
                                 </li>
+
+                                <li><a href="project_two#">Admin CMS Design System</a>
+                                </li>
+                               
                                 <li>
                                     <a href="project_three#">
                                         Mass Communication

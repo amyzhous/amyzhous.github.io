@@ -10,93 +10,33 @@ import ProjectInfo from "./projectInfo";
 import SGbanner from "../../assets/img/ui/SG.svg";
 import loginhero from "../../assets/login/loginhero.png";
 import Carousel from "react-bootstrap/Carousel";
+import color from "../../assets/designsystem/color.gif";
+import responsive from "../../assets/designsystem/responsive.png";
+import tables from "../../assets/designsystem/tables.png";
+import snackbars from "../../assets/designsystem/snackbars.png";
+import elevation from "../../assets/designsystem/elevation.png";
+import playbuttons from "../../assets/designsystem/playbuttons.png";
+import adminds from "../../assets/designsystem/adminds.png";
+import sidesheets from "../../assets/designsystem/sidesheets.png";
+import playdash from "../../assets/designsystem/playdash.png";
+import waveeditor from "../../assets/designsystem/waveeditor.png";
+import wavedash from "../../assets/designsystem/wavedash.png";
+import playform from "../../assets/designsystem/playform.png";
+import mvp from "../../assets/designsystem/mvp.jpg";
+import slack from "../../assets/designsystem/slack.png";
 
-const InsightUnorderedList = () => {
-    return (
-        <ul style={{ paddingLeft: "15px", color: "#555555" }}>
-            <li>83% of our users said they like to shop with their eyes</li>
-            <li>
-                33% of our users search and filter based on identifying the
-                brand they usually purchase
-            </li>
-            <li>25% of our users have tried shopping for groceries online</li>
-            <li>
-                Users would like to have information with regards to the expiry
-                dates
-            </li>
-            <li>
-                When it comes to fruit and produce, users are worried about the
-                quality of their products when shopping online
-            </li>
-        </ul>
-    );
-};
-const KpiOrderedList = () => {
-    return (
-        <ol style={{ paddingLeft: "15px", color: "#555555" }}>
-            <li>
-                Decreased time in full funnel conversion (e.g Entering the
-                platform and purchasing at least 1 item [cohort X])
-            </li>
-            <li>
-                Number of individuals from [cohort X] that make a return
-                purchase within 3 weeks
-            </li>
-            <li>
-                Decreased duration spent on platform within search functionality
-            </li>
-            <li>Decreased number of search terms within a session</li>
-        </ol>
-    );
-};
 
-const IdeasUnorderedList = () => {
-    return (
-        <ul
-            style={{
-                paddingLeft: "15px",
-                color: "#555555",
-                fontFamily: "Source Sans Pro",
-                fontSize: "1.1rem",
-            }}
-        >
-            <li>Social Meetup</li>
-            <li>Advisor Helper</li>
-            <li>Digital Mental Health Tool</li>
-            <li>Simple Student Portal</li>
-            <li>Newsfeed Board</li>
-            <li>Study Buddy</li>
-        </ul>
-    );
-};
 
-const NextStepUnorderedList = () => {
-    return (
-        <ul
-            style={{
-                paddingLeft: "15px",
-                color: "#555555",
-                fontFamily: "Source Sans Pro",
-            }}
-        >
-            <li>Conduct usability testing for MVP</li>
-            <li>
-                Determine the technical feasibility of certain features with
-                developers
-            </li>
-            <li>Iterate MVP after gathering usability testing feedback</li>
-        </ul>
-    );
-};
+
 
 class Designsystem extends React.Component {
     constructor(props) {
         super(props);
         this.projectInfoContent = [
-            // {"title": "Duration", "content": "2 weeks"},
-            // {"title": "Role", "content": "Interaction Design, Ideation, Wireframes, High Fidelity, Product Management"},
-            // {"title": "Team", "content": "Sole Designer + Researcher"},
-            // {"title": "Tools", "content": "Invision Studio, Sketch, Pen + Paper"},
+            {"title": "Role", "content": "Led and managed the design system initiative"},
+            {"title": "Platform", "content": "Web CMS (Content Management System)"},
+            {"title": "Team", "content": "Design Team, 4 Product Teams, Director of Product"},
+            {"title": "Timeline", "content": "Ongoing"},
         ];
     }
 
@@ -110,169 +50,160 @@ class Designsystem extends React.Component {
                         className="projectBanner"
                         style={{ display: "inline-block", cursor: "default" }}
                     >
-                        <Card.Img variant="top" src={loginhero} />
+                        <Card.Img variant="top" src={adminds} />
                     </Card>
                 </div>
 
-                <ProjectInfo contents={this.projectInfoContent} />
 
                 <Container className="nav-container">
-                    <Container>
-                        <Row>
                             <Col sm={12}>
-                                <Text Title="Designing for conversion and growth" />
+                                <Text Title="Admin CMS Design System" />
                             </Col>
-                            <Container
-                                style={{
-                                    borderBottom:
-                                        "2px solid rgba(230, 230, 233, 1)",
-                                    marginBottom: "3em",
-                                }}
-                            >
-                                <Row style={{ marginBottom: "4rem" }}>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "#666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Role /
-                                            </b>{" "}
-                                            Digital Designer
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "#666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Duration /
-                                            </b>{" "}
-                                            Aug 2020 - Present
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "##666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Work /
-                                            </b>{" "}
-                                            Under NDA, contact me at{" "}
-                                            <a
-                                                style={{ color: "#666666" }}
-                                                href="mailto:ayjzhou@gmail.com"
-                                            >
-                                                ayjzhou@gmail.com
-                                            </a>{" "}
-                                            to learn more about my work!
-                                        </div>
-                                    </Col>
-                                    <Col sm={12}>
-                                        <div
-                                            style={{
-                                                fontFamily: "Karla",
-                                                marginBottom: "2rem",
-                                                fontSize: "1rem",
-                                                color: "##666666",
-                                            }}
-                                        >
-                                            <b
-                                                style={{
-                                                    color: "#37373F",
-                                                    fontFamily: "karla",
-                                                    fontWeight: "700",
-                                                }}
-                                            >
-                                                Tools /
-                                            </b>{" "}
-                                            Figma, Sketch, Adobe CC, Unbounce,
-                                            Asana
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Container>
-
-                            <Col sm={12}>
-                                <Text content="Search + Gather is a digital marketing agency based in Toronto, Canada. Their clients range from small businesses to the best startups in Toronto and North America. The agency provides performance marketing with outstanding creatives and user experiences that drive conversions and growth for clients." />
-                            </Col>
-                        </Row>
-                    </Container>
+                            <ProjectInfo contents={this.projectInfoContent} />
 
                     <Container>
                         <Row>
                             <Col sm={12}>
-                                <Text content="My role as the Digital Designer & Integration Specialist consists of designing creatives and solutions to landing page optimization. Rooted deep into marketing, I help optimized and drive conversion goals for user acquisition and improve customer experience through the use of data." />
-                            </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
-                        </Row>
-                    </Container>
+                                <Text header="Overview" />
+                                <Text content="When I first joined InnoSoft, we didn’t have a design system. Designers were tasked with owning 1-2 products within the product suite and we often prioritized speed over consistency. As time passed, this approach led to the accumulation of front-end debt and prompted internal discussions regarding the definition of consistency for the admin experience across our product suites." />
+                           </Col>
 
-                    <Container>
-                        <Row>
-                            <Col sm={12}>
-                                <Text content="Some of the clients I worked with within this role range from e-commerce companies to B2B and SaaS startups like HeyOrca, HiMama, Nix Color Sensors, Ipppinka, and Kritik to name a few." />
-                            </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
-                        </Row>
-                    </Container>
 
-                    <Container>
-                        <Row>
+                           <Col sm={12}>
+                                <Text header="Things are everywhere" />
+                                <Text content="The lack of a single and centralized source of truth for design was evident as we integrated more products into our suite. This led to designers spending a significant amount of time searching or re-building components instead of deep diving into the problem space." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={slack} />
+                                    <Text Content= "Due to the lack of documentation, we often receive messages like this from Product Managers or Developers." />
+                                </div>
+                           </Col>
+
+
+                           <Col sm={12}>
+                                <Text header="My Role" />
+                                <Text content="I led the initiative by facilitating a kickoff meeting with the design team and aligning our goals for what the system will be. We began to have weekly meetings afterwards to audit and determine what types of components each products CMS needs. Amidst this, our design team also migrated tools from Adobe Xd to Figma where I spreheaded the migration of the components into our Figma library." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={mvp} />
+                                    <Text Content= "As a team, we came up with a list of things we wanted to tackle first." />
+
+                                </div>
+                           </Col>
+
+                           <Col sm={12}>
+                                <Text header="The Foundations" />
+                                <Text title= "Colour"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={color} />
+                                    <Text Content= "We collaborated with an external marketing agency to re-brand our products." />
+                                </div>
+
+
+                                <Text title= "Responsiveness"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={responsive} />
+                                    <Text Content= "We worked on defining the breakpoints for our web-based products." />
+                                </div>
+
+
+                                <Text title= "Elevation"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={elevation} />
+                                    <Text Content= "Elevation plays a huge role as our CMS is dark mode." />
+                                </div>
+
+                                <Text title= "Buttons"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={playbuttons} />
+                                    <Text Content= "Buttons with the Fusion Play branding." />
+                                </div>
+
+
+                                <Text title= "Tables"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={tables} />
+                                    <Text Content= "Tables are used heavily throughout the CMS." />
+                                </div>
+
+
+                                <Text title= "Side Sheets"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={sidesheets} />
+                                    <Text Content= "We use side sheets primarily for filtering." />
+                                </div>
+
+
+                                <Text title= "Snackbars"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={snackbars} />
+                                    <Text Content= "Snackbars are another commonly used component in the CMS." />
+                                </div>
+
+
+                                <Text header= "In Context"/>
+
+                                <Text title= "Fusion Play Dashboard"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={playdash} />
+                                </div>
+
+                                <Text title= "Fusion Play Forms & Wizard"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={playform} />
+                                </div>
+
+                                <Text title= "Fusion Wave Dashboard"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={wavedash} />
+                                </div>
+
+                                <Text title= "Fusion Wave Playlist Page Editor"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={waveeditor} />
+                                </div>
+
+
+                                {/* <Text title= "Fusion Club Financials"/>
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={clubtables} />
+                                </div> */}
+
+                            </Col>    
+                            
+
                             <Col sm={12}>
-                                <Text content="My projects are currently under NDA, but if you are interested in learning more you feel free to email me." />
-                            </Col>
-                            {/* <Col sm={12}><Text content=""/></Col> */}
+                                <Text header="Outcome" />
+                                <Text content="Currently, the MVP version of our design system is utilized by 4/5 of our products and we’re working closer with development on how we can continue to improve on the process. This is an ongoing process as we add more components and iterate on our design process and principles." />
+                           </Col>
                         </Row>
                     </Container>
+                  
+
+                    
+
+                  
 
                     <Container className="bottom-breadcrumbs">
-                        <nav style={{ fontFamily: "karla" }}>
+                        <nav style={{ fontFamily: "dm sans" }}>
                             <ul className="breadcrumb justify-content-center">
+                            <li>
+                                    <a href="projects#">All Projects</a>
+                                </li>
+                                <li style={{ color: "#7A838B" }}>
+                                <a href="project_one#">External Login</a>
+                                </li>
+
+                                <li  style={{ color: "#7A838B" }}>Admin CMS Design System
+                                </li>
+                               
                                 <li>
-                                    <a href="projects#">ALL</a>
+                                    <a href="project_three#">
+                                        Mass Communication
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="project_one#">PC EXPRESS</a>
-                                </li>
-                                {/* <li><a href="project_two#">COMMUNITECH</a></li> */}
-                                <li style={{ color: "#E8998D" }}>
-                                    SEARCH AND GATHER
-                                </li>
-                                <li>
-                                    <a href="project_four#">UI SNIPPETS</a>
+                                    <a href="project_four#">
+                                        Conflict Scheduling
+                                    </a>
                                 </li>
                                 {/* <li><a href="project_five#">UX PLAYGROUND</a></li> */}
                                 {/* <li><a href="project_three#">eMERGE</a></li> */}

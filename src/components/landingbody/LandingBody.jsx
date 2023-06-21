@@ -71,7 +71,7 @@ class LandingBody extends React.Component {
                         <Typed
                             className="typed-text-name"
                             style={{
-                                color: "#222222",
+                                color: "#1E2126",
                                 letterSpacing: "0px",
                                 fontFamily: "dm sans",
                                 fontWeight: "500",

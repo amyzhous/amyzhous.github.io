@@ -48,11 +48,11 @@ class App extends React.Component {
                 <Switch>
                     <Route path="/project_one">
                         <MyNavBar show={true} redirectToProjectSection={true} />
-                        <Designsystem />
+                        <Login />
                     </Route>
                     <Route path="/project_two">
                         <MyNavBar show={true} redirectToProjectSection={true} />
-                        <Login />
+                        <Designsystem />
                     </Route>
                     <Route path="/project_three">
                         <MyNavBar show={true} redirectToProjectSection={true} />

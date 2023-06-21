@@ -46,17 +46,17 @@ class MainPage extends React.Component {
 
                     <a href="/project_one">
                         <MyCard
-                            imgSrc={adminds}
-                            title="Admin Design System"
-                            subtitle="Company's first admin design system"
+                            imgSrc={loginhero}
+                            title="External Login"
+                            subtitle="Account creation and onboarding"
                         />
                     </a>
 
                     <a href="/project_two">
                         <MyCard
-                            imgSrc={loginhero}
-                            title="External Login"
-                            subtitle="Account creation and onboarding"
+                            imgSrc={adminds}
+                            title="Admin CMS Design System"
+                            subtitle="Cross-product admin design system"
                         />
                     </a>
 
