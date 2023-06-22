@@ -95,11 +95,11 @@ class MyCard extends React.Component {
                             <Card.Title
                                 style={{
                                     color: "#1E2126",
-                                    fontSize: "1em",
+                                    fontSize: "1.125rem",
                                     textAlign: "center",
                                     marginLeft: "16px",
                                     marginRight: "16px",
-                                    fontWeight: "700",
+                                    fontWeight: "500",
                                     fontFamily: "dm sans",
                                 }}
                             >
@@ -108,7 +108,7 @@ class MyCard extends React.Component {
                             <Card.Subtitle
                                 style={{
                                     color: "#7A838B",
-                                    fontSize: "0.8em",
+                                    fontSize: "0.95rem",
                                     fontWeight: "400",
                                     marginBottom: "10px",
                                     textAlign: "center",

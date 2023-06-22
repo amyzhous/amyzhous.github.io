@@ -73,9 +73,8 @@ class About extends React.Component {
                                     </p>
                                     <p>
                                         I am currently a product designer at
-                                        InnoSoft, responsible for owning the 1{" "}
-                                        {">"} 2 growth phase of Fusion Play.
-                                        Prior to that, I worked on 0 {">"} 1
+                                        InnoSoft, responsible for owning the 1 → 2 growth phase of Fusion Play.
+                                        Prior to that, I worked on 0 → 1
                                         solutions for a new business vertical
                                         and helped design for our core product,
                                         Fusion.

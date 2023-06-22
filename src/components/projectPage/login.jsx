@@ -134,20 +134,19 @@ This process limits users who do not have an organization domain and clients lik
                                     </li>
                                 </ul>
                             </Col>
+                            
 
-                            <Col sm={12}>
-                                <Text header="User Goals" />
+                            <Col sm={6}>
+                                <Text header="Business Goals" />
+                                <Text content="We want to provide our clients with the ability to manage login and account creation within one platform and become less reliant on our core product, Fusion, as this is one of the main friction points for organizations looking to purchase Fusion Play." />
                             </Col>
-                            <Col sm={12}>
+
+
+                            <Col sm={6}>
+                                <Text header="User Goals" />
                                 <Text content="We want to enable participants that do not have a single-sign-on account with their institution to be able to quickly join an organization and login to Fusion Play." />
                             </Col>
 
-                            <Col sm={12}>
-                                <Text header="Business Goals" />
-                            </Col>
-                            <Col sm={12}>
-                                <Text content="We want to provide our clients with the ability to manage login and account creation within one platform and become less reliant on our core product, Fusion, as this is one of the main friction points for organizations looking to purchase Fusion Play." />
-                            </Col>
 
                             <Col sm={12}>
                                 <Text header="CMS Organization Code Management" />
@@ -182,12 +181,12 @@ This process limits users who do not have an organization domain and clients lik
                                     <Card.Img src={breakdown} />
                                 </div> */}
 
-                                <Text title="Nicknames" />
-                                <Text content="In pair with the signage integration, we’ve also added Nicknames to help League Admins identify which code belongs to what group." />
+                                {/* <Text title="Nicknames" />
+                                <Text content="We’ve also added Nicknames to help League Admins identify which code belongs to what segment when it's being used in different locations." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={nickname} />
                                     <Text Content= "Creating an organization code." />
-                                </div>
+                                </div> */}
                             </Col>
 
                             <Col sm={12}>
