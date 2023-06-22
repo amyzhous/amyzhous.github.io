@@ -16,6 +16,7 @@ import notification from "../../assets/masscomm/notification.png";
 import stepper1 from "../../assets/masscomm/stepper1.png";
 import editor from "../../assets/masscomm/editor.png";
 import createann from "../../assets/masscomm/createann.gif";
+import commcenter from "../../assets/masscomm/commcenter.png";
 
 
 
@@ -75,7 +76,7 @@ class MassComm extends React.Component {
                                 <Text content="In an effort to remove this high friction point for our clients, our team launched a new communication tool within the Admin CMS in March 2023 to streamline the communication process." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={stepper1} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Text Content= "Select recipients from announcement creation wizard." />
                                 </div>
                             </Col>
 
@@ -97,8 +98,8 @@ class MassComm extends React.Component {
                                 <Text title="Manage all communications" />
                                 <Text content="A Communication Center was introduced as it’s own tab which will allow League Admins to manage and create announcements to their participants." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={masscommhero} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Card.Img src={commcenter} />
+                                    <Text Content= "Communication Center in the CMS." />
                                 </div>
 
 
@@ -106,9 +107,9 @@ class MassComm extends React.Component {
                                 <Text content="League Admins can now easily create, save, or use a template to craft announcements on the fly for their participants." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={createann} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Text Content= "Announcement creation flow" />
                                 </div>
-                                <Text content= "A push notification can also be attached to an announcement." />
+                                <Text content= "We introduced a WYSIWYG editor for League Admins to be able to customize their messages with images and branding from their institution. Admins can also include a push-notification with their announcements." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={editor} />
                                 </div>
@@ -119,15 +120,16 @@ class MassComm extends React.Component {
                                 <Text header="Player App" />
                                 <Text title="Stay up-to-date with Announcements" />
                                 <Text content="Participants can now view announcements without having to go through their emails or team captain." />
-                                <Text content="To assist participants in organizing and filtering the most relevant information, we implemented an announcement expiry feature on the Admin CMS that automatically removes outdated announcements from the Player App." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={notification} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Text Content= "Enabling notifications in the mobile app." />
                                 </div>
 
+
+                                <Text content="To assist participants in organizing and filtering the most relevant information, we implemented an announcement expiry feature on the Admin CMS that automatically removes outdated announcements from the Player App." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={announcement} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Text Content= "Viewing announcements from the Player App." />
                                 </div>
                             </Col>
 
