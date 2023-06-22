@@ -88,7 +88,7 @@ class MyNavBar extends React.Component {
 
                                             <Nav.Item>
                                                 <a
-                                                    href="https://drive.google.com/file/d/1IKD3dOwbi0zBaDKGtjiqVk3u80FFIggu/view?usp=sharing"
+                                                    href="https://drive.google.com/file/d/1IK_cSKHbb5UnW74XMINBaq4dBtIu6NhP/view?usp=sharing"
                                                     className="top-nav-bar-button"
                                                 >
                                                     resume
