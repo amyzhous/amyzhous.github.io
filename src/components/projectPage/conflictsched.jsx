@@ -21,7 +21,8 @@ import randoschedconflict from "../../assets/conflictsched/rando_sched_conflict.
 import reviewconflict from "../../assets/conflictsched/review_conflict.gif";
 import oneoff from "../../assets/conflictsched/oneoff.gif";
 import doublelim from "../../assets/conflictsched/double_elim.gif";
-
+import calendar from "../../assets/conflictsched/calendar.png";
+import hover from "../../assets/conflictsched/hove.png";
 
 
 
@@ -30,8 +31,8 @@ class ConflictSced extends React.Component {
         super(props);
         this.projectInfoContent = [
             {"title": "Role", "content": "Lead Product Designer"},
-            {"title": "Platform", "content": "Web, Mobile"},
-            {"title": "Team", "content": "Product Manager, 4 Developers, Director of Product"},
+            {"title": "Platform", "content": "Web"},
+            {"title": "Team", "content": "Product Manager, 2 Developers, Director of Product"},
             {"title": "Tools", "content": "Releasing in V2 (Sept 2023)"},
         ];
     }
@@ -75,10 +76,10 @@ In efforts with our product vision of having Fusion Play become a standalone app
 
                             <Col sm={12}>
                                 <Text header="Problem" />
-                                <Text content="Give League Admins the ability to quickly create games and schedules for leagues, while checking for conflicts." />
+                                <Text content="Currently, League Admins have to refer back to the Fusion Desktop App calendar to check for availability before scheduling any games." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={conflictmodal} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Card.Img src={calendar} />
+                                    <Text Content= "Fusion Desktop App Calendar" />
                                 </div>
                             </Col>
 
@@ -87,53 +88,53 @@ In efforts with our product vision of having Fusion Play become a standalone app
                                 <Text header="Solution" />
                                 <Text content="Give League Admins the ability to quickly create games and schedules for leagues, while checking for conflicts." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={stepper} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Card.Img src={reviewlist} />
                                 </div>
                             </Col>
 
 
                             <Col sm={12}>
-                                <Text header="Conflict checking" />
-                                <Text content="Conflicts only check for facilities and times." />
+                                <Text header="Conflict Checking" />
+                                <Text title="Randomized Schedule Creation" />
+                                <Text content="When League Admins input the time and location for the game in the Schedule Creation wizard, we do a conflict check to see if there's any games overlapping." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={randoschedconflict} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
-                                </div>
-
-                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
-                                <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={reviewconflict} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Text Content= "Randomized schedule creation wizard." />
                                 </div>
 
 
-                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
-                                <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={oneoff} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
-                                </div>
-
-
-                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
+                                <Text title="Double Elimination Schedule Creation" />
+                                <Text content="Similar to the randomized schedule creation, we perform the check when the time and location is inputted." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={doublelim} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Text Content= "Double elimination schedule creation wizard." />
                                 </div>
-
-
-                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
-                                <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={editgame} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
-                                </div>
-
                                 
-                                <Text content="Admins can hover on the games with conflicts to delete or edit." />
+
+                                {/* <Text title="Viewing Conflicts" />
+                                <Text content="If a conflict exist during the schedule creation process, League Admins can proceed to the Review page to manage and edit the games before publishing." />
                                 <div style={{ marginBottom: "4rem" }}>
-                                    <Card.Img src={editgame} />
-                                    <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
+                                    <Card.Img src={reviewconflict} />
+                                    <Text Content= "Games in conflict flow." />
+                                </div> */}
+
+
+                                <Text content="League Admins can hover on the games in conflict to edit or delete." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={hover} />
+                                    <Text Content= "Conflict modal." />
                                 </div>
+
+
+                                <Text title="One-off Games" />
+                                <Text content="Another way to create games in the CMS is adding one-off games in the Games tab. We also want to be able to do a conflict check for these games." />
+                                <div style={{ marginBottom: "4rem" }}>
+                                    <Card.Img src={oneoff} />
+                                    <Text Content= "Adding one-off games." />
+                                </div>
+                            
+
+
                             </Col>
 
 

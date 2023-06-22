@@ -84,7 +84,7 @@ class About extends React.Component {
                                         Outside of design, I've been exploring
                                         brunch restaurants 🥞, trying and
                                         failing climbing V2s and V3s at the gym
-                                        🧗🏻, and of course, travelling and
+                                        🧗🏻, and travelling and
                                         immersing myself into the local culture
                                         🗺️.
                                     </p>
