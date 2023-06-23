@@ -80,7 +80,7 @@ class Login extends React.Component {
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={multi} />
                                 </div>
-                                <Text content="Presently, Fusion Play has various data dependencies on our core recreational management product, Fusion. The dependency on Fusion restricts account creation for Fusion Play participants on the mobile Player App. These obstacles create friction in the intramural experience, as League Admins must navigate between different products for different groups." />
+                                <Text content="Fusion Play has various data dependencies on our core recreational management product, Fusion. The dependency on Fusion restricts account creation for Fusion Play participants on the mobile Player App. These obstacles create friction in the intramural experience, as League Admins must navigate between different products for different groups." />
                             </Col>
 
                             <Col sm={12}>
