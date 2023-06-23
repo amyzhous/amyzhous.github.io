@@ -18,6 +18,8 @@ import { Link } from "react-router-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import amylogo from "../../assets/img/amylogo.svg";
 
+
+
 class MyNavBar extends React.Component {
     constructor(props) {
         super(props);

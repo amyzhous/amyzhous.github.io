@@ -20,6 +20,10 @@ import Login from "./projectPage/login";
 import MassComm from "./projectPage/masscomm";
 import Designsystem from "./projectPage/designsystem";
 import ConflictSced from "./projectPage/conflictsched.jsx";
+import Intelivideo from "./projectPage/intelivideo.jsx";
+
+
+
 
 ReactGA.initialize("UA-172380537-1");
 ReactGA.pageview(window.location.pathname + window.location.search);
@@ -50,24 +54,28 @@ class App extends React.Component {
                         <MyNavBar show={true} redirectToProjectSection={true} />
                         <Login />
                     </Route>
+
                     <Route path="/project_two">
                         <MyNavBar show={true} redirectToProjectSection={true} />
                         <Designsystem />
                     </Route>
+
                     <Route path="/project_three">
                         <MyNavBar show={true} redirectToProjectSection={true} />
                         <MassComm />
                     </Route>
+
                     <Route path="/project_four">
                         <MyNavBar show={true} redirectToProjectSection={true} />
                         <ConflictSced />
                     </Route>
+
                     <Route path="/project_five">
                         <MyNavBar
-                            show={false}
-                            redirectToProjectSection={true}
-                        />
-                        <Petco />
+                            show={true}
+                            redirectToProjectSection={true}/>
+                        <Intelivideo />
+
                     </Route>
                     <Route path="/about">
                         <MyNavBar show={true} redirectToProjectSection={true} />

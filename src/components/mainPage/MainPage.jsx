@@ -16,6 +16,10 @@ import cshero from "../../assets/conflictsched/cshero.png";
 import adminds from "../../assets/designsystem/adminds.png";
 import masscommhero from "../../assets/masscomm/masscommhero.png";
 import loginhero from "../../assets/login/loginhero.png";
+import intelivideohero from "../../assets/intelivideo/intelivideohero.png";
+
+
+
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -77,6 +81,16 @@ class MainPage extends React.Component {
                             subtitle="Game and schedule checking"
                         />
                     </a>
+
+                    <a href="/project_five">
+                        <MyCard
+                            imgSrc={intelivideohero}
+                            title="Video-on-Demand Integration"
+                            subtitle="3rd party video integration"
+                        />
+                    </a>
+
+
                     {/* <a href="/project_five">
                        <MyCard imgSrc={petcobanner} title="Pet&Co."/>
                    </a>   */}
