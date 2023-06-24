@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "49e81bf495d9b63065ec52b333096fe7",
+    "revision": "6c374e82117b1295d2d5cb2cad780009",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c0e4f2a0.chunk.css"
   },
   {
-    "revision": "780fcd7575943402cd27",
+    "revision": "c4231c2f85c563f57582",
     "url": "/static/css/main.31bb004f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.7ced15e3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "780fcd7575943402cd27",
-    "url": "/static/js/main.c7dcd56e.chunk.js"
+    "revision": "c4231c2f85c563f57582",
+    "url": "/static/js/main.16413352.chunk.js"
   },
   {
     "revision": "488a4333866f3f2f6bbf",
@@ -376,8 +376,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/sidesheets.9417265d.png"
   },
   {
-    "revision": "213c1ebea83035be906ed17038199735",
-    "url": "/static/media/slack.213c1ebe.png"
+    "revision": "d6d200c732cafa5f8317385d1bf65ee6",
+    "url": "/static/media/slack.d6d200c7.png"
   },
   {
     "revision": "35b5d77f42c8102e5c645c5cb124439f",
