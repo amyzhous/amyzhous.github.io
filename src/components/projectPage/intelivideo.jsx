@@ -80,10 +80,10 @@ class Intelivideo extends React.Component {
                                 <Text header="Our solution" />
                             </Col>
                             <Col sm={12}>
-                                <Text content="We partnered with Intelivideo, a Video On Demand (VOD) platform, to provide a medium for campus recreation departments to create content, services, and resources for their patreons." />
+                                <Text content="We partnered with Intelivideo, a Video On Demand (VOD) platform, to provide a medium for campus recreation departments to create content, services, and resources for their patrons." />
                                <div  style={{ marginBottom: "4rem"}}>
                                 <Button style={{ borderColor: "#FF7812", backgroundColor: "#FFFFFF", letterSpacing: "0.5px", fontSize: "1rem", fontWeight: "700px"}}>
-                                    <a href="https://www.fusionfamily.com/release/3-8?wvideo=rje9cb3sud">VIEW FUSION v3.8 RELEASE</a>
+                                    <a href="https://www.fusionfamily.com/release/3-8?wvideo=rje9cb3sud">FUSION v3.8 RELEASE →</a>
                                     </Button>
                                 </div>
 
@@ -96,7 +96,7 @@ class Intelivideo extends React.Component {
                             <Col sm={12}>
                                 <Text header="Client Member Portal" />
                                 <Text content="I collaborated with our Senior Designer, Tameika, on the patreon experience from the Client Member Portal and another designer worked on the workflows for the Intelivideo integration." />
-                                <Text title="Video-on-Demand Page States" />
+                                <Text title="Video-on-demand page states" />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={allvideos} />
                                     <Text Content="All videos" />
@@ -149,7 +149,7 @@ class Intelivideo extends React.Component {
                                     <Text Content="Searching on video-on-page" />
                                 </div>
 
-                                <Text title="Video Player"/>
+                                <Text title="Video player"/>
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={videoplayer} />
                                     <Text Content="Video player with the ability to add videos to playlists or favorites" />

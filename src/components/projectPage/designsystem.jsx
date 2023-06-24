@@ -80,8 +80,8 @@ class Designsystem extends React.Component {
 
 
                            <Col sm={12}>
-                                <Text header="My Role" />
-                                <Text content="I led the initiative by facilitating a kickoff meeting with the design team and aligning our goals for what the system will be. We began to have weekly meetings afterwards to audit and determine what types of components each products CMS needs. Amidst this, our design team also migrated tools from Adobe Xd to Figma where I spreheaded the migration of the components into our Figma library." />
+                                <Text header="My role" />
+                                <Text content="I led the initiative by facilitating a kickoff meeting with the design team and aligning our goals for what the system will be. We began to have weekly meetings afterwards to audit and determine what types of components each products CMS (Content Management System) needs. Amidst this, our design team also migrated tools from Adobe Xd to Figma where I spearheaded the migration of the components into our Figma library." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={mvp} />
                                     <Text Content= "As a team, we came up with a list of things we wanted to tackle first." />
@@ -90,7 +90,7 @@ class Designsystem extends React.Component {
                            </Col>
 
                            <Col sm={12}>
-                                <Text header="The Foundations" />
+                                <Text header="The foundations" />
                                 <Text title= "Colour"/>
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={color} />
@@ -125,7 +125,7 @@ class Designsystem extends React.Component {
                                 </div>
 
 
-                                <Text title= "Side Sheets"/>
+                                <Text title= "Side sheets"/>
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={sidesheets} />
                                     <Text Content= "We use side sheets primarily for filtering." />
@@ -139,7 +139,7 @@ class Designsystem extends React.Component {
                                 </div>
 
 
-                                <Text header= "In Context"/>
+                                <Text header= "In context"/>
 
                                 <Text title= "Fusion Play Dashboard"/>
                                 <div style={{ marginBottom: "4rem" }}>

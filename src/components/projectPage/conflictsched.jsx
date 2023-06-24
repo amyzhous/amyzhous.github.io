@@ -68,7 +68,8 @@ class ConflictSced extends React.Component {
                         <Row>
                             <Col sm={12}>
                                 <Text header="Overview" />
-                                <Text content="Fusion Play is a multi-platform league management software introduced in August 2022 as an upgraded and improved solution to our existing intramural software, Fusion IM. Both products are data depend on our core recreation management product, Fusion for imports.
+                                <Text content="Fusion Play is a multi-platform league management software introduced in August 2022 as an upgraded and improved solution to our existing intramural software, Fusion IM. Both products are data dependent on our core recreation management product, Fusion for imports. 
+
 
 In efforts with our product vision of having Fusion Play become a standalone app in version 2, we had to address one of the main dependencies which is scheduling." />
                             </Col>
@@ -94,8 +95,8 @@ In efforts with our product vision of having Fusion Play become a standalone app
 
 
                             <Col sm={12}>
-                                <Text header="Conflict Checking" />
-                                <Text title="Randomized Schedule Creation" />
+                                <Text header="Conflict checking" />
+                                <Text title="Randomized schedule creation" />
                                 <Text content="When League Admins input the time and location for the game in the Schedule Creation wizard, we do a conflict check to see if there's any games overlapping." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={randoschedconflict} />
@@ -103,7 +104,7 @@ In efforts with our product vision of having Fusion Play become a standalone app
                                 </div>
 
 
-                                <Text title="Double Elimination Schedule Creation" />
+                                <Text title="Double elimination schedule creation" />
                                 <Text content="Similar to the randomized schedule creation, we perform the check when the time and location is inputted." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={doublelim} />
@@ -126,7 +127,7 @@ In efforts with our product vision of having Fusion Play become a standalone app
                                 </div>
 
 
-                                <Text title="One-off Games" />
+                                <Text title="One-off games" />
                                 <Text content="Another way to create games in the CMS is adding one-off games in the Games tab. We also want to be able to do a conflict check for these games." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={oneoff} />

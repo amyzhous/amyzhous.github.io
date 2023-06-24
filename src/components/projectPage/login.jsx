@@ -76,7 +76,7 @@ class Login extends React.Component {
                             </Col>
 
                             <Col sm={12}>
-                                <Text content="Fusion play is a multi-platform league platform which includes an web-based Admin CMS (Content Management System), a tablet Staff App, and a mobile Player App." />
+                                <Text content="Fusion play is a multi-platform league software which includes an web-based Admin CMS (Content Management System), a tablet Staff App, and a mobile Player App." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={multi} />
                                 </div>
@@ -88,9 +88,7 @@ class Login extends React.Component {
                             </Col>
                             <Col sm={12}>
                                 <Text
-                                    content="Currently, we handle the account creation and login process for our client’s users if they have an organization domain. Users will be redirected to their organization single-sign-on page where they will authenticate and be redirected back into the app.
-
-This process limits users who do not have an organization domain and clients like community centres who do not provide organization domains to their users."
+                                    content="Users have to login into the app using their organization credentials. The problem arises when their organizations do not provide them with a organization domain for single-sign-on. This is a common problem for our clients who manage community centers, as they do not provide organization domains to their patrons."
                                 />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={breakdown} />
@@ -101,7 +99,7 @@ This process limits users who do not have an organization domain and clients lik
                                 <Text header="Solution" />
                             </Col>
                             <Col sm={12}>
-                                <Text content="In order to better support the ongoing product-wide efforts to becoming a standalone product and streamline the process of account creation for non-SSO institutions, we introduced Social-Sign-On, Organization Codes, and Participant Onboarding." />
+                                <Text content="We introduced Social-Sign-On, Organization Codes, and Participant Onboarding to streamline the account creation process for non-SSO institutions. Adding these features will also help support the product-wide efforts to becoming a standalone product." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={solution} />
                                     <Text Content= "Account creation for the tablet Staff App and mobile Player App." />
@@ -109,7 +107,7 @@ This process limits users who do not have an organization domain and clients lik
                             </Col>
 
                             <Col sm={12}>
-                                <Text header="Business Problem" />
+                                <Text header="Business problem" />
                             </Col>
                             <Col sm={12}>
                                 <Text content="Because there are currently limitations to account creation for organizations, this leads to:" />
@@ -123,10 +121,7 @@ This process limits users who do not have an organization domain and clients lik
                                     }}
                                 >
                                     <li>
-                                        Our clients using different products to
-                                        handle registration for users with
-                                        organization email domains and those
-                                        without
+                                    Our clients use different products to handle registration for users with organization email domains than those without
                                     </li>
                                     <li>
                                         Increasing our data-dependency on Fusion
@@ -137,26 +132,26 @@ This process limits users who do not have an organization domain and clients lik
                             
 
                             <Col sm={6}>
-                                <Text header="Business Goals" />
+                                <Text header="Business goals" />
                                 <Text content="We want to provide our clients with the ability to manage login and account creation within one platform and become less reliant on our core product, Fusion, as this is one of the main friction points for organizations looking to purchase Fusion Play." />
                             </Col>
 
 
                             <Col sm={6}>
-                                <Text header="User Goals" />
+                                <Text header="User goals" />
                                 <Text content="We want to enable participants that do not have a single-sign-on account with their institution to be able to quickly join an organization and login to Fusion Play." />
                             </Col>
 
 
                             <Col sm={12}>
-                                <Text header="CMS Organization Code Management" />
+                                <Text header="CMS organization code management" />
                             </Col>
                             <Col sm={12}>
                                 <Text content="We needed to introduced some tools in the CMS for League Admins to be able customized account creation for their users." />
                             </Col>
 
                             <Col sm={12}>
-                                <Text title="Organization Code" />
+                                <Text title="Organization code" />
                             </Col>
                             <Col sm={12}>
                                 <Text content="Organization codes are a collection of codes created by League Admins which will be used for linking users to their organization." />
@@ -190,7 +185,7 @@ This process limits users who do not have an organization domain and clients lik
                             </Col>
 
                             <Col sm={12}>
-                                <Text header="Player App Account Creation" />
+                                <Text header="Player App account creation" />
                             </Col>
                             <Col sm={12}>
                                 <Text title="Participants without Fusion Play installed" />
@@ -208,7 +203,7 @@ This process limits users who do not have an organization domain and clients lik
                             </Col>
 
                             <Col sm={12}>
-                                <Text header="Social Single-Sign-On" />
+                                <Text header="Social single-sign-on" />
                             </Col>
                             <Col sm={12}>
                                 {/* <Text title="Player App"/> */}
@@ -245,19 +240,19 @@ Another problem that came with importing from Fusion is that every state has dif
                                     <Card.Img src={ideation} />
                                 </div>
 
-                                <Text title="Update Profile" />
+                                <Text title="Update profile" />
                                 <Text content="After the user authenticates using their organization SSO or social SSO, we’ve added the option to update their profile before entering the app." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={update} />
                                 </div>
 
-                                <Text title="League Restrictions" />
+                                <Text title="League restrictions" />
                                 <Text content="If a user has not inputted any information that is required to register for the league, we will restrict access until the user inputs the required info." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={leaguerestriction} />
                                 </div>
 
-                                <Text title="Direct to Profile" />
+                                <Text title="Direct to profile" />
                                 <Text content="If users are missing any required information, we will direct them to the profile to add the missing fields." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={profile} />
