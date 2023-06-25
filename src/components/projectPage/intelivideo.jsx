@@ -95,7 +95,7 @@ class Intelivideo extends React.Component {
 
                             <Col sm={12}>
                                 <Text header="Client Member Portal" />
-                                <Text content="I collaborated with our Senior Designer, Tameika, on the patreon experience from the Client Member Portal and another designer worked on the workflows for the Intelivideo integration." />
+                                <Text content="I collaborated with a Senior Designer on the patron experience from the Client Member Portal and another designer worked on the workflows for the Intelivideo integration." />
                                 <Text title="Video-on-demand page states" />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={allvideos} />

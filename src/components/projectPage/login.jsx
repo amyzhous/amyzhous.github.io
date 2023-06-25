@@ -76,7 +76,7 @@ class Login extends React.Component {
                             </Col>
 
                             <Col sm={12}>
-                                <Text content="Fusion play is a multi-platform league software which includes an web-based Admin CMS (Content Management System), a tablet Staff App, and a mobile Player App." />
+                                <Text content="Fusion Play is a multi-platform league management software which includes a web-based Admin CMS (Content Management System), a tablet Staff App, and a mobile Player App." />
                                 <div style={{ marginBottom: "4rem" }}>
                                     <Card.Img src={multi} />
                                 </div>
