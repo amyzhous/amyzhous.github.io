@@ -101,7 +101,7 @@ class App extends React.Component {
                             </a>
                             <a
                                 target="_blank"
-                                href="https://www.linkedin.com/in/amyyjzhou/"
+                                href="https://www.linkedin.com/in/amyyjzhou/" 
                                 className="footer-icon-anchor"
                             >
                                 <Card.Img
