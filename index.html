@@ -898,7 +898,63 @@ function setSection(n, el) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
   el.classList.add('on');
   movePill(el);
+
+  // Hide hero section on About page
+  const hero = document.querySelector('.hero');
+  const qidx = document.querySelector('.qidx');
+  if (n === 'about') {
+    hero.style.display = 'none';
+    if (qidx) qidx.style.display = 'none';
+  } else {
+    hero.style.display = 'block';
+    if (qidx) qidx.style.display = 'flex';
+  }
+
+  // Update URL without page reload
+  const path = n === 'work' ? '/' : '/' + n;
+  window.history.pushState({section: n}, '', path);
 }
+
+/* ── Load section from URL ── */
+function loadSectionFromURL() {
+  const path = window.location.pathname;
+  let section = 'work';
+  if (path.includes('about')) {
+    section = 'about';
+  }
+
+  const tab = document.querySelector(`.tab[onclick*="${section}"]`);
+  if (tab) {
+    setSection(section, tab);
+  }
+}
+
+/* ── Handle browser back/forward ── */
+window.addEventListener('popstate', (e) => {
+  if (e.state && e.state.section) {
+    const tab = document.querySelector(`.tab[onclick*="${e.state.section}"]`);
+    if (tab) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('on'));
+      document.getElementById('section-' + e.state.section).classList.add('on');
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+      tab.classList.add('on');
+      movePill(tab);
+
+      const hero = document.querySelector('.hero');
+      const qidx = document.querySelector('.qidx');
+      if (e.state.section === 'about') {
+        hero.style.display = 'none';
+        if (qidx) qidx.style.display = 'none';
+      } else {
+        hero.style.display = 'block';
+        if (qidx) qidx.style.display = 'flex';
+      }
+    }
+  }
+});
+
+/* ── Load correct section on page load ── */
+window.addEventListener('DOMContentLoaded', loadSectionFromURL);
 
 /* ── Theme toggle ── */
 const sunSVG  = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
