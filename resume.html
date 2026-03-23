@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amy Zhou — Product Designer Resume</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ─── THEME ─── */
+:root{
+  --accent:#6366F1;
+  --accent-light:#A5B4FC;
+  --text:#0D0E1A;
+  --text2:#4A5070;
+  --text3:#7A82A8;
+  --bg:#FFFFFF;
+  --bg2:#F5F5FC;
+  --border:rgba(0,0,0,.08);
+  --tag-bg:rgba(99,102,241,.08);
+  --tag-border:rgba(99,102,241,.25);
+  --tag-text:#6366F1;
+}
+
+/* ─── BASE ─── */
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text2);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding:40px 20px;
+}
+
+.resume-container{
+  max-width:850px;
+  margin:0 auto;
+  background:var(--bg);
+  position:relative;
+}
+
+/* ─── HEADER ─── */
+.resume-header{
+  margin-bottom:32px;
+  padding-bottom:24px;
+  border-bottom:2px solid var(--accent);
+}
+
+.name{
+  font-family:'Instrument Serif',serif;
+  font-size:42px;
+  font-weight:400;
+  line-height:1.1;
+  letter-spacing:-.02em;
+  color:var(--text);
+  margin-bottom:8px;
+}
+
+.title{
+  font-size:18px;
+  color:var(--accent);
+  font-weight:500;
+  margin-bottom:16px;
+}
+
+.contact-info{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 20px;
+  font-size:13px;
+  color:var(--text2);
+}
+
+.contact-info a{
+  color:var(--text2);
+  text-decoration:none;
+  transition:color .2s;
+}
+
+.contact-info a:hover{
+  color:var(--accent);
+}
+
+.contact-separator{
+  color:var(--text3);
+}
+
+/* ─── SECTIONS ─── */
+.section{
+  margin-bottom:32px;
+}
+
+.section-title{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+  font-weight:600;
+}
+
+/* ─── SUMMARY ─── */
+.summary{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--text2);
+}
+
+/* ─── EXPERIENCE ─── */
+.job{
+  margin-bottom:24px;
+  position:relative;
+  padding-left:16px;
+  border-left:2px solid var(--border);
+}
+
+.job:last-child{
+  margin-bottom:0;
+}
+
+.job::before{
+  content:'';
+  position:absolute;
+  left:-6px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+  border:2px solid var(--bg);
+  box-shadow:0 0 0 2px var(--accent);
+}
+
+.job-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  margin-bottom:4px;
+  gap:12px;
+}
+
+.job-title{
+  font-size:16px;
+  font-weight:600;
+  color:var(--text);
+}
+
+.job-date{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--text3);
+  white-space:nowrap;
+}
+
+.company{
+  font-size:14px;
+  color:var(--accent);
+  margin-bottom:8px;
+  font-weight:500;
+}
+
+.job-description{
+  font-size:14px;
+  line-height:1.65;
+  color:var(--text2);
+  margin-bottom:10px;
+}
+
+.achievements{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.achievements li{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--text2);
+  padding-left:14px;
+  position:relative;
+  margin-bottom:6px;
+}
+
+.achievements li::before{
+  content:'•';
+  position:absolute;
+  left:0;
+  color:var(--accent);
+  font-weight:bold;
+}
+
+/* ─── EDUCATION ─── */
+.edu-item{
+  margin-bottom:16px;
+}
+
+.edu-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  margin-bottom:4px;
+}
+
+.degree{
+  font-size:15px;
+  font-weight:600;
+  color:var(--text);
+}
+
+.edu-date{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--text3);
+}
+
+.school{
+  font-size:14px;
+  color:var(--accent);
+  margin-bottom:4px;
+}
+
+.edu-details{
+  font-size:13px;
+  color:var(--text2);
+}
+
+/* ─── SKILLS ─── */
+.skills-grid{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:12px 20px;
+}
+
+.skill-category{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text3);
+  padding-top:2px;
+}
+
+.skill-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.skill-tag{
+  padding:4px 12px;
+  border-radius:100px;
+  background:var(--tag-bg);
+  border:1px solid var(--tag-border);
+  color:var(--tag-text);
+  font-size:12px;
+  font-weight:500;
+}
+
+/* ─── TWO COLUMN SECTIONS ─── */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+}
+
+/* ─── PRINT STYLES ─── */
+@media print{
+  body{
+    padding:0;
+    background:white;
+  }
+
+  .resume-container{
+    max-width:100%;
+  }
+
+  .section{
+    page-break-inside:avoid;
+  }
+
+  .job{
+    page-break-inside:avoid;
+  }
+
+  a{
+    color:var(--text2);
+    text-decoration:none;
+  }
+
+  @page{
+    margin:0.75in;
+  }
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:640px){
+  .resume-header{
+    margin-bottom:24px;
+  }
+
+  .name{
+    font-size:32px;
+  }
+
+  .title{
+    font-size:16px;
+  }
+
+  .contact-info{
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .contact-separator{
+    display:none;
+  }
+
+  .job-header,
+  .edu-header{
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .skills-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .skill-category{
+    padding-top:0;
+  }
+
+  .two-col{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="resume-container">
+
+  <!-- HEADER -->
+  <header class="resume-header">
+    <h1 class="name">Amy Zhou</h1>
+    <div class="title">Product Designer — Enterprise & Construction Tech</div>
+    <div class="contact-info">
+      <a href="mailto:ayjzhou@gmail.com">ayjzhou@gmail.com</a>
+      <span class="contact-separator">•</span>
+      <a href="https://www.linkedin.com/in/amyyjzhou/" target="_blank">linkedin.com/in/amyyjzhou</a>
+      <span class="contact-separator">•</span>
+      <a href="https://amyzhous.github.io" target="_blank">amyzhous.github.io</a>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section class="section">
+    <h2 class="section-title">Summary</h2>
+    <p class="summary">Product designer with 5+ years of experience specializing in complex B2B enterprise software for architecture and construction. Expert in designing process-heavy admin tools, workflow systems, and data dashboards that teams actually want to use. Strong focus on information architecture, design systems, and translating technical complexity into intuitive interfaces.</p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <h3 class="job-title">Senior Product Designer</h3>
+        <span class="job-date">2022 — Present</span>
+      </div>
+      <div class="company">Architecture Tech Co.</div>
+      <p class="job-description">Lead end-to-end design for construction management platform serving 200+ architecture and general contractor firms.</p>
+      <ul class="achievements">
+        <li>Redesigned RFI management dashboard, reducing average resolution time by 40% and onboarding 200+ firms in first 6 months</li>
+        <li>Led 0→1 design for submittal workflow engine that reduced manual review time by 60%, processing 500+ documents monthly</li>
+        <li>Designed multi-tier approvals command center that decreased bottlenecks by 65% across 8 active project sites</li>
+        <li>Grew and maintained design system from 40 to 180+ components with comprehensive documentation</li>
+        <li>Conducted 50+ user research sessions with project managers, architects, and field inspectors to validate features</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3 class="job-title">Product Designer</h3>
+        <span class="job-date">2020 — 2022</span>
+      </div>
+      <div class="company">Fintech Startup</div>
+      <p class="job-description">Sole designer for financial analytics dashboard used by 2M+ monthly active users.</p>
+      <ul class="achievements">
+        <li>Designed and shipped data visualization dashboard for real-time transaction monitoring and fraud detection</li>
+        <li>Created responsive design system used across 5 product teams, reducing design-to-dev handoff time by 50%</li>
+        <li>Led user research program including usability testing, interviews, and analytics to inform product roadmap</li>
+        <li>Improved 30-day user activation rate from 42% to 68% through redesigned onboarding flow</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3 class="job-title">UX Designer</h3>
+        <span class="job-date">2018 — 2020</span>
+      </div>
+      <div class="company">B2B Platform</div>
+      <p class="job-description">Designed field inspection tools and admin interfaces for municipal permitting software.</p>
+      <ul class="achievements">
+        <li>Redesigned core onboarding flow, increasing 30-day activation by 42% across 300+ city government clients</li>
+        <li>Designed offline-first mobile inspection app for iOS, achieving 42% field adoption in first quarter</li>
+        <li>Created permit tracking dashboard that reduced citizen inquiry call volume by 34%</li>
+        <li>Collaborated with engineering team to establish component library and design token system</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section class="section">
+    <h2 class="section-title">Education & Certifications</h2>
+
+    <div class="two-col">
+      <div>
+        <div class="edu-item">
+          <div class="edu-header">
+            <h3 class="degree">BA, Interaction Design</h3>
+            <span class="edu-date">2014 — 2018</span>
+          </div>
+          <div class="school">University Name</div>
+          <p class="edu-details">Graduated with honours • Thesis on cognitive load in data-heavy enterprise interfaces</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="edu-item">
+          <div class="edu-header">
+            <h3 class="degree">UX Master Certificate</h3>
+            <span class="edu-date">2021</span>
+          </div>
+          <div class="school">Nielsen Norman Group</div>
+          <p class="edu-details">Specialization in Enterprise UX and Information Architecture</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <h2 class="section-title">Skills & Expertise</h2>
+
+    <div class="skills-grid">
+      <div class="skill-category">Design</div>
+      <div class="skill-list">
+        <span class="skill-tag">Product Design</span>
+        <span class="skill-tag">UX Research</span>
+        <span class="skill-tag">Design Systems</span>
+        <span class="skill-tag">Information Architecture</span>
+        <span class="skill-tag">Workflow Design</span>
+        <span class="skill-tag">Data Visualization</span>
+      </div>
+
+      <div class="skill-category">Tools</div>
+      <div class="skill-list">
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Prototyping</span>
+        <span class="skill-tag">User Testing</span>
+        <span class="skill-tag">Design Tokens</span>
+      </div>
+
+      <div class="skill-category">Domain</div>
+      <div class="skill-list">
+        <span class="skill-tag">Enterprise UX</span>
+        <span class="skill-tag">Construction Tech</span>
+        <span class="skill-tag">B2B SaaS</span>
+        <span class="skill-tag">Complex Workflows</span>
+        <span class="skill-tag">Admin Tools</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
