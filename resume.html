@@ -34,82 +34,54 @@ body{
   color:var(--text2);
   line-height:1.5;
   -webkit-font-smoothing:antialiased;
-  padding:32px 20px;
+  padding:48px 32px;
 }
 
 .resume-container{
-  max-width:900px;
+  max-width:800px;
   margin:0 auto;
   background:var(--bg);
-  position:relative;
-}
-
-/* ─── MAIN GRID ─── */
-.resume-grid{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:48px;
 }
 
 /* ─── HEADER ─── */
 .resume-header{
-  margin-bottom:24px;
-  padding-bottom:20px;
-  border-bottom:2px solid var(--accent);
+  margin-bottom:56px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
 }
 
 .name{
   font-family:'Instrument Serif',serif;
-  font-size:36px;
+  font-size:48px;
   font-weight:400;
   line-height:1.1;
   letter-spacing:-.02em;
   color:var(--text);
-  margin-bottom:6px;
-}
-
-.title{
-  font-size:16px;
-  color:var(--accent);
-  font-weight:500;
-  margin-bottom:12px;
 }
 
 .contact-info{
   display:flex;
-  flex-wrap:wrap;
-  gap:4px 16px;
-  font-size:12px;
+  flex-direction:column;
+  gap:6px;
+  font-size:13px;
   color:var(--text2);
+  text-align:right;
 }
 
 .contact-info a{
-  color:var(--text2);
+  color:var(--accent);
   text-decoration:none;
   transition:color .2s;
 }
 
 .contact-info a:hover{
-  color:var(--accent);
-}
-
-.contact-separator{
-  color:var(--text3);
-}
-
-/* ─── LEFT COLUMN ─── */
-.left-column{
-  padding-right:0;
-}
-
-/* ─── RIGHT COLUMN ─── */
-.right-column{
-  padding-left:0;
+  color:var(--text);
 }
 
 /* ─── SECTIONS ─── */
 .section{
-  margin-bottom:24px;
+  margin-bottom:48px;
 }
 
 .section:last-child{
@@ -117,18 +89,16 @@ body{
 }
 
 .section-title{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:16px;
+  font-size:20px;
   font-weight:600;
+  color:var(--text);
+  margin-bottom:24px;
+  letter-spacing:-.01em;
 }
 
 /* ─── EXPERIENCE ─── */
 .job{
-  margin-bottom:24px;
+  margin-bottom:32px;
 }
 
 .job:last-child{
@@ -139,14 +109,32 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:baseline;
-  margin-bottom:3px;
+  margin-bottom:12px;
+  gap:16px;
+}
+
+.job-title-line{
+  display:flex;
+  align-items:baseline;
   gap:8px;
 }
 
-.job-title{
+.company{
   font-size:15px;
-  font-weight:600;
   color:var(--text);
+  font-weight:600;
+}
+
+.job-title{
+  font-size:13px;
+  font-weight:300;
+  color:var(--text2);
+}
+
+.job-title::before{
+  content:'/';
+  margin-right:8px;
+  color:var(--text3);
 }
 
 .job-date{
@@ -154,20 +142,16 @@ body{
   font-size:10px;
   color:var(--text3);
   white-space:nowrap;
-}
-
-.company{
-  font-size:14px;
-  color:var(--accent);
-  margin-bottom:6px;
-  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.08em;
 }
 
 .job-description{
   font-size:15px;
   line-height:1.65;
   color:var(--text2);
-  margin-bottom:8px;
+  margin-bottom:10px;
+  margin-top:12px;
   font-weight:300;
 }
 
@@ -181,83 +165,56 @@ body{
   font-size:13px;
   line-height:1.65;
   color:var(--text2);
-  padding-left:12px;
-  position:relative;
-  margin-bottom:6px;
-  font-weight:300;
-}
-
-.achievements li::before{
-  content:'–';
-  position:absolute;
-  left:0;
-  color:var(--text3);
-}
-
-/* ─── EDUCATION ─── */
-.edu-item{
-  margin-bottom:18px;
-}
-
-.edu-item:last-child{
-  margin-bottom:0;
-}
-
-.degree{
-  font-size:14px;
-  font-weight:600;
-  color:var(--text);
-  margin-bottom:4px;
-}
-
-.edu-date{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  color:var(--text3);
-  display:block;
-  margin-bottom:6px;
-}
-
-.school{
-  font-size:13px;
-  color:var(--accent);
-  margin-bottom:4px;
-  font-weight:500;
-}
-
-.edu-details{
-  font-size:13px;
-  color:var(--text2);
-  line-height:1.5;
+  margin-bottom:8px;
   font-weight:300;
 }
 
 /* ─── SKILLS ─── */
-.skill-category{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--text3);
-  margin-bottom:10px;
-  margin-top:16px;
+.skill-row{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:32px;
+  margin-bottom:14px;
 }
 
-.skill-category:first-of-type{
-  margin-top:0;
+.skill-row:last-child{
+  margin-bottom:0;
+}
+
+.skill-category{
+  font-size:13px;
+  font-weight:600;
+  color:var(--text);
 }
 
 .skill-list{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.skill-item{
   font-size:13px;
   color:var(--text2);
   font-weight:300;
-  line-height:1.5;
+  line-height:1.65;
+}
+
+/* ─── EDUCATION ─── */
+.edu-item{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:300;
+  line-height:1.65;
+}
+
+.school{
+  font-weight:600;
+  color:var(--text);
+}
+
+.degree{
+  display:inline;
+}
+
+.degree::before{
+  content:'/';
+  margin:0 8px;
+  color:var(--text3);
 }
 
 /* ─── PRINT STYLES ─── */
@@ -269,10 +226,6 @@ body{
 
   .resume-container{
     max-width:100%;
-  }
-
-  .resume-grid{
-    gap:32px;
   }
 
   .section{
@@ -297,43 +250,31 @@ body{
 /* ─── RESPONSIVE ─── */
 @media(max-width:768px){
   body{
-    padding:20px 16px;
-  }
-
-  .resume-grid{
-    grid-template-columns:1fr;
-    gap:24px;
+    padding:32px 20px;
   }
 
   .resume-header{
-    margin-bottom:20px;
-  }
-
-  .name{
-    font-size:28px;
-  }
-
-  .title{
-    font-size:14px;
+    flex-direction:column;
+    gap:16px;
   }
 
   .contact-info{
-    flex-direction:column;
-    gap:4px;
+    text-align:left;
   }
 
-  .contact-separator{
-    display:none;
+  .name{
+    font-size:36px;
   }
 
   .job-header{
     flex-direction:column;
     align-items:flex-start;
-    gap:2px;
+    gap:6px;
   }
 
-  .skill-category{
-    margin-top:16px;
+  .skill-row{
+    grid-template-columns:1fr;
+    gap:8px;
   }
 }
 </style>
@@ -347,71 +288,11 @@ body{
     <h1 class="name">Amy Zhou</h1>
     <div class="contact-info">
       <a href="https://amyzhous.github.io" target="_blank">amyzhous.github.io</a>
-      <span class="contact-separator">•</span>
       <a href="mailto:ayjzhou@gmail.com">ayjzhou@gmail.com</a>
-      <span class="contact-separator">•</span>
       <a href="https://www.linkedin.com/in/amyyjzhou/" target="_blank">/in/amyyjzhou/</a>
-      <span class="contact-separator">•</span>
       <span>+1 (905) 348-2889</span>
     </div>
   </header>
-
-  <!-- 2-COLUMN GRID -->
-  <div class="resume-grid">
-
-    <!-- LEFT COLUMN -->
-    <div class="left-column">
-
-      <!-- SKILLS -->
-      <section class="section">
-        <h2 class="section-title">Skills</h2>
-
-        <div class="skill-list">
-          <div class="skill-item">End to End Product Design</div>
-          <div class="skill-item">0→1 Product Design</div>
-          <div class="skill-item">Interaction Design</div>
-          <div class="skill-item">Visual Design</div>
-          <div class="skill-item">Product Strategy</div>
-          <div class="skill-item">User Research</div>
-          <div class="skill-item">Usability testing</div>
-          <div class="skill-item">Design Systems</div>
-          <div class="skill-item">Rapid Prototyping</div>
-          <div class="skill-item">Customer Discovery</div>
-          <div class="skill-item">Complex B2b Workflows</div>
-          <div class="skill-item">Information Architecture</div>
-        </div>
-      </section>
-
-      <!-- TOOLS -->
-      <section class="section">
-        <h2 class="section-title">Tools</h2>
-
-        <div class="skill-list">
-          <div class="skill-item">Figma</div>
-          <div class="skill-item">Claude & Claude Code</div>
-          <div class="skill-item">Cursor</div>
-          <div class="skill-item">Replit</div>
-          <div class="skill-item">UserTesting</div>
-          <div class="skill-item">Unbounce</div>
-          <div class="skill-item">Linear</div>
-          <div class="skill-item">HTML/CSS</div>
-        </div>
-      </section>
-
-      <!-- EDUCATION -->
-      <section class="section">
-        <h2 class="section-title">Education</h2>
-
-        <div class="edu-item">
-          <h3 class="degree">BA, Economics</h3>
-          <div class="school">University of Waterloo</div>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="right-column">
 
   <!-- EXPERIENCE -->
   <section class="section">
@@ -419,10 +300,12 @@ body{
 
     <div class="job">
       <div class="job-header">
-        <h3 class="job-title">Product Design Lead</h3>
+        <div class="job-title-line">
+          <span class="company">Part3 Technologies</span>
+          <span class="job-title">Product Design Lead</span>
+        </div>
         <span class="job-date">Sep 2023 — Present</span>
       </div>
-      <div class="company">Part3 Technologies</div>
       <ul class="achievements">
         <li>Joined as the first designer and contributed to 4x ARR growth as the platform expanded over 2.5 year</li>
         <li>Design 0→1 business verticals that drove $450k + in expansion revenue</li>
@@ -435,10 +318,12 @@ body{
 
     <div class="job">
       <div class="job-header">
-        <h3 class="job-title">Product Designer II</h3>
+        <div class="job-title-line">
+          <span class="company">InnoSoft</span>
+          <span class="job-title">Product Designer II</span>
+        </div>
         <span class="job-date">Feb 2021 — Sep 2023</span>
       </div>
-      <div class="company">InnoSoft</div>
 
       <p class="job-description">Fusion Play — A multi-platform league management software</p>
       <ul class="achievements">
@@ -464,21 +349,41 @@ body{
 
     <div class="job">
       <div class="job-header">
-        <h3 class="job-title">Designer</h3>
+        <div class="job-title-line">
+          <span class="company">Search+Gather</span>
+          <span class="job-title">Designer</span>
+        </div>
         <span class="job-date">Aug 2020 — Oct 2022</span>
       </div>
-      <div class="company">Search+Gather</div>
       <ul class="achievements">
         <li>Led growth designs for ad creation and landing page optimization for B2B SaaS clients including Coinbase, HeyOrca, HiMama, Kritik, Top Hat and Magical</li>
         <li>Utilized data to identify areas of improvement for creative designs and generated ideas to enhance overall performance</li>
       </ul>
     </div>
-
   </section>
 
+  <!-- SKILLS -->
+  <section class="section">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skill-row">
+      <div class="skill-category">Design</div>
+      <div class="skill-list">End to End Product Design, 0→1 Product Design, Interaction Design, Visual Design, Product Strategy, User Research, Usability testing, Design Systems, Rapid Prototyping, Customer Discovery, Complex B2b Workflows, Information Architecture</div>
     </div>
 
-  </div>
+    <div class="skill-row">
+      <div class="skill-category">Tools</div>
+      <div class="skill-list">Figma, Claude & Claude Code, Cursor, Replit, UserTesting, Unbounce, Linear, HTML/CSS</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="edu-item">
+      <span class="school">University of Waterloo</span><span class="degree">BA, Economics</span>
+    </div>
+  </section>
 
 </div>
 
