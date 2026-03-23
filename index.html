@@ -8,6 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+/* Load saved theme immediately to prevent flash */
+(function() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.dataset.theme = savedTheme;
+})();
+</script>
 <style>
 
 /* ─── RESET ─── */
@@ -577,7 +584,7 @@ body{
   <nav class="nav">
     <div class="nav-left">
       <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle theme"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
-      <a href="layout-compare.html" class="nav-logo">Amy Z.</a>
+      <a href="index.html" class="nav-logo">Amy Z.</a>
     </div>
     <div class="nav-right">
       <div class="tabs" id="tabs">
@@ -848,20 +855,6 @@ body{
 </div>
 
 <script>
-/* ── Load saved theme ── */
-(function() {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.documentElement.dataset.theme = savedTheme;
-    const themeBtn = document.getElementById('themeBtn');
-    if (themeBtn) {
-      const moonSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
-      const sunSVG  = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
-      themeBtn.innerHTML = savedTheme === 'dark' ? sunSVG : moonSVG;
-    }
-  }
-})();
-
 /* ── Cursor ── */
 const cur = document.getElementById('cursor');
 if (cur) {
@@ -889,6 +882,13 @@ function movePill(t) {
 setTimeout(() => {
   const a = document.querySelector('.tab.on');
   if (a) movePill(a);
+
+  /* Set correct theme icon on load */
+  const themeBtn = document.getElementById('themeBtn');
+  const currentTheme = document.documentElement.dataset.theme;
+  const sunSVG  = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+  const moonSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+  if (themeBtn) themeBtn.innerHTML = currentTheme === 'dark' ? sunSVG : moonSVG;
 }, 60);
 
 /* ── Section switch ── */
@@ -981,10 +981,10 @@ document.querySelectorAll('.feat-card').forEach(el => io.observe(el));
 
 /* ── Card navigation ── */
 const cardUrls = {
-  p1: 'case-study.html',
-  p2: 'case-study.html',
-  p3: 'case-study.html',
-  p4: 'case-study.html'
+  p1: 'rfi-intelligence.html',
+  p2: 'submittal-workflow.html',
+  p3: 'approvals-command.html',
+  p4: 'field-inspection.html'
 };
 Object.entries(cardUrls).forEach(([id, url]) => {
   const card = document.getElementById(id);
