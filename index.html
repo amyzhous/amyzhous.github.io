@@ -1,26 +1,981 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <title>Product Designer Portfolio | Creating Intuitive Digital Experiences</title>
-    <meta name="description" content="Senior Product Designer crafting beautiful, user-centered digital experiences. View case studies showcasing innovative design solutions." />
-    <meta name="author" content="Product Designer" />
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-pal="indigo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amy Z. — Product Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
 
-    <meta property="og:title" content="Product Designer Portfolio" />
-    <meta property="og:description" content="Senior Product Designer crafting beautiful, user-centered digital experiences" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <script type="module" crossorigin src="/assets/index-CUUjh-n8.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-fbhhl1Cw.css">
-  </head>
+/* ─── CUSTOM CURSOR ─── */
+@media(pointer:fine){
+  *{cursor:none}
+  #cursor{
+    position:fixed;width:14px;height:14px;background:var(--accent);
+    border-radius:50%;pointer-events:none;z-index:9999;
+    transition:transform .18s var(--expo),background .3s,opacity .25s;
+    transform:translate(-50%,-50%);opacity:.75;
+  }
+  #cursor.big{transform:translate(-50%,-50%) scale(3.5);opacity:.25;}
+}
+@media(pointer:coarse){#cursor{display:none}}
 
-  <body>
-    <div id="root"></div>
-  </body>
+/* ─── PALETTE TOKENS ─── */
+[data-pal="indigo"]{
+  --accent:#6366F1;--accent2:#8B5CF6;
+  --grad:linear-gradient(135deg,#6366F1,#8B5CF6);
+  --h1c:rgba(99,102,241,.24);--h2c:rgba(139,92,246,.18);--h3c:rgba(167,139,250,.14);
+  --tag-bg:rgba(99,102,241,.12);--tag-border:rgba(99,102,241,.35);--tag-text:#A5B4FC;
+}
+[data-pal="violet"]{
+  --accent:#7C3AED;--accent2:#A78BFA;
+  --grad:linear-gradient(135deg,#7C3AED,#A78BFA);
+  --h1c:rgba(124,58,237,.26);--h2c:rgba(167,139,250,.2);--h3c:rgba(196,181,253,.14);
+  --tag-bg:rgba(124,58,237,.12);--tag-border:rgba(124,58,237,.35);--tag-text:#C4B5FD;
+}
+[data-pal="peri"]{
+  --accent:#818CF8;--accent2:#C4B5FD;
+  --grad:linear-gradient(135deg,#818CF8,#C4B5FD);
+  --h1c:rgba(129,140,248,.2);--h2c:rgba(196,181,253,.14);--h3c:rgba(167,139,250,.1);
+  --tag-bg:rgba(129,140,248,.1);--tag-border:rgba(129,140,248,.3);--tag-text:#C7D2FE;
+}
+
+/* ─── THEME TOKENS ─── */
+[data-theme="dark"]{
+  --bg:#07080F;--bg2:#0D0F1C;--bg3:#13152A;
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.13);
+  --text:#ECEEF8;--text2:#8890B0;--text3:#3D4568;
+  --card:rgba(255,255,255,.03);--card-h:rgba(255,255,255,.055);
+  --nav-bg:rgba(7,8,15,.88);--ctrl-bg:rgba(5,5,10,.96);
+}
+[data-theme="light"]{
+  --bg:#F5F5FC;--bg2:#EBEBF8;--bg3:#E0E0F2;
+  --border:rgba(0,0,0,.07);--border2:rgba(0,0,0,.12);
+  --text:#0D0E1A;--text2:#5C6080;--text3:#9098B8;
+  --card:rgba(255,255,255,.7);--card-h:rgba(255,255,255,.95);
+  --nav-bg:rgba(245,245,252,.9);--ctrl-bg:rgba(242,242,250,.96);
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);color:var(--text);
+  transition:background .35s ease,color .35s ease;
+  overflow-x:hidden;
+}
+
+/* ─── CONTROL BAR ─── */
+.cbar{
+  position:fixed;top:0;left:0;right:0;z-index:400;
+  height:44px;display:flex;align-items:center;gap:6px;padding:0 18px;
+  background:var(--ctrl-bg);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transition:background .35s;
+  flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
+}
+.cbar::-webkit-scrollbar{display:none;}
+[data-theme="light"] .cbar{border-bottom-color:rgba(0,0,0,.07);}
+.cb-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#666;white-space:nowrap;flex-shrink:0;}
+.cb-sep{width:1px;height:16px;background:rgba(255,255,255,.08);margin:0 6px;flex-shrink:0;}
+[data-theme="light"] .cb-sep{background:rgba(0,0,0,.1);}
+.cbsp{flex:1}
+
+.xbtn{
+  height:26px;padding:0 12px;border-radius:6px;
+  border:1px solid rgba(255,255,255,.08);background:transparent;
+  font-size:11px;font-family:'Inter',sans-serif;font-weight:500;
+  color:#666;transition:all .18s;white-space:nowrap;
+  display:flex;align-items:center;gap:6px;cursor:pointer;flex-shrink:0;
+}
+[data-theme="light"] .xbtn{border-color:rgba(0,0,0,.1);color:#888;}
+.xbtn:hover{color:var(--text);border-color:rgba(255,255,255,.2);}
+.xbtn.on{background:var(--accent);border-color:transparent;color:#fff;}
+.xbtn .swatch{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* ─── NAV ─── */
+.nav{
+  position:sticky;top:0;z-index:200;
+  height:52px;padding:0 clamp(20px,4vw,48px);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:background .35s,border-color .35s;
+}
+.nav-logo{
+  font-family:'Instrument Serif',serif;font-size:17px;
+  color:var(--text);transition:color .35s;letter-spacing:-.01em;white-space:nowrap;
+}
+.nav-right{display:flex;align-items:center;}
+.tabs{
+  position:relative;display:flex;
+  background:transparent;border:none;
+  padding:0;gap:0;
+}
+.pill{
+  position:absolute;bottom:0;height:2px;
+  background:var(--accent);border-radius:2px;
+  transition:left .25s var(--smooth),width .25s var(--smooth);
+  pointer-events:none;z-index:0;
+}
+.tab{
+  position:relative;z-index:1;padding:4px 14px;border-radius:0;
+  font-size:13px;font-family:'Inter',sans-serif;font-weight:500;
+  color:var(--text3);transition:color .22s var(--expo);white-space:nowrap;cursor:pointer;
+}
+.tab.on{color:var(--text);}
+.tab:hover{color:var(--text2);}
+
+/* ─── THEME TOGGLE ─── */
+.nav-left{display:flex;align-items:center;gap:10px;}
+.theme-btn{
+  background:none;border:none;padding:0;
+  color:var(--text3);cursor:pointer;flex-shrink:0;
+  display:flex;align-items:center;
+  transition:color .2s var(--expo), transform .35s var(--spring);
+}
+.theme-btn:hover{color:var(--accent);transform:rotate(15deg) scale(1.15);}
+
+/* ─── SECTIONS ─── */
+.section{display:none;animation:fadeUp .3s ease both;}
+.section.on{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── HALOS ─── */
+.halos{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.halo{position:absolute;border-radius:50%;filter:blur(88px);will-change:transform;}
+.h1{width:680px;height:680px;background:radial-gradient(circle,var(--h1c),transparent 68%);top:-260px;left:-140px;animation:hf1 22s ease-in-out infinite;}
+.h2{width:520px;height:520px;background:radial-gradient(circle,var(--h2c),transparent 68%);top:-50px;right:-60px;animation:hf2 28s ease-in-out infinite;}
+.h3{width:420px;height:420px;background:radial-gradient(circle,var(--h3c),transparent 68%);bottom:-140px;left:42%;animation:hf3 19s ease-in-out infinite;}
+@keyframes hf1{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(65px,42px) scale(1.06)}70%{transform:translate(-32px,60px) scale(.94)}}
+@keyframes hf2{0%,100%{transform:translate(0,0) scale(1)}35%{transform:translate(-50px,32px) scale(1.05)}65%{transform:translate(42px,-42px) scale(.96)}}
+@keyframes hf3{0%,100%{transform:translate(0,0) scale(1)}55%{transform:translate(-60px,-32px) scale(1.09)}}
+
+/* ─── EASING ─── */
+:root{
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;overflow:hidden;
+  padding:clamp(56px,8vw,96px) clamp(20px,4vw,48px) clamp(48px,6vw,72px);
+  border-bottom:1px solid var(--border);
+  transition:border-color .35s;
+}
+.hero-inner{position:relative;z-index:1;}
+.h1t{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(40px,5.5vw,72px);
+  font-weight:400;line-height:1.06;letter-spacing:-.022em;
+  color:var(--text);margin-bottom:12px;
+  opacity:0;animation:fadeUp .65s .08s var(--expo) both;
+  transition:color .35s;
+}
+.hero-tagline{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(22px,2.8vw,36px);
+  font-weight:400;line-height:1.12;letter-spacing:-.018em;
+  color:var(--text2);margin-bottom:32px;
+  opacity:0;animation:fadeUp .65s .18s var(--expo) both;
+  transition:color .35s;
+}
+.hero-tagline em{
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;font-style:italic;
+}
+/* Cycling greeting */
+#greeting{
+  display:inline-block;
+  transition:opacity .55s var(--smooth), transform .55s var(--smooth);
+}
+#greeting.fade{opacity:0;transform:translateY(-9px);}
+
+.hdesc{
+  font-size:clamp(14px,1.5vw,16px);line-height:1.78;color:var(--text2);
+  max-width:500px;
+  opacity:0;animation:fadeUp .65s .28s var(--expo) both;transition:color .35s;
+}
+
+/* ─── QUICK INDEX ─── */
+.qidx{
+  padding:13px clamp(20px,4vw,48px);
+  background:var(--nav-bg);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  transition:background .35s,border-color .35s;
+}
+.qil{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-right:6px;white-space:nowrap;}
+.qic{
+  padding:4px 12px;border-radius:100px;border:1px solid var(--border2);
+  background:transparent;font-size:11px;font-family:'Inter',sans-serif;font-weight:500;
+  color:var(--text2);cursor:pointer;
+  transition:color .22s var(--expo), background .22s var(--expo),
+             border-color .22s var(--expo), transform .3s var(--spring);
+}
+.qic:hover{
+  border-color:var(--accent);color:var(--accent);
+  background:var(--tag-bg);transform:translateY(-2px);
+}
+.qic.on{background:var(--tag-bg);border-color:var(--tag-border);color:var(--tag-text);}
+
+/* ─── ALL-FEATURED CARDS ─── */
+.all-feat{display:flex;flex-direction:column;}
+
+.feat-card{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--border);
+  transition:background .3s var(--smooth), box-shadow .3s var(--smooth);
+}
+.feat-card:hover{
+  background:var(--card-h);
+  box-shadow:inset -3px 0 0 var(--accent);
+}
+
+/* Image pane */
+.feat-img{
+  height:clamp(280px,30vw,420px);
+  overflow:hidden;position:relative;
+}
+.feat-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .7s var(--expo);
+}
+.feat-card:hover .feat-img img{transform:scale(1.04);}
+
+.feat-img .pimg{transition:transform .7s var(--expo);}
+.feat-card:hover .feat-img .pimg{transform:scale(1.04);}
+
+/* Subtle edge vignette */
+.feat-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,transparent 60%,rgba(7,8,15,.18));
+  pointer-events:none;
+}
+[data-theme="light"] .feat-img::after{
+  background:linear-gradient(to right,transparent 60%,rgba(245,245,252,.15));
+}
+
+/* Content pane */
+.feat-body{
+  padding:clamp(28px,3.5vw,56px);
+  display:flex;flex-direction:column;justify-content:center;gap:16px;
+}
+
+.feat-eyebrow{display:flex;align-items:center;gap:10px;}
+
+.feat-badge{
+  padding:3px 11px;border-radius:100px;
+  font-size:10px;font-weight:600;
+  font-family:'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--grad);color:#fff;flex-shrink:0;
+  transition:transform .3s var(--spring), opacity .2s;
+}
+.feat-card:hover .feat-badge{transform:scale(1.04);}
+
+.feat-year{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--text3);
+}
+
+.feat-title{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(24px,3vw,36px);font-weight:400;
+  line-height:1.12;color:var(--text);
+  transition:color .35s, transform .4s var(--expo);
+}
+.feat-card:hover .feat-title{transform:translateX(3px);}
+
+.feat-impact{
+  font-size:13px;font-weight:600;
+  color:var(--accent2);font-family:'Inter',sans-serif;
+}
+
+.feat-desc{
+  font-size:13px;line-height:1.75;
+  color:var(--text2);transition:color .35s;
+  max-width:400px;
+}
+
+.ptags{display:flex;flex-wrap:wrap;gap:5px;}
+
+.ptag{
+  font-size:10px;padding:3px 10px;border-radius:100px;
+  background:var(--tag-bg);color:var(--tag-text);
+  border:1px solid var(--tag-border);
+  font-family:'Inter',sans-serif;font-weight:500;
+  transition:transform .28s var(--spring), background .2s;
+}
+.ptag:hover{transform:scale(1.06);}
+
+.feat-arr{
+  align-self:flex-start;padding:9px 20px;border-radius:100px;
+  border:1px solid var(--border2);font-size:13px;font-weight:500;
+  color:var(--text2);font-family:'Inter',sans-serif;
+  display:flex;align-items:center;gap:8px;margin-top:4px;
+  cursor:pointer;
+  transition:border-color .25s var(--expo), color .25s var(--expo),
+             background .25s var(--expo), transform .35s var(--spring), gap .25s var(--expo);
+}
+.feat-card:hover .feat-arr{
+  border-color:var(--accent);color:var(--accent);
+  background:var(--tag-bg);transform:translateY(-1px);gap:12px;
+}
+
+/* ─── ABOUT ─── */
+.about-wrap{
+  display:grid;grid-template-columns:1fr clamp(240px,28vw,360px);
+  gap:clamp(32px,6vw,80px);
+  padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(32px,4vw,56px);
+  border-bottom:1px solid var(--border);transition:border-color .35s;
+}
+.about-resume{
+  padding:clamp(32px,5vw,64px) clamp(20px,4vw,48px) clamp(40px,6vw,80px);
+}
+.about-eye{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:28px;}
+.about-h{font-family:'Instrument Serif',serif;font-size:clamp(22px,3vw,38px);font-weight:400;line-height:1.2;letter-spacing:-.02em;color:var(--text);margin-bottom:22px;transition:color .35s;}
+.about-p{font-size:15px;line-height:1.8;color:var(--text2);max-width:540px;margin-bottom:32px;transition:color .35s;}
+.sl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;}
+.skills{display:flex;flex-wrap:wrap;gap:7px;}
+.sk-pill{
+  padding:5px 13px;border:1px solid var(--border2);border-radius:100px;
+  font-size:11px;font-family:'Inter',sans-serif;font-weight:500;
+  color:var(--text2);transition:all .18s;cursor:pointer;
+}
+.sk-pill:hover{border-color:var(--accent);color:var(--accent);background:var(--tag-bg);}
+.aside-photo{
+  width:100%;aspect-ratio:3/4;background:var(--card);
+  border:1px solid var(--border);border-radius:12px;overflow:hidden;
+  position:relative;display:flex;align-items:center;justify-content:center;
+  font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:16px;
+}
+.aside-photo::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--h1c),var(--h2c));opacity:.6;
+}
+.aside-cur{padding:16px;background:var(--card);border:1px solid var(--border);border-radius:10px;}
+.cur-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:9px;display:flex;align-items:center;gap:7px;}
+.cur-d{width:5px;height:5px;border-radius:50%;background:#22C55E;box-shadow:0 0 6px rgba(34,197,94,.5);animation:lp 2.5s ease-in-out infinite;}
+.cur-t{font-size:13px;color:var(--text2);line-height:1.6;}
+
+/* ─── RÉSUMÉ ─── */
+.res-wrap{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(32px,6vw,72px);
+  padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px);
+}
+.rl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:32px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.tl{display:flex;flex-direction:column;}
+.tli{padding:22px 0 22px 24px;border-left:1px solid var(--border);position:relative;transition:border-color .35s;}
+.tli::before{content:'';position:absolute;left:-5px;top:26px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--border2);transition:all .22s;}
+.tli:hover::before{border-color:var(--accent);background:var(--accent);box-shadow:0 0 12px color-mix(in srgb,var(--accent) 50%,transparent);}
+.td{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
+.tc{font-family:'Instrument Serif',serif;font-size:17px;font-weight:400;color:var(--text);margin-bottom:2px;transition:color .35s;}
+.tr{font-size:12px;color:var(--text2);margin-bottom:9px;}
+.tdesc{font-size:12px;line-height:1.65;color:var(--text3);}
+.res-dl{
+  display:inline-flex;align-items:center;gap:8px;margin-top:32px;
+  padding:10px 20px;border-radius:9px;
+  background:var(--tag-bg);border:1px solid var(--tag-border);
+  font-size:12px;font-weight:600;color:var(--accent);font-family:'Inter',sans-serif;
+  transition:all .2s;cursor:pointer;
+}
+.res-dl:hover{transform:translateY(-2px);box-shadow:0 4px 20px color-mix(in srgb,var(--accent) 20%,transparent);}
+
+/* ─── FOOTER ─── */
+.footer-cta{
+  border-top:1px solid var(--border);
+  padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px) clamp(40px,5vw,60px);
+  transition:border-color .35s;
+  display:flex;flex-direction:column;
+}
+.fc-label{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:20px;
+}
+.fc-main-row{
+  display:flex;align-items:baseline;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;margin-bottom:20px;
+}
+.fc-heading{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(40px,5.5vw,72px);
+  font-weight:400;line-height:1.06;letter-spacing:-.022em;
+  color:var(--text);transition:color .35s;
+}
+#footer-greeting{
+  display:inline-block;
+  transition:opacity .55s var(--smooth), transform .55s var(--smooth);
+}
+#footer-greeting.fade{opacity:0;transform:translateY(-9px);}
+.fc-email{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(1rem,1.8vw,1.4rem);font-style:italic;
+  color:var(--accent);transition:opacity .2s;
+  text-decoration:none;align-self:flex-end;padding-bottom:6px;
+}
+.fc-email:hover{opacity:.65;}
+.fc-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.fc-socials{display:flex;gap:20px;align-items:center;}
+.fc-social,.fc-resume-btn{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  color:var(--text2);transition:color .2s;cursor:pointer;
+  text-decoration:none;background:none;border:none;padding:0;
+}
+.fc-social:hover,.fc-resume-btn:hover{color:var(--text);}
+.fc-copy{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);}
+
+/* ─── WATERMARK ─── */
+.wm{
+  padding:14px clamp(20px,4vw,48px);
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:8px;transition:border-color .35s;
+}
+.wm-t{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.wm-a{color:var(--accent);}
+
+/* ─── CSS PROJECT MOCKUP IMAGES ─── */
+.pimg{position:relative;overflow:hidden;width:100%;height:100%;}
+.feat-card:hover .pimg{transform:scale(1.035);}
+
+.pimg-1{background:linear-gradient(145deg,#0E1028 0%,#1a1f3e 100%);}
+.pimg-2{background:linear-gradient(145deg,#0A1820 0%,#0f2030 100%);}
+.pimg-3{background:linear-gradient(145deg,#160E28 0%,#200f3a 100%);}
+.pimg-4{background:linear-gradient(145deg,#141008 0%,#2a1a05 100%);}
+[data-theme="light"] .pimg-1{background:linear-gradient(145deg,#EEF0FF,#D8DCFF);}
+[data-theme="light"] .pimg-2{background:linear-gradient(145deg,#E5F4FF,#CEEBFF);}
+[data-theme="light"] .pimg-3{background:linear-gradient(145deg,#F2ECFF,#E4D8FF);}
+[data-theme="light"] .pimg-4{background:linear-gradient(145deg,#FFF6E8,#FFE4C0);}
+
+.ui{position:absolute;}
+
+/* App chrome */
+.ui-top{top:0;left:0;right:0;height:14%;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07);}
+.ui-side{top:0;left:0;bottom:0;width:20%;background:rgba(255,255,255,.03);border-right:1px solid rgba(255,255,255,.07);}
+
+/* Bar chart */
+.ui-bar{bottom:14%;border-radius:3px 3px 0 0;background:var(--accent);opacity:.7;}
+.ui-bar2{background:var(--accent2);opacity:.55;}
+.ui-b1{left:24%;width:8%;height:34%;}
+.ui-b2{left:34%;width:8%;height:54%;}
+.ui-b3{left:44%;width:8%;height:40%;}
+.ui-b4{left:54%;width:8%;height:62%;}
+.ui-b5{left:64%;width:8%;height:30%;}
+.ui-b6{left:74%;width:8%;height:46%;}
+
+/* Node graph */
+.ui-node{width:11px;height:11px;border-radius:50%;background:var(--accent);opacity:.8;}
+.ui-n1{top:32%;left:28%;}
+.ui-n2{top:32%;left:52%;}
+.ui-n3{top:32%;left:74%;}
+.ui-n4{top:60%;left:40%;}
+.ui-n5{top:60%;left:65%;}
+.ui-line{height:1px;background:rgba(255,255,255,.14);}
+.ui-l1{top:36%;left:33%;width:20%;}
+.ui-l2{top:36%;left:57%;width:18%;}
+.ui-l3{top:44%;left:32%;width:10%;transform:rotate(32deg);transform-origin:left center;}
+.ui-l4{top:44%;left:57%;width:10%;transform:rotate(32deg);transform-origin:left center;}
+
+/* Area chart */
+.ui-area{
+  bottom:0;left:0;right:0;height:60%;
+  background:linear-gradient(to top,rgba(99,102,241,.32),rgba(99,102,241,.04));
+  clip-path:polygon(0 84%,12% 54%,26% 66%,44% 26%,60% 46%,76% 14%,90% 30%,100% 20%,100% 100%,0 100%);
+}
+.ui-hline{left:0;right:0;height:1px;background:rgba(255,255,255,.06);}
+.ui-hl1{top:26%}.ui-hl2{top:50%}.ui-hl3{top:72%}
+
+/* Component / card grid */
+.ui-comp{border:1px solid rgba(255,255,255,.09);border-radius:4px;background:rgba(255,255,255,.025);}
+.ui-c1{top:18%;left:24%;width:34%;height:26%;}
+.ui-c2{top:18%;left:62%;width:30%;height:26%;}
+.ui-c3{top:52%;left:24%;width:30%;height:24%;}
+.ui-c4{top:52%;left:58%;width:34%;height:24%;}
+.ui-c5{top:82%;left:24%;width:68%;height:7%;border-radius:3px;}
+
+/* Dot grid accent */
+.ui-dots{
+  position:absolute;top:14%;right:3%;width:32%;height:65%;
+  background-image:radial-gradient(circle,rgba(255,255,255,.14) 1px,transparent 1px);
+  background-size:10px 10px;
+}
+
+[data-theme="light"] .ui-top{background:rgba(0,0,0,.04);border-bottom-color:rgba(0,0,0,.07);}
+[data-theme="light"] .ui-side{background:rgba(0,0,0,.03);border-right-color:rgba(0,0,0,.06);}
+[data-theme="light"] .ui-hline{background:rgba(0,0,0,.06);}
+[data-theme="light"] .ui-comp{border-color:rgba(0,0,0,.09);background:rgba(0,0,0,.02);}
+[data-theme="light"] .ui-line{background:rgba(0,0,0,.12);}
+[data-theme="light"] .ui-dots{background-image:radial-gradient(circle,rgba(0,0,0,.1) 1px,transparent 1px);}
+[data-theme="light"] .ui-area{background:linear-gradient(to top,rgba(99,102,241,.2),rgba(99,102,241,.02));}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  /* Control bar */
+  .cbar{padding:0 12px;gap:4px;}
+  .cb-lbl:first-child{display:none;}
+  #p-indigo .swatch~*,#p-violet .swatch~*,#p-peri .swatch~*{display:none;}
+  .xbtn{padding:0 8px;gap:0;}
+
+  /* Nav */
+  .nav{height:48px;padding:0 16px;}
+  .nav-logo{font-size:15px;}
+  .tab{padding:4px 10px;font-size:12px;}
+
+  /* Hero */
+  .hero{padding:44px 20px 40px;}
+  .h1t{font-size:clamp(34px,10vw,52px);}
+  .hero-tagline{font-size:clamp(18px,5.5vw,28px);}
+  .hdesc{font-size:14px;max-width:100%;}
+
+  /* Quick index */
+  .qidx{padding:10px 16px;}
+  .qil{display:none;}
+
+  /* Cards — stack image above content */
+  .feat-card{grid-template-columns:1fr;}
+  .feat-img{height:220px;}
+  .feat-img::after{display:none;}
+  .feat-body{padding:24px 20px 28px;}
+  .feat-title{font-size:clamp(20px,5.5vw,28px);}
+
+  /* About */
+  .about-wrap{
+    grid-template-columns:1fr;
+    padding:32px 20px 28px;gap:24px;
+  }
+  .about-aside{display:none;}
+  .about-resume{padding:0 20px 40px;}
+  .res-wrap{grid-template-columns:1fr;gap:32px;}
+
+  /* Footer */
+  .footer-cta{padding:40px 20px 40px;}
+  .fc-main-row{flex-direction:column;align-items:flex-start;gap:8px;}
+  .fc-email{padding-bottom:0;align-self:auto;}
+  .fc-heading{font-size:clamp(34px,10vw,52px);}
+  .fc-bottom{flex-direction:column;align-items:flex-start;gap:10px;}
+
+  /* Watermark */
+  .wm{padding:12px 20px;}
+}
+
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+
+<div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav">
+    <div class="nav-left">
+      <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle theme"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+      <a href="layout-compare.html" class="nav-logo">Amy Z.</a>
+    </div>
+    <div class="nav-right">
+      <div class="tabs" id="tabs">
+        <div class="pill" id="pill"></div>
+        <div class="tab on" onclick="setSection('work',this)">Work</div>
+        <div class="tab" onclick="setSection('about',this)">About</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <div class="hero">
+    <div class="halos">
+      <div class="halo h1"></div>
+      <div class="halo h2"></div>
+      <div class="halo h3"></div>
+    </div>
+    <div class="hero-inner">
+      <h1 class="h1t"><span id="greeting">Hello</span>, I'm Amy.</h1>
+      <p class="hero-tagline">I design systems with <em>real clarity.</em></p>
+      <p class="hdesc">5+ years designing process-heavy admin tools for architecture and construction — RFI workflows, submittal tracking, approval chains, and field inspection systems that teams actually want to use.</p>
+    </div>
+  </div>
+
+  <!-- ═══ WORK ═══ -->
+  <div class="section on" id="section-work">
+
+    <!-- Quick index -->
+    <div class="qidx">
+      <span class="qil">Jump to</span>
+      <span class="qic on" onclick="qi(this,'p1')">RFI Intelligence</span>
+      <span class="qic" onclick="qi(this,'p2')">Submittal Workflow</span>
+      <span class="qic" onclick="qi(this,'p3')">Approvals Command</span>
+      <span class="qic" onclick="qi(this,'p4')">Field Inspection</span>
+    </div>
+
+    <!-- ── ALL FEATURED CARDS ── -->
+    <div class="all-feat">
+
+      <!-- Card 1 -->
+      <div class="feat-card" id="p1">
+        <div class="feat-img">
+          <div class="pimg pimg-1">
+            <div class="ui ui-top"></div>
+            <div class="ui ui-side"></div>
+            <div class="ui ui-bar ui-b1"></div>
+            <div class="ui ui-bar ui-bar2 ui-b2"></div>
+            <div class="ui ui-bar ui-b3"></div>
+            <div class="ui ui-bar ui-bar2 ui-b4"></div>
+            <div class="ui ui-bar ui-b5"></div>
+            <div class="ui ui-bar ui-bar2 ui-b6"></div>
+            <div class="ui ui-dots"></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-eyebrow">
+            <span class="feat-badge">Dashboard</span>
+            <span class="feat-year">Arch. Tech · 2024</span>
+          </div>
+          <div class="feat-title">RFI Intelligence Tracker</div>
+          <div class="feat-impact">↑ 40% faster resolution · 200+ firms onboarded</div>
+          <p class="feat-desc">Redesigned the end-to-end RFI lifecycle dashboard for a $2B construction management platform — from request creation through approval routing to full resolution tracking.</p>
+          <div class="ptags">
+            <span class="ptag">Complex Workflows</span>
+            <span class="ptag">Data Visualization</span>
+            <span class="ptag">0→1</span>
+          </div>
+          <div class="feat-arr">View case study →</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="feat-card" id="p2">
+        <div class="feat-img">
+          <div class="pimg pimg-2">
+            <div class="ui ui-top"></div>
+            <div class="ui ui-side"></div>
+            <div class="ui ui-node ui-n1"></div>
+            <div class="ui ui-node ui-n2"></div>
+            <div class="ui ui-node ui-n3"></div>
+            <div class="ui ui-node ui-n4"></div>
+            <div class="ui ui-node ui-n5"></div>
+            <div class="ui ui-line ui-l1"></div>
+            <div class="ui ui-line ui-l2"></div>
+            <div class="ui ui-line ui-l3"></div>
+            <div class="ui ui-line ui-l4"></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-eyebrow">
+            <span class="feat-badge">Workflow</span>
+            <span class="feat-year">B2B SaaS · 2023</span>
+          </div>
+          <div class="feat-title">Submittal Workflow Engine</div>
+          <div class="feat-impact">↓ 60% manual review time · 500+ docs/month</div>
+          <p class="feat-desc">Built an end-to-end submittal review system across 12 project types. Replaced a manual 17-step email chain with a structured, auditable workflow with full traceability and automated routing.</p>
+          <div class="ptags">
+            <span class="ptag">Product Strategy</span>
+            <span class="ptag">Information Architecture</span>
+            <span class="ptag">Admin Tools</span>
+          </div>
+          <div class="feat-arr">View case study →</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="feat-card" id="p3">
+        <div class="feat-img">
+          <div class="pimg pimg-3">
+            <div class="ui ui-top"></div>
+            <div class="ui ui-side"></div>
+            <div class="ui ui-area"></div>
+            <div class="ui ui-hline ui-hl1"></div>
+            <div class="ui ui-hline ui-hl2"></div>
+            <div class="ui ui-hline ui-hl3"></div>
+            <div class="ui ui-dots"></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-eyebrow">
+            <span class="feat-badge">Admin</span>
+            <span class="feat-year">Arch. Tech · 2024</span>
+          </div>
+          <div class="feat-title">Approvals Command Center</div>
+          <div class="feat-impact">↓ 65% approval bottlenecks · 8 project sites</div>
+          <p class="feat-desc">Multi-tier approval chain visualization designed for both senior approvers who check in weekly and coordinators living in the tool every day. Role-based views, deadline surfacing, and audit logs built in.</p>
+          <div class="ptags">
+            <span class="ptag">Permission Design</span>
+            <span class="ptag">Complex Systems</span>
+            <span class="ptag">Stakeholder UX</span>
+          </div>
+          <div class="feat-arr">View case study →</div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="feat-card" id="p4">
+        <div class="feat-img">
+          <div class="pimg pimg-4">
+            <div class="ui ui-top"></div>
+            <div class="ui ui-side"></div>
+            <div class="ui ui-comp ui-c1"></div>
+            <div class="ui ui-comp ui-c2"></div>
+            <div class="ui ui-comp ui-c3"></div>
+            <div class="ui ui-comp ui-c4"></div>
+            <div class="ui ui-comp ui-c5"></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-eyebrow">
+            <span class="feat-badge">Mobile</span>
+            <span class="feat-year">Enterprise · 2023</span>
+          </div>
+          <div class="feat-title">Field Inspection App</div>
+          <div class="feat-impact">↑ 42% field adoption · iOS + offline-first</div>
+          <p class="feat-desc">Native mobile app for on-site inspectors to log punch list items, attach geotagged photos, and generate PDF reports — fully offline-first for job sites with limited or zero connectivity.</p>
+          <div class="ptags">
+            <span class="ptag">Mobile Design</span>
+            <span class="ptag">Offline-first</span>
+            <span class="ptag">Design System</span>
+          </div>
+          <div class="feat-arr">View case study →</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /work -->
+
+  <!-- ═══ ABOUT ═══ -->
+  <div class="section" id="section-about">
+
+    <!-- About Me -->
+    <div class="about-wrap">
+      <div>
+        <div class="about-eye">About me</div>
+        <p class="about-p">I'm Amy Zhou, a product designer specializing in architecture, construction, and B2B enterprise software. Over 5+ years I've turned complex, process-heavy tools into software people actually want to open. My work spans RFI workflows, submittal tracking, field inspection tools, and data dashboards.<br><br>I think in systems, move fast with research, and care about the gap between "technically ships" and "actually works."</p>
+        <div class="sl">Areas of expertise</div>
+        <div class="skills">
+          <span class="sk-pill">Product Design</span>
+          <span class="sk-pill">Design Systems</span>
+          <span class="sk-pill">UX Research</span>
+          <span class="sk-pill">Enterprise UX</span>
+          <span class="sk-pill">Construction Tech</span>
+          <span class="sk-pill">Workflow Design</span>
+          <span class="sk-pill">Information Architecture</span>
+          <span class="sk-pill">Figma</span>
+          <span class="sk-pill">Prototyping</span>
+          <span class="sk-pill">Data Visualisation</span>
+        </div>
+      </div>
+      <div class="about-aside">
+        <div class="aside-photo">Your photo</div>
+      </div>
+    </div>
+
+    <!-- Experience + Education timeline -->
+    <div class="about-resume">
+      <div class="res-wrap">
+        <div>
+          <div class="rl">Experience</div>
+          <div class="tl">
+            <div class="tli">
+              <div class="td">2022 – Present</div>
+              <div class="tc">Architecture Tech Co.</div>
+              <div class="tr">Senior Product Designer</div>
+              <div class="tdesc">Led end-to-end design for RFI management, submittals, and construction admin workflows. Grew design system from 40 to 180+ components.</div>
+            </div>
+            <div class="tli">
+              <div class="td">2020 – 2022</div>
+              <div class="tc">Fintech Startup</div>
+              <div class="tr">Product Designer</div>
+              <div class="tdesc">Sole designer for data dashboard used by 2M+ monthly users. Led research, prototyping, and visual design end to end.</div>
+            </div>
+            <div class="tli">
+              <div class="td">2018 – 2020</div>
+              <div class="tc">B2B Platform</div>
+              <div class="tr">UX Designer</div>
+              <div class="tdesc">Redesigned core onboarding and field inspection tool. Increased 30-day activation by 42%.</div>
+            </div>
+          </div>
+          <div class="res-dl">↓ Download full résumé (PDF)</div>
+        </div>
+        <div>
+          <div class="rl">Education &amp; Credentials</div>
+          <div class="tl">
+            <div class="tli">
+              <div class="td">2014 – 2018</div>
+              <div class="tc">University Name</div>
+              <div class="tr">BA Interaction Design</div>
+              <div class="tdesc">Graduated with honours. Thesis on cognitive load in data-heavy enterprise interfaces.</div>
+            </div>
+            <div class="tli">
+              <div class="td">2021</div>
+              <div class="tc">Nielsen Norman Group</div>
+              <div class="tr">UX Master Certificate</div>
+              <div class="tdesc">Specialization in Enterprise UX and Information Architecture.</div>
+            </div>
+            <div class="tli">
+              <div class="td">2023</div>
+              <div class="tc">DesignOps Summit</div>
+              <div class="tr">Speaker</div>
+              <div class="tdesc">"Scaling Design Systems in B2B Without Losing Your Mind."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer-cta">
+    <div class="fc-label">Let's work together</div>
+    <div class="fc-main-row">
+      <div class="fc-heading">Say <span id="footer-greeting">hello</span>.</div>
+      <a href="mailto:ayjzhou@gmail.com" class="fc-email">ayjzhou@gmail.com</a>
+    </div>
+    <div class="fc-bottom">
+      <div class="fc-socials">
+        <a href="https://linkedin.com" target="_blank" class="fc-social">LinkedIn ↗</a>
+        <a href="#" class="fc-resume-btn">Résumé ↗</a>
+      </div>
+      <div class="fc-copy">© 2025 Amy Z.</div>
+    </div>
+  </footer>
+
+
+</div>
+
+<script>
+/* ── Cursor ── */
+const cur = document.getElementById('cursor');
+if (cur) {
+  document.addEventListener('mousemove', e => {
+    cur.style.left = e.clientX + 'px';
+    cur.style.top  = e.clientY + 'px';
+  });
+  document.querySelectorAll(
+    'button,.tab,.sk-pill,.feat-arr,.qic,.tli,.res-dl,.fc-social,.fc-email,.xbtn,.ptag'
+  ).forEach(el => {
+    el.addEventListener('mouseenter', () => cur.classList.add('big'));
+    el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+  });
+}
+
+/* ── Sliding pill (underline) ── */
+function movePill(t) {
+  const pill = document.getElementById('pill');
+  const tabs = document.getElementById('tabs');
+  const tr = tabs.getBoundingClientRect();
+  const ar = t.getBoundingClientRect();
+  pill.style.left  = (ar.left - tr.left) + 'px';
+  pill.style.width = ar.width + 'px';
+}
+setTimeout(() => {
+  const a = document.querySelector('.tab.on');
+  if (a) movePill(a);
+}, 60);
+
+/* ── Section switch ── */
+function setSection(n, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('on'));
+  document.getElementById('section-' + n).classList.add('on');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  el.classList.add('on');
+  movePill(el);
+}
+
+/* ── Theme toggle ── */
+const sunSVG  = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+const moonSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+
+function toggleTheme() {
+  const html   = document.documentElement;
+  const isDark = html.dataset.theme === 'dark';
+  html.dataset.theme = isDark ? 'light' : 'dark';
+  document.getElementById('themeBtn').innerHTML = isDark ? moonSVG : sunSVG;
+}
+
+/* ── Quick index ── */
+function qi(chip, id) {
+  chip.closest('.qidx').querySelectorAll('.qic').forEach(c => c.classList.remove('on'));
+  chip.classList.add('on');
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/* ── Cycling greeting ── */
+const greetings = [
+  'Hello',   // English
+  'Hola',    // Spanish
+  'Ciao',    // Italian
+  'Salut',   // French
+  'Hallo',   // German
+  'Olá',     // Portuguese
+  '你好',    // Chinese
+  'Hei',     // Norwegian
+  'Hej',     // Swedish
+  '안녕',    // Korean
+  'Oi',      // Brazilian
+];
+let gi = 0;
+const gel = document.getElementById('greeting');
+
+setInterval(() => {
+  gel.classList.add('fade');
+  setTimeout(() => {
+    gi = (gi + 1) % greetings.length;
+    gel.textContent = greetings[gi];
+    gel.classList.remove('fade');
+  }, 500);
+}, 5000);
+
+/* ── Footer greeting cycler (offset by 2.5s so they don't sync) ── */
+const fgel = document.getElementById('footer-greeting');
+let fgi = 0;
+setTimeout(() => {
+  setInterval(() => {
+    fgel.classList.add('fade');
+    setTimeout(() => {
+      fgi = (fgi + 1) % greetings.length;
+      fgel.textContent = greetings[fgi];
+      fgel.classList.remove('fade');
+    }, 500);
+  }, 5000);
+}, 2500);
+
+/* ── Scroll reveal on cards ── */
+document.querySelectorAll('.feat-card').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity .55s ease, transform .55s ease';
+  el.style.transitionDelay = (i * 0.06) + 's';
+});
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.feat-card').forEach(el => io.observe(el));
+
+/* ── Card navigation ── */
+const cardUrls = {
+  p1: 'case-study.html',
+  p2: 'case-study.html',
+  p3: 'case-study.html',
+  p4: 'case-study.html'
+};
+Object.entries(cardUrls).forEach(([id, url]) => {
+  const card = document.getElementById(id);
+  if(!card) return;
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', () => window.location.href = url);
+});
+</script>
+
+</body>
 </html>
