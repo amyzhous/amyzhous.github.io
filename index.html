@@ -357,15 +357,24 @@ body{
 }
 .sk-pill:hover{border-color:var(--accent);color:var(--accent);background:var(--tag-bg);}
 .aside-photo{
-  width:100%;aspect-ratio:3/4;background:var(--card);
+  width:100%;aspect-ratio:3/4;
   border:1px solid var(--border);border-radius:12px;overflow:hidden;
   position:relative;display:flex;align-items:center;justify-content:center;
-  font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--text3);margin-bottom:16px;
+  margin-bottom:16px;
+  background-size:cover;background-position:center;
 }
 .aside-photo::before{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,var(--h1c),var(--h2c));opacity:.6;
+  background-image:inherit;
+  background-size:cover;background-position:center;
+  filter:blur(20px);
+  transform:scale(1.1);
+  opacity:.3;
+}
+.aside-photo img{
+  position:relative;z-index:1;
+  width:100%;height:100%;object-fit:contain;
+  object-position:center;
 }
 .aside-cur{padding:16px;background:var(--card);border:1px solid var(--border);border-radius:10px;}
 .cur-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:9px;display:flex;align-items:center;gap:7px;}
@@ -776,7 +785,9 @@ body{
         </div>
       </div>
       <div class="about-aside">
-        <div class="aside-photo">Your photo</div>
+        <div class="aside-photo" style="background-image:url('assets/amy-zhou-photo.jpg')">
+          <img src="assets/amy-zhou-photo.jpg" alt="Amy Zhou">
+        </div>
       </div>
     </div>
 
