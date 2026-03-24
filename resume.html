@@ -47,8 +47,10 @@ body{
 .resume-header{
   margin-bottom:56px;
   display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:16px;
 }
 
 .name{
@@ -67,8 +69,8 @@ body{
   gap:4px 12px;
   font-size:13px;
   color:var(--text2);
-  text-align:right;
-  justify-content:flex-end;
+  text-align:center;
+  justify-content:center;
 }
 
 .contact-info a{
@@ -260,13 +262,12 @@ body{
   }
 
   .resume-header{
-    flex-direction:column;
-    gap:16px;
+    gap:12px;
   }
 
   .contact-info{
-    text-align:left;
-    justify-content:flex-start;
+    text-align:center;
+    justify-content:center;
   }
 
   .name{
@@ -300,7 +301,7 @@ body{
       <span class="contact-sep">·</span>
       <a href="https://www.linkedin.com/in/amyyjzhou/" target="_blank">/in/amyyjzhou/</a>
       <span class="contact-sep">·</span>
-      <span>+1 (905) 348-2889</span>
+      <a href="tel:+19053482889">+1 (905) 348-2889</a>
     </div>
   </header>
 
