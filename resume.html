@@ -62,11 +62,13 @@ body{
 
 .contact-info{
   display:flex;
-  flex-direction:column;
-  gap:6px;
+  flex-direction:row;
+  flex-wrap:wrap;
+  gap:4px 12px;
   font-size:13px;
   color:var(--text2);
   text-align:right;
+  justify-content:flex-end;
 }
 
 .contact-info a{
@@ -77,6 +79,10 @@ body{
 
 .contact-info a:hover{
   color:var(--text);
+}
+
+.contact-sep{
+  color:var(--text3);
 }
 
 /* ─── SECTIONS ─── */
@@ -260,6 +266,7 @@ body{
 
   .contact-info{
     text-align:left;
+    justify-content:flex-start;
   }
 
   .name{
@@ -288,8 +295,11 @@ body{
     <h1 class="name">Amy Zhou</h1>
     <div class="contact-info">
       <a href="https://amyzhous.github.io" target="_blank">amyzhous.github.io</a>
+      <span class="contact-sep">·</span>
       <a href="mailto:ayjzhou@gmail.com">ayjzhou@gmail.com</a>
+      <span class="contact-sep">·</span>
       <a href="https://www.linkedin.com/in/amyyjzhou/" target="_blank">/in/amyyjzhou/</a>
+      <span class="contact-sep">·</span>
       <span>+1 (905) 348-2889</span>
     </div>
   </header>
