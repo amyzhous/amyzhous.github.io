@@ -38,6 +38,7 @@ const redirectPage = (to: string): string => `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <meta http-equiv="refresh" content="0; url=${to}">
 <link rel="canonical" href="${to}">
 <title>Moved</title>

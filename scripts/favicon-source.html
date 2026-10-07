@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=block">
+<style>
+  html,body{margin:0;padding:0;}
+  body{width:512px;height:512px;background:#0D0D0F;overflow:hidden;}
+  #g{position:absolute;font-family:Newsreader,Georgia,serif;line-height:1;color:#EDEDEF;
+     font-variation-settings:'opsz' 72;white-space:pre;}
+</style></head>
+<body><span id="g">A</span>
+<script>
+// Fit the glyph's real ink box into the square with an even margin, so the
+// mark is optically centred rather than centred on its line box.
+window.fit = async (weight, inset) => {
+  const el = document.getElementById('g');
+  el.style.fontWeight = weight;
+  el.style.fontSize = '400px';
+  await document.fonts.ready;
+  const c = document.createElement('canvas').getContext('2d');
+  c.font = `${weight} 400px Newsreader, Georgia, serif`;
+  const m = c.measureText('A');
+  const w = m.actualBoundingBoxRight + m.actualBoundingBoxLeft;
+  const h = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
+  const target = 512 * (1 - inset * 2);
+  const scale = target / Math.max(w, h);
+  const size = 400 * scale;
+  el.style.fontSize = size + 'px';
+  const m2 = (() => { c.font = `${weight} ${size}px Newsreader, Georgia, serif`; return c.measureText('A'); })();
+  const iw = m2.actualBoundingBoxRight + m2.actualBoundingBoxLeft;
+  const ih = m2.actualBoundingBoxAscent + m2.actualBoundingBoxDescent;
+  // position so the ink box lands centred in the 512 square
+  el.style.left = (512 - iw) / 2 + m2.actualBoundingBoxLeft + 'px';
+  el.style.top  = (512 - ih) / 2 + m2.actualBoundingBoxAscent + 'px';
+  el.style.transform = 'translateY(-1em)';
+  el.style.lineHeight = '1em';
+  // translateY(-1em) + top at baseline: set top to baseline, shift up by ascent handled above
+  el.style.transform = 'none';
+  el.style.position = 'absolute';
+  el.style.top = ((512 - ih) / 2 - (m2.fontBoundingBoxAscent - m2.actualBoundingBoxAscent)) + 'px';
+  return {size, iw, ih};
+};
+</script>
+</body></html>

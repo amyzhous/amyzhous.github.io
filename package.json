@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "resume": "node scripts/print-resumes.mjs"
+    "resume": "node scripts/print-resumes.mjs",
+    "favicon": "node scripts/make-favicon.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",

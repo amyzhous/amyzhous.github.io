@@ -30,7 +30,8 @@ npm run resume     # exports both résumé PDFs to dist/pdf/ (needs Chrome)
 | `src/templates/` | The functions that turn that data into HTML |
 | `src/styles/` | `tokens` → `base` → `figures` → page sheet → `motion` |
 | `src/scripts/autoscroll.ts` | The home page's looping work column |
-| `vite.config.ts` | Renders each page at build time, then Vite bundles it |
+| `public/` | Favicon set, copied to the site root as-is |
+| `vite.config.ts` | Renders each page at build time, emits the redirect stubs |
 | `*.html` | One entry per route; they hold `<!--head-->` and `<!--app-->` |
 
 Everything in `[SQUARE BRACKETS]` is a deliberate placeholder. Filling one in
@@ -59,6 +60,20 @@ The home work column auto-scrolls at 18px/second (`autoScrollSpeed` in
 `src/data/site.ts`; 0 disables it). The list renders twice so the loop has no
 seam, the duplicate is hidden from assistive tech and the tab order, and the
 column yields to the reader on hover, wheel or touch.
+
+## Favicon
+
+The mark is a Newsreader "A" in `--text` on the `--ground` square — the site's
+own name treatment, nothing new. `public/favicon.ico` carries 16, 32 and 48px;
+the 16px tile is set in weight 500 because the lighter cut loses its serifs at
+that size. Regenerate with `scripts/make-favicon.mjs` if the type ever changes.
+
+## Old URLs
+
+The previous site's five case study URLs are kept alive as redirect stubs to
+the index, emitted from the `redirects` map in `vite.config.ts`. All five
+served the same unfinished template, so there is no page-for-page mapping.
+The old site is on the `backup/pre-redesign-site` branch.
 
 ## Résumés
 
