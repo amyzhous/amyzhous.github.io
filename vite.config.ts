@@ -17,6 +17,55 @@ const pages = {
   'resume-ats.html': { module: 'src/pages/resume-ats.page.ts' },
 } as const;
 
+/**
+ * URLs from the previous site. Every one of them served the same unfinished
+ * "Permit Flow" template rather than the case study its link promised, so
+ * there is no equivalent page to send them to — they go to the index, where
+ * the current work is one click away.
+ */
+const redirects: Record<string, string> = {
+  'rfi-intelligence.html': '/',
+  'submittal-workflow.html': '/',
+  'approvals-command.html': '/',
+  'field-inspection.html': '/',
+  'case-study.html': '/',
+};
+
+/** A no-JavaScript-required redirect stub, styled so a flash is not jarring. */
+const redirectPage = (to: string): string => `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=${to}">
+<link rel="canonical" href="${to}">
+<title>Moved</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+         background: #0D0D0F; color: #9A9AA2; color-scheme: dark;
+         font: 400 14px/1.6 'Instrument Sans', ui-sans-serif, system-ui, sans-serif; }
+  p { margin: 0; padding: 0 24px; text-align: center; }
+  a { color: #EDEDEF; }
+</style>
+</head>
+<body>
+<p>This page has moved. <a href="${to}">Go to the work</a>.</p>
+<script>location.replace(${JSON.stringify(to)});</script>
+</body>
+</html>
+`;
+
+/** Emits those stubs alongside the built pages. */
+const emitRedirects = (): Plugin => ({
+  name: 'emit-redirects',
+  generateBundle() {
+    for (const [from, to] of Object.entries(redirects)) {
+      this.emitFile({ type: 'asset', fileName: from, source: redirectPage(to) });
+    }
+  },
+});
+
 interface PageModule {
   head: () => string;
   body: () => string;
@@ -93,7 +142,7 @@ const renderPages = (): Plugin => {
 
 export default defineConfig({
   appType: 'mpa',
-  plugins: [renderPages()],
+  plugins: [renderPages(), emitRedirects()],
   build: {
     target: 'es2022',
     cssCodeSplit: true,
