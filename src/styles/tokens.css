@@ -1,0 +1,39 @@
+/* ── Design tokens ──────────────────────────────────────────────────────────
+   Dark editorial. One serif doing the meaning, one sans doing the labelling,
+   hairline rules, no accent colour anywhere. There is no light mode and no
+   theme switching; the résumé is a separate, print-only stylesheet.
+   ------------------------------------------------------------------------- */
+
+:root {
+  --ground: #0d0d0f; /* page */
+  --plate: #16161a; /* figure grounds, inset panels */
+  --plate-line: #26262b; /* dividers inside figures */
+  --row-line: #1e1e23; /* table row separators */
+  --rule: #222227; /* section rules */
+
+  --text: #ededef; /* headings, emphasis */
+  --text-2: #d4d4da; /* lede */
+  --body: #c4c4ca; /* running text */
+  --muted: #9a9aa2; /* secondary */
+  --dim: #8a8a92; /* captions */
+  --label: #6a6a72; /* uppercase labels */
+
+  --fill-1: #ededef; /* chart: first value */
+  --fill-2: #8a8a92; /* chart: second */
+  --fill-3: #45454c; /* chart: third */
+  --chip: #2a2a30; /* inactive chip */
+  --chip-ink: #b4b4bc;
+  --cell-line: #33333a; /* matrix cell border */
+  --track: #202026; /* bar track */
+  --cell-line-soft: #2a2a30;
+  --after-line: #38383f;
+
+  --serif: Newsreader, Georgia, serif;
+  --sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --enter: 620ms;
+
+  --container: 1180px;
+  --frame: 1240px;
+}

@@ -1,0 +1,110 @@
+/* ── Résumé, ATS ────────────────────────────────────────────────────────────
+   Single column, real headings, no grid. Built to be parsed by Greenhouse,
+   Lever and Workday. Letter, 816 × 1056 at 96dpi.
+   ------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111114;
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  print-color-adjust: exact;
+}
+
+.sheet {
+  width: 816px;
+  height: 1056px;
+  padding: 44px 76px 8px;
+  background: #ffffff;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin: 16px 0 9px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #d5d5db;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #111114;
+}
+
+p {
+  margin: 0;
+}
+
+.body {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #2e2e33;
+}
+
+.contact {
+  color: #55555c;
+}
+
+.role {
+  margin-bottom: 12px;
+}
+
+.job {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111114;
+}
+
+.when {
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: #55555c;
+}
+
+ul {
+  margin: 7px 0 0;
+  padding-left: 18px;
+}
+
+li {
+  margin-bottom: 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #2e2e33;
+}
+
+.skills p {
+  margin-bottom: 3px;
+}
+
+/* The whole résumé is one Letter page; these values are tuned so the content
+   ends inside it. Adding a bullet means taking one out. */
+
+@page {
+  size: 8.5in 11in;
+  margin: 0;
+}
+
+@media print {
+  /* One sheet, one page: let the box collapse to its content so a rounding
+     sliver cannot spill onto a second page. */
+  .sheet {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+}

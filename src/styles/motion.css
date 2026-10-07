@@ -1,0 +1,229 @@
+/* ── Motion ─────────────────────────────────────────────────────────────────
+   Everything in the design, nothing more.
+
+   Scroll-driven figure animations use clip-path and opacity only. transform is
+   reserved for hover — animating it here would break the hover behaviour.
+   Every animation has a @supports fallback that shows the finished state.
+   ------------------------------------------------------------------------- */
+
+/* ── arrival: the page assembles itself, once (home only) ── */
+
+.in {
+  animation: in-up var(--enter) var(--ease) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── figures draw themselves as they enter view ── */
+
+.row {
+  animation: row-in both linear;
+  animation-timeline: view();
+}
+
+@keyframes row-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.row-1 {
+  animation-range: entry 4% cover 18%;
+}
+.row-2 {
+  animation-range: entry 7% cover 21%;
+}
+.row-3 {
+  animation-range: entry 10% cover 24%;
+}
+.row-4 {
+  animation-range: entry 13% cover 27%;
+}
+.row-5 {
+  animation-range: entry 16% cover 30%;
+}
+
+.bar {
+  animation: bar-draw both linear;
+  animation-timeline: view();
+}
+
+@keyframes bar-draw {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.bar-1 {
+  animation-range: entry 8% cover 26%;
+}
+.bar-2 {
+  animation-range: entry 13% cover 31%;
+}
+.bar-3 {
+  animation-range: entry 18% cover 36%;
+}
+
+.cel {
+  animation: cel-in both linear;
+  animation-timeline: view();
+}
+
+@keyframes cel-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cel-a {
+  animation-range: entry 6% cover 22%;
+}
+.cel-b {
+  animation-range: entry 10% cover 26%;
+}
+.cel-c {
+  animation-range: entry 14% cover 30%;
+}
+.cel-d {
+  animation-range: entry 18% cover 34%;
+}
+
+.solo {
+  animation: solo-draw both linear;
+  animation-timeline: view();
+  animation-range: entry 22% cover 42%;
+}
+
+@keyframes solo-draw {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* ── case study: sections rise and fade as they enter view ── */
+
+.sec {
+  animation: sec-in both linear;
+  animation-timeline: view();
+  animation-range: entry 4% cover 22%;
+}
+
+@keyframes sec-in {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+/* ── case study: the 1px scroll-progress rule in the sticky header ── */
+
+.prog {
+  height: 1px;
+  background: var(--text);
+  transform-origin: 0 50%;
+  animation: grow both linear;
+  animation-timeline: scroll();
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ── fallbacks: show the finished state ── */
+
+@supports not (animation-timeline: view()) {
+  .row,
+  .cel {
+    opacity: 1;
+    animation: none;
+  }
+
+  .bar,
+  .solo {
+    clip-path: none;
+    animation: none;
+  }
+
+  .sec {
+    opacity: 1;
+    translate: none;
+    animation: none;
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .prog {
+    animation: none;
+    transform: scaleX(0.3);
+  }
+}
+
+/* ── reduced motion: all of it off, including the auto-scroll ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .in {
+    animation: none;
+  }
+
+  .row,
+  .cel,
+  .sec {
+    opacity: 1;
+    translate: none;
+    animation: none;
+  }
+
+  .bar,
+  .solo {
+    clip-path: none;
+    animation: none;
+  }
+
+  .row,
+  .bar,
+  .cel,
+  .solo,
+  .chip,
+  .title,
+  .go,
+  .u,
+  .arr {
+    transition: none;
+  }
+
+  .prog {
+    animation: none;
+    transform: none;
+  }
+}

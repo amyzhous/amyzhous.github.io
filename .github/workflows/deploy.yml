@@ -1,0 +1,45 @@
+# Builds the site and publishes it to `master`, which is what GitHub Pages
+# serves for amyzhous.github.io. The source lives on this branch; `master`
+# holds only the built output.
+name: Deploy
+
+on:
+  push:
+    branches: [source]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+
+      - name: Publish to master
+        run: |
+          cp .nojekyll robots.txt dist/ 2>/dev/null || true
+          cd dist
+          git init -q
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q --depth 1 origin master
+          git reset -q --soft FETCH_HEAD
+          git add -A
+          git commit -q -m "Deploy ${{ github.sha }}" || exit 0
+          git push -q origin HEAD:master
