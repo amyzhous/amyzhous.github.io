@@ -1,389 +1,76 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amy Zhou — Product Designer Resume</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ─── RESET ─── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
-
-/* ─── THEME ─── */
-:root{
-  --accent:#6366F1;
-  --accent-light:#A5B4FC;
-  --text:#0D0E1A;
-  --text2:#4A5070;
-  --text3:#7A82A8;
-  --bg:#FFFFFF;
-  --bg2:#F5F5FC;
-  --border:rgba(0,0,0,.08);
-  --tag-bg:rgba(99,102,241,.08);
-  --tag-border:rgba(99,102,241,.25);
-  --tag-text:#6366F1;
-}
-
-/* ─── BASE ─── */
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text2);
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-  padding:48px 32px;
-}
-
-.resume-container{
-  max-width:800px;
-  margin:0 auto;
-  background:var(--bg);
-}
-
-/* ─── HEADER ─── */
-.resume-header{
-  margin-bottom:56px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  gap:16px;
-}
-
-.name{
-  font-family:'Instrument Serif',serif;
-  font-size:48px;
-  font-weight:400;
-  line-height:1.1;
-  letter-spacing:-.02em;
-  color:var(--text);
-}
-
-.contact-info{
-  display:flex;
-  flex-direction:row;
-  flex-wrap:wrap;
-  gap:4px 12px;
-  font-size:13px;
-  color:var(--text2);
-  text-align:center;
-  justify-content:center;
-}
-
-.contact-info a{
-  color:var(--accent);
-  text-decoration:none;
-  transition:color .2s;
-}
-
-.contact-info a:hover{
-  color:var(--text);
-}
-
-.contact-sep{
-  color:var(--text3);
-}
-
-/* ─── SECTIONS ─── */
-.section{
-  margin-bottom:48px;
-}
-
-.section:last-child{
-  margin-bottom:0;
-}
-
-.section-title{
-  font-size:20px;
-  font-weight:600;
-  color:var(--text);
-  margin-bottom:24px;
-  letter-spacing:-.01em;
-}
-
-/* ─── EXPERIENCE ─── */
-.job{
-  margin-bottom:32px;
-}
-
-.job:last-child{
-  margin-bottom:0;
-}
-
-.job-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  margin-bottom:12px;
-  gap:16px;
-}
-
-.job-title-line{
-  display:flex;
-  align-items:baseline;
-  gap:8px;
-}
-
-.job-title{
-  font-size:15px;
-  color:var(--text);
-  font-weight:600;
-}
-
-.company{
-  font-size:13px;
-  font-weight:300;
-  color:var(--text2);
-}
-
-.company::before{
-  content:'·';
-  margin-right:8px;
-  color:var(--text3);
-}
-
-.job-date{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  color:var(--text3);
-  white-space:nowrap;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.job-description{
-  font-size:15px;
-  line-height:1.65;
-  color:var(--text2);
-  margin-bottom:10px;
-  margin-top:12px;
-  font-weight:300;
-}
-
-.achievements{
-  list-style:none;
-  margin:0;
-  padding:0;
-}
-
-.achievements li{
-  font-size:13px;
-  line-height:1.65;
-  color:var(--text2);
-  margin-bottom:8px;
-  font-weight:300;
-}
-
-/* ─── SKILLS ─── */
-.skill-row{
-  display:grid;
-  grid-template-columns:140px 1fr;
-  gap:32px;
-  margin-bottom:14px;
-}
-
-.skill-row:last-child{
-  margin-bottom:0;
-}
-
-.skill-category{
-  font-size:13px;
-  font-weight:600;
-  color:var(--text);
-}
-
-.skill-list{
-  font-size:13px;
-  color:var(--text2);
-  font-weight:300;
-  line-height:1.65;
-}
-
-/* ─── EDUCATION ─── */
-.edu-item{
-  font-size:13px;
-  color:var(--text2);
-  font-weight:300;
-  line-height:1.65;
-}
-
-.school{
-  font-weight:600;
-  color:var(--text);
-}
-
-.degree{
-  display:inline;
-}
-
-.degree::before{
-  content:'/';
-  margin:0 8px;
-  color:var(--text3);
-}
-
-/* ─── PRINT STYLES ─── */
-@media print{
-  body{
-    padding:0;
-    background:white;
-  }
-
-  .resume-container{
-    max-width:100%;
-  }
-
-  .section{
-    page-break-inside:avoid;
-  }
-
-  .job{
-    page-break-inside:avoid;
-  }
-
-  a{
-    color:var(--text2);
-    text-decoration:none;
-  }
-
-  @page{
-    size:A4;
-    margin:0.6in 0.5in;
-  }
-}
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:768px){
-  body{
-    padding:32px 20px;
-  }
-
-  .resume-header{
-    gap:12px;
-  }
-
-  .contact-info{
-    text-align:center;
-    justify-content:center;
-  }
-
-  .name{
-    font-size:36px;
-  }
-
-  .job-header{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:6px;
-  }
-
-  .skill-row{
-    grid-template-columns:1fr;
-    gap:8px;
-  }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Newsreader:opsz,ital,wght@6..72,0,400;6..72,1,400&display=swap">
+  
+  <title>Amy Zhou — résumé</title>
+  <meta name="description" content="Senior Product Designer">
+  <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/resume-B5RoR064.css">
 </head>
 <body>
 
-<div class="resume-container">
+<div class="sheet">
 
-  <!-- HEADER -->
-  <header class="resume-header">
-    <h1 class="name">Amy Zhou</h1>
-    <div class="contact-info">
-      <a href="https://amyzhous.github.io" target="_blank">amyzhous.github.io</a>
-      <span class="contact-sep">·</span>
-      <a href="mailto:ayjzhou@gmail.com">ayjzhou@gmail.com</a>
-      <span class="contact-sep">·</span>
-      <a href="https://www.linkedin.com/in/amyyjzhou/" target="_blank">/in/amyyjzhou/</a>
-      <span class="contact-sep">·</span>
-      <a href="tel:+19053482889">+1 (905) 348-2889</a>
-    </div>
-  </header>
+  <!-- name left, site right -->
+  <div class="topline">
+    <p class="ink name">Amy Zhou</p>
+    <span class="spacer"></span>
+    <p class="where">amy@part3.io · [portfolio]</p>
+  </div>
 
-  <!-- EXPERIENCE -->
-  <section class="section">
-    <h2 class="section-title">Experience</h2>
+  <p class="serif ink positioning">
+    <em>Senior / Staff Product Designer</em> — turning complex, high-stakes construction workflows into tools people trust, owning the outcome from the measurement framework through to the shipped screen.
+  </p>
 
-    <div class="job">
-      <div class="job-header">
-        <div class="job-title-line">
-          <span class="job-title">Product Design Lead</span>
-          <span class="company">Part3 Technologies</span>
-        </div>
-        <span class="job-date">Sep 2023 — Present</span>
+  <div class="block block-head">
+    <p class="lbl">Work Experience</p>
+    <span></span>
+  </div>
+
+  <div class="block role">
+    <p class="serif ink role-company">Part3</p>
+    <div>
+      <div class="role-title-row">
+        <p class="ink role-title">Senior Product Designer, sole designer → Design + Activation Loop Lead</p>
+        <p class="role-dates">Sept 2023 – Present</p>
       </div>
-      <ul class="achievements">
-        <li>Joined as the first designer and contributed to 4x ARR growth as the platform expanded over 2.5 year</li>
-        <li>Design 0→1 business verticals that drove $450k + in expansion revenue</li>
-        <li>Led design on Submittal Assistant, an AI submittal review tool that was a key differentiator against competitor software</li>
-        <li>Shipped over 100 features across complex, multi role document workflows and reduce time to-value from 37 to 15 days through activation funnels</li>
-        <li>Led customer discovery with partnered architecture firms including KPMB, RAMSA, VCBO, and Larson & Darby to gather insights to directly shape quarterly OKRs and roadmap prioritization</li>
-        <li>Worked cross functionality with CX, Engineering, Product and Marketing to shape backlog, establish recurring customer feedback loops, and connect discovery insights to expansion and retention</li>
-      </ul>
+      <p class="sub">Construction administration SaaS. Design foundation, design system, and the product’s first AI design language.</p><p class="sub">Submittal Assistant: defined the AI design language now standard for every AI feature; led the V1 to V2 rebuild. Relaunch drove 0 to ~170 reviews a week and ~88 weekly users.</p><p class="sub">Project Files, 0 to 1: information architecture, version model, drawing-package UX. ~55 orgs, 46 paid, 406 projects, ~37,500 drawings.</p><p class="sub">Activation Loop: created and own the initiative, the time-to-first-value framework, the onboarding redesigns and the dashboard in self-taught SQL. Self-led median TTFV fell from 18 days to 4 in Q2, against a 14-day target.</p><p class="sub">Shipped 10+ features in a quarter including Teams v2 and step-based submittals. Design principles and copy standards merged into the codebase.</p>
     </div>
-
-    <div class="job">
-      <div class="job-header">
-        <div class="job-title-line">
-          <span class="job-title">Product Designer II</span>
-          <span class="company">InnoSoft</span>
-        </div>
-        <span class="job-date">Feb 2021 — Sep 2023</span>
+  </div><div class="block role">
+    <p class="serif ink role-company">[Company two]</p>
+    <div>
+      <div class="role-title-row">
+        <p class="ink role-title">[Your title]</p>
+        <p class="role-dates">[Dates]</p>
       </div>
-      <ul class="achievements">
-        <li>Led the design strategy, vision, and execution for the growth phase of multi-platform league management software; designed 10+ features that helped increase sales by 2x since launch</li>
-        <li>Owned and led design efforts for shipping multiple high impact projects including Reporting & Analytics, Communication Tools, Scheduling, Authentication & Account Creation on web, mobile, and tablet platforms for 100,000+ users</li>
-        <li>Conceptualized the initial 0 to 1 product MVP for a club sports management platform and worked closely with the Product Manager to pitch the proof of concept prototype to 50+ prospect leads for buy-in</li>
-        <li>Worked closely with 4 product teams consisting of 19+ developers, and 4+ product managers, CTO, CEO, and other cross functional partners including marketing and sales; delivering 3+ product releases</li>
-        <li>Aligned stakeholders on product vision, facilitated design reviews within the Design team, and managed the design system</li>
-        <li>Facilitated user research and usability testing with beta customers and onboarded 2 junior designers onto projects</li>
-      </ul>
+      <p class="sub">[What the company does, and the scope you held.]</p><p class="sub">[The headline thing you did, and what it changed. A number if you have one.]</p>
     </div>
-
-    <div class="job">
-      <div class="job-header">
-        <div class="job-title-line">
-          <span class="job-title">Designer</span>
-          <span class="company">Search+Gather</span>
-        </div>
-        <span class="job-date">Aug 2020 — Oct 2022</span>
+  </div><div class="block role">
+    <p class="serif ink role-company">[Company three]</p>
+    <div>
+      <div class="role-title-row">
+        <p class="ink role-title">[Your title]</p>
+        <p class="role-dates">[Dates]</p>
       </div>
-      <ul class="achievements">
-        <li>Led growth designs for ad creation and landing page optimization for B2B SaaS clients including Coinbase, HeyOrca, HiMama, Kritik, Top Hat and Magical</li>
-        <li>Utilized data to identify areas of improvement for creative designs and generated ideas to enhance overall performance</li>
-      </ul>
+      <p class="sub">[What the company does, and the scope you held.]</p><p class="sub">[The headline thing you did, and what it changed.]</p>
     </div>
-  </section>
+  </div>
 
-  <!-- SKILLS -->
-  <section class="section">
-    <h2 class="section-title">Skills</h2>
+  <div class="block block-skills skills">
+    <p class="lbl">Skills</p>
+    <div><p class="sub">Product and interaction design, design systems, prototyping in Figma and React, AI-feature UX, UX writing, usability and QA.</p><p class="sub">Activation and onboarding strategy, funnel diagnosis, metrics definition and instrumentation in SQL, cross-functional facilitation.</p><p class="sub">Construction administration: submittals, RFIs, drawings and specs, field reporting, certificates.</p></div>
+  </div>
 
-    <div class="skill-row">
-      <div class="skill-category">Design</div>
-      <div class="skill-list">End to End Product Design, 0→1 Product Design, Interaction Design, Visual Design, Product Strategy, User Research, Usability testing, Design Systems, Rapid Prototyping, Customer Discovery, Complex B2b Workflows, Information Architecture</div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-category">Tools</div>
-      <div class="skill-list">Figma, Claude & Claude Code, Cursor, Replit, UserTesting, Unbounce, Linear, HTML/CSS</div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="section">
-    <h2 class="section-title">Education</h2>
-    <div class="edu-item">
-      <span class="school">University of Waterloo</span><span class="degree">BA, Economics</span>
-    </div>
-  </section>
+  <div class="block block-education">
+    <p class="lbl">Education</p>
+    <p class="sub">[Degree], [School] · [Year]</p>
+  </div>
 
 </div>
-
 </body>
 </html>
