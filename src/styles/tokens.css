@@ -1,32 +1,49 @@
 /* ── Design tokens ──────────────────────────────────────────────────────────
-   Dark editorial. One serif doing the meaning, one sans doing the labelling,
-   hairline rules, no accent colour anywhere. There is no light mode and no
-   theme switching; the résumé is a separate, print-only stylesheet.
+   Light editorial. One serif doing the meaning, one sans doing the labelling,
+   hairline rules, and a single gradient reserved for links.
+
+   The neutral ramp is the warm "sand" family measured from emilkowal.ski. The
+   text steps between sand 11 and 12 were solved, not eyeballed: each one is
+   within 0.03 of the contrast ratio the same token held in the dark theme it
+   replaces, against the surface it actually sits on.
+
+   --label is the one deliberate departure. Matching the dark theme would have
+   put it at 3.6:1, which the 9px figure micro-text inherits on --plate. It is
+   set instead to clear 4.5:1 on the plate, the harder of the two surfaces it
+   sits on, and still reads lighter than --dim.
    ------------------------------------------------------------------------- */
 
 :root {
-  --ground: #0d0d0f; /* page */
-  --plate: #16161a; /* figure grounds, inset panels */
-  --plate-line: #26262b; /* dividers inside figures */
-  --row-line: #1e1e23; /* table row separators */
-  --rule: #222227; /* section rules */
+  --ground: #fdfdfc; /* page */
+  --plate: #f1f0ef; /* figure grounds, inset panels */
+  --plate-line: #dad9d6; /* dividers inside figures */
+  --row-line: #e9e9e7; /* table row separators */
+  --rule: #e2e1de; /* section rules */
+  --row-hover: #e9e9e7; /* the register's live row */
+  --scrim: rgb(253 253 252 / 95%); /* sticky header over scrolling content */
 
-  --text: #ededef; /* headings, emphasis */
-  --text-2: #d4d4da; /* lede */
-  --body: #c4c4ca; /* running text */
-  --muted: #9a9aa2; /* secondary */
-  --dim: #8a8a92; /* captions */
-  --label: #6a6a72; /* uppercase labels */
+  --text: #21201c; /* headings, emphasis        16.0:1 */
+  --text-2: #302f2b; /* lede                      13.2:1 */
+  --body: #3b3a37; /* running text              11.2:1 */
+  --muted: #595954; /* secondary                  6.9:1 */
+  --dim: #666661; /* captions                   5.7:1 */
+  --label: #6e6e69; /* uppercase labels           5.0:1 */
 
-  --fill-1: #ededef; /* chart: first value */
-  --fill-2: #8a8a92; /* chart: second */
-  --fill-3: #45454c; /* chart: third */
-  --chip: #2a2a30; /* inactive chip */
-  --chip-ink: #b4b4bc;
-  --cell-line: #33333a; /* matrix cell border */
-  --track: #202026; /* bar track */
-  --cell-line-soft: #2a2a30;
-  --after-line: #38383f;
+  --fill-1: #21201c; /* chart: first value */
+  --fill-2: #676661; /* chart: second */
+  --fill-3: #b5b5b0; /* chart: third */
+  --track: #e9e9e7; /* bar track */
+  --chip: #e2e1de; /* inactive chip */
+  --chip-ink: #494944;
+  --cell-line: #cfceca; /* matrix cell border */
+  --cell-line-soft: #dad9d6;
+  --after-line: #bcbbb5;
+
+  /* The one piece of colour on the site: links. Measured from michiecao.com,
+     where it sits as a hairline at rest and grows into a highlight on hover. */
+  --link-grad: linear-gradient(120deg, #ffbee5 0%, #ffd788 70%);
+  --link-rest: 1.5px;
+  --link-hover: 88%;
 
   --serif: Newsreader, Georgia, serif;
   --sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;

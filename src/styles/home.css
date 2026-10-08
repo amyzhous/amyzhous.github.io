@@ -153,9 +153,10 @@
   flex-grow: 1;
 }
 
+/* The title keeps the site's left-to-right wipe; only the ink changes. */
 .title {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1px;
+  background-image: var(--link-grad);
+  background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: 0 100%;
   transition: background-size 420ms var(--ease);
@@ -195,7 +196,7 @@
 
 @media (hover: hover) {
   .proj:hover .title {
-    background-size: 100% 1px;
+    background-size: 100% 2px;
   }
 
   .proj:hover .go {
@@ -204,7 +205,7 @@
   }
 
   .proj:hover .row-3 {
-    background: #1f1f24;
+    background: var(--row-hover);
   }
 
   .proj:hover .chip-on {
@@ -238,7 +239,7 @@
 }
 
 .proj:focus-visible .title {
-  background-size: 100% 1px;
+  background-size: 100% 2px;
 }
 
 .proj:focus-visible .go {

@@ -61,10 +61,29 @@ The home work column auto-scrolls at 18px/second (`autoScrollSpeed` in
 seam, the duplicate is hidden from assistive tech and the tab order, and the
 column yields to the reader on hover, wheel or touch.
 
+## Theme and colour
+
+Light editorial on a warm neutral ground. The ramp is the "sand" family
+measured from emilkowal.ski; the text steps between its 11th and 12th stops
+were solved so each token holds the contrast ratio it had in the dark theme
+this replaces, against the surface it actually sits on. `--label` is the one
+departure: it is set to clear 4.5:1 on `--plate` rather than reproduce the old
+3.6:1, because the 9px figure micro-text inherits it. Every page now audits at
+zero contrast failures, lowest 4.5:1.
+
+Links are the only colour on the site: a gradient hairline at rest that grows
+into a highlight on hover, the mechanic measured from michiecao.com. It lives
+in `--link-grad` / `--link-rest` / `--link-hover`, so changing it is one edit.
+
+There is no theme switching. Every colour is a token in `src/styles/tokens.css`
+and nothing else in the stylesheets hardcodes one, so the whole site could be
+re-themed from that file alone.
+
 ## Favicon
 
-The mark is a Newsreader "A" in `--text` on the `--ground` square — the site's
-own name treatment, nothing new. `public/favicon.ico` carries 16, 32 and 48px;
+The mark is a Newsreader "A", light on a near-black tile — the site's own name
+treatment, kept dark deliberately so it reads against both light and dark
+browser chrome rather than matching the page. `public/favicon.ico` carries 16, 32 and 48px;
 the 16px tile is set in weight 500 because the lighter cut loses its serifs at
 that size. Regenerate with `scripts/make-favicon.mjs` if the type ever changes.
 

@@ -15,7 +15,7 @@ body {
   margin: 0;
   background: var(--ground);
   color: var(--text);
-  color-scheme: dark;
+  color-scheme: light;
   font-family: var(--sans);
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
@@ -43,23 +43,25 @@ a {
   color: var(--label);
 }
 
-/* Underline that wipes in from the left. */
+/* Links carry a gradient hairline at rest and grow it into a highlight on
+   hover — the mechanic from michiecao.com. Visible at rest means a link reads
+   as a link without relying on colour alone. */
 .u {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1px;
+  background-image: var(--link-grad);
+  background-size: 100% var(--link-rest);
   background-repeat: no-repeat;
-  background-position: 0 100%;
-  transition: background-size 240ms var(--ease);
+  background-position: 0 88%;
+  transition: background-size 250ms ease-in;
 }
 
 @media (hover: hover) {
   .u:hover {
-    background-size: 100% 1px;
+    background-size: 100% var(--link-hover);
   }
 }
 
 .u:focus-visible {
-  background-size: 100% 1px;
+  background-size: 100% var(--link-hover);
 }
 
 .visually-hidden {
