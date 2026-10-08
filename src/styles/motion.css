@@ -217,7 +217,7 @@
   .chip,
   .title,
   .go,
-  .u,
+  .case-back,
   .arr {
     transition: none;
   }

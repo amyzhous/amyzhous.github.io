@@ -75,9 +75,11 @@ irradiation thickens a stroke; dark-on-light thins it, so the original cut
 read as spindly once the ground flipped. Only display sizes, which carry
 weight on their own, stay lighter — `--serif-weight` and `--serif-display`.
 
-Links are the only colour on the site: a gradient hairline at rest that grows
-into a highlight on hover, the mechanic measured from michiecao.com. It lives
-in `--link-grad` / `--link-rest` / `--link-hover`, so changing it is one edit.
+Links are the only colour on the site: a gradient hairline, taken from
+michiecao.com, that stays put rather than moving on hover. It lives in
+`--link-grad` and `--link-rest`, so changing it is one edit. The back control
+in the case header is navigation rather than prose, so it carries no underline
+and shifts colour instead — the same treatment as the rail index.
 
 There is no theme switching. Every colour is a token in `src/styles/tokens.css`
 and nothing else in the stylesheets hardcodes one, so the whole site could be

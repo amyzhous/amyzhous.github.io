@@ -44,25 +44,13 @@ a {
   color: var(--label);
 }
 
-/* Links carry a gradient hairline at rest and grow it into a highlight on
-   hover — the mechanic from michiecao.com. Visible at rest means a link reads
-   as a link without relying on colour alone. */
+/* Links carry a gradient hairline, always. Visible at rest means a link reads
+   as a link without relying on colour alone, and it does not move on hover. */
 .u {
   background-image: var(--link-grad);
   background-size: 100% var(--link-rest);
   background-repeat: no-repeat;
   background-position: 0 88%;
-  transition: background-size 250ms ease-in;
-}
-
-@media (hover: hover) {
-  .u:hover {
-    background-size: 100% var(--link-hover);
-  }
-}
-
-.u:focus-visible {
-  background-size: 100% var(--link-hover);
 }
 
 .visually-hidden {

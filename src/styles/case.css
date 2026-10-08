@@ -26,6 +26,17 @@
 .case-back {
   color: var(--muted);
   text-decoration: none;
+  transition: color 300ms;
+}
+
+@media (hover: hover) {
+  .case-back:hover {
+    color: var(--text);
+  }
+}
+
+.case-back:focus-visible {
+  color: var(--text);
 }
 
 .prog-track {

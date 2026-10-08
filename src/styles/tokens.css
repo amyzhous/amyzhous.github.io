@@ -39,11 +39,9 @@
   --cell-line-soft: #dad9d6;
   --after-line: #bcbbb5;
 
-  /* The one piece of colour on the site: links. Measured from michiecao.com,
-     where it sits as a hairline at rest and grows into a highlight on hover. */
+  /* The one piece of colour on the site: a gradient hairline under links. */
   --link-grad: linear-gradient(120deg, #ffbee5 0%, #ffd788 70%);
   --link-rest: 1.5px;
-  --link-hover: 88%;
 
   --serif: Newsreader, Georgia, serif;
 

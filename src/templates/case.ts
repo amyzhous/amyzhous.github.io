@@ -132,7 +132,7 @@ export const render = (slug: Slug): string => {
   return `
 <header class="case-header">
   <div class="case-header-bar">
-    <a class="u lbl lbl-wide case-back" href="/">← All work</a>
+    <a class="lbl lbl-wide case-back" href="/">← All work</a>
     <span class="spacer"></span>
     <span class="lbl lbl-wide">${esc(c.n)} · ${esc(c.title)}</span>
   </div>
