@@ -4,8 +4,8 @@
  * Anything still in [SQUARE BRACKETS] is a deliberate placeholder — do not
  * invent a replacement. Fill them in this file and the whole site updates.
  *
- * The name, email, LinkedIn, résumé link and current role below were taken
- * from amyzhous.github.io and this project's own résumé data, not invented.
+ * The name, email, LinkedIn and résumé link below were taken from
+ * amyzhous.github.io, not invented.
  */
 
 export const site = {
@@ -17,10 +17,6 @@ export const site = {
   linkedinHref: 'https://www.linkedin.com/in/amyyjzhou/',
   lede:
     'I design the software construction teams run their day on, and I stay on it until it ships and the number moves.',
-  voice:
-    "[One sentence in your own voice: what you're known for and what you want next.] Currently Senior Product Designer at Part3.",
-  closing:
-    "Happy to walk through any of these, including the parts that didn't work.",
 } as const;
 
 /** Auto-scroll speed for the home work column, px/second. 0 disables. */

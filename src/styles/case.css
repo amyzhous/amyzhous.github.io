@@ -49,6 +49,7 @@
 }
 
 .case-title {
+  font-weight: var(--serif-display);
   margin: 0 0 16px;
   font-size: clamp(32px, 3.6vw, 48px);
   line-height: 1.12;
@@ -261,6 +262,7 @@ blockquote.pull footer {
 }
 
 .metrics-val {
+  font-weight: var(--serif-display);
   margin: 0 0 10px;
   font-size: clamp(38px, 4.4vw, 56px);
   line-height: 1;
@@ -289,6 +291,7 @@ blockquote.pull footer {
 }
 
 .bignum-val {
+  font-weight: var(--serif-display);
   margin: 0;
   font-size: clamp(38px, 4.4vw, 56px);
   line-height: 1;
@@ -419,7 +422,7 @@ blockquote.pull footer {
 
 .case-fun .fun-val {
   font-family: var(--serif);
-  font-weight: 300;
+  font-weight: var(--serif-weight);
   font-size: 22px;
 }
 
@@ -551,6 +554,7 @@ blockquote.pull footer {
 }
 
 .next-title {
+  font-weight: var(--serif-display);
   margin: 0 0 14px;
   font-size: clamp(28px, 3.4vw, 42px);
   line-height: 1.14;

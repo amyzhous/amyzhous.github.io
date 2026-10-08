@@ -39,9 +39,8 @@ its data file updates every page that uses it.
 
 ### Still to fill
 
-City · phone · portfolio URL · LinkedIn URL · résumé PDF link · education · the
-two earlier roles · the sample size and period on the AI funnel figure · the
-one-sentence voice line on the home rail.
+Education · the two earlier roles · the sample size and period on the AI
+funnel figure · the case study bodies.
 
 ### One number to settle
 
@@ -71,6 +70,11 @@ departure: it is set to clear 4.5:1 on `--plate` rather than reproduce the old
 3.6:1, because the 9px figure micro-text inherits it. Every page now audits at
 zero contrast failures, lowest 4.5:1.
 
+The serif runs at 400, not the 300 the dark theme used. Light-on-dark
+irradiation thickens a stroke; dark-on-light thins it, so the original cut
+read as spindly once the ground flipped. Only display sizes, which carry
+weight on their own, stay lighter — `--serif-weight` and `--serif-display`.
+
 Links are the only colour on the site: a gradient hairline at rest that grows
 into a highlight on hover, the mechanic measured from michiecao.com. It lives
 in `--link-grad` / `--link-rest` / `--link-hover`, so changing it is one edit.
@@ -81,9 +85,8 @@ re-themed from that file alone.
 
 ## Favicon
 
-The mark is a Newsreader "A", light on a near-black tile — the site's own name
-treatment, kept dark deliberately so it reads against both light and dark
-browser chrome rather than matching the page. `public/favicon.ico` carries 16, 32 and 48px;
+The mark is a Newsreader "A" in `--text` on the `--ground` tile — the site's
+own name treatment at icon scale. `public/favicon.ico` carries 16, 32 and 48px;
 the 16px tile is set in weight 500 because the lighter cut loses its serifs at
 that size. Regenerate with `scripts/make-favicon.mjs` if the type ever changes.
 

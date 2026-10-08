@@ -37,19 +37,11 @@
 }
 
 .rail-lede {
-  margin: 0 0 16px;
+  margin: 0 0 32px;
   max-width: 26ch;
   font-size: 20px;
   line-height: 1.45;
   color: var(--text-2);
-}
-
-.rail-voice {
-  margin: 0 0 32px;
-  max-width: 32ch;
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--dim);
 }
 
 .rail-label {
@@ -125,6 +117,7 @@
 }
 
 .proj-title {
+  font-weight: var(--serif-display);
   margin: 0 0 20px;
   font-size: clamp(24px, 2.6vw, 34px);
   line-height: 1.2;
@@ -173,23 +166,6 @@
   transition:
     gap 300ms var(--ease),
     color 300ms;
-}
-
-.endcard {
-  padding: 26px 0 52px;
-  border-top: 1px solid var(--rule);
-}
-
-.endcard p {
-  margin: 0;
-  max-width: 46ch;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-.endcard a {
-  color: var(--text);
-  text-decoration: none;
 }
 
 /* ── hover: pointer devices only. transform belongs to hover. ── */
@@ -261,8 +237,7 @@
     overflow: visible;
   }
 
-  .rail-lede,
-  .rail-voice {
+  .rail-lede {
     max-width: 46ch;
   }
 }
@@ -281,11 +256,6 @@
 
   .rail-lede {
     font-size: 19px;
-  }
-
-  .rail-voice {
-    margin-bottom: 28px;
-    font-size: 16px;
   }
 
   .proj {
@@ -340,8 +310,7 @@
 /* Below 900px the work column is no longer a scroller, so the duplicate copy
    of the list has nothing to do: hide it rather than render the work twice. */
 @media (max-width: 900px) {
-  .proj[aria-hidden='true'],
-  .endcard[aria-hidden='true'] {
+  .proj[aria-hidden='true'] {
     display: none;
   }
 }

@@ -31,19 +31,12 @@ const card = (w: (typeof work)[number], ghost: boolean, first: boolean): string 
 </a>`;
 };
 
-const endcard = (ghost: boolean): string => `
-<div class="endcard"${ghost ? ' aria-hidden="true"' : ''}>
-  <p>${esc(site.closing)} <a class="u" href="mailto:${esc(site.email)}"${
-    ghost ? ' tabindex="-1"' : ''
-  }>${esc(site.email)}</a></p>
-</div>`;
-
 /** The list is rendered twice so the wrap has identical content. */
 const workColumn = (): string =>
   [0, 1]
     .map((pass) => {
       const ghost = pass === 1;
-      return map(work, (w, i) => card(w, ghost, i === 0)) + endcard(ghost);
+      return map(work, (w, i) => card(w, ghost, i === 0));
     })
     .join('');
 
@@ -56,10 +49,9 @@ export const render = (): string => `
     <p class="lbl rail-role in" style="--d: 60ms">${esc(site.roleLabel)}</p>
 
     <p class="serif rail-lede in" style="--d: 120ms">${esc(site.lede)}</p>
-    <p class="serif rail-voice in" style="--d: 180ms">${esc(site.voice)}</p>
 
-    <p class="lbl rail-label in" style="--d: 240ms">Work</p>
-    <nav class="rail-index in" style="--d: 290ms" aria-label="Work">
+    <p class="lbl rail-label in" style="--d: 180ms">Work</p>
+    <nav class="rail-index in" style="--d: 240ms" aria-label="Work">
       ${map(
         work,
         (w, i) => `<a class="idx${i === 0 ? ' idx-on' : ''}" href="${paths[w.slug]}" data-index="${i}">
@@ -68,8 +60,8 @@ export const render = (): string => `
       )}
     </nav>
 
-    <p class="lbl rail-label in" style="--d: 350ms">Elsewhere</p>
-    <p class="serif rail-elsewhere in" style="--d: 400ms">
+    <p class="lbl rail-label in" style="--d: 300ms">Elsewhere</p>
+    <p class="serif rail-elsewhere in" style="--d: 360ms">
       <a class="u" href="mailto:${esc(site.email)}">Email</a><br>
       <a class="u" href="${esc(site.resumeHref)}">Résumé</a><br>
       <a class="u" href="${esc(site.linkedinHref)}">LinkedIn</a>

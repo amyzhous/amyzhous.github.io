@@ -32,7 +32,8 @@ a {
 
 .serif {
   font-family: var(--serif);
-  font-weight: 300;
+  font-weight: var(--serif-weight);
+  font-optical-sizing: auto;
 }
 
 /* Uppercase label. Used once per section, never decoratively. */
