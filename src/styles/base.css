@@ -94,6 +94,24 @@ a {
   border: 0;
 }
 
+/* Moving between pages cross-fades rather than cutting. Browsers without
+   cross-document view transitions navigate exactly as they did before. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
 /* Figure plate: never a decorative shape, always a drawn diagram. */
 .plate {
   position: relative;

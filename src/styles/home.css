@@ -49,7 +49,25 @@
 }
 
 .rail-index {
+  position: relative;
   margin: 0 0 32px;
+}
+
+/* The hairline between index entries already exists in --rule. This is the
+   same line in gradient, sliding to whichever project the work column is
+   showing — the rail's only moving part, and it is reporting something. */
+.idx-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--link-grad);
+  transform: translateY(var(--marker-y, 0)) scaleX(var(--marker-on, 0));
+  transform-origin: left center;
+  transition:
+    transform 520ms var(--ease);
+  pointer-events: none;
 }
 
 .idx {

@@ -52,6 +52,7 @@ export const render = (): string => `
 
     <p class="lbl rail-label in" style="--d: 180ms">Work</p>
     <nav class="rail-index in" style="--d: 240ms" aria-label="Work">
+      <span class="idx-marker" data-marker aria-hidden="true"></span>
       ${map(
         work,
         (w, i) => `<a class="idx${i === 0 ? ' idx-on' : ''}" href="${paths[w.slug]}" data-index="${i}">

@@ -30,6 +30,7 @@ export const startAutoScroll = (scroller: HTMLElement): (() => void) => {
   const indexLinks = Array.from(
     document.querySelectorAll<HTMLElement>('.rail-index .idx'),
   );
+  const marker = document.querySelector<HTMLElement>('[data-marker]');
   const projects = Array.from(scroller.querySelectorAll<HTMLElement>('.proj'));
 
   let held = false;
@@ -40,8 +41,8 @@ export const startAutoScroll = (scroller: HTMLElement): (() => void) => {
   let raf = 0;
 
   const loopPoint = (): number => {
-    const marker = scroller.querySelector<HTMLElement>('.loop-start');
-    return marker ? marker.offsetTop : scroller.scrollHeight - scroller.clientHeight;
+    const start = scroller.querySelector<HTMLElement>('.loop-start');
+    return start ? start.offsetTop : scroller.scrollHeight - scroller.clientHeight;
   };
 
   /** Pull the reader's position back into the first copy of the list. */
@@ -52,10 +53,23 @@ export const startAutoScroll = (scroller: HTMLElement): (() => void) => {
     pos = p;
   };
 
+  /**
+   * Slide the gradient rule to the active entry. It stays at scaleX(0) until
+   * it has somewhere to be, so on the stacked layout — where the column is no
+   * longer a scroller and nothing tracks an active project — it never shows.
+   */
+  const placeMarker = (index: number): void => {
+    const link = indexLinks[index];
+    if (!marker || !link) return;
+    marker.style.setProperty('--marker-y', `${link.offsetTop}px`);
+    marker.style.setProperty('--marker-on', '1');
+  };
+
   const setActive = (next: number): void => {
     if (next === active) return;
     active = next;
     indexLinks.forEach((link, i) => link.classList.toggle('idx-on', i === active));
+    placeMarker(active);
   };
 
   const hold = (): void => {
@@ -77,6 +91,9 @@ export const startAutoScroll = (scroller: HTMLElement): (() => void) => {
   scroller.addEventListener('focusout', release);
   scroller.addEventListener('wheel', nudge, { passive: true });
   scroller.addEventListener('touchstart', nudge, { passive: true });
+
+  // Only mark the active project once the column is actually a scroller.
+  if (scroller.scrollHeight > scroller.clientHeight + 1) placeMarker(active);
 
   let last = performance.now();
   const step = (now: number): void => {

@@ -89,6 +89,26 @@ There is no theme switching. Every colour is a token in `src/styles/tokens.css`
 and nothing else in the stylesheets hardcodes one, so the whole site could be
 re-themed from that file alone.
 
+## Micro-motion
+
+Four small things beyond the original inventory, all of them reporting
+something rather than decorating:
+
+- **The rail index carries a gradient rule** that slides to whichever project
+  the work column is showing. The hairlines between entries already existed in
+  `--rule`; this is the same line in gradient, so it adds a movement rather
+  than an object. It is driven from `placeMarker()` in `autoscroll.ts`, and it
+  stays at `scaleX(0)` until it has somewhere to be — on the stacked layout,
+  where nothing tracks an active project, it never appears.
+- **Pages cross-fade** via cross-document view transitions, 320ms on the
+  site's own curve. Browsers without support navigate exactly as before.
+- **The next-case title** takes the same left-to-right wipe the home project
+  titles use, so the two ways out of a page behave alike.
+- **The metric strip** arrives a cell at a time on scroll, matching the
+  stagger the register rows already had.
+
+All four are off under `prefers-reduced-motion: reduce`.
+
 ## Favicon
 
 The mark is a Newsreader "A" in `--text` on the `--ground` tile — the site's

@@ -567,6 +567,11 @@ blockquote.pull footer {
 .next-title {
   font-weight: var(--serif-display);
   margin: 0 0 14px;
+  background-image: var(--link-grad);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 420ms var(--ease);
   font-size: clamp(28px, 3.4vw, 42px);
   line-height: 1.14;
   letter-spacing: -0.02em;
@@ -593,10 +598,18 @@ blockquote.pull footer {
   .next:hover .arr {
     transform: translateX(6px);
   }
+
+  .next:hover .next-title {
+    background-size: 100% 2px;
+  }
 }
 
 .next:focus-visible .arr {
   transform: translateX(6px);
+}
+
+.next:focus-visible .next-title {
+  background-size: 100% 2px;
 }
 
 /* ── responsive ── */
