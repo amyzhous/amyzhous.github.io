@@ -39,9 +39,11 @@
   --cell-line-soft: #dad9d6;
   --after-line: #bcbbb5;
 
-  /* The one piece of colour on the site: a gradient hairline under links. */
+  /* The one piece of colour on the site: a gradient hairline under links,
+     swept in on hover. */
   --link-grad: linear-gradient(120deg, #ffbee5 0%, #ffd788 70%);
-  --link-rest: 1.5px;
+  --link-underline: 1.5px;
+  --link-sweep: 380ms;
 
   --serif: Newsreader, Georgia, serif;
 

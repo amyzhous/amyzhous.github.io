@@ -44,13 +44,41 @@ a {
   color: var(--label);
 }
 
-/* Links carry a gradient hairline, always. Visible at rest means a link reads
-   as a link without relying on colour alone, and it does not move on hover. */
+/* The gradient hairline arrives on hover and leaves the way it came.
+   It is a pseudo-element scaled on the X axis rather than an animated
+   background-size: transform runs on the compositor, so the sweep stays
+   smooth instead of repainting the line on every frame. Origin flips between
+   the two states, so it grows from the left and retracts to the right. */
 .u {
-  background-image: var(--link-grad);
-  background-size: 100% var(--link-rest);
-  background-repeat: no-repeat;
-  background-position: 0 88%;
+  position: relative;
+  text-decoration: none;
+}
+
+.u::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -0.14em;
+  left: 0;
+  height: var(--link-underline);
+  background: var(--link-grad);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform var(--link-sweep) var(--ease);
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .u:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
+/* Keyboard users get the same signal the pointer does. */
+.u:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left center;
 }
 
 .visually-hidden {

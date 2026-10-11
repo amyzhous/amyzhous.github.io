@@ -226,4 +226,8 @@
     animation: none;
     transform: none;
   }
+
+  .u::after {
+    transition: none;
+  }
 }
