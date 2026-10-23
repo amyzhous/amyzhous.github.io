@@ -1,95 +1,80 @@
 /**
- * One content source for both résumé exports. Placeholders in [SQUARE
- * BRACKETS] are deliberate — the two earlier roles and education are still
- * to fill.
+ * One content source for both résumé exports.
+ *
+ * `*asterisks*` in a bullet mark the emphasis Amy put on it. The designed
+ * résumé renders them bold; the ATS version strips them, so nothing but plain
+ * text reaches a parser.
  */
 
 export const resume = {
   name: 'Amy Zhou',
   shortTitle: 'Senior Product Designer',
-  email: 'amy@part3.io',
-  contactLine: '[City, Country] | [Phone] | amy@part3.io | [portfolio URL] | [LinkedIn URL]',
-  designedContact: 'amy@part3.io · [portfolio]',
+  email: 'ayjzhou@gmail.com',
+  phone: '(905) 348-2989',
+  site: 'amyzhous.github.io',
+  linkedin: 'linkedin.com/in/amyyjzhou',
+
   positioningEmphasis: 'Senior / Staff Product Designer',
   positioningRest:
     ' — turning complex, high-stakes construction workflows into tools people trust, owning the outcome from the measurement framework through to the shipped screen.',
-  atsSummary:
-    'Senior product designer with [X] years of experience in complex B2B workflows, design systems and AI features. Sole designer at a construction technology SaaS company, owning design across the entire product surface. Specialises in growth and activation: defines the measurement framework, diagnoses the funnel, and ships the redesign.',
+
   education: {
-    designed: '[Degree], [School] · [Year]',
-    atsDegree: '[Degree], [Field of Study]',
-    atsWhen: '[School] | [City] | [Year]',
+    school: 'University of Waterloo',
+    degree: 'BA, Economics',
   },
+
   roles: [
     {
-      company: 'Part3',
-      location: '[City]',
-      dates: 'Sept 2023 – Present',
+      company: 'Part3 Technologies',
+      title: 'Senior Product Designer',
+      dates: 'Sep 2023 – Present',
       datesLong: 'September 2023 – Present',
-      /** The designed résumé keeps the full progression on one line. */
-      title: 'Senior Product Designer, sole designer → Design + Activation Loop Lead',
-      atsTitle: 'Senior Product Designer',
-      /** Tighter phrasing for the designed, one-page layout. */
-      designedLines: [
-        'Construction administration SaaS. Design foundation, design system, and the product’s first AI design language.',
-        'Submittal Assistant: defined the AI design language now standard for every AI feature; led the V1 to V2 rebuild. Relaunch drove 0 to ~170 reviews a week and ~88 weekly users.',
-        'Project Files, 0 to 1: information architecture, version model, drawing-package UX. ~55 orgs, 46 paid, 406 projects, ~37,500 drawings.',
-        'Activation Loop: created and own the initiative, the time-to-first-value framework, the onboarding redesigns and the dashboard in self-taught SQL. Self-led median TTFV fell from 18 days to 4 in Q2, against a 14-day target.',
-        'Shipped 10+ features in a quarter including Teams v2 and step-based submittals. Design principles and copy standards merged into the codebase.',
-      ],
-      atsLines: [
-        'Sole designer at a construction administration SaaS company; built the design foundation and design system across the entire product surface.',
-        'Defined the company’s first AI design language, now the standard for every AI feature, and led the V1 to V2 rebuild of AI submittal review. Relaunch drove 0 to 170 reviews per week and 88 weekly active users.',
-        'Led Project Files from 0 to 1, owning information architecture, the version model and drawing-package UX. Adopted by 55 organisations, 46 of them paid, across 406 projects and 37,500 drawings.',
-        'Created and owns the activation initiative: the time-to-first-value measurement framework, the onboarding redesigns, and the activation dashboard built in SQL. Self-led median time-to-first-value fell from 18 days to 4 in Q2, against a 14-day target.',
-        'Shipped 10 or more features in a single quarter and authored the design principles and product copy standards now merged into the codebase.',
+      lines: [
+        'Led product design for a *B2B construction administration SaaS platform* serving *280+ active organizations* across *6K+ projects and 690K+ documents*.',
+        'Led 0→1 design of a *new business vertical* from discovery through launch, associated with an estimated *$650K in annual recurring revenue* and *58K+ drawings* managed.',
+        "Co-led customer activation with CX, defining four activation metrics and establishing the company's first baseline through SQL dashboards and funnel analysis to guide onboarding redesigns.",
+        'Partnered with product, engineering, customer support, sales, and marketing to align customer needs, business priorities, and design decisions.',
+        'Redesigned complex workflows across user roles and third-party integrations, improving consistency across the product.',
+        'Partnered with the CTO and engineering to raise UX maturity, establishing design standards, reusable patterns, design QA, and AI-assisted workflows to improve design quality and delivery.',
       ],
     },
     {
-      company: '[Company two]',
-      atsCompany: '[Company Two]',
-      location: '[City]',
-      dates: '[Dates]',
-      datesLong: '[Month Year] – [Month Year]',
-      title: '[Your title]',
-      atsTitle: '[Your Title]',
-      designedLines: [
-        '[What the company does, and the scope you held.]',
-        '[The headline thing you did, and what it changed. A number if you have one.]',
-      ],
-      atsLines: [
-        '[What the company does and the scope you held.]',
-        '[The headline thing you did and what it changed, with a number if you have one.]',
+      company: 'InnoSoft',
+      title: 'Product Designer II',
+      dates: 'Feb 2021 – Sep 2023',
+      datesLong: 'February 2021 – September 2023',
+      lines: [
+        'Led design of a league management product, contributing to *2× revenue growth* following launch.',
+        'Designed and launched a 0→1 MVP, supporting adoption across *100,000+ users*.',
+        'Improved onboarding and acquisition flows through iterative design and experimentation, increasing *conversion by 50%*.',
+        'Designed analytics, communication, and scheduling experiences across web and mobile.',
+        'Led design system improvements, created reusable components, and introduced Figma to the design team.',
+        'Mentored junior designers and collaborated across four product teams.',
       ],
     },
     {
-      company: '[Company three]',
-      atsCompany: '[Company Three]',
-      location: '[City]',
-      dates: '[Dates]',
-      datesLong: '[Month Year] – [Month Year]',
-      title: '[Your title]',
-      atsTitle: '[Your Title]',
-      designedLines: [
-        '[What the company does, and the scope you held.]',
-        '[The headline thing you did, and what it changed.]',
-      ],
-      atsLines: [
-        '[What the company does and the scope you held.]',
-        '[The headline thing you did and what it changed.]',
+      company: 'Search+Gather',
+      title: 'Designer',
+      dates: 'Aug 2020 – Oct 2022',
+      datesLong: 'August 2020 – October 2022',
+      lines: [
+        'Designed marketing and product experiences for B2B SaaS clients, including Coinbase, HeyOrca, HiMama, Kritik, TopHat, and Magical.',
       ],
     },
   ],
-  /** Condensed for the one-page designed layout. */
-  designedSkills: [
-    'Product and interaction design, design systems, prototyping in Figma and React, AI-feature UX, UX writing, usability and QA.',
-    'Activation and onboarding strategy, funnel diagnosis, metrics definition and instrumentation in SQL, cross-functional facilitation.',
-    'Construction administration: submittals, RFIs, drawings and specs, field reporting, certificates.',
-  ],
-  atsSkills: [
-    'Design: product design, interaction design, design systems, prototyping, mobile and responsive design, AI feature design, UX writing, usability testing.',
-    'Growth and product: activation strategy, onboarding design, funnel analysis, metrics definition and instrumentation, cross-functional facilitation.',
-    'Technical: Figma, React, HTML, CSS, SQL, Linear, Storybook.',
-    'Domain: construction administration, submittals, RFIs, drawings and specifications, field reporting.',
+
+  skills: [
+    {
+      k: 'Design',
+      v: 'Product design, interaction design, visual design, prototyping, information architecture, design systems, accessibility (WCAG).',
+    },
+    {
+      k: 'Research & Growth',
+      v: 'Customer discovery, usability testing, activation, onboarding, monetization, funnel analysis, SQL.',
+    },
+    {
+      k: 'Tools',
+      v: 'Figma, Adobe CC, UserTesting, Linear, Storybook, HTML/CSS, Claude, Claude Code, Cursor, Figma Make.',
+    },
   ],
 } as const;

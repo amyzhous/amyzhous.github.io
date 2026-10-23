@@ -39,13 +39,11 @@ its data file updates every page that uses it.
 
 ### Still to fill
 
-Education · the two earlier roles · the sample size and period on the AI
-funnel figure · the case study bodies.
+The sample size and period on the AI funnel figure · the case study bodies.
 
-### One number to settle
-
-The site says **58K+ drawings**; the résumé says **37,500**. Different as-of
-dates — pick one source of truth before either goes out.
+The résumé is complete. Its only open item is a location line: ATS tools
+often filter on one, and none was supplied, so neither version claims a city
+rather than inventing one.
 
 ## Motion
 
@@ -126,6 +124,18 @@ The old site is on the `backup/pre-redesign-site` branch.
 ## Résumés
 
 `resume.html` and `resume-ats.html` are print documents, not web pages: Letter,
-816 × 1056 at 96dpi, one page each. Their layouts are tuned so the content ends
-inside the page in *print* metrics, which run slightly taller than screen — if
-you add a bullet, re-run `npm run resume` and check it is still one page.
+816 × 1056 at 96dpi, one page each, built from one content source in
+`src/data/resume.ts` so the two cannot drift apart. Both carry `noindex`.
+
+`*asterisks*` in a bullet mark emphasis: the designed résumé sets those runs
+bold, the ATS version strips the markers so a parser only ever sees plain
+text. The ATS version has no summary section, matching the résumé Amy wrote.
+
+Their layouts are tuned so the content ends inside the page in *print*
+metrics, which run taller than on screen. Current slack is 68px on the
+designed résumé and 26px on the ATS one, so if you add a bullet, re-run
+`npm run resume` and check it is still one page.
+
+The PDFs are built on demand into `dist/pdf/` and are not deployed — the
+site's Résumé link points at Google Drive. Publishing them instead would mean
+running the export in CI, which needs Chrome on the runner.

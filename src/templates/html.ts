@@ -23,5 +23,16 @@ export const join = (parts: string[]): string => parts.join('');
 export const map = <T>(items: readonly T[], fn: (item: T, i: number) => string): string =>
   items.map(fn).join('');
 
+/**
+ * Renders `*marked*` runs as bold, escaping everything first so the markers
+ * are the only markup that survives. `bold: false` strips them instead, for
+ * the ATS résumé where a parser should see plain text.
+ */
+export const emphasise = (text: string, bold = true): string =>
+  text
+    .split('*')
+    .map((part, i) => (i % 2 ? (bold ? `<b>${esc(part)}</b>` : esc(part)) : esc(part)))
+    .join('');
+
 export const attr = (name: string, value: string | number | undefined | null): string =>
   value === undefined || value === null || value === '' ? '' : ` ${name}="${esc(String(value))}"`;
