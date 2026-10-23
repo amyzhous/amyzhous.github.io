@@ -21,20 +21,20 @@ body {
 .sheet {
   width: 816px;
   height: 1056px;
-  padding: 44px 76px 8px;
+  padding: 34px 76px 6px;
   background: #ffffff;
 }
 
 h1 {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 h2 {
-  margin: 15px 0 8px;
-  padding-bottom: 6px;
+  margin: 10px 0 5px;
+  padding-bottom: 4px;
   border-bottom: 1px solid #d5d5db;
   font-size: 12px;
   font-weight: 600;
@@ -58,7 +58,7 @@ p {
 }
 
 .role {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .job {
@@ -74,19 +74,19 @@ p {
 }
 
 ul {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   padding-left: 18px;
 }
 
 li {
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.45;
   color: #2e2e33;
 }
 
 .skills p {
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 /* The whole résumé is one Letter page; these values are tuned so the content

@@ -129,14 +129,19 @@ The old site is on the `backup/pre-redesign-site` branch.
 
 `*asterisks*` in a bullet mark emphasis: the designed résumé sets those runs
 bold, the ATS version strips the markers so a parser only ever sees plain
-text. Neither version carries a summary or a positioning line: the bullets
-are specific and numeric, and an unverifiable sentence above them competes
-with the evidence rather than framing it.
+text. Both open with Amy's summary, in `resume.summary`.
+
+The designed résumé's order of voice, loudest first, is: name, role title,
+company, bullets, then dates and section labels. The role is what a reader is
+assessing, so it leads each entry; the company and dates sit in the rail as
+the where-and-when and stay quiet. An earlier version had this inverted — the
+company set larger than the role — with section labels at 2.4:1 and dates at
+2.2:1. Every colour now clears 4.5:1 on white, the lowest being 5.1:1.
 
 Their layouts are tuned so the content ends inside the page in *print*
-metrics, which run taller than on screen. Current slack is 54px on the
-designed résumé and 26px on the ATS one, so if you add a bullet, re-run
-`npm run resume` and check it is still one page.
+metrics, which run taller than on screen. Current slack is 26px on the
+designed résumé and 16px on the ATS one — both pages are full, so if you add
+a bullet, re-run `npm run resume` and check it is still one page.
 
 The PDFs are built on demand into `dist/pdf/` and are not deployed — the
 site's Résumé link points at Google Drive. Publishing them instead would mean

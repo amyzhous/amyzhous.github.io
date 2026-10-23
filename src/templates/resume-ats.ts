@@ -11,6 +11,9 @@ export const render = (): string => `
   <p class="body" style="margin-bottom: 5px">${esc(resume.shortTitle)}</p>
   <p class="body contact">${esc(contact)}</p>
 
+  <h2>Summary</h2>
+  <p class="body">${esc(resume.summary)}</p>
+
   <h2>Experience</h2>
   ${map(
     resume.roles,

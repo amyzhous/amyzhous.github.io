@@ -1,17 +1,16 @@
 import { resume } from '../data/resume.js';
 import { emphasise, esc, map } from './html.js';
 
-const contact = [resume.email, resume.phone, resume.site, resume.linkedin].join(' · ');
+const contact = [resume.email, resume.phone, resume.site, resume.linkedin];
 
 export const render = (): string => `
 <div class="sheet">
 
-  <!-- name left, contact right -->
-  <div class="topline">
-    <p class="ink name">${esc(resume.name)}</p>
-    <span class="spacer"></span>
-    <p class="where">${esc(contact)}</p>
-  </div>
+  <p class="name">${esc(resume.name)}</p>
+  <p class="role-line">${esc(resume.shortTitle)}</p>
+  <p class="contact">${map(contact, (c) => `<span>${esc(c)}</span>`)}</p>
+
+  <p class="summary">${esc(resume.summary)}</p>
 
   <div class="block block-head">
     <p class="lbl">Experience</p>
@@ -21,24 +20,21 @@ export const render = (): string => `
   ${map(
     resume.roles,
     (r) => `<div class="block role">
-    <p class="serif ink role-company">${esc(r.company)}</p>
     <div>
-      <div class="role-title-row">
-        <p class="ink role-title">${esc(r.title)}</p>
-        <p class="role-dates">${esc(r.dates)}</p>
-      </div>
+      <p class="role-company">${esc(r.company)}</p>
+      <p class="role-dates">${esc(r.dates)}</p>
+    </div>
+    <div>
+      <p class="role-title">${esc(r.title)}</p>
       ${map(r.lines, (l) => `<p class="sub">${emphasise(l)}</p>`)}
     </div>
   </div>`,
   )}
 
-  <div class="block block-skills skills">
+  <div class="block block-skills">
     <p class="lbl">Skills</p>
     <div>
-      ${map(
-        resume.skills,
-        (s) => `<p class="sub"><b>${esc(s.k)}:</b> ${esc(s.v)}</p>`,
-      )}
+      ${map(resume.skills, (s) => `<p class="sub"><b>${esc(s.k)}:</b> ${esc(s.v)}</p>`)}
     </div>
   </div>
 

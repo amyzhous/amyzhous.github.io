@@ -14,6 +14,10 @@ export const resume = {
   site: 'amyzhous.github.io',
   linkedin: 'linkedin.com/in/amyyjzhou',
 
+  /** Amy's own words. Both résumés open with this. */
+  summary:
+    'Senior Product Designer experienced in leading complex digital products from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.',
+
   education: {
     school: 'University of Waterloo',
     degree: 'BA, Economics',
