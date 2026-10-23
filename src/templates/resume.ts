@@ -13,10 +13,6 @@ export const render = (): string => `
     <p class="where">${esc(contact)}</p>
   </div>
 
-  <p class="serif ink positioning">
-    <em>${esc(resume.positioningEmphasis)}</em>${esc(resume.positioningRest)}
-  </p>
-
   <div class="block block-head">
     <p class="lbl">Experience</p>
     <span></span>

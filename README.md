@@ -129,10 +129,12 @@ The old site is on the `backup/pre-redesign-site` branch.
 
 `*asterisks*` in a bullet mark emphasis: the designed résumé sets those runs
 bold, the ATS version strips the markers so a parser only ever sees plain
-text. The ATS version has no summary section, matching the résumé Amy wrote.
+text. Neither version carries a summary or a positioning line: the bullets
+are specific and numeric, and an unverifiable sentence above them competes
+with the evidence rather than framing it.
 
 Their layouts are tuned so the content ends inside the page in *print*
-metrics, which run taller than on screen. Current slack is 68px on the
+metrics, which run taller than on screen. Current slack is 54px on the
 designed résumé and 26px on the ATS one, so if you add a bullet, re-run
 `npm run resume` and check it is still one page.
 

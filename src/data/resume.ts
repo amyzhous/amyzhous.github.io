@@ -14,10 +14,6 @@ export const resume = {
   site: 'amyzhous.github.io',
   linkedin: 'linkedin.com/in/amyyjzhou',
 
-  positioningEmphasis: 'Senior / Staff Product Designer',
-  positioningRest:
-    ' — turning complex, high-stakes construction workflows into tools people trust, owning the outcome from the measurement framework through to the shipped screen.',
-
   education: {
     school: 'University of Waterloo',
     degree: 'BA, Economics',
