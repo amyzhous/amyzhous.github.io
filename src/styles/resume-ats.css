@@ -33,7 +33,7 @@ h1 {
 }
 
 h2 {
-  margin: 10px 0 5px;
+  margin: 9px 0 4px;
   padding-bottom: 4px;
   border-bottom: 1px solid #d5d5db;
   font-size: 12px;
@@ -58,7 +58,7 @@ p {
 }
 
 .role {
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .job {
@@ -74,7 +74,7 @@ p {
 }
 
 ul {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   padding-left: 18px;
 }
 

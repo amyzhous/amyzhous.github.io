@@ -24,7 +24,7 @@ export const render = (): string => `
       (r) => `<div class="entry">
       <p class="entry-title">${esc(r.title)}</p>
       <p class="entry-meta">${esc(r.company)} · ${esc(r.dates)}</p>
-      ${map(r.lines, (l) => `<p class="sub">${emphasise(l, false)}</p>`)}
+      <ul class="bullets">${map(r.lines, (l) => `<li>${emphasise(l, false)}</li>`)}</ul>
     </div>`,
     ),
   )}
