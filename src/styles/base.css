@@ -36,11 +36,11 @@ a {
   font-optical-sizing: auto;
 }
 
-/* Uppercase label. Used once per section, never decoratively. */
+/* Section label. Set in sentence case — colour and size carry the role, not
+   capitals. Used once per section, never decoratively. */
 .lbl {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
   color: var(--label);
 }
 

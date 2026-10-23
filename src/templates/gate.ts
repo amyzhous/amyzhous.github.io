@@ -42,9 +42,8 @@ ${launched ? '' : '<meta name="robots" content="noindex, nofollow">'}
   .gate-inner { width: 100%; max-width: 300px; }
   .gate-label {
     margin: 0 0 14px;
-    font-size: 11px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
+    font-size: 11.5px;
+    letter-spacing: .01em;
     color: #6E6E69;
   }
   .gate-lede {
@@ -86,9 +85,8 @@ ${launched ? '' : '<meta name="robots" content="noindex, nofollow">'}
     background: #21201C;
     color: #FDFDFC;
     font: inherit;
-    font-size: 12px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
+    font-size: 12.5px;
+    letter-spacing: .01em;
     cursor: pointer;
     transition: background 300ms, color 300ms;
   }

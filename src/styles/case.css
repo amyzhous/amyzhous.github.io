@@ -73,7 +73,7 @@
 }
 
 .lbl-wide {
-  letter-spacing: 0.12em;
+  letter-spacing: 0.01em;
 }
 
 .h2 {
@@ -344,9 +344,8 @@ blockquote.pull footer {
 
 .case-reg .reg-side .reg-head {
   margin-bottom: 18px;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.01em;
 }
 
 .case-reg .reg-side p {
@@ -373,8 +372,7 @@ blockquote.pull footer {
 }
 
 .case-reg .reg-head-row span {
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 .case-reg .row {
@@ -407,8 +405,7 @@ blockquote.pull footer {
 
 .case-fun .fun-head {
   margin-bottom: 32px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 .case-fun .fun-bars {
@@ -422,8 +419,7 @@ blockquote.pull footer {
 
 .case-fun .fun-key {
   font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 .case-fun .fun-track,
@@ -440,8 +436,7 @@ blockquote.pull footer {
 .case-fun .fun-foot {
   margin-top: 28px;
   padding-top: 16px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 /* the matrix, as a table of real cells */
@@ -730,7 +725,7 @@ blockquote.pull footer {
 
   .case-reg .chip {
     padding: 1px 5px;
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .fig-bleed {

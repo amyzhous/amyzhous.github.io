@@ -26,8 +26,8 @@
 
 .reg-side .reg-head {
   margin-bottom: 12px;
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.01em;
   color: var(--label);
 }
 
@@ -60,8 +60,8 @@
 }
 
 .reg-head-row span {
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.01em;
   color: var(--label);
 }
 
@@ -84,7 +84,7 @@
 .chip {
   justify-self: start;
   padding: 1px 6px;
-  font-size: 9px;
+  font-size: 10px;
   background: var(--chip);
   color: var(--chip-ink);
   transition:
@@ -104,8 +104,8 @@
 
 .fun-head {
   margin: 0 0 18px;
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.01em;
   color: var(--label);
 }
 
@@ -149,7 +149,7 @@
   margin: 16px 0 0;
   padding-top: 10px;
   border-top: 1px solid var(--plate-line);
-  font-size: 9px;
+  font-size: 10px;
   color: var(--label);
 }
 
@@ -181,8 +181,8 @@
 }
 
 .mx-col {
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.01em;
   color: var(--label);
   text-align: center;
 }
@@ -200,7 +200,7 @@
 
 .mx-note {
   margin: 10px 0 0;
-  font-size: 9px;
+  font-size: 10px;
   color: var(--label);
 }
 
@@ -214,8 +214,8 @@
 
 .mx-solo-label {
   margin: 0 0 8px;
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.01em;
   color: var(--label);
   text-align: center;
 }
@@ -230,8 +230,8 @@
 }
 
 .solo span {
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.01em;
   color: var(--ground);
 }
 
@@ -291,9 +291,8 @@
   }
 
   .fun-key {
-    font-size: 9px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.01em;
     color: var(--dim);
   }
 

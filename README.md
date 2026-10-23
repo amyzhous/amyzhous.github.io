@@ -73,6 +73,10 @@ irradiation thickens a stroke; dark-on-light thins it, so the original cut
 read as spindly once the ground flipped. Only display sizes, which carry
 weight on their own, stay lighter — `--serif-weight` and `--serif-display`.
 
+Nothing on the site is set in capitals. Labels carry their role through
+colour and size instead, and the figure micro-text sits at 10px rather than
+9px because lowercase reads smaller than caps at the same size.
+
 Links are the only colour on the site: a gradient hairline, taken from
 michiecao.com, that sweeps in on hover and retracts the way it came. It is a
 pseudo-element scaled on the X axis rather than an animated `background-size`,
