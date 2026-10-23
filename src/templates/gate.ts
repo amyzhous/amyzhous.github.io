@@ -12,8 +12,8 @@
  * word itself is not sitting in the page source.
  */
 
-/** SHA-256 of the passphrase. Regenerate with: printf 'word' | shasum -a 256 */
-export const PASSPHRASE_HASH =
+/** SHA-256 of the password. Regenerate with: printf 'word' | shasum -a 256 */
+export const PASSWORD_HASH =
   '1906bc7c801f03c41551b06e2fd406e8f471787c51357e8731ec61dd599f04c8';
 
 const KEY = 'portfolio-open';
@@ -118,11 +118,10 @@ export const headScript = (): string => `
 export const markup = (): string => `
 <div class="gate" data-gate>
   <div class="gate-inner">
-    <p class="gate-label">Amy Zhou</p>
-    <p class="gate-lede">This portfolio is shared privately. Enter the passphrase to continue.</p>
+    <p class="gate-lede">Hey, this page is locked.<br>Enter password to enter.</p>
     <form data-gate-form>
       <div class="gate-field">
-        <label class="gate-label" for="gate-input" style="display:block;margin-bottom:8px">Passphrase</label>
+        <label class="gate-label" for="gate-input" style="display:block;margin-bottom:8px">Password</label>
         <input class="gate-input" id="gate-input" name="passphrase" type="password"
                autocomplete="current-password" autocapitalize="off" autocorrect="off"
                spellcheck="false" required>
@@ -136,7 +135,7 @@ export const markup = (): string => `
 </div>
 <script type="module">
   const KEY = '${KEY}';
-  const HASH = '${PASSPHRASE_HASH}';
+  const HASH = '${PASSWORD_HASH}';
   const gate = document.querySelector('[data-gate]');
   const form = document.querySelector('[data-gate-form]');
   const error = document.querySelector('[data-gate-error]');
