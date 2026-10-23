@@ -131,12 +131,17 @@ The old site is on the `backup/pre-redesign-site` branch.
 bold, the ATS version strips the markers so a parser only ever sees plain
 text. Both open with Amy's summary, in `resume.summary`.
 
-The designed résumé's order of voice, loudest first, is: name, role title,
-company, bullets, then dates and section labels. The role is what a reader is
-assessing, so it leads each entry; the company and dates sit in the rail as
-the where-and-when and stay quiet. An earlier version had this inverted — the
-company set larger than the role — with section labels at 2.4:1 and dates at
-2.2:1. Every colour now clears 4.5:1 on white, the lowest being 5.1:1.
+The designed résumé is set in Instrument Sans throughout — one typeface, no
+serif — and its rail means one thing only: this is a section. Everything
+belonging to an entry (role, company, dates, bullets) lives in the content
+column, so the two levels never share a column, and a hairline opens each
+section. Weight carries meaning rather than decoration: 600 marks a heading
+or the key of a key–value pair, and nothing inside running prose is bold.
+
+Earlier versions got this wrong in three ways worth not repeating — the
+company was set larger than the role title, metrics were bolded scattershot
+through the bullets, and the ink ramp put section labels at 2.4:1 and dates
+at 2.2:1. Every colour now clears 4.5:1 on white, the lowest being 5.1:1.
 
 Their layouts are tuned so the content ends inside the page in *print*
 metrics, which run taller than on screen. Current slack is 26px on the

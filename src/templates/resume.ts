@@ -3,45 +3,44 @@ import { emphasise, esc, map } from './html.js';
 
 const contact = [resume.email, resume.phone, resume.site, resume.linkedin];
 
+/** A section: its label in the rail, everything else in the content column. */
+const section = (label: string, body: string): string => `
+  <section class="section">
+    <p class="lbl">${esc(label)}</p>
+    <div>${body}</div>
+  </section>`;
+
 export const render = (): string => `
 <div class="sheet">
 
   <p class="name">${esc(resume.name)}</p>
-  <p class="role-line">${esc(resume.shortTitle)}</p>
   <p class="contact">${map(contact, (c) => `<span>${esc(c)}</span>`)}</p>
-
   <p class="summary">${esc(resume.summary)}</p>
 
-  <div class="block block-head">
-    <p class="lbl">Experience</p>
-    <span></span>
-  </div>
-
-  ${map(
-    resume.roles,
-    (r) => `<div class="block role">
-    <div>
-      <p class="role-company">${esc(r.company)}</p>
-      <p class="role-dates">${esc(r.dates)}</p>
-    </div>
-    <div>
-      <p class="role-title">${esc(r.title)}</p>
-      ${map(r.lines, (l) => `<p class="sub">${emphasise(l)}</p>`)}
-    </div>
-  </div>`,
+  ${section(
+    'Experience',
+    map(
+      resume.roles,
+      (r) => `<div class="entry">
+      <p class="entry-title">${esc(r.title)}</p>
+      <p class="entry-meta">${esc(r.company)} · ${esc(r.dates)}</p>
+      ${map(r.lines, (l) => `<p class="sub">${emphasise(l, false)}</p>`)}
+    </div>`,
+    ),
   )}
 
-  <div class="block block-skills">
-    <p class="lbl">Skills</p>
-    <div>
-      ${map(resume.skills, (s) => `<p class="sub"><b>${esc(s.k)}:</b> ${esc(s.v)}</p>`)}
-    </div>
-  </div>
+  ${section(
+    'Skills',
+    map(
+      resume.skills,
+      (s) => `<p class="sub"><span class="key">${esc(s.k)}:</span> ${esc(s.v)}</p>`,
+    ),
+  )}
 
-  <div class="block block-education">
-    <p class="lbl">Education</p>
-    <p class="sub"><b>${esc(resume.education.school)}</b> · ${esc(resume.education.degree)}</p>
-  </div>
+  ${section(
+    'Education',
+    `<p class="sub">${esc(resume.education.school)} · ${esc(resume.education.degree)}</p>`,
+  )}
 
 </div>`;
 

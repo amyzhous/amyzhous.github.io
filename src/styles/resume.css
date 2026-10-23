@@ -1,21 +1,24 @@
 /* ── Résumé, designed ───────────────────────────────────────────────────────
-   Letter, 816 × 1056 at 96dpi, built for paper.
+   Letter, 816 × 1056 at 96dpi, built for paper. One typeface throughout.
 
-   Order of voice, loudest first: name, role title, company, bullets, then
-   dates and section labels. The role is what the reader is assessing, so it
-   leads each entry; the company and dates sit in the rail as the "where and
-   when" and stay quiet. Every colour clears 4.5:1 on white — the previous
-   ramp had section labels at 2.4:1 and dates at 2.2:1.
+   The rail means one thing and one thing only: this is a section. Everything
+   belonging to an entry — role, company, dates, bullets — lives in the
+   content column, so the two levels never share a column. A hairline opens
+   each section, which is the only structural mark on the page.
+
+   Weight carries meaning, never decoration: 600 marks a heading or the key
+   in a key–value pair, and nothing inside running prose is ever bold.
+   Every colour clears 4.5:1 on white; the lowest is 5.1:1.
    ------------------------------------------------------------------------- */
 
 :root {
   --paper: #ffffff;
-  --ink: #21201c; /* name, role titles          15.8:1 */
+  --ink: #21201c; /* name, role titles, keys    15.8:1 */
   --ink-2: #3b3a37; /* bullets, summary          11.2:1 */
   --ink-sub: #5f5e58; /* company, dates, contact    7.0:1 */
   --ink-label: #6e6e69; /* section labels             5.3:1 */
+  --rule: #e4e3e0;
 
-  --serif: Newsreader, Georgia, serif;
   --sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -30,6 +33,7 @@ body {
   background: var(--paper);
   color: var(--ink-2);
   font-family: var(--sans);
+  font-size: 12px;
   -webkit-font-smoothing: antialiased;
   print-color-adjust: exact;
 }
@@ -37,32 +41,25 @@ body {
 .sheet {
   width: 816px;
   height: 1056px;
-  padding: 56px 64px 20px;
+  padding: 46px 64px 18px;
   background: var(--paper);
 }
 
-/* ── masthead: the name, then the contact line with room to breathe ── */
+/* ── identity ── */
 
 .name {
-  margin: 0 0 2px;
+  margin: 0 0 7px;
   font-size: 21px;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
 
-.role-line {
-  margin: 0 0 9px;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--ink-sub);
-}
-
 .contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 14px;
-  margin: 0 0 20px;
+  gap: 3px 13px;
+  margin: 0 0 16px;
   font-size: 11.5px;
   line-height: 1.5;
   color: var(--ink-sub);
@@ -70,23 +67,35 @@ body {
 
 .contact span + span::before {
   content: '·';
-  margin-right: 14px;
+  margin-right: 13px;
   color: var(--ink-label);
 }
 
 .summary {
-  margin: 0 0 22px;
-  max-width: 74ch;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 14.5px;
-  line-height: 1.58;
+  margin: 0 0 20px;
+  max-width: 86ch;
+  font-size: 12.5px;
+  line-height: 1.6;
   color: var(--ink-2);
 }
 
-/* ── sections ── */
+/* ── sections: rail is the label, content column is everything else ── */
+
+.section {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+  padding-top: 15px;
+  border-top: 1px solid var(--rule);
+}
+
+.section + .section {
+  margin-top: 16px;
+}
 
 .lbl {
+  margin: 0;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.13em;
@@ -94,55 +103,32 @@ body {
   color: var(--ink-label);
 }
 
-/* Rail holds where and when; the content column holds what. */
-.block {
-  display: grid;
-  grid-template-columns: 116px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
+/* ── an entry ── */
+
+.entry {
+  margin-bottom: 13px;
 }
 
-.block-head {
-  margin-bottom: 14px;
-}
-
-.block-head p {
-  margin: 0;
-}
-
-.role {
-  margin-bottom: 14px;
-}
-
-.role:last-of-type {
+.entry:last-child {
   margin-bottom: 0;
 }
 
-.role-company {
-  margin: 0 0 2px;
-  font-size: 12.5px;
-  font-weight: 500;
-  line-height: 1.3;
-  color: var(--ink);
-}
-
-.role-dates {
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.4;
-  color: var(--ink-sub);
-}
-
-.role-title {
-  margin: 0 0 6px;
+.entry-title {
+  margin: 0 0 1px;
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: -0.003em;
   color: var(--ink);
 }
 
+.entry-meta {
+  margin: 0 0 6px;
+  font-size: 11.5px;
+  color: var(--ink-sub);
+}
+
 .sub {
-  margin: 0 0 5px;
+  margin: 0 0 4px;
   font-size: 12px;
   line-height: 1.5;
   color: var(--ink-2);
@@ -152,23 +138,10 @@ body {
   margin-bottom: 0;
 }
 
-.sub b {
+/* The only bold inside a line: the key of a key–value pair. */
+.key {
   font-weight: 600;
   color: var(--ink);
-}
-
-.block-skills {
-  margin-top: 20px;
-  margin-bottom: 18px;
-}
-
-.block-skills .lbl,
-.block-education .lbl {
-  padding-top: 2px;
-}
-
-.block-education p {
-  margin: 0;
 }
 
 @page {
