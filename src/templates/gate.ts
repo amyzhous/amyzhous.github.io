@@ -16,6 +16,8 @@
 export const PASSWORD_HASH =
   '1906bc7c801f03c41551b06e2fd406e8f471787c51357e8731ec61dd599f04c8';
 
+import { launched } from '../data/site.js';
+
 const KEY = 'portfolio-open';
 
 /**
@@ -23,6 +25,7 @@ const KEY = 'portfolio-open';
  * flashes its content. Everything it needs is inline for the same reason.
  */
 export const headScript = (): string => `
+${launched ? '' : '<meta name="robots" content="noindex, nofollow">'}
 <style>
   html.is-locked body > *:not(.gate) { display: none !important; }
   html:not(.is-locked) .gate { display: none; }

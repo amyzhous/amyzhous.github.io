@@ -19,6 +19,16 @@ export const site = {
     'I design the software construction teams run their day on, and I stay on it until it ships and the number moves.',
 } as const;
 
+/**
+ * Flip to true when the work is ready to be found.
+ *
+ * While this is false every page carries noindex and robots.txt disallows
+ * everything. The password gate stops people browsing, but it does nothing
+ * about crawlers — they read the HTML directly and never meet the form — so
+ * keeping the site out of search results takes this as well as the lock.
+ */
+export const launched = false;
+
 /** Auto-scroll speed for the home work column, px/second. 0 disables. */
 export const autoScrollSpeed = 18;
 

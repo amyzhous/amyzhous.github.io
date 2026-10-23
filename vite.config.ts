@@ -60,13 +60,24 @@ const redirectPage = (to: string): string => `<!doctype html>
 </html>
 `;
 
-/** Emits those stubs alongside the built pages. */
-const emitRedirects = (): Plugin => ({
-  name: 'emit-redirects',
-  generateBundle() {
+/** Emits those stubs, and robots.txt, alongside the built pages. */
+const emitStaticFiles = (): Plugin => ({
+  name: 'emit-static-files',
+  async generateBundle() {
     for (const [from, to] of Object.entries(redirects)) {
       this.emitFile({ type: 'asset', fileName: from, source: redirectPage(to) });
     }
+
+    // robots.txt follows the same switch as the noindex tags, so the two
+    // cannot disagree about whether the site wants to be found.
+    const { launched } = (await loadModule!(SITE_MODULE)) as { launched: boolean };
+    this.emitFile({
+      type: 'asset',
+      fileName: 'robots.txt',
+      source: launched
+        ? 'User-agent: *\nAllow: /\n'
+        : '# Unfinished and deliberately unlisted.\nUser-agent: *\nDisallow: /\n',
+    });
   },
 });
 
@@ -74,6 +85,16 @@ interface PageModule {
   head: () => string;
   body: () => string;
 }
+
+/** Where the site's build-time flags live. */
+const SITE_MODULE = 'src/data/site.ts';
+
+/**
+ * Loads a source module during the build. Set by the render plugin, which
+ * owns the esbuild bundling, and read by anything else that needs a value
+ * out of `src/`.
+ */
+let loadModule: ((id: string) => Promise<unknown>) | undefined;
 
 /**
  * Renders each page's markup at build time, so the HTML Vite emits is the
@@ -84,7 +105,6 @@ interface PageModule {
  * esbuild bundles each page module to a temporary ESM file and it is imported.
  */
 const renderPages = (): Plugin => {
-  let loadModule: ((id: string) => Promise<PageModule>) | undefined;
   let cleanup: (() => Promise<void>) | undefined;
 
   return {
@@ -92,8 +112,7 @@ const renderPages = (): Plugin => {
     enforce: 'pre',
 
     configureServer(server) {
-      loadModule = async (id) =>
-        (await server.ssrLoadModule(`/${id}`)) as unknown as PageModule;
+      loadModule = async (id) => server.ssrLoadModule(`/${id}`);
       // Content and template edits should reload the browser, not just HMR CSS.
       server.watcher.on('change', (file) => {
         if (/src\/(data|templates|pages)\//.test(file)) {
@@ -109,10 +128,11 @@ const renderPages = (): Plugin => {
       cleanup = () => rm(dir, { recursive: true, force: true });
 
       const outfiles = new Map<string, string>();
-      for (const page of Object.values(pages)) {
-        const outfile = join(dir, `${page.module.replace(/[^a-z0-9]/gi, '_')}.mjs`);
+      const modules = [...Object.values(pages).map((p) => p.module), SITE_MODULE];
+      for (const id of modules) {
+        const outfile = join(dir, `${id.replace(/[^a-z0-9]/gi, '_')}.mjs`);
         await esbuild.build({
-          entryPoints: [resolve(page.module)],
+          entryPoints: [resolve(id)],
           outfile,
           bundle: true,
           format: 'esm',
@@ -121,11 +141,10 @@ const renderPages = (): Plugin => {
           // The CSS imports in the page entries are for the browser bundle only.
           external: ['*.css'],
         });
-        outfiles.set(page.module, outfile);
+        outfiles.set(id, outfile);
       }
 
-      loadModule = async (id) =>
-        (await import(pathToFileURL(outfiles.get(id)!).href)) as PageModule;
+      loadModule = async (id) => import(pathToFileURL(outfiles.get(id)!).href);
     },
 
     // The HTML is rendered in the output phase, after buildEnd, so the temporary
@@ -138,7 +157,7 @@ const renderPages = (): Plugin => {
       const key = ctx.path.replace(/^\//, '') || 'index.html';
       const page = pages[key as keyof typeof pages];
       if (!page) return html;
-      const mod = await loadModule!(page.module);
+      const mod = (await loadModule!(page.module)) as PageModule;
       return html.replace('<!--head-->', mod.head()).replace('<!--app-->', mod.body());
     },
   };
@@ -146,7 +165,7 @@ const renderPages = (): Plugin => {
 
 export default defineConfig({
   appType: 'mpa',
-  plugins: [renderPages(), emitRedirects()],
+  plugins: [renderPages(), emitStaticFiles()],
   build: {
     target: 'es2022',
     cssCodeSplit: true,

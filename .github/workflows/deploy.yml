@@ -32,7 +32,7 @@ jobs:
 
       - name: Publish to master
         run: |
-          cp .nojekyll robots.txt dist/ 2>/dev/null || true
+          cp .nojekyll dist/ 2>/dev/null || true   # robots.txt is emitted by the build
           cd dist
           git init -q
           git config user.name "github-actions[bot]"

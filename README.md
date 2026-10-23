@@ -120,6 +120,16 @@ that size. Regenerate with `scripts/make-favicon.mjs` if the type ever changes.
 deliberately left open: they are unlinked and `noindex`, and the gate would
 otherwise be what got printed into the PDF.
 
+### Before launch
+
+`launched` in `src/data/site.ts` is the single switch. While it is false every
+page carries `noindex, nofollow` and `robots.txt` disallows everything. Flip
+it to true when the work is ready to be found — the lock and the crawler
+rules are driven by the same flag so they cannot disagree.
+
+This matters because the gate alone does not keep the site out of search
+results: a crawler reads the HTML directly and never meets the form.
+
 **It is a courtesy gate, not security.** The site is static, so every page is
 already inside the HTML the browser downloads — anyone who opens View Source
 or fetches the URL directly reads it without meeting the form. What it does
