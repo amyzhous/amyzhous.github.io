@@ -114,6 +114,31 @@ own name treatment at icon scale. `public/favicon.ico` carries 16, 32 and 48px;
 the 16px tile is set in weight 500 because the lighter cut loses its serifs at
 that size. Regenerate with `scripts/make-favicon.mjs` if the type ever changes.
 
+## The passphrase gate
+
+`src/templates/gate.ts` puts a lock over the four site pages. The résumés are
+deliberately left open: they are unlinked and `noindex`, and the gate would
+otherwise be what got printed into the PDF.
+
+**It is a courtesy gate, not security.** The site is static, so every page is
+already inside the HTML the browser downloads — anyone who opens View Source
+or fetches the URL directly reads it without meeting the form. What it does
+is stop casual browsing and make it clear the work is shared deliberately.
+Real protection means a host that checks credentials before serving the
+bytes: Cloudflare Access in front of the Pages site, or moving to a host with
+built-in password protection.
+
+The passphrase ships as a SHA-256 hash, not plain text, so the word itself is
+not sitting in the page source. To change it:
+
+```bash
+printf 'newword' | shasum -a 256
+```
+
+and paste the result into `PASSPHRASE_HASH`. Input is lowercased and trimmed
+before hashing. Unlocking is remembered in `sessionStorage`, so it is asked
+once per browser session rather than once per page.
+
 ## Old URLs
 
 The previous site's five case study URLs are kept alive as redirect stubs to

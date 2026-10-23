@@ -13,6 +13,8 @@ const pages = {
   'project-files.html': { module: 'src/pages/project-files.page.ts' },
   'ai-strategy.html': { module: 'src/pages/ai-strategy.page.ts' },
   'unified-submittals.html': { module: 'src/pages/unified-submittals.page.ts' },
+  // The résumés are not gated: they are unlinked and noindex, and the lock
+  // would otherwise be what got printed into the PDF.
   'resume.html': { module: 'src/pages/resume.page.ts' },
   'resume-ats.html': { module: 'src/pages/resume-ats.page.ts' },
 } as const;
