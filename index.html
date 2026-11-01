@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#FDFDFC">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Newsreader:opsz,ital,wght@6..72,0,300..500;6..72,1,300..500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,ital,wght@6..72,0,300..500;6..72,1,300..500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
   <script>
     /* GitHub Pages caches HTML for several minutes while hashed assets come
        and go, so a browser can hold a page whose stylesheet no longer
@@ -21,10 +21,12 @@
         return (s.href || '').indexOf('/assets/') > -1;
       });
       if (ok || /[?&]fresh=/.test(location.search)) return;
-      location.replace(location.pathname + '?fresh=' + Date.now());
+      var q = location.search ? location.search + '&' : '?';
+      location.replace(location.pathname + q + 'fresh=' + Date.now());
     });
     if (/[?&]fresh=/.test(location.search)) {
-      history.replaceState(null, '', location.pathname);
+      var keep = location.search.replace(/[?&]fresh=\d+/, '').replace(/^&/, '?');
+      history.replaceState(null, '', location.pathname + (keep === '?' ? '' : keep));
     }
   </script>
   <!--head-->
