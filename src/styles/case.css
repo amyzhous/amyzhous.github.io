@@ -868,6 +868,7 @@ blockquote.pull footer {
 /* the one border on the page */
 .cs-bar {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
@@ -1061,6 +1062,14 @@ blockquote.pull footer {
   flex: none;
 }
 
+.cs-foot-row {
+  /* the pill's own padding would push its label past the text edge */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-left: -13px;
+}
+
 .cs-foot .pill {
   display: inline-flex;
   align-items: center;
@@ -1083,8 +1092,7 @@ blockquote.pull footer {
 }
 
 .cs-foot {
-  display: flex;
-  gap: 4px;
+  display: block;
   margin-top: 32px;
   padding: 20px 0 48px;
   border-top: 1px solid var(--rule);

@@ -92,7 +92,7 @@ export const render = (slug: Slug): string => {
   return `
 <div class="cs">
 
-  <div class="cs-wide cs-bar">
+  <div class="cs-m cs-bar">
     <p class="cs-crumb"><a class="u" href="/classic.html" data-home>← All work</a> <span>/</span> ${esc(c.name)}</p>
     <nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
       <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
@@ -138,16 +138,19 @@ export const render = (slug: Slug): string => {
     ),
   )}
 
-  ${slug === 'project-files' ? `<div class="cs-wide"><figure class="cs-ph-live"><div class="plate fig-plate-169">${drawingRegister()}</div><figcaption class="cs-ph-note">A sheet keeps its identity across revisions, and the current one is never in question.</figcaption></figure></div>` : ''}
+  ${slug === 'project-files' ? `<div class="cs-wide"><div class="plate fig-plate-169">${drawingRegister()}</div></div>
+  <div class="cs-m"><p class="cs-ph-note">A sheet keeps its identity across revisions, and the current one is never in question.</p></div>` : ''}
 
   <div class="cs-m cs-next">
     <a class="u" href="${paths[next.slug]}">Next: ${esc(next.name)} →</a>
   </div>
 
-  <footer class="cs-wide cs-foot">
+  <footer class="cs-m cs-foot">
+    <div class="cs-foot-row">
     <a class="pill ghost" href="mailto:${esc(site.email)}"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="M2.5 4.5 8 9l5.5-4.5"/></svg>Email</a>
     <a class="pill ghost" href="${esc(site.resumeHref)}" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Resume</a>
     <a class="pill ghost" href="${esc(site.linkedinHref)}" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M7 9a3 3 0 0 0 4.2 0l2-2a3 3 0 0 0-4.2-4.2l-.6.6"/><path d="M9 7a3 3 0 0 0-4.2 0l-2 2A3 3 0 0 0 7 13.2l.6-.6"/></svg>LinkedIn</a>
+    </div>
   </footer>
 
 </div>`;
