@@ -19,7 +19,7 @@
   --ink-label: #6e6e69; /* section labels             5.3:1 */
   --rule: #e4e3e0;
 
-  --sans: Inter, 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 }
 
 *,
