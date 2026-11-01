@@ -13,15 +13,17 @@ import '../styles/chat.css';
 (function(){
   const arrow='<svg class="lu-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>';
   const cases=[
-    {id:'c1',slug:'project-files',n:1,name:'Project Files',title:'Getting drawings out of email and into the project',stat:'58K+ drawings, used by 40% of existing customers',
-     fig:'<div>Drawing sets</div><div class="body"><div class="grid">'+'<div></div>'.repeat(16)+'</div></div>'},
-    {id:'c2',slug:'ai-strategy',n:2,name:'AI Strategy',title:'Designing for what happens after the answer',stat:'83% opened it, 15% accepted it',
-     fig:'<div>What happened after the answer</div><div class="body"><div class="bars"><span>Opened</span><div class="track"><div class="fill" style="--v:83%;background:var(--ink)"></div></div><span>83%</span><span>Read</span><div class="track"><div class="fill" style="--v:70%;background:var(--ink-2)"></div></div><span>70%</span><span>Accepted</span><div class="track"><div class="fill" style="--v:15%;background:var(--ink-3)"></div></div><span>15%</span></div></div>'},
-    {id:'c3',slug:'unified-submittals',n:3,name:'Unified Submittals',title:'Four submittal experiences into one',stat:'Four flows became one page that adapts to each role',
-     fig:'<div>One submittal page, four roles</div><div class="body"><div class="flow"><span>Contractor</span><i></i><span>Architect</span><i></i><span>Consultant</span><i></i><span>Owner</span></div></div>'}
+    {id:'c1',slug:'project-files',n:1,name:'Project Files',title:"We weren't building another file browser.",stat:'58K+ drawings managed · 0→1 paid product launched',
+     fig:'<div>Drawing register</div><div class="body"><div class="grid">'+'<div></div>'.repeat(16)+'</div></div>'},
+    {id:'c2',slug:'activation-growth',n:2,name:'Activation & Growth',title:"Getting started wasn't the same as getting value.",stat:'37% historical activation baseline established',
+     fig:'<div>One journey, three opportunities</div><div class="body"><div class="flow"><span>Create project</span><i></i><span>Reuse template</span><i></i><span>Invite team</span><i></i><span>First real work</span></div></div>'},
+    {id:'c3',slug:'construction-data-ai',n:3,name:'Construction Data & AI',title:"What if reporting didn't require knowing what to ask?",stat:'Product direction proposed · internal dashboard builder demonstrated',
+     fig:'<div>Charts first, AI when you need to go deeper</div><div class="body"><div class="bars"><span>Submittals</span><div class="track"><div class="fill" style="--v:78%;background:var(--ink)"></div></div><span>Review time</span><div class="track"><div class="fill" style="--v:54%;background:var(--ink-2)"></div></div><span>RFIs</span><div class="track"><div class="fill" style="--v:36%;background:var(--ink-3)"></div></div></div></div>'},
+    {id:'c4',slug:'self-serve-billing',n:4,name:'Self-Serve Billing',title:"Access shouldn't wait for a billing decision.",stat:'44 firms used self-serve seat management · 245 seat-change events',
+     fig:'<div>Provisional access, then approval</div><div class="body"><div class="flow"><span>Add teammate</span><i></i><span>Provisional access</span><i></i><span>Billing approval</span><i></i><span>Confirmed seat</span></div></div>'}
   ];
-  const metrics={c1:[['Drawings','58K+'],['Customers using it','40%']],c2:[['Opened','83%'],['Accepted','15%','down']],c3:[['Flows','4 → 1'],['Roles served','4']]};
-  const icons={c1:'<path d="M3 2.5h6.5L13 6v7.5H3z"/><path d="M9.5 2.5V6H13"/>',c2:'<path d="M8 2v2.5M8 11.5V14M2 8h2.5M11.5 8H14"/><circle cx="8" cy="8" r="3"/>',c3:'<rect x="2.5" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="9" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="2.5" y="9" width="4.5" height="4.5" rx="1"/><rect x="9" y="9" width="4.5" height="4.5" rx="1"/>'};
+  const metrics={c1:[['Drawings managed','58K+'],['Paid product','0→1']],c2:[['Activation baseline','37%'],['Opportunities','3']],c3:[['Direction','Proposed'],['Dashboard','Demonstrated']],c4:[['Firms','44'],['Seat changes','245']]};
+  const icons={c1:'<path d="M3 2.5h6.5L13 6v7.5H3z"/><path d="M9.5 2.5V6H13"/>',c2:'<path d="M8 2v2.5M8 11.5V14M2 8h2.5M11.5 8H14"/><circle cx="8" cy="8" r="3"/>',c4:'<path d="M2.5 5.5h11v7h-11z"/><path d="M2.5 8.5h11"/><circle cx="11" cy="10.5" r="1"/>',c3:'<rect x="2.5" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="9" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="2.5" y="9" width="4.5" height="4.5" rx="1"/><rect x="9" y="9" width="4.5" height="4.5" rx="1"/>'};
   const card=(c,withId,fig=true)=>'<a class="card rc pop"'+(withId?' id="'+c.id+'"':'')+' href="/'+c.slug+'.html">'
     +'<div class="rc-h"><span class="rc-name">'+c.name+'</span></div>'
     +'<h3>'+c.title+'</h3>'
@@ -41,7 +43,7 @@ import '../styles/chat.css';
   // split a paragraph into its rendered lines; {n} becomes a citation chip
   function splitLines(el){
     const text=el.dataset.text||(el.dataset.text=el.textContent.trim());
-    const tok=w=>w.replace(/\{(\d)\}([.,]?)/,(m,n,p)=>'<a class="cite" href="#c'+n+'" data-jump="c'+n+'"><svg class="lu-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>'+['','Project Files','AI Strategy','Submittals'][n]+'</a>'+p);
+    const tok=w=>w.replace(/\{(\d)\}([.,]?)/,(m,n,p)=>'<a class="cite" href="#c'+n+'" data-jump="c'+n+'"><svg class="lu-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>'+['','Project Files','Activation','Data & AI','Billing'][n]+'</a>'+p);
     el.innerHTML=text.replace(/ +\{(\d)\}/g,'\u00a0{$1}').split(/[ \t\n]+/).map(w=>'<span class="tk">'+(/\{\d\}/.test(w)?'<span class="nw">'+tok(w)+'</span>':tok(w))+'</span>').join(' ');
   }
   function setP(el,p){
@@ -119,7 +121,7 @@ import '../styles/chat.css';
         party:['Love that energy. Let\'s talk.',true]
       };
       const [t,mail]=lines[v], words=t.split(' ');
-      fb.innerHTML=words.map((w,i)=>'<span class="fw" style="animation-delay:'+(i*45)+'ms">'+w+'</span>').join(' ')+(mail?' <a class="fw fbl" style="animation-delay:'+(words.length*45)+'ms" href="mailto:hello@example.com">Email me</a>':'');
+      fb.innerHTML=words.map((w,i)=>'<span class="fw" style="animation-delay:'+(i*45)+'ms">'+w+'</span>').join(' ')+(mail?' <a class="fw fbl" style="animation-delay:'+(words.length*45)+'ms" href="mailto:ayjzhou@gmail.com">Email me</a>':'');
       return;
     }
     const r=e.target.closest('.rel'); if(r) ask(r.dataset.q);
@@ -185,20 +187,21 @@ import '../styles/chat.css';
   addEventListener('keydown',e=>{ if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){ e.preventDefault(); document.getElementById('input').focus(); }});
 
   // follow-ups: answers written by Amy, matched by keyword
-  const linksRow='<div class="tools pop"><a class="pill ghost" href="mailto:hello@example.com">Email</a><a class="pill ghost" href="#">Résumé</a><a class="pill ghost" href="#">LinkedIn</a></div>';
+  const linksRow='<div class="tools pop"><a class="pill ghost" href="mailto:ayjzhou@gmail.com">Email</a><a class="pill ghost" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing">Résumé</a><a class="pill ghost" href="https://www.linkedin.com/in/amyyjzhou/">LinkedIn</a></div>';
   const mini=i=>'<div class="cards" style="margin-top:18px">'+card(cases[i],false,false)+'</div>';
   const answers=[
-    {k:/^amy's résumé$/i, a:'Here is my résumé. One page, PDF.', x:'<div class="cards" style="margin-top:18px"><a class="card rc pop" href="#"><div class="rc-h"><span class="rc-name">PDF</span></div><h3>Amy Zhou, résumé</h3><div class="rc-f"><span class="rc-note">Senior product designer</span><span class="rc-btn">Open résumé '+arrow+'</span></div></a></div>'},
-    {k:/^amy on linkedin$/i, a:'Here is my LinkedIn. Happy to connect.', x:'<div class="cards" style="margin-top:18px"><a class="card rc pop" href="#"><div class="rc-h"><span class="rc-name">linkedin.com</span></div><h3>Amy Zhou on LinkedIn</h3><div class="rc-f"><span class="rc-note">Senior product designer at Part3</span><span class="rc-btn">Open LinkedIn '+arrow+'</span></div></a></div>'},
+    {k:/^amy's résumé$/i, a:'Here is my résumé. One page, PDF.', x:'<div class="cards" style="margin-top:18px"><a class="card rc pop" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing"><div class="rc-h"><span class="rc-name">PDF</span></div><h3>Amy Zhou, résumé</h3><div class="rc-f"><span class="rc-note">Senior product designer</span><span class="rc-btn">Open résumé '+arrow+'</span></div></a></div>'},
+    {k:/^amy on linkedin$/i, a:'Here is my LinkedIn. Happy to connect.', x:'<div class="cards" style="margin-top:18px"><a class="card rc pop" href="https://www.linkedin.com/in/amyyjzhou/"><div class="rc-h"><span class="rc-name">linkedin.com</span></div><h3>Amy Zhou on LinkedIn</h3><div class="rc-f"><span class="rc-note">Senior product designer at Part3</span><span class="rc-btn">Open LinkedIn '+arrow+'</span></div></a></div>'},
     {k:/^tell me about amy$/i, a:'I\'m the senior product designer at Part3, a seed-stage platform for construction administration: submittals, RFIs, and the Procore and Bluebeam work around them. I joined when the company was about 10 people and have been its only designer since. I\'m self-taught, I prototype in HTML before Figma, and I care about owning a problem until the number moves, not just handing off screens. I want to stay an IC.', x:''},
     {k:/not on your|fun fact/i, a:'[Your fun fact here. One or two sentences, something a teammate would know about you that a résumé wouldn\'t.]', x:''},
     {k:/get into design|self-taught|school/i, a:'I\'m self-taught. I joined Part3 when it was about 10 people and have been its only product designer since, so I learned by shipping. I still prototype in HTML before I open Figma.', x:''},
-    {k:/project files|drawing|files|40%/i, a:'Project Files moved drawing sets out of email and into the project {1}. It\'s now at 58K+ drawings and 40% of existing customers.', x:mini(0), t:[['Heard it from CX','[What customers were doing with drawings before, e.g. emailing PDFs back and forth.]'],['Checked the data','[Tickets, usage, or calls that confirmed it was worth solving.]'],['Prototyped in HTML','[What you tested, and with whom.]'],['Shipped and measured','58K+ drawings uploaded, used by 40% of existing customers.']]},
-    {k:/\bai\b|assistant|review|15%|answer/i, a:'Most people opened the AI review and most read it, but only 15% accepted it {2}. The work was designing for what happens after the answer.', x:mini(1), t:[['Looked past the answer','83% opened the AI review and 70% read it, but only 15% accepted it.'],['Found why','[What stopped people from accepting, from calls or session data.]'],['Changed the design','[The decision you made about what happens after the answer.]'],['Measured again','[What moved, or what you learned if it didn\'t.]']]},
-    {k:/submittal/i, a:'I merged four role-specific submittal experiences into one page that adapts to who is looking at it {3}.', x:mini(2), t:[['Mapped four flows','Contractor, architect, consultant, and owner each had their own submittal experience.'],['Found the overlap','[What all four roles actually shared.]'],['Made the key call','[The decision that let one page adapt to each role.]'],['Shipped one page','Four flows became one role-adaptive page.']]},
+    {k:/project files|drawing|files|58k|register|revision/i, a:'Project Files started as a file-management brief and became a paid product for managing drawings {1}. A PDF is a file, but a drawing has an identity and a history. 58K+ drawings managed.', x:mini(0), t:[['Heard it from CX','[What customers were doing with drawings before, e.g. emailing PDFs back and forth.]'],['Checked the data','[Tickets, usage, or calls that confirmed it was worth solving.]'],['Prototyped in HTML','[What you tested, and with whom.]'],['Shipped and measured','58K+ drawings uploaded, used by 40% of existing customers.']]},
+    {k:/activation|onboarding|setup|getting started|template|37%/i, a:'Getting started was not the same as getting value {2}. I worked across project setup, reusable templates, and team onboarding, and established a 37% historical activation baseline to measure against.', x:mini(1), t:[['Looked past the answer','83% opened the AI review and 70% read it, but only 15% accepted it.'],['Found why','[What stopped people from accepting, from calls or session data.]'],['Changed the design','[The decision you made about what happens after the answer.]'],['Measured again','[What moved, or what you learned if it didn\'t.]']]},
+    {k:/\bai\b|data|reporting|dashboard|analytics|chart/i, a:'Part3 already captured the data; turning it into reporting meant knowing what to ask {3}. I proposed a visual-first approach with AI available to investigate, not to replace the evidence.', x:mini(2), t:[['Mapped four flows','Contractor, architect, consultant, and owner each had their own submittal experience.'],['Found the overlap','[What all four roles actually shared.]'],['Made the key call','[The decision that let one page adapt to each role.]'],['Shipped one page','Four flows became one role-adaptive page.']]},
+    {k:/billing|seat|access|invoice|provisional|permission|44 firms/i, a:'Access should not wait for a billing decision {4}. Teammates get provisional access while a billing admin approves the seat. 44 firms used it, across 245 seat-change events.', x:mini(3), t:[['Two reasonable approaches','Approve first, or provision first. Each has a cost for a different person.'],['Chose provision-first','The person adding a teammate is often not the person paying.'],['Designed the edge case','Expired access falls back to Viewer rather than disappearing.']]},
     {k:/reach|contact|email|hire|resume|résumé|linkedin|talk/i, a:'Email is the fastest way to reach me. My résumé and LinkedIn are here too.', x:linksRow},
   ];
-  const fallback={a:'I can walk you through Project Files {1}, AI Strategy {2}, or Unified Submittals {3}. Or reach me directly.', x:linksRow};
+  const fallback={a:'I can walk you through Project Files {1}, Activation & Growth {2}, Construction Data & AI {3}, or Self-Serve Billing {4}. Or reach me directly.', x:linksRow};
 
   // composer only offers preset questions, opened with /
   const cmds=[
@@ -441,7 +444,7 @@ import '../styles/chat.css';
     const bio="I design the software construction teams run their day on, and I stay on it until it ships and the number moves.";
     classic.innerHTML='<div class="cl-wrap"><aside class="cl-side"><h1 class="cl-name">Amy Zhou</h1><p class="cl-role">Product designer</p><p class="cl-bio">'+bio+'</p>'
       +'<h2 class="cl-label">Work</h2><ol class="cl-work">'+cases.map(c=>'<li><button type="button" data-to="cl-'+c.id+'"><span class="n">0'+c.n+'</span>'+c.name+'</button></li>').join('')+'</ol>'
-      +'<h2 class="cl-label">Elsewhere</h2><ul class="cl-links"><li><a href="mailto:hello@example.com">Email</a></li><li><a href="#">Résumé</a></li><li><a href="#">LinkedIn</a></li></ul></aside>'
+      +'<h2 class="cl-label">Elsewhere</h2><ul class="cl-links"><li><a href="mailto:ayjzhou@gmail.com">Email</a></li><li><a href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing">Résumé</a></li><li><a href="https://www.linkedin.com/in/amyyjzhou/">LinkedIn</a></li></ul></aside>'
       +'<main class="cl-main" aria-label="Case studies">'+cases.map(c=>'<section class="cl-case" id="cl-'+c.id+'">'+card(c,false)+'</section>').join('')+'</main></div>';
     classic.querySelectorAll('.pop').forEach(el=>{ el.style.opacity=1; });
     classic.querySelectorAll('.fig').forEach(f=>f.classList.add('seen'));
@@ -529,7 +532,7 @@ import '../styles/chat.css';
         +'<section id="cs-decisions" aria-labelledby="h-decisions"><h2 id="h-decisions">Key decisions</h2>'+d.decisions.map((x,k)=>'<div class="cs-dec"><h3><span class="n">0'+(k+1)+'</span>'+x.t+'</h3><dl><div><dt>Options</dt><dd>'+x.o+'</dd></div><div><dt>Chose</dt><dd>'+x.c+'</dd></div><div><dt>Why</dt><dd>'+x.w+'</dd></div></dl><div class="cs-shot">'+P('[Visual for this decision]')+'</div></div>').join('')+'</section>'
         +'<section id="cs-outcome" aria-labelledby="h-outcome"><h2 id="h-outcome">Outcome</h2><div class="cs-stats">'+d.outcome.map(o=>'<div><b>'+o[0]+'</b><span>'+o[1]+'</span></div>').join('')+'</div><p>'+d.outcomeText+'</p></section>'
         +'<section id="cs-next" aria-labelledby="h-next"><h2 id="h-next">What I\'d do next</h2><p>'+d.next+'</p></section>'
-        +'<footer class="cs-foot"><p class="cs-label">Next case study</p>'+card(nx,false,false)+'<p class="cs-contact"><a href="mailto:hello@example.com">Email me</a><a href="#">Résumé</a><a href="#">LinkedIn</a></p></footer>'
+        +'<footer class="cs-foot"><p class="cs-label">Next case study</p>'+card(nx,false,false)+'<p class="cs-contact"><a href="mailto:ayjzhou@gmail.com">Email me</a><a href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing">Résumé</a><a href="https://www.linkedin.com/in/amyyjzhou/">LinkedIn</a></p></footer>'
         +'</article><nav class="cs-index" aria-label="On this page"><p>On this page</p><ol>'+secs.map(x=>'<li><button type="button" data-sec="cs-'+x[0]+'">'+x[1]+'</button></li>').join('')+'</ol></nav></main>';
       page.querySelectorAll('.pop').forEach(el=>el.style.opacity=1);
       const btns=[...page.querySelectorAll('.cs-index button')];

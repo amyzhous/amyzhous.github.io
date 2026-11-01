@@ -13,9 +13,10 @@ import '../styles/chat-view.css';
 
 /** The question each project's thread is keyed on, as the bundle writes it. */
 const QUESTION_BY_SLUG: Record<string, string> = {
-  'project-files': 'How did Project Files reach 40% of customers?',
-  'ai-strategy': 'Why did only 15% accept the AI review?',
-  'unified-submittals': 'How did four submittal flows become one?',
+  'project-files': 'How did Project Files become a paid product?',
+  'activation-growth': 'How did you approach activation?',
+  'construction-data-ai': 'What did you propose for construction data and AI?',
+  'self-serve-billing': 'How does self-serve billing work?',
 };
 
 const SLUG_BY_QUESTION: Record<string, string> = Object.fromEntries(
