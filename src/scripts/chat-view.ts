@@ -34,8 +34,16 @@ const openRequestedThread = (): void => {
   const button = threadButtons().find((b) => b.dataset.q === question);
   if (!button) return;
 
-  // The bundle's own click handler does the rest.
+  // The bundle has already rendered its landing answer by now. Note what is
+  // on screen, let its own click handler ask the question — which is what
+  // runs the typing and streaming — then drop what was there before, so the
+  // page opens on this project rather than on "Who's Amy?".
+  const existing = Array.from(document.querySelectorAll('.entry'));
   button.click();
+  const asked = Array.from(document.querySelectorAll('.entry')).length > existing.length;
+  if (asked) existing.forEach((el) => el.remove());
+
+  document.querySelector('.scroller, .col')?.scrollTo?.({ top: 0 });
   // Leave the address bar clean, so a reload does not re-trigger it.
   history.replaceState(null, '', location.pathname);
 };

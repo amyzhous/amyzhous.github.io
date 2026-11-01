@@ -13,8 +13,9 @@
   order: 1;
 }
 
-/* Same place on every page. */
+/* Centred in the same 52px band as the classic headers, and on its own
+   bar's right margin rather than the viewport edge. */
 .viewtgl {
-  top: 26px;
-  right: 28px;
+  top: 8px;
+  right: 20px;
 }
