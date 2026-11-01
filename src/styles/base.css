@@ -44,7 +44,7 @@ a {
   color: var(--label);
 }
 
-/* The gradient hairline arrives on hover and leaves the way it came.
+/* The hairline arrives on hover and leaves the way it came.
    It is a pseudo-element scaled on the X axis rather than an animated
    background-size: transform runs on the compositor, so the sweep stays
    smooth instead of repainting the line on every frame. Origin flips between
@@ -61,7 +61,7 @@ a {
   bottom: -0.14em;
   left: 0;
   height: var(--link-underline);
-  background: var(--link-grad);
+  background: currentColor;
   transform: scaleX(0);
   transform-origin: right center;
   transition: transform var(--link-sweep) var(--ease);

@@ -73,15 +73,18 @@ irradiation thickens a stroke; dark-on-light thins it, so the original cut
 read as spindly once the ground flipped. Only display sizes, which carry
 weight on their own, stay lighter — `--serif-weight` and `--serif-display`.
 
+The view switch sits on every classic page — fixed top-right on the home
+page, inside the sticky header on the case studies, where a fixed one would
+cover it.
+
 Nothing on the site is set in capitals. Labels carry their role through
 colour and size instead, and the figure micro-text sits at 10px rather than
 9px because lowercase reads smaller than caps at the same size.
 
-Links are the only colour on the site: a gradient hairline, taken from
-michiecao.com, that sweeps in on hover and retracts the way it came. It is a
-pseudo-element scaled on the X axis rather than an animated `background-size`,
-because transform runs on the compositor and the line does not repaint on
-every frame. `--link-grad`, `--link-underline` and `--link-sweep` control it.
+Links carry a plain hairline that sweeps in on hover and retracts the way it
+came. It is a pseudo-element scaled on the X axis rather than an animated
+`background-size`, because transform runs on the compositor and the line does
+not repaint on every frame. `--link-underline` and `--link-sweep` control it.
 
 The back control in the case header is navigation rather than prose, so it
 carries no underline and shifts colour instead — the same treatment as the
@@ -139,8 +142,13 @@ JavaScript, never written against this project's strict config; typing it by
 hand would mean rewriting working code. Replace the file wholesale when a new
 bundle arrives rather than editing it.
 
-That bundle shipped a simplified classic view of its own. It is bypassed —
-the Classic half of its toggle links to `/`, which is the real one.
+That bundle shipped a simplified classic view and its own case study pages.
+Both are bypassed: the Classic half of its toggle links to `/`, and its work
+cards link to `/<slug>.html`, so there is one set of case studies rather than
+two that can drift. It is also pinned to light with `data-theme="light"` on
+`<html>` — the bundle follows the OS into dark and the rest of the site does
+not — and `src/styles/chat-overrides.css` points its `--sans` at Instrument
+Sans, which it was missing.
 
 ## The password gate
 

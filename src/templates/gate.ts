@@ -72,7 +72,7 @@ ${launched ? '' : '<meta name="robots" content="noindex, nofollow">'}
     position: absolute;
     right: 0; bottom: -1px; left: 0;
     height: 2px;
-    background: linear-gradient(120deg, #FFBEE5 0%, #FFD788 70%);
+    background: #21201C;
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform 380ms cubic-bezier(.2,.7,.2,1);

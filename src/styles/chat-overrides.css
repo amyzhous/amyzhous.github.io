@@ -1,0 +1,10 @@
+/* ── Chat view, reconciled with the rest of the site ────────────────────────
+   Loaded after the imported `chat.css`, which stays untouched so a new
+   bundle can replace it wholesale.
+   ------------------------------------------------------------------------- */
+
+:root {
+  /* The bundle asks for DM Sans, which this site does not load — it was
+     falling through to system-ui. Same sans as everywhere else. */
+  --sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
