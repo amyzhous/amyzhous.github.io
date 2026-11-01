@@ -11,6 +11,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+  <script>
+    /* GitHub Pages caches HTML for several minutes while hashed assets come
+       and go, so a browser can hold a page whose stylesheet no longer
+       exists and render it raw. If ours did not load, fetch the page again
+       on a fresh URL, once. */
+    addEventListener('load', function () {
+      var ok = Array.prototype.some.call(document.styleSheets, function (s) {
+        return (s.href || '').indexOf('/assets/') > -1;
+      });
+      if (ok || /[?&]fresh=/.test(location.search)) return;
+      location.replace(location.pathname + '?fresh=' + Date.now());
+    });
+    if (/[?&]fresh=/.test(location.search)) {
+      history.replaceState(null, '', location.pathname);
+    }
+  </script>
   
   <title>Amy Zhou — résumé (ATS)</title>
   <meta name="robots" content="noindex">

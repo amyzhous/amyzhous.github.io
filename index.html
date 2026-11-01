@@ -11,6 +11,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Newsreader:opsz,ital,wght@6..72,0,300..500;6..72,1,300..500&display=swap">
+  <script>
+    /* GitHub Pages caches HTML for several minutes while hashed assets come
+       and go, so a browser can hold a page whose stylesheet no longer
+       exists and render it raw. If ours did not load, fetch the page again
+       on a fresh URL, once. */
+    addEventListener('load', function () {
+      var ok = Array.prototype.some.call(document.styleSheets, function (s) {
+        return (s.href || '').indexOf('/assets/') > -1;
+      });
+      if (ok || /[?&]fresh=/.test(location.search)) return;
+      location.replace(location.pathname + '?fresh=' + Date.now());
+    });
+    if (/[?&]fresh=/.test(location.search)) {
+      history.replaceState(null, '', location.pathname);
+    }
+  </script>
   
   <title>Amy Zhou — product designer</title>
   <meta name="description" content="I design the software construction teams run their day on, and I stay on it until it ships and the number moves.">
@@ -209,7 +225,7 @@
 <a class="proj in" href="/project-files.html" style="--d: 300ms">
   <div class="proj-kicker">
     <span class="lbl proj-no">01</span>
-    <span class="lbl">Flagship case · 0→1 product · Approximately 3-minute read</span>
+    <span class="lbl">Project Files</span>
   </div>
   <h2 class="serif proj-title"><span class="title">We weren&#39;t building another file browser.</span></h2>
   <div class="plate">
@@ -256,7 +272,7 @@
 <a class="proj" href="/activation-growth.html">
   <div class="proj-kicker">
     <span class="lbl proj-no">02</span>
-    <span class="lbl">Growth and cross-functional leadership · Approximately 2–3-minute read</span>
+    <span class="lbl">Activation &amp; Growth</span>
   </div>
   <h2 class="serif proj-title"><span class="title">Getting started wasn&#39;t the same as getting value.</span></h2>
   <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Strong composition showing project creation, reusable templates, and team onboarding. Three connected views, not three identical screenshots.</p></figure>
@@ -269,7 +285,7 @@
 <a class="proj" href="/construction-data-ai.html">
   <div class="proj-kicker">
     <span class="lbl proj-no">03</span>
-    <span class="lbl">Product vision and AI interaction design · Approximately 2–3-minute read</span>
+    <span class="lbl">Construction Data &amp; AI</span>
   </div>
   <h2 class="serif proj-title"><span class="title">What if reporting didn&#39;t require knowing what to ask?</span></h2>
   <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Full-width dashboard with meaningful construction metrics, charts, and a contextual AI panel.</p></figure>
@@ -282,7 +298,7 @@
 <a class="proj" href="/self-serve-billing.html">
   <div class="proj-kicker">
     <span class="lbl proj-no">04</span>
-    <span class="lbl">Monetization and permissions · Approximately 2-minute read</span>
+    <span class="lbl">Self-Serve Billing</span>
   </div>
   <h2 class="serif proj-title"><span class="title">Access shouldn&#39;t wait for a billing decision.</span></h2>
   <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Provisional-access employee state paired with the billing-admin approval experience.</p></figure>
@@ -295,7 +311,7 @@
 <a class="proj loop-start" href="/project-files.html" aria-hidden="true" tabindex="-1">
   <div class="proj-kicker">
     <span class="lbl proj-no">01</span>
-    <span class="lbl">Flagship case · 0→1 product · Approximately 3-minute read</span>
+    <span class="lbl">Project Files</span>
   </div>
   <h2 class="serif proj-title"><span class="title">We weren&#39;t building another file browser.</span></h2>
   <div class="plate">
@@ -342,7 +358,7 @@
 <a class="proj" href="/activation-growth.html" aria-hidden="true" tabindex="-1">
   <div class="proj-kicker">
     <span class="lbl proj-no">02</span>
-    <span class="lbl">Growth and cross-functional leadership · Approximately 2–3-minute read</span>
+    <span class="lbl">Activation &amp; Growth</span>
   </div>
   <h2 class="serif proj-title"><span class="title">Getting started wasn&#39;t the same as getting value.</span></h2>
   <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Strong composition showing project creation, reusable templates, and team onboarding. Three connected views, not three identical screenshots.</p></figure>
@@ -355,7 +371,7 @@
 <a class="proj" href="/construction-data-ai.html" aria-hidden="true" tabindex="-1">
   <div class="proj-kicker">
     <span class="lbl proj-no">03</span>
-    <span class="lbl">Product vision and AI interaction design · Approximately 2–3-minute read</span>
+    <span class="lbl">Construction Data &amp; AI</span>
   </div>
   <h2 class="serif proj-title"><span class="title">What if reporting didn&#39;t require knowing what to ask?</span></h2>
   <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Full-width dashboard with meaningful construction metrics, charts, and a contextual AI panel.</p></figure>
@@ -368,7 +384,7 @@
 <a class="proj" href="/self-serve-billing.html" aria-hidden="true" tabindex="-1">
   <div class="proj-kicker">
     <span class="lbl proj-no">04</span>
-    <span class="lbl">Monetization and permissions · Approximately 2-minute read</span>
+    <span class="lbl">Self-Serve Billing</span>
   </div>
   <h2 class="serif proj-title"><span class="title">Access shouldn&#39;t wait for a billing decision.</span></h2>
   <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Provisional-access employee state paired with the billing-admin approval experience.</p></figure>
