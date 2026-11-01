@@ -438,6 +438,11 @@ import '../styles/chat.css';
 
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>setTimeout(playIntro,150));
 
+  // Arriving back through history restores the finished DOM from the back/forward
+  // cache without re-running any of this, so the answer would just be sitting
+  // there. Entering the chat should always play, however you got here.
+  addEventListener('pageshow',e=>{ if(e.persisted) playIntro(); });
+
   // ---- classic view: same content, plain two-column layout ----
   (function(){
     const classic=document.getElementById('classic'), app=document.getElementById('app');
