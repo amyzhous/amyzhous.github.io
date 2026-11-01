@@ -34,107 +34,107 @@
   <meta name="description" content="Designing provisional access for teams that need to move quickly without losing control over paid seats.">
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
   <script type="module" crossorigin src="/assets/view-pref-DPK6K2y5.js"></script>
-  <script type="module" crossorigin src="/assets/case-Ce8Cp5H8.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/case-D3H5lKxV.css">
+  <script type="module" crossorigin src="/assets/case-DaKV6Mgu.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/case-DGLRBgNN.css">
   <link rel="stylesheet" crossorigin href="/assets/motion-CmomtH7M.css">
 </head>
 <body>
 
-<div class="viewtgl-rail">
-  <nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
-    <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
-    <button type="button" data-mode="chat" aria-pressed="false">Chat</button>
-  </nav>
-</div>
+<div class="cs">
 
-<header class="case-header">
-  <div class="case-header-bar">
-    <a class="u lbl lbl-wide case-back" href="/classic.html" data-home>← All work</a>
+  <div class="cs-wide cs-bar">
+    <p class="cs-crumb"><a class="u" href="/classic.html" data-home>← All work</a> <span>/</span> Self-Serve Billing</p>
+    <nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
+      <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
+      <button type="button" data-mode="chat" aria-pressed="false">Chat</button>
+    </nav>
   </div>
-  <div class="prog-track"><div class="prog"></div></div>
-</header>
 
-<main class="frame">
-  
-<figure class="fig-todo fig-todo-bleed">
-  <p class="lbl fig-todo-kind">HERO</p>
-  <p class="fig-todo-note">Provisional-access employee state paired with the billing-admin approval experience.</p>
-</figure>
+  <div class="cs-wide cs-hero">
+<figure class="cs-ph">
+  <p class="cs-ph-kind">HERO</p>
+  <p class="cs-ph-note">Provisional-access employee state paired with the billing-admin approval experience.</p>
+</figure></div>
 
-  <div class="inner">
-    <div class="case-title-block">
-      <p class="lbl lbl-wide case-eyebrow">Self-Serve Billing</p>
-      <h1 class="serif case-title">Access shouldn&#39;t wait for a billing decision.</h1>
-      <p class="case-standfirst">Designing provisional access for teams that need to move quickly without losing control over paid seats.</p>
-    </div>
+  <div class="cs-m">
+    <h1 class="cs-t1">Access shouldn&#39;t wait for a billing decision.</h1>
 
-    <section class="case-outcome" aria-label="Outcome">
-      <dl class="case-facts">
-        <div><dt class="lbl lbl-wide">Role</dt><dd>Product design for member access, billing approval, and related user states</dd></div>
-        <div><dt class="lbl lbl-wide">Team</dt><dd>A larger cross-functional initiative</dd></div>
-      </dl>
+    <dl class="cs-meta">
+      <div><dt class="cs-label">Role</dt><dd>Product design for member access, billing approval, and related user states</dd></div>
+    </dl>
 
-      <p class="lbl lbl-wide">Outcome</p>
-      <div class="case-stats">
-        <div class="case-stat">
-          <p class="serif case-stat-fig">44</p>
-          <p class="case-stat-label">firms used self-serve seat management</p>
-        </div><div class="case-stat">
-          <p class="serif case-stat-fig">245</p>
-          <p class="case-stat-label">seat-change events recorded</p>
+    <div class="cs-block">
+      <p class="cs-label">Overview</p>
+      <p class="cs-t2">Designing provisional access for teams that need to move quickly without losing control over paid seats.</p>
+      <div class="cs-stats">
+        <div>
+          <p class="cs-t2">44</p>
+          <p class="cs-body">firms used self-serve seat management</p>
+        </div><div>
+          <p class="cs-t2">245</p>
+          <p class="cs-body">seat-change events recorded</p>
         </div>
       </div>
-      <p class="case-stat-note">The usage figures cover the wider self-serve seat-management system, not the isolated effect of the provisional-access design.</p>
-    </section>
-  </div>
-
-  <div class="inner">
-    <nav class="case-nav" aria-label="Sections">
-      <ol>
-        <li><a href="#1-the-person-adding-a-teammate-wasn-t-always-the-person-payi">The person adding a teammate wasn&#39;t always the person paying.</a></li><li><a href="#2-two-reasonable-approaches-one-important-tradeoff">Two reasonable approaches, one important tradeoff</a></li><li><a href="#3-making-temporary-access-understandable">Making temporary access understandable</a></li><li><a href="#4-what-changed">What changed</a></li>
-      </ol>
-    </nav>
-
-    <div class="case-read">
-    <section class="sec" id="1-the-person-adding-a-teammate-wasn-t-always-the-person-payi">
-      <h2 class="serif h2 sec-heading">The person adding a teammate wasn&#39;t always the person paying.</h2>
-      <div class="sec-body"><p class="body">Previously, expanding a team&#39;s paid seats required help from Part3 staff. That could interrupt onboarding just as a firm was growing its use of the product.</p><p class="body">But self-serve purchasing introduced another complication. An organization administrator might be responsible for adding people while a principal or billing administrator controlled spending.</p><blockquote class="case-pull"><p class="serif">Making those two people complete the same action wasn&#39;t realistic.</p></blockquote></div>
-    </section><section class="sec" id="2-two-reasonable-approaches-one-important-tradeoff">
-      <h2 class="serif h2 sec-heading">Two reasonable approaches, one important tradeoff</h2>
-      <div class="sec-body"><p class="body">An approval-first model protected spending control but left the new member waiting.</p><p class="body">The alternative was to grant the requested access immediately and give the billing administrator a limited window to approve it.</p><aside class="case-decision">
-      <p class="lbl lbl-wide">The decision</p>
-      <p>The team adopted the second approach, with a seven-day approval period and a fallback to Viewer access if approval didn&#39;t arrive.</p>
-    </aside>
-<figure class="fig-todo">
-  <p class="lbl fig-todo-kind">STATIC</p>
-  <p class="fig-todo-note">Approve-first versus provision-first comparison, showing the consequences for the employee and the billing administrator.</p>
-</figure></div>
-    </section><section class="sec" id="3-making-temporary-access-understandable">
-      <h2 class="serif h2 sec-heading">Making temporary access understandable</h2>
-      <div class="sec-body"><p class="body">The experience needed to work for both sides.</p><p class="body">A new member had to know their access was temporary without feeling blocked from starting work. The billing administrator needed to understand the pending request and what approving it meant.</p><p class="body">The design also had to account for requests that expired without a decision.</p>
-<figure class="fig-todo">
-  <p class="lbl fig-todo-kind">HERO ANIMATION</p>
-  <p class="fig-todo-note">Provisional access → Pending request → Billing-admin approval → Confirmed access.</p>
-</figure>
-<figure class="fig-todo">
-  <p class="lbl fig-todo-kind">STATIC</p>
-  <p class="fig-todo-note">Approved versus expired states, including the Viewer fallback.</p>
-</figure></div>
-    </section><section class="sec" id="4-what-changed">
-      <h2 class="serif h2 sec-heading">What changed</h2>
-      <div class="sec-body"><p class="body">The broader self-serve billing system recorded <b>44 firms taking seat actions and 245 seat-change events</b> by the October 2026 audit.</p><p class="body">Approvals were more common than direct seat purchases. That was an important finding: much of the customer need was about approving access that someone else had already requested, not simply buying additional seats.</p><p class="body">The usage figures cover the wider self-serve seat-management system, not the isolated effect of the provisional-access design.</p><p class="body">The design challenge was balancing two legitimate needs: letting people get to work and giving organizations control over spending. Provisional access gave those needs separate paths without treating either as an afterthought.</p></div>
-    </section>
-
-    
-
-    <a class="next" href="/project-files.html">
-      <p class="lbl lbl-wide next-label">Next case study</p>
-      <p class="serif next-title">Project Files</p>
-      <p class="body">Turning a file-management brief into a new paid product for managing construction drawings.</p>
-      <p class="lbl lbl-wide next-go">Explore project <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></p>
-    </a>
+      <p class="cs-note">The usage figures cover the wider self-serve seat-management system, not the isolated effect of the provisional-access design.</p>
     </div>
   </div>
-</main>
+
+  <div class="cs-m"><div class="cs-block" id="1-the-person-adding-a-teammate-wasn-t-always-the-person-payi">
+      <p class="cs-label">Problem</p>
+      <h2 class="cs-t3">The person adding a teammate wasn&#39;t always the person paying.</h2>
+    </div>
+<p class="cs-body">Previously, expanding a team&#39;s paid seats required help from Part3 staff. That could interrupt onboarding just as a firm was growing its use of the product.</p>
+<p class="cs-body">But self-serve purchasing introduced another complication. An organization administrator might be responsible for adding people while a principal or billing administrator controlled spending.</p>
+<p class="cs-t2">Making those two people complete the same action wasn&#39;t realistic.</p></div><div class="cs-m"><div class="cs-block" id="2-two-reasonable-approaches-one-important-tradeoff">
+      <p class="cs-label">Trade-off</p>
+      <h2 class="cs-t3">Two reasonable approaches, one important tradeoff</h2>
+    </div>
+<p class="cs-body">An approval-first model protected spending control but left the new member waiting.</p>
+<p class="cs-body">The alternative was to grant the requested access immediately and give the billing administrator a limited window to approve it.</p>
+<div class="cs-block">
+      <p class="cs-label">The decision</p>
+      <p class="cs-t2">The team adopted the second approach, with a seven-day approval period and a fallback to Viewer access if approval didn&#39;t arrive.</p>
+    </div></div>
+<div class="cs-wide">
+<figure class="cs-ph">
+  <p class="cs-ph-kind">STATIC</p>
+  <p class="cs-ph-note">Approve-first versus provision-first comparison, showing the consequences for the employee and the billing administrator.</p>
+</figure></div><div class="cs-m"><div class="cs-block" id="3-making-temporary-access-understandable">
+      <p class="cs-label">Solution</p>
+      <h2 class="cs-t3">Making temporary access understandable</h2>
+    </div>
+<p class="cs-body">The experience needed to work for both sides.</p>
+<p class="cs-body">A new member had to know their access was temporary without feeling blocked from starting work. The billing administrator needed to understand the pending request and what approving it meant.</p>
+<p class="cs-body">The design also had to account for requests that expired without a decision.</p></div>
+<div class="cs-wide">
+<figure class="cs-ph">
+  <p class="cs-ph-kind">HERO ANIMATION</p>
+  <p class="cs-ph-note">Provisional access → Pending request → Billing-admin approval → Confirmed access.</p>
+</figure></div>
+<div class="cs-wide">
+<figure class="cs-ph">
+  <p class="cs-ph-kind">STATIC</p>
+  <p class="cs-ph-note">Approved versus expired states, including the Viewer fallback.</p>
+</figure></div><div class="cs-m"><div class="cs-block" id="4-what-changed">
+      <p class="cs-label">Outcome</p>
+      <h2 class="cs-t3">What changed</h2>
+    </div>
+<p class="cs-body">The broader self-serve billing system recorded <b>44 firms taking seat actions and 245 seat-change events</b> by the October 2026 audit.</p>
+<p class="cs-body">Approvals were more common than direct seat purchases. That was an important finding: much of the customer need was about approving access that someone else had already requested, not simply buying additional seats.</p>
+<p class="cs-body">The usage figures cover the wider self-serve seat-management system, not the isolated effect of the provisional-access design.</p>
+<div class="cs-block">
+      <p class="cs-label">Reflection</p>
+      <p class="cs-t2">The design challenge was balancing two legitimate needs: letting people get to work and giving organizations control over spending. Provisional access gave those needs separate paths without treating either as an afterthought.</p>
+    </div></div>
+
+  
+
+  <footer class="cs-wide cs-foot">
+    <a class="u" href="mailto:ayjzhou@gmail.com">Email</a>
+    <a class="u" href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="u" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+  </footer>
+
+</div>
 </body>
 </html>
