@@ -1,9 +1,17 @@
-import { caseBySlug, caseStudies, type Block, type CaseStudy } from '../data/cases.js';
-import { paths, type Slug } from '../data/site.js';
+import { caseBySlug, type Block, type CaseStudy } from '../data/cases.js';
+import { site, type Slug } from '../data/site.js';
 import { esc, map } from './html.js';
 import { drawingRegister } from './figures.js';
 
-const arrow = `<svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>`;
+/**
+ * The case study page.
+ *
+ * The layout follows rachelchen.tech/projects/openai, measured rather than
+ * eyeballed: a 740px column of text, images breaking out to 992px, every
+ * block separated by a 32px gap and nothing else. That page carries no
+ * rules — its only borders are 1px at 5% alpha — and it ends on a
+ * reflection and a row of links, with no next-project card.
+ */
 
 /** `**bold**` runs inside a paragraph. */
 const inline = (text: string): string =>
@@ -13,118 +21,132 @@ const inline = (text: string): string =>
     .join('');
 
 /**
- * A visual that has been specified but not made yet. Drawn as a plate with
- * the direction inside it, so the page shows where it goes and what it is
- * rather than pretending nothing is missing.
+ * A visual that has been specified but not made yet: a plate holding its own
+ * direction, so the page shows where it goes and what it is.
  */
-const placeholder = (kind: string, note: string, bleed = false): string => `
-<figure class="fig-todo${bleed ? ' fig-todo-bleed' : ''}">
-  <p class="lbl fig-todo-kind">${esc(kind)}</p>
-  <p class="fig-todo-note">${esc(note)}</p>
+const placeholder = (kind: string, note: string): string => `
+<figure class="cs-ph">
+  <p class="cs-ph-kind">${esc(kind)}</p>
+  <p class="cs-ph-note">${esc(note)}</p>
 </figure>`;
-
-const block = (b: Block): string => {
-  switch (b.t) {
-    case 'figure':
-      return placeholder(b.kind, b.note);
-    case 'pull':
-      // The sentence the case turns on, set so a skimmer cannot miss it.
-      return `<blockquote class="case-pull"><p class="serif">${inline(b.text)}</p></blockquote>`;
-    case 'decision':
-      // The judgment call, framed. What a senior reader is reading for.
-      return `<aside class="case-decision">
-      <p class="lbl lbl-wide">${esc(b.label)}</p>
-      <p>${inline(b.text)}</p>
-    </aside>`;
-    default:
-      return `<p class="body">${inline(b.text)}</p>`;
-  }
-};
 
 /** A slug for the in-page anchors, from the section heading. */
 const anchor = (heading: string, i: number): string =>
   `${i + 1}-${heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`.slice(0, 60);
 
+const prose = (b: Block): string => {
+  switch (b.t) {
+    case 'pull':
+      return `<p class="cs-t2">${inline(b.text)}</p>`;
+    case 'decision':
+      // Labelled the way she labels a section, not boxed: the page has no plates.
+      return `<div class="cs-block">
+      <p class="cs-label">${esc(b.label)}</p>
+      <p class="cs-t2">${inline(b.text)}</p>
+    </div>`;
+    case 'reflection':
+      return `<div class="cs-block">
+      <p class="cs-label">Reflection</p>
+      <p class="cs-t2">${inline(b.text)}</p>
+    </div>`;
+    case 'p':
+      return `<p class="cs-body">${inline(b.text)}</p>`;
+    default:
+      return '';
+  }
+};
+
+/**
+ * Text sits in the narrow column and figures in the wide one, so a section's
+ * blocks are emitted as alternating runs rather than one container.
+ */
+const runs = (blocks: Block[], lead = ''): string => {
+  const out: string[] = [];
+  let narrow: string[] = lead ? [lead] : [];
+
+  const flush = () => {
+    if (narrow.length) out.push(`<div class="cs-m">${narrow.join('\n')}</div>`);
+    narrow = [];
+  };
+
+  for (const b of blocks) {
+    if (b.t === 'figure') {
+      flush();
+      out.push(`<div class="cs-wide">${placeholder(b.kind, b.note)}</div>`);
+    } else {
+      narrow.push(prose(b));
+    }
+  }
+  flush();
+  return out.join('\n');
+};
+
 export const render = (slug: Slug): string => {
   const c: CaseStudy = caseBySlug[slug]!;
-  const i = caseStudies.findIndex((x) => x.slug === slug);
-  const next = caseStudies[(i + 1) % caseStudies.length]!;
+
+  const meta = [
+    { label: 'Role', value: c.role },
+    ...(c.team ? [{ label: 'Team', value: c.team }] : []),
+  ];
 
   return `
-<div class="viewtgl-rail">
-  <nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
-    <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
-    <button type="button" data-mode="chat" aria-pressed="false">Chat</button>
-  </nav>
-</div>
+<div class="cs">
 
-<header class="case-header">
-  <div class="case-header-bar">
-    <a class="u lbl lbl-wide case-back" href="/classic.html" data-home>← All work</a>
+  <div class="cs-wide cs-bar">
+    <p class="cs-crumb"><a class="u" href="/classic.html" data-home>← All work</a> <span>/</span> ${esc(c.name)}</p>
+    <nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
+      <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
+      <button type="button" data-mode="chat" aria-pressed="false">Chat</button>
+    </nav>
   </div>
-  <div class="prog-track"><div class="prog"></div></div>
-</header>
 
-<main class="frame">
-  ${c.hero ? placeholder(c.hero.kind, c.hero.note, true) : ''}
+  ${c.hero ? `<div class="cs-wide cs-hero">${placeholder(c.hero.kind, c.hero.note)}</div>` : ''}
 
-  <div class="inner">
-    <div class="case-title-block">
-      <p class="lbl lbl-wide case-eyebrow">${esc(c.name)}</p>
-      <h1 class="serif case-title">${esc(c.headline)}</h1>
-      <p class="case-standfirst">${esc(c.standfirst)}</p>
-    </div>
+  <div class="cs-m">
+    <h1 class="cs-t1">${esc(c.headline)}</h1>
 
-    <section class="case-outcome" aria-label="Outcome">
-      <dl class="case-facts">
-        <div><dt class="lbl lbl-wide">Role</dt><dd>${esc(c.role)}</dd></div>
-        ${c.team ? `<div><dt class="lbl lbl-wide">Team</dt><dd>${esc(c.team)}</dd></div>` : ''}
-      </dl>
+    <dl class="cs-meta">
+      ${map(
+        meta,
+        (m) => `<div><dt class="cs-label">${esc(m.label)}</dt><dd>${esc(m.value)}</dd></div>`,
+      )}
+    </dl>
 
-      <p class="lbl lbl-wide">Outcome</p>
-      <div class="case-stats">
+    <div class="cs-block">
+      <p class="cs-label">Overview</p>
+      <p class="cs-t2">${esc(c.standfirst)}</p>
+      <div class="cs-stats">
         ${map(
           c.stats,
-          (s) => `<div class="case-stat">
-          ${s.figure ? `<p class="serif case-stat-fig">${esc(s.figure)}</p>` : ''}
-          <p class="case-stat-label">${esc(s.label)}</p>
+          (s) => `<div>
+          ${s.figure ? `<p class="cs-t2">${esc(s.figure)}</p>` : ''}
+          <p class="cs-body">${esc(s.label)}</p>
         </div>`,
         )}
       </div>
-      ${c.statNote ? `<p class="case-stat-note">${esc(c.statNote)}</p>` : ''}
-    </section>
-  </div>
-
-  <div class="inner">
-    <nav class="case-nav" aria-label="Sections">
-      <ol>
-        ${map(
-          c.sections,
-          (s, i) => `<li><a href="#${anchor(s.heading, i)}">${esc(s.heading)}</a></li>`,
-        )}
-      </ol>
-    </nav>
-
-    <div class="case-read">
-    ${map(
-      c.sections,
-      (s, i) => `<section class="sec" id="${anchor(s.heading, i)}">
-      <h2 class="serif h2 sec-heading">${esc(s.heading)}</h2>
-      <div class="sec-body">${map(s.blocks, block)}</div>
-    </section>`,
-    )}
-
-    ${slug === 'project-files' ? `<figure class="fig-register"><div class="plate fig-plate-169 case-reg">${drawingRegister()}</div><figcaption class="cap fig-caption-inline"><b>Drawing register</b> &nbsp;A sheet keeps its identity across revisions, and the current one is never in question.</figcaption></figure>` : ''}
-
-    <a class="next" href="${paths[next.slug]}">
-      <p class="lbl lbl-wide next-label">Next case study</p>
-      <p class="serif next-title">${esc(next.name)}</p>
-      <p class="body">${esc(next.standfirst)}</p>
-      <p class="lbl lbl-wide next-go">Explore project ${arrow}</p>
-    </a>
+      ${c.statNote ? `<p class="cs-note">${esc(c.statNote)}</p>` : ''}
     </div>
   </div>
-</main>`;
+
+  ${map(c.sections, (s, i) =>
+    runs(
+      s.blocks,
+      `<div class="cs-block" id="${anchor(s.heading, i)}">
+      <p class="cs-label">${esc(s.kind ?? 'Section')}</p>
+      <h2 class="cs-t3">${esc(s.heading)}</h2>
+    </div>`,
+    ),
+  )}
+
+  ${slug === 'project-files' ? `<div class="cs-wide"><figure class="cs-ph-live"><div class="plate fig-plate-169">${drawingRegister()}</div><figcaption class="cs-ph-note">A sheet keeps its identity across revisions, and the current one is never in question.</figcaption></figure></div>` : ''}
+
+  <footer class="cs-wide cs-foot">
+    <a class="u" href="mailto:${esc(site.email)}">Email</a>
+    <a class="u" href="${esc(site.linkedinHref)}" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="u" href="${esc(site.resumeHref)}" target="_blank" rel="noopener">Resume</a>
+  </footer>
+
+</div>`;
 };
 
 export const head = (slug: Slug): string => {

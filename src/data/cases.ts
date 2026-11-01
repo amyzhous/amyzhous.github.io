@@ -30,7 +30,9 @@ export type Block =
   /** The sentence the case turns on, set apart from the prose. */
   | { t: 'pull'; text: string }
   /** The judgment call: what a senior reader is looking for. */
-  | { t: 'decision'; label: string; text: string };
+  | { t: 'decision'; label: string; text: string }
+  /** What she took from it, closing the case as she closes her writing. */
+  | { t: 'reflection'; text: string };
 
 /** One figure off the metrics line. A metric without a number is label-only. */
 export interface Stat {
@@ -40,6 +42,8 @@ export interface Stat {
 
 export interface Section {
   heading: string;
+  /** What kind of thing this section is, labelled above the heading. */
+  kind?: string;
   blocks: Block[];
 }
 
@@ -118,15 +122,33 @@ const ROLE_TRIM: Record<string, string> = {
   'self-serve-billing': 'Product design for member access, billing approval, and related user states',
 };
 
-const TEAM: Record<string, string> = {
-  'project-files': 'Product and engineering',
-  'activation-growth': 'Product, engineering, and Customer Experience',
-  'construction-data-ai': 'Engineering',
-  'self-serve-billing': 'A larger cross-functional initiative',
+/**
+ * Nothing in the markdown names the collaborators as a field, so there is no
+ * Team to print. Earlier this held noun phrases worked up out of Amy's
+ * sentences; they were the only words on the page she had not written, so
+ * they are gone. Fill this in when she supplies the real thing.
+ */
+const TEAM: Record<string, string> = {};
+
+/** What each section is, in order. Labels, not copy. */
+const KINDS: Record<string, string[]> = {
+  'project-files': ['Problem', 'Solution', 'Solution', 'Outcome'],
+  'activation-growth': ['Problem', 'Solution', 'Outcome'],
+  'construction-data-ai': ['Problem', 'Solution', 'Solution', 'Solution'],
+  'self-serve-billing': ['Problem', 'Trade-off', 'Solution', 'Outcome'],
+};
+
+/** The closing paragraph, matched by its opening words as the others are. */
+const REFLECTION: Record<string, string> = {
+  'project-files': 'That distinction continues to shape how I think about the product',
+  'activation-growth': 'The larger lesson was that activation couldn\u2019t be reduced to finishing setup',
+  'construction-data-ai': 'The opportunity:',
+  'self-serve-billing': 'The design challenge was balancing two legitimate needs',
 };
 
 /** Curly and straight quotes both appear in the source; compare without them. */
-const loose = (s: string) => s.replace(/[‘’“”]/g, "'").toLowerCase();
+const loose = (s: string) =>
+  s.replace(/\*\*/g, '').replace(/[‘’“”]/g, "'").toLowerCase();
 
 const parse = (file: string): CaseStudy => {
   const raw = readFileSync(join(DIR, file), 'utf8');
@@ -166,7 +188,12 @@ const parse = (file: string): CaseStudy => {
 
   const sections: Section[] = [];
   for (const p of paras) {
-    if (p.startsWith('## ')) sections.push({ heading: p.replace(/^##\s*/, ''), blocks: [] });
+    if (p.startsWith('## '))
+      sections.push({
+        heading: p.replace(/^##\s*/, ''),
+        kind: KINDS[slug]?.[sections.length],
+        blocks: [],
+      });
     else if (sections.length) sections[sections.length - 1]!.blocks.push(asBlock(p));
   }
 
@@ -174,6 +201,7 @@ const parse = (file: string): CaseStudy => {
   // text is untouched; only where it sits on the page changes.
   const pull = PULL[slug];
   const decision = DECISION[slug];
+  const reflection = REFLECTION[slug];
   for (const s of sections) {
     s.blocks = s.blocks.map((b) => {
       if (b.t !== 'p') return b;
@@ -181,6 +209,7 @@ const parse = (file: string): CaseStudy => {
       if (pull && text.startsWith(loose(pull))) return { t: 'pull', text: b.text };
       if (decision && text.startsWith(loose(decision.starts)))
         return { t: 'decision', label: decision.label, text: b.text };
+      if (reflection && text.startsWith(loose(reflection))) return { t: 'reflection', text: b.text };
       return b;
     });
   }
