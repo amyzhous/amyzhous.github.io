@@ -130,6 +130,17 @@ a {
   pointer-events: none;
 }
 
+/* The rail is fixed, and on a narrow screen the column runs right under it,
+   so paragraphs were sliding behind the switch mid-sentence. Fade the page
+   out beneath it rather than moving the switch, which belongs in the same
+   place on every page. */
+@media (max-width: 767px) {
+  .viewtgl-rail {
+    height: 64px;
+    background: linear-gradient(var(--ground) 62%, transparent);
+  }
+}
+
 .viewtgl {
   display: flex;
   align-self: center;
