@@ -13,7 +13,7 @@ body {
   margin: 0;
   background: #ffffff;
   color: #111114;
-  font-family: 'Instrument Sans', ui-sans-serif, system-ui, Arial, sans-serif;
+  font-family: Inter, 'Instrument Sans', ui-Arial, sans-serif, system-ui, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   print-color-adjust: exact;
 }

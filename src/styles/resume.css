@@ -19,7 +19,7 @@
   --ink-label: #6e6e69; /* section labels             5.3:1 */
   --rule: #e4e3e0;
 
-  --sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --sans: Inter, 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 }
 
 *,
@@ -39,10 +39,24 @@ body {
 }
 
 .sheet {
+  /* A floor, not a ceiling. With a fixed height, anything that did not fit
+     was silently cut off the bottom of the page instead of showing up. */
   width: 816px;
-  height: 1056px;
+  min-height: 1056px;
   padding: 38px 64px 16px;
   background: var(--paper);
+}
+
+/* links carry no decoration here; the contact line is already set apart */
+.contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .contact a:hover {
+    text-decoration: underline;
+  }
 }
 
 /* ── identity ── */
