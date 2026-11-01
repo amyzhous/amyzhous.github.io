@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#FDFDFC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Newsreader:opsz,ital,wght@6..72,0,300..500;6..72,1,300..500&display=swap">
+  
+  <title>Self-Serve Billing — case study</title>
+  <meta name="description" content="Designing provisional access for teams that need to move quickly without losing control over paid seats.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  html.is-locked body > *:not(.gate) { display: none !important; }
+  html:not(.is-locked) .gate { display: none; }
+  .gate {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #FDFDFC;
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  }
+  .gate-inner { width: 100%; max-width: 300px; }
+  .gate-label {
+    margin: 0 0 14px;
+    font-size: 11.5px;
+    letter-spacing: .01em;
+    color: #6E6E69;
+  }
+  .gate-lede {
+    margin: 0 0 26px;
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.45;
+    color: #21201C;
+  }
+  .gate-field { position: relative; margin-bottom: 18px; }
+  .gate-input {
+    width: 100%;
+    padding: 0 0 9px;
+    border: 0;
+    border-bottom: 1px solid #DAD9D6;
+    background: none;
+    font: inherit;
+    font-size: 15px;
+    color: #21201C;
+    border-radius: 0;
+  }
+  .gate-input:focus { outline: none; }
+  .gate-field::after {
+    content: '';
+    position: absolute;
+    right: 0; bottom: -1px; left: 0;
+    height: 2px;
+    background: #21201C;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 380ms cubic-bezier(.2,.7,.2,1);
+  }
+  .gate-field:focus-within::after { transform: scaleX(1); }
+  .gate-row { display: flex; align-items: center; gap: 16px; }
+  .gate-submit {
+    padding: 9px 18px;
+    border: 1px solid #21201C;
+    background: #21201C;
+    color: #FDFDFC;
+    font: inherit;
+    font-size: 12.5px;
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: background 300ms, color 300ms;
+  }
+  .gate-submit:hover { background: transparent; color: #21201C; }
+  .gate-submit:focus-visible,
+  .gate-input:focus-visible { outline: 2px solid #21201C; outline-offset: 3px; }
+  .gate-error {
+    margin: 0;
+    font-size: 12.5px;
+    color: #5F5E58;
+    opacity: 0;
+    transition: opacity 240ms;
+  }
+  .gate-error[data-shown] { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .gate-field::after, .gate-error, .gate-submit { transition: none; }
+  }
+</style>
+<script>
+  try {
+    if (sessionStorage.getItem('portfolio-open') !== '1') {
+      document.documentElement.classList.add('is-locked');
+    }
+  } catch (e) {
+    document.documentElement.classList.add('is-locked');
+  }
+</script>
+  <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="/assets/case-DFmbySJi.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/case-8TYMWwIT.css">
+  <link rel="stylesheet" crossorigin href="/assets/motion-DiqBBWPS.css">
+</head>
+<body>
+
+<div class="gate" data-gate>
+  <div class="gate-inner">
+    <p class="gate-lede">Hey, this page is locked.<br>Enter password to enter.</p>
+    <form data-gate-form>
+      <div class="gate-field">
+        <label class="gate-label" for="gate-input" style="display:block;margin-bottom:8px">Password</label>
+        <input class="gate-input" id="gate-input" name="passphrase" type="password"
+               autocomplete="current-password" autocapitalize="off" autocorrect="off"
+               spellcheck="false" required>
+      </div>
+      <div class="gate-row">
+        <button class="gate-submit" type="submit">Enter</button>
+        <p class="gate-error" data-gate-error role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</div>
+<script type="module">
+  const KEY = 'portfolio-open';
+  const HASH = '1906bc7c801f03c41551b06e2fd406e8f471787c51357e8731ec61dd599f04c8';
+  const gate = document.querySelector('[data-gate]');
+  const form = document.querySelector('[data-gate-form]');
+  const error = document.querySelector('[data-gate-error]');
+  const input = document.getElementById('gate-input');
+
+  if (document.documentElement.classList.contains('is-locked')) {
+    input.focus();
+  }
+
+  const digest = async (value) => {
+    if (!crypto?.subtle) return null;
+    const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
+    return [...new Uint8Array(bytes)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  };
+
+  const open = () => {
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* private mode */ }
+    document.documentElement.classList.remove('is-locked');
+    gate.remove();
+    document.dispatchEvent(new CustomEvent('gate:open'));
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const value = input.value.trim().toLowerCase();
+    const hashed = await digest(value);
+    if (hashed === HASH) { open(); return; }
+    error.textContent = 'That is not it. Try again.';
+    error.setAttribute('data-shown', '');
+    input.select();
+  });
+
+  input.addEventListener('input', () => {
+    error.removeAttribute('data-shown');
+  });
+</script>
+<div class="viewtgl-rail">
+  <nav class="viewtgl" aria-label="Page view">
+    <span class="viewtgl-on" aria-current="page">Classic</span>
+    <a href="/chat.html?thread=self-serve-billing">Chat</a>
+  </nav>
+</div>
+
+<header class="case-header">
+  <div class="case-header-bar">
+    <a class="u lbl lbl-wide case-back" href="/">← All work</a>
+  </div>
+  <div class="prog-track"><div class="prog"></div></div>
+</header>
+
+<main class="frame">
+  <div class="inner">
+    <div class="case-title-block">
+      <p class="lbl lbl-wide case-kicker">04 &nbsp;Monetization and permissions · Approximately 2-minute read</p>
+      <h1 class="serif case-title">Access shouldn&#39;t wait for a billing decision.</h1>
+      <p class="body case-standfirst">Designing provisional access for teams that need to move quickly without losing control over paid seats.</p>
+      <p class="serif case-metrics">44 firms used self-serve seat management · 245 seat-change events recorded</p>
+      <p class="case-role"><span class="lbl lbl-wide">Role</span> Product design for member access, billing approval, and related user states within a larger cross-functional initiative.</p>
+    </div>
+  </div>
+
+  <div class="inner">
+<figure class="fig-todo fig-todo-bleed">
+  <p class="lbl fig-todo-kind">HERO</p>
+  <p class="fig-todo-note">Provisional-access employee state paired with the billing-admin approval experience.</p>
+</figure></div>
+
+  <div class="inner">
+    <section class="sec">
+      <div><p class="serif h2 sec-heading">The person adding a teammate wasn&#39;t always the person paying.</p></div>
+      <div class="sec-body"><p class="body">Previously, expanding a team&#39;s paid seats required help from Part3 staff. That could interrupt onboarding just as a firm was growing its use of the product.</p><p class="body">But self-serve purchasing introduced another complication. An organization administrator might be responsible for adding people while a principal or billing administrator controlled spending.</p><p class="body">Making those two people complete the same action wasn&#39;t realistic.</p></div>
+    </section><section class="sec">
+      <div><p class="serif h2 sec-heading">Two reasonable approaches, one important tradeoff</p></div>
+      <div class="sec-body"><p class="body">An approval-first model protected spending control but left the new member waiting.</p><p class="body">The alternative was to grant the requested access immediately and give the billing administrator a limited window to approve it.</p><p class="body">The team adopted the second approach, with a seven-day approval period and a fallback to Viewer access if approval didn&#39;t arrive.</p>
+<figure class="fig-todo">
+  <p class="lbl fig-todo-kind">STATIC</p>
+  <p class="fig-todo-note">Approve-first versus provision-first comparison, showing the consequences for the employee and the billing administrator.</p>
+</figure></div>
+    </section><section class="sec">
+      <div><p class="serif h2 sec-heading">Making temporary access understandable</p></div>
+      <div class="sec-body"><p class="body">The experience needed to work for both sides.</p><p class="body">A new member had to know their access was temporary without feeling blocked from starting work. The billing administrator needed to understand the pending request and what approving it meant.</p><p class="body">The design also had to account for requests that expired without a decision.</p>
+<figure class="fig-todo">
+  <p class="lbl fig-todo-kind">HERO ANIMATION</p>
+  <p class="fig-todo-note">Provisional access → Pending request → Billing-admin approval → Confirmed access.</p>
+</figure>
+<figure class="fig-todo">
+  <p class="lbl fig-todo-kind">STATIC</p>
+  <p class="fig-todo-note">Approved versus expired states, including the Viewer fallback.</p>
+</figure></div>
+    </section><section class="sec">
+      <div><p class="serif h2 sec-heading">What changed</p></div>
+      <div class="sec-body"><p class="body">The broader self-serve billing system recorded <b>44 firms taking seat actions and 245 seat-change events</b> by the October 2026 audit.</p><p class="body">Approvals were more common than direct seat purchases. That was an important finding: much of the customer need was about approving access that someone else had already requested, not simply buying additional seats.</p><p class="body">The usage figures cover the wider self-serve seat-management system, not the isolated effect of the provisional-access design.</p><p class="body">The design challenge was balancing two legitimate needs: letting people get to work and giving organizations control over spending. Provisional access gave those needs separate paths without treating either as an afterthought.</p></div>
+    </section>
+
+    
+
+    <a class="next" href="/project-files.html">
+      <p class="lbl lbl-wide next-label">Next case study</p>
+      <p class="serif next-title">Project Files</p>
+      <p class="body">Turning a file-management brief into a new paid product for managing construction drawings.</p>
+      <p class="lbl lbl-wide next-go">Explore project <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></p>
+    </a>
+  </div>
+</main>
+</body>
+</html>
