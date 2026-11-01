@@ -82,7 +82,7 @@ const wireClassicLink = (): void => {
       event.stopImmediatePropagation();
       const active = threadButtons().find((b) => b.getAttribute('aria-current') === 'true');
       const slug = active?.dataset.q ? SLUG_BY_QUESTION[active.dataset.q] : undefined;
-      location.href = slug ? `/${slug}.html` : '/';
+      location.href = slug ? `/${slug}.html` : '/classic.html';
     },
     true,
   );

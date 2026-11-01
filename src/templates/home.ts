@@ -46,7 +46,7 @@ export const render = (): string => `
 <div class="viewtgl-rail">
   <nav class="viewtgl" aria-label="Page view">
     <span class="viewtgl-on" aria-current="page">Classic</span>
-    <a href="/chat.html">Chat</a>
+    <a href="/">Chat</a>
   </nav>
 </div>
 

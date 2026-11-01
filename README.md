@@ -126,10 +126,14 @@ that size. Regenerate with `scripts/make-favicon.mjs` if the type ever changes.
 The site ships the same work twice, and a switch top-right crosses between
 them:
 
-- **Classic** at `/` — this project's own pages, the ones everything else in
-  this file describes.
-- **Chat** at `/chat.html` — a conversational view, imported from a
-  self-contained build that arrived as `amyzhou-portfolio.zip`.
+- **Chat** at `/` — the landing view, imported from a self-contained build
+  that arrived as `amyzhou-portfolio.zip`. The bundle was always written to
+  sit at the root; its own `og:url` points there.
+- **Classic** at `/classic.html` — this project's own pages, the ones
+  everything else in this file describes. The case studies live alongside it
+  at `/<slug>.html` and belong to this view.
+
+`/chat.html` redirects to `/`, so links made before the swap still work.
 
 The import is split along this project's existing lines rather than dropped
 in as one file: markup in `src/templates/chat.ts`, styles in

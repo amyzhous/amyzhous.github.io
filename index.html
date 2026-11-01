@@ -1,16 +1,29 @@
 <!doctype html>
-<html lang="en">
+<!-- data-theme="light" is the bundle's own switch for staying light; its
+     stylesheet writes every dark rule as :root:not([data-theme="light"]). -->
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#FDFDFC">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,ital,wght@6..72,0,300..500;6..72,1,300..500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amy Zhou · Product designer</title>
+<meta name="description" content="Amy Zhou leads end-to-end design of complex digital products, from discovery through launch, spanning product strategy, design and growth.">
+<meta name="author" content="Amy Zhou">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amy Zhou · Product designer">
+<meta property="og:description" content="Amy Zhou leads end-to-end design of complex digital products, from discovery through launch, spanning product strategy, design and growth.">
+<meta property="og:image" content="https://amyzhous.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://amyzhous.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amy Zhou · Product designer">
+<meta name="twitter:description" content="Amy Zhou leads end-to-end design of complex digital products, from discovery through launch, spanning product strategy, design and growth.">
+<meta name="twitter:image" content="https://amyzhous.github.io/og-image.png">
+<meta name="theme-color" content="#fcfcfa">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231b1a18'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='26' text-anchor='middle' fill='%23fcfcfa'%3EAZ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <script>
     /* GitHub Pages caches HTML for several minutes while hashed assets come
        and go, so a browser can hold a page whose stylesheet no longer
@@ -29,8 +42,9 @@
       history.replaceState(null, '', location.pathname + (keep === '?' ? '' : keep));
     }
   </script>
-  <!--head-->
-  <script type="module" src="/src/scripts/home.ts"></script>
+<!--head-->
+<script type="module" src="/src/scripts/chat.ts"></script>
+<script type="module" src="/src/scripts/chat-view.ts"></script>
 </head>
 <body>
 <!--app-->
