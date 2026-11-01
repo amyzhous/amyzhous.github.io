@@ -16,7 +16,7 @@ export const site = {
     'https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing',
   linkedinHref: 'https://www.linkedin.com/in/amyyjzhou/',
   lede:
-    'I design the software construction teams run their day on, and I stay on it until it ships and the number moves.',
+    'I lead end-to-end design of complex digital products, from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.',
 } as const;
 
 /**

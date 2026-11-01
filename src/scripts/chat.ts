@@ -441,7 +441,7 @@ import '../styles/chat.css';
   // ---- classic view: same content, plain two-column layout ----
   (function(){
     const classic=document.getElementById('classic'), app=document.getElementById('app');
-    const bio="I design the software construction teams run their day on, and I stay on it until it ships and the number moves.";
+    const bio="I lead end-to-end design of complex digital products, from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.";
     classic.innerHTML='<div class="cl-wrap"><aside class="cl-side"><h1 class="cl-name">Amy Zhou</h1><p class="cl-role">Product designer</p><p class="cl-bio">'+bio+'</p>'
       +'<h2 class="cl-label">Work</h2><ol class="cl-work">'+cases.map(c=>'<li><button type="button" data-to="cl-'+c.id+'"><span class="n">0'+c.n+'</span>'+c.name+'</button></li>').join('')+'</ol>'
       +'<h2 class="cl-label">Elsewhere</h2><ul class="cl-links"><li><a href="mailto:ayjzhou@gmail.com">Email</a></li><li><a href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing">Résumé</a></li><li><a href="https://www.linkedin.com/in/amyyjzhou/">LinkedIn</a></li></ul></aside>'

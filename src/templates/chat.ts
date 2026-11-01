@@ -71,7 +71,7 @@ export const markup = (): string => `
     <div class="askrow pop"><h1 class="bubble">Who's Amy?</h1></div>
     <div class="view" data-view="answer" role="tabpanel" id="panel-answer" aria-labelledby="tab-answer">
       <div class="status"><span class="pix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="shimmer">Preheating the oven</span></div>
-      <p class="ans" data-stream>I design the software construction teams run their day on, and I stay on it until it ships and the number moves.</p>
+      <p class="ans" data-stream>I lead end-to-end design of complex digital products, from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.</p>
       <p class="ans" data-stream>Recent work: turning a file-management brief into a new paid product for managing construction drawings {1}, rethinking activation across project setup, reusable workflows, and team onboarding {2}, exploring a visual-first approach to construction analytics {3}, and designing provisional access for teams that need to move quickly without losing control over paid seats {4}.</p>
 
 
