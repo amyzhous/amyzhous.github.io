@@ -46,14 +46,16 @@
   gap: 0;
 }
 
-.card {
-  padding: 26px 0 34px;
+/* `.card.rc` rather than `.card`: the bundle sets padding on both classes,
+   so this has to outrank the `.rc` reset below it. */
+.card.rc {
+  padding: 30px 0 38px;
   border: 0;
   border-top: 1px solid var(--rule);
   border-radius: 0;
 }
 
-.cards .card:first-child {
+.cards .card.rc:first-child {
   padding-top: 0;
   border-top: 0;
 }
@@ -63,7 +65,6 @@
 }
 
 .rc {
-  padding: 0;
   border-radius: 0;
   background: none;
 }
