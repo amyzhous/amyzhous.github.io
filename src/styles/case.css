@@ -930,34 +930,30 @@ blockquote.pull footer {
   color: var(--muted);
 }
 
-/* ── rail + reading column ── */
-
-.case-cols {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 64px;
-  padding-top: 48px;
-}
-
-.case-rail {
-  flex: 1 1 260px;
-  min-width: 0;
-}
+/* ── contents, then one reading column ──
+   A travelling rail cost a third of the page width to hold four links, and
+   sat empty for most of the scroll. The contents are a row instead, read
+   once and done, and the text keeps the full measure. */
 
 .case-nav {
-  position: sticky;
-  top: 72px;
+  margin-top: 56px;
 }
 
-.case-nav ul {
+.case-nav ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 
 .case-nav a {
   display: block;
-  padding: 7px 0;
+  height: 100%;
+  padding: 16px 20px 16px 0;
   font-size: 14.5px;
   line-height: 1.45;
   color: var(--muted);
@@ -965,17 +961,20 @@ blockquote.pull footer {
   transition: color 160ms ease;
 }
 
+.case-nav li + li a {
+  padding-left: 20px;
+  border-left: 1px solid var(--rule);
+}
+
 .case-nav a:hover {
   color: var(--text);
 }
 
 .case-read {
-  flex: 999 1 540px;
-  min-width: 0;
-  max-width: 680px;
+  padding-top: 8px;
 }
 
-/* headings now sit in the reading column, so sections stack */
+/* headings sit in the reading column, so sections stack */
 .case-read .sec {
   display: block;
   padding: 48px 0 0;
@@ -985,12 +984,21 @@ blockquote.pull footer {
 
 .case-read .sec:first-child {
   margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
 }
 
 .case-read .sec-heading {
   margin: 0 0 22px;
+}
+
+/* prose keeps a readable measure; figures take the width they are given */
+.case-read .body,
+.case-read .case-pull,
+.case-read .case-decision {
+  max-width: 68ch;
+}
+
+.case-read .case-decision {
+  max-width: 72ch;
 }
 
 /* ── the two lifted sentences ── */
@@ -1032,25 +1040,13 @@ blockquote.pull footer {
 }
 
 @media (max-width: 900px) {
-  .case-cols {
-    gap: 0;
-    padding-top: 32px;
+  .case-nav li + li a {
+    padding-left: 0;
+    border-left: 0;
   }
 
-  /* the rail stops travelling and becomes a plain list above the text */
-  .case-rail {
-    flex-basis: 100%;
-    margin-bottom: 36px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .case-nav {
-    position: static;
-  }
-
-  .case-read {
-    max-width: none;
+  .case-nav li + li {
+    border-top: 1px solid var(--rule);
   }
 
   .case-stat + .case-stat {

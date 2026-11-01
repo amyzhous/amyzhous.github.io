@@ -95,17 +95,15 @@ export const render = (slug: Slug): string => {
     </section>
   </div>
 
-  <div class="inner case-cols">
-    <aside class="case-rail">
-      <nav class="case-nav" aria-label="Sections">
-        <ul>
-          ${map(
-            c.sections,
-            (s, i) => `<li><a href="#${anchor(s.heading, i)}">${esc(s.heading)}</a></li>`,
-          )}
-        </ul>
-      </nav>
-    </aside>
+  <div class="inner">
+    <nav class="case-nav" aria-label="Sections">
+      <ol>
+        ${map(
+          c.sections,
+          (s, i) => `<li><a href="#${anchor(s.heading, i)}">${esc(s.heading)}</a></li>`,
+        )}
+      </ol>
+    </nav>
 
     <div class="case-read">
     ${map(
