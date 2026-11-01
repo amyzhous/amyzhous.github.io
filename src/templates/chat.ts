@@ -81,7 +81,7 @@ export const markup = (): string => `
 
       <div class="tools foot pop">
         <a class="pill ghost" href="mailto:ayjzhou@gmail.com"><svg class="i i16" viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="M2.5 4.5 8 9l5.5-4.5"/></svg>Email</a>
-        <a class="pill ghost" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Resume</a>
+        <a class="pill ghost" href="/resume.html" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Resume</a>
         <a class="pill ghost" href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16"><path d="M7 9a3 3 0 0 0 4.2 0l2-2a3 3 0 0 0-4.2-4.2l-.6.6"/><path d="M9 7a3 3 0 0 0-4.2 0l-2 2A3 3 0 0 0 7 13.2l.6-.6"/></svg>LinkedIn</a>
         <span class="tsep"></span>
         <span class="reacts" role="group" aria-label="React">
@@ -106,7 +106,7 @@ export const markup = (): string => `
     <div class="view" data-view="links" role="tabpanel" id="panel-links" aria-labelledby="tab-links" hidden>
       <div class="links">
         <a class="lk" href="mailto:ayjzhou@gmail.com">Email<span>ayjzhou@gmail.com</span></a>
-        <a class="lk" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing" target="_blank" rel="noopener">Resume<span>PDF</span></a>
+        <a class="lk" href="/resume.html" target="_blank" rel="noopener">Resume<span>PDF</span></a>
         <a class="lk" href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener">LinkedIn<span>linkedin.com</span></a>
       </div>
       <p class="credit">Animated emoji from <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto</a>, CC BY 4.0.</p>

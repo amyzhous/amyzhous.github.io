@@ -27,8 +27,6 @@ export type Block =
   | { t: 'p'; text: string }
   /** A visual that is still a direction, not a drawn thing. */
   | { t: 'figure'; kind: string; note: string }
-  /** The sentence the case turns on, set apart from the prose. */
-  | { t: 'pull'; text: string }
   /** The judgment call: what a senior reader is looking for. */
   | { t: 'decision'; label: string; text: string }
   /** What she took from it, closing the case as she closes her writing. */
@@ -87,13 +85,6 @@ const STAT = /^([0-9][^\s]*)\s+(.+)$/;
  * worked with. Every string is quoted from the markdown itself — a paragraph
  * is matched by its opening words, never rewritten.
  */
-const PULL: Record<string, string> = {
-  'project-files': 'The important distinction was simple:',
-  'activation-growth': 'The challenge wasn’t simply reducing the number of onboarding steps.',
-  'construction-data-ai': 'I proposed a different starting point:',
-  'self-serve-billing': 'Making those two people complete the same action',
-};
-
 const DECISION: Record<string, { label: string; starts: string }> = {
   'project-files': { label: 'The trade-off', starts: 'The tradeoff was between automation and control.' },
   'activation-growth': { label: 'The decision', starts: 'Rather than treating onboarding as a single wizard' },
@@ -199,14 +190,12 @@ const parse = (file: string): CaseStudy => {
 
   // Lift the two sentences that carry the case out of the running prose. The
   // text is untouched; only where it sits on the page changes.
-  const pull = PULL[slug];
   const decision = DECISION[slug];
   const reflection = REFLECTION[slug];
   for (const s of sections) {
     s.blocks = s.blocks.map((b) => {
       if (b.t !== 'p') return b;
       const text = loose(b.text);
-      if (pull && text.startsWith(loose(pull))) return { t: 'pull', text: b.text };
       if (decision && text.startsWith(loose(decision.starts)))
         return { t: 'decision', label: decision.label, text: b.text };
       if (reflection && text.startsWith(loose(reflection))) return { t: 'reflection', text: b.text };

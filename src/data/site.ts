@@ -12,8 +12,7 @@ export const site = {
   name: 'Amy Zhou',
   roleLabel: 'Product designer',
   email: 'ayjzhou@gmail.com',
-  resumeHref:
-    'https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing',
+  resumeHref: '/resume.html',
   linkedinHref: 'https://www.linkedin.com/in/amyyjzhou/',
   lede:
     'I lead end-to-end design of complex digital products, from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.',

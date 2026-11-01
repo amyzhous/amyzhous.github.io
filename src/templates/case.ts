@@ -1,5 +1,5 @@
-import { caseBySlug, type Block, type CaseStudy } from '../data/cases.js';
-import { site, type Slug } from '../data/site.js';
+import { caseBySlug, caseStudies, type Block, type CaseStudy } from '../data/cases.js';
+import { paths, site, type Slug } from '../data/site.js';
 import { esc, map } from './html.js';
 import { drawingRegister } from './figures.js';
 
@@ -36,8 +36,6 @@ const anchor = (heading: string, i: number): string =>
 
 const prose = (b: Block): string => {
   switch (b.t) {
-    case 'pull':
-      return `<p class="cs-t2">${inline(b.text)}</p>`;
     case 'decision':
       // Labelled the way she labels a section, not boxed: the page has no plates.
       return `<div class="cs-block">
@@ -83,6 +81,8 @@ const runs = (blocks: Block[], lead = ''): string => {
 
 export const render = (slug: Slug): string => {
   const c: CaseStudy = caseBySlug[slug]!;
+  const i = caseStudies.findIndex((x) => x.slug === slug);
+  const next = caseStudies[(i + 1) % caseStudies.length]!;
 
   const meta = [
     { label: 'Role', value: c.role },
@@ -139,6 +139,10 @@ export const render = (slug: Slug): string => {
   )}
 
   ${slug === 'project-files' ? `<div class="cs-wide"><figure class="cs-ph-live"><div class="plate fig-plate-169">${drawingRegister()}</div><figcaption class="cs-ph-note">A sheet keeps its identity across revisions, and the current one is never in question.</figcaption></figure></div>` : ''}
+
+  <div class="cs-m cs-next">
+    <a class="u" href="${paths[next.slug]}">Next: ${esc(next.name)} →</a>
+  </div>
 
   <footer class="cs-wide cs-foot">
     <a class="u" href="mailto:${esc(site.email)}">Email</a>
