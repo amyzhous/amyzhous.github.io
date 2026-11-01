@@ -22,7 +22,7 @@ import '../styles/chat.css';
   ];
   const metrics={c1:[['Drawings','58K+'],['Customers using it','40%']],c2:[['Opened','83%'],['Accepted','15%','down']],c3:[['Flows','4 → 1'],['Roles served','4']]};
   const icons={c1:'<path d="M3 2.5h6.5L13 6v7.5H3z"/><path d="M9.5 2.5V6H13"/>',c2:'<path d="M8 2v2.5M8 11.5V14M2 8h2.5M11.5 8H14"/><circle cx="8" cy="8" r="3"/>',c3:'<rect x="2.5" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="9" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="2.5" y="9" width="4.5" height="4.5" rx="1"/><rect x="9" y="9" width="4.5" height="4.5" rx="1"/>'};
-  const card=(c,withId,fig=true)=>'<a class="card rc pop"'+(withId?' id="'+c.id+'"':'')+' href="#'+c.slug+'">'
+  const card=(c,withId,fig=true)=>'<a class="card rc pop"'+(withId?' id="'+c.id+'"':'')+' href="/'+c.slug+'.html">'
     +'<div class="rc-h"><span class="rc-name">'+c.name+'</span></div>'
     +'<h3>'+c.title+'</h3>'
     +(fig?'<div class="fig">'+c.fig+'</div>':'')
@@ -541,6 +541,9 @@ import '../styles/chat.css';
     page.addEventListener('click',e=>{ const b=e.target.closest('[data-sec]'); if(b){ document.getElementById(b.dataset.sec).scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); } });
     function route(){
       const h=location.hash.slice(1), c=bySlug[h];
+      // The only thing not sourced from this bundle: case studies are the
+      // classic ones. Its own case pages below go unused.
+      if(c){ location.href='/'+c.slug+'.html'; return; }
       if(h==='chat'||h==='classic') lastMode=h;
       if(c){
         if(active) active.finish();
