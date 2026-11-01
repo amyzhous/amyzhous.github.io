@@ -23,10 +23,27 @@ const placeholder = (kind: string, note: string, bleed = false): string => `
   <p class="fig-todo-note">${esc(note)}</p>
 </figure>`;
 
-const block = (b: Block): string =>
-  b.t === 'figure'
-    ? placeholder(b.kind, b.note)
-    : `<p class="body">${inline(b.text)}</p>`;
+const block = (b: Block): string => {
+  switch (b.t) {
+    case 'figure':
+      return placeholder(b.kind, b.note);
+    case 'pull':
+      // The sentence the case turns on, set so a skimmer cannot miss it.
+      return `<blockquote class="case-pull"><p class="serif">${inline(b.text)}</p></blockquote>`;
+    case 'decision':
+      // The judgment call, framed. What a senior reader is reading for.
+      return `<aside class="case-decision">
+      <p class="lbl lbl-wide">${esc(b.label)}</p>
+      <p>${inline(b.text)}</p>
+    </aside>`;
+    default:
+      return `<p class="body">${inline(b.text)}</p>`;
+  }
+};
+
+/** A slug for the in-page anchors, from the section heading. */
+const anchor = (heading: string, i: number): string =>
+  `${i + 1}-${heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`.slice(0, 60);
 
 export const render = (slug: Slug): string => {
   const c: CaseStudy = caseBySlug[slug]!;
@@ -49,22 +66,52 @@ export const render = (slug: Slug): string => {
 </header>
 
 <main class="frame">
+  ${c.hero ? placeholder(c.hero.kind, c.hero.note, true) : ''}
+
   <div class="inner">
     <div class="case-title-block">
+      <p class="lbl lbl-wide case-eyebrow">${esc(c.name)}</p>
       <h1 class="serif case-title">${esc(c.headline)}</h1>
-      <p class="body case-standfirst">${esc(c.standfirst)}</p>
-      <p class="serif case-metrics">${esc(c.metrics)}</p>
-      <p class="case-role"><span class="lbl lbl-wide">Role</span> ${esc(c.role)}</p>
+      <p class="case-standfirst">${esc(c.standfirst)}</p>
     </div>
+
+    <section class="case-outcome" aria-label="Outcome">
+      <dl class="case-facts">
+        <div><dt class="lbl lbl-wide">Role</dt><dd>${esc(c.role)}</dd></div>
+        ${c.team ? `<div><dt class="lbl lbl-wide">Team</dt><dd>${esc(c.team)}</dd></div>` : ''}
+      </dl>
+
+      <p class="lbl lbl-wide">Outcome</p>
+      <div class="case-stats">
+        ${map(
+          c.stats,
+          (s) => `<div class="case-stat">
+          ${s.figure ? `<p class="serif case-stat-fig">${esc(s.figure)}</p>` : ''}
+          <p class="case-stat-label">${esc(s.label)}</p>
+        </div>`,
+        )}
+      </div>
+      ${c.statNote ? `<p class="case-stat-note">${esc(c.statNote)}</p>` : ''}
+    </section>
   </div>
 
-  ${c.hero ? `<div class="inner">${placeholder(c.hero.kind, c.hero.note, true)}</div>` : ''}
+  <div class="inner case-cols">
+    <aside class="case-rail">
+      <nav class="case-nav" aria-label="Sections">
+        <ul>
+          ${map(
+            c.sections,
+            (s, i) => `<li><a href="#${anchor(s.heading, i)}">${esc(s.heading)}</a></li>`,
+          )}
+        </ul>
+      </nav>
+    </aside>
 
-  <div class="inner">
+    <div class="case-read">
     ${map(
       c.sections,
-      (s) => `<section class="sec">
-      <div><p class="serif h2 sec-heading">${esc(s.heading)}</p></div>
+      (s, i) => `<section class="sec" id="${anchor(s.heading, i)}">
+      <h2 class="serif h2 sec-heading">${esc(s.heading)}</h2>
       <div class="sec-body">${map(s.blocks, block)}</div>
     </section>`,
     )}
@@ -77,6 +124,7 @@ export const render = (slug: Slug): string => {
       <p class="body">${esc(next.standfirst)}</p>
       <p class="lbl lbl-wide next-go">Explore project ${arrow}</p>
     </a>
+    </div>
   </div>
 </main>`;
 };

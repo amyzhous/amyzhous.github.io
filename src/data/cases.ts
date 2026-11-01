@@ -26,7 +26,17 @@ const DIR = resolve('src/content/cases');
 export type Block =
   | { t: 'p'; text: string }
   /** A visual that is still a direction, not a drawn thing. */
-  | { t: 'figure'; kind: string; note: string };
+  | { t: 'figure'; kind: string; note: string }
+  /** The sentence the case turns on, set apart from the prose. */
+  | { t: 'pull'; text: string }
+  /** The judgment call: what a senior reader is looking for. */
+  | { t: 'decision'; label: string; text: string };
+
+/** One figure off the metrics line. A metric without a number is label-only. */
+export interface Stat {
+  figure?: string;
+  label: string;
+}
 
 export interface Section {
   heading: string;
@@ -42,7 +52,13 @@ export interface CaseStudy {
   headline: string;
   standfirst: string;
   metrics: string;
+  /** The metrics line, split so the figures can carry the top of the page. */
+  stats: Stat[];
+  /** What the figures do and don't prove. Amy's caveat, where she wrote one. */
+  statNote?: string;
   role: string;
+  /** Who she worked with, named in her own words. */
+  team?: string;
   /** The opening visual, above the first section. */
   hero?: Block & { t: 'figure' };
   sections: Section[];
@@ -56,6 +72,61 @@ const SLUGS: Record<string, string> = {
 };
 
 const FIGURE = /^\[([A-Z][A-Z \-]*?)\s*—\s*([\s\S]+)\]$/;
+
+/** A metric that opens with a figure: "58K+ drawings managed", "0→1 paid …". */
+const STAT = /^([0-9][^\s]*)\s+(.+)$/;
+
+/**
+ * Three things below are keyed by slug rather than parsed, because the
+ * markdown does not mark them up: which sentence the case turns on, which
+ * one carries the judgment call, what the figures do not prove, and who she
+ * worked with. Every string is quoted from the markdown itself — a paragraph
+ * is matched by its opening words, never rewritten.
+ */
+const PULL: Record<string, string> = {
+  'project-files': 'The important distinction was simple:',
+  'activation-growth': 'The challenge wasn’t simply reducing the number of onboarding steps.',
+  'construction-data-ai': 'I proposed a different starting point:',
+  'self-serve-billing': 'Making those two people complete the same action',
+};
+
+const DECISION: Record<string, { label: string; starts: string }> = {
+  'project-files': { label: 'The trade-off', starts: 'The tradeoff was between automation and control.' },
+  'activation-growth': { label: 'The decision', starts: 'Rather than treating onboarding as a single wizard' },
+  'construction-data-ai': { label: 'The decision', starts: 'The important distinction was between helping users' },
+  'self-serve-billing': { label: 'The decision', starts: 'The team adopted the second approach' },
+};
+
+/** Amy's own caveat about what the numbers cover. */
+const STAT_NOTE: Record<string, string> = {
+  'activation-growth':
+    'That was a starting point for evaluation, not evidence that these changes caused an improvement.',
+  'construction-data-ai':
+    'The product was still in development at this stage, so customer adoption and effectiveness remain unmeasured.',
+  'self-serve-billing':
+    'The usage figures cover the wider self-serve seat-management system, not the isolated effect of the provisional-access design.',
+};
+
+/**
+ * Where the markdown's Role line also names the partners, the clause moves
+ * to Team rather than being printed twice. These are the role lines with
+ * that clause cut off — no word is changed.
+ */
+const ROLE_TRIM: Record<string, string> = {
+  'activation-growth': 'Product design and activation prioritization',
+  'construction-data-ai': 'Product concept and interaction design exploration',
+  'self-serve-billing': 'Product design for member access, billing approval, and related user states',
+};
+
+const TEAM: Record<string, string> = {
+  'project-files': 'Product and engineering',
+  'activation-growth': 'Product, engineering, and Customer Experience',
+  'construction-data-ai': 'Engineering',
+  'self-serve-billing': 'A larger cross-functional initiative',
+};
+
+/** Curly and straight quotes both appear in the source; compare without them. */
+const loose = (s: string) => s.replace(/[‘’“”]/g, "'").toLowerCase();
 
 const parse = (file: string): CaseStudy => {
   const raw = readFileSync(join(DIR, file), 'utf8');
@@ -91,21 +162,51 @@ const parse = (file: string): CaseStudy => {
     hero = asBlock(paras.shift()!) as Block & { t: 'figure' };
   }
 
+  const slug = SLUGS[file.replace(/\.md$/, '')]!;
+
   const sections: Section[] = [];
   for (const p of paras) {
     if (p.startsWith('## ')) sections.push({ heading: p.replace(/^##\s*/, ''), blocks: [] });
     else if (sections.length) sections[sections.length - 1]!.blocks.push(asBlock(p));
   }
 
+  // Lift the two sentences that carry the case out of the running prose. The
+  // text is untouched; only where it sits on the page changes.
+  const pull = PULL[slug];
+  const decision = DECISION[slug];
+  for (const s of sections) {
+    s.blocks = s.blocks.map((b) => {
+      if (b.t !== 'p') return b;
+      const text = loose(b.text);
+      if (pull && text.startsWith(loose(pull))) return { t: 'pull', text: b.text };
+      if (decision && text.startsWith(loose(decision.starts)))
+        return { t: 'decision', label: decision.label, text: b.text };
+      return b;
+    });
+  }
+
+  const stats: Stat[] = metrics
+    .replace(/^Outcome:\s*/i, '')
+    .split('·')
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => {
+      const m = STAT.exec(part);
+      return m ? { figure: m[1]!, label: m[2]! } : { label: part };
+    });
+
   return {
-    slug: SLUGS[file.replace(/\.md$/, '')]!,
+    slug,
     n: n!,
     name: name!.trim(),
     kicker,
     headline,
     standfirst,
     metrics,
-    role,
+    stats,
+    statNote: STAT_NOTE[slug],
+    role: ROLE_TRIM[slug] ?? role,
+    team: TEAM[slug],
     hero,
     sections,
   };

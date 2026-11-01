@@ -833,3 +833,244 @@ blockquote.pull footer {
 .fig-register {
   margin: 0 0 128px;
 }
+
+/* ── Option C: outcome first, a navigation rail, one reading column ──
+   The page answers in this order: what it looked like, what it was, what it
+   produced, then the argument. The rail is navigation only — the project
+   facts live with the figures, not above the contents list. */
+
+.case-eyebrow {
+  margin: 0 0 18px;
+}
+
+/* the hero sits outside .inner, so it runs the full width */
+.fig-todo-bleed {
+  margin: 0;
+  padding: 36px 44px;
+  border-right: 0;
+  border-left: 0;
+  aspect-ratio: 2 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fig-todo-bleed .fig-todo-note {
+  margin-top: auto;
+}
+
+/* ── outcome ── */
+
+.case-outcome {
+  padding-bottom: 8px;
+}
+
+.case-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0;
+  margin-top: 18px;
+  border-top: 1.5px solid var(--text);
+  border-bottom: 1px solid var(--rule);
+}
+
+.case-stat {
+  padding: 26px 40px 26px 0;
+}
+
+.case-stat + .case-stat {
+  padding-left: 40px;
+  border-left: 1px solid var(--rule);
+}
+
+.case-stat-fig {
+  margin: 0;
+  font-weight: var(--serif-display);
+  font-size: clamp(34px, 3.4vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.case-stat-label {
+  margin: 10px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.case-stat-note {
+  margin: 16px 0 0;
+  max-width: 68ch;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* the project facts, contained, ahead of the figures */
+.case-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px 48px;
+  margin: 0 0 40px;
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.case-facts dt {
+  margin: 0 0 8px;
+}
+
+.case-facts dd {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ── rail + reading column ── */
+
+.case-cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 64px;
+  padding-top: 48px;
+}
+
+.case-rail {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.case-nav {
+  position: sticky;
+  top: 72px;
+}
+
+.case-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-nav a {
+  display: block;
+  padding: 7px 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.case-nav a:hover {
+  color: var(--text);
+}
+
+.case-read {
+  flex: 999 1 540px;
+  min-width: 0;
+  max-width: 680px;
+}
+
+/* headings now sit in the reading column, so sections stack */
+.case-read .sec {
+  display: block;
+  padding: 48px 0 0;
+  margin-top: 48px;
+  scroll-margin-top: 24px;
+}
+
+.case-read .sec:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.case-read .sec-heading {
+  margin: 0 0 22px;
+}
+
+/* ── the two lifted sentences ── */
+
+.case-pull {
+  margin: 30px 0 26px;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--text);
+}
+
+.case-pull p {
+  margin: 0;
+  font-weight: var(--serif-weight);
+  font-size: 25px;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.case-pull b {
+  font-weight: inherit;
+}
+
+.case-decision {
+  margin: 30px 0 26px;
+  padding: 26px 30px;
+  background: var(--plate);
+}
+
+.case-decision .lbl {
+  margin: 0 0 12px;
+}
+
+.case-decision p:last-child {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .case-cols {
+    gap: 0;
+    padding-top: 32px;
+  }
+
+  /* the rail stops travelling and becomes a plain list above the text */
+  .case-rail {
+    flex-basis: 100%;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .case-nav {
+    position: static;
+  }
+
+  .case-read {
+    max-width: none;
+  }
+
+  .case-stat + .case-stat {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .fig-todo-bleed {
+    aspect-ratio: 3 / 2;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .case-decision {
+    padding: 22px;
+  }
+
+  .case-pull p {
+    font-size: 21px;
+  }
+}
