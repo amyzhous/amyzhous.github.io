@@ -22,7 +22,6 @@
 const HANDOVER_MS = 4000;
 /** A project is "active" once it has passed this far up the column. */
 const ACTIVE_LINE = 0.45;
-const PROJECT_COUNT = 3;
 
 export const startAutoScroll = (scroller: HTMLElement): (() => void) => {
   const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)');
@@ -32,6 +31,8 @@ export const startAutoScroll = (scroller: HTMLElement): (() => void) => {
   );
   const marker = document.querySelector<HTMLElement>('[data-marker]');
   const projects = Array.from(scroller.querySelectorAll<HTMLElement>('.proj'));
+  /** The list is rendered twice, so one pass is half of what is in the DOM. */
+  const projectCount = indexLinks.length || projects.length / 2;
 
   let held = false;
   let idleUntil = 0;
@@ -116,7 +117,7 @@ export const startAutoScroll = (scroller: HTMLElement): (() => void) => {
       let next = active;
       const line = scroller.clientHeight * ACTIVE_LINE;
       for (let i = 0; i < projects.length; i++) {
-        if (projects[i]!.offsetTop - scroller.scrollTop <= line) next = i % PROJECT_COUNT;
+        if (projects[i]!.offsetTop - scroller.scrollTop <= line) next = i % projectCount;
       }
       setActive(next);
     }

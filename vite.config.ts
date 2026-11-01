@@ -12,8 +12,9 @@ const pages = {
   'index.html': { module: 'src/pages/home.page.ts' },
   'chat.html': { module: 'src/pages/chat.page.ts' },
   'project-files.html': { module: 'src/pages/project-files.page.ts' },
-  'ai-strategy.html': { module: 'src/pages/ai-strategy.page.ts' },
-  'unified-submittals.html': { module: 'src/pages/unified-submittals.page.ts' },
+  'activation-growth.html': { module: 'src/pages/activation-growth.page.ts' },
+  'construction-data-ai.html': { module: 'src/pages/construction-data-ai.page.ts' },
+  'self-serve-billing.html': { module: 'src/pages/self-serve-billing.page.ts' },
   // The résumés are not gated: they are unlinked and noindex, and the lock
   // would otherwise be what got printed into the PDF.
   'resume.html': { module: 'src/pages/resume.page.ts' },
@@ -27,6 +28,9 @@ const pages = {
  * the current work is one click away.
  */
 const redirects: Record<string, string> = {
+  // Retired case studies, from the previous set of three.
+  'ai-strategy.html': '/construction-data-ai.html',
+  'unified-submittals.html': '/',
   'rfi-intelligence.html': '/',
   'submittal-workflow.html': '/',
   'approvals-command.html': '/',

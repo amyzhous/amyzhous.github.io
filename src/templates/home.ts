@@ -1,6 +1,6 @@
 import { autoScrollSpeed, paths, site, work } from '../data/site.js';
 import { esc, map } from './html.js';
-import { homeFigure } from './figures.js';
+import { drawingRegister } from './figures.js';
 
 const arrow = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>`;
 
@@ -22,7 +22,9 @@ const card = (w: (typeof work)[number], ghost: boolean, first: boolean): string 
     <span class="lbl">${esc(w.kicker)}</span>
   </div>
   <h2 class="serif proj-title"><span class="title">${esc(w.title)}</span></h2>
-  <div class="plate">${homeFigure(w.figure)}</div>
+  ${w.figure === 'register'
+    ? `<div class="plate">${drawingRegister()}</div>`
+    : `<figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">${esc(w.heroNote ?? '')}</p></figure>`}
   <div class="proj-foot">
     <p class="serif proj-metric">${esc(w.metric)}</p>
     <span class="spacer"></span>

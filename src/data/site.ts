@@ -32,13 +32,13 @@ export const launched = false;
 /** Auto-scroll speed for the home work column, px/second. 0 disables. */
 export const autoScrollSpeed = 18;
 
-export type Slug = 'project-files' | 'ai-strategy' | 'unified-submittals';
+import { caseStudies } from './cases.js';
 
-export const paths: Record<Slug, string> = {
-  'project-files': '/project-files.html',
-  'ai-strategy': '/ai-strategy.html',
-  'unified-submittals': '/unified-submittals.html',
-};
+export type Slug = string;
+
+export const paths: Record<Slug, string> = Object.fromEntries(
+  caseStudies.map((c) => [c.slug, `/${c.slug}.html`]),
+);
 
 export interface RegisterRow {
   no: string;
@@ -46,13 +46,6 @@ export interface RegisterRow {
   rev: string;
   /** The one inverted revision chip — the current sheet. */
   current?: boolean;
-}
-
-export interface FunnelBar {
-  k: string;
-  v: string;
-  w: string;
-  fill: string;
 }
 
 export const registerRows: RegisterRow[] = [
@@ -63,14 +56,6 @@ export const registerRows: RegisterRow[] = [
   { no: 'S-101', title: 'Foundation Plan', rev: 'R2' },
 ];
 
-export const funnelBars: FunnelBar[] = [
-  { k: 'Opened', v: '83%', w: '83%', fill: 'var(--fill-1)' },
-  { k: 'Read', v: '70%', w: '70%', fill: 'var(--fill-2)' },
-  { k: 'Accepted', v: '15%', w: '15%', fill: 'var(--fill-3)' },
-];
-
-export const funnelFootnote = 'n = [SAMPLE] · [PERIOD]';
-
 export interface WorkEntry {
   slug: Slug;
   n: string;
@@ -78,41 +63,22 @@ export interface WorkEntry {
   kicker: string;
   title: string;
   metric: string;
-  /** Which of the three diagrams sits on the plate. */
-  figure: 'register' | 'funnel' | 'matrix';
-  /** Shorter metric for the phone composition. */
-  metricPhone: string;
+  /**
+   * The drawing register is the one drawn diagram that still belongs to a
+   * live case study. The rest carry their hero direction as a placeholder
+   * until the visual exists.
+   */
+  figure: 'register' | 'placeholder';
+  heroNote?: string;
 }
 
-export const work: WorkEntry[] = [
-  {
-    slug: 'project-files',
-    n: '01',
-    short: 'Project Files',
-    kicker: 'Project Files · 0→1 · Systems',
-    title: 'From file management to a new paid product',
-    metric: '58K+ drawings · 40% of existing customers',
-    metricPhone: '58K+ drawings · 40% of existing customers',
-    figure: 'register',
-  },
-  {
-    slug: 'ai-strategy',
-    n: '02',
-    short: 'AI Strategy',
-    kicker: 'AI Strategy · Design language',
-    title: 'Designing for what happens after the answer',
-    metric: '83% opened → 15% accepted',
-    metricPhone: '83% opened → 15% accepted',
-    figure: 'funnel',
-  },
-  {
-    slug: 'unified-submittals',
-    n: '03',
-    short: 'Unified Submittals',
-    kicker: 'Unified Submittals · Systems · Craft',
-    title: 'Four versions of the same job, made into one',
-    metric: '4 → 1 review paths · ~24K submittals a month',
-    metricPhone: '4 → 1 review paths · ~24K a month',
-    figure: 'matrix',
-  },
-];
+export const work: WorkEntry[] = caseStudies.map((c) => ({
+  slug: c.slug,
+  n: c.n,
+  short: c.name,
+  kicker: c.kicker,
+  title: c.headline,
+  metric: c.metrics,
+  figure: c.slug === 'project-files' ? 'register' : 'placeholder',
+  heroNote: c.hero?.note,
+}));

@@ -776,3 +776,56 @@ blockquote.pull footer {
     line-height: 1.16;
   }
 }
+
+/* ── a visual that is specified but not made yet ──
+   Drawn as a plate holding its own direction, so the page shows where it
+   goes and what it is rather than hiding the gap. */
+.fig-todo {
+  margin: 0 0 26px;
+  padding: 28px 30px;
+  background: var(--plate);
+  border: 1px dashed var(--cell-line);
+}
+
+.fig-todo-bleed {
+  margin-bottom: 56px;
+  padding: 44px 46px;
+}
+
+.fig-todo-kind {
+  margin: 0 0 10px;
+}
+
+.fig-todo-note {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.case-kicker {
+  margin: 0 0 18px;
+}
+
+.case-metrics {
+  margin: 24px 0 0;
+  font-size: 19px;
+  color: var(--text);
+}
+
+.case-role {
+  margin: 14px 0 0;
+  max-width: 62ch;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.case-role .lbl {
+  margin-right: 8px;
+}
+
+.fig-register {
+  margin: 0 0 128px;
+}
