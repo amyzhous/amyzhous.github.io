@@ -190,8 +190,14 @@ a {
   }
 }
 
+/* The page-wide focus ring is a 2px outline set off the element, which on a
+   pill inside a pill reads as a heavy black box. Ring these on their own
+   edge instead. Safari focuses a button on click, so this shows on a plain
+   tap too and has to be quiet. */
 .viewtgl a:focus-visible,
 .viewtgl button:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 1.5px var(--text);
   color: var(--text);
 }
 

@@ -67,10 +67,14 @@
 }
 
 .body {
-  font-family: var(--serif);
+  /* Running prose is the sans. The serif is for display sizes only — titles,
+     section headings, the metric line. Sans sets larger on the page at the
+     same nominal size, so this steps down a point and tightens the leading
+     to hold the measure the serif had. */
+  font-family: var(--sans);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.68;
+  font-size: 17px;
+  line-height: 1.62;
   color: var(--body);
 }
 
