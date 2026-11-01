@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#FDFDFC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,ital,wght@6..72,0,300..500;6..72,1,300..500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+  <script>
+    /* GitHub Pages caches HTML for several minutes while hashed assets come
+       and go, so a browser can hold a page whose stylesheet no longer
+       exists and render it raw. If ours did not load, fetch the page again
+       on a fresh URL, once. */
+    addEventListener('load', function () {
+      var ok = Array.prototype.some.call(document.styleSheets, function (s) {
+        return (s.href || '').indexOf('/assets/') > -1;
+      });
+      if (ok || /[?&]fresh=/.test(location.search)) return;
+      var q = location.search ? location.search + '&' : '?';
+      location.replace(location.pathname + q + 'fresh=' + Date.now());
+    });
+    if (/[?&]fresh=/.test(location.search)) {
+      var keep = location.search.replace(/[?&]fresh=\d+/, '').replace(/^&/, '?');
+      history.replaceState(null, '', location.pathname + (keep === '?' ? '' : keep));
+    }
+  </script>
+  
+  <title>Amy Zhou — product designer</title>
+  <meta name="description" content="I lead end-to-end design of complex digital products, from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  html.is-locked body > *:not(.gate) { display: none !important; }
+  html:not(.is-locked) .gate { display: none; }
+  .gate {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #FDFDFC;
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  }
+  .gate-inner { width: 100%; max-width: 300px; }
+  .gate-label {
+    margin: 0 0 14px;
+    font-size: 11.5px;
+    letter-spacing: .01em;
+    color: #6E6E69;
+  }
+  .gate-lede {
+    margin: 0 0 26px;
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.45;
+    color: #21201C;
+  }
+  .gate-field { position: relative; margin-bottom: 18px; }
+  .gate-input {
+    width: 100%;
+    padding: 0 0 9px;
+    border: 0;
+    border-bottom: 1px solid #DAD9D6;
+    background: none;
+    font: inherit;
+    font-size: 15px;
+    color: #21201C;
+    border-radius: 0;
+  }
+  .gate-input:focus { outline: none; }
+  .gate-field::after {
+    content: '';
+    position: absolute;
+    right: 0; bottom: -1px; left: 0;
+    height: 2px;
+    background: #21201C;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 380ms cubic-bezier(.2,.7,.2,1);
+  }
+  .gate-field:focus-within::after { transform: scaleX(1); }
+  .gate-row { display: flex; align-items: center; gap: 16px; }
+  .gate-submit {
+    padding: 9px 18px;
+    border: 1px solid #21201C;
+    background: #21201C;
+    color: #FDFDFC;
+    font: inherit;
+    font-size: 12.5px;
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: background 300ms, color 300ms;
+  }
+  .gate-submit:hover { background: transparent; color: #21201C; }
+  .gate-submit:focus-visible,
+  .gate-input:focus-visible { outline: 2px solid #21201C; outline-offset: 3px; }
+  .gate-error {
+    margin: 0;
+    font-size: 12.5px;
+    color: #5F5E58;
+    opacity: 0;
+    transition: opacity 240ms;
+  }
+  .gate-error[data-shown] { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .gate-field::after, .gate-error, .gate-submit { transition: none; }
+  }
+</style>
+<script>
+  try {
+    if (sessionStorage.getItem('portfolio-open') !== '1') {
+      document.documentElement.classList.add('is-locked');
+    }
+  } catch (e) {
+    document.documentElement.classList.add('is-locked');
+  }
+</script>
+  <script type="module" crossorigin src="/assets/classic-BgwQeqlS.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="/assets/classic-Buj-GDKT.css">
+  <link rel="stylesheet" crossorigin href="/assets/motion-vmbdgyE4.css">
+</head>
+<body>
+
+<div class="gate" data-gate>
+  <div class="gate-inner">
+    <p class="gate-lede">Hey, this page is locked.<br>Enter password to enter.</p>
+    <form data-gate-form>
+      <div class="gate-field">
+        <label class="gate-label" for="gate-input" style="display:block;margin-bottom:8px">Password</label>
+        <input class="gate-input" id="gate-input" name="passphrase" type="password"
+               autocomplete="current-password" autocapitalize="off" autocorrect="off"
+               spellcheck="false" required>
+      </div>
+      <div class="gate-row">
+        <button class="gate-submit" type="submit">Enter</button>
+        <p class="gate-error" data-gate-error role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</div>
+<script type="module">
+  const KEY = 'portfolio-open';
+  const HASH = '1906bc7c801f03c41551b06e2fd406e8f471787c51357e8731ec61dd599f04c8';
+  const gate = document.querySelector('[data-gate]');
+  const form = document.querySelector('[data-gate-form]');
+  const error = document.querySelector('[data-gate-error]');
+  const input = document.getElementById('gate-input');
+
+  if (document.documentElement.classList.contains('is-locked')) {
+    input.focus();
+  }
+
+  const digest = async (value) => {
+    if (!crypto?.subtle) return null;
+    const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
+    return [...new Uint8Array(bytes)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  };
+
+  const open = () => {
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* private mode */ }
+    document.documentElement.classList.remove('is-locked');
+    gate.remove();
+    document.dispatchEvent(new CustomEvent('gate:open'));
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const value = input.value.trim().toLowerCase();
+    const hashed = await digest(value);
+    if (hashed === HASH) { open(); return; }
+    error.textContent = 'That is not it. Try again.';
+    error.setAttribute('data-shown', '');
+    input.select();
+  });
+
+  input.addEventListener('input', () => {
+    error.removeAttribute('data-shown');
+  });
+</script>
+<div class="viewtgl-rail">
+  <nav class="viewtgl" aria-label="Page view">
+    <span class="viewtgl-on" aria-current="page">Classic</span>
+    <a href="/">Chat</a>
+  </nav>
+</div>
+
+<div class="shell">
+
+  <!-- ══ rail ══ -->
+  <div class="rail">
+    <p class="serif rail-name in" style="--d: 0ms">Amy Zhou</p>
+    <p class="lbl rail-role in" style="--d: 60ms">Product designer</p>
+
+    <p class="serif rail-lede in" style="--d: 120ms">I lead end-to-end design of complex digital products, from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.</p>
+
+    <p class="lbl rail-label in" style="--d: 180ms">Work</p>
+    <nav class="rail-index in" style="--d: 240ms" aria-label="Work">
+      <span class="idx-marker" data-marker aria-hidden="true"></span>
+      <a class="idx idx-on" href="/project-files.html" data-index="0">
+        <span class="lbl">01</span><span class="serif idx-title">Project Files</span>
+      </a><a class="idx" href="/activation-growth.html" data-index="1">
+        <span class="lbl">02</span><span class="serif idx-title">Activation &amp; Growth</span>
+      </a><a class="idx" href="/construction-data-ai.html" data-index="2">
+        <span class="lbl">03</span><span class="serif idx-title">Construction Data &amp; AI</span>
+      </a><a class="idx" href="/self-serve-billing.html" data-index="3">
+        <span class="lbl">04</span><span class="serif idx-title">Self-Serve Billing</span>
+      </a>
+    </nav>
+
+    <p class="lbl rail-label in" style="--d: 300ms">Elsewhere</p>
+    <p class="serif rail-elsewhere in" style="--d: 360ms">
+      <a class="u" href="mailto:ayjzhou@gmail.com">Email</a><br>
+      <a class="u" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing">Résumé</a><br>
+      <a class="u" href="https://www.linkedin.com/in/amyyjzhou/">LinkedIn</a>
+    </p>
+  </div>
+
+  <!-- ══ work: the list is rendered twice so the loop never cuts ══ -->
+  <div class="scroller" data-scroller data-speed="18">
+<a class="proj in" href="/project-files.html" style="--d: 300ms">
+  <div class="proj-kicker">
+    <span class="lbl proj-no">01</span>
+    <span class="lbl">Project Files</span>
+  </div>
+  <h2 class="serif proj-title"><span class="title">We weren&#39;t building another file browser.</span></h2>
+  <div class="plate">
+<div class="reg-side" aria-hidden="true">
+  <p class="reg-head">Drawing sets</p>
+  <p class="reg-top">Architectural</p>
+  <p class="reg-sub">Plans</p>
+  <p class="reg-sub">Elevations</p>
+  <p>Structural</p>
+  <p>Mechanical</p>
+</div>
+<div class="reg-table">
+  <div class="reg-row reg-head-row">
+    <span>No.</span><span>Title</span><span>Rev</span>
+  </div>
+  <div class="reg-row row row-1">
+    <span class="row-no">A-101</span>
+    <span class="row-title">Level 1 Floor Plan</span>
+    <span class="chip">R2</span>
+  </div><div class="reg-row row row-2">
+    <span class="row-no">A-102</span>
+    <span class="row-title">Level 2 Floor Plan</span>
+    <span class="chip">R1</span>
+  </div><div class="reg-row row row-3">
+    <span class="row-no">A-201</span>
+    <span class="row-title">North Elevation</span>
+    <span class="chip chip-on">R3</span>
+  </div><div class="reg-row row row-4">
+    <span class="row-no">A-202</span>
+    <span class="row-title">South Elevation</span>
+    <span class="chip">R1</span>
+  </div><div class="reg-row row row-5">
+    <span class="row-no">S-101</span>
+    <span class="row-title">Foundation Plan</span>
+    <span class="chip">R2</span>
+  </div>
+</div></div>
+  <div class="proj-foot">
+    <p class="serif proj-metric">58K+ drawings managed · 0→1 paid product launched</p>
+    <span class="spacer"></span>
+    <span class="go">Open case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+  </div>
+</a>
+<a class="proj" href="/activation-growth.html">
+  <div class="proj-kicker">
+    <span class="lbl proj-no">02</span>
+    <span class="lbl">Activation &amp; Growth</span>
+  </div>
+  <h2 class="serif proj-title"><span class="title">Getting started wasn&#39;t the same as getting value.</span></h2>
+  <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Strong composition showing project creation, reusable templates, and team onboarding. Three connected views, not three identical screenshots.</p></figure>
+  <div class="proj-foot">
+    <p class="serif proj-metric">37% historical activation baseline established · Three connected onboarding opportunities addressed</p>
+    <span class="spacer"></span>
+    <span class="go">Open case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+  </div>
+</a>
+<a class="proj" href="/construction-data-ai.html">
+  <div class="proj-kicker">
+    <span class="lbl proj-no">03</span>
+    <span class="lbl">Construction Data &amp; AI</span>
+  </div>
+  <h2 class="serif proj-title"><span class="title">What if reporting didn&#39;t require knowing what to ask?</span></h2>
+  <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Full-width dashboard with meaningful construction metrics, charts, and a contextual AI panel.</p></figure>
+  <div class="proj-foot">
+    <p class="serif proj-metric">Outcome: Product direction proposed to leadership · Internal dashboard builder demonstrated</p>
+    <span class="spacer"></span>
+    <span class="go">Open case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+  </div>
+</a>
+<a class="proj" href="/self-serve-billing.html">
+  <div class="proj-kicker">
+    <span class="lbl proj-no">04</span>
+    <span class="lbl">Self-Serve Billing</span>
+  </div>
+  <h2 class="serif proj-title"><span class="title">Access shouldn&#39;t wait for a billing decision.</span></h2>
+  <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Provisional-access employee state paired with the billing-admin approval experience.</p></figure>
+  <div class="proj-foot">
+    <p class="serif proj-metric">44 firms used self-serve seat management · 245 seat-change events recorded</p>
+    <span class="spacer"></span>
+    <span class="go">Open case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+  </div>
+</a>
+<a class="proj loop-start" href="/project-files.html" aria-hidden="true" tabindex="-1">
+  <div class="proj-kicker">
+    <span class="lbl proj-no">01</span>
+    <span class="lbl">Project Files</span>
+  </div>
+  <h2 class="serif proj-title"><span class="title">We weren&#39;t building another file browser.</span></h2>
+  <div class="plate">
+<div class="reg-side" aria-hidden="true">
+  <p class="reg-head">Drawing sets</p>
+  <p class="reg-top">Architectural</p>
+  <p class="reg-sub">Plans</p>
+  <p class="reg-sub">Elevations</p>
+  <p>Structural</p>
+  <p>Mechanical</p>
+</div>
+<div class="reg-table">
+  <div class="reg-row reg-head-row">
+    <span>No.</span><span>Title</span><span>Rev</span>
+  </div>
+  <div class="reg-row row row-1">
+    <span class="row-no">A-101</span>
+    <span class="row-title">Level 1 Floor Plan</span>
+    <span class="chip">R2</span>
+  </div><div class="reg-row row row-2">
+    <span class="row-no">A-102</span>
+    <span class="row-title">Level 2 Floor Plan</span>
+    <span class="chip">R1</span>
+  </div><div class="reg-row row row-3">
+    <span class="row-no">A-201</span>
+    <span class="row-title">North Elevation</span>
+    <span class="chip chip-on">R3</span>
+  </div><div class="reg-row row row-4">
+    <span class="row-no">A-202</span>
+    <span class="row-title">South Elevation</span>
+    <span class="chip">R1</span>
+  </div><div class="reg-row row row-5">
+    <span class="row-no">S-101</span>
+    <span class="row-title">Foundation Plan</span>
+    <span class="chip">R2</span>
+  </div>
+</div></div>
+  <div class="proj-foot">
+    <p class="serif proj-metric">58K+ drawings managed · 0→1 paid product launched</p>
+    <span class="spacer"></span>
+    <span class="go">Open case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+  </div>
+</a>
+<a class="proj" href="/activation-growth.html" aria-hidden="true" tabindex="-1">
+  <div class="proj-kicker">
+    <span class="lbl proj-no">02</span>
+    <span class="lbl">Activation &amp; Growth</span>
+  </div>
+  <h2 class="serif proj-title"><span class="title">Getting started wasn&#39;t the same as getting value.</span></h2>
+  <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Strong composition showing project creation, reusable templates, and team onboarding. Three connected views, not three identical screenshots.</p></figure>
+  <div class="proj-foot">
+    <p class="serif proj-metric">37% historical activation baseline established · Three connected onboarding opportunities addressed</p>
+    <span class="spacer"></span>
+    <span class="go">Open case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+  </div>
+</a>
+<a class="proj" href="/construction-data-ai.html" aria-hidden="true" tabindex="-1">
+  <div class="proj-kicker">
+    <span class="lbl proj-no">03</span>
+    <span class="lbl">Construction Data &amp; AI</span>
+  </div>
+  <h2 class="serif proj-title"><span class="title">What if reporting didn&#39;t require knowing what to ask?</span></h2>
+  <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Full-width dashboard with meaningful construction metrics, charts, and a contextual AI panel.</p></figure>
+  <div class="proj-foot">
+    <p class="serif proj-metric">Outcome: Product direction proposed to leadership · Internal dashboard builder demonstrated</p>
+    <span class="spacer"></span>
+    <span class="go">Open case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+  </div>
+</a>
+<a class="proj" href="/self-serve-billing.html" aria-hidden="true" tabindex="-1">
+  <div class="proj-kicker">
+    <span class="lbl proj-no">04</span>
+    <span class="lbl">Self-Serve Billing</span>
+  </div>
+  <h2 class="serif proj-title"><span class="title">Access shouldn&#39;t wait for a billing decision.</span></h2>
+  <figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">Provisional-access employee state paired with the billing-admin approval experience.</p></figure>
+  <div class="proj-foot">
+    <p class="serif proj-metric">44 firms used self-serve seat management · 245 seat-change events recorded</p>
+    <span class="spacer"></span>
+    <span class="go">Open case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+  </div>
+</a>
+  </div>
+
+</div>
+</body>
+</html>
