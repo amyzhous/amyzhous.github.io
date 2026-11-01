@@ -26,10 +26,10 @@ export const markup = (): string => `
       <div class="sec2">Today</div>
       <div id="today">
         <button class="row th on" data-go="top" aria-current="true">Who's Amy?</button>
-        <button class="row th" data-q="How did Project Files become a paid product?">Project Files</button>
-        <button class="row th" data-q="How did you approach activation?">Activation &amp; Growth</button>
-        <button class="row th" data-q="What did you propose for construction data and AI?">Construction Data &amp; AI</button>
-        <button class="row th" data-q="How does self-serve billing work?">Self-Serve Billing</button>
+        <button class="row th" data-q="We weren't building another file browser.">Project Files</button>
+        <button class="row th" data-q="Getting started wasn't the same as getting value.">Activation &amp; Growth</button>
+        <button class="row th" data-q="What if reporting didn't require knowing what to ask?">Construction Data &amp; AI</button>
+        <button class="row th" data-q="Access shouldn't wait for a billing decision.">Self-Serve Billing</button>
       </div>
       <div class="sec2">Earlier</div>
       <button class="row th" data-q="Amy's resume">Amy's resume</button>
@@ -71,8 +71,8 @@ export const markup = (): string => `
     <div class="askrow pop"><h1 class="bubble">Who's Amy?</h1></div>
     <div class="view" data-view="answer" role="tabpanel" id="panel-answer" aria-labelledby="tab-answer">
       <div class="status"><span class="pix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="shimmer">Preheating the oven</span></div>
-      <p class="ans" data-stream>I lead end-to-end design of complex digital products, from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.</p>
-      <p class="ans" data-stream>Recent work: turning a file-management brief into a new paid product for managing construction drawings {1}, rethinking activation across project setup, reusable workflows, and team onboarding {2}, exploring a visual-first approach to construction analytics {3}, and designing provisional access for teams that need to move quickly without losing control over paid seats {4}.</p>
+      <p class="ans" data-stream>I lead end-to-end design of complex digital products, from discovery through launch.</p>
+      <p class="ans" data-stream>Recent work: a new paid product for managing construction drawings {1}, activation across project setup and team onboarding {2}, a visual-first approach to construction analytics {3}, and provisional access for teams that need to move quickly without losing control over paid seats {4}.</p>
 
 
 
@@ -94,8 +94,8 @@ export const markup = (): string => `
       <p class="fb" aria-live="polite"></p>
       <div class="relwrap">
       <div class="related">
-        <button class="rel pop" data-q="How did Project Files become a paid product?"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>How did Project Files become a paid product?</span></button>
-        <button class="rel pop" data-q="How did you approach activation?"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>How did you approach activation?</span></button>
+        <button class="rel pop" data-q="We weren't building another file browser."><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>We weren't building another file browser.</span></button>
+        <button class="rel pop" data-q="Getting started wasn't the same as getting value."><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>Getting started wasn't the same as getting value.</span></button>
         <button class="rel pop" data-q="How did you get into design?"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>How did you get into design?</span></button>
       </div>
       </div>
