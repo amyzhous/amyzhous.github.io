@@ -1,0 +1,20 @@
+/* ── Consistency between the two views ─────────────────────────────────────
+   Loaded after the bundle's own stylesheet. Nothing here restyles it; it
+   lines the shared chrome up with the classic pages.
+   ------------------------------------------------------------------------- */
+
+/* The switch reads Classic | Chat everywhere. The bundle writes Chat first,
+   so this reorders without touching its markup — no reflow, no flash. */
+.viewtgl [data-mode='classic'] {
+  order: 0;
+}
+
+.viewtgl [data-mode='chat'] {
+  order: 1;
+}
+
+/* Same place on every page. */
+.viewtgl {
+  top: 26px;
+  right: 28px;
+}

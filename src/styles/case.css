@@ -11,68 +11,30 @@
   backdrop-filter: blur(12px);
 }
 
+/* Same height as the chat view's bar, so the top of the page does not jump
+   when you cross between them. */
 .case-header-bar {
   display: flex;
   align-items: center;
+  min-height: 52px;
   max-width: var(--frame);
   margin: 0 auto;
-  padding: 16px 44px;
+  padding: 0 44px;
+}
+
+/* The fixed switch sits over this corner. */
+.case-where {
+  margin-right: 150px;
+}
+
+@media (max-width: 700px) {
+  .case-where {
+    display: none;
+  }
 }
 
 .case-header-bar .spacer {
   flex-grow: 1;
-}
-
-/* The view switch rides in the sticky header here — a fixed one would sit
-   on top of it. Same control, same words, as on the home page. */
-.case-header-bar .viewtgl {
-  display: flex;
-  gap: 2px;
-  margin-left: 20px;
-  padding: 3px;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  background: var(--plate);
-  font-size: 12.5px;
-}
-
-.case-header-bar .viewtgl > * {
-  display: inline-flex;
-  align-items: center;
-  height: 26px;
-  padding: 0 11px;
-  border-radius: 999px;
-  color: var(--muted);
-  text-decoration: none;
-  transition:
-    background 150ms,
-    color 150ms;
-}
-
-.case-header-bar .viewtgl-on {
-  background: var(--ground);
-  color: var(--text);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
-}
-
-@media (hover: hover) {
-  .case-header-bar .viewtgl a:hover {
-    color: var(--text);
-  }
-}
-
-.case-header-bar .viewtgl a:focus-visible {
-  color: var(--text);
-}
-
-@media (max-width: 560px) {
-  .case-header-bar .viewtgl {
-    margin-left: 12px;
-  }
-
-  .case-header-bar .lbl-wide {
-    display: none;
-  }
 }
 
 .case-back {

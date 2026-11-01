@@ -134,14 +134,15 @@ export const render = (slug: Slug): string => {
   <div class="case-header-bar">
     <a class="lbl lbl-wide case-back" href="/">← All work</a>
     <span class="spacer"></span>
-    <span class="lbl lbl-wide">${esc(c.n)} · ${esc(c.title)}</span>
-    <nav class="viewtgl" aria-label="Page view">
-      <span class="viewtgl-on" aria-current="page">Classic</span>
-      <a href="/chat.html">Chat</a>
-    </nav>
+    <span class="lbl lbl-wide case-where">${esc(c.n)} · ${esc(c.title)}</span>
   </div>
   <div class="prog-track"><div class="prog"></div></div>
 </header>
+
+<nav class="viewtgl" aria-label="Page view">
+  <span class="viewtgl-on" aria-current="page">Classic</span>
+  <a href="/chat.html?thread=${esc(slug)}">Chat</a>
+</nav>
 
 <main class="frame">
   <div class="inner">
