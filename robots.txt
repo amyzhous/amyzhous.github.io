@@ -1,3 +1,2 @@
-# Unfinished and deliberately unlisted.
 User-agent: *
-Disallow: /
+Allow: /
