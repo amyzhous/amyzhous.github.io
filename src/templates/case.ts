@@ -35,15 +35,15 @@ export const render = (slug: Slug): string => {
 
   return `
 <div class="viewtgl-rail">
-  <nav class="viewtgl" aria-label="Page view">
-    <span class="viewtgl-on" aria-current="page">Classic</span>
-    <a href="/?thread=${esc(slug)}">Chat</a>
+  <nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
+    <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
+    <button type="button" data-mode="chat" aria-pressed="false">Chat</button>
   </nav>
 </div>
 
 <header class="case-header">
   <div class="case-header-bar">
-    <a class="u lbl lbl-wide case-back" href="/classic.html">← All work</a>
+    <a class="u lbl lbl-wide case-back" href="/classic.html" data-home>← All work</a>
   </div>
   <div class="prog-track"><div class="prog"></div></div>
 </header>

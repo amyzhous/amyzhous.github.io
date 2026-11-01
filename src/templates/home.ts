@@ -73,7 +73,7 @@ export const render = (): string => `
     <p class="lbl rail-label in" style="--d: 300ms">Elsewhere</p>
     <p class="serif rail-elsewhere in" style="--d: 360ms">
       <a class="u" href="mailto:${esc(site.email)}">Email</a><br>
-      <a class="u" href="${esc(site.resumeHref)}">Résumé</a><br>
+      <a class="u" href="${esc(site.resumeHref)}">Resume</a><br>
       <a class="u" href="${esc(site.linkedinHref)}">LinkedIn</a>
     </p>
   </div>

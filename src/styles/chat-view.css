@@ -19,3 +19,24 @@
   top: 8px;
   right: 20px;
 }
+
+/* The resume answer shows the document itself, not just a link to it. */
+.rsm {
+  margin-top: 18px;
+}
+
+.rsm-doc {
+  display: block;
+  width: 100%;
+  height: min(72vh, 620px);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--plate);
+}
+
+.rsm-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}

@@ -10,6 +10,7 @@
  */
 
 import '../styles/chat-view.css';
+import { setView } from './view-pref.js';
 
 /** The question each project's thread is keyed on, as the bundle writes it. */
 const QUESTION_BY_SLUG: Record<string, string> = {
@@ -82,6 +83,7 @@ const wireClassicLink = (): void => {
       event.stopImmediatePropagation();
       const active = threadButtons().find((b) => b.getAttribute('aria-current') === 'true');
       const slug = active?.dataset.q ? SLUG_BY_QUESTION[active.dataset.q] : undefined;
+      setView('classic');
       location.href = slug ? `/${slug}.html` : '/classic.html';
     },
     true,
