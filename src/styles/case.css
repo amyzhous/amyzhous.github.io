@@ -908,8 +908,8 @@ blockquote.pull footer {
   margin: 0;
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 31px;
-  line-height: 1.2;
+  font-size: 24px;
+  line-height: 1.3;
   letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -918,8 +918,8 @@ blockquote.pull footer {
   margin: 0;
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.45;
+  font-size: 26px;
+  line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -954,7 +954,14 @@ blockquote.pull footer {
 .cs-block {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+}
+
+/* the only repeating rule on the page: one per section, nothing else */
+.cs-block:has(> .cs-t3) {
+  margin-top: 24px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
 }
 
 /* ── meta and figures ── */
@@ -962,8 +969,10 @@ blockquote.pull footer {
 .cs-meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 24px;
+  gap: 24px 32px;
   margin: 0;
+  padding: 24px 28px;
+  background: var(--plate);
 }
 
 .cs-meta dt {
@@ -985,6 +994,13 @@ blockquote.pull footer {
 
 .cs-stats .cs-body {
   margin-top: 6px;
+}
+
+.cs-stats > div > .cs-body:only-child {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
 }
 
 .cs-ph {
