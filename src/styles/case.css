@@ -905,12 +905,13 @@ blockquote.pull footer {
 }
 
 .cs-t2 {
-  /* A statement, not a heading: the standfirst, the judgment call, the
-     closing thought. Sans, like everything that is not a heading. */
+  /* The standfirst, the judgment call, the closing thought. These are body
+     text with a label over them, so they are set exactly as body text: the
+     label does the ranking, not a second size or a second ink. */
   margin: 0;
-  font-size: 18px;
-  line-height: 1.55;
-  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--body);
 }
 
 /* a figure is data, so it is set in the sans too, carried by size */
@@ -945,11 +946,6 @@ blockquote.pull footer {
   font-size: 16px;
   line-height: 1.6;
   color: var(--body); /* 11.2:1 */
-}
-
-.cs-body b {
-  font-weight: 500;
-  color: var(--text);
 }
 
 .cs-note {
@@ -991,7 +987,7 @@ blockquote.pull footer {
 .cs-meta dd {
   margin: 0;
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--body);
 }
 
@@ -1005,12 +1001,7 @@ blockquote.pull footer {
   margin-top: 6px;
 }
 
-.cs-stats > div > .cs-body:only-child {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--text);
-}
+
 
 .cs-ph {
   display: flex;
@@ -1037,9 +1028,9 @@ blockquote.pull footer {
 .cs-ph-note {
   margin: 0;
   max-width: 56ch;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
-  color: var(--muted); /* 6.9:1 */
+  color: var(--body);
 }
 
 /* the one figure that is drawn rather than described */

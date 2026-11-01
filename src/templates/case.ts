@@ -13,12 +13,12 @@ import { drawingRegister } from './figures.js';
  * reflection and a row of links, with no next-project card.
  */
 
-/** `**bold**` runs inside a paragraph. */
-const inline = (text: string): string =>
-  text
-    .split('**')
-    .map((part, i) => (i % 2 ? `<b>${esc(part)}</b>` : esc(part)))
-    .join('');
+/**
+ * The markdown's `**bold**` runs are dropped rather than rendered. Body text
+ * is one size in one colour: a heavier, darker clause in the middle of a
+ * paragraph reads as a mistake, not as emphasis.
+ */
+const inline = (text: string): string => esc(text.replace(/\*\*/g, ''));
 
 /**
  * A visual that has been specified but not made yet: a plate holding its own

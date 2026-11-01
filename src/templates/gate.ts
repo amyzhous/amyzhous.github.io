@@ -43,7 +43,7 @@ export const headScript = (): string =>
     place-items: center;
     padding: 24px;
     background: #FDFDFC;
-    font-family: Inter, 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
   }
   .gate-inner { width: 100%; max-width: 300px; }
   .gate-label {
