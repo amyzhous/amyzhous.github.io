@@ -40,6 +40,12 @@ jobs:
           git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           git fetch -q --depth 1 origin master
           git reset -q --soft FETCH_HEAD
+          # Keep previously published assets that this build did not re-emit.
+          # Pages caches HTML for several minutes; a browser holding an older
+          # page still asks for the hashed CSS and JS it referenced, and if
+          # those were deleted the page renders with no styles at all.
+          git ls-tree -r --name-only FETCH_HEAD -- assets \
+            | while read -r old; do [ -e "$old" ] || git checkout FETCH_HEAD -- "$old"; done
           git add -A
           git commit -q -m "Deploy ${{ github.sha }}" || exit 0
           git push -q origin HEAD:master

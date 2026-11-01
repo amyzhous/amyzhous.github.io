@@ -34,23 +34,31 @@
   right: 28px;
   z-index: 30;
   display: flex;
+  gap: 2px;
+  padding: 3px;
   border: 1px solid var(--rule);
-  font-size: 11.5px;
-  background: var(--ground);
+  border-radius: 999px;
+  background: var(--plate);
+  font-size: 12.5px;
 }
 
 .viewtgl > * {
-  padding: 5px 12px;
-  color: var(--label);
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--muted);
   text-decoration: none;
   transition:
-    color 300ms,
-    background 300ms;
+    background 150ms,
+    color 150ms;
 }
 
 .viewtgl-on {
-  background: var(--plate);
+  background: var(--ground);
   color: var(--text);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
 }
 
 @media (hover: hover) {
