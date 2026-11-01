@@ -118,6 +118,30 @@ own name treatment at icon scale. `public/favicon.ico` carries 16, 32 and 48px;
 the 16px tile is set in weight 500 because the lighter cut loses its serifs at
 that size. Regenerate with `scripts/make-favicon.mjs` if the type ever changes.
 
+## Two views
+
+The site ships the same work twice, and a switch top-right crosses between
+them:
+
+- **Classic** at `/` — this project's own pages, the ones everything else in
+  this file describes.
+- **Chat** at `/chat.html` — a conversational view, imported from a
+  self-contained build that arrived as `amyzhou-portfolio.zip`.
+
+The import is split along this project's existing lines rather than dropped
+in as one file: markup in `src/templates/chat.ts`, styles in
+`src/styles/chat.css`, behaviour in `src/scripts/chat.ts`, and the animation
+frames the bundle carried as base64 extracted into `public/chat/`. The
+original is kept in `.chat-import/` for reference.
+
+`src/scripts/chat.ts` carries `@ts-nocheck`. It is the bundle's own
+JavaScript, never written against this project's strict config; typing it by
+hand would mean rewriting working code. Replace the file wholesale when a new
+bundle arrives rather than editing it.
+
+That bundle shipped a simplified classic view of its own. It is bypassed —
+the Classic half of its toggle links to `/`, which is the real one.
+
 ## The password gate
 
 `src/templates/gate.ts` puts a lock over the four site pages. The résumés are

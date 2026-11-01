@@ -45,6 +45,10 @@ export const render = (): string => `
 
   <!-- ══ rail ══ -->
   <div class="rail">
+    <nav class="viewtgl in" aria-label="Page view" style="--d: 0ms">
+      <span class="viewtgl-on" aria-current="page">Classic</span>
+      <a href="/chat.html">Chat</a>
+    </nav>
     <p class="serif rail-name in" style="--d: 0ms">${esc(site.name)}</p>
     <p class="lbl rail-role in" style="--d: 60ms">${esc(site.roleLabel)}</p>
 

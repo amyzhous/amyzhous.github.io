@@ -10,6 +10,7 @@ const require = createRequire(import.meta.url);
 /** Every page, and the module that renders its markup. */
 const pages = {
   'index.html': { module: 'src/pages/home.page.ts' },
+  'chat.html': { module: 'src/pages/chat.page.ts' },
   'project-files.html': { module: 'src/pages/project-files.page.ts' },
   'ai-strategy.html': { module: 'src/pages/ai-strategy.page.ts' },
   'unified-submittals.html': { module: 'src/pages/unified-submittals.page.ts' },

@@ -1,0 +1,103 @@
+<nav class="viewtgl" aria-label="Page view">
+  <button type="button" data-mode="chat" aria-pressed="true">Chat</button>
+  <button type="button" data-mode="classic" aria-pressed="false">Classic</button>
+</nav>
+
+<!-- Stub: the bundle queries #classic on boot. Classic is the real site at "/". -->
+<div class="classic" id="classic" hidden></div>
+<div class="casepage" id="casepage" hidden></div>
+<div class="app" id="app">
+  <div class="scrim" id="scrim"></div>
+  <aside class="side" id="sidenav" aria-label="Navigation">
+    <div class="logo"><span class="avatar-sm" aria-hidden="true">AZ</span><span class="lt">Amy Zhou</span></div>
+    <button class="row rail-only" id="chatsBtn" title="Chats"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3h10a1 1 0 0 1 1 1v6.5a1 1 0 0 1-1 1H7.5L4.5 14v-2.5H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/></svg><span class="lbl">Chats</span></button>
+    <nav class="threads" aria-label="Chats">
+      <div class="sec2">Today</div>
+      <div id="today">
+        <button class="row th on" data-go="top" aria-current="true">Who's Amy?</button>
+        <button class="row th" data-q="How did Project Files reach 40% of customers?">Project Files</button>
+        <button class="row th" data-q="Why did only 15% accept the AI review?">AI Strategy</button>
+        <button class="row th" data-q="How did four submittal flows become one?">Unified Submittals</button>
+      </div>
+      <div class="sec2">Earlier</div>
+      <button class="row th" data-q="Amy's résumé">Amy's résumé</button>
+      <button class="row th" data-q="Amy on LinkedIn">LinkedIn</button>
+    </nav>
+    <div class="side-bottom"><button class="row collapse" id="collapse" aria-label="Collapse sidebar" aria-expanded="true" title="Collapse sidebar (⌘\)"><svg class="i i16 pl-close" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="3" width="11" height="10" rx="2"/><path d="M6.5 3v10"/><path d="M11 6.5 9.5 8l1.5 1.5"/></svg><svg class="i i16 pl-open" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="3" width="11" height="10" rx="2"/><path d="M6.5 3v10"/><path d="M9.5 6.5 11 8l-1.5 1.5"/></svg><span class="lbl">Collapse</span></button></div>
+  </aside>
+
+  <div class="main" role="presentation">
+    <header class="bar" id="bar">
+      <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidenav"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg></button>
+      <span class="t">Who's Amy?</span>
+    </header>
+
+    <main class="scroll" id="scroll" tabindex="0" aria-label="Conversation"><div class="col" id="col"></div></main>
+
+    <div class="dock">
+      <div class="cmdwrap">
+        <div class="cmds" id="cmds" role="listbox" aria-label="Questions" hidden></div>
+        <form class="composer" id="form" onsubmit="return false" aria-label="Ask a question">
+          <span class="slash" aria-hidden="true">/</span>
+          <input id="input" placeholder="Type / to ask a question" aria-label="Pick a question about Amy's work" autocomplete="off" role="combobox" aria-controls="cmds" aria-expanded="false" aria-autocomplete="list" aria-haspopup="listbox">
+          <button class="send" id="send" disabled aria-label="Ask"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 7-7 7 7" /><path d="M12 19V5" /></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<template id="intro">
+  <article class="entry" id="top">
+    <div class="tabs" role="tablist" aria-label="Answer views">
+      <button class="tab on" data-tab="answer" role="tab" id="tab-answer" aria-selected="true" aria-controls="panel-answer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="3" y1="6" y2="6" /><line x1="15" x2="3" y1="12" y2="12" /><line x1="17" x2="3" y1="18" y2="18" /></svg>Answer</button>
+      <button class="tab" data-tab="work" role="tab" id="tab-work" aria-selected="false" aria-controls="panel-work" tabindex="-1"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><rect width="20" height="14" x="2" y="6" rx="2" /></svg>Work <span class="c">3</span></button>
+      <button class="tab" data-tab="links" role="tab" id="tab-links" aria-selected="false" aria-controls="panel-links" tabindex="-1"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>Links <span class="c">3</span></button>
+    </div>
+
+    <div class="askrow pop"><h1 class="bubble">Who's Amy?</h1></div>
+    <div class="view" data-view="answer" role="tabpanel" id="panel-answer" aria-labelledby="tab-answer">
+      <div class="status"><span class="pix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="shimmer">Preheating the oven</span></div>
+      <p class="ans" data-stream>I design the software construction teams run their day on, and I stay on it until it ships and the number moves.</p>
+      <p class="ans" data-stream>Recent work: getting drawings out of email and into the project {1}, designing what happens after an AI answer {2}, and merging four submittal experiences into one {3}.</p>
+
+
+
+      <h2 class="h pop">Work</h2>
+      <div class="cards">__CARDS__</div>
+
+      <div class="tools foot pop">
+        <a class="pill ghost" href="mailto:hello@example.com"><svg class="i i16" viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="M2.5 4.5 8 9l5.5-4.5"/></svg>Email</a>
+        <a class="pill ghost" href="#"><svg class="i i16" viewBox="0 0 16 16"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Résumé</a>
+        <a class="pill ghost" href="#"><svg class="i i16" viewBox="0 0 16 16"><path d="M7 9a3 3 0 0 0 4.2 0l2-2a3 3 0 0 0-4.2-4.2l-.6.6"/><path d="M9 7a3 3 0 0 0-4.2 0l-2 2A3 3 0 0 0 7 13.2l.6-.6"/></svg>LinkedIn</a>
+        <span class="tsep"></span>
+        <span class="reacts" role="group" aria-label="React">
+          <button class="rx" data-v="wave" aria-label="Wave" aria-pressed="false"><img class="em" alt="" width="22" height="22" src="/chat/e3146d894b.webp"></button>
+          <button class="rx" data-v="laugh" aria-label="Laughing" aria-pressed="false"><img class="em" alt="" width="22" height="22" src="/chat/c32491a6d2.webp"></button>
+          <button class="rx" data-v="eyes" aria-label="Eyes" aria-pressed="false"><img class="em" alt="" width="22" height="22" src="/chat/fe5a098fbf.webp"></button>
+          <button class="rx" data-v="party" aria-label="Party" aria-pressed="false"><img class="em" alt="" width="22" height="22" src="/chat/d3a18a4307.webp"></button>
+        </span>
+      </div>
+      <p class="fb" aria-live="polite"></p>
+      <div class="relwrap">
+      <div class="related">
+        <button class="rel pop" data-q="How did Project Files reach 40% of customers?"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>How did Project Files reach 40% of customers?</span></button>
+        <button class="rel pop" data-q="Why did only 15% accept the AI review?"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>Why did only 15% accept the AI review?</span></button>
+        <button class="rel pop" data-q="How did you get into design?"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>How did you get into design?</span></button>
+      </div>
+      </div>
+    </div>
+
+    <div class="view" data-view="work" role="tabpanel" id="panel-work" aria-labelledby="tab-work" hidden><div class="cards">__CARDS2__</div></div>
+
+    <div class="view" data-view="links" role="tabpanel" id="panel-links" aria-labelledby="tab-links" hidden>
+      <div class="links">
+        <a class="lk" href="mailto:hello@example.com">Email<span>hello@example.com</span></a>
+        <a class="lk" href="#">Résumé<span>PDF</span></a>
+        <a class="lk" href="#">LinkedIn<span>linkedin.com</span></a>
+      </div>
+      <p class="credit">Animated emoji from <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto</a>, CC BY 4.0.</p>
+    </div>
+  </article>
+</template>
