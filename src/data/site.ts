@@ -27,7 +27,7 @@ export const site = {
  * about crawlers — they read the HTML directly and never meet the form — so
  * keeping the site out of search results takes this as well as the lock.
  */
-export const launched = false;
+export const launched = true;
 
 /** Auto-scroll speed for the home work column, px/second. 0 disables. */
 export const autoScrollSpeed = 18;

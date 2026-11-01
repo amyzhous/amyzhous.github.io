@@ -10,6 +10,9 @@
  *
  * The password is stored as a SHA-256 hash rather than plain text, so the
  * word itself is not sitting in the page source.
+ *
+ * Nothing here renders once the site is launched: `launched` in site.ts
+ * takes the lock off and lets crawlers in. Flip it back to re-lock.
  */
 
 /** SHA-256 of the password. Regenerate with: printf 'word' | shasum -a 256 */
@@ -24,8 +27,11 @@ const KEY = 'portfolio-open';
  * Runs in the document head, before anything paints, so a locked page never
  * flashes its content. Everything it needs is inline for the same reason.
  */
-export const headScript = (): string => `
-${launched ? '' : '<meta name="robots" content="noindex, nofollow">'}
+export const headScript = (): string =>
+  launched
+    ? ''
+    : `
+<meta name="robots" content="noindex, nofollow">
 <style>
   html.is-locked body > *:not(.gate) { display: none !important; }
   html:not(.is-locked) .gate { display: none; }
@@ -116,7 +122,10 @@ ${launched ? '' : '<meta name="robots" content="noindex, nofollow">'}
 </script>`;
 
 /** The form itself. Real elements, labelled, with a live error region. */
-export const markup = (): string => `
+export const markup = (): string =>
+  launched
+    ? ''
+    : `
 <div class="gate" data-gate>
   <div class="gate-inner">
     <p class="gate-lede">Hey, this page is locked.<br>Enter password to enter.</p>
