@@ -857,7 +857,7 @@ blockquote.pull footer {
   flex-direction: column;
   gap: 32px;
   width: 100%;
-  max-width: 700px;
+  max-width: 740px;
 }
 
 .cs-wide {
@@ -897,9 +897,9 @@ blockquote.pull footer {
 .cs-t1 {
   margin: 0;
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 1.18;
+  font-weight: var(--serif-display);
+  font-size: clamp(32px, 3.6vw, 48px);
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -909,8 +909,8 @@ blockquote.pull footer {
      text with a label over them, so they are set exactly as body text: the
      label does the ranking, not a second size or a second ink. */
   margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.62;
   color: var(--body);
 }
 
@@ -927,9 +927,9 @@ blockquote.pull footer {
 .cs-t3 {
   margin: 0;
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 1.3;
+  font-weight: var(--serif-weight);
+  font-size: clamp(23px, 2.4vw, 30px);
+  line-height: 1.26;
   letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -943,8 +943,8 @@ blockquote.pull footer {
 
 .cs-body {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.62;
   color: var(--body); /* 11.2:1 */
 }
 
@@ -986,8 +986,8 @@ blockquote.pull footer {
 
 .cs-meta dd {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.62;
   color: var(--body);
 }
 
@@ -1028,8 +1028,8 @@ blockquote.pull footer {
 .cs-ph-note {
   margin: 0;
   max-width: 56ch;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.62;
   color: var(--body);
 }
 
@@ -1049,9 +1049,42 @@ blockquote.pull footer {
   line-height: 1.5;
 }
 
+/* the same link row the chat view uses: pill, icon, label */
+.cs-foot .i {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+.cs-foot .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 32px;
+  padding: 0 13px;
+  border-radius: 999px;
+  color: var(--body);
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+@media (hover: hover) {
+  .cs-foot .pill:hover {
+    background: var(--row-hover);
+    color: var(--text);
+  }
+}
+
 .cs-foot {
   display: flex;
-  gap: 24px;
+  gap: 4px;
   margin-top: 32px;
   padding: 20px 0 48px;
   border-top: 1px solid var(--rule);

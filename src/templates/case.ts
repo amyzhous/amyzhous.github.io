@@ -145,9 +145,9 @@ export const render = (slug: Slug): string => {
   </div>
 
   <footer class="cs-wide cs-foot">
-    <a class="u" href="mailto:${esc(site.email)}">Email</a>
-    <a class="u" href="${esc(site.linkedinHref)}" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="u" href="${esc(site.resumeHref)}" target="_blank" rel="noopener">Resume</a>
+    <a class="pill ghost" href="mailto:${esc(site.email)}"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="M2.5 4.5 8 9l5.5-4.5"/></svg>Email</a>
+    <a class="pill ghost" href="${esc(site.resumeHref)}" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Resume</a>
+    <a class="pill ghost" href="${esc(site.linkedinHref)}" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M7 9a3 3 0 0 0 4.2 0l2-2a3 3 0 0 0-4.2-4.2l-.6.6"/><path d="M9 7a3 3 0 0 0-4.2 0l-2 2A3 3 0 0 0 7 13.2l.6-.6"/></svg>LinkedIn</a>
   </footer>
 
 </div>`;
