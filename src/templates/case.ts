@@ -119,7 +119,7 @@ export const render = (slug: Slug): string => {
         ${map(
           c.stats,
           (s) => `<div>
-          ${s.figure ? `<p class="cs-t2">${esc(s.figure)}</p>` : ''}
+          ${s.figure ? `<p class="cs-fig">${esc(s.figure)}</p>` : ''}
           <p class="cs-body">${esc(s.label)}</p>
         </div>`,
         )}

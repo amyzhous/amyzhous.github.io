@@ -1,8 +1,8 @@
 :root{
   --bg:#fcfcfa; --side:#f6f5f2; --ink:#1b1a18; --ink-2:#5b5954; --ink-3:#73706a;
   --rule:#e8e7e3; --panel:#f2f1ee; --bar:#e3e2de; --hover:#efeeea;
-  --serif:"Newsreader","Iowan Old Style",Georgia,serif;
-  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:'Libre Baskerville','Iowan Old Style',Georgia,serif;
+  --sans:Inter,'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   color-scheme:light; box-sizing:border-box;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161615; --side:#1b1b19; --ink:#ecebe7; --ink-2:#b1afa9; --ink-3:#8f8d87; --rule:#2b2a27; --panel:#1f1e1c; --bar:#2c2b28; --hover:#232220; --field:#4a4844; color-scheme:dark;}}
@@ -93,7 +93,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .src .s-bot{display:flex; align-items:center; gap:6px; color:var(--ink-3); font-size:11px}
 .dot{width:16px; height:16px; border-radius:50%; background:var(--ink); color:var(--bg); font:600 9px/16px var(--sans); text-align:center; flex:none}
 
-.ans{font-family:var(--serif); font-size:19px; line-height:1.6; margin:22px 0 0}
+.ans{font-size:19px; line-height:1.6; margin:22px 0 0}
 .ans+.ans{margin-top:12px}
 .cite{display:inline-grid; place-items:center; min-width:17px; height:17px; padding:0 4px; margin-left:3px; border-radius:5px; background:var(--panel); font:500 10.5px var(--sans); color:var(--ink-2); vertical-align:3px; transition:background .15s,color .15s}
 .cite:hover{background:var(--ink); color:var(--bg)}
@@ -110,7 +110,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .meta .l{flex:1; min-width:0}
 .tag{font-size:11.5px; color:var(--ink-3); display:flex; align-items:center; gap:7px}
 .meta h3{font-family:var(--serif); font-size:22px; font-weight:400; line-height:1.2; margin:6px 0 4px}
-.stat{font-family:var(--serif); font-size:15.5px; color:var(--ink-2); margin:0}
+.stat{font-size:15.5px; color:var(--ink-2); margin:0}
 .go{font-size:12px; color:var(--ink-2); display:inline-flex; gap:6px; align-items:center; white-space:nowrap}
 .go svg{transition:transform .2s}
 .card:hover .go{color:var(--ink)} .card:hover .go svg{transform:translateX(3px)}
@@ -151,7 +151,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .lk:hover{color:var(--ink)} .lk:hover span{color:var(--ink-2)}
 
 .related{display:flex; flex-direction:column}
-.rel{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 2px; border-top:1px solid var(--rule); font-family:var(--serif); font-size:17px; text-align:left; color:var(--ink); transition:color .15s}
+.rel{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 2px; border-top:1px solid var(--rule); font-size:17px; text-align:left; color:var(--ink); transition:color .15s}
 .rel:last-child{border-bottom:1px solid var(--rule)}
 .rel svg{color:var(--ink-3); transition:color .15s, transform .2s}
 .rel:hover svg{color:var(--ink); transform:rotate(90deg)}
@@ -375,16 +375,16 @@ canvas.game.snake{aspect-ratio:160/96; max-width:520px; margin:0 auto; touch-act
 .cl-side{position:sticky; top:64px; align-self:start}
 .cl-name{font-family:var(--serif); font-weight:400; font-size:21px; margin:0}
 .cl-role{font-size:11.5px; color:var(--ink-2); margin:6px 0 0}
-.cl-bio{font-family:var(--serif); font-size:19px; line-height:1.52; margin:28px 0 0; max-width:280px}
+.cl-bio{font-size:19px; line-height:1.52; margin:28px 0 0; max-width:280px}
 .cl-label{font-size:11.5px; font-weight:400; color:var(--ink-2); margin:40px 0 10px}
 .cl-work{list-style:none; margin:0; padding:0; border-top:1px solid var(--rule)}
 .cl-work li{border-bottom:1px solid var(--rule)}
 .cl-work li:last-child{border-bottom:0}
-.cl-work button{display:flex; align-items:baseline; gap:14px; width:100%; padding:9px 0; font-family:var(--serif); font-size:17px; color:var(--ink-3); text-align:left; transition:color .2s}
+.cl-work button{display:flex; align-items:baseline; gap:14px; width:100%; padding:9px 0; font-size:17px; color:var(--ink-3); text-align:left; transition:color .2s}
 .cl-work .n{font-family:var(--sans); font-size:11px; width:14px}
 .cl-work button:hover,.cl-work button.on{color:var(--ink)}
 .cl-links{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px}
-.cl-links a{font-family:var(--serif); font-size:17px}
+.cl-links a{font-size:17px}
 .cl-links a:hover{text-decoration:underline; text-underline-offset:3px}
 .cl-main{display:flex; flex-direction:column; gap:20px; min-width:0}
 .cl-case{scroll-margin-top:64px}
@@ -408,7 +408,7 @@ canvas.game.snake{aspect-ratio:160/96; max-width:520px; margin:0 auto; touch-act
 .cs{min-width:0}
 .cs .cs-kicker{font-family:var(--sans); font-size:12px; line-height:1.4; color:var(--ink-3); margin:0}
 .cs-title{font-family:var(--serif); font-weight:400; font-size:clamp(30px,4vw,42px); line-height:1.12; letter-spacing:-.01em; margin:10px 0 0; outline:none}
-.cs .cs-sum{font-family:var(--serif); font-size:20px; line-height:1.5; color:var(--ink-2); margin:16px 0 0}
+.cs .cs-sum{font-size:20px; line-height:1.5; color:var(--ink-2); margin:16px 0 0}
 .cs-meta{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:32px 0 0; padding:16px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
 .cs-meta dt{font-size:11.5px; color:var(--ink-3)}
 .cs-meta dd{margin:4px 0 0; font-size:13.5px}
@@ -417,7 +417,7 @@ canvas.game.snake{aspect-ratio:160/96; max-width:520px; margin:0 auto; touch-act
 .cs-hero figcaption{font-size:12.5px; color:var(--ink-3); margin-top:10px}
 .cs section{margin-top:56px; scroll-margin-top:72px}
 .cs h2{font-size:13px; font-weight:600; letter-spacing:.01em; margin:0 0 14px}
-.cs p,.cs li{font-family:var(--serif); font-size:18px; line-height:1.6}
+.cs p,.cs li{font-size:18px; line-height:1.6}
 .cs p{margin:0 0 14px}
 .cs ul{margin:0; padding-left:20px}
 .cs li{margin-bottom:8px}
@@ -429,12 +429,12 @@ canvas.game.snake{aspect-ratio:160/96; max-width:520px; margin:0 auto; touch-act
 .cs-dec dl{margin:0; display:grid; gap:8px}
 .cs-dec dl div{display:grid; grid-template-columns:72px 1fr; gap:12px}
 .cs-dec dt{font-size:12px; color:var(--ink-3); padding-top:4px}
-.cs-dec dd{margin:0; font-family:var(--serif); font-size:17px; line-height:1.55}
+.cs-dec dd{margin:0; font-size:17px; line-height:1.55}
 .cs-shot .ph,.cs-hero .ph{color:var(--ink-2)}
 .cs-shot{margin-top:16px; aspect-ratio:16/8; border-radius:10px; background:var(--panel); display:grid; place-items:center; font-size:12.5px}
 .cs-stats{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px}
 .cs-stats div{flex:1 1 140px; border:1px solid var(--rule); border-radius:12px; padding:16px 18px}
-.cs-stats b{display:block; font-family:var(--serif); font-weight:400; font-size:34px; line-height:1}
+.cs-stats b{display:block; font-weight:400; font-size:34px; line-height:1}
 .cs-stats span{display:block; font-size:12.5px; color:var(--ink-2); margin-top:8px}
 .cs-foot{margin-top:72px; padding-top:28px; border-top:1px solid var(--rule)}
 .cs-label{font-family:var(--sans)!important; font-size:12px!important; color:var(--ink-3); margin:0 0 12px!important}

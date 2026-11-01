@@ -43,7 +43,7 @@ export const headScript = (): string =>
     place-items: center;
     padding: 24px;
     background: #FDFDFC;
-    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    font-family: Inter, 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
   }
   .gate-inner { width: 100%; max-width: 300px; }
   .gate-label {
@@ -54,7 +54,7 @@ export const headScript = (): string =>
   }
   .gate-lede {
     margin: 0 0 26px;
-    font-family: Newsreader, Georgia, serif;
+    font-family: 'Libre Baskerville', Georgia, serif;
     font-weight: 400;
     font-size: 19px;
     line-height: 1.45;

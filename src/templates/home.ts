@@ -26,7 +26,7 @@ const card = (w: (typeof work)[number], ghost: boolean, first: boolean): string 
     ? `<div class="plate">${drawingRegister()}</div>`
     : `<figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">${esc(w.heroNote ?? '')}</p></figure>`}
   <div class="proj-foot">
-    <p class="serif proj-metric">${esc(w.metric)}</p>
+    <p class="proj-metric">${esc(w.metric)}</p>
     <span class="spacer"></span>
     <span class="go">Open case study ${arrow}</span>
   </div>
@@ -57,7 +57,7 @@ export const render = (): string => `
     <p class="serif rail-name in" style="--d: 0ms">${esc(site.name)}</p>
     <p class="lbl rail-role in" style="--d: 60ms">${esc(site.roleLabel)}</p>
 
-    <p class="serif rail-lede in" style="--d: 120ms">${esc(site.lede)}</p>
+    <p class="rail-lede in" style="--d: 120ms">${esc(site.lede)}</p>
 
     <p class="lbl rail-label in" style="--d: 180ms">Work</p>
     <nav class="rail-index in" style="--d: 240ms" aria-label="Work">
@@ -71,7 +71,7 @@ export const render = (): string => `
     </nav>
 
     <p class="lbl rail-label in" style="--d: 300ms">Elsewhere</p>
-    <p class="serif rail-elsewhere in" style="--d: 360ms">
+    <p class="rail-elsewhere in" style="--d: 360ms">
       <a class="u" href="mailto:${esc(site.email)}">Email</a><br>
       <a class="u" href="${esc(site.resumeHref)}">Resume</a><br>
       <a class="u" href="${esc(site.linkedinHref)}">LinkedIn</a>
