@@ -26,59 +26,6 @@
 
 /* ── rail ── */
 
-/* View switch. Sits where the chat view puts its own, so the control does
-   not jump when you cross between them — but flat, like everything here. */
-.viewtgl {
-  position: fixed;
-  top: 26px;
-  right: 28px;
-  z-index: 30;
-  display: flex;
-  gap: 2px;
-  padding: 3px;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  background: var(--plate);
-  font-size: 12.5px;
-}
-
-.viewtgl > * {
-  display: inline-flex;
-  align-items: center;
-  height: 28px;
-  padding: 0 12px;
-  border-radius: 999px;
-  color: var(--muted);
-  text-decoration: none;
-  transition:
-    background 150ms,
-    color 150ms;
-}
-
-.viewtgl-on {
-  background: var(--ground);
-  color: var(--text);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
-}
-
-@media (hover: hover) {
-  .viewtgl a:hover {
-    color: var(--text);
-  }
-}
-
-.viewtgl a:focus-visible {
-  color: var(--text);
-}
-
-@media (max-width: 900px) {
-  .viewtgl {
-    position: static;
-    align-self: start;
-    margin-bottom: 22px;
-  }
-}
-
 .rail-name {
   margin: 0 0 4px;
   font-size: 22px;
