@@ -26,26 +26,45 @@ const threadButtons = (): HTMLElement[] =>
   Array.from(document.querySelectorAll<HTMLElement>('.side .th'));
 
 /** ── arriving: open the thread the case study sent us to ── */
-const openRequestedThread = (): void => {
+
+/** Resolves once the bundle has rendered its landing answer, or gives up. */
+const settled = (): Promise<void> =>
+  new Promise((resolve) => {
+    if (document.querySelector('.entry')) return resolve();
+    const stop = setTimeout(finish, 2000);
+    const observer = new MutationObserver(() => {
+      if (document.querySelector('.entry')) finish();
+    });
+    function finish(): void {
+      clearTimeout(stop);
+      observer.disconnect();
+      resolve();
+    }
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+
+const openRequestedThread = async (): Promise<void> => {
   const slug = new URLSearchParams(location.search).get('thread');
   const question = slug ? QUESTION_BY_SLUG[slug] : undefined;
   if (!question) return;
 
+  // Leave the address bar clean, so a reload does not re-trigger this.
+  history.replaceState(null, '', location.pathname);
+
+  // The bundle renders its landing answer during boot; asking before that
+  // lands finishes gets the new answer wiped when it does.
+  await settled();
+
   const button = threadButtons().find((b) => b.dataset.q === question);
   if (!button) return;
 
-  // The bundle has already rendered its landing answer by now. Note what is
-  // on screen, let its own click handler ask the question — which is what
-  // runs the typing and streaming — then drop what was there before, so the
-  // page opens on this project rather than on "Who's Amy?".
   const existing = Array.from(document.querySelectorAll('.entry'));
+  // Its own click handler is what runs the typing and streaming.
   button.click();
-  const asked = Array.from(document.querySelectorAll('.entry')).length > existing.length;
-  if (asked) existing.forEach((el) => el.remove());
+  const added = document.querySelectorAll('.entry').length > existing.length;
+  if (added) existing.forEach((el) => el.remove());
 
-  document.querySelector('.scroller, .col')?.scrollTo?.({ top: 0 });
-  // Leave the address bar clean, so a reload does not re-trigger it.
-  history.replaceState(null, '', location.pathname);
+  document.querySelector('.scroller')?.scrollTo?.({ top: 0 });
 };
 
 /** ── leaving: go back to the case study this thread is about ── */
@@ -70,7 +89,7 @@ const wireClassicLink = (): void => {
 
 const start = (): void => {
   wireClassicLink();
-  openRequestedThread();
+  void openRequestedThread();
 };
 
 // While the lock is up the page is display:none and nothing should animate
