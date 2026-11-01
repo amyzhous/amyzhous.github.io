@@ -51,7 +51,6 @@ export const render = (slug: Slug): string => {
 <main class="frame">
   <div class="inner">
     <div class="case-title-block">
-      <p class="lbl lbl-wide case-kicker">${esc(c.n)} &nbsp;${esc(c.kicker)}</p>
       <h1 class="serif case-title">${esc(c.headline)}</h1>
       <p class="body case-standfirst">${esc(c.standfirst)}</p>
       <p class="serif case-metrics">${esc(c.metrics)}</p>

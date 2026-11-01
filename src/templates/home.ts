@@ -19,7 +19,7 @@ const card = (w: (typeof work)[number], ghost: boolean, first: boolean): string 
   }>
   <div class="proj-kicker">
     <span class="lbl proj-no">${esc(w.n)}</span>
-    <span class="lbl">${esc(w.kicker)}</span>
+    <span class="lbl">${esc(w.short)}</span>
   </div>
   <h2 class="serif proj-title"><span class="title">${esc(w.title)}</span></h2>
   ${w.figure === 'register'

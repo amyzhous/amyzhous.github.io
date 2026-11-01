@@ -72,7 +72,7 @@ export const markup = (): string => `
     <div class="view" data-view="answer" role="tabpanel" id="panel-answer" aria-labelledby="tab-answer">
       <div class="status"><span class="pix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="shimmer">Preheating the oven</span></div>
       <p class="ans" data-stream>I design the software construction teams run their day on, and I stay on it until it ships and the number moves.</p>
-      <p class="ans" data-stream>Recent work: turning a file-management brief into a paid product for managing drawings {1}, rethinking how teams get to value {2}, making construction data useful without knowing what to ask {3}, and letting teams add a teammate before billing catches up {4}.</p>
+      <p class="ans" data-stream>Recent work: turning a file-management brief into a new paid product for managing construction drawings {1}, rethinking activation across project setup, reusable workflows, and team onboarding {2}, exploring a visual-first approach to construction analytics {3}, and designing provisional access for teams that need to move quickly without losing control over paid seats {4}.</p>
 
 
 

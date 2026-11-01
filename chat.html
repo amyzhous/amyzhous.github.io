@@ -24,6 +24,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <script>
+    /* GitHub Pages caches HTML for several minutes while hashed assets come
+       and go, so a browser can hold a page whose stylesheet no longer
+       exists and render it raw. If ours did not load, fetch the page again
+       on a fresh URL, once. */
+    addEventListener('load', function () {
+      var ok = Array.prototype.some.call(document.styleSheets, function (s) {
+        return (s.href || '').indexOf('/assets/') > -1;
+      });
+      if (ok || /[?&]fresh=/.test(location.search)) return;
+      location.replace(location.pathname + '?fresh=' + Date.now());
+    });
+    if (/[?&]fresh=/.test(location.search)) {
+      history.replaceState(null, '', location.pathname);
+    }
+  </script>
 <!--head-->
 <script type="module" src="/src/scripts/chat.ts"></script>
 <script type="module" src="/src/scripts/chat-view.ts"></script>
