@@ -9,7 +9,6 @@
  * typecheck` keeps covering the code this project actually authors. Replace
  * the whole file when a new bundle arrives rather than editing it. */
 import '../styles/chat.css';
-import '../styles/chat-overrides.css';
 
 (function(){
   const arrow='<svg class="lu-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>';
@@ -23,7 +22,7 @@ import '../styles/chat-overrides.css';
   ];
   const metrics={c1:[['Drawings','58K+'],['Customers using it','40%']],c2:[['Opened','83%'],['Accepted','15%','down']],c3:[['Flows','4 → 1'],['Roles served','4']]};
   const icons={c1:'<path d="M3 2.5h6.5L13 6v7.5H3z"/><path d="M9.5 2.5V6H13"/>',c2:'<path d="M8 2v2.5M8 11.5V14M2 8h2.5M11.5 8H14"/><circle cx="8" cy="8" r="3"/>',c3:'<rect x="2.5" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="9" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="2.5" y="9" width="4.5" height="4.5" rx="1"/><rect x="9" y="9" width="4.5" height="4.5" rx="1"/>'};
-  const card=(c,withId,fig=true)=>'<a class="card rc pop"'+(withId?' id="'+c.id+'"':'')+' href="/'+c.slug+'.html">'
+  const card=(c,withId,fig=true)=>'<a class="card rc pop"'+(withId?' id="'+c.id+'"':'')+' href="#'+c.slug+'">'
     +'<div class="rc-h"><span class="rc-name">'+c.name+'</span></div>'
     +'<h3>'+c.title+'</h3>'
     +(fig?'<div class="fig">'+c.fig+'</div>':'')
@@ -456,7 +455,6 @@ import '../styles/chat-overrides.css';
       // Classic is the real site at '/', not the view this bundle shipped
       // with. The stub #classic element stays so the queries above still
       // resolve; it is never shown.
-      if(m==='classic'){ location.href='/'; return; }
 
       const isC=m==='classic';
       document.body.classList.toggle('classic-mode',isC);
@@ -466,7 +464,7 @@ import '../styles/chat-overrides.css';
       if(write){ try{ localStorage.setItem('viewMode',m); }catch(e){} history.replaceState(null,'','#'+m); }
     }
     btns.forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode,true)));
-    addEventListener('hashchange',()=>{ const h=location.hash.slice(1); if(h==='classic'){ location.href='/'; return; } if(h==='chat') setMode(h,false); });
+    addEventListener('hashchange',()=>{ const h=location.hash.slice(1); if(h==='classic'||h==='chat') setMode(h,false); });
     let start=location.hash.slice(1);
     if(start!=='classic'&&start!=='chat'){ try{ start=localStorage.getItem('viewMode')||'chat'; }catch(e){ start='chat'; } }
     setMode(start,false);
@@ -543,8 +541,6 @@ import '../styles/chat-overrides.css';
     page.addEventListener('click',e=>{ const b=e.target.closest('[data-sec]'); if(b){ document.getElementById(b.dataset.sec).scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); } });
     function route(){
       const h=location.hash.slice(1), c=bySlug[h];
-      // Case studies live in the classic view; this bundle's own go unused.
-      if(c){ location.href='/'+c.slug+'.html'; return; }
       if(h==='chat'||h==='classic') lastMode=h;
       if(c){
         if(active) active.finish();
