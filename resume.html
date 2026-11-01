@@ -21,10 +21,12 @@
         return (s.href || '').indexOf('/assets/') > -1;
       });
       if (ok || /[?&]fresh=/.test(location.search)) return;
-      location.replace(location.pathname + '?fresh=' + Date.now());
+      var q = location.search ? location.search + '&' : '?';
+      location.replace(location.pathname + q + 'fresh=' + Date.now());
     });
     if (/[?&]fresh=/.test(location.search)) {
-      history.replaceState(null, '', location.pathname);
+      var keep = location.search.replace(/[?&]fresh=\d+/, '').replace(/^&/, '?');
+      history.replaceState(null, '', location.pathname + (keep === '?' ? '' : keep));
     }
   </script>
   
