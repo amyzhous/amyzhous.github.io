@@ -13,8 +13,8 @@
   order: 1;
 }
 
-/* Centred in the same 52px band as the classic headers, and on its own
-   bar's right margin rather than the viewport edge. */
+/* The same position the classic pages use: 20px in from the right edge,
+   centred in the 52px header band. */
 .viewtgl {
   top: 8px;
   right: 20px;

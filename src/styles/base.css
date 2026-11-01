@@ -112,9 +112,11 @@ a {
   }
 }
 
-/* View switch. Fixed, but aligned to the content container's right edge
-   rather than the viewport's, so it sits on the same margin as everything
-   else on the page, and centred in the same 52px band the headers use. */
+/* View switch. One position, everywhere: 20px in from the right edge of the
+   window, centred in the 52px band both views use for their header. It is
+   deliberately not aligned to the content container — that would move it
+   whenever the layout underneath it changed, and crossing between Classic
+   and Chat should not make the control jump. */
 .viewtgl-rail {
   position: fixed;
   top: 0;
@@ -123,10 +125,8 @@ a {
   z-index: 30;
   display: flex;
   justify-content: flex-end;
-  max-width: var(--frame);
   height: 52px;
-  margin: 0 auto;
-  padding: 0 44px;
+  padding: 0 20px;
   pointer-events: none;
 }
 
@@ -171,11 +171,7 @@ a {
   color: var(--text);
 }
 
-@media (max-width: 820px) {
-  .viewtgl-rail {
-    padding: 0 24px;
-  }
-}
+
 
 /* Figure plate: never a decorative shape, always a drawn diagram. */
 .plate {
