@@ -79,3 +79,27 @@
   gap: 6px;
   margin-top: 10px;
 }
+
+/* an answer whose whole content is a list has no lead paragraph */
+.ans:empty {
+  display: none;
+}
+
+/* the fun-facts list: the answer's own voice, set as a list rather than a
+   run-on paragraph */
+.facts {
+  margin: 18px 0 0;
+  padding: 0 0 0 20px;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--ink-2);
+}
+
+.facts li {
+  margin: 0 0 8px;
+}
+
+.facts li:last-child {
+  margin-bottom: 0;
+}
