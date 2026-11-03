@@ -30,126 +30,134 @@
     }
   </script>
   
-  <title>Construction Data &amp; AI — case study</title>
+  <title>Construction Data &amp; AI · Amy Zhou</title>
   <meta name="description" content="Exploring a visual-first approach to construction analytics, with AI available when users need to go deeper.">
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
   <script type="module" crossorigin src="/assets/view-pref-DPK6K2y5.js"></script>
-  <script type="module" crossorigin src="/assets/case-B1mSRA6v.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/case-CPScp_5J.css">
-  <link rel="stylesheet" crossorigin href="/assets/motion-CmomtH7M.css">
+  <script type="module" crossorigin src="/assets/case-BmHv21w2.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/case-C6lC9eXt.css">
+  <link rel="stylesheet" crossorigin href="/assets/tokens-B7SynE8w.css">
 </head>
 <body>
 
-<div class="cs">
-
-  <div class="cs-m cs-bar">
-    <p class="cs-crumb"><a class="u" href="/classic.html" data-home>← All work</a> <span>/</span> Construction Data &amp; AI</p>
+<div class="layout">
+<aside class="rail" aria-label="Case study navigation">
+    <p class="crumb"><a class="backlink" href="/classic.html" data-home><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a></p>
+    <nav aria-label="Contents"><ol class="toc">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#why">Why reporting mattered</a></li>
+      <li><a href="#mcp">What MCP revealed</a></li>
+      <li><a href="#direction">Product direction</a></li>
+      <li><a href="#custom">Making reporting customizable</a></li>
+      <li><a href="#investigate">Moving from insight to investigation</a></li>
+      <li><a href="#create">Creating reports through conversation</a></li>
+      <li><a href="#impact">Why it matters</a></li>
+    </ol></nav>
     <nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
       <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
       <button type="button" data-mode="chat" aria-pressed="false">Chat</button>
     </nav>
-  </div>
+  </aside>
 
-  <div class="cs-wide cs-hero">
-<figure class="cs-ph">
-  <p class="cs-ph-kind">HERO</p>
-  <p class="cs-ph-note">Full-width dashboard with meaningful construction metrics, charts, and a contextual AI panel.</p>
-</figure></div>
-
-  <div class="cs-m">
-    <h1 class="cs-t1">What if reporting didn&#39;t require knowing what to ask?</h1>
-
-    <dl class="cs-meta">
-      <div><dt class="cs-label">Role</dt><dd>Product concept and interaction design exploration</dd></div>
+  <main>
+    <div class="m-crumb"><a class="backlink" href="/classic.html" data-home><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a><nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
+      <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
+      <button type="button" data-mode="chat" aria-pressed="false">Chat</button>
+    </nav></div>
+    <p class="kicker">AI & Analytics · Part3</p>
+    <h1>Construction Data & Insights</h1>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Product Design Lead</dd></div>
+      <div><dt>Team</dt><dd>Product, Engineering, Leadership</dd></div>
+      <div><dt>Timeline</dt><dd>Q4 2026</dd></div>
     </dl>
 
-    <div class="cs-block">
-      <p class="cs-label">Overview</p>
-      <p class="cs-t2">Exploring a visual-first approach to construction analytics, with AI available when users need to go deeper.</p>
-      <div class="cs-stats">
-        <div>
-          
-          <p class="cs-body">Product direction proposed to leadership</p>
-        </div><div>
-          
-          <p class="cs-body">Internal dashboard builder demonstrated</p>
-        </div>
+    <section id="overview">
+      <p>Architects use Part3 to manage construction administration, from reviewing submittals and responding to RFIs to tracking changes and drawing revisions. These workflows generate valuable information about project progress, turnaround times, and outstanding work.</p>
+      <p>But while Part3 helped teams manage their work, customers had limited control over how they could analyze and report on it.</p>
+      <p>I identified an opportunity to turn that data into more useful insights, defining a customizable dashboard experience with AI-assisted reporting.</p>
+      <div class="slot r169"><span>Hero: customizable construction analytics dashboard</span></div>
+    </section>
+
+    <section id="why">
+      <h2>Why reporting mattered</h2>
+      <p>Part3 already offered project dashboards and cross-project summaries, but reporting was largely predefined. Firms needed different information depending on their projects, teams, and responsibilities.</p>
+      <p>Customer requests revealed three recurring needs:</p>
+      <ul class="needs">
+        <li><i>01</i><b>Relevant metrics</b><span>Prioritize overdue work, turnaround times, and accountability instead of relying on fixed charts.</span></li>
+        <li><i>02</i><b>Cross-project visibility</b><span>Compare performance across teams, disciplines, and projects.</span></li>
+        <li><i>03</i><b>Flexible reporting</b><span>Create views tailored to specific needs and communicate results to leadership.</span></li>
+      </ul>
+      <p>These limitations often pushed customers toward spreadsheets, exports, and additional reporting tools.</p>
+      <p>For Part3, improving analytics offered an opportunity to support more of the decisions firms make beyond day-to-day document management.</p>
+      <div class="slot r21"><span>Existing dashboard and anonymized customer requests</span></div>
+    </section>
+
+    <section id="mcp">
+      <h2>What MCP revealed</h2>
+      <p>With expanded Postgres-backed data infrastructure, we introduced a Model Context Protocol (MCP) integration that enabled customers to analyze project information through external AI tools.</p>
+      <p>Early use cases included turnaround benchmarking, workload analysis, financial reporting, and performance dashboards.</p>
+      <p>These examples showed what more flexible reporting could offer, but accessing those insights still required technical setup and familiarity with external tools.</p>
+      <p><b>The opportunity was to bring that flexibility directly into Part3, without requiring customers to understand the technology behind it.</b></p>
+      <div class="slot r21"><span>Project data → MCP reporting → in-product dashboard</span></div>
+    </section>
+
+    <section id="direction">
+      <h2>Product direction</h2>
+      <p>The challenge was balancing flexibility with accessibility.</p>
+      <p>A chat-first experience could support complex questions but required users to know what to ask. A traditional dashboard was familiar but couldn't accommodate every firm's reporting needs.</p>
+      <p>Working across Product and Engineering, I advocated for a visual-first approach: customizable dashboards that showed useful information immediately, with AI available to investigate results and create reports.</p>
+      <p>This gave AI a specific purpose. Rather than generating the numbers, AI would reduce the effort needed to explore and organize data that Part3 already held.</p>
+      <div class="slot r21"><span>Dashboard → investigate → create</span></div>
+    </section>
+
+    <section id="custom">
+      <p class="eyebrow">Design decisions · 01</p>
+      <h2>Making reporting customizable</h2>
+      <p><b>Hypothesis:</b> Giving customers control over their reporting would increase its relevance across different roles, encouraging repeat use and reducing reliance on manual workarounds.</p>
+      <p><b>Approach:</b> I explored suggested charts with configurable metrics, groupings, filters, and layouts. Customers could build views around project performance or compare results across their organization.</p>
+      <p>Suggested charts reduced the effort required to get started, while customization allowed firms to measure what mattered to them.</p>
+      <p><b>Design outcome:</b> A flexible reporting experience that supported different needs without requiring customers to build everything from scratch.</p>
+      <div class="slot r169"><span>Animation: populated dashboard → add chart → configure → save</span></div>
+    </section>
+
+    <section id="investigate">
+      <p class="eyebrow">Design decisions · 02</p>
+      <h2>Moving from insight to investigation</h2>
+      <p><b>Hypothesis:</b> Connecting metrics to their underlying records would help customers investigate problems faster and make decisions with greater confidence.</p>
+      <p><b>Approach:</b> Building on our AI strategy discussions, I explored contextual actions that allowed users to ask questions about a chart, review a breakdown, and open supporting project records.</p>
+      <p>The key decision was to make answers verifiable. AI could help explain a trend, but customers needed access to the evidence behind it.</p>
+      <p><b>Design outcome:</b> A direct path from spotting a performance issue to investigating its underlying cause.</p>
+      <div class="slot r169"><span>Animation: chart → ask why → breakdown → source record</span></div>
+    </section>
+
+    <section id="create">
+      <p class="eyebrow">Design decisions · 03</p>
+      <h2>Creating reports through conversation</h2>
+      <p><b>Hypothesis:</b> Natural-language report creation would reduce the effort required for custom reporting, allowing more customers to answer questions independently.</p>
+      <p><b>Approach:</b> Working within Engineering's charting capabilities, I explored a workflow where customers could describe the report they needed, review the proposed chart, and add it to their dashboard.</p>
+      <p>AI would interpret the request and configure a supported visualization, while the underlying values came from Part3's data APIs.</p>
+      <p><b>Design outcome:</b> A simpler way to create reusable reports without relying on external tools or manually configuring every chart.</p>
+      <div class="slot r169"><span>Animation: request chart → preview → confirm → add to dashboard</span></div>
+    </section>
+
+    <section id="impact">
+      <h2>Why it matters</h2>
+      <p>MCP-powered reporting demonstrated how deeper access to construction data could support customer decisions.</p>
+      <div class="cases">
+        <div><h3>Ryder Architecture<span>Turnaround benchmarking</span></h3><p>Ryder used its project data to compare review times against an industry benchmark, demonstrating the value of reporting beyond standard project summaries.</p></div>
+        <div><h3>Parkin Architects<span>Financial visibility</span></h3><p>An MCP-powered dashboard surfaced outstanding pricing that informed the firm's project budget discussions. Parkin also wanted reporting to be more accessible to people across the firm.</p></div>
+        <div><h3>BWA<span>Software consolidation</span></h3><p>A performance benchmark showed BWA's turnaround times were 43% faster than peers. The analysis helped demonstrate the value of Part3 as the firm evaluated consolidating its construction administration software.</p></div>
       </div>
-      <p class="cs-note">The product was still in development at this stage, so customer adoption and effectiveness remain unmeasured.</p>
-    </div>
-  </div>
+      <p>These use cases showed that more accessible reporting could support performance reviews, financial decisions, and software investment.</p>
+      <p>The dashboard direction built on those findings, combining customizable views, source-backed investigation, and conversational reporting. For Part3, it created an opportunity to make advanced analytics useful to more customers and strengthen the platform's value across an entire firm.</p>
+    </section>
 
-  <div class="cs-m"><div class="cs-block" id="1-powerful-data-was-still-difficult-to-use">
-      <p class="cs-label">Problem</p>
-      <h2 class="cs-t3">Powerful data was still difficult to use.</h2>
-    </div>
-<p class="cs-body">Part3 already captured information about submittals, RFIs, reviews, and project activity. But turning that information into useful reporting wasn&#39;t straightforward.</p>
-<p class="cs-body">Advanced integrations and AI tools offered new possibilities, but they also assumed users knew what information to request.</p>
-<p class="cs-body">I proposed a different starting point: give users a useful view of their data first, then let them ask questions or build on it.</p></div>
-<div class="cs-wide">
-<figure class="cs-ph">
-  <p class="cs-ph-kind">STATIC</p>
-  <p class="cs-ph-note">Dashboard overview, highlighting useful default metrics and the contextual Ask entry point.</p>
-</figure></div><div class="cs-m"><div class="cs-block" id="2-start-with-something-people-can-understand">
-      <p class="cs-label">Solution</p>
-      <h2 class="cs-t3">Start with something people can understand.</h2>
-    </div>
-<p class="cs-body">Not every user wants to describe a report in a prompt.</p>
-<p class="cs-body">I explored a dashboard experience where project teams could browse suggested charts, choose what to measure, and adjust the grouping or time period.</p>
-<p class="cs-body">The interface makes those choices visible instead of hiding them inside a conversation.</p></div>
-<div class="cs-wide">
-<figure class="cs-ph">
-  <p class="cs-ph-kind">ANIMATION</p>
-  <p class="cs-ph-note">Browse charts → Configure measure and grouping → Add to dashboard.</p>
-</figure></div><div class="cs-m"><div class="cs-block" id="3-use-ai-to-investigate-not-replace-the-evidence">
-      <p class="cs-label">Solution</p>
-      <h2 class="cs-t3">Use AI to investigate, not replace the evidence.</h2>
-    </div>
-<p class="cs-body">Once someone spots a trend, the next question is often why it happened.</p>
-<p class="cs-body">I explored contextual questions directly from a chart, allowing users to examine a change and follow the answer back to the underlying project records.</p>
-<div class="cs-block">
-      <p class="cs-label">The decision</p>
-      <p class="cs-t2">The important distinction was between helping users interpret a question and giving them a result they could verify.</p>
-    </div></div>
-<div class="cs-wide">
-<figure class="cs-ph">
-  <p class="cs-ph-kind">HERO ANIMATION</p>
-  <p class="cs-ph-note">Select review-time trend → Ask why it increased → View breakdown → Open source record.</p>
-</figure></div>
-<div class="cs-wide">
-<figure class="cs-ph">
-  <p class="cs-ph-kind">STATIC CLOSE-UP</p>
-  <p class="cs-ph-note">AI answer beside its supporting records.</p>
-</figure></div><div class="cs-m"><div class="cs-block" id="4-let-people-create-without-learning-a-reporting-tool">
-      <p class="cs-label">Solution</p>
-      <h2 class="cs-t3">Let people create without learning a reporting tool.</h2>
-    </div>
-<p class="cs-body">Natural language offered another way to create charts. Rather than generating a final dashboard without review, the proposed interaction let users inspect the chart&#39;s scope and destination before adding it.</p></div>
-<div class="cs-wide">
-<figure class="cs-ph">
-  <p class="cs-ph-kind">STATIC</p>
-  <p class="cs-ph-note">Chat-generated chart preview, showing metric, grouping, date range, and confirmation.</p>
-</figure></div>
-<div class="cs-m"><p class="cs-body">The dashboard direction was presented to leadership and followed by an internal engineering preview. The implementation uses Part3&#39;s existing data APIs, with deterministic metrics rather than AI-generated numbers.</p>
-<p class="cs-body">The product was still in development at this stage, so customer adoption and effectiveness remain unmeasured.</p>
-<div class="cs-block">
-      <p class="cs-label">Reflection</p>
-      <p class="cs-t2">The opportunity: Make more of Part3&#39;s existing data useful to the people managing projects, without requiring them to become reporting experts.</p>
-    </div></div>
-
-  
-
-  <div class="cs-m cs-next">
-    <a class="u" href="/self-serve-billing.html">Next: Self-Serve Billing →</a>
-  </div>
-
-  <footer class="cs-m cs-foot">
-    <div class="cs-foot-row">
-    <a class="pill ghost" href="mailto:ayjzhou@gmail.com"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="M2.5 4.5 8 9l5.5-4.5"/></svg>Email</a>
-    <a class="pill ghost" href="/resume.html" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Resume</a>
-    <a class="pill ghost" href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M7 9a3 3 0 0 0 4.2 0l2-2a3 3 0 0 0-4.2-4.2l-.6.6"/><path d="M9 7a3 3 0 0 0-4.2 0l-2 2A3 3 0 0 0 7 13.2l.6-.6"/></svg>LinkedIn</a>
-    </div>
-  </footer>
+    <footer>
+      <a class="next" href="/self-serve-billing.html"><small>Next project</small><span>Self-Serve Billing →</span></a>
+      <div class="links"><a href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:ayjzhou@gmail.com">Email</a><a href="/resume.html" target="_blank" rel="noopener">Résumé</a></div>
+    </footer>
+  </main>
 
 </div>
 </body>
