@@ -103,9 +103,9 @@ p,li,dd,figcaption,.cap,.stats span,.points p,.learned p,.links,.next small{colo
 .features figcaption{color:var(--ink-2)}
 
 @media (max-width:900px){
-  .layout{grid-template-columns:1fr; gap:0; padding:0 20px}
+  .layout{grid-template-columns:1fr; gap:0; padding:52px 20px 0}
   .rail{display:none}
-  .m-crumb{display:block; position:sticky; top:0; z-index:5; padding-right:120px; background:var(--bg); padding:14px 0; border-bottom:1px solid var(--rule); font-size:13px; color:var(--ink-3)}
+  .m-crumb{display:block; position:sticky; top:0; z-index:5; background:var(--bg); padding:14px 0; border-bottom:1px solid var(--rule); font-size:13px; color:var(--ink-3)}
   .m-crumb a{color:var(--ink-2); text-decoration:underline; text-underline-offset:3px; display:inline-flex; min-height:32px; align-items:center}
   main{padding-top:0}
   h1{margin-top:28px}
@@ -240,6 +240,6 @@ section .stats + p{margin-top:24px}
 .viewtgl button[aria-pressed="true"]{background:var(--bg); color:var(--ink)}
 .viewtgl button:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
 @media (hover:hover){ .viewtgl button:hover{color:var(--ink)} }
-@media (max-width:900px){
-  .viewtgl button{height:32px}
+@media (pointer:coarse){
+  .viewtgl button{height:38px}
 }

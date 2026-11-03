@@ -392,8 +392,9 @@ canvas.game.snake{aspect-ratio:160/96; max-width:520px; margin:0 auto; touch-act
   .cl-wrap{grid-template-columns:1fr; gap:40px; padding:64px 18px 80px}
   .cl-side{position:static} .cl-bio{max-width:none}
   .cl-work button{min-height:44px; align-items:center}
-  .viewtgl{top:calc(8px + env(safe-area-inset-top,0px)); right:10px}
-  .viewtgl button{height:32px}
+  /* the switch holds the same place and target size as every other page */
+  .viewtgl{top:calc(8px + env(safe-area-inset-top,0px)); right:20px}
+  .viewtgl button{height:38px}
 }
 
 /* case study page */
