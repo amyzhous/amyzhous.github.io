@@ -1,0 +1,85 @@
+<aside class="rail" aria-label="Case study navigation">
+    <p class="crumb"><a class="backlink" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a></p>
+    <nav aria-label="Contents"><ol class="toc">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#why">Why billing mattered</a></li>
+      <li><a href="#direction">Product direction</a></li>
+      <li><a href="#two">Designing for two decision-makers</a></li>
+      <li><a href="#expiry">Managing provisional access</a></li>
+      <li><a href="#changed">What it changed</a></li>
+    </ol></nav>
+  </aside>
+
+  <main>
+    <p class="m-crumb"><a class="backlink" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a></p>
+    <p class="kicker">Monetization · Part3</p>
+    <h1>Self-Serve Billing</h1>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Product Design Lead</dd></div>
+      <div><dt>Team</dt><dd>Product, Engineering, Customer Operations</dd></div>
+      <div><dt>Timeline</dt><dd>Q2–Q3 2026</dd></div>
+    </dl>
+
+    <section id="overview">
+      <p class="hook">The person adding a teammate wasn't the person paying for the seat.</p>
+      <p>Customers could manage their projects independently, but expanding their teams still required support. I designed the self-serve experience to remove that dependency while giving firms control over additional spending.</p>
+      <div class="slot r169"><span>Hero: employee request and billing-admin approval</span></div>
+    </section>
+
+    <section id="impact">
+      <h2>Impact</h2>
+      <div class="stats three">
+        <div><b>~27%</b><span>Of Maxio-linked firms used self-service</span></div>
+        <div><b>29 sec</b><span>One firm's seat purchase, down from a multi-day process</span></div>
+        <div><b>7 : 1</b><span>Approval-to-purchase ratio</span></div>
+      </div>
+    </section>
+
+    <section id="why">
+      <h2>Why billing mattered</h2>
+      <p>When firms reached their seat limit, administrators encountered an overage warning, and additional access required coordination with internal operations and billing teams.</p>
+      <p>For customers, this delayed onboarding and made it harder to bring collaborators into active projects. It also created friction in self-led activation, where getting teams working is essential to reaching first value.</p>
+      <p>For the business, manual seat expansion increased operational overhead and introduced unnecessary friction at a natural point of growth.</p>
+      <p>The challenge was to remove that dependency without giving every administrator authority to approve additional spending.</p>
+    </section>
+
+    <section id="direction">
+      <h2>Product direction</h2>
+      <p>Our initial approach required billing approval before granting access. While it protected spending decisions, it also made an employee's ability to work dependent on the availability of an approver.</p>
+      <p>During implementation, we shifted to provision first, approve second. New members could begin working immediately while billing approval happened within a seven-day window.</p>
+      <p>This was more than a change in sequence. It separated access from purchasing approval, allowing teams to continue working while preserving financial oversight.</p>
+      <p>It also introduced a new permissions model where access could be provisional, approved, or downgraded. My focus was translating that model into an experience that worked for both employees and billing administrators.</p>
+      <div class="slot r21"><span>Approve-first vs. provision-first comparison</span></div>
+    </section>
+
+    <section id="two">
+      <p class="eyebrow">Design decisions · 01</p>
+      <h2>Designing for two decision-makers</h2>
+      <p>Employees and billing administrators had different responsibilities, so they needed different information.</p>
+      <p>I designed role-specific experiences that made those responsibilities explicit. Employees could understand their current access, approval status, and deadline. Billing administrators could review pending requests, assess their financial implications, and take action.</p>
+      <p>The goal was to keep approvals visible without making them a prerequisite for starting work.</p>
+      <div class="slot r169"><span>Animation: add teammate → provisional access → billing-admin approval</span></div>
+    </section>
+
+    <section id="expiry">
+      <p class="eyebrow">Design decisions · 02</p>
+      <h2>Managing provisional access</h2>
+      <p>Provision-first introduced an important tradeoff. Removing employees when approval expired could disrupt project collaboration, but leaving their access unchanged indefinitely would undermine financial controls.</p>
+      <p>We used a seven-day approval window, after which unapproved permissions automatically stepped down to Viewer.</p>
+      <p>The member remained on the project, and the request stayed open so approval could restore their original access without another invitation.</p>
+      <div class="slot r21"><span>Expired access: employee and billing-admin views</span></div>
+    </section>
+
+    <section id="changed">
+      <h2>What it changed</h2>
+      <p>Most recorded activity involved approving additional access rather than purchasing seats directly. This suggested that the approval experience was more central to how firms expanded their teams than checkout alone.</p>
+      <p>Self-serve billing moved routine seat expansion into the product, reducing reliance on manual operations and allowing customers to manage growth more independently.</p>
+      <p>For the business, it established a more scalable expansion process. For customers, it removed a dependency that could delay getting the right people onto a project.</p>
+    </section>
+
+    <footer>
+      <a class="next" href="#"><small>Next project</small><span>Project Files →</span></a>
+      <div class="links"><a href="#">LinkedIn</a><a href="mailto:hello@example.com">Email</a><a href="#">Résumé</a></div>
+    </footer>
+  </main>
