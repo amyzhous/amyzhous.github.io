@@ -74,10 +74,10 @@ export const markup = (): string => `
       <p class="ans" data-stream>I lead end-to-end design for complex digital products, from discovery through launch.</p>
       <p class="ans-label pop">Recent work</p>
       <ul class="recent pop">
-        <li><a href="#c1">Project Files</a> — 0→1 paid product for construction drawing management</li>
-        <li><a href="#c2">Activation &amp; Growth</a> — Activation strategy and product design</li>
-        <li><a href="#c3">Construction Data &amp; Insights</a> — Customizable dashboards and AI-assisted reporting</li>
-        <li><a href="#c4">Self-Serve Billing</a> — Self-serve subscription expansion for teams</li>
+        <li><a class="cite" href="#c1" data-jump="c1"><svg class="lu-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>Project Files</a> — 0→1 paid product for construction drawing management</li>
+        <li><a class="cite" href="#c2" data-jump="c2"><svg class="lu-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>Activation &amp; Growth</a> — Activation strategy and product design</li>
+        <li><a class="cite" href="#c3" data-jump="c3"><svg class="lu-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>Construction Data &amp; Insights</a> — Customizable dashboards and AI-assisted reporting</li>
+        <li><a class="cite" href="#c4" data-jump="c4"><svg class="lu-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>Self-Serve Billing</a> — Self-serve subscription expansion for teams</li>
       </ul>
 
 
@@ -87,7 +87,7 @@ export const markup = (): string => `
 
       <div class="tools foot pop">
         <a class="pill ghost" href="mailto:ayjzhou@gmail.com"><svg class="i i16" viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="M2.5 4.5 8 9l5.5-4.5"/></svg>Email</a>
-        <a class="pill ghost" href="/resume.html" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Resume</a>
+        <a class="pill ghost" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Resume</a>
         <a class="pill ghost" href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16"><path d="M7 9a3 3 0 0 0 4.2 0l2-2a3 3 0 0 0-4.2-4.2l-.6.6"/><path d="M9 7a3 3 0 0 0-4.2 0l-2 2A3 3 0 0 0 7 13.2l.6-.6"/></svg>LinkedIn</a>
         <span class="tsep"></span>
         <span class="reacts" role="group" aria-label="React">
@@ -102,7 +102,7 @@ export const markup = (): string => `
       <div class="related">
         <button class="rel pop" data-q="Project Files"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>Project Files</span></button>
         <button class="rel pop" data-q="Activation & Growth"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>Activation & Growth</span></button>
-        <button class="rel pop" data-q="How did you get into design?"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>How did you get into design?</span></button>
+        <button class="rel pop" data-q="Learn more about Amy"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>Learn more about Amy</span></button>
       </div>
       </div>
     </div>
@@ -112,7 +112,7 @@ export const markup = (): string => `
     <div class="view" data-view="links" role="tabpanel" id="panel-links" aria-labelledby="tab-links" hidden>
       <div class="links">
         <a class="lk" href="mailto:ayjzhou@gmail.com">Email<span>ayjzhou@gmail.com</span></a>
-        <a class="lk" href="/resume.html" target="_blank" rel="noopener">Resume<span>PDF</span></a>
+        <a class="lk" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing" target="_blank" rel="noopener">Resume<span>PDF</span></a>
         <a class="lk" href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener">LinkedIn<span>linkedin.com</span></a>
       </div>
       <p class="credit">Animated emoji from <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto</a>, CC BY 4.0.</p>

@@ -147,16 +147,7 @@
   margin-bottom: 0;
 }
 
-.recent a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--rule);
-  transition: text-decoration-color 160ms ease;
-}
-
-@media (hover: hover) {
-  .recent a:hover {
-    text-decoration-color: var(--ink);
-  }
+/* the project name is the chat's own citation chip */
+.recent .cite {
+  vertical-align: baseline;
 }
