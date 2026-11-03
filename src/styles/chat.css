@@ -189,7 +189,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .cmds[hidden]{display:none}
 .cmd{display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:9px 10px; border-radius:9px; font-size:13.5px}
 .cmd.on,.cmd:hover{background:var(--panel)}
-.cc{font-size:12px; color:var(--ink-3); min-width:104px}
+.cc{font-size:12px; color:var(--ink-3); flex:none; width:168px}
 .cq{color:var(--ink)}
 .cmd-empty{padding:10px; font-size:13px; color:var(--ink-3)}
 .tsep{width:1px; height:16px; background:var(--rule); margin:0 6px; align-self:center}
