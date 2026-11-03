@@ -93,7 +93,8 @@
   font-family: var(--serif);
   font-size: 17px;
   line-height: 1.62;
-  color: var(--ink-2);
+  /* the same ink an answer paragraph uses — a list is still the answer */
+  color: inherit;
 }
 
 .facts li {
