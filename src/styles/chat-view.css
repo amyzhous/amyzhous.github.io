@@ -104,3 +104,59 @@
 .facts li:last-child {
   margin-bottom: 0;
 }
+
+/* Amy's portrait in the About answer. Sized so it sits with the prose
+   rather than dominating it, and cropped square-ish on a phone. */
+.amy-photo {
+  margin: 18px 0 0;
+  max-width: 260px;
+}
+
+.amy-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--panel, #f2f1ee);
+}
+
+/* The landing answer's recent-work list. The project name is the link, as
+   the copy has it, and the description follows on the same line. */
+.ans-label {
+  margin: 22px 0 0;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.recent {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.62;
+  color: inherit;
+}
+
+.recent li {
+  margin: 0 0 6px;
+}
+
+.recent li:last-child {
+  margin-bottom: 0;
+}
+
+.recent a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule);
+  transition: text-decoration-color 160ms ease;
+}
+
+@media (hover: hover) {
+  .recent a:hover {
+    text-decoration-color: var(--ink);
+  }
+}
