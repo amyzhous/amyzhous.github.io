@@ -207,14 +207,14 @@ import '../styles/chat.css';
 
   // composer only offers preset questions, opened with /
   const cmds=[
-    {c:'/about', q:'About Amy'},
+    {c:'/about-amy', q:'About Amy'},
     {c:'/project-files', q:'Project Files'},
     {c:'/activation', q:'Activation & Growth'},
-    {c:'/data-ai', q:'Construction Data & Insights'},
+    {c:'/insights-and-analytics', q:'Construction Data & Insights'},
     {c:'/billing', q:'Self-Serve Billing'},
     {c:'/get-to-know-amy', q:'Who is Amy?'},
-    {c:'/fun-facts', q:'Fun facts'},
-    {c:'/travel', q:"What\u2019s Amy\u2019s travel style?"},
+    {c:'/fun-facts', q:'Fun facts', hidden:true},
+    {c:'/travel', q:"What\u2019s Amy\u2019s travel style?", hidden:true},
     {c:'/contact', q:'How do I reach you?'},
     // hidden: only appear when typed exactly
     {c:'/figma', q:'Do you design in Figma?', hidden:true, a:'Eventually. I prototype in HTML first so I can feel how something works, then Figma is where it goes for reference and handoff.'},
