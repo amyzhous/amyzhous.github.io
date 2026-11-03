@@ -44,28 +44,21 @@ const wire = (html: string, slug: Slug): string => {
         '<a class="backlink" href="/classic.html" data-home>',
       )
       .replace('<a class="next" href="#">', `<a class="next" href="${paths[next]}">`)
+      // the footer links are the chat view's buttons: pill, icon, label
       .replace(
-        '<a href="#">LinkedIn</a>',
-        `<a href="${esc(site.linkedinHref)}" target="_blank" rel="noopener">LinkedIn</a>`,
+        '<div class="links"><a href="#">LinkedIn</a><a href="mailto:hello@example.com">Email</a><a href="#">Résumé</a></div>',
+        `<div class="links">
+      <a class="pill ghost" href="mailto:${esc(site.email)}"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="M2.5 4.5 8 9l5.5-4.5"/></svg>Email</a>
+      <a class="pill ghost" href="${esc(site.resumeHref)}" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M6 8h4M6 10.5h4"/></svg>Resume</a>
+      <a class="pill ghost" href="${esc(site.linkedinHref)}" target="_blank" rel="noopener"><svg class="i i16" viewBox="0 0 16 16" aria-hidden="true"><path d="M7 9a3 3 0 0 0 4.2 0l2-2a3 3 0 0 0-4.2-4.2l-.6.6"/><path d="M9 7a3 3 0 0 0-4.2 0l-2 2A3 3 0 0 0 7 13.2l.6-.6"/></svg>LinkedIn</a>
+    </div>`,
       )
-      .replace(
-        '<a href="mailto:hello@example.com">Email</a>',
-        `<a href="mailto:${esc(site.email)}">Email</a>`,
-      )
-      .replace(
-        '<a href="#">Résumé</a>',
-        `<a href="${esc(site.resumeHref)}" target="_blank" rel="noopener">Résumé</a>`,
-      )
-      // the switch sits in the rail on desktop, in the sticky bar on mobile
-      .replace('</ol></nav>\n  </aside>', `</ol></nav>\n    ${VIEW_SWITCH}\n  </aside>`)
-      // a <nav> inside a <p> is hoisted out by the parser, so the mobile bar
-      // becomes a div and holds the switch properly
-      .replace('<p class="m-crumb">', '<div class="m-crumb">')
-      .replace('</a></p>\n    <p class="kicker"', `</a>${VIEW_SWITCH}</div>\n    <p class="kicker"`)
   );
 };
 
 export const render = (slug: Slug): string => `
+<div class="viewtgl-rail">${VIEW_SWITCH}</div>
+
 <div class="layout">
 ${wire(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug)}
 </div>`;

@@ -92,9 +92,11 @@ footer{margin-top:96px; padding-top:28px; border-top:1px solid var(--rule); disp
 .next{text-decoration:none}
 .next small{display:block; font-size:12px; color:var(--ink-3)}
 .next span{font-family:var(--serif); font-size:24px}
-.links{display:flex; gap:18px; font-size:14px}
-.links a{display:inline-flex; align-items:center; min-height:24px; text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--rule)} /* 24px is the minimum target size */
-.links a:hover{text-decoration-color:var(--ink)}
+.links{display:flex; flex-wrap:wrap; gap:4px; margin-right:-13px}
+.links .i{width:16px; height:16px; fill:none; stroke:currentcolor; stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; flex:none}
+.links .pill{display:inline-flex; align-items:center; gap:7px; height:32px; padding:0 13px; border-radius:999px; color:var(--ink-2); font-size:12.5px; font-weight:500; text-decoration:none; transition:background .15s, color .15s}
+@media (hover:hover){ .links .pill:hover{background:var(--hover); color:var(--ink)} }
+
 .ph{color:inherit; font-style:italic}
 /* one body color everywhere */
 p,li,dd,figcaption,.cap,.stats span,.points p,.learned p,.links,.next small{color:var(--ink-2)}
@@ -103,7 +105,7 @@ p,li,dd,figcaption,.cap,.stats span,.points p,.learned p,.links,.next small{colo
 @media (max-width:900px){
   .layout{grid-template-columns:1fr; gap:0; padding:0 20px}
   .rail{display:none}
-  .m-crumb{display:block; position:sticky; top:0; z-index:5; background:var(--bg); padding:14px 0; border-bottom:1px solid var(--rule); font-size:13px; color:var(--ink-3)}
+  .m-crumb{display:block; position:sticky; top:0; z-index:5; padding-right:120px; background:var(--bg); padding:14px 0; border-bottom:1px solid var(--rule); font-size:13px; color:var(--ink-3)}
   .m-crumb a{color:var(--ink-2); text-decoration:underline; text-underline-offset:3px; display:inline-flex; min-height:32px; align-items:center}
   main{padding-top:0}
   h1{margin-top:28px}
@@ -137,7 +139,7 @@ section h2 + p{margin-top:14px}
 main{padding-top:40px}
 .kicker{margin-top:0; line-height:20px}
 .crumb{margin:0; line-height:20px}
-.rail{padding-top:40px}
+.rail{padding-top:52px}
 .toc{margin-top:36px}
 main h1{margin-top:10px}
 .meta{margin-top:32px}
@@ -229,16 +231,15 @@ section .stats + p{margin-top:24px}
 
 .hook{font-family:var(--serif); font-size:clamp(20px,2.4vw,24px); line-height:1.35; color:var(--ink) !important; margin:0 0 16px}
 
-/* ── the site's view switch, in the rail ── */
-.rail .viewtgl,
-.m-crumb .viewtgl{display:inline-flex; gap:2px; padding:3px; border:1px solid var(--rule); border-radius:999px; background:var(--panel); font-size:12.5px}
-.rail .viewtgl{margin-top:20px; align-self:flex-start}
-.viewtgl button{appearance:none; display:inline-flex; align-items:center; height:26px; padding:0 11px; border:0; border-radius:999px; background:none; color:var(--ink-2); font:inherit; font-size:12.5px; line-height:1; cursor:pointer}
+/* ── the site's view switch ──
+   Fixed in the header band, 20px in from the right: the same place it holds
+   on the classic index and in the chat view, on every page and every size. */
+.viewtgl-rail{position:fixed; top:0; right:0; left:0; z-index:30; display:flex; justify-content:flex-end; height:52px; padding:0 20px; pointer-events:none}
+.viewtgl{position:relative; top:8px; display:inline-flex; align-self:flex-start; gap:2px; padding:3px; border:1px solid var(--rule); border-radius:999px; background:var(--panel); font-size:12.5px; pointer-events:auto}
+.viewtgl button{appearance:none; display:inline-flex; align-items:center; height:28px; padding:0 11px; border:0; border-radius:999px; background:none; color:var(--ink-2); font:inherit; font-size:12.5px; line-height:1; cursor:pointer}
 .viewtgl button[aria-pressed="true"]{background:var(--bg); color:var(--ink)}
 .viewtgl button:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
 @media (hover:hover){ .viewtgl button:hover{color:var(--ink)} }
 @media (max-width:900px){
-  .m-crumb{display:flex; align-items:center; justify-content:space-between; gap:12px}
-  .rail .viewtgl{display:none}
   .viewtgl button{height:32px}
 }
