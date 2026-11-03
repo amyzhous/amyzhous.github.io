@@ -74,10 +74,14 @@ export interface WorkEntry {
 export const work: WorkEntry[] = caseStudies.map((c) => ({
   slug: c.slug,
   n: c.n,
-  short: c.name,
+  short: c.kicker,
   kicker: c.kicker,
-  title: c.headline,
-  metric: c.metrics,
+  title: c.name,
+  // the headline figures, as the case study states them; where a case has
+  // none, its own closing line stands in rather than an empty rule
+  metric: c.stats.length
+    ? c.stats.map((st) => `${st.figure} ${st.label}`).join(' · ')
+    : c.summary,
   figure: c.slug === 'project-files' ? 'register' : 'placeholder',
-  heroNote: c.hero?.note,
+  heroNote: c.heroNote,
 }));

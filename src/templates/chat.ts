@@ -26,10 +26,10 @@ export const markup = (): string => `
       <div class="sec2">Today</div>
       <div id="today">
         <button class="row th on" data-go="top" aria-current="true">Who's Amy?</button>
-        <button class="row th" data-q="We weren't building another file browser.">Project Files</button>
-        <button class="row th" data-q="Getting started wasn't the same as getting value.">Activation &amp; Growth</button>
-        <button class="row th" data-q="What if reporting didn't require knowing what to ask?">Construction Data &amp; AI</button>
-        <button class="row th" data-q="Access shouldn't wait for a billing decision.">Self-Serve Billing</button>
+        <button class="row th" data-q="Project Files">Project Files</button>
+        <button class="row th" data-q="Activation & Growth">Activation &amp; Growth</button>
+        <button class="row th" data-q="Construction Data & Insights">Construction Data &amp; Insights</button>
+        <button class="row th" data-q="Self-Serve Billing">Self-Serve Billing</button>
       </div>
       <div class="sec2">Earlier</div>
       <button class="row th" data-q="Amy's resume">Amy's resume</button>
@@ -72,7 +72,7 @@ export const markup = (): string => `
     <div class="view" data-view="answer" role="tabpanel" id="panel-answer" aria-labelledby="tab-answer">
       <div class="status"><span class="pix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="shimmer">Preheating the oven</span></div>
       <p class="ans" data-stream>I lead end-to-end design of complex digital products, from discovery through launch.</p>
-      <p class="ans" data-stream>Recent work: a new paid product for managing construction drawings {1}, activation across project setup and team onboarding {2}, a visual-first approach to construction analytics {3}, and provisional access for teams that need to move quickly without losing control over paid seats {4}.</p>
+      <p class="ans" data-stream>Recent work: Project Files {1}, a 0→1 paid product for managing construction drawings; Activation &amp; Growth {2}, ownership of activation across product strategy and design; Construction Data &amp; Insights {3}, a customizable dashboard experience with AI-assisted reporting; and Self-Serve Billing {4}, the self-serve experience for expanding a team.</p>
 
 
 
@@ -94,8 +94,8 @@ export const markup = (): string => `
       <p class="fb" aria-live="polite"></p>
       <div class="relwrap">
       <div class="related">
-        <button class="rel pop" data-q="We weren't building another file browser."><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>We weren't building another file browser.</span></button>
-        <button class="rel pop" data-q="Getting started wasn't the same as getting value."><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>Getting started wasn't the same as getting value.</span></button>
+        <button class="rel pop" data-q="Project Files"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>Project Files</span></button>
+        <button class="rel pop" data-q="Activation & Growth"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>Activation & Growth</span></button>
         <button class="rel pop" data-q="How did you get into design?"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 0 0 4 4h12" /></svg><span>How did you get into design?</span></button>
       </div>
       </div>
