@@ -27,8 +27,8 @@ import '../styles/chat.css';
   const card=(c,withId,fig=true)=>'<a class="card rc pop"'+(withId?' id="'+c.id+'"':'')+' href="/'+c.slug+'.html">'
     +'<div class="rc-h"><span class="rc-name">'+c.name+'</span></div>'
     +'<h3>'+c.title+'</h3>'
-    +(fig?'<div class="fig">'+c.fig+'</div>':'')
-    +'<div class="rc-f"><span class="rc-note">'+c.stat+'</span><span class="rc-btn">Read more '+arrow+'</span></div></a>';
+    +(fig?'<div class="fig'+(c.fig.indexOf('shotfig')>-1?' fig-shot':'')+'">'+c.fig+'</div>':'')
+    +'<div class="rc-f"><span class="rc-btn">Read more '+arrow+'</span></div></a>';
   const tpl=document.getElementById('intro').innerHTML
     .replace('__CARDS__',cases.map(c=>card(c,true)).join(''))
     .replace('__CARDS2__',cases.map(c=>card(c,false)).join(''));

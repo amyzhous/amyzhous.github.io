@@ -69,6 +69,20 @@ const SPEC_ROW = `
       </div>
       <p class="cap">Specifications organized into divisions and sections, and by issued set.</p>`;
 
+/**
+ * The opening image goes above the title, the way a project introduces
+ * itself before it is named. It is authored inside the overview, so it
+ * is lifted out rather than asked for twice.
+ */
+const liftHero = (html: string, slug: Slug): string => {
+  const re = new RegExp(`\\s*<figure class="shot [^"]*">(?:(?!</figure>)[\\s\\S])*?/case/${slug}/[\\s\\S]*?</figure>`);
+  const m = re.exec(html);
+  if (!m) return html;
+  return html
+    .replace(m[0], '')
+    .replace('<p class="kicker">', `<div class="case-hero">${m[0].trim()}</div>\n    <p class="kicker">`);
+};
+
 /** Reading order, which also decides what "next project" points at. */
 const ORDER: Slug[] = [
   'project-files',
@@ -118,7 +132,7 @@ export const render = (slug: Slug): string => `
 <div class="viewtgl-rail">${VIEW_SWITCH}</div>
 
 <div class="layout">
-${wire(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug)}
+${wire(liftHero(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug)}
 </div>`;
 
 export const head = (slug: Slug): string => {

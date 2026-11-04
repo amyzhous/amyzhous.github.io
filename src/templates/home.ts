@@ -27,7 +27,6 @@ const card = (w: (typeof work)[number], ghost: boolean, first: boolean): string 
       : `<figure class="proj-shot"><img src="${esc(w.heroSrc)}" alt="${esc(w.title)}" loading="lazy"></figure>`
     : `<figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">${esc(w.heroNote ?? '')}</p></figure>`}
   <div class="proj-foot">
-    <p class="proj-metric">${esc(w.metric)}</p>
     <span class="spacer"></span>
     <span class="go">Read more ${arrow}</span>
   </div>

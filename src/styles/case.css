@@ -255,3 +255,8 @@ section .stats + p{margin-top:24px}
 @media (pointer:coarse){
   .viewtgl button{height:38px}
 }
+
+/* The opening image, above the title: the project before it is named. */
+.case-hero{margin:0 0 30px}
+.case-hero .shot{margin:0}
+@media (max-width:860px){ .case-hero{margin-bottom:22px} }
