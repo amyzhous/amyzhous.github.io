@@ -246,15 +246,7 @@ section .stats + p{margin-top:24px}
 /* ── the site's view switch ──
    Fixed in the header band, 20px in from the right: the same place it holds
    on the classic index and in the chat view, on every page and every size. */
-.viewtgl-rail{position:fixed; top:0; right:0; left:0; z-index:30; display:flex; justify-content:flex-end; height:52px; padding:0 20px; pointer-events:none}
-.viewtgl{position:relative; top:8px; display:inline-flex; align-self:flex-start; gap:2px; padding:3px; border:1px solid var(--rule); border-radius:999px; background:var(--panel); font-size:12.5px; pointer-events:auto}
-.viewtgl button{appearance:none; display:inline-flex; align-items:center; height:28px; padding:0 11px; border:0; border-radius:999px; background:none; color:var(--ink-2); font:inherit; font-size:12.5px; line-height:1; cursor:pointer}
-.viewtgl button[aria-pressed="true"]{background:var(--bg); color:var(--ink)}
-.viewtgl button:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
 @media (hover:hover){ .viewtgl button:hover{color:var(--ink)} }
-@media (pointer:coarse){
-  .viewtgl button{height:38px}
-}
 
 /* The opening image, above the title: the project before it is named. */
 .case-hero{margin:0 0 30px}

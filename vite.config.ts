@@ -10,7 +10,6 @@ const require = createRequire(import.meta.url);
 /** Every page, and the module that renders its markup. */
 const pages = {
   'index.html': { module: 'src/pages/index.page.ts' },
-  'classic.html': { module: 'src/pages/classic.page.ts' },
   'project-files.html': { module: 'src/pages/project-files.page.ts' },
   'activation-growth.html': { module: 'src/pages/activation-growth.page.ts' },
   'construction-data-ai.html': { module: 'src/pages/construction-data-ai.page.ts' },
@@ -30,6 +29,9 @@ const pages = {
 const redirects: Record<string, string> = {
   // The chat view used to live here; it is the landing page now.
   'chat.html': '/',
+  // The site had a second, plain index alongside the chat view. There is
+  // one view now, so its URL goes to it.
+  'classic.html': '/',
   // Retired case studies, from the previous set of three.
   'ai-strategy.html': '/construction-data-ai.html',
   'unified-submittals.html': '/',

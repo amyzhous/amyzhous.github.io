@@ -1,8 +1,5 @@
 import '../styles/tokens.css';
 import '../styles/case.css';
-import { wirePreferenceToggle } from './view-pref.js';
-
-wirePreferenceToggle();
 
 /**
  * The rail's contents highlight whichever section is being read. This is the

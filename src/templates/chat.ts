@@ -11,11 +11,6 @@
  * <html> in chat.html, which is the bundle's own switch for staying light.
  */
 export const markup = (): string => `
-<nav class="viewtgl" aria-label="Page view">
-  <button type="button" data-mode="chat" aria-pressed="true">Chat</button>
-  <button type="button" data-mode="classic" aria-pressed="false">Classic</button>
-</nav>
-<div class="classic" id="classic" hidden></div>
 <div class="casepage" id="casepage" hidden></div>
 <div class="app" id="app">
   <div class="scrim" id="scrim"></div>

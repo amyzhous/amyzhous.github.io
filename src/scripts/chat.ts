@@ -243,7 +243,7 @@ import '../styles/chat.css';
   menu.addEventListener('mousedown',e=>e.preventDefault());
   menu.addEventListener('click',e=>{ const b=e.target.closest('.cmd'); if(b) pick(+b.dataset.i); });
   send.addEventListener('click',()=>pick(sel));
-  addEventListener('keydown',e=>{ if(e.key==='/' && document.activeElement!==input && !document.body.classList.contains('classic-mode')){ e.preventDefault(); input.focus(); } });
+  addEventListener('keydown',e=>{ if(e.key==='/' && document.activeElement!==input){ e.preventDefault(); input.focus(); } });
 
   // ---- dumpling hop: tiny pixel runner ----
   let game=null;
@@ -446,42 +446,6 @@ import '../styles/chat.css';
   // cache without re-running any of this, so the answer would just be sitting
   // there. Entering the chat should always play, however you got here.
   addEventListener('pageshow',e=>{ if(e.persisted) playIntro(); });
-
-  // ---- classic view: same content, plain two-column layout ----
-  (function(){
-    const classic=document.getElementById('classic'), app=document.getElementById('app');
-    const bio="I lead end-to-end design of complex digital products, from discovery through launch. My work spans product strategy, design, and growth, from improving customer onboarding to shaping how teams design and build software.";
-    classic.innerHTML='<div class="cl-wrap"><aside class="cl-side"><h1 class="cl-name">Amy Zhou</h1><p class="cl-role">Product designer</p><p class="cl-bio">'+bio+'</p>'
-      +'<h2 class="cl-label">Work</h2><ol class="cl-work">'+cases.map(c=>'<li><button type="button" data-to="cl-'+c.id+'"><span class="n">0'+c.n+'</span>'+c.name+'</button></li>').join('')+'</ol>'
-      +'<h2 class="cl-label">Elsewhere</h2><ul class="cl-links"><li><a href="mailto:ayjzhou@gmail.com">Email</a></li><li><a href="/resume.html" target="_blank" rel="noopener">Resume</a></li><li><a href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener">LinkedIn</a></li></ul></aside>'
-      +'<main class="cl-main" aria-label="Case studies">'+cases.map(c=>'<section class="cl-case" id="cl-'+c.id+'">'+card(c,false)+'</section>').join('')+'</main></div>';
-    classic.querySelectorAll('.pop').forEach(el=>{ el.style.opacity=1; });
-    classic.querySelectorAll('.fig').forEach(f=>f.classList.add('seen'));
-    const workBtns=[...classic.querySelectorAll('.cl-work button')];
-    classic.addEventListener('click',e=>{ const b=e.target.closest('[data-to]'); if(b) document.getElementById(b.dataset.to).scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); });
-    const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting) workBtns.forEach(b=>b.classList.toggle('on',b.dataset.to===en.target.id)); }),{rootMargin:'-40% 0px -55% 0px'});
-    classic.querySelectorAll('.cl-case').forEach(c=>io.observe(c));
-
-    const btns=[...document.querySelectorAll('.viewtgl button')];
-    function setMode(m,write){
-      // Classic is the real site at '/', not the view this bundle shipped
-      // with. The stub #classic element stays so the queries above still
-      // resolve; it is never shown.
-
-      const isC=m==='classic';
-      document.body.classList.toggle('classic-mode',isC);
-      classic.hidden=!isC; app.inert=isC;
-      btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===m));
-      if(isC && active) active.finish();
-      if(write){ try{ localStorage.setItem('viewMode',m); }catch(e){} history.replaceState(null,'','#'+m); }
-    }
-    btns.forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode,true)));
-    addEventListener('hashchange',()=>{ const h=location.hash.slice(1); if(h==='classic'||h==='chat') setMode(h,false); });
-    let start=location.hash.slice(1);
-    if(start!=='classic'&&start!=='chat'){ try{ start=localStorage.getItem('viewMode')||'chat'; }catch(e){ start='chat'; } }
-    setMode(start,false);
-    window.__setMode=setMode;
-  })();
 
   // ---- case study pages: plain article, same content source ----
   (function(){

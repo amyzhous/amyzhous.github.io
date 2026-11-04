@@ -99,11 +99,6 @@ const ORDER: Slug[] = [
   'self-serve-billing',
 ];
 
-const VIEW_SWITCH = `<nav class="viewtgl" aria-label="Preferred view" data-pref-toggle>
-      <button type="button" data-mode="classic" aria-pressed="true">Classic</button>
-      <button type="button" data-mode="chat" aria-pressed="false">Chat</button>
-    </nav>`;
-
 /**
  * The exports point every link at `#`. Wire them to real destinations,
  * matching on the surrounding markup so no copy is touched.
@@ -117,12 +112,8 @@ const wire = (html: string, slug: Slug): string => {
         '<div class="slot r21"><span>Drawing references</span></div>',
         slug === 'project-files' ? SPEC_ROW.trim() : '<div class="slot r21"><span>Drawing references</span></div>',
       )
-      // "All work" returns to the classic index and carries the data-home
-      // hook, so it honours whichever view was last chosen
-      .replaceAll(
-        '<a class="backlink" href="#">',
-        '<a class="backlink" href="/classic.html" data-home>',
-      )
+      // "All work" returns to the one home there is
+      .replaceAll('<a class="backlink" href="#">', '<a class="backlink" href="/">')
       .replace('<a class="next" href="#">', `<a class="next" href="${paths[next]}">`)
       // the footer links are the chat view's buttons: pill, icon, label
       .replace(
@@ -137,8 +128,6 @@ const wire = (html: string, slug: Slug): string => {
 };
 
 export const render = (slug: Slug): string => `
-<div class="viewtgl-rail">${VIEW_SWITCH}</div>
-
 <div class="layout">
 ${wire(dropKicker(liftHero(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug)), slug)}
 </div>`;

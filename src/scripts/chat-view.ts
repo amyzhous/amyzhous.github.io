@@ -10,7 +10,6 @@
  */
 
 import '../styles/chat-view.css';
-import { setView } from './view-pref.js';
 
 /** The question each project's thread is keyed on, as the bundle writes it. */
 const QUESTION_BY_SLUG: Record<string, string> = {
@@ -19,10 +18,6 @@ const QUESTION_BY_SLUG: Record<string, string> = {
   'construction-data-ai': 'What did you propose for construction data and AI?',
   'self-serve-billing': 'How does self-serve billing work?',
 };
-
-const SLUG_BY_QUESTION: Record<string, string> = Object.fromEntries(
-  Object.entries(QUESTION_BY_SLUG).map(([slug, q]) => [q, slug]),
-);
 
 const threadButtons = (): HTMLElement[] =>
   Array.from(document.querySelectorAll<HTMLElement>('.side .th'));
@@ -69,29 +64,7 @@ const openRequestedThread = async (): Promise<void> => {
   document.querySelector('.scroller')?.scrollTo?.({ top: 0 });
 };
 
-/** ── leaving: go back to the case study this thread is about ── */
-const wireClassicLink = (): void => {
-  const classic = document.querySelector<HTMLElement>('.viewtgl [data-mode="classic"]');
-  if (!classic) return;
-
-  classic.addEventListener(
-    'click',
-    (event) => {
-      event.preventDefault();
-      // Runs before the bundle's own handler, which would switch to its
-      // bundled classic view instead.
-      event.stopImmediatePropagation();
-      const active = threadButtons().find((b) => b.getAttribute('aria-current') === 'true');
-      const slug = active?.dataset.q ? SLUG_BY_QUESTION[active.dataset.q] : undefined;
-      setView('classic');
-      location.href = slug ? `/${slug}.html` : '/classic.html';
-    },
-    true,
-  );
-};
-
 const start = (): void => {
-  wireClassicLink();
   void openRequestedThread();
 };
 

@@ -5,28 +5,12 @@
 
 /* The switch reads Classic | Chat everywhere. The bundle writes Chat first,
    so this reorders without touching its markup — no reflow, no flash. */
-.viewtgl [data-mode='classic'] {
-  order: 0;
-}
 
-.viewtgl [data-mode='chat'] {
-  order: 1;
-}
 
 /* The same position the classic pages use: 20px in from the right edge,
    centred in the 52px header band. */
-.viewtgl {
-  top: 8px;
-  right: 20px;
-}
 
 /* and the same target size on touch, so the control is identical everywhere */
-@media (pointer: coarse) {
-  .viewtgl > * {
-    height: 38px;
-    padding: 0 14px;
-  }
-}
 
 /* The resume answer shows the document itself, not just a link to it.
    The preview is Google's, and it does not always paint — it needs Drive to
