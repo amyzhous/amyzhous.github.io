@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { caseBySlug } from '../data/cases.js';
 import { paths, site, type Slug } from '../data/site.js';
@@ -14,6 +14,42 @@ import { esc } from './html.js';
  */
 
 const DIR = resolve('src/content/cases-html');
+
+/**
+ * A slot becomes a real image as soon as the file exists.
+ *
+ * Each asset slot in the exports carries a label. Where a file of the
+ * matching name sits in `public/case/<slug>/`, the slot renders that image
+ * instead; otherwise it stays the labelled placeholder it already was. That
+ * way screenshots can be dropped in one at a time without touching markup.
+ */
+const SHOTS: Record<string, Record<string, string>> = {
+  'project-files': {
+    'Hero: drawing register': 'drawings-register',
+    'Detail: drawing revision history': 'sheet-revisions',
+    'Drawing references': 'specs-sections',
+    'File model versus drawing model': 'specs-divisions',
+    'Existing workflow': 'specs-sets',
+  },
+};
+
+const EXT = ['png', 'jpg', 'jpeg', 'webp'];
+
+const withShots = (html: string, slug: Slug): string => {
+  const map = SHOTS[slug];
+  if (!map) return html;
+
+  return html.replace(
+    /<div class="slot (r\d+)"><span>([^<]*)<\/span><\/div>/g,
+    (whole, ratio: string, label: string) => {
+      const name = map[label];
+      if (!name) return whole;
+      const ext = EXT.find((e) => existsSync(`public/case/${slug}/${name}.${e}`));
+      if (!ext) return whole;
+      return `<figure class="shot ${ratio}"><img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy"></figure>`;
+    },
+  );
+};
 
 /** Reading order, which also decides what "next project" points at. */
 const ORDER: Slug[] = [
@@ -60,7 +96,7 @@ export const render = (slug: Slug): string => `
 <div class="viewtgl-rail">${VIEW_SWITCH}</div>
 
 <div class="layout">
-${wire(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug)}
+${wire(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug)}
 </div>`;
 
 export const head = (slug: Slug): string => {

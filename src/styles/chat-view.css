@@ -162,3 +162,14 @@
     text-decoration-color: var(--ink);
   }
 }
+
+/* Room beneath the newest answer, so its question can sit at the top of the
+   view however short the answer is. */
+.col > .entry:last-child {
+  min-height: calc(100vh - 230px);
+}
+
+/* the Work heading used to carry this gap; the cards need it either way */
+.recent + .cards {
+  margin-top: 36px;
+}

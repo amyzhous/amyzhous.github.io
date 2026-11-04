@@ -258,7 +258,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .col{padding-top:0}
 .tab .i{width:15px; height:15px}
 .askrow{display:flex; justify-content:flex-end; margin-top:28px}
-.bubble{margin:0; max-width:80%; background:var(--panel); border-radius:18px; padding:11px 17px; font:400 15px/1.4 var(--sans); color:var(--ink)}
+.bubble{margin:0; max-width:80%; background:var(--panel); border-radius:18px; padding:11px 17px; font:400 16px/1.45 var(--serif); font-size-adjust:0.47; color:var(--ink)}
 .entry+.entry{margin-top:36px; padding-top:8px; border-top:0}
 .view{padding-top:0}
 .askrow[hidden]{display:none}

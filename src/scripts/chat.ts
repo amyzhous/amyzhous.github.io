@@ -421,7 +421,11 @@ import '../styles/chat.css';
     const el=document.createElement('article'); el.className='entry';
     el.innerHTML='<div class="askrow pop"><h2 class="bubble">'+esc(q)+'</h2></div><div class="ansblock"><div class="status"><span class="pix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="shimmer">Preheating the oven</span></div>'+trace(m.t)+'<p class="ans" data-stream>'+esc(m.a)+'</p>'+m.x+'</div>';
     col.appendChild(el);
-    stream(el,1300,true);
+    // Pin the question to the top of the view and let the answer fill in
+    // underneath it. Chasing the bottom of a growing answer scrolled the
+    // question — and the start of the stream — off the screen.
+    requestAnimationFrame(()=>{ scroller.scrollTo({top:el.offsetTop-12, behavior:'smooth'}); });
+    stream(el,1300,false);
     const cv=el.querySelector('canvas.game'); if(cv) (cv.classList.contains('snake')?startSnake:startGame)(cv);
   }
 
