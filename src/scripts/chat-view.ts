@@ -102,3 +102,21 @@ if (document.documentElement.classList.contains('is-locked')) {
 } else {
   start();
 }
+
+/**
+ * The resume preview is a letter sheet at a fixed 816px, so it cannot reflow
+ * to the column. Scale it to whatever width it is given, and keep doing so
+ * as the window changes.
+ */
+const SHEET = 816;
+const fitResume = (box: HTMLElement): void => {
+  box.style.setProperty('--rsm-scale', String(box.clientWidth / SHEET));
+};
+
+new MutationObserver(() => {
+  document.querySelectorAll<HTMLElement>('.rsm-fit:not([data-fitted])').forEach((box) => {
+    box.dataset.fitted = '1';
+    fitResume(box);
+    new ResizeObserver(() => fitResume(box)).observe(box);
+  });
+}).observe(document.body, { childList: true, subtree: true });

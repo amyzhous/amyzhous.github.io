@@ -40,10 +40,21 @@
 .rsm-frame {
   position: relative;
   display: grid;
-  height: min(72vh, 620px);
   border: 1px solid var(--rule);
   border-radius: 12px;
   background: var(--plate);
+  overflow: hidden;
+}
+
+/* The resume page is a fixed 816 x 1056 letter sheet, so it cannot reflow.
+   Scale the whole sheet to the column instead of cropping it: the box keeps
+   the sheet's proportions and the script sets the factor. */
+.rsm-fit {
+  grid-area: 1 / 1;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 816 / 1056;
+  overflow: hidden;
 }
 
 .rsm-fallback {
@@ -57,12 +68,15 @@
 }
 
 .rsm-doc {
-  grid-area: 1 / 1;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 816px;
+  height: 1056px;
   border: 0;
-  border-radius: 12px;
   background: none;
+  transform-origin: top left;
+  transform: scale(var(--rsm-scale, 1));
 }
 
 /* A phone cannot render a PDF in a frame at all on iOS, and the page is too
