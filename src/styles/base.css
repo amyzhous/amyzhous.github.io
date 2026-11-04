@@ -32,6 +32,7 @@ a {
 
 .serif {
   font-family: var(--serif);
+  font-size-adjust: 0.47;
   font-weight: var(--serif-weight);
   font-optical-sizing: auto;
 }

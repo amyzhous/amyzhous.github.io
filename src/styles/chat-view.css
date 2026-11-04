@@ -91,6 +91,7 @@
   margin: 18px 0 0;
   padding: 0 0 0 20px;
   font-family: var(--serif);
+  font-size-adjust: 0.47;
   font-size: 17px;
   line-height: 1.62;
   /* the same ink an answer paragraph uses — a list is still the answer */
@@ -134,6 +135,7 @@
   margin: 10px 0 0;
   padding: 0 0 0 20px;
   font-family: var(--serif);
+  font-size-adjust: 0.47;
   font-size: 17px;
   line-height: 1.62;
   color: inherit;
@@ -147,7 +149,16 @@
   margin-bottom: 0;
 }
 
-/* the project name is the chat's own citation chip */
-.recent .cite {
-  vertical-align: baseline;
+.recent a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule);
+  transition: text-decoration-color 160ms ease;
+}
+
+@media (hover: hover) {
+  .recent a:hover {
+    text-decoration-color: var(--ink);
+  }
 }

@@ -298,6 +298,7 @@
 
   .fun-val {
     font-family: var(--serif);
+    font-size-adjust: 0.47;
     font-weight: var(--serif-weight);
     font-size: 15px;
     text-align: right;
