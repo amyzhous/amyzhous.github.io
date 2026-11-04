@@ -91,7 +91,6 @@
   margin: 18px 0 0;
   padding: 0 0 0 20px;
   font-family: var(--serif);
-  font-size-adjust: 0.47;
   font-size: 17px;
   line-height: 1.62;
   /* the same ink an answer paragraph uses — a list is still the answer */
@@ -135,7 +134,6 @@
   margin: 10px 0 0;
   padding: 0 0 0 20px;
   font-family: var(--serif);
-  font-size-adjust: 0.47;
   font-size: 17px;
   line-height: 1.62;
   color: inherit;
@@ -172,4 +170,37 @@
 /* the Work heading used to carry this gap; the cards need it either way */
 .recent + .cards {
   margin-top: 36px;
+}
+
+/* the card is a link; the pointer should say so */
+.rc,
+.rc-btn,
+.recent a,
+.related .rel {
+  cursor: pointer;
+}
+
+/* ── follow-up prompts ──
+   They were the same ink and nearly the same size as the answer, so they
+   read as more prose rather than as things to click. Set them in the sans
+   a step lighter, with room above to part them from the answer. */
+.ansblock .related {
+  margin-top: 30px;
+  gap: 2px;
+}
+
+.ansblock .rel {
+  padding: 9px 8px 9px 2px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  color: var(--ink-2);
+  border-radius: 8px;
+  transition: color 150ms ease, background 150ms ease;
+}
+
+@media (hover: hover) {
+  .ansblock .rel:hover {
+    color: var(--ink);
+    background: var(--hover);
+  }
 }

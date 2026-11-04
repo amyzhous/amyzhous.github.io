@@ -24,6 +24,9 @@ const DIR = resolve('src/content/cases-html');
  * way screenshots can be dropped in one at a time without touching markup.
  */
 const SHOTS: Record<string, Record<string, string>> = {
+  'construction-data-ai': {
+    'Hero: customizable construction analytics dashboard': 'hero',
+  },
   'project-files': {
     'Hero: drawing register': 'drawings-register',
     'Detail: drawing revision history': 'sheet-revisions',
@@ -33,7 +36,7 @@ const SHOTS: Record<string, Record<string, string>> = {
   },
 };
 
-const EXT = ['png', 'jpg', 'jpeg', 'webp'];
+const EXT = ['mp4', 'png', 'jpg', 'jpeg', 'webp'];
 
 const withShots = (html: string, slug: Slug): string => {
   const map = SHOTS[slug];
@@ -46,7 +49,11 @@ const withShots = (html: string, slug: Slug): string => {
       if (!name) return whole;
       const ext = EXT.find((e) => existsSync(`public/case/${slug}/${name}.${e}`));
       if (!ext) return whole;
-      return `<figure class="shot ${ratio}"><img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy"></figure>`;
+      const media =
+        ext === 'mp4'
+          ? `<video src="/case/${slug}/${name}.mp4" autoplay muted loop playsinline preload="metadata" aria-label="${esc(label)}"></video>`
+          : `<img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy">`;
+      return `<figure class="shot ${ratio}">${media}</figure>`;
     },
   );
 };

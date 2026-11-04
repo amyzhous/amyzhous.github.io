@@ -77,11 +77,9 @@ export const work: WorkEntry[] = caseStudies.map((c) => ({
   short: c.kicker,
   kicker: c.kicker,
   title: c.name,
-  // the headline figures, as the case study states them; where a case has
-  // none, its own closing line stands in rather than an empty rule
-  metric: c.stats.length
-    ? c.stats.map((st) => `${st.figure} ${st.label}`).join(' · ')
-    : c.summary,
+  // the headline figures, as the case study states them. A case without
+  // figures shows none: a truncated sentence in their place said nothing.
+  metric: c.stats.map((st) => `${st.figure} ${st.label}`).join(' · '),
   figure: c.slug === 'project-files' ? 'register' : 'placeholder',
   heroNote: c.heroNote,
 }));

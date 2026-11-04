@@ -1,7 +1,7 @@
 :root{
   --bg:#fcfcfa; --side:#f6f5f2; --ink:#1b1a18; --ink-2:#5b5954; --ink-3:#73706a;
   --rule:#e8e7e3; --panel:#f2f1ee; --bar:#e3e2de; --hover:#efeeea;
-  --serif:'Libre Baskerville','Iowan Old Style',Georgia,serif;
+  --serif:"Newsreader","Iowan Old Style",Georgia,serif;
   --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light; box-sizing:border-box;
 }
@@ -46,7 +46,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 
 /* sidebar */
 .side{background:var(--side); border-right:1px solid var(--rule); display:flex; flex-direction:column; padding:16px 12px; font-size:13px; min-height:0}
-.logo{display:flex; align-items:center; gap:9px; padding:2px 6px 18px; font-family:var(--serif); font-size-adjust:0.47; font-size:18px}
+.logo{display:flex; align-items:center; gap:9px; padding:2px 6px 18px; font-family:var(--serif); font-size:18px}
 .mark{width:24px; height:24px; border-radius:7px; background:var(--ink); color:var(--bg); font:600 10px/1 var(--sans); display:grid; place-items:center}
 .new{display:flex; align-items:center; gap:8px; height:36px; padding:0 10px 0 12px; border:1px solid var(--rule); border-radius:999px; background:var(--bg); color:var(--ink-2); transition:border-color .15s,color .15s}
 .new:hover{border-color:var(--ink-3); color:var(--ink)}
@@ -76,7 +76,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 
 /* thread entry */
 .entry+.entry{margin-top:44px; padding-top:40px; border-top:1px solid var(--rule)}
-.q{font-family:var(--serif); font-size-adjust:0.47; font-weight:400; font-size:34px; line-height:1.15; letter-spacing:-.01em; margin:0}
+.q{font-family:var(--serif); font-weight:400; font-size:34px; line-height:1.15; letter-spacing:-.01em; margin:0}
 .entry+.entry .q{font-size:26px}
 .tabs{display:flex; gap:22px; margin-top:22px; border-bottom:1px solid var(--rule)}
 .tab{display:flex; align-items:center; gap:7px; height:38px; font-size:13.5px; font-weight:500; color:var(--ink-3); border-bottom:2px solid transparent; margin-bottom:-1px; transition:color .15s}
@@ -93,7 +93,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .src .s-bot{display:flex; align-items:center; gap:6px; color:var(--ink-3); font-size:11px}
 .dot{width:16px; height:16px; border-radius:50%; background:var(--ink); color:var(--bg); font:600 9px/16px var(--sans); text-align:center; flex:none}
 
-.ans{font-family:var(--serif); font-size-adjust:0.47; font-size:17px; line-height:1.62; margin:22px 0 0}
+.ans{font-family:var(--serif); font-size:17px; line-height:1.62; margin:22px 0 0}
 .ans+.ans{margin-top:12px}
 .cite{display:inline-grid; place-items:center; min-width:17px; height:17px; padding:0 4px; margin-left:3px; border-radius:5px; background:var(--panel); font:500 10.5px var(--sans); color:var(--ink-2); vertical-align:3px; transition:background .15s,color .15s}
 .cite:hover{background:var(--ink); color:var(--bg)}
@@ -109,8 +109,8 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .meta{padding:14px 18px 16px; display:flex; align-items:flex-end; gap:16px}
 .meta .l{flex:1; min-width:0}
 .tag{font-size:11.5px; color:var(--ink-3); display:flex; align-items:center; gap:7px}
-.meta h3{font-family:var(--serif); font-size-adjust:0.47; font-size:22px; font-weight:400; line-height:1.2; margin:6px 0 4px}
-.stat{font-family:var(--serif); font-size-adjust:0.47; font-size:15.5px; color:var(--ink-2); margin:0}
+.meta h3{font-family:var(--serif); font-size:22px; font-weight:400; line-height:1.2; margin:6px 0 4px}
+.stat{font-family:var(--serif); font-size:15.5px; color:var(--ink-2); margin:0}
 .go{font-size:12px; color:var(--ink-2); display:inline-flex; gap:6px; align-items:center; white-space:nowrap}
 .go svg{transition:transform .2s}
 .card:hover .go{color:var(--ink)} .card:hover .go svg{transform:translateX(3px)}
@@ -132,7 +132,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .rc-name{font-weight:400}
 .rc-tag{font-size:11px; color:var(--ink-2); background:var(--panel); border-radius:999px; padding:2px 8px}
 .rc-of{margin-left:auto; font-size:11.5px; color:var(--ink-3); font-variant-numeric:tabular-nums}
-.rc h3{font-family:var(--serif); font-size-adjust:0.47; font-size:21px; font-weight:400; line-height:1.25; margin:6px 0 0}
+.rc h3{font-family:var(--serif); font-size:21px; font-weight:400; line-height:1.25; margin:6px 0 0}
 .rc-m{display:flex; flex-wrap:wrap; gap:6px}
 .rc-k{display:inline-flex; align-items:center; gap:8px; font-size:12px; color:var(--ink-2); border:1px solid var(--rule); border-radius:8px; padding:5px 6px 5px 10px}
 .rc-k b{font-weight:500; color:var(--ink); background:var(--panel); border-radius:5px; padding:1px 6px; font-variant-numeric:tabular-nums}
@@ -151,7 +151,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .lk:hover{color:var(--ink)} .lk:hover span{color:var(--ink-2)}
 
 .related{display:flex; flex-direction:column}
-.rel{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 2px; border-top:1px solid var(--rule); font-family:var(--serif); font-size-adjust:0.47; font-size:17px; text-align:left; color:var(--ink); transition:color .15s}
+.rel{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 2px; border-top:1px solid var(--rule); font-family:var(--serif); font-size:17px; text-align:left; color:var(--ink); transition:color .15s}
 .rel:last-child{border-bottom:1px solid var(--rule)}
 .rel svg{color:var(--ink-3); transition:color .15s, transform .2s}
 .rel:hover svg{color:var(--ink); transform:rotate(90deg)}
@@ -258,7 +258,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer; p
 .col{padding-top:0}
 .tab .i{width:15px; height:15px}
 .askrow{display:flex; justify-content:flex-end; margin-top:28px}
-.bubble{margin:0; max-width:80%; background:var(--panel); border-radius:18px; padding:11px 17px; font:400 16px/1.45 var(--serif); font-size-adjust:0.47; color:var(--ink)}
+.bubble{margin:0; max-width:80%; background:var(--panel); border-radius:18px; padding:11px 17px; font:400 16px/1.45 var(--serif); color:var(--ink)}
 .entry+.entry{margin-top:36px; padding-top:8px; border-top:0}
 .view{padding-top:0}
 .askrow[hidden]{display:none}
@@ -373,18 +373,18 @@ canvas.game.snake{aspect-ratio:160/96; max-width:520px; margin:0 auto; touch-act
 .classic[hidden]{display:none}
 .cl-wrap{max-width:1140px; margin:0 auto; padding:64px 32px 120px; display:grid; grid-template-columns:304px 1fr; gap:76px}
 .cl-side{position:sticky; top:64px; align-self:start}
-.cl-name{font-family:var(--serif); font-size-adjust:0.47; font-weight:400; font-size:21px; margin:0}
+.cl-name{font-family:var(--serif); font-weight:400; font-size:21px; margin:0}
 .cl-role{font-size:11.5px; color:var(--ink-2); margin:6px 0 0}
-.cl-bio{font-family:var(--serif); font-size-adjust:0.47; font-size:19px; line-height:1.52; margin:28px 0 0; max-width:280px}
+.cl-bio{font-family:var(--serif); font-size:19px; line-height:1.52; margin:28px 0 0; max-width:280px}
 .cl-label{font-size:11.5px; font-weight:400; color:var(--ink-2); margin:40px 0 10px}
 .cl-work{list-style:none; margin:0; padding:0; border-top:1px solid var(--rule)}
 .cl-work li{border-bottom:1px solid var(--rule)}
 .cl-work li:last-child{border-bottom:0}
-.cl-work button{display:flex; align-items:baseline; gap:14px; width:100%; padding:9px 0; font-family:var(--serif); font-size-adjust:0.47; font-size:17px; color:var(--ink-3); text-align:left; transition:color .2s}
+.cl-work button{display:flex; align-items:baseline; gap:14px; width:100%; padding:9px 0; font-family:var(--serif); font-size:17px; color:var(--ink-3); text-align:left; transition:color .2s}
 .cl-work .n{font-family:var(--sans); font-size:11px; width:14px}
 .cl-work button:hover,.cl-work button.on{color:var(--ink)}
 .cl-links{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px}
-.cl-links a{font-family:var(--serif); font-size-adjust:0.47; font-size:17px}
+.cl-links a{font-family:var(--serif); font-size:17px}
 .cl-links a:hover{text-decoration:underline; text-underline-offset:3px}
 .cl-main{display:flex; flex-direction:column; gap:20px; min-width:0}
 .cl-case{scroll-margin-top:64px}
@@ -408,8 +408,8 @@ canvas.game.snake{aspect-ratio:160/96; max-width:520px; margin:0 auto; touch-act
 .cs-wrap{max-width:1040px; margin:0 auto; padding:56px 28px 120px; display:grid; grid-template-columns:minmax(0,680px) 180px; gap:72px; justify-content:center}
 .cs{min-width:0}
 .cs .cs-kicker{font-family:var(--sans); font-size:12px; line-height:1.4; color:var(--ink-3); margin:0}
-.cs-title{font-family:var(--serif); font-size-adjust:0.47; font-weight:400; font-size:clamp(30px,4vw,42px); line-height:1.12; letter-spacing:-.01em; margin:10px 0 0; outline:none}
-.cs .cs-sum{font-family:var(--serif); font-size-adjust:0.47; font-size:20px; line-height:1.5; color:var(--ink-2); margin:16px 0 0}
+.cs-title{font-family:var(--serif); font-weight:400; font-size:clamp(30px,4vw,42px); line-height:1.12; letter-spacing:-.01em; margin:10px 0 0; outline:none}
+.cs .cs-sum{font-family:var(--serif); font-size:20px; line-height:1.5; color:var(--ink-2); margin:16px 0 0}
 .cs-meta{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:32px 0 0; padding:16px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
 .cs-meta dt{font-size:11.5px; color:var(--ink-3)}
 .cs-meta dd{margin:4px 0 0; font-size:13.5px}
@@ -418,24 +418,24 @@ canvas.game.snake{aspect-ratio:160/96; max-width:520px; margin:0 auto; touch-act
 .cs-hero figcaption{font-size:12.5px; color:var(--ink-3); margin-top:10px}
 .cs section{margin-top:56px; scroll-margin-top:72px}
 .cs h2{font-size:13px; font-weight:600; letter-spacing:.01em; margin:0 0 14px}
-.cs p,.cs li{font-family:var(--serif); font-size-adjust:0.47; font-size:18px; line-height:1.6}
+.cs p,.cs li{font-family:var(--serif); font-size:18px; line-height:1.6}
 .cs p{margin:0 0 14px}
 .cs ul{margin:0; padding-left:20px}
 .cs li{margin-bottom:8px}
 .cs-tldr{background:var(--panel); border-radius:12px; padding:20px 24px 12px}
 .cs-dec{padding:22px 0; border-top:1px solid var(--rule)}
 .cs-dec:first-of-type{border-top:0; padding-top:4px}
-.cs-dec h3{font-family:var(--serif); font-size-adjust:0.47; font-weight:400; font-size:21px; margin:0 0 12px; display:flex; gap:12px; align-items:baseline}
+.cs-dec h3{font-family:var(--serif); font-weight:400; font-size:21px; margin:0 0 12px; display:flex; gap:12px; align-items:baseline}
 .cs-dec h3 .n{font-family:var(--sans); font-size:11.5px; color:var(--ink-3)}
 .cs-dec dl{margin:0; display:grid; gap:8px}
 .cs-dec dl div{display:grid; grid-template-columns:72px 1fr; gap:12px}
 .cs-dec dt{font-size:12px; color:var(--ink-3); padding-top:4px}
-.cs-dec dd{margin:0; font-family:var(--serif); font-size-adjust:0.47; font-size:17px; line-height:1.55}
+.cs-dec dd{margin:0; font-family:var(--serif); font-size:17px; line-height:1.55}
 .cs-shot .ph,.cs-hero .ph{color:var(--ink-2)}
 .cs-shot{margin-top:16px; aspect-ratio:16/8; border-radius:10px; background:var(--panel); display:grid; place-items:center; font-size:12.5px}
 .cs-stats{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px}
 .cs-stats div{flex:1 1 140px; border:1px solid var(--rule); border-radius:12px; padding:16px 18px}
-.cs-stats b{display:block; font-family:var(--serif); font-size-adjust:0.47; font-weight:400; font-size:34px; line-height:1}
+.cs-stats b{display:block; font-family:var(--serif); font-weight:400; font-size:34px; line-height:1}
 .cs-stats span{display:block; font-size:12.5px; color:var(--ink-2); margin-top:8px}
 .cs-foot{margin-top:72px; padding-top:28px; border-top:1px solid var(--rule)}
 .cs-label{font-family:var(--sans)!important; font-size:12px!important; color:var(--ink-3); margin:0 0 12px!important}

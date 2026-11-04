@@ -28,7 +28,7 @@ const card = (w: (typeof work)[number], ghost: boolean, first: boolean): string 
   <div class="proj-foot">
     <p class="proj-metric">${esc(w.metric)}</p>
     <span class="spacer"></span>
-    <span class="go">Open case study ${arrow}</span>
+    <span class="go">Read more ${arrow}</span>
   </div>
 </a>`;
 };
