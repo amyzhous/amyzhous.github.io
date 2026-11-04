@@ -1,0 +1,1 @@
+/* empty css               */import{w as t}from"./view-pref-DPK6K2y5.js";t();const i=[...document.querySelectorAll(".toc a")],c=new IntersectionObserver(e=>e.forEach(o=>{o.isIntersecting&&i.forEach(r=>r.classList.toggle("on",r.getAttribute("href")===`#${o.target.id}`))}),{rootMargin:"-35% 0px -60% 0px"});document.querySelectorAll("main section[id]").forEach(e=>c.observe(e));
