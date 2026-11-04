@@ -216,7 +216,6 @@ import '../styles/chat.css';
     {c:'/travel', q:"What\u2019s Amy\u2019s travel style?", hidden:true},
     {c:'/contact', q:'How do I reach you?'},
     // hidden: only appear when typed exactly
-    {c:'/figma', q:'Do you design in Figma?', hidden:true, a:'Eventually. I prototype in HTML first so I can feel how something works, then Figma is where it goes for reference and handoff.'},
     {c:'/off-the-record', q:'Fun facts', hidden:true},
     {c:'/play', q:'Got any games?', hidden:true, a:'Help the dumpling hop over the kitchen. Space or tap to jump.', x:'<div class="gamewrap pop"><div class="ghud"><span class="gscore">0</span><span class="gbest">Best 0</span></div><canvas class="game" width="240" height="64" tabindex="0" aria-label="Dumpling hop game. Press space or tap to jump."></canvas><div class="gmsg" aria-live="polite">Space or tap to start</div></div>'},
     {c:'/snake', q:'Snake?', hidden:true, a:'Close. It\'s a noodle. Arrow keys or swipe to steer, and eat the dumplings.', x:'<div class="gamewrap pop"><div class="ghud"><span class="gscore">0</span><span class="gbest">Best 0</span></div><canvas class="game snake" width="160" height="96" tabindex="0" aria-label="Noodle snake game. Use arrow keys or swipe to steer."></canvas><div class="gmsg" aria-live="polite">Press an arrow key or swipe to start</div></div>'}

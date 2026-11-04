@@ -29,10 +29,7 @@ const SHOTS: Record<string, Record<string, string>> = {
   },
   'project-files': {
     'Hero: drawing register': 'drawings-register',
-    'Detail: drawing revision history': 'sheet-revisions',
-    'Drawing references': 'specs-sections',
-    'File model versus drawing model': 'specs-divisions',
-    'Existing workflow': 'specs-sets',
+    'Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4': 'sheet-revisions',
   },
 };
 
