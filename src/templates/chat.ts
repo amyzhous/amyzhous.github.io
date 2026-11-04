@@ -82,7 +82,6 @@ export const markup = (): string => `
 
 
 
-      <h2 class="h pop">Work</h2>
       <div class="cards">__CARDS__</div>
 
       <div class="tools foot pop">
