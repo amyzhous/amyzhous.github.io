@@ -6,7 +6,7 @@
  * is lifted out of the markup, never written: if the index and a case study
  * disagree, it is because something stopped reading from here.
  */
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 const DIR = resolve('src/content/cases-html');
@@ -32,8 +32,25 @@ export interface CaseStudy {
   summary: string;
   /** The direction for the opening image. */
   heroNote?: string;
+  /** The opening image itself, once it exists. */
+  heroSrc?: string;
   role: string;
 }
+
+/** The opening image of each case, where one has been made. */
+const HERO_NAMES: Record<string, string> = {
+  'project-files': 'drawings-register',
+  'construction-data-ai': 'hero',
+};
+
+const HERO: Record<string, string | undefined> = Object.fromEntries(
+  Object.entries(HERO_NAMES).map(([slug, name]) => {
+    const ext = ['mp4', 'jpg', 'png', 'webp'].find((e) =>
+      existsSync(`public/case/${slug}/${name}.${e}`),
+    );
+    return [slug, ext ? `/case/${slug}/${name}.${ext}` : undefined];
+  }),
+);
 
 /** Reading order. */
 const SLUGS = [
@@ -80,6 +97,7 @@ const parse = (slug: string, i: number): CaseStudy => {
       ),
     ].map((m) => ({ figure: strip(m[1]!), label: strip(m[2]!) })),
     heroNote: one(/<div class="slot [^"]*"><span>([\s\S]*?)<\/span>/, html) || undefined,
+    heroSrc: HERO[slug],
     role: one(/<dt>Role<\/dt><dd>([\s\S]*?)<\/dd>/, html),
   };
 };

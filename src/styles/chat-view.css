@@ -218,3 +218,19 @@
     background: var(--hover);
   }
 }
+
+/* a card's own screenshot, in place of the drawn plate */
+.shotfig {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.shotfig img,
+.shotfig video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

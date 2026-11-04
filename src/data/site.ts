@@ -69,6 +69,7 @@ export interface WorkEntry {
    */
   figure: 'register' | 'placeholder';
   heroNote?: string;
+  heroSrc?: string;
 }
 
 export const work: WorkEntry[] = caseStudies.map((c) => ({
@@ -82,4 +83,5 @@ export const work: WorkEntry[] = caseStudies.map((c) => ({
   metric: c.stats.map((st) => `${st.figure} ${st.label}`).join(' · '),
   figure: c.slug === 'project-files' ? 'register' : 'placeholder',
   heroNote: c.heroNote,
+  heroSrc: c.heroSrc,
 }));

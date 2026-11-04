@@ -55,6 +55,20 @@ const withShots = (html: string, slug: Slug): string => {
   );
 };
 
+/**
+ * The three specifications views answer no slot this case study has, so
+ * they go in as their own row under Launch — specifications are part of
+ * what shipped, and the Product direction section describes them as
+ * organized into divisions and sections.
+ */
+const SPEC_ROW = `
+      <div class="shot-row">
+        <figure class="shot r43"><img src="/case/project-files/specs-divisions.jpg" alt="Specifications by division" loading="lazy"></figure>
+        <figure class="shot r43"><img src="/case/project-files/specs-sections.jpg" alt="Specifications by section" loading="lazy"></figure>
+        <figure class="shot r43"><img src="/case/project-files/specs-sets.jpg" alt="Specifications by set" loading="lazy"></figure>
+      </div>
+      <p class="cap">Specifications organized into divisions and sections, and by issued set.</p>`;
+
 /** Reading order, which also decides what "next project" points at. */
 const ORDER: Slug[] = [
   'project-files',
@@ -77,6 +91,10 @@ const wire = (html: string, slug: Slug): string => {
 
   return (
     html
+      .replace(
+        '<div class="slot r21"><span>Drawing references</span></div>',
+        slug === 'project-files' ? SPEC_ROW.trim() : '<div class="slot r21"><span>Drawing references</span></div>',
+      )
       // "All work" returns to the classic index and carries the data-home
       // hook, so it honours whichever view was last chosen
       .replaceAll(

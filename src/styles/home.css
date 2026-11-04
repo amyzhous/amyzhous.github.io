@@ -369,3 +369,20 @@
   line-height: 1.6;
   color: var(--muted);
 }
+
+/* a project card's own screenshot, where one exists */
+.proj-shot {
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--plate);
+}
+
+.proj-shot img,
+.proj-shot video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
