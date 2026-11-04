@@ -196,13 +196,25 @@ body {
 }
 
 @media print {
-  /* One sheet, one page: let the box collapse to its content so a rounding
-     sliver cannot spill onto a second page. */
+  /* The résumé runs as long as it needs to. `overflow: hidden` and the
+     page-break locks were what kept it to one sheet, which cut anything
+     past the first page instead of carrying it over. */
   .sheet {
     width: 100%;
     height: auto;
-    overflow: hidden;
-    page-break-after: avoid;
-    page-break-inside: avoid;
+    min-height: 0;
+  }
+
+  /* A break may fall between entries, never through one, and a heading
+     never sits alone at the foot of a page. */
+  .entry,
+  .role,
+  li {
+    break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
   }
 }

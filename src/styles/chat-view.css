@@ -87,11 +87,20 @@
   }
 }
 
+/* Open and download sat side by side with nothing between them, so they
+   read as one run of text. */
+.rsm-acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin-top: 10px;
+}
+
 .rsm-open {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 10px;
+  min-height: 24px;
 }
 
 /* an answer whose whole content is a list has no lead paragraph */
@@ -242,4 +251,51 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ── project cards ──
+   The card's own rounded outline sat just outside the screenshot's, so a
+   card read as a curve inside a curve. The border keeps its width and
+   loses its colour, so nothing shifts when it appears on hover. */
+.card {
+  border-color: transparent;
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: var(--rule);
+}
+
+/* "Read more" was a filled black pill — the loudest thing on a page whose
+   subject is the screenshot above it. It is the same quiet line the index
+   cards use: text, ink, and an arrow that moves. */
+.rc-btn {
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--ink-2);
+  font-weight: 400;
+}
+
+.card:hover .rc-btn {
+  color: var(--ink);
+}
+
+.card:hover .rc-btn svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 600px) {
+  .rc-btn {
+    justify-content: flex-start;
+    height: auto;
+  }
+}
+
+@media (pointer: coarse) {
+  .rc-btn {
+    height: auto;
+    padding: 0;
+  }
 }

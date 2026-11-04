@@ -74,6 +74,14 @@ const SPEC_ROW = `
  * itself before it is named. It is authored inside the overview, so it
  * is lifted out rather than asked for twice.
  */
+/**
+ * The kicker repeated the discipline and the client, both of which the
+ * card that led here already said. The page opens on the work and then
+ * names it.
+ */
+const dropKicker = (html: string): string =>
+  html.replace(/\s*<p class="kicker">[\s\S]*?<\/p>/, '');
+
 const liftHero = (html: string, slug: Slug): string => {
   const re = new RegExp(`\\s*<figure class="shot [^"]*">(?:(?!</figure>)[\\s\\S])*?/case/${slug}/[\\s\\S]*?</figure>`);
   const m = re.exec(html);
@@ -132,7 +140,7 @@ export const render = (slug: Slug): string => `
 <div class="viewtgl-rail">${VIEW_SWITCH}</div>
 
 <div class="layout">
-${wire(liftHero(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug)}
+${wire(dropKicker(liftHero(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug)), slug)}
 </div>`;
 
 export const head = (slug: Slug): string => {

@@ -28,7 +28,7 @@ const card = (w: (typeof work)[number], ghost: boolean, first: boolean): string 
     : `<figure class="fig-todo fig-todo-plate"><p class="lbl fig-todo-kind">Hero</p><p class="fig-todo-note">${esc(w.heroNote ?? '')}</p></figure>`}
   <div class="proj-foot">
     <span class="spacer"></span>
-    <span class="go">Read more ${arrow}</span>
+    <span class="go">View project ${arrow}</span>
   </div>
 </a>`;
 };
