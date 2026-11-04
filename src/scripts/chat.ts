@@ -188,7 +188,7 @@ import '../styles/chat.css';
 
   // follow-ups: answers written by Amy, matched by keyword
   const linksRow='<div class="tools pop"><a class="pill ghost" href="mailto:ayjzhou@gmail.com">Email</a><a class="pill ghost" href="/resume.html" target="_blank" rel="noopener">Resume</a><a class="pill ghost" href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener">LinkedIn</a></div>';
-  const mini=i=>'<div class="cards" style="margin-top:18px">'+card(cases[i],false,false)+'</div>';
+  const mini=i=>'<div class="cards" style="margin-top:18px">'+card(cases[i],false)+'</div>';
   const answers=[
     {k:/^amy's resume$/i, a:'Here is my resume. One page, PDF.', x:'<div class="rsm pop"><div class="rsm-frame"><p class="rsm-fallback">If the preview does not load, open or download the resume below.</p><div class="rsm-fit"><iframe class="rsm-doc" src="/resume.html" title="Amy Zhou, resume" loading="lazy" scrolling="no"></iframe></div></div><div class="rsm-acts"><a class="rsm-open" href="https://drive.google.com/file/d/1j4ykMs8B7TO3vfYmPjJoGhWmnjomap9A/view?usp=sharing" target="_blank" rel="noopener">Open in Google Drive '+arrow+'</a><a class="rsm-open" href="/Amy-Zhou-Resume.pdf" download>Download PDF '+arrow+'</a></div></div>'},
     {k:/^amy on linkedin$/i, a:'Here is my LinkedIn. Happy to connect.', x:'<div class="cards" style="margin-top:18px"><a class="card rc pop" href="https://www.linkedin.com/in/amyyjzhou/" target="_blank" rel="noopener"><div class="rc-h"><span class="rc-name">linkedin.com</span></div><h3>Amy Zhou on LinkedIn</h3><div class="rc-f"><span class="rc-note">Senior product designer at Part3</span><span class="rc-btn">Open LinkedIn '+arrow+'</span></div></a></div>'},
