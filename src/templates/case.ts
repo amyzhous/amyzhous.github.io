@@ -110,9 +110,7 @@ ${EXPLORATIONS.map(
 ${EXPLORATIONS.map(
   (e, i) =>
     `          <button type="button" role="tab" aria-selected="${i === 0}" data-to="${i}">` +
-    `<img src="/case/project-files/${e.file}.webp" alt="" loading="lazy">` +
-    `<span class="explore-eyebrow">${esc(e.eyebrow)}</span>` +
-    `<span class="explore-title">${esc(e.title)}</span></button>`,
+    `<img src="/case/project-files/${e.file}.webp" alt="${esc(e.title)}" loading="lazy"></button>`,
 ).join('\n')}
         </div>
       </div>`;
