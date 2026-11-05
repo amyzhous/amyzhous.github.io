@@ -35,6 +35,7 @@ const SHOTS: Record<string, Record<string, string>> = {
   },
   'project-files': {
     'Hero: drawing register': 'hero',
+    'Existing workflow': 'existing-workflow',
     'File model versus drawing model': 'file-vs-drawing-model',
     'Animation: Import → Extract → Review → Publish': 'importing',
     'Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4': 'revisions',
@@ -44,11 +45,11 @@ const SHOTS: Record<string, Record<string, string>> = {
 const EXT = ['mp4', 'png', 'jpg', 'jpeg', 'webp'];
 
 /**
- * A screenshot can be cropped to its slot's ratio without losing anything
- * that matters. A diagram cannot: its labels sit at the edges. These keep
- * their own proportions instead of filling the frame.
+ * Most screenshots can be cropped to their slot's ratio without losing
+ * anything that matters. These cannot: their content runs to the edges,
+ * so they keep their own proportions instead of filling the frame.
  */
-const DIAGRAMS = new Set(['file-vs-drawing-model']);
+const UNCROPPED = new Set(['file-vs-drawing-model', 'existing-workflow']);
 
 /**
  * A phone plays these at about 335 CSS px, where the 1080-wide copy is
@@ -77,7 +78,7 @@ const withShots = (html: string, slug: Slug): string => {
         ext === 'mp4'
           ? video(`/case/${slug}/${name}`, label)
           : `<img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy">`;
-      const fit = DIAGRAMS.has(name) ? ' shot-fit' : '';
+      const fit = UNCROPPED.has(name) ? ' shot-fit' : '';
       return `<figure class="shot ${ratio}${fit}">${media}</figure>`;
     },
   );
@@ -149,7 +150,7 @@ const wire = (html: string, slug: Slug): string => {
       // placeholders go rather than sit on the page as dashed boxes, and
       // Launch carries its figures alone.
       .replace(
-        /\s*<div class="slot r21"><span>(?:Drawing references|Existing workflow|Detail: drawing revision history)<\/span><\/div>/g,
+        /\s*<div class="slot r21"><span>(?:Drawing references|Detail: drawing revision history)<\/span><\/div>/g,
         slug === 'project-files' ? '' : '$&',
       )
       // the ask pair sits under Importing drawings, after its own figure
