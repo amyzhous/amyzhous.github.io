@@ -261,3 +261,20 @@ section .stats + p{margin-top:24px}
 .shot-note-text h3.sub{margin:0 0 6px}
 .shot-note-text p{margin:0; font-size:14px; color:var(--ink-2)}
 @media (max-width:720px){ .shot-note{grid-template-columns:1fr; gap:14px; align-items:start} }
+
+/* ── design explorations ──
+   One board at a time, the rest as thumbnails. The stage is set to the
+   tallest board so switching never moves the page, and each board sits
+   inside it whole: these carry annotations at their edges. */
+.explore{margin-top:32px}
+.explore-stage{position:relative; aspect-ratio:2000/763; border-radius:10px; overflow:hidden; background:var(--plate)}
+.explore-stage img{display:block; width:100%; height:100%; object-fit:contain}
+.explore-thumbs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:12px}
+.explore-thumbs button{appearance:none; border:1px solid transparent; background:none; padding:0; font:inherit; text-align:left; cursor:pointer; border-radius:8px}
+.explore-thumbs img{display:block; width:100%; aspect-ratio:2000/763; object-fit:cover; object-position:top left; border:1px solid var(--rule); border-radius:8px; background:var(--plate)}
+.explore-thumbs button[aria-selected='true'] img{border-color:var(--ink-3)}
+.explore-eyebrow{display:block; margin-top:8px; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-3)}
+.explore-title{display:block; font-size:13px; color:var(--ink-2); line-height:1.35}
+.explore-thumbs button[aria-selected='true'] .explore-title{color:var(--ink)}
+.explore-thumbs button:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
+@media (max-width:720px){ .explore-thumbs{gap:8px} .explore-title{font-size:12px} }

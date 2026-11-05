@@ -85,6 +85,39 @@ const withShots = (html: string, slug: Slug): string => {
 };
 
 /**
+ * The design explorations behind the model, shown one at a time with the
+ * others as thumbnails under it. Each board's own title is its label.
+ *
+ * The three boards are not the same height, so the stage is set to the
+ * tallest and the shorter two sit inside it: these are labelled boards,
+ * and cropping one would cut its annotations off.
+ */
+const EXPLORATIONS = [
+  { file: 'explore-files-to-sheets', eyebrow: 'Exploration', title: 'Files to sheets' },
+  { file: 'explore-version-history', eyebrow: 'Exploration', title: 'Version history for each sheet' },
+  { file: 'explore-beta', eyebrow: 'Beta', title: 'ProjectFiles Beta' },
+];
+
+const CAROUSEL = `
+      <div class="explore" data-explore>
+        <div class="explore-stage">
+${EXPLORATIONS.map(
+  (e, i) =>
+    `          <img src="/case/project-files/${e.file}.webp" alt="${esc(e.eyebrow)}: ${esc(e.title)}"${i ? ' hidden' : ''} loading="lazy">`,
+).join('\n')}
+        </div>
+        <div class="explore-thumbs" role="tablist" aria-label="Design explorations">
+${EXPLORATIONS.map(
+  (e, i) =>
+    `          <button type="button" role="tab" aria-selected="${i === 0}" data-to="${i}">` +
+    `<img src="/case/project-files/${e.file}.webp" alt="" loading="lazy">` +
+    `<span class="explore-eyebrow">${esc(e.eyebrow)}</span>` +
+    `<span class="explore-title">${esc(e.title)}</span></button>`,
+).join('\n')}
+        </div>
+      </div>`;
+
+/**
  * The two "ask" clips, each beside its own label and description, under
  * Importing drawings.
  *
@@ -152,6 +185,11 @@ const wire = (html: string, slug: Slug): string => {
       .replace(
         /\s*<div class="slot r21"><span>(?:Drawing references|Detail: drawing revision history)<\/span><\/div>/g,
         slug === 'project-files' ? '' : '$&',
+      )
+      // the explorations come before the diagram they arrived at
+      .replace(
+        /(<figure class="shot [^"]*"><img src="\/case\/project-files\/file-vs-drawing-model)/,
+        slug === 'project-files' ? `${CAROUSEL}\n      $1` : '$&',
       )
       // the ask pair sits under Importing drawings, after its own figure
       .replace(
