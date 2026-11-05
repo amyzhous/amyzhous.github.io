@@ -84,17 +84,27 @@ const withShots = (html: string, slug: Slug): string => {
 };
 
 /**
- * Asking a question of an issued set and of a specification division. The
- * Product direction section is where they belong: its own sentence defines
- * the model as drawing sets, sheets and revision history, "with
- * specifications organized into divisions and sections".
+ * The two "ask" clips, each beside its own label and description, under
+ * Importing drawings.
+ *
+ * NOTE: the export has no copy for these two, so the descriptions below
+ * are a first draft of mine for Amy to replace.
  */
 const ASK_ROW = `
-      <div class="shot-row two">
+      <div class="shot-note">
         <figure class="shot r169">${video('/case/project-files/ask-set', 'Asking a question about an issued set')}</figure>
-        <figure class="shot r169">${video('/case/project-files/ask-division', 'Asking a question about a specification division')}</figure>
+        <div class="shot-note-text">
+          <h3 class="sub">Ask about an issued set</h3>
+          <p>Ask which sheets cover a floor and get an answer cited to the drawings it came from.</p>
+        </div>
       </div>
-      <p class="cap">Asking a question of an issued set, and of a specification division.</p>`;
+      <div class="shot-note">
+        <figure class="shot r169">${video('/case/project-files/ask-division', 'Asking a question about a specification division')}</figure>
+        <div class="shot-note-text">
+          <h3 class="sub">Ask about a specification division</h3>
+          <p>Ask a question of one division and see what it requires, without opening the set.</p>
+        </div>
+      </div>`;
 
 /**
  * The kicker repeated the discipline and the client, both of which the
@@ -142,9 +152,9 @@ const wire = (html: string, slug: Slug): string => {
         /\s*<div class="slot r21"><span>(?:Drawing references|Existing workflow|Detail: drawing revision history)<\/span><\/div>/g,
         slug === 'project-files' ? '' : '$&',
       )
-      // the ask pair follows the model diagram it illustrates
+      // the ask pair sits under Importing drawings, after its own figure
       .replace(
-        /(<figure class="shot r21 shot-fit">[\s\S]*?<\/figure>)/,
+        /(<section id="importing">[\s\S]*?<\/figure>)/,
         slug === 'project-files' ? `$1${ASK_ROW}` : '$&',
       )
       // "All work" returns to the one home there is

@@ -52,9 +52,6 @@ p b{color:inherit; font-weight:600}
 .lead{font-size:16.5px}
 
 /* three views of one thing, side by side */
-.shot-row{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:32px}
-.shot-row .shot{margin:0}
-@media (max-width:700px){ .shot-row{grid-template-columns:1fr} }
 
 /* a slot that has its screenshot */
 .shot{margin:28px 0 0; border-radius:10px; overflow:hidden; background:var(--panel)}
@@ -253,10 +250,14 @@ section .stats + p{margin-top:24px}
 .case-hero .shot{margin:0}
 @media (max-width:860px){ .case-hero{margin-bottom:22px} }
 
-/* two views of one idea, side by side */
-.shot-row.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-@media (max-width:720px){ .shot-row,.shot-row.two{grid-template-columns:1fr} }
 
 /* A diagram keeps its own proportions: cropping one cuts off its labels. */
 .shot.shot-fit{aspect-ratio:auto; background:none}
 .shot.shot-fit img{height:auto; object-fit:contain}
+
+/* A figure beside its own label: media left, what it shows right. */
+.shot-note{display:grid; grid-template-columns:minmax(0,1.55fr) minmax(0,1fr); gap:28px; align-items:end; margin-top:32px}
+.shot-note .shot{margin:0}
+.shot-note-text h3.sub{margin:0 0 6px}
+.shot-note-text p{margin:0; font-size:14px; color:var(--ink-2)}
+@media (max-width:720px){ .shot-note{grid-template-columns:1fr; gap:14px; align-items:start} }
