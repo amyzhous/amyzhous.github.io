@@ -1,4 +1,7 @@
 node_modules
 dist
 .DS_Store
+# Printed résumés are build output, except the two the site links to.
 *.pdf
+!public/Amy-Zhou-Resume.pdf
+!public/Amy-Zhou-Resume-ATS.pdf
