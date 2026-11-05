@@ -100,12 +100,12 @@ const EXPLORATIONS = [
 
 const CAROUSEL = `
       <div class="explore" data-explore>
-        <div class="explore-stage">
+        <button type="button" class="explore-stage" data-zoom aria-label="View this board larger">
 ${EXPLORATIONS.map(
   (e, i) =>
     `          <img src="/case/project-files/${e.file}.webp" alt="${esc(e.eyebrow)}: ${esc(e.title)}"${i ? ' hidden' : ''} loading="lazy">`,
 ).join('\n')}
-        </div>
+        </button>
         <div class="explore-thumbs" role="tablist" aria-label="Design explorations">
 ${EXPLORATIONS.map(
   (e, i) =>
@@ -113,7 +113,13 @@ ${EXPLORATIONS.map(
     `<img src="/case/project-files/${e.file}.webp" alt="${esc(e.title)}" loading="lazy"></button>`,
 ).join('\n')}
         </div>
-      </div>`;
+      </div>
+      <dialog class="lightbox" data-lightbox>
+        <button type="button" class="lightbox-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <img alt="">
+      </dialog>`;
 
 /**
  * The two "ask" clips, each beside its own label and description, under

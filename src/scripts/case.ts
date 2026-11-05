@@ -45,3 +45,31 @@ document.querySelectorAll<HTMLElement>('[data-explore]').forEach((root) => {
     });
   });
 });
+
+/**
+ * Clicking a board opens it at full size. <dialog> brings Escape, the
+ * backdrop and focus return with it, so this only has to fill in the
+ * image and decide what counts as a click on the backdrop.
+ */
+const lightbox = document.querySelector<HTMLDialogElement>('[data-lightbox]');
+
+if (lightbox) {
+  const full = lightbox.querySelector('img')!;
+
+  document.querySelectorAll<HTMLElement>('[data-zoom]').forEach((stage) => {
+    stage.addEventListener('click', () => {
+      const shown = [...stage.querySelectorAll('img')].find((i) => !i.hidden);
+      if (!shown) return;
+      full.src = shown.src;
+      full.alt = shown.alt;
+      lightbox.showModal();
+    });
+  });
+
+  lightbox.querySelector('.lightbox-close')!.addEventListener('click', () => lightbox.close());
+
+  // the dialog fills the screen, so "outside the image" is the backdrop
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.close();
+  });
+}
