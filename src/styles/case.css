@@ -268,7 +268,10 @@ section .stats + p{margin-top:24px}
    inside it whole: these carry annotations at their edges. */
 .explore{margin-top:32px}
 .explore-stage{position:relative; aspect-ratio:2000/763; border-radius:10px; overflow:hidden; background:var(--plate)}
-.explore-stage img{display:block; width:100%; height:100%; object-fit:contain}
+/* `display:block` here would beat the browser's own [hidden] rule, leaving
+   every board rendered and stacked, with only the first one in view. */
+.explore-stage img{display:none; width:100%; height:100%; object-fit:contain}
+.explore-stage img:not([hidden]){display:block}
 .explore-thumbs{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
 .explore-thumbs button{appearance:none; border:0; background:none; padding:0; font:inherit; cursor:pointer; line-height:0}
 .explore-thumbs img{display:block; width:116px; aspect-ratio:2000/763; object-fit:cover; object-position:top left; border:1px solid var(--rule); border-radius:6px; background:var(--plate); opacity:.55; transition:opacity .15s, border-color .15s}
