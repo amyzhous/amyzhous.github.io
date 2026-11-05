@@ -40,6 +40,7 @@ export interface CaseStudy {
 /** The opening image of each case, where one has been made. */
 const HERO_NAMES: Record<string, string> = {
   'project-files': 'drawings-register',
+  'activation-growth': 'hero',
   'construction-data-ai': 'hero',
 };
 

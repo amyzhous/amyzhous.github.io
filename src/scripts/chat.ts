@@ -16,7 +16,7 @@ import '../styles/chat.css';
     {id:'c1',slug:'project-files',n:1,name:"0\u21921 Product Design \u00b7 Part3",title:"Project Files",stat:"$652K+ Annual revenue associated with Project Files \u00b7 58K+ Drawings managed in Part3",
      fig:'<div class="shotfig"><img src="/case/project-files/drawings-register.jpg" alt="" loading="lazy"></div>'},
     {id:'c2',slug:'activation-growth',n:2,name:"Growth \u00b7 Part3",title:"Activation & Growth",stat:"77 Projects started from firm-authored templates \u00b7 54% Of subsequent projects reused a template among firms that created one \u00b7 37% Historical activation baseline, giving us a starting point to measure future improvements",
-     fig:'<div>One journey, three opportunities</div><div class="body"><div class="flow"><span>Create project</span><i></i><span>Reuse template</span><i></i><span>Invite team</span><i></i><span>First real work</span></div></div>'},
+     fig:'<div class="shotfig"><video src="/case/activation-growth/hero.mp4" autoplay muted loop playsinline preload="metadata"></video></div>'},
     {id:'c3',slug:'construction-data-ai',n:3,name:"AI & Analytics \u00b7 Part3",title:"Construction Data & Insights",stat:"",
      fig:'<div class="shotfig"><video src="/case/construction-data-ai/hero.mp4" autoplay muted loop playsinline preload="metadata"></video></div>'},
     {id:'c4',slug:'self-serve-billing',n:4,name:"Monetization \u00b7 Part3",title:"Self-Serve Billing",stat:"~27% Of Maxio-linked firms used self-service \u00b7 29 sec One firm's seat purchase, down from a multi-day process \u00b7 7 : 1 Approval-to-purchase ratio",

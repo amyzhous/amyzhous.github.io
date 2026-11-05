@@ -27,6 +27,9 @@ const SHOTS: Record<string, Record<string, string>> = {
   'construction-data-ai': {
     'Hero: customizable construction analytics dashboard': 'hero',
   },
+  'activation-growth': {
+    'Hero: selected onboarding and project setup experiences': 'hero',
+  },
   'project-files': {
     'Hero: drawing register': 'drawings-register',
     'Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4': 'sheet-revisions',
