@@ -256,7 +256,7 @@ section .stats + p{margin-top:24px}
 .shot.shot-fit img{height:auto; object-fit:contain}
 
 /* A figure beside its own label: media left, what it shows right. */
-.shot-note{display:grid; grid-template-columns:minmax(0,1.55fr) minmax(0,1fr); gap:28px; align-items:end; margin-top:32px}
+.shot-note{display:grid; grid-template-columns:minmax(0,2.2fr) minmax(0,1fr); gap:28px; align-items:end; margin-top:32px}
 .shot-note .shot{margin:0}
 .shot-note-text h3.sub{margin:0 0 6px}
 .shot-note-text p{margin:0; font-size:14px; color:var(--ink-2)}
