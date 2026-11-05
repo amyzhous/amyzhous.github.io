@@ -14,13 +14,13 @@ import '../styles/chat.css';
   const arrow='<svg class="lu-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>';
   const cases=[
     {id:'c1',slug:'project-files',n:1,name:"0\u21921 Product Design \u00b7 Part3",title:"Project Files",stat:"$652K+ Annual revenue associated with Project Files \u00b7 58K+ Drawings managed in Part3",
-     fig:'<div class="shotfig"><img src="/case/project-files/drawings-register.jpg" alt="" loading="lazy"></div>'},
+     fig:'<div class="shotfig"><video src="/case/project-files/hero.mp4" autoplay muted loop playsinline preload="metadata"></video></div>'},
     {id:'c2',slug:'activation-growth',n:2,name:"Growth \u00b7 Part3",title:"Activation & Growth",stat:"77 Projects started from firm-authored templates \u00b7 54% Of subsequent projects reused a template among firms that created one \u00b7 37% Historical activation baseline, giving us a starting point to measure future improvements",
      fig:'<div class="shotfig"><video src="/case/activation-growth/hero.mp4" autoplay muted loop playsinline preload="metadata"></video></div>'},
     {id:'c3',slug:'construction-data-ai',n:3,name:"AI & Analytics \u00b7 Part3",title:"Construction Data & Insights",stat:"",
      fig:'<div class="shotfig"><video src="/case/construction-data-ai/hero.mp4" autoplay muted loop playsinline preload="metadata"></video></div>'},
     {id:'c4',slug:'self-serve-billing',n:4,name:"Monetization \u00b7 Part3",title:"Self-Serve Billing",stat:"~27% Of Maxio-linked firms used self-service \u00b7 29 sec One firm's seat purchase, down from a multi-day process \u00b7 7 : 1 Approval-to-purchase ratio",
-     fig:'<div>Provisional access, then approval</div><div class="body"><div class="flow"><span>Add teammate</span><i></i><span>Provisional access</span><i></i><span>Billing approval</span><i></i><span>Confirmed seat</span></div></div>'}
+     fig:'<div class="shotfig"><video src="/case/self-serve-billing/hero.mp4" autoplay muted loop playsinline preload="metadata"></video></div>'}
   ];
   const metrics={c1:[['Drawings managed','58K+'],['Paid product','0→1']],c2:[['Activation baseline','37%'],['Opportunities','3']],c3:[['Direction','Proposed'],['Dashboard','Demonstrated']],c4:[['Firms','44'],['Seat changes','245']]};
   const icons={c1:'<path d="M3 2.5h6.5L13 6v7.5H3z"/><path d="M9.5 2.5V6H13"/>',c2:'<path d="M8 2v2.5M8 11.5V14M2 8h2.5M11.5 8H14"/><circle cx="8" cy="8" r="3"/>',c4:'<path d="M2.5 5.5h11v7h-11z"/><path d="M2.5 8.5h11"/><circle cx="11" cy="10.5" r="1"/>',c3:'<rect x="2.5" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="9" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="2.5" y="9" width="4.5" height="4.5" rx="1"/><rect x="9" y="9" width="4.5" height="4.5" rx="1"/>'};

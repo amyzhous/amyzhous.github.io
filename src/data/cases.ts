@@ -39,9 +39,10 @@ export interface CaseStudy {
 
 /** The opening image of each case, where one has been made. */
 const HERO_NAMES: Record<string, string> = {
-  'project-files': 'drawings-register',
+  'project-files': 'hero',
   'activation-growth': 'hero',
   'construction-data-ai': 'hero',
+  'self-serve-billing': 'hero',
 };
 
 const HERO: Record<string, string | undefined> = Object.fromEntries(

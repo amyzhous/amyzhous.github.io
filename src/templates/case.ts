@@ -30,8 +30,11 @@ const SHOTS: Record<string, Record<string, string>> = {
   'activation-growth': {
     'Hero: selected onboarding and project setup experiences': 'hero',
   },
+  'self-serve-billing': {
+    'Hero: employee request and billing-admin approval': 'hero',
+  },
   'project-files': {
-    'Hero: drawing register': 'drawings-register',
+    'Hero: drawing register': 'hero',
     'Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4': 'sheet-revisions',
   },
 };
