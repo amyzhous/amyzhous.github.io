@@ -33,8 +33,8 @@
   <title>Project Files · Amy Zhou</title>
   <meta name="description" content="Part3 helps architects manage construction administration, but the drawings behind that work lived outside the product.">
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-  <script type="module" crossorigin src="/assets/case-S0WdWACE.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/case-BlerGhdc.css">
+  <script type="module" crossorigin src="/assets/case-DSsQdSEk.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/case-Cie9hBGw.css">
 </head>
 <body>
 
@@ -54,7 +54,7 @@
 
   <main>
     <p class="m-crumb"><a class="backlink" href="/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a></p>
-    <div class="case-hero"><figure class="shot r169"><video src="/case/project-files/hero.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Hero: drawing register"></video></figure></div>
+    <div class="case-hero"><figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Hero: drawing register"><source src="/case/project-files/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/hero.mp4" type="video/mp4"></video></figure></div>
     <h1>Project Files</h1>
     <dl class="meta">
       <div><dt>Role</dt><dd>Product Design Lead</dd></div>
@@ -79,7 +79,6 @@
       <h2>Why Project Files?</h2>
       <p>Architects relied on drawings to review submittals, answer RFIs, and issue changes, but managed them in separate tools. Teams had to switch between products to find drawings, check revisions, and complete their work.</p>
       <p>For Part3, this exposed a gap in the existing product and an opportunity to introduce a new paid offering.</p>
-      <div class="slot r21"><span>Existing workflow</span></div>
     </section>
 
     <section id="direction">
@@ -87,7 +86,12 @@
       <p>Project Files began as a file-management concept. Through customer discovery and workflow analysis, I found that a general file library could store PDFs, but couldn't help architects identify current drawings or track revisions.</p>
       <p>I worked with product and engineering to shift the scope toward drawing management. We defined a model built around drawing sets, individual sheets, and revision history, with specifications organized into divisions and sections.</p>
       <p>We prioritized two workflows: importing large drawing sets with minimal setup and managing current revisions throughout construction.</p>
-      <div class="slot r21"><span>File model versus drawing model</span></div>
+      <figure class="shot r21 shot-fit"><img src="/case/project-files/file-vs-drawing-model.webp" alt="File model versus drawing model" loading="lazy"></figure>
+      <div class="shot-row two">
+        <figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Asking a question about an issued set"><source src="/case/project-files/ask-set-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/ask-set.mp4" type="video/mp4"></video></figure>
+        <figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Asking a question about a specification division"><source src="/case/project-files/ask-division-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/ask-division.mp4" type="video/mp4"></video></figure>
+      </div>
+      <p class="cap">Asking a question of an issued set, and of a specification division.</p>
     </section>
 
     <section id="importing">
@@ -95,26 +99,19 @@
       <p>Drawing sets often arrive as a single PDF containing hundreds of sheets. Requiring architects to split and label them manually would make adopting Project Files more difficult.</p>
       <p>We chose to extract sheet numbers, titles, and disciplines automatically, then let users review the results before publishing.</p>
       <p>The extra review step was deliberate. It added a little time to setup but prevented inaccurate sheet information from carrying into the drawing register.</p>
-      <div class="slot r169"><span>Animation: Import → Extract → Review → Publish</span></div>
+      <figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Import → Extract → Review → Publish"><source src="/case/project-files/importing-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/importing.mp4" type="video/mp4"></video></figure>
     </section>
 
     <section id="revisions">
       <h2>Managing revisions</h2>
       <p>The newest upload isn't always the latest issued drawing. Automatic versioning alone couldn't account for historical uploads or different issue dates.</p>
       <p>We combined automatic revision tracking with manual control, so teams could identify current drawings without losing their revision history.</p>
-      <figure class="shot r169"><img src="/case/project-files/sheet-revisions.jpg" alt="Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4" loading="lazy"></figure>
-      <div class="slot r21"><span>Detail: drawing revision history</span></div>
+      <figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4"><source src="/case/project-files/revisions-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/revisions.mp4" type="video/mp4"></video></figure>
     </section>
 
     <section id="launch">
       <h2>Launch</h2>
       <p>Project Files shipped as a paid product for architecture firms, supporting drawing management, current-set exports, and references across construction administration workflows. The product went on to generate <b>$652K+ in associated annual revenue</b>, with more than <b>58,000 drawings managed</b> in Part3.</p>
-      <div class="shot-row">
-        <figure class="shot r43"><img src="/case/project-files/specs-divisions.jpg" alt="Specifications by division" loading="lazy"></figure>
-        <figure class="shot r43"><img src="/case/project-files/specs-sections.jpg" alt="Specifications by section" loading="lazy"></figure>
-        <figure class="shot r43"><img src="/case/project-files/specs-sets.jpg" alt="Specifications by set" loading="lazy"></figure>
-      </div>
-      <p class="cap">Specifications organized into divisions and sections, and by issued set.</p>
     </section>
 
     <footer>
