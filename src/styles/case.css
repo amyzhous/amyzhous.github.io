@@ -252,3 +252,11 @@ section .stats + p{margin-top:24px}
 .case-hero{margin:0 0 30px}
 .case-hero .shot{margin:0}
 @media (max-width:860px){ .case-hero{margin-bottom:22px} }
+
+/* two views of one idea, side by side */
+.shot-row.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:720px){ .shot-row,.shot-row.two{grid-template-columns:1fr} }
+
+/* A diagram keeps its own proportions: cropping one cuts off its labels. */
+.shot.shot-fit{aspect-ratio:auto; background:none}
+.shot.shot-fit img{height:auto; object-fit:contain}

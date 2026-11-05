@@ -5,3 +5,7 @@ dist
 *.pdf
 !public/Amy-Zhou-Resume.pdf
 !public/Amy-Zhou-Resume-ATS.pdf
+
+# Original screen recordings. They are the source for `npm run media`;
+# what ships is the encoded copy in public/case/.
+media-src

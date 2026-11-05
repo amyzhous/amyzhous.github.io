@@ -35,11 +35,32 @@ const SHOTS: Record<string, Record<string, string>> = {
   },
   'project-files': {
     'Hero: drawing register': 'hero',
-    'Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4': 'sheet-revisions',
+    'File model versus drawing model': 'file-vs-drawing-model',
+    'Animation: Import → Extract → Review → Publish': 'importing',
+    'Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4': 'revisions',
   },
 };
 
 const EXT = ['mp4', 'png', 'jpg', 'jpeg', 'webp'];
+
+/**
+ * A screenshot can be cropped to its slot's ratio without losing anything
+ * that matters. A diagram cannot: its labels sit at the edges. These keep
+ * their own proportions instead of filling the frame.
+ */
+const DIAGRAMS = new Set(['file-vs-drawing-model']);
+
+/**
+ * A phone plays these at about 335 CSS px, where the 1080-wide copy is
+ * already more than a 3x screen can resolve. `media` is read once when the
+ * element loads, which is what we want: the file should not change under a
+ * window resize mid-playback.
+ */
+const video = (src: string, label: string): string =>
+  `<video autoplay muted loop playsinline preload="metadata" aria-label="${esc(label)}">` +
+  `<source src="${src}-sm.mp4" type="video/mp4" media="(max-width: 700px)">` +
+  `<source src="${src}.mp4" type="video/mp4">` +
+  `</video>`;
 
 const withShots = (html: string, slug: Slug): string => {
   const map = SHOTS[slug];
@@ -54,32 +75,27 @@ const withShots = (html: string, slug: Slug): string => {
       if (!ext) return whole;
       const media =
         ext === 'mp4'
-          ? `<video src="/case/${slug}/${name}.mp4" autoplay muted loop playsinline preload="metadata" aria-label="${esc(label)}"></video>`
+          ? video(`/case/${slug}/${name}`, label)
           : `<img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy">`;
-      return `<figure class="shot ${ratio}">${media}</figure>`;
+      const fit = DIAGRAMS.has(name) ? ' shot-fit' : '';
+      return `<figure class="shot ${ratio}${fit}">${media}</figure>`;
     },
   );
 };
 
 /**
- * The three specifications views answer no slot this case study has, so
- * they go in as their own row under Launch — specifications are part of
- * what shipped, and the Product direction section describes them as
- * organized into divisions and sections.
+ * Asking a question of an issued set and of a specification division. The
+ * Product direction section is where they belong: its own sentence defines
+ * the model as drawing sets, sheets and revision history, "with
+ * specifications organized into divisions and sections".
  */
-const SPEC_ROW = `
-      <div class="shot-row">
-        <figure class="shot r43"><img src="/case/project-files/specs-divisions.jpg" alt="Specifications by division" loading="lazy"></figure>
-        <figure class="shot r43"><img src="/case/project-files/specs-sections.jpg" alt="Specifications by section" loading="lazy"></figure>
-        <figure class="shot r43"><img src="/case/project-files/specs-sets.jpg" alt="Specifications by set" loading="lazy"></figure>
+const ASK_ROW = `
+      <div class="shot-row two">
+        <figure class="shot r169">${video('/case/project-files/ask-set', 'Asking a question about an issued set')}</figure>
+        <figure class="shot r169">${video('/case/project-files/ask-division', 'Asking a question about a specification division')}</figure>
       </div>
-      <p class="cap">Specifications organized into divisions and sections, and by issued set.</p>`;
+      <p class="cap">Asking a question of an issued set, and of a specification division.</p>`;
 
-/**
- * The opening image goes above the title, the way a project introduces
- * itself before it is named. It is authored inside the overview, so it
- * is lifted out rather than asked for twice.
- */
 /**
  * The kicker repeated the discipline and the client, both of which the
  * card that led here already said. The page opens on the work and then
@@ -88,6 +104,11 @@ const SPEC_ROW = `
 const dropKicker = (html: string): string =>
   html.replace(/\s*<p class="kicker">[\s\S]*?<\/p>/, '');
 
+/**
+ * The opening image goes above the title, the way a project introduces
+ * itself before it is named. It is authored inside the overview, so it
+ * is lifted out rather than asked for twice.
+ */
 const liftHero = (html: string, slug: Slug): string => {
   const re = new RegExp(`\\s*<figure class="shot [^"]*">(?:(?!</figure>)[\\s\\S])*?/case/${slug}/[\\s\\S]*?</figure>`);
   const m = re.exec(html);
@@ -114,9 +135,17 @@ const wire = (html: string, slug: Slug): string => {
 
   return (
     html
+      // Project Files is fully illustrated now, so its remaining empty
+      // placeholders go rather than sit on the page as dashed boxes, and
+      // Launch carries its figures alone.
       .replace(
-        '<div class="slot r21"><span>Drawing references</span></div>',
-        slug === 'project-files' ? SPEC_ROW.trim() : '<div class="slot r21"><span>Drawing references</span></div>',
+        /\s*<div class="slot r21"><span>(?:Drawing references|Existing workflow|Detail: drawing revision history)<\/span><\/div>/g,
+        slug === 'project-files' ? '' : '$&',
+      )
+      // the ask pair follows the model diagram it illustrates
+      .replace(
+        /(<figure class="shot r21 shot-fit">[\s\S]*?<\/figure>)/,
+        slug === 'project-files' ? `$1${ASK_ROW}` : '$&',
       )
       // "All work" returns to the one home there is
       .replaceAll('<a class="backlink" href="#">', '<a class="backlink" href="/">')
