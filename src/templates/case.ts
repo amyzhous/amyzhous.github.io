@@ -200,7 +200,7 @@ const dropKicker = (html: string): string =>
  * is lifted out rather than asked for twice.
  */
 const liftHero = (html: string, slug: Slug): string => {
-  const re = new RegExp(`\\s*<figure class="shot [^"]*">(?:(?!</figure>)[\\s\\S])*?/case/${slug}/[\\s\\S]*?</figure>`);
+  const re = new RegExp(`\\s*<figure class="shot"[^>]*>(?:(?!</figure>)[\\s\\S])*?/case/${slug}/[\\s\\S]*?</figure>`);
   const m = re.exec(html);
   if (!m) return html;
   return html
@@ -268,7 +268,7 @@ const wire = (html: string, slug: Slug): string => {
       )
       // the explorations come before the diagram they arrived at
       .replace(
-        /(<figure class="shot [^"]*"><img src="\/case\/project-files\/file-vs-drawing-model)/,
+        /(<figure class="shot"[^>]*><img src="\/case\/project-files\/file-vs-drawing-model)/,
         slug === 'project-files' ? `${CAROUSEL}\n      $1` : '$&',
       )
       // "All work" returns to the one home there is
