@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { caseBySlug } from '../data/cases.js';
@@ -79,12 +80,6 @@ const EXTRAS: Record<string, Record<string, [string, string][]>> = {
 
 const EXT = ['mp4', 'png', 'jpg', 'jpeg', 'webp'];
 
-/**
- * Most screenshots can be cropped to their slot's ratio without losing
- * anything that matters. These cannot: their content runs to the edges,
- * so they keep their own proportions instead of filling the frame.
- */
-const UNCROPPED = new Set(['file-vs-drawing-model', 'existing-workflow']);
 
 /**
  * A phone plays these at about 335 CSS px, where the 1080-wide copy is
@@ -103,6 +98,30 @@ const video = (src: string, label: string): string =>
  * slot, minus the word that described what kind of picture to make.
  * Nothing here is written for the page; it is what Amy named the shot.
  */
+/**
+ * A figure is shaped by its file, not by the slot it fills.
+ *
+ * The slot labels were written against placeholder art and name ratios the
+ * recordings do not have: the 4:3 animations were landing in 16:9 and 2:1
+ * frames and losing a quarter to a third of the picture to the crop.
+ */
+const ratioCache = new Map<string, string>();
+
+const mediaRatio = (file: string): string => {
+  const hit = ratioCache.get(file);
+  if (hit) return hit;
+  // resolved from the project root: the SSR pass runs from a temp directory
+  const bin = resolve('node_modules/ffprobe-static/bin', process.platform, process.arch, 'ffprobe');
+  const out = execFileSync(bin, [
+    '-v', 'error', '-select_streams', 'v:0',
+    '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', file,
+  ]).toString().trim().split('\n')[0]!;
+  const [w, h] = out.split('x');
+  const ratio = `${w}/${h}`;
+  ratioCache.set(file, ratio);
+  return ratio;
+};
+
 const caption = (label: string): string => {
   const text = label.replace(/^(?:Animation|Detail|Hero|Screens?):\s*/, '');
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -114,7 +133,7 @@ const withShots = (html: string, slug: Slug): string => {
 
   return html.replace(
     /<div class="slot (r\d+)"><span>([^<]*)<\/span><\/div>/g,
-    (whole, ratio: string, label: string) => {
+    (whole, _ratio: string, label: string) => {
       const name = map[label];
       if (!name) return whole;
       const ext = EXT.find((e) => existsSync(`public/case/${slug}/${name}.${e}`));
@@ -123,9 +142,9 @@ const withShots = (html: string, slug: Slug): string => {
         ext === 'mp4'
           ? video(`/case/${slug}/${name}`, label)
           : `<img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy">`;
-      const fit = UNCROPPED.has(name) ? ' shot-fit' : '';
       const cap = name === 'hero' ? '' : `<p class="cap">${esc(caption(label))}</p>`;
-      return `<figure class="shot ${ratio}${fit}">${media}</figure>${cap}`;
+      const shape = mediaRatio(`public/case/${slug}/${name}.${ext}`);
+      return `<figure class="shot" style="aspect-ratio:${shape}">${media}</figure>${cap}`;
     },
   );
 };
@@ -200,11 +219,14 @@ const extrasFor = (slug: Slug, section: string): string => {
   );
   if (!present.length) return '';
 
-  const figures = present.map(
-    ([file, label]) =>
-      `<figure class="shot ${SQUARE.has(file) ? 'r11' : 'r43'}">${video(`/case/${slug}/${file}`, label)}` +
-      `<figcaption class="cap">${esc(label)}</figcaption></figure>`,
-  );
+  const figures = present.map(([file, label]) => {
+    const ext = EXT.find((e) => existsSync(`public/case/${slug}/${file}.${e}`))!;
+    const shape = mediaRatio(`public/case/${slug}/${file}.${ext}`);
+    return (
+      `<figure class="shot" style="aspect-ratio:${shape}">${video(`/case/${slug}/${file}`, label)}` +
+      `<figcaption class="cap">${esc(label)}</figcaption></figure>`
+    );
+  });
 
   // A square at the full column width is taller than anything else on the
   // page, so squares go two across, the way a square is used at all.

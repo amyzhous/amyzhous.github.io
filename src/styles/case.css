@@ -9,7 +9,7 @@
    ------------------------------------------------------------------------ */
 
 :root{
-  --bg:#fcfcfa; --ink:#1b1a18; --ink-2:#5b5954; --ink-3:#706d67; --rule:#e8e7e3; --panel:#f2f1ee; --hover:#efeeea;
+  --bg:#fcfcfa; --ink:#1b1a18; --ink-2:#4a4844; --ink-3:#706d67; --rule:#e8e7e3; --panel:#f2f1ee; --hover:#efeeea;
   --serif:"Libre Baskerville","Iowan Old Style",Georgia,serif; --sans:Saans,system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light; box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
@@ -333,7 +333,17 @@ section > ol,
 section .shot,
 section .slot,
 section .explore,
-section .shot-note{max-width:var(--prose); margin-inline:auto}
+section .shot-note,
+/* The title block shares the column too. On Rachel Chen's pages every
+   element but the opening image sits on one left edge — h1, the meta row,
+   the headings and the prose all at 376 of 1440 — and only the hero is
+   wider. Ours had the title and meta at the full canvas and the reading
+   column inside it, so the page had two left edges. */
+main > h1,
+main > .kicker,
+main > .m-crumb,
+main > .meta,
+main > footer{max-width:var(--prose); margin-inline:auto}
 
 
 /* ── a board at full size ── */
@@ -348,7 +358,7 @@ section .shot-note{max-width:var(--prose); margin-inline:auto}
 
 /* Squares go two across: one at the full column width would stand taller
    than every other figure on the page. */
-.shot-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:24px; max-width:var(--prose)}
+.shot-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:24px auto 0; max-width:var(--prose)}
 .shot-pair .shot{margin:0}
 @media (max-width:700px){ .shot-pair{grid-template-columns:1fr} }
 
@@ -360,3 +370,20 @@ section .shot-note{max-width:var(--prose); margin-inline:auto}
 /* A heading follows its figure at the section gap, not on top of it. */
 section h3{margin-top:var(--section-gap)}
 section h2 + h3{margin-top:var(--head-gap)}
+
+/* Overview, The problem, Product direction: these name the section rather
+   than make a claim, so they read as a label and not as a heading. The
+   same treatment Rachel Chen gives hers: the body sans, small, and a step
+   lighter than the text it introduces. */
+section > h2{
+  font-family:var(--sans);
+  font-size:15px;
+  font-weight:400;
+  line-height:1.4;
+  letter-spacing:0;
+  color:var(--ink-3);
+}
+
+/* which leaves the serif to the headings that say something */
+section > h3{margin-top:var(--head-gap)}
+section > h2 + h3{margin-top:10px}
