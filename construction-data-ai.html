@@ -102,33 +102,31 @@
     </section>
 
     <section id="custom">
-      <p class="eyebrow">Design decisions · 01</p>
-      <h2>Making reporting customizable</h2>
-      <p><b>Hypothesis:</b> Giving customers control over their reporting would increase its relevance across different roles, encouraging repeat use and reducing reliance on manual workarounds.</p>
-      <p><b>Approach:</b> I explored suggested charts with configurable metrics, groupings, filters, and layouts. Customers could build views around project performance or compare results across their organization.</p>
-      <p>Suggested charts reduced the effort required to get started, while customization allowed firms to measure what mattered to them.</p>
-      <p><b>Design outcome:</b> A flexible reporting experience that supported different needs without requiring customers to build everything from scratch.</p>
-      <div class="slot r169"><span>Animation: populated dashboard → add chart → configure → save</span></div>
+      <h2>01. Making reporting customizable</h2>
+      <p><b>The key decision was where customization should begin.</b></p>
+      <p>An empty dashboard offered flexibility but placed all the work on the customer. Suggested charts provided a starting point, while editable settings allowed customers to adjust the reporting to their needs.</p>
+      <p>The experience was designed to support both customers who wanted a quick overview and those who needed more specific analysis.</p>
+      <div class="slot r169"><span>Animation: Populated dashboard → add suggested chart → configure → save view</span></div>
     </section>
 
     <section id="investigate">
-      <p class="eyebrow">Design decisions · 02</p>
-      <h2>Moving from insight to investigation</h2>
-      <p><b>Hypothesis:</b> Connecting metrics to their underlying records would help customers investigate problems faster and make decisions with greater confidence.</p>
-      <p><b>Approach:</b> Building on our AI strategy discussions, I explored contextual actions that allowed users to ask questions about a chart, review a breakdown, and open supporting project records.</p>
-      <p>The key decision was to make answers verifiable. AI could help explain a trend, but customers needed access to the evidence behind it.</p>
-      <p><b>Design outcome:</b> A direct path from spotting a performance issue to investigating its underlying cause.</p>
-      <figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: chart → ask why → breakdown → source record"><source src="/case/construction-data-ai/investigate-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/investigate.mp4" type="video/mp4"></video></figure><p class="cap">Chart → ask why → breakdown → source record</p>
+      <h2>02. Moving from insight to investigation</h2>
+      <p>A chart could show that review times were increasing, but it couldn't explain why.</p>
+      <p>Building on our AI strategy discussions, I explored contextual actions that allowed customers to ask questions about a specific chart, examine a breakdown, and open the records behind the results.</p>
+      <p><b>The key decision was making answers verifiable.</b></p>
+      <p>AI could help explain patterns and identify where to investigate, but customers needed to see the underlying data before relying on those answers.</p>
+      <p>Rather than moving users into a separate conversation, the experience connected the chart, the question, and the supporting records.</p>
+      <figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Select chart → ask why → review breakdown → open source records"><source src="/case/construction-data-ai/investigate-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/investigate.mp4" type="video/mp4"></video></figure><p class="cap">Select chart → ask why → review breakdown → open source records</p>
     </section>
 
     <section id="create">
-      <p class="eyebrow">Design decisions · 03</p>
-      <h2>Creating reports through conversation</h2>
-      <p><b>Hypothesis:</b> Natural-language report creation would reduce the effort required for custom reporting, allowing more customers to answer questions independently.</p>
-      <p><b>Approach:</b> Working within Engineering's charting capabilities, I explored a workflow where customers could describe the report they needed, review the proposed chart, and add it to their dashboard.</p>
-      <p>AI would interpret the request and configure a supported visualization, while the underlying values came from Part3's data APIs.</p>
-      <p><b>Design outcome:</b> A simpler way to create reusable reports without relying on external tools or manually configuring every chart.</p>
-      <figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: request chart → preview → confirm → add to dashboard"><source src="/case/construction-data-ai/create-chart-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/create-chart.mp4" type="video/mp4"></video></figure><p class="cap">Request chart → preview → confirm → add to dashboard</p>
+      <h2>03. Creating reports through conversation</h2>
+      <p>Not every reporting need could be anticipated through suggested charts. Customers also needed a way to create reports without manually configuring every metric, grouping, and filter.</p>
+      <p>Working within Engineering's charting capabilities, I explored a workflow where customers could describe the report they needed, review the proposed visualization, and add it to their dashboard.</p>
+      <p><b>The key decision was separating AI-generated configurations from the underlying data.</b></p>
+      <p>AI could interpret a request and configure a supported chart, but the values would come directly from Part3's data APIs. Customers could review the result before saving it as a reusable view.</p>
+      <p>This made conversational reporting a way to create and customize dashboards, without making AI responsible for the accuracy of the numbers.</p>
+      <figure class="shot r169"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Describe report → review chart preview → confirm → save to dashboard"><source src="/case/construction-data-ai/create-chart-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/create-chart.mp4" type="video/mp4"></video></figure><p class="cap">Describe report → review chart preview → confirm → save to dashboard</p>
     </section>
 
     <section id="impact">
