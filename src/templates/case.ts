@@ -24,21 +24,56 @@ const DIR = resolve('src/content/cases-html');
  * way screenshots can be dropped in one at a time without touching markup.
  */
 const SHOTS: Record<string, Record<string, string>> = {
-  'construction-data-ai': {
-    'Hero: customizable construction analytics dashboard': 'hero',
-  },
-  'activation-growth': {
-    'Hero: selected onboarding and project setup experiences': 'hero',
-  },
-  'self-serve-billing': {
-    'Hero: employee request and billing-admin approval': 'hero',
-  },
   'project-files': {
     'Hero: drawing register': 'hero',
     'Existing workflow': 'existing-workflow',
     'File model versus drawing model': 'file-vs-drawing-model',
     'Animation: Import → Extract → Review → Publish': 'importing',
     'Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4': 'revisions',
+    'Detail: drawing revision history': 'revision-trace',
+  },
+  'activation-growth': {
+    'Hero: selected onboarding and project setup experiences': 'hero',
+    'Animation: import contacts → detect existing → add team → populate reviewers': 'import-members',
+    'Animation: create template → reuse configuration → start new project': 'create-template',
+  },
+  'construction-data-ai': {
+    'Hero: customizable construction analytics dashboard': 'hero',
+    'Animation: chart → ask why → breakdown → source record': 'investigate',
+    'Animation: request chart → preview → confirm → add to dashboard': 'create-chart',
+  },
+  'self-serve-billing': {
+    'Hero: employee request and billing-admin approval': 'hero',
+    'Animation: add teammate → provisional access → billing-admin approval': 'add-seats',
+  },
+};
+
+/**
+ * Recordings the exports have no slot for. They follow the section they
+ * belong to, after whatever figure it already carries, which is the order
+ * the pages keep throughout: the claim, then the prose, then the evidence.
+ */
+const SQUARE = new Set(['ask-set', 'ask-division']);
+
+const EXTRAS: Record<string, Record<string, [string, string][]>> = {
+  'project-files': {
+    using: [
+      ['ask-set', 'Asking a question of an issued set'],
+      ['ask-division', 'Asking a question of a specification division'],
+    ],
+  },
+  'activation-growth': {
+    team: [
+      ['add-members', 'Adding members quickly'],
+      ['project-roles', 'Setting project roles'],
+    ],
+    templates: [['use-template', 'Starting a project from a template']],
+  },
+  'self-serve-billing': {
+    two: [
+      ['approve-requests', 'A billing admin approving requests'],
+      ['seat-request', 'A seat request end to end'],
+    ],
   },
 };
 
@@ -122,29 +157,6 @@ ${EXPLORATIONS.map(
       </dialog>`;
 
 /**
- * The two "ask" clips, each beside its own label and description, under
- * Importing drawings.
- *
- * NOTE: the export has no copy for these two, so the descriptions below
- * are a first draft of mine for Amy to replace.
- */
-const ASK_ROW = `
-      <div class="shot-note">
-        <figure class="shot r169">${video('/case/project-files/ask-set', 'Asking a question about an issued set')}</figure>
-        <div class="shot-note-text">
-          <h3 class="sub">Ask about an issued set</h3>
-          <p>Ask which sheets cover a floor and get an answer cited to the drawings it came from.</p>
-        </div>
-      </div>
-      <div class="shot-note">
-        <figure class="shot r169">${video('/case/project-files/ask-division', 'Asking a question about a specification division')}</figure>
-        <div class="shot-note-text">
-          <h3 class="sub">Ask about a specification division</h3>
-          <p>Ask a question of one division and see what it requires, without opening the set.</p>
-        </div>
-      </div>`;
-
-/**
  * The kicker repeated the discipline and the client, both of which the
  * card that led here already said. The page opens on the work and then
  * names it.
@@ -165,6 +177,36 @@ const liftHero = (html: string, slug: Slug): string => {
     .replace(m[0], '')
     .replace('<p class="kicker">', `<div class="case-hero">${m[0].trim()}</div>\n    <p class="kicker">`);
 };
+
+/**
+ * The extra recordings for one section, appended where that section ends.
+ */
+const extrasFor = (slug: Slug, section: string): string => {
+  const list = EXTRAS[slug]?.[section];
+  if (!list) return '';
+  const present = list.filter(([file]) =>
+    EXT.some((e) => existsSync(`public/case/${slug}/${file}.${e}`)),
+  );
+  if (!present.length) return '';
+
+  const figures = present.map(
+    ([file, label]) =>
+      `<figure class="shot ${SQUARE.has(file) ? 'r11' : 'r43'}">${video(`/case/${slug}/${file}`, label)}</figure>`,
+  );
+
+  // A square at the full column width is taller than anything else on the
+  // page, so squares go two across, the way a square is used at all.
+  return present.every(([file]) => SQUARE.has(file))
+    ? `\n      <div class="shot-pair">${figures.join('')}</div>`
+    : figures.map((f) => `\n      ${f}`).join('');
+};
+
+/** Appends each section's extra recordings just inside its closing tag. */
+const withExtras = (html: string, slug: Slug): string =>
+  html.replace(/<section id="([a-z-]+)">([\s\S]*?)<\/section>/g, (whole, id: string, body: string) => {
+    const extra = extrasFor(slug, id);
+    return extra ? `<section id="${id}">${body}${extra}\n    </section>` : whole;
+  });
 
 /** Reading order, which also decides what "next project" points at. */
 const ORDER: Slug[] = [
@@ -187,18 +229,13 @@ const wire = (html: string, slug: Slug): string => {
       // placeholders go rather than sit on the page as dashed boxes, and
       // Launch carries its figures alone.
       .replace(
-        /\s*<div class="slot r21"><span>(?:Drawing references|Detail: drawing revision history)<\/span><\/div>/g,
+        /\s*<div class="slot r21"><span>Drawing references<\/span><\/div>/g,
         slug === 'project-files' ? '' : '$&',
       )
       // the explorations come before the diagram they arrived at
       .replace(
         /(<figure class="shot [^"]*"><img src="\/case\/project-files\/file-vs-drawing-model)/,
         slug === 'project-files' ? `${CAROUSEL}\n      $1` : '$&',
-      )
-      // the ask pair sits under Importing drawings, after its own figure
-      .replace(
-        /(<section id="importing">[\s\S]*?<\/figure>)/,
-        slug === 'project-files' ? `$1${ASK_ROW}` : '$&',
       )
       // "All work" returns to the one home there is
       .replaceAll('<a class="backlink" href="#">', '<a class="backlink" href="/">')
@@ -217,7 +254,7 @@ const wire = (html: string, slug: Slug): string => {
 
 export const render = (slug: Slug): string => `
 <div class="layout">
-${wire(dropKicker(liftHero(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug)), slug)}
+${wire(dropKicker(liftHero(withExtras(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug)), slug)}
 </div>`;
 
 export const head = (slug: Slug): string => {

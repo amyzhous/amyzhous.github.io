@@ -2,12 +2,12 @@
     <p class="crumb"><a class="backlink" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a></p>
     <nav aria-label="Contents"><ol class="toc">
       <li><a href="#overview">Overview</a></li>
-      <li><a href="#impact">Impact</a></li>
-      <li><a href="#problem">Why Project Files?</a></li>
+      <li><a href="#problem">The problem</a></li>
       <li><a href="#direction">Product direction</a></li>
-      <li><a href="#importing">Importing drawings</a></li>
-      <li><a href="#revisions">Managing revisions</a></li>
-      <li><a href="#launch">Launch</a></li>
+      <li><a href="#importing">Importing drawings at scale</a></li>
+      <li><a href="#revisions">Connecting revisions</a></li>
+      <li><a href="#using">Using drawings across Part3</a></li>
+      <li><a href="#launch">Outcome</a></li>
     </ol></nav>
   </aside>
 
@@ -22,54 +22,65 @@
     </dl>
 
     <section id="overview">
-      <p>Part3 helps architects manage construction administration, but the drawings behind that work lived outside the product.</p>
-      <p>I led the end-to-end design of Project Files, a 0→1 paid product, from identifying the opportunity and driving the product direction to designing the drawing import, revision management, and specification experiences.</p>
+      <h2>Overview</h2>
+      <p>Project Files helps architects manage construction drawings and revisions directly in Part3.</p>
+      <p>I led the design from early discovery through launch, working with product and engineering to define the product direction and core experience.</p>
+      <p>Project Files launched as a paid offering, generating over <b>$800K in associated annual revenue</b>.</p>
       <div class="slot r169"><span>Hero: drawing register</span></div>
     </section>
 
-    <section id="impact">
-      <h2>Impact</h2>
-      <div class="stats two">
-        <div><b>$652K+</b><span>Annual revenue associated with Project Files</span></div>
-        <div><b>58K+</b><span>Drawings managed in Part3</span></div>
-      </div>
-    </section>
-
     <section id="problem">
-      <h2>Why Project Files?</h2>
-      <p>Architects relied on drawings to review submittals, answer RFIs, and issue changes, but managed them in separate tools. Teams had to switch between products to find drawings, check revisions, and complete their work.</p>
-      <p>For Part3, this exposed a gap in the existing product and an opportunity to introduce a new paid offering.</p>
+      <h2>The problem</h2>
+      <h3>Part3 managed construction documents, but not the drawings behind them.</h3>
+      <p>During construction, architects issue documents such as site instructions and proposed changes that often include revised drawings.</p>
+      <p>While Part3 handled these documents, firms still relied on shared drives and internal servers to maintain their drawing sets. Each revision required someone to replace outdated sheets, organize files, and ensure the team had the latest drawings.</p>
+      <p>Through customer interviews, I found that the challenge wasn't where firms stored files. It was how they managed drawings as projects changed.</p>
+      <p>This made me question the original direction of building a general file management system.</p>
       <div class="slot r21"><span>Existing workflow</span></div>
     </section>
 
     <section id="direction">
       <h2>Product direction</h2>
-      <p>Project Files began as a file-management concept. Through customer discovery and workflow analysis, I found that a general file library could store PDFs, but couldn't help architects identify current drawings or track revisions.</p>
-      <p>I worked with product and engineering to shift the scope toward drawing management. We defined a model built around drawing sets, individual sheets, and revision history, with specifications organized into divisions and sections.</p>
-      <p>We prioritized two workflows: importing large drawing sets with minimal setup and managing current revisions throughout construction.</p>
+      <h3>From file versioning to individual drawing revisions</h3>
+      <p>I explored different approaches to file organization and versioning, but they didn't account for how drawing sets change during construction.</p>
+      <p>A single PDF could contain hundreds of sheets, with only a few updated in each issue. Managing versions at the file level would still leave architects responsible for identifying and replacing individual sheets.</p>
+      <p>I proposed treating each drawing as its own record, with a consistent sheet number, revision history, and reference to the document that issued it.</p>
+      <p>Working with product and engineering, we defined a model that could support both the initial drawing set and subsequent revisions.</p>
+      <p>We focused on two priorities: importing drawings at scale and managing revisions through existing construction workflows.</p>
       <div class="slot r21"><span>File model versus drawing model</span></div>
     </section>
 
     <section id="importing">
-      <h2>Importing drawings</h2>
-      <p>Drawing sets often arrive as a single PDF containing hundreds of sheets. Requiring architects to split and label them manually would make adopting Project Files more difficult.</p>
-      <p>We chose to extract sheet numbers, titles, and disciplines automatically, then let users review the results before publishing.</p>
-      <p>The extra review step was deliberate. It added a little time to setup but prevented inaccurate sheet information from carrying into the drawing register.</p>
+      <h2>Design</h2>
+      <h3>01. Importing drawings at scale</h3>
+      <p>Drawing sets can contain hundreds of sheets, delivered as individual PDFs or one combined file.</p>
+      <p>I worked with our AI engineer on an import experience that separates combined PDFs into individual sheets. They developed an extraction service using a multimodal AI model to identify drawing numbers and titles.</p>
+      <p><b>The main constraint was extraction accuracy.</b></p>
+      <p>We gave customers a way to review and correct results before importing, ensuring the drawing information could be used to match future revisions.</p>
       <div class="slot r169"><span>Animation: Import → Extract → Review → Publish</span></div>
     </section>
 
     <section id="revisions">
-      <h2>Managing revisions</h2>
-      <p>The newest upload isn't always the latest issued drawing. Automatic versioning alone couldn't account for historical uploads or different issue dates.</p>
-      <p>We combined automatic revision tracking with manual control, so teams could identify current drawings without losing their revision history.</p>
+      <h3>02. Connecting revisions to construction documents</h3>
+      <p>Rather than introducing a separate workflow for updating drawings, we used the information already available in Part3.</p>
+      <p>When an architect issues a site instruction with revised drawings, Part3 can match each sheet to its existing record, preserve the revision history, and update the latest version.</p>
+      <p>Each revision is also linked to the document that issued it.</p>
+      <p><b>The challenge was deciding what should happen automatically and what should remain editable.</b></p>
+      <p>Not all revisions arrive in sequence. Older drawings may be uploaded later, and projects can contain multiple drawing packages.</p>
+      <p>I worked with engineering to define how the latest version would be determined while allowing architects to change it manually when needed.</p>
       <div class="slot r169"><span>Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4</span></div>
       <div class="slot r21"><span>Detail: drawing revision history</span></div>
     </section>
 
+    <section id="using">
+      <h3>03. Using drawings across Part3</h3>
+      <p>With drawings managed in Part3, architects can access the latest set, compare revisions, and reference drawings in other construction workflows.</p>
+      <p>We also supported exporting the latest drawings so firms could continue sharing files and maintaining their existing servers.</p>
+    </section>
+
     <section id="launch">
-      <h2>Launch</h2>
-      <p>Project Files shipped as a paid product for architecture firms, supporting drawing management, current-set exports, and references across construction administration workflows. The product went on to generate <b>$652K+ in associated annual revenue</b>, with more than <b>58,000 drawings managed</b> in Part3.</p>
-      <div class="slot r21"><span>Drawing references</span></div>
+      <h2>Outcome</h2>
+      <p>Project Files launched as a paid addition to Part3, generating over $800K in associated annual revenue. Customers have managed more than 100,000 drawings in the product, with the drawing model also supporting workflows such as field reports and AI-assisted features.</p>
     </section>
 
     <footer>
