@@ -36,12 +36,16 @@ a{color:inherit}
   --body:16px;            /* running text */
   --leading:1.7;
   --para-gap:24px;        /* between paragraphs: near one line of leading */
-  --section-gap:88px;     /* between sections */
+  --section-gap:72px;     /* between sections */
+  --open-gap:104px;       /* the meta row to the first section */
+  --head-gap:20px;        /* a heading to what follows it */
+  --figure-gap:16px;      /* prose to the figure that answers it */
+  --hero-gap:40px;        /* the opening image to the title */
   --pair:2.2fr;           /* a clip's share of a clip-and-label row */
 }
 
 @media (max-width:900px){
-  :root{ --prose:none; --canvas:none; --section-gap:64px }
+  :root{ --prose:none; --canvas:none; --section-gap:56px; --open-gap:64px }
 }
 
 .layout{max-width:1180px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:200px minmax(0,1fr); gap:72px}
@@ -179,9 +183,10 @@ main h1{margin-top:10px}
 section{padding-top:var(--section-gap)}
 #overview{padding-top:40px}
 section h2{margin-bottom:0}
-section h2 + *{margin-top:16px !important}
+section h2 + *{margin-top:var(--head-gap) !important}
 section p + p{margin-top:var(--para-gap)}
-section p + .slot, section .stats + p{margin-top:var(--para-gap)}
+section p + .slot, section p + .shot, section p + .shot-pair, section p + .explore{margin-top:var(--figure-gap)}
+section .stats + p{margin-top:var(--para-gap)}
 .slot{margin-top:32px; border-radius:10px}
 .slot + .slot{margin-top:16px}
 .slot + p{margin-top:32px}
@@ -265,9 +270,9 @@ section .stats + p{margin-top:var(--para-gap)}
 .hook{font-family:var(--serif); font-size:clamp(20px,2.4vw,24px); line-height:1.35; color:var(--ink) !important; margin:0 0 16px}
 
 /* The opening image, above the title: the project before it is named. */
-.case-hero{margin:0 0 30px}
+.case-hero{margin:0 0 var(--hero-gap)}
 .case-hero .shot{margin:0}
-@media (max-width:860px){ .case-hero{margin-bottom:22px} }
+
 
 
 /* A diagram keeps its own proportions: cropping one cuts off its labels. */
@@ -334,3 +339,12 @@ section .shot-note{max-width:var(--prose)}
 .shot-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:24px; max-width:var(--prose)}
 .shot-pair .shot{margin:0}
 @media (max-width:700px){ .shot-pair{grid-template-columns:1fr} }
+
+/* The meta row closes the title block; the first section starts well
+   clear of it, the way these pages breathe on Rachel Chen's site:
+   measured there, 104px from the meta to the first section label. */
+#overview{padding-top:var(--open-gap)}
+
+/* A heading follows its figure at the section gap, not on top of it. */
+section h3{margin-top:var(--section-gap)}
+section h2 + h3{margin-top:var(--head-gap)}
