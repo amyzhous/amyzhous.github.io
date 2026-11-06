@@ -39,8 +39,8 @@ const SHOTS: Record<string, Record<string, string>> = {
   },
   'construction-data-ai': {
     'Hero: customizable construction analytics dashboard': 'hero',
-    'Animation: chart → ask why → breakdown → source record': 'investigate',
-    'Animation: request chart → preview → confirm → add to dashboard': 'create-chart',
+    'Animation: Select chart → ask why → review breakdown → open source records': 'investigate',
+    'Animation: Describe report → review chart preview → confirm → save to dashboard': 'create-chart',
   },
   'self-serve-billing': {
     'Hero: employee request and billing-admin approval': 'hero',
