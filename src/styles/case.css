@@ -34,11 +34,13 @@ a{color:inherit}
   --prose:660px;          /* the reading column, and the standard figure */
   --canvas:820px;         /* the opening image, the only thing wider */
   --body:16px;            /* running text */
-  --body-weight:500;      /* Saans Medium: the cut between 400 and 600 */
+  --body-weight:400;      /* Saans Regular */
   --leading:1.7;
   --para-gap:24px;        /* between paragraphs: near one line of leading */
   --section-gap:72px;     /* between sections */
-  --open-gap:104px;       /* the meta row to the first section */
+  --open-gap:83px;        /* the meta row to the first section: 104 from
+                             the last line of it, once the row's own 20px of
+                             padding and its rule are counted */
   --head-gap:20px;        /* a heading to what follows it */
   --figure-gap:16px;      /* prose to the figure that answers it */
   --hero-gap:40px;        /* the opening image to the title */
