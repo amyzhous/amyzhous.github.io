@@ -34,6 +34,7 @@ a{color:inherit}
   --prose:660px;          /* the reading column, and the standard figure */
   --canvas:820px;         /* the opening image, the only thing wider */
   --body:16px;            /* running text */
+  --body-weight:500;      /* Saans Medium: the cut between 400 and 600 */
   --leading:1.7;
   --para-gap:24px;        /* between paragraphs: near one line of leading */
   --section-gap:72px;     /* between sections */
@@ -85,7 +86,7 @@ section{padding-top:var(--section-gap)}
 h2{font-family:var(--serif); font-weight:400; font-size:clamp(24px,2.4vw,28px); line-height:1.2; letter-spacing:0; margin:0}
 h3{font-family:var(--serif); font-weight:400; font-size:21px; line-height:1.3; margin:44px 0 0}
 h3.sub{font-family:var(--sans); font-size:13px; font-weight:600; line-height:1.4; margin:40px 0 12px}
-p{font-size:var(--body); line-height:var(--leading); color:var(--ink-2); margin:16px 0 0}
+p{font-size:var(--body); font-weight:var(--body-weight); line-height:var(--leading); color:var(--ink-2); margin:16px 0 0}
 p b{color:inherit; font-weight:600}
 .lead{font-size:16.5px}
 
