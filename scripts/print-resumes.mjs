@@ -81,7 +81,10 @@ const main = async () => {
       '--headless=new',
       '--disable-gpu',
       '--no-pdf-header-footer',
-      '--virtual-time-budget=4000',
+      // long enough for the webfonts to arrive: a short budget printed
+      // the résumé before Libre Baskerville had loaded, and the PDF came
+      // out with the fallback embedded instead.
+      '--virtual-time-budget=20000',
       `--print-to-pdf=${join(OUT, out)}`,
       `http://localhost:${PORT}/${page}`,
     ]);

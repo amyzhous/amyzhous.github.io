@@ -19,7 +19,8 @@
   --ink-label: #6e6e69; /* section labels             5.3:1 */
   --rule: #e4e3e0;
 
-  --sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --sans: Saans, ui-sans-serif, system-ui, sans-serif;
+  --serif: 'Libre Baskerville', 'Iowan Old Style', Georgia, serif;
 }
 
 *,
@@ -61,11 +62,15 @@ body {
 
 /* ── identity ── */
 
+/* The name is set the way the site sets a title: Libre Baskerville at
+   its own weight. Libre Baskerville carries nothing under 400 and runs
+   wide, so it sits a size below where the sans did. */
 .name {
   margin: 0 0 5px;
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--ink);
 }
 
