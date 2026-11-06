@@ -283,3 +283,28 @@
     padding: 0;
   }
 }
+
+/* ── the chat reads in the sans ──
+   The question, the answer and the bubble are one conversation, so they
+   share one typeface. Libre Baskerville stays for the things that are
+   titles: the project cards and the case studies. */
+.q,
+.ans,
+.bubble,
+.ans-label,
+.facts li,
+.recent li {
+  font-family: var(--sans);
+}
+
+/* Saans runs a touch larger on the body than the serif it replaces, so the
+   answer comes back a step to hold the same measure. */
+.ans {
+  font-size: 16.5px;
+  line-height: 1.65;
+}
+
+.q {
+  font-size: 31px;
+  letter-spacing: -0.015em;
+}

@@ -1,8 +1,8 @@
 :root{
   --bg:#fcfcfa; --side:#f6f5f2; --ink:#1b1a18; --ink-2:#5b5954; --ink-3:#73706a;
   --rule:#e8e7e3; --panel:#f2f1ee; --bar:#e3e2de; --hover:#efeeea;
-  --serif:"Newsreader","Iowan Old Style",Georgia,serif;
-  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Libre Baskerville","Iowan Old Style",Georgia,serif;
+  --sans:Saans,system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light; box-sizing:border-box;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161615; --side:#1b1b19; --ink:#ecebe7; --ink-2:#b1afa9; --ink-3:#8f8d87; --rule:#2b2a27; --panel:#1f1e1c; --bar:#2c2b28; --hover:#232220; --field:#4a4844; color-scheme:dark;}}

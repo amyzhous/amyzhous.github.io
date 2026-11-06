@@ -8,6 +8,7 @@
  * code. It is checked out of the typecheck gate instead, so `npm run
  * typecheck` keeps covering the code this project actually authors. Replace
  * the whole file when a new bundle arrives rather than editing it. */
+import '../styles/fonts.css';
 import '../styles/chat.css';
 
 (function(){

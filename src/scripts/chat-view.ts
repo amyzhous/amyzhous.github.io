@@ -9,6 +9,7 @@
  * its own script, which stays as it shipped.
  */
 
+import '../styles/fonts.css';
 import '../styles/chat-view.css';
 
 /** The question each project's thread is keyed on, as the bundle writes it. */

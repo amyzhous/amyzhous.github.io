@@ -54,7 +54,7 @@ export const headScript = (): string =>
   }
   .gate-lede {
     margin: 0 0 26px;
-    font-family: Newsreader, Georgia, serif;
+    font-family: 'Libre Baskerville', Georgia, serif;
     font-weight: 400;
     font-size: 19px;
     line-height: 1.45;

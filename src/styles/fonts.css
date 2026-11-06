@@ -1,0 +1,36 @@
+/* ── Saans ─────────────────────────────────────────────────────────────────
+   The site's sans, self-hosted. Three weights, each about 24KB as woff2,
+   down from 79KB as the TTF they were drawn from. `swap` means the page
+   reads in the fallback while the file arrives rather than showing
+   nothing, and the fallback stack is the system sans so the substitution
+   is a typeface change, not a reflow into something unrelated.
+   ------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: Saans;
+  src: url('/fonts/saans-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Saans;
+  src: url('/fonts/saans-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Saans;
+  src: url('/fonts/saans-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Libre Baskerville runs at its own size here, as it does on Rachel
+   Chen's case studies, which set the same face: h1 32/1.15, h2 28/1.2.
+   No x-height normalisation, because the sizes are drawn for this face
+   rather than inherited from the one it replaced. */
