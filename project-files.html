@@ -55,6 +55,7 @@
 
   <main>
     <p class="m-crumb"><a class="backlink" href="/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a></p>
+    <div class="case-hero"><figure class="shot" style="aspect-ratio:1920/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Hero: drawing register"><source src="/case/project-files/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/hero.mp4" type="video/mp4"></video></figure></div>
     <h1>Project Files</h1>
     <dl class="meta">
       <div><dt>Role</dt><dd>Product Design Lead</dd></div>
@@ -67,7 +68,6 @@
       <p>Project Files helps architects manage construction drawings and revisions directly in Part3.</p>
       <p>I led the design from early discovery through launch, working with product and engineering to define the product direction and core experience.</p>
       <p>Project Files launched as a paid offering, generating over $800K in associated annual revenue.</p>
-      <figure class="shot" style="aspect-ratio:1920/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Hero: drawing register"><source src="/case/project-files/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/hero.mp4" type="video/mp4"></video></figure>
     </section>
 
     <section id="problem">
@@ -88,6 +88,25 @@
       <p>I proposed treating each drawing as its own record, with a consistent sheet number, revision history, and reference to the document that issued it.</p>
       <p>Working with product and engineering, we defined a model that could support both the initial drawing set and subsequent revisions.</p>
       <p>We focused on two priorities: importing drawings at scale and managing revisions through existing construction workflows.</p>
+      
+      <div class="explore" data-explore>
+        <button type="button" class="explore-stage" data-zoom aria-label="View this board larger">
+          <img src="/case/project-files/explore-files-to-sheets.webp" alt="Exploration: Files to sheets" loading="lazy">
+          <img src="/case/project-files/explore-version-history.webp" alt="Exploration: Version history for each sheet" hidden loading="lazy">
+          <img src="/case/project-files/explore-beta.webp" alt="Beta: ProjectFiles Beta" hidden loading="lazy">
+        </button>
+        <div class="explore-thumbs" role="tablist" aria-label="Design explorations">
+          <button type="button" role="tab" aria-selected="true" data-to="0"><img src="/case/project-files/explore-files-to-sheets.webp" alt="Files to sheets" loading="lazy"></button>
+          <button type="button" role="tab" aria-selected="false" data-to="1"><img src="/case/project-files/explore-version-history.webp" alt="Version history for each sheet" loading="lazy"></button>
+          <button type="button" role="tab" aria-selected="false" data-to="2"><img src="/case/project-files/explore-beta.webp" alt="ProjectFiles Beta" loading="lazy"></button>
+        </div>
+      </div>
+      <dialog class="lightbox" data-lightbox>
+        <button type="button" class="lightbox-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <img alt="">
+      </dialog>
       <figure class="shot" style="aspect-ratio:2000/878"><img src="/case/project-files/file-vs-drawing-model.webp" alt="File model versus drawing model" loading="lazy"></figure><p class="cap">File model versus drawing model</p>
     </section>
 
