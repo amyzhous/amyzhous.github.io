@@ -33,9 +33,9 @@ const SHOTS: Record<string, Record<string, string>> = {
     'Detail: drawing revision history': 'revision-trace',
   },
   'activation-growth': {
-    'Hero: selected onboarding and project setup experiences': 'hero',
-    'Animation: import contacts → detect existing → add team → populate reviewers': 'import-members',
-    'Animation: create template → reuse configuration → start new project': 'create-template',
+    'Hero: Selected onboarding and project setup experiences': 'hero',
+    'Animation: Import contacts → detect existing → add team → populate reviewers': 'import-members',
+    'Animation: Create template → reuse configuration → start new project': 'create-template',
   },
   'construction-data-ai': {
     'Hero: customizable construction analytics dashboard': 'hero',
@@ -58,21 +58,21 @@ const SQUARE = new Set(['ask-set', 'ask-division']);
 const EXTRAS: Record<string, Record<string, [string, string][]>> = {
   'project-files': {
     using: [
-      ['ask-set', 'Asking a question of an issued set'],
-      ['ask-division', 'Asking a question of a specification division'],
+      ['ask-set', 'Ask about the set'],
+      ['ask-division', 'Ask about the division'],
     ],
   },
   'activation-growth': {
     team: [
-      ['add-members', 'Adding members quickly'],
-      ['project-roles', 'Setting project roles'],
+      ['add-members', 'Add members quickly'],
+      ['project-roles', 'Project roles'],
     ],
-    templates: [['use-template', 'Starting a project from a template']],
+    templates: [['use-template', 'Create from template']],
   },
   'self-serve-billing': {
     two: [
-      ['approve-requests', 'A billing admin approving requests'],
-      ['seat-request', 'A seat request end to end'],
+      ['approve-requests', 'Approve requests'],
+      ['seat-request', 'Seat request approval'],
     ],
   },
 };
@@ -98,6 +98,16 @@ const video = (src: string, label: string): string =>
   `<source src="${src}.mp4" type="video/mp4">` +
   `</video>`;
 
+/**
+ * The caption under a figure is the label the export already gave that
+ * slot, minus the word that described what kind of picture to make.
+ * Nothing here is written for the page; it is what Amy named the shot.
+ */
+const caption = (label: string): string => {
+  const text = label.replace(/^(?:Animation|Detail|Hero|Screens?):\s*/, '');
+  return text.charAt(0).toUpperCase() + text.slice(1);
+};
+
 const withShots = (html: string, slug: Slug): string => {
   const map = SHOTS[slug];
   if (!map) return html;
@@ -114,7 +124,8 @@ const withShots = (html: string, slug: Slug): string => {
           ? video(`/case/${slug}/${name}`, label)
           : `<img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy">`;
       const fit = UNCROPPED.has(name) ? ' shot-fit' : '';
-      return `<figure class="shot ${ratio}${fit}">${media}</figure>`;
+      const cap = name === 'hero' ? '' : `<p class="cap">${esc(caption(label))}</p>`;
+      return `<figure class="shot ${ratio}${fit}">${media}</figure>${cap}`;
     },
   );
 };
@@ -191,7 +202,8 @@ const extrasFor = (slug: Slug, section: string): string => {
 
   const figures = present.map(
     ([file, label]) =>
-      `<figure class="shot ${SQUARE.has(file) ? 'r11' : 'r43'}">${video(`/case/${slug}/${file}`, label)}</figure>`,
+      `<figure class="shot ${SQUARE.has(file) ? 'r11' : 'r43'}">${video(`/case/${slug}/${file}`, label)}` +
+      `<figcaption class="cap">${esc(label)}</figcaption></figure>`,
   );
 
   // A square at the full column width is taller than anything else on the
