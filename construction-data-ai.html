@@ -32,10 +32,15 @@
   
   <title>Construction Data &amp; Insights · Amy Zhou</title>
   <meta name="description" content="Architects use Part3 to manage construction administration, from reviewing submittals and responding to RFIs to tracking changes and drawing revisions. These workflows generate valuable information about project progress, turnaround times, and outstanding work.">
+  <script>
+    // ?layout=single renders the one-column variation, for comparing the two
+    try { if (new URLSearchParams(location.search).get('layout') === 'single')
+      document.documentElement.classList.add('layout-single'); } catch (e) {}
+  </script>
   <script type="module" crossorigin src="/assets/fonts-Co8O0gI4.js"></script>
-  <script type="module" crossorigin src="/assets/case-UBvW9EfP.js"></script>
+  <script type="module" crossorigin src="/assets/case-FELNv6uv.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/fonts-CpWdZCIs.css">
-  <link rel="stylesheet" crossorigin href="/assets/case-Bn5wRmek.css">
+  <link rel="stylesheet" crossorigin href="/assets/case-Ch_N_uSp.css">
 </head>
 <body>
 
@@ -56,7 +61,6 @@
 
   <main>
     <p class="m-crumb"><a class="backlink" href="/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a></p>
-    <div class="case-hero"><figure class="shot" style="aspect-ratio:1920/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Hero: customizable construction analytics dashboard"><source src="/case/construction-data-ai/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/hero.mp4" type="video/mp4"></video></figure></div>
     <h1>Construction Data & Insights</h1>
     <dl class="meta">
       <div><dt>Role</dt><dd>Product Design Lead</dd></div>
@@ -64,10 +68,15 @@
       <div><dt>Timeline</dt><dd>Q4 2026</dd></div>
     </dl>
 
-    <section id="overview" class="one-col">
-      <p>Architects use Part3 to manage construction administration, from reviewing submittals and responding to RFIs to tracking changes and drawing revisions. These workflows generate valuable information about project progress, turnaround times, and outstanding work.</p>
-      <p>But while Part3 helped teams manage their work, customers had limited control over how they could analyze and report on it.</p>
-      <p>I identified an opportunity to turn that data into more useful insights, defining a customizable dashboard experience with AI-assisted reporting.</p>
+    <section id="overview" class="split wide">
+      <div class="col-text">
+        <p>Architects use Part3 to manage construction administration, from reviewing submittals and responding to RFIs to tracking changes and drawing revisions. These workflows generate valuable information about project progress, turnaround times, and outstanding work.</p>
+        <p>But while Part3 helped teams manage their work, customers had limited control over how they could analyze and report on it.</p>
+        <p>I identified an opportunity to turn that data into more useful insights, defining a customizable dashboard experience with AI-assisted reporting.</p>
+      </div>
+      <div class="col-media">
+        <figure class="shot w-wide" style="aspect-ratio:1920/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Hero: customizable construction analytics dashboard"><source src="/case/construction-data-ai/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/hero.mp4" type="video/mp4"></video></figure>
+      </div>
     </section>
 
     <section id="why" class="split">
@@ -136,7 +145,7 @@
         <p>Rather than moving users into a separate conversation, the experience connected the chart, the question, and the supporting records.</p>
       </div>
       <div class="col-media">
-        <figure class="shot" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Select chart → ask why → review breakdown → open source records"><source src="/case/construction-data-ai/investigate-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/investigate.mp4" type="video/mp4"></video></figure>
+        <figure class="shot w-std" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Select chart → ask why → review breakdown → open source records"><source src="/case/construction-data-ai/investigate-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/investigate.mp4" type="video/mp4"></video></figure>
         <p class="cap">Select chart → ask why → review breakdown → open source records</p>
       </div>
     </section>
@@ -151,7 +160,7 @@
         <p>This made conversational reporting a way to create and customize dashboards, without making AI responsible for the accuracy of the numbers.</p>
       </div>
       <div class="col-media">
-        <figure class="shot" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Describe report → review chart preview → confirm → save to dashboard"><source src="/case/construction-data-ai/create-chart-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/create-chart.mp4" type="video/mp4"></video></figure>
+        <figure class="shot w-std" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Describe report → review chart preview → confirm → save to dashboard"><source src="/case/construction-data-ai/create-chart-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/create-chart.mp4" type="video/mp4"></video></figure>
         <p class="cap">Describe report → review chart preview → confirm → save to dashboard</p>
       </div>
     </section>
