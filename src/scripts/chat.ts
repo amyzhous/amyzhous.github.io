@@ -34,8 +34,6 @@ import '../styles/chat.css';
     .replace('__CARDS__',cases.map(c=>card(c,true)).join(''))
     .replace('__CARDS2__',cases.map(c=>card(c,false)).join(''));
 
-  const EMOJI={"wave": {"anim": "/chat/befaeda1e3.webp", "still": "/chat/e3146d894b.webp", "ms": 1840}, "eyes": {"anim": "/chat/c78606a5b1.webp", "still": "/chat/fe5a098fbf.webp", "ms": 680}, "laugh": {"anim": "/chat/5ef51cfed8.webp", "still": "/chat/c32491a6d2.webp", "ms": 1225}, "party": {"anim": "/chat/3325168cb2.webp", "still": "/chat/d3a18a4307.webp", "ms": 1620}};
-  function playEmoji(btn){ const img=btn.querySelector('img.em'), d=EMOJI[btn.dataset.v]; if(!img||!d||reduce) return; clearTimeout(img._t); img.src=''; img.src=d.anim+'#'+Date.now()%1; img._t=setTimeout(()=>{ img.src=d.still; }, d.ms+60); }
   var INTRO_MS_=2200;
   const col=document.getElementById('col'), scroller=document.getElementById('scroll'), bar=document.getElementById('bar');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -93,7 +91,6 @@ import '../styles/chat.css';
   function playIntro(){
     col.innerHTML=tpl; scroller.scrollTop=0;
     stream(col.querySelector('.entry'),INTRO_MS_,false);
-    clearTimeout(playIntro._t); playIntro._t=setTimeout(()=>col.querySelectorAll('.rx').forEach((b,i)=>setTimeout(()=>playEmoji(b),i*160)), INTRO_MS_+200);
   }
 
   // tabs
@@ -110,21 +107,6 @@ import '../styles/chat.css';
     const j=e.target.closest('[data-jump]'); if(j){ e.preventDefault(); jump(j.dataset.jump); return; }
     const trb=e.target.closest('.tr-btn');
     if(trb){ const open=trb.getAttribute('aria-expanded')!=='true'; trb.setAttribute('aria-expanded',open); const bd=document.getElementById(trb.getAttribute('aria-controls')); bd.classList.toggle('open',open); bd.setAttribute('aria-hidden',!open); bd.inert=!open; return; }
-    const rx=e.target.closest('.rx');
-    if(rx){
-      const row=rx.closest('.tools'), fb=row.nextElementSibling, v=rx.dataset.v;
-      playEmoji(rx);
-      if(rx.getAttribute('aria-pressed')==='true') return;
-      row.querySelectorAll('.rx').forEach(b=>b.setAttribute('aria-pressed', b===rx));
-      const lines={
-        wave:['Hi back. Email is the fastest way to reach me.',true],
-        laugh:['Glad something landed. The case studies are a little more serious, promise.',false],
-        party:['Love that energy. Let\'s talk.',true]
-      };
-      const [t,mail]=lines[v], words=t.split(' ');
-      fb.innerHTML=words.map((w,i)=>'<span class="fw" style="animation-delay:'+(i*45)+'ms">'+w+'</span>').join(' ')+(mail?' <a class="fw fbl" style="animation-delay:'+(words.length*45)+'ms" href="mailto:ayjzhou@gmail.com">Email me</a>':'');
-      return;
-    }
     const r=e.target.closest('.rel'); if(r) ask(r.dataset.q);
   });
 
