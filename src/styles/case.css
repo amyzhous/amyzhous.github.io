@@ -555,21 +555,38 @@ section.split .col-text p + p{margin-top:28px}
 /* and the opening image is the one thing wider */
 .layout-single .case-hero{max-width:var(--container); margin-inline:auto}
 
-.layout-single section.split .col-text h2,
-.layout-single section.split.wide .col-text h2,
-.layout-single section.split .col-text h2:has(+ h3) + h3,
-.layout-single section.split.wide .col-text h2:has(+ h3) + h3,
 .layout-single section.split .col-text h3,
 .layout-single section.split.wide .col-text h3{font-size:28px; line-height:1.2}
 
 .layout-single h1{font-size:32px; line-height:1.15}
 
-.layout-single section.split .col-text > h2:has(+ h3),
-.layout-single section.split.wide .col-text > h2:has(+ h3),
+.layout-single section.split .col-text > h2,
+.layout-single section.split.wide .col-text > h2,
+.layout-single section.one-col > h2,
 .layout-single .cap{font-family:var(--sans); font-size:var(--body); line-height:var(--leading); font-weight:400; color:var(--ink-3)}
 
-.layout-single section.split .col-text p + p{margin-top:20px}
 
 @media (max-width:900px){
   .layout-single{--read:none; --figure:none; --container:none; --section-gap:56px; --open-gap:64px}
 }
+
+/* ── the vertical rhythm ──────────────────────────────────────────────────
+   Paragraphs sat 20px apart under a 22.5px line-height, so the space
+   between two paragraphs was smaller than the space between two lines of
+   one, and a column of five read as a single block. The gaps now step:
+   lines 22.5, paragraphs 30, a heading from the text above it 52, and a
+   section from the one above it 96. Each level is clearly larger than the
+   one inside it, which is what lets the eye find the edges. */
+.layout-single{--section-gap:96px}
+
+.layout-single section .col-text > p + p{margin-top:30px}
+.layout-single section .col-text > h2{margin-top:52px}
+.layout-single section .col-text > h2 + h3{margin-top:4px !important}
+.layout-single section .col-text > h3{margin-top:52px}
+.layout-single section .col-text > h2 + p{margin-top:16px !important}
+.layout-single section .col-text > h3 + p{margin-top:16px}
+.layout-single .col-text > *:first-child{margin-top:0}
+
+.layout-single section.one-col > p + p{margin-top:30px}
+.layout-single section.one-col > h2{margin-top:0}
+.layout-single section.one-col > h2 + p{margin-top:16px !important}
