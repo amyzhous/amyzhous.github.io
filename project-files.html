@@ -33,9 +33,9 @@
   <title>Project Files · Amy Zhou</title>
   <meta name="description" content="Project Files helps architects manage construction drawings and revisions directly in Part3.">
   <script type="module" crossorigin src="/assets/fonts-Co8O0gI4.js"></script>
-  <script type="module" crossorigin src="/assets/case-BhVEQwS6.js"></script>
+  <script type="module" crossorigin src="/assets/case-CvSwTqb-.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/fonts-CpWdZCIs.css">
-  <link rel="stylesheet" crossorigin href="/assets/case-BG-8T_8h.css">
+  <link rel="stylesheet" crossorigin href="/assets/case-CUumymYl.css">
 </head>
 <body>
 
@@ -63,33 +63,46 @@
       <div><dt>Timeline</dt><dd>2024–2026</dd></div>
     </dl>
 
-    <section id="overview">
+    <section id="overview" class="one-col">
       <h2>Overview</h2>
       <p>Project Files helps architects manage construction drawings and revisions directly in Part3.</p>
       <p>I led the design from early discovery through launch, working with product and engineering to define the product direction and core experience.</p>
       <p>Project Files launched as a paid offering, generating over $800K in associated annual revenue.</p>
     </section>
 
-    <section id="problem">
-      <h2>The problem</h2>
-      <h3>Part3 managed construction documents, but not the drawings behind them.</h3>
-      <p>During construction, architects issue documents such as site instructions and proposed changes that often include revised drawings.</p>
-      <p>While Part3 handled these documents, firms still relied on shared drives and internal servers to maintain their drawing sets. Each revision required someone to replace outdated sheets, organize files, and ensure the team had the latest drawings.</p>
-      <p>Through customer interviews, I found that the challenge wasn't where firms stored files. It was how they managed drawings as projects changed.</p>
-      <p>This made me question the original direction of building a general file management system.</p>
-      <figure class="shot" style="aspect-ratio:2000/1125"><img src="/case/project-files/existing-workflow.webp" alt="Existing workflow" loading="lazy"></figure><p class="cap">Existing workflow</p>
+    <section id="problem" class="split wide">
+      <div class="col-text">
+        <h2>The problem</h2>
+        <h3>Part3 managed construction documents, but not the drawings behind them.</h3>
+        <p>During construction, architects issue documents such as site instructions and proposed changes that often include revised drawings.</p>
+        <p>While Part3 handled these documents, firms still relied on shared drives and internal servers to maintain their drawing sets. Each revision required someone to replace outdated sheets, organize files, and ensure the team had the latest drawings.</p>
+        <p>Through customer interviews, I found that the challenge wasn't where firms stored files. It was how they managed drawings as projects changed.</p>
+        <p>This made me question the original direction of building a general file management system.</p>
+      </div>
+      <div class="col-media">
+        <figure class="shot" style="aspect-ratio:2000/1125"><img src="/case/project-files/existing-workflow.webp" alt="Existing workflow" loading="lazy"></figure>
+        <p class="cap">Existing workflow</p>
+      </div>
     </section>
 
-    <section id="direction">
-      <h2>Product direction</h2>
-      <h3>From file versioning to individual drawing revisions</h3>
-      <p>I explored different approaches to file organization and versioning, but they didn't account for how drawing sets change during construction.</p>
-      <p>A single PDF could contain hundreds of sheets, with only a few updated in each issue. Managing versions at the file level would still leave architects responsible for identifying and replacing individual sheets.</p>
-      <p>I proposed treating each drawing as its own record, with a consistent sheet number, revision history, and reference to the document that issued it.</p>
-      <p>Working with product and engineering, we defined a model that could support both the initial drawing set and subsequent revisions.</p>
-      <p>We focused on two priorities: importing drawings at scale and managing revisions through existing construction workflows.</p>
-      
-      <div class="explore" data-explore>
+    <section id="direction" class="split wide">
+      <div class="col-text">
+        <h2>Product direction</h2>
+        <h3>From file versioning to individual drawing revisions</h3>
+        <p>I explored different approaches to file organization and versioning, but they didn't account for how drawing sets change during construction.</p>
+        <p>A single PDF could contain hundreds of sheets, with only a few updated in each issue. Managing versions at the file level would still leave architects responsible for identifying and replacing individual sheets.</p>
+        <p>I proposed treating each drawing as its own record, with a consistent sheet number, revision history, and reference to the document that issued it.</p>
+        <p>Working with product and engineering, we defined a model that could support both the initial drawing set and subsequent revisions.</p>
+        <p>We focused on two priorities: importing drawings at scale and managing revisions through existing construction workflows.</p>
+        <dialog class="lightbox" data-lightbox>
+        <button type="button" class="lightbox-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <img alt="">
+      </dialog>
+      </div>
+      <div class="col-media">
+        <div class="explore" data-explore>
         <button type="button" class="explore-stage" data-zoom aria-label="View this board larger">
           <img src="/case/project-files/explore-files-to-sheets.webp" alt="Exploration: Files to sheets" loading="lazy">
           <img src="/case/project-files/explore-version-history.webp" alt="Exploration: Version history for each sheet" hidden loading="lazy">
@@ -100,47 +113,56 @@
           <button type="button" role="tab" aria-selected="false" data-to="1"><img src="/case/project-files/explore-version-history.webp" alt="Version history for each sheet" loading="lazy"></button>
           <button type="button" role="tab" aria-selected="false" data-to="2"><img src="/case/project-files/explore-beta.webp" alt="ProjectFiles Beta" loading="lazy"></button>
         </div>
+        <figure class="shot" style="aspect-ratio:2000/878"><img src="/case/project-files/file-vs-drawing-model.webp" alt="File model versus drawing model" loading="lazy"></figure>
+        <p class="cap">File model versus drawing model</p>
       </div>
-      <dialog class="lightbox" data-lightbox>
-        <button type="button" class="lightbox-close" aria-label="Close">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-        <img alt="">
-      </dialog>
-      <figure class="shot" style="aspect-ratio:2000/878"><img src="/case/project-files/file-vs-drawing-model.webp" alt="File model versus drawing model" loading="lazy"></figure><p class="cap">File model versus drawing model</p>
     </section>
 
-    <section id="importing">
-      <h2>Design</h2>
-      <h3>01. Importing drawings at scale</h3>
-      <p>Drawing sets can contain hundreds of sheets, delivered as individual PDFs or one combined file.</p>
-      <p>I worked with our AI engineer on an import experience that separates combined PDFs into individual sheets. They developed an extraction service using a multimodal AI model to identify drawing numbers and titles.</p>
-      <p>The main constraint was extraction accuracy.</p>
-      <p>We gave customers a way to review and correct results before importing, ensuring the drawing information could be used to match future revisions.</p>
-      <figure class="shot" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Import → Extract → Review → Publish"><source src="/case/project-files/importing-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/importing.mp4" type="video/mp4"></video></figure><p class="cap">Import → Extract → Review → Publish</p>
+    <section id="importing" class="split">
+      <div class="col-text">
+        <h2>Design</h2>
+        <h3>01. Importing drawings at scale</h3>
+        <p>Drawing sets can contain hundreds of sheets, delivered as individual PDFs or one combined file.</p>
+        <p>I worked with our AI engineer on an import experience that separates combined PDFs into individual sheets. They developed an extraction service using a multimodal AI model to identify drawing numbers and titles.</p>
+        <p>The main constraint was extraction accuracy.</p>
+        <p>We gave customers a way to review and correct results before importing, ensuring the drawing information could be used to match future revisions.</p>
+      </div>
+      <div class="col-media">
+        <figure class="shot" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Import → Extract → Review → Publish"><source src="/case/project-files/importing-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/importing.mp4" type="video/mp4"></video></figure>
+        <p class="cap">Import → Extract → Review → Publish</p>
+      </div>
     </section>
 
-    <section id="revisions">
-      <h3>02. Connecting revisions to construction documents</h3>
-      <p>Rather than introducing a separate workflow for updating drawings, we used the information already available in Part3.</p>
-      <p>When an architect issues a site instruction with revised drawings, Part3 can match each sheet to its existing record, preserve the revision history, and update the latest version.</p>
-      <p>Each revision is also linked to the document that issued it.</p>
-      <p>The challenge was deciding what should happen automatically and what should remain editable.</p>
-      <p>Not all revisions arrive in sequence. Older drawings may be uploaded later, and projects can contain multiple drawing packages.</p>
-      <p>I worked with engineering to define how the latest version would be determined while allowing architects to change it manually when needed.</p>
-      <figure class="shot" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4"><source src="/case/project-files/revisions-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/revisions.mp4" type="video/mp4"></video></figure><p class="cap">A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4</p>
-      <figure class="shot" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Detail: drawing revision history"><source src="/case/project-files/revision-trace-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/revision-trace.mp4" type="video/mp4"></video></figure><p class="cap">Drawing revision history</p>
+    <section id="revisions" class="split">
+      <div class="col-text">
+        <h3>02. Connecting revisions to construction documents</h3>
+        <p>Rather than introducing a separate workflow for updating drawings, we used the information already available in Part3.</p>
+        <p>When an architect issues a site instruction with revised drawings, Part3 can match each sheet to its existing record, preserve the revision history, and update the latest version.</p>
+        <p>Each revision is also linked to the document that issued it.</p>
+        <p>The challenge was deciding what should happen automatically and what should remain editable.</p>
+        <p>Not all revisions arrive in sequence. Older drawings may be uploaded later, and projects can contain multiple drawing packages.</p>
+        <p>I worked with engineering to define how the latest version would be determined while allowing architects to change it manually when needed.</p>
+      </div>
+      <div class="col-media">
+        <figure class="shot" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4"><source src="/case/project-files/revisions-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/revisions.mp4" type="video/mp4"></video></figure>
+        <p class="cap">A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4</p>
+        <figure class="shot" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Detail: drawing revision history"><source src="/case/project-files/revision-trace-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/revision-trace.mp4" type="video/mp4"></video></figure>
+        <p class="cap">Drawing revision history</p>
+      </div>
     </section>
 
-    <section id="using">
-      <h3>03. Using drawings across Part3</h3>
-      <p>With drawings managed in Part3, architects can access the latest set, compare revisions, and reference drawings in other construction workflows.</p>
-      <p>We also supported exporting the latest drawings so firms could continue sharing files and maintaining their existing servers.</p>
-    
-      <div class="shot-pair"><figure class="shot" style="aspect-ratio:1080/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Ask about the set"><source src="/case/project-files/ask-set-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/ask-set.mp4" type="video/mp4"></video><figcaption class="cap">Ask about the set</figcaption></figure><figure class="shot" style="aspect-ratio:1080/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Ask about the division"><source src="/case/project-files/ask-division-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/ask-division.mp4" type="video/mp4"></video><figcaption class="cap">Ask about the division</figcaption></figure></div>
+    <section id="using" class="split">
+      <div class="col-text">
+        <h3>03. Using drawings across Part3</h3>
+        <p>With drawings managed in Part3, architects can access the latest set, compare revisions, and reference drawings in other construction workflows.</p>
+        <p>We also supported exporting the latest drawings so firms could continue sharing files and maintaining their existing servers.</p>
+      </div>
+      <div class="col-media">
+        <div class="shot-pair"><figure class="shot" style="aspect-ratio:1080/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Ask about the set"><source src="/case/project-files/ask-set-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/ask-set.mp4" type="video/mp4"></video><figcaption class="cap">Ask about the set</figcaption></figure><figure class="shot" style="aspect-ratio:1080/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Ask about the division"><source src="/case/project-files/ask-division-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/ask-division.mp4" type="video/mp4"></video><figcaption class="cap">Ask about the division</figcaption></figure></div>
+      </div>
     </section>
 
-    <section id="launch">
+    <section id="launch" class="one-col">
       <h2>Outcome</h2>
       <p>Project Files launched as a paid addition to Part3, generating over $800K in associated annual revenue. Customers have managed more than 100,000 drawings in the product, with the drawing model also supporting workflows such as field reports and AI-assisted features.</p>
     </section>
