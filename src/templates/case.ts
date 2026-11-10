@@ -210,12 +210,13 @@ const dropKicker = (html: string): string =>
  * is lifted out rather than asked for twice.
  */
 const liftHero = (html: string, slug: Slug): string => {
-  const re = new RegExp(`\\s*<figure class="shot"[^>]*>(?:(?!</figure>)[\\s\\S])*?/case/${slug}/[\\s\\S]*?</figure>`);
+  const re = new RegExp(`\\s*<figure class="shot[^"]*"[^>]*>(?:(?!</figure>)[\\s\\S])*?/case/${slug}/[\\s\\S]*?</figure>`);
   const m = re.exec(html);
   if (!m) return html;
+  // first thing in the page, above the back link
   return html
     .replace(m[0], '')
-    .replace('<p class="kicker">', `<div class="case-hero">${m[0].trim()}</div>\n    <p class="kicker">`);
+    .replace('<p class="m-crumb">', `<div class="case-hero">${m[0].trim()}</div>\n    <p class="m-crumb">`);
 };
 
 /**
@@ -278,7 +279,7 @@ const wire = (html: string, slug: Slug): string => {
       )
       // the explorations come before the diagram they arrived at
       .replace(
-        /(<figure class="shot"[^>]*><img src="\/case\/project-files\/file-vs-drawing-model)/,
+        /(<figure class="shot[^"]*"[^>]*><img src="\/case\/project-files\/file-vs-drawing-model)/,
         slug === 'project-files' ? `${CAROUSEL}\n      $1` : '$&',
       )
       // "All work" returns to the one home there is
@@ -329,9 +330,24 @@ const splitColumns = (html: string): string =>
     );
   });
 
+/**
+ * The hero and the explorations have twice been lost to a change in the
+ * figure markup that a regex was still matching on. A page missing either
+ * now stops the build instead of shipping.
+ */
+const assertIntact = (html: string, slug: Slug): string => {
+  if (!html.includes('case-hero')) {
+    throw new Error(`${slug}: the hero was not lifted — check liftHero's pattern against the figure markup`);
+  }
+  if (slug === 'project-files' && !html.includes('data-explore')) {
+    throw new Error(`${slug}: the exploration carousel was dropped — check its pattern against the figure markup`);
+  }
+  return html;
+};
+
 export const render = (slug: Slug): string => `
 <div class="layout">
-${splitColumns(wire(dropKicker(liftHero(withExtras(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug)), slug))}
+${assertIntact(splitColumns(wire(dropKicker(liftHero(withExtras(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug)), slug)), slug)}
 </div>`;
 
 export const head = (slug: Slug): string => {
