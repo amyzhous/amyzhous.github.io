@@ -33,8 +33,8 @@
   <title>Project Files · Amy Zhou</title>
   <meta name="description" content="Project Files helps architects manage construction drawings and revisions directly in Part3.">
   <script>
-    // ?layout=single renders the one-column variation, for comparing the two
-    try { if (new URLSearchParams(location.search).get('layout') === 'single')
+    // one column is the layout; ?layout=two shows the old grid for comparison
+    try { if (new URLSearchParams(location.search).get('layout') !== 'two')
       document.documentElement.classList.add('layout-single'); } catch (e) {}
   </script>
   <script type="module" crossorigin src="/assets/fonts-Co8O0gI4.js"></script>
