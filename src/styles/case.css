@@ -514,34 +514,45 @@ section.split .col-text p + p{margin-top:28px}
    the page, a landscape screen breaks out past the text, a standard
    screen matches it, a square sits in. Charles Honig's case studies run
    this way — single column throughout, figure widths from 312 to 1076. */
+.layout-single{
+  --read:680px;          /* ~85 characters at 16px */
+  --section-gap:112px;   /* a new section is unmistakable */
+}
+
 .layout-single section.split,
 .layout-single section.split.wide{
   display:block;
 }
 
+.layout-single .col-media{margin-top:36px}
+.layout-single .col-media > * + *{margin-top:36px}
+
+/* Centred, so the space either side of a block is the same. Left-aligning
+   a 680 column inside a 1200 container left 640px standing empty on the
+   right of every paragraph and 840 beside an inset figure. */
 .layout-single section.split .col-text > *,
 .layout-single section.split.wide .col-text > *,
 .layout-single section.one-col > *{
   max-width:var(--read);
-  margin-inline:0;
+  margin-inline:auto;
 }
 
-.layout-single{
-  --read:680px;          /* ~70 characters at 16px */
-  --section-gap:112px;   /* a new section is unmistakable */
-}
+/* Figures centre too, each at the width its own class asks for. Written
+   against the section so it is not outranked by the two-column rule that
+   pins a column's children left. */
+.layout-single section .col-media > .shot,
+.layout-single section .col-media > .explore,
+.layout-single section .col-media > .shot-pair,
+.layout-single section .col-media > .cap,
+.layout-single section.one-col > .shot{margin-inline:auto}
 
-.layout-single .col-media{margin-top:36px}
-.layout-single .col-media > * + *{margin-top:36px}
-
-/* figure widths, by what the figure is */
-.layout-single .shot.w-full{max-width:var(--container)}
-.layout-single .shot.w-wide{max-width:900px}
-.layout-single .shot.w-std{max-width:var(--read)}
-.layout-single .shot.w-inset{max-width:480px}
-.layout-single .explore{max-width:var(--container)}
-.layout-single .shot-pair{max-width:900px; margin-inline:0}
-.layout-single .cap{max-width:var(--read)}
+.layout-single section .col-media > .shot.w-full{max-width:var(--container)}
+.layout-single section .col-media > .shot.w-wide{max-width:900px}
+.layout-single section .col-media > .shot.w-std{max-width:var(--read)}
+.layout-single section .col-media > .shot.w-inset{max-width:480px}
+.layout-single section .col-media > .explore{max-width:var(--container)}
+.layout-single section .col-media > .shot-pair{max-width:900px}
+.layout-single section .col-media > .cap{max-width:var(--read)}
 
 /* headings can carry their full size again in a 680 column */
 .layout-single section.split .col-text h2,
