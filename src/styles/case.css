@@ -31,11 +31,11 @@ a{color:inherit}
    them), paired figure 438, hero 923.
    --------------------------------------------------------------------- */
 :root{
-  --prose:660px;          /* the reading column, and the standard figure */
-  --canvas:820px;         /* the opening image, the only thing wider */
-  --body:16px;            /* running text */
+  --prose:688px;          /* the reading column, and the standard figure */
+  --canvas:923px;         /* the opening image, the only thing wider */
+  --body:15px;            /* running text */
   --body-weight:400;      /* Saans Regular */
-  --leading:1.7;
+  --leading:1.5;
   --para-gap:24px;        /* between paragraphs: near one line of leading */
   --section-gap:72px;     /* between sections */
   --open-gap:83px;        /* the meta row to the first section: 104 from
@@ -76,21 +76,21 @@ a{color:inherit}
 /* content */
 main{padding:40px 0 120px; max-width:var(--canvas); margin:0 auto}
 .m-crumb{display:none}
-h1{font-family:var(--serif); font-weight:400; font-size:clamp(26px,3vw,32px); line-height:1.15; letter-spacing:0; margin:48px 0 0}
+h1{font-family:var(--serif); font-weight:400; font-size:clamp(30px,3.4vw,40px); line-height:1.15; letter-spacing:0; margin:48px 0 0}
 .meta{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:36px 0 0; padding:20px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
 .meta dt{font-size:12px; color:var(--ink-3); margin-bottom:8px}
-.meta dd{margin:0; font-size:14.5px; line-height:1.6}
+.meta dd{margin:0; font-size:calc(var(--body) - 1px); line-height:1.6}
 .meta dd span{display:block}
 .hero{margin-top:40px}
 
 section{padding-top:var(--section-gap)}
 .eyebrow{font-size:12.5px; font-weight:500; color:var(--ink-3); margin:0 0 12px}
-h2{font-family:var(--serif); font-weight:400; font-size:clamp(24px,2.4vw,28px); line-height:1.2; letter-spacing:0; margin:0}
-h3{font-family:var(--serif); font-weight:400; font-size:21px; line-height:1.3; margin:44px 0 0}
+h2{font-family:var(--serif); font-weight:400; font-size:clamp(26px,2.8vw,32px); line-height:1.2; letter-spacing:0; margin:0}
+h3{font-family:var(--serif); font-weight:400; font-size:24px; line-height:1.25; margin:44px 0 0}
 h3.sub{font-family:var(--sans); font-size:13px; font-weight:600; line-height:1.4; margin:40px 0 12px}
 p{font-size:var(--body); font-weight:var(--body-weight); line-height:var(--leading); color:var(--ink-2); margin:16px 0 0}
 p b{color:inherit; font-weight:600}
-.lead{font-size:16.5px}
+.lead{font-size:calc(var(--body) + 1px)}
 
 /* three views of one thing, side by side */
 
@@ -110,28 +110,28 @@ p b{color:inherit; font-weight:600}
 .features{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:28px}
 .features figure{margin:0}
 .features .slot{margin-top:0}
-.features figcaption{font-size:14px; line-height:1.45; color:var(--ink); margin-top:12px}
+.features figcaption{font-size:var(--body); line-height:var(--leading); color:var(--ink); margin-top:12px}
 
 /* outcomes */
 .stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:20px}
 .stats div{background:var(--panel); border-radius:12px; padding:20px 20px 22px}
 .stats b{display:block; font-family:var(--serif); font-weight:400; font-size:38px; line-height:1}
-.stats span{display:block; font-size:13.5px; color:var(--ink-2); margin-top:10px; line-height:1.4}
+.stats span{display:block; font-size:calc(var(--body) - 1px); color:var(--ink-2); margin-top:10px; line-height:1.4}
 
 /* pain points */
 .points{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:8px; list-style:none; padding:0; counter-reset:pp}
 .points li{border:1px solid var(--rule); border-radius:12px; padding:20px 22px; counter-increment:pp}
 .points li::before{content:counter(pp); display:inline-grid; place-items:center; width:24px; height:24px; border-radius:50%; background:var(--ink); color:var(--bg); font-size:12px; font-weight:600}
-.points b{display:block; font-size:15.5px; margin:14px 0 6px}
-.points p{margin:0; font-size:15px; line-height:1.6}
+.points b{display:block; font-size:var(--body); margin:14px 0 6px}
+.points p{margin:0; font-size:var(--body); line-height:var(--leading)}
 
 /* callouts */
 .insight{margin-top:40px; padding:24px 28px; border-left:3px solid var(--ink); background:var(--panel); border-radius:0 12px 12px 0}
 .insight small{display:block; font-size:12px; font-weight:600; color:var(--ink-2); margin-bottom:8px}
-.insight p{margin:0; font-family:var(--serif); font-size:19px; line-height:1.45; color:var(--ink)}
+.insight p{margin:0; font-family:var(--serif); font-size:calc(var(--body) + 4px); line-height:1.45; color:var(--ink)}
 .hmw{margin:44px 0 0; font-family:var(--serif); font-size:20px; line-height:1.4; color:var(--ink)}
 .hmw::before{content:"How might we"; display:block; font-family:var(--sans); font-size:12px; font-weight:600; color:var(--ink-3); margin-bottom:8px}
-.cap{font-size:13px; color:var(--ink-3); margin-top:10px}
+.cap{font-size:var(--body); line-height:var(--leading); color:var(--ink-3); margin-top:10px}
 
 /* reflection */
 .learned{list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:28px}
@@ -139,10 +139,10 @@ p b{color:inherit; font-weight:600}
 .learned p{margin:6px 0 0}
 
 footer{margin-top:96px; padding-top:28px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap}
-.next{text-decoration:none}
+.next{text-decoration:none; min-width:0; flex:1 1 auto}
 .next small{display:block; font-size:12px; color:var(--ink-3)}
 .next span{font-family:var(--serif); font-size:24px}
-.links{display:flex; flex-wrap:wrap; gap:4px; margin-right:-13px}
+.links{display:flex; flex-wrap:nowrap; gap:4px; margin-right:-13px; flex:0 0 auto}
 .links .i{width:16px; height:16px; fill:none; stroke:currentcolor; stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; flex:none}
 .links .pill{display:inline-flex; align-items:center; gap:7px; height:32px; padding:0 13px; border-radius:999px; color:var(--ink-2); font-size:12.5px; font-weight:500; text-decoration:none; transition:background .15s, color .15s}
 @media (hover:hover){ .links .pill:hover{background:var(--hover); color:var(--ink)} }
@@ -235,22 +235,22 @@ section .stats + p{margin-top:var(--para-gap)}
 .quotes{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:8px}
 .quotes figure{margin:0; padding:24px 22px 20px; border:0; border-radius:14px; background:var(--panel); display:flex; flex-direction:column; position:relative}
 .quotes figure::before{content:"\201C"; font-family:var(--serif); font-size:56px; line-height:.6; color:var(--ink-3); display:block; height:22px}
-.quotes blockquote{font-size:17px; line-height:1.45; flex:1}
+.quotes blockquote{font-size:calc(var(--body) + 1px); line-height:1.45; flex:1}
 .quotes figcaption{margin-top:16px; padding-top:12px; border-top:1px solid var(--rule); color:var(--ink-2); font-size:12.5px}
 /* evidence: stat-led cards */
 .cases{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; border-top:0}
 .cases div{padding:22px; border:1px solid var(--rule); border-bottom:1px solid var(--rule); border-radius:14px; background:var(--bg)}
 .cases .fig{display:block; font-family:var(--serif); font-weight:400; font-size:34px; line-height:1; color:var(--ink); margin-bottom:14px}
-.cases h3{font-size:13px}
-.cases p{font-size:14.5px; line-height:1.6}
+.cases h3{font-size:calc(var(--body) - 2px)}
+.cases p{font-size:var(--body); line-height:var(--leading)}
 @media (max-width:900px){ .quotes,.cases{grid-template-columns:1fr} }
 
 .needs{list-style:none; margin:20px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
 .needs li{background:var(--panel); border-radius:14px; padding:20px 20px 22px}
 .needs b{display:block; font-family:var(--serif); font-weight:400; font-size:19px; color:var(--ink)}
-.needs span{display:block; margin-top:8px; font-size:14.5px; line-height:1.55; color:var(--ink-2)}
+.needs span{display:block; margin-top:8px; font-size:var(--body); line-height:var(--leading); color:var(--ink-2)}
 .needs + p{margin-top:24px}
-.cases h3{font-size:14px; margin:0}
+.cases h3{font-size:calc(var(--body) - 1px); margin:0}
 @media (max-width:900px){ .needs{grid-template-columns:1fr} }
 
 /* needs as quiet ruled rows, matching the page */
@@ -258,14 +258,14 @@ section .stats + p{margin-top:var(--para-gap)}
 .needs li{display:grid; grid-template-columns:36px 200px minmax(0,1fr); gap:16px; align-items:baseline; background:none; border-radius:0; padding:16px 0; border-bottom:1px solid var(--rule)}
 .needs i{font-style:normal; font-size:12.5px; font-weight:600; color:var(--ink-3)}
 .needs b{font-family:var(--serif); font-weight:400; font-size:18px; color:var(--ink)}
-.needs span{margin:0; font-size:16.5px; line-height:1.6; color:var(--ink-2)}
+.needs span{margin:0; font-size:var(--body); line-height:var(--leading); color:var(--ink-2)}
 @media (max-width:700px){ .needs li{grid-template-columns:28px minmax(0,1fr); row-gap:4px} .needs span{grid-column:2} }
 
 /* impact as ruled rows, matching needs */
 .cases{display:block; margin-top:20px; border-top:1px solid var(--rule)}
 .cases div{display:grid; grid-template-columns:236px minmax(0,1fr); gap:16px; align-items:baseline; padding:16px 0; border:0; border-bottom:1px solid var(--rule); border-radius:0; background:none}
 .cases h3{font-family:var(--serif); font-weight:400; font-size:18px; line-height:1.35; color:var(--ink); margin:0}
-.cases p{margin:0; font-size:16.5px; line-height:1.6}
+.cases p{margin:0; font-size:var(--body); line-height:var(--leading)}
 @media (max-width:700px){ .cases div{grid-template-columns:1fr; row-gap:6px} }
 .cases h3 span{display:block; font-family:var(--sans); font-size:13px; color:var(--ink-3); margin-top:4px}
 
@@ -374,19 +374,5 @@ main > footer{max-width:var(--prose); margin-inline:auto}
 section h3{margin-top:var(--section-gap)}
 section h2 + h3{margin-top:var(--head-gap)}
 
-/* Overview, The problem, Product direction: these name the section rather
-   than make a claim, so they read as a label and not as a heading. The
-   same treatment Rachel Chen gives hers: the body sans, small, and a step
-   lighter than the text it introduces. */
-section > h2{
-  font-family:var(--sans);
-  font-size:15px;
-  font-weight:400;
-  line-height:1.4;
-  letter-spacing:0;
-  color:var(--ink-3);
-}
-
-/* which leaves the serif to the headings that say something */
 section > h3{margin-top:var(--head-gap)}
 section > h2 + h3{margin-top:10px}
