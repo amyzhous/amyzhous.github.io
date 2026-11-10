@@ -391,7 +391,8 @@ section > h2 + h3{margin-top:10px}
    section name that is followed by a claim steps back to being a line
    of context, and the claim becomes the heading. A section with no
    claim keeps its name as the heading, which is all it has. */
-section > h2:has(+ h3){
+section > h2:has(+ h3),
+.col-text > h2:has(+ h3){
   font-family:var(--sans);
   font-size:var(--body);
   line-height:var(--leading);
@@ -400,7 +401,8 @@ section > h2:has(+ h3){
   color:var(--ink-3);
 }
 
-section > h2:has(+ h3) + h3{
+section > h2:has(+ h3) + h3,
+.col-text > h2:has(+ h3) + h3{
   font-size:clamp(26px,2.8vw,32px);
   line-height:1.2;
 }
@@ -468,3 +470,40 @@ section.one-col > .drows{max-width:var(--container)}
   section.one-col > .points,
   section.one-col > .drows{max-width:none}
 }
+
+/* ── type sized to the column it sits in ──────────────────────────────────
+   A heading has to be taken in at a glance, which means it wants roughly
+   30 to 40 characters on a line. At the page width a 32px heading gives
+   that; in a 480px column it gives 30, and in the 360px column of the
+   large variation it gives 23 — so anything longer than two words wraps
+   and the heading becomes a paragraph in disguise. These step down with
+   the column rather than keeping the page's scale inside it. */
+section.split .col-text h2,
+section.split .col-text h2:has(+ h3) + h3{
+  font-size:24px;
+  line-height:1.25;
+}
+
+section.split.wide .col-text h2,
+section.split.wide .col-text h2:has(+ h3) + h3{
+  font-size:21px;
+  line-height:1.3;
+}
+
+section.split .col-text h3{font-size:21px; line-height:1.3}
+section.split.wide .col-text h3{font-size:19px; line-height:1.35}
+
+/* the label keeps the body size whatever column it is in; written at the
+   same weight of selector as the rules above so it is not outranked */
+section.split .col-text > h2:has(+ h3),
+section.split.wide .col-text > h2:has(+ h3){
+  font-family:var(--sans);
+  font-size:var(--body);
+  line-height:var(--leading);
+  font-weight:400;
+  color:var(--ink-3);
+}
+
+/* A paragraph break has to be worth more than a line break, or the column
+   reads as one block. One full line of leading, plus a little. */
+section.split .col-text p + p{margin-top:28px}
