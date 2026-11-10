@@ -31,13 +31,19 @@ a{color:inherit}
    them), paired figure 438, hero 923.
    --------------------------------------------------------------------- */
 :root{
-  --prose:688px;          /* the reading column, and the standard figure */
-  --canvas:923px;         /* the opening image, the only thing wider */
-  --body:15px;            /* running text */
+  --container:1200px;     /* the case study body */
+  --col-text:480px;       /* prose, standard variation */
+  --col-media:680px;      /* figures, standard variation */
+  --col-gap:40px;
+  --col-text-wide:360px;  /* where a landscape screen needs the room */
+  --col-media-wide:800px;
+  --prose:var(--col-text); /* a section that has no figures */
+  --canvas:var(--container); /* the opening image spans the body */
+  --body:16px;            /* running text */
   --body-weight:400;      /* Saans Regular */
-  --leading:1.5;
+  --leading:1.6;
   --para-gap:24px;        /* between paragraphs: near one line of leading */
-  --section-gap:72px;     /* between sections */
+  --section-gap:96px;     /* between sections */
   --open-gap:83px;        /* the meta row to the first section: 104 from
                              the last line of it, once the row's own 20px of
                              padding and its rule are counted */
@@ -57,11 +63,11 @@ a{color:inherit}
    left and 346px from the right, which reads as a layout that slipped. */
 .layout{position:relative; padding:0 32px}
 
-/* The rail only appears once the margin beside the centred canvas is wide
-   enough to hold it: 820 of canvas plus 248 either side. Below that it
-   would sit on top of the text, so the page runs without it. */
+/* The rail only appears once the margin beside the body is wide enough to
+   hold it: 1200 of container plus 248 either side. Below that it would sit
+   on top of the text, so the page runs without it. */
 .rail{display:none}
-@media (min-width:1320px){ .rail{display:flex; position:fixed; left:24px; top:0; width:200px} }
+@media (min-width:1700px){ .rail{display:flex; position:fixed; left:24px; top:0; width:200px} }
 
 /* left rail: breadcrumb + sticky contents */
 .rail{height:100vh; padding:40px 0; flex-direction:column}
@@ -344,9 +350,11 @@ section .shot-note,
    column inside it, so the page had two left edges. */
 main > h1,
 main > .kicker,
-main > .m-crumb,
+main > .m-crumb{max-width:var(--container); margin-inline:0}
+
+/* the meta row and the footer run the width of the body */
 main > .meta,
-main > footer{max-width:var(--prose); margin-inline:auto}
+main > footer{max-width:var(--container); margin-inline:0}
 
 
 /* ── a board at full size ── */
@@ -395,4 +403,42 @@ section > h2:has(+ h3){
 section > h2:has(+ h3) + h3{
   font-size:clamp(26px,2.8vw,32px);
   line-height:1.2;
+}
+
+/* ── the two-column body ──────────────────────────────────────────────────
+   Prose left, figures right, both aligned to the top, one side throughout.
+   A section with no figures keeps the single column it already had. */
+section.split{
+  display:grid;
+  grid-template-columns:var(--col-text) var(--col-media);
+  column-gap:var(--col-gap);
+  align-items:start;
+}
+
+section.split.wide{
+  grid-template-columns:var(--col-text-wide) var(--col-media-wide);
+}
+
+.col-text,
+.col-media{min-width:0}
+
+/* inside a column nothing is centred or re-measured: the column is the
+   measure, so the old max-widths would only fight it */
+section.split .col-text > *,
+section.split .col-media > *{max-width:100%; margin-inline:0}
+
+.col-media > .shot + .shot,
+.col-media > .cap + .shot,
+.col-media > .explore + .shot{margin-top:28px}
+
+.col-text > *:first-child,
+.col-media > *:first-child{margin-top:0}
+
+/* a section without figures still reads at the prose measure */
+section.one-col > *{max-width:var(--col-text); margin-inline:0}
+
+@media (max-width:900px){
+  section.split,
+  section.split.wide{grid-template-columns:1fr; row-gap:24px}
+  section.one-col > *{max-width:none}
 }

@@ -286,9 +286,42 @@ const wire = (html: string, slug: Slug): string => {
   );
 };
 
+/**
+ * Splits each section into the two columns the layout asks for: the prose
+ * on the left, every figure on the right, both aligned to the top.
+ *
+ * A caption belongs to the figure above it, so it travels into the media
+ * column rather than being left behind in the prose.
+ *
+ * A section whose widest figure is landscape gets the large variation,
+ * where the picture takes more of the row and the text gives way; the
+ * standard variation holds everywhere else.
+ */
+const MEDIA_TAG = /^<(?:figure|figcaption)\b|^<div class="(?:slot|explore|shot-pair)\b|^<p class="cap"/;
+
+const splitColumns = (html: string): string =>
+  html.replace(/<section id="([a-z-]+)">([\s\S]*?)<\/section>/g, (_whole, id: string, body: string) => {
+    // top-level children only: a figure's own contents must not be split
+    const parts = body.match(/<([a-z][a-z0-9]*)\b[^>]*>[\s\S]*?<\/\1>|<[a-z][a-z0-9]*\b[^>]*\/?>/g) ?? [];
+    const text: string[] = [];
+    const media: string[] = [];
+    for (const part of parts) (MEDIA_TAG.test(part.trim()) ? media : text).push(part.trim());
+
+    if (!media.length) return `<section id="${id}" class="one-col">${body}</section>`;
+
+    const wide = /aspect-ratio:(\d+)\/(\d+)/.exec(media.join(''));
+    const large = wide && Number(wide[1]) / Number(wide[2]) >= 1.7 ? ' wide' : '';
+
+    return (
+      `<section id="${id}" class="split${large}">` +
+      `\n      <div class="col-text">\n        ${text.join('\n        ')}\n      </div>` +
+      `\n      <div class="col-media">\n        ${media.join('\n        ')}\n      </div>\n    </section>`
+    );
+  });
+
 export const render = (slug: Slug): string => `
 <div class="layout">
-${wire(dropKicker(liftHero(withExtras(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug)), slug)}
+${splitColumns(wire(dropKicker(liftHero(withExtras(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug)), slug))}
 </div>`;
 
 export const head = (slug: Slug): string => {
