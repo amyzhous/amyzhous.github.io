@@ -376,3 +376,23 @@ section h2 + h3{margin-top:var(--head-gap)}
 
 section > h3{margin-top:var(--head-gap)}
 section > h2 + h3{margin-top:10px}
+
+/* ── the section name, where a claim follows it ──
+   Rachel Chen never makes a bare label the heading: "Overview" sits at
+   body size in grey and the sentence under it carries the type. So a
+   section name that is followed by a claim steps back to being a line
+   of context, and the claim becomes the heading. A section with no
+   claim keeps its name as the heading, which is all it has. */
+section > h2:has(+ h3){
+  font-family:var(--sans);
+  font-size:var(--body);
+  line-height:var(--leading);
+  font-weight:400;
+  letter-spacing:0;
+  color:var(--ink-3);
+}
+
+section > h2:has(+ h3) + h3{
+  font-size:clamp(26px,2.8vw,32px);
+  line-height:1.2;
+}
