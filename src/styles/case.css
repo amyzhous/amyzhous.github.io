@@ -507,3 +507,58 @@ section.split.wide .col-text > h2:has(+ h3){
 /* A paragraph break has to be worth more than a line break, or the column
    reads as one block. One full line of leading, plus a little. */
 section.split .col-text p + p{margin-top:28px}
+
+/* ── the one-column variation ─────────────────────────────────────────────
+   Reached with ?layout=single. One reading path at the measure the text
+   wants, and the variety comes from the figures: a wide diagram crosses
+   the page, a landscape screen breaks out past the text, a standard
+   screen matches it, a square sits in. Charles Honig's case studies run
+   this way — single column throughout, figure widths from 312 to 1076. */
+.layout-single section.split,
+.layout-single section.split.wide{
+  display:block;
+}
+
+.layout-single section.split .col-text > *,
+.layout-single section.split.wide .col-text > *,
+.layout-single section.one-col > *{
+  max-width:var(--read);
+  margin-inline:0;
+}
+
+.layout-single{
+  --read:680px;          /* ~70 characters at 16px */
+  --section-gap:112px;   /* a new section is unmistakable */
+}
+
+.layout-single .col-media{margin-top:36px}
+.layout-single .col-media > * + *{margin-top:36px}
+
+/* figure widths, by what the figure is */
+.layout-single .shot.w-full{max-width:var(--container)}
+.layout-single .shot.w-wide{max-width:900px}
+.layout-single .shot.w-std{max-width:var(--read)}
+.layout-single .shot.w-inset{max-width:480px}
+.layout-single .explore{max-width:var(--container)}
+.layout-single .shot-pair{max-width:900px; margin-inline:0}
+.layout-single .cap{max-width:var(--read)}
+
+/* headings can carry their full size again in a 680 column */
+.layout-single section.split .col-text h2,
+.layout-single section.split.wide .col-text h2{font-size:32px; line-height:1.2}
+.layout-single section.split .col-text h3,
+.layout-single section.split.wide .col-text h3,
+.layout-single section.split .col-text h2:has(+ h3) + h3,
+.layout-single section.split.wide .col-text h2:has(+ h3) + h3{font-size:24px; line-height:1.25}
+.layout-single section.split .col-text > h2:has(+ h3),
+.layout-single section.split.wide .col-text > h2:has(+ h3){font-size:var(--body); line-height:var(--leading)}
+
+@media (max-width:900px){
+  .layout-single{--read:none; --section-gap:56px}
+  .layout-single .shot.w-full,
+  .layout-single .shot.w-wide,
+  .layout-single .shot.w-std,
+  .layout-single .shot.w-inset,
+  .layout-single .shot-pair,
+  .layout-single .explore{max-width:none}
+}

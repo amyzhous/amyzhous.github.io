@@ -122,6 +122,16 @@ const mediaRatio = (file: string): string => {
   return ratio;
 };
 
+/** The width a figure wants, from its own proportions. */
+const widthClass = (ratio: string): string => {
+  const [w, h] = ratio.split('/').map(Number);
+  const r = w! / h!;
+  if (r >= 2) return ' w-full';      // a wide diagram reads across the page
+  if (r >= 1.6) return ' w-wide';    // a landscape screen breaks out
+  if (r >= 1.2) return ' w-std';     // a standard screen matches the text
+  return ' w-inset';                 // a square or portrait sits in
+};
+
 const caption = (label: string): string => {
   const text = label.replace(/^(?:Animation|Detail|Hero|Screens?):\s*/, '');
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -144,7 +154,7 @@ const withShots = (html: string, slug: Slug): string => {
           : `<img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy">`;
       const cap = name === 'hero' ? '' : `<p class="cap">${esc(caption(label))}</p>`;
       const shape = mediaRatio(`public/case/${slug}/${name}.${ext}`);
-      return `<figure class="shot" style="aspect-ratio:${shape}">${media}</figure>${cap}`;
+      return `<figure class="shot${widthClass(shape)}" style="aspect-ratio:${shape}">${media}</figure>${cap}`;
     },
   );
 };
@@ -223,7 +233,7 @@ const extrasFor = (slug: Slug, section: string): string => {
     const ext = EXT.find((e) => existsSync(`public/case/${slug}/${file}.${e}`))!;
     const shape = mediaRatio(`public/case/${slug}/${file}.${ext}`);
     return (
-      `<figure class="shot" style="aspect-ratio:${shape}">${video(`/case/${slug}/${file}`, label)}` +
+      `<figure class="shot${widthClass(shape)}" style="aspect-ratio:${shape}">${video(`/case/${slug}/${file}`, label)}` +
       `<figcaption class="cap">${esc(label)}</figcaption></figure>`
     );
   });
@@ -328,5 +338,10 @@ export const head = (slug: Slug): string => {
   const c = caseBySlug[slug]!;
   return `
   <title>${esc(c.name)} · Amy Zhou</title>
-  <meta name="description" content="${esc(c.standfirst)}">`;
+  <meta name="description" content="${esc(c.standfirst)}">
+  <script>
+    // ?layout=single renders the one-column variation, for comparing the two
+    try { if (new URLSearchParams(location.search).get('layout') === 'single')
+      document.documentElement.classList.add('layout-single'); } catch (e) {}
+  </script>`;
 };
