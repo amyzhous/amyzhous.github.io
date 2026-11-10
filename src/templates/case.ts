@@ -356,8 +356,8 @@ export const head = (slug: Slug): string => {
   <title>${esc(c.name)} · Amy Zhou</title>
   <meta name="description" content="${esc(c.standfirst)}">
   <script>
-    // ?layout=single renders the one-column variation, for comparing the two
-    try { if (new URLSearchParams(location.search).get('layout') === 'single')
+    // one column is the layout; ?layout=two shows the old grid for comparison
+    try { if (new URLSearchParams(location.search).get('layout') !== 'two')
       document.documentElement.classList.add('layout-single'); } catch (e) {}
   </script>`;
 };

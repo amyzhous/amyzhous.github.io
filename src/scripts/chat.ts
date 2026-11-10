@@ -18,7 +18,7 @@ import '../styles/chat.css';
      fig:'<div class="shotfig"><video autoplay muted loop playsinline preload="metadata"><source src="/case/project-files/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/hero.mp4" type="video/mp4"></video></div>'},
     {id:'c2',slug:'activation-growth',n:2,name:"Growth \u00b7 Part3",title:"Activation & Growth",stat:"77 Projects started from firm-authored templates \u00b7 54% Of subsequent projects reused a template among firms that created one \u00b7 37% Historical activation baseline, giving us a starting point to measure future improvements",
      fig:'<div class="shotfig"><video autoplay muted loop playsinline preload="metadata"><source src="/case/activation-growth/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/activation-growth/hero.mp4" type="video/mp4"></video></div>'},
-    {id:'c3',slug:'construction-data-ai',n:3,name:"AI & Analytics \u00b7 Part3",title:"Construction Data & Insights",stat:"",
+    {id:'c3',slug:'construction-data-ai',n:3,name:"AI & Analytics \u00b7 Part3",title:"Insights Builder",stat:"",
      fig:'<div class="shotfig"><video autoplay muted loop playsinline preload="metadata"><source src="/case/construction-data-ai/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/hero.mp4" type="video/mp4"></video></div>'},
     {id:'c4',slug:'self-serve-billing',n:4,name:"Monetization \u00b7 Part3",title:"Self-Serve Billing",stat:"~27% Of Maxio-linked firms used self-service \u00b7 29 sec One firm's seat purchase, down from a multi-day process \u00b7 7 : 1 Approval-to-purchase ratio",
      fig:'<div class="shotfig"><video autoplay muted loop playsinline preload="metadata"><source src="/case/self-serve-billing/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/self-serve-billing/hero.mp4" type="video/mp4"></video></div>'}
@@ -44,7 +44,7 @@ import '../styles/chat.css';
   // split a paragraph into its rendered lines; {n} becomes a citation chip
   function splitLines(el){
     const text=el.dataset.text||(el.dataset.text=el.textContent.trim());
-    const tok=w=>w.replace(/\{(\d)\}([.,;]?)/,(m,n,p)=>'<a class="cite" href="#c'+n+'" data-jump="c'+n+'"><svg class="lu-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>'+['','Project Files','Activation & Growth','Construction Data & Insights','Self-Serve Billing'][n]+'</a>'+p);
+    const tok=w=>w.replace(/\{(\d)\}([.,;]?)/,(m,n,p)=>'<a class="cite" href="#c'+n+'" data-jump="c'+n+'"><svg class="lu-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>'+['','Project Files','Activation & Growth','Insights Builder','Self-Serve Billing'][n]+'</a>'+p);
     el.innerHTML=text.replace(/ +\{(\d)\}/g,'\u00a0{$1}').split(/[ \t\n]+/).map(w=>'<span class="tk">'+(/\{\d\}/.test(w)?'<span class="nw">'+tok(w)+'</span>':tok(w))+'</span>').join(' ');
   }
   function setP(el,p){
@@ -202,14 +202,14 @@ import '../styles/chat.css';
     {k:/billing|seat|access|invoice|provisional|permission|self-serve/i, a:"The person adding a teammate wasn't the person paying for the seat. Customers could manage their projects independently, but expanding their teams still required support. I designed the self-serve experience to remove that dependency while giving firms control over additional spending. {4}", x:mini(3)},
     {k:/reach|contact|email|hire|resume|resume|linkedin|talk/i, a:'Email is the fastest way to reach me. My resume and LinkedIn are here too.', x:linksRow},
   ];
-  const fallback={a:'I can walk you through Project Files {1}, Activation & Growth {2}, Construction Data & AI {3}, or Self-Serve Billing {4}. Or reach me directly.', x:linksRow};
+  const fallback={a:'I can walk you through Project Files {1}, Activation & Growth {2}, Insights Builder {3}, or Self-Serve Billing {4}. Or reach me directly.', x:linksRow};
 
   // composer only offers preset questions, opened with /
   const cmds=[
     {c:'/about-amy', q:'About Amy'},
     {c:'/project-files', q:'Project Files'},
     {c:'/activation', q:'Activation & Growth'},
-    {c:'/insights-and-analytics', q:'Construction Data & Insights'},
+    {c:'/insights-and-analytics', q:'Insights Builder'},
     {c:'/billing', q:'Self-Serve Billing'},
     {c:'/get-to-know-amy', q:'Get to know Amy'},
     {c:'/fun-facts', q:'Fun facts', hidden:true},
