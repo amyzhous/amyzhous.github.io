@@ -238,7 +238,7 @@ section .stats + p{margin-top:var(--para-gap)}
 .cases + p{margin-top:28px}
 
 /* quotes: cards in a row, distinct from body */
-.quotes{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:8px}
+.quotes{display:grid; grid-template-columns:1fr; gap:16px; margin-top:8px}
 .quotes figure{margin:0; padding:24px 22px 20px; border:0; border-radius:14px; background:var(--panel); display:flex; flex-direction:column; position:relative}
 .quotes blockquote{font-size:calc(var(--body) + 1px); line-height:1.45; flex:1}
 .quotes figcaption{display:flex; align-items:center; gap:10px; margin-top:20px; color:var(--ink-3); font-size:12.5px; line-height:1.35}
@@ -518,11 +518,12 @@ section.split .col-text p + p{margin-top:28px}
    16, figure to the next heading 70.
    Reached with ?layout=single. */
 .layout-single{
-  --read:688px;
-  --figure:648px;
-  --container:923px;
-  --body:15px;
-  --leading:1.5;
+  --col:744px;          /* the content column: figures and evidence blocks */
+  --read:650px;         /* the prose inside it, held to a readable measure */
+  --figure:744px;
+  --container:980px;
+  --body:16.5px;
+  --leading:1.55;
   --section-gap:70px;
   --open-gap:83px;      /* 104 measured from the last line of the meta row */
   --head-gap:20px;
@@ -536,21 +537,29 @@ section.split .col-text p + p{margin-top:28px}
 .layout-single .col-media{margin-top:var(--figure-gap)}
 .layout-single .col-media > * + *{margin-top:28px}
 
-/* everything the page says runs at one width */
-.layout-single section.split .col-text > *,
-.layout-single section.split.wide .col-text > *,
-.layout-single section.one-col > *,
+/* The content column is one box, centred once. Everything inside it is
+   left-aligned to that box rather than centred on its own, so a figure and
+   the sentence above it start on the same pixel however wide each one is.
+   The prose then stops at a readable measure while the pictures and the
+   evidence blocks run on to the full width. */
+.layout-single section.one-col,
+.layout-single section.split .col-text,
+.layout-single section.split.wide .col-text,
 .layout-single main > h1,
 .layout-single main > .m-crumb,
 .layout-single main > .meta,
-.layout-single main > footer{max-width:var(--read); margin-inline:auto}
+.layout-single main > footer{max-width:var(--col); margin-inline:auto}
+
+.layout-single section.split .col-text > *,
+.layout-single section.split.wide .col-text > *,
+.layout-single section.one-col > *{max-width:var(--read); margin-inline:0}
 
 /* the figure sits just inside it, as hers does */
 .layout-single section .col-media > .shot,
 .layout-single section .col-media > .explore,
 .layout-single section .col-media > .shot-pair,
 .layout-single section .col-media > .cap,
-.layout-single section.one-col > .shot{max-width:var(--figure); margin-inline:auto}
+.layout-single section.one-col > .shot{max-width:var(--figure); margin-inline:0}
 
 /* and the opening image is the one thing wider */
 .layout-single .case-hero{max-width:var(--container); margin-inline:auto}
@@ -623,19 +632,17 @@ section.split .col-text p + p{margin-top:28px}
 @media (max-width:860px){ .tiers.three{grid-template-columns:repeat(2,minmax(0,1fr))} }
 @media (max-width:620px){ .tiers,.tiers.three{grid-template-columns:1fr} }
 
-/* Every block that carries words hangs off the same left edge as the prose,
-   so the labels, rules and figures above and below it line up. Only the
-   pictures keep the narrower inset they were given. */
+/* The evidence blocks and the figures take the whole column: they are rows
+   of cards and pictures, not a paragraph to read across. They start on the
+   same left edge as the prose and simply run further right. */
 .layout-single section.one-col > .stats,
 .layout-single section.one-col > .quotes,
 .layout-single section.one-col > .tiers,
 .layout-single section.one-col > .cases,
-.layout-single section.one-col > .features{max-width:var(--read); margin-inline:auto}
-
-/* A figure in a one-column section shares that edge as well, so the page
-   reads down a single left margin. The opening image stays wider on
-   purpose: it is the one deliberate break in the column. */
-.layout-single section.one-col > .shot{max-width:var(--read)}
+.layout-single section.one-col > .features,
+.layout-single section.one-col > .shot,
+.layout-single section.one-col > .explore,
+.layout-single section.one-col > .shot-pair{max-width:none; margin-inline:0}
 
 /* The section labels are set as small caps in the decks — CONTEXT, DRAWING
    MODEL, DESIGN DECISION 01 — so they read as labels rather than as another
