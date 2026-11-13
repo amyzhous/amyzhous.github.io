@@ -561,8 +561,19 @@ section.split .col-text p + p{margin-top:28px}
 .layout-single section .col-media > .cap,
 .layout-single section.one-col > .shot{max-width:var(--figure); margin-inline:0}
 
-/* and the opening image is the one thing wider */
-.layout-single .case-hero{max-width:var(--container); margin-inline:auto}
+/* The media column is the same box as the text column, centred once, so a
+   figure starts on the same pixel as the sentence that introduces it. Every
+   figure on these pages lives here, not in the one-column sections. */
+.layout-single section.split .col-media,
+.layout-single section.split.wide .col-media{max-width:var(--col); margin-inline:auto}
+
+/* The opening image is still the one thing wider, but it widens to the
+   right from the same left edge rather than being centred on its own. */
+.layout-single .case-hero{
+  max-width:none;
+  margin-left:max(0px, calc((100% - var(--col)) / 2));
+  margin-right:0;
+}
 
 .layout-single section.split .col-text h3,
 .layout-single section.split.wide .col-text h3{font-size:28px; line-height:1.2}
@@ -576,7 +587,7 @@ section.split .col-text p + p{margin-top:28px}
 
 
 @media (max-width:900px){
-  .layout-single{--read:none; --figure:none; --container:none; --section-gap:56px; --open-gap:64px}
+  .layout-single{--read:none; --figure:none; --container:none; --col:100%; --section-gap:56px; --open-gap:64px}
 }
 
 /* ── the vertical rhythm ──────────────────────────────────────────────────
