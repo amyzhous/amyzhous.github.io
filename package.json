@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit",
-    "resume": "node scripts/print-resumes.mjs",
-    "favicon": "node scripts/make-favicon.mjs",
-    "media": "node scripts/compress-media.mjs",
-    "stills": "node scripts/stills.mjs"
+    "dev": "node scripts/run.cjs vite",
+    "build": "node scripts/run.cjs vite build",
+    "preview": "node scripts/run.cjs vite preview",
+    "typecheck": "node scripts/run.cjs tsc --noEmit",
+    "resume": "node scripts/run.cjs node scripts/print-resumes.mjs",
+    "favicon": "node scripts/run.cjs node scripts/make-favicon.mjs",
+    "media": "node scripts/run.cjs node scripts/compress-media.mjs",
+    "stills": "node scripts/run.cjs node scripts/stills.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",

@@ -636,3 +636,14 @@ section.split .col-text p + p{margin-top:28px}
    reads down a single left margin. The opening image stays wider on
    purpose: it is the one deliberate break in the column. */
 .layout-single section.one-col > .shot{max-width:var(--read)}
+
+/* The section labels are set as small caps in the decks — CONTEXT, DRAWING
+   MODEL, DESIGN DECISION 01 — so they read as labels rather than as another
+   line of prose. Caps carry more weight than lowercase at the same size, so
+   they step down and letterspace to hold the same colour on the page. The
+   captions under figures keep their sentence case; only the labels change. */
+.layout-single section.split .col-text > h2,
+.layout-single section.split.wide .col-text > h2,
+.layout-single section.one-col > h2{
+  text-transform:uppercase; letter-spacing:.085em; font-size:12px; line-height:1.4;
+}
