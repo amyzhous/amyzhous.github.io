@@ -240,9 +240,9 @@ section .stats + p{margin-top:var(--para-gap)}
 /* quotes: cards in a row, distinct from body */
 .quotes{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:8px}
 .quotes figure{margin:0; padding:24px 22px 20px; border:0; border-radius:14px; background:var(--panel); display:flex; flex-direction:column; position:relative}
-.quotes figure::before{content:"\201C"; font-family:var(--serif); font-size:56px; line-height:.6; color:var(--ink-3); display:block; height:22px}
 .quotes blockquote{font-size:calc(var(--body) + 1px); line-height:1.45; flex:1}
-.quotes figcaption{margin-top:16px; padding-top:12px; border-top:1px solid var(--rule); color:var(--ink-2); font-size:12.5px}
+.quotes figcaption{display:flex; align-items:center; gap:10px; margin-top:20px; color:var(--ink-3); font-size:12.5px; line-height:1.35}
+.quotes .av{flex:none; display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--rule); color:var(--ink-2); font-size:10.5px; font-weight:600; letter-spacing:.02em}
 /* evidence: stat-led cards */
 .cases{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; border-top:0}
 .cases div{padding:22px; border:1px solid var(--rule); border-bottom:1px solid var(--rule); border-radius:14px; background:var(--bg)}
@@ -599,17 +599,40 @@ section.split .col-text p + p{margin-top:28px}
 .layout-single section.one-col > h3 + p{margin-top:16px !important}
 .layout-single section.one-col > h3:first-child{margin-top:0}
 
-/* The evidence blocks earn the full figure width rather than the reading
-   measure: they are rows of cards, not a paragraph to read across. */
-.layout-single section.one-col > .stats,
-.layout-single section.one-col > .points,
-.layout-single section.one-col > .quotes,
-.layout-single section.one-col > .cases,
-.layout-single section.one-col > .features{max-width:var(--figure); margin-inline:auto}
-
 /* Three points go three across, as the decks set them; four stay in the
    two-by-two the default grid already gives. Without this a set of three
    leaves its last card alone on a second row. */
-.points.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media (max-width:860px){ .points.three{grid-template-columns:repeat(2,minmax(0,1fr))} }
-@media (max-width:620px){ .points,.points.three{grid-template-columns:1fr} }
+
+/* ── tiers ────────────────────────────────────────────────────────────────
+   The decks set these lists as a hairline rule, a small label under it and
+   a serif line below that: no boxes, no filled numerals. `.three` goes
+   three across as the decks do; the default two-up holds the four-item
+   grid; `.stack` is the single column that runs beside a block of text. */
+.tiers{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px 32px;
+  list-style:none; padding:0; margin:24px 0 0}
+.tiers.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tiers.stack{grid-template-columns:1fr; gap:26px}
+.tiers li{border-top:1px solid var(--rule); padding-top:14px}
+.tiers .t-x{margin:0; font-size:12.5px; line-height:1.3; color:var(--ink-3)}
+.tiers .t-x i{font-style:normal; margin-right:10px; color:var(--ink-3)}
+.tiers .t-h{font-family:var(--serif); font-weight:400; font-size:19px; line-height:1.3;
+  color:var(--ink); margin:7px 0 0}
+.tiers p:not(.t-x){margin:10px 0 0; font-size:var(--body); line-height:var(--leading); color:var(--ink-2)}
+.tiers.stack .t-h{font-size:20px}
+
+@media (max-width:860px){ .tiers.three{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:620px){ .tiers,.tiers.three{grid-template-columns:1fr} }
+
+/* Every block that carries words hangs off the same left edge as the prose,
+   so the labels, rules and figures above and below it line up. Only the
+   pictures keep the narrower inset they were given. */
+.layout-single section.one-col > .stats,
+.layout-single section.one-col > .quotes,
+.layout-single section.one-col > .tiers,
+.layout-single section.one-col > .cases,
+.layout-single section.one-col > .features{max-width:var(--read); margin-inline:auto}
+
+/* A figure in a one-column section shares that edge as well, so the page
+   reads down a single left margin. The opening image stays wider on
+   purpose: it is the one deliberate break in the column. */
+.layout-single section.one-col > .shot{max-width:var(--read)}
