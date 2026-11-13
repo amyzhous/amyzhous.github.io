@@ -31,16 +31,16 @@
   </script>
   
   <title>Insights Builder · Amy Zhou</title>
-  <meta name="description" content="Architects use Part3 to manage construction administration, from reviewing submittals and responding to RFIs to tracking changes and drawing revisions. These workflows generate valuable information about project progress, turnaround times, and outstanding work.">
+  <meta name="description" content="Part3 stores years of construction records, from drawings and submittals to RFIs and project changes.">
   <script>
     // one column is the layout; ?layout=two shows the old grid for comparison
     try { if (new URLSearchParams(location.search).get('layout') !== 'two')
       document.documentElement.classList.add('layout-single'); } catch (e) {}
   </script>
   <script type="module" crossorigin src="/assets/fonts-Co8O0gI4.js"></script>
-  <script type="module" crossorigin src="/assets/case-CuYIWC-6.js"></script>
+  <script type="module" crossorigin src="/assets/case-6Ipy-VFp.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/fonts-CpWdZCIs.css">
-  <link rel="stylesheet" crossorigin href="/assets/case-13tGJ2yI.css">
+  <link rel="stylesheet" crossorigin href="/assets/case-BXSAxlnf.css">
 </head>
 <body>
 
@@ -49,13 +49,18 @@
     <p class="crumb"><a class="backlink" href="/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>All work</a></p>
     <nav aria-label="Contents"><ol class="toc">
       <li><a href="#overview">Overview</a></li>
+      <li><a href="#preview">Product preview</a></li>
+      <li><a href="#research">Customer research</a></li>
+      <li><a href="#discovery">Customer discovery</a></li>
+      <li><a href="#mcp">MCP usage</a></li>
+      <li><a href="#direction">From evidence to direction</a></li>
       <li><a href="#why">Why reporting mattered</a></li>
-      <li><a href="#mcp">What MCP revealed</a></li>
-      <li><a href="#direction">Product direction</a></li>
-      <li><a href="#custom">Making reporting customizable</a></li>
-      <li><a href="#investigate">Moving from insight to investigation</a></li>
-      <li><a href="#create">Creating reports through conversation</a></li>
-      <li><a href="#impact">Why it matters</a></li>
+      <li><a href="#investigate">Show the dashboard first</a></li>
+      <li><a href="#create">Control without setup</a></li>
+      <li><a href="#custom">Define the report, not the numbers</a></li>
+      <li><a href="#opportunity">Business opportunity</a></li>
+      <li><a href="#evaluation">Evaluation</a></li>
+      <li><a href="#impact">Reflection</a></li>
     </ol></nav>
   </aside>
 
@@ -65,80 +70,74 @@
     <h1>Insights Builder</h1>
     <dl class="meta">
       <div><dt>Role</dt><dd>Product Design Lead</dd></div>
-      <div><dt>Team</dt><dd>Product, Engineering, Leadership</dd></div>
-      <div><dt>Timeline</dt><dd>Q4 2026</dd></div>
+      <div><dt>Scope</dt><dd>Product Strategy &amp; Design</dd></div>
+      <div><dt>Timeline</dt><dd>Q3 – Q4 2026</dd></div>
     </dl>
 
     <section id="overview" class="one-col">
-      <p>Architects use Part3 to manage construction administration, from reviewing submittals and responding to RFIs to tracking changes and drawing revisions. These workflows generate valuable information about project progress, turnaround times, and outstanding work.</p>
-      <p>But while Part3 helped teams manage their work, customers had limited control over how they could analyze and report on it.</p>
-      <p>I identified an opportunity to turn that data into more useful insights, defining a customizable dashboard experience with AI-assisted reporting.</p>
+      <h2>Overview</h2>
+      <h3>Firms had the data, but not the reports they needed.</h3>
+      <p>Part3 stores years of construction records, from drawings and submittals to RFIs and project changes.</p>
+      <p>Customers repeatedly asked for more flexible reporting than our dashboards could provide.</p>
     </section>
 
-    <section id="why" class="split">
-      <div class="col-text">
-        <h2>Why reporting mattered</h2>
-        <p>Part3 already offered project dashboards and cross-project summaries, but reporting was largely predefined. Firms needed different information depending on their projects, teams, and responsibilities.</p>
-        <p>Customer requests revealed three recurring needs:</p>
-        <ul class="needs">
-        <li><i>01</i><b>Relevant metrics</b><span>Prioritize overdue work, turnaround times, and accountability instead of relying on fixed charts.</span></li>
-        <li><i>02</i><b>Cross-project visibility</b><span>Compare performance across teams, disciplines, and projects.</span></li>
-        <li><i>03</i><b>Flexible reporting</b><span>Create views tailored to specific needs and communicate results to leadership.</span></li>
-      </ul>
-        <p>These limitations often pushed customers toward spreadsheets, exports, and additional reporting tools.</p>
-        <p>For Part3, improving analytics offered an opportunity to support more of the decisions firms make beyond day-to-day document management.</p>
-      </div>
-      <div class="col-media">
-        <div class="slot r21"><span>Existing dashboard and anonymized customer requests</span></div>
-      </div>
+    <section id="preview" class="one-col">
+      <h2>Product preview</h2>
+      <h3>Introducing Insights Builder.</h3>
+      <p>Insights Builder gives teams dashboards they can adapt to their work. They can add and arrange charts, save their views, and share reports with colleagues.</p>
+      <p>Ask Part3 is the assistant built into Part3.</p>
+      <p>It uses the current page or selected chart as context, so people can ask questions, create charts, and check the records behind a result.</p>
     </section>
 
-    <section id="mcp" class="split">
-      <div class="col-text">
-        <h2>What MCP revealed</h2>
-        <p>With expanded Postgres-backed data infrastructure, we introduced a Model Context Protocol (MCP) integration that enabled customers to analyze project information through external AI tools.</p>
-        <p>Early use cases included turnaround benchmarking, workload analysis, financial reporting, and performance dashboards.</p>
-        <p>These examples showed what more flexible reporting could offer, but accessing those insights still required technical setup and familiarity with external tools.</p>
-        <p>The opportunity was to bring that flexibility directly into Part3, without requiring customers to understand the technology behind it.</p>
+    <section id="research" class="one-col">
+      <h2>Customer research</h2>
+      <h3>What customers needed from reporting</h3>
+      <div class="stats three">
+        <div><b>67%</b><span>Flexible reporting</span></div>
+        <div><b>48%</b><span>Cross-project visibility</span></div>
+        <div><b>33%</b><span>Relevant operational metrics</span></div>
       </div>
-      <div class="col-media">
-        <div class="slot r21"><span>Project data → MCP reporting → in-product dashboard</span></div>
-      </div>
+      <p>Share of firms with reporting requests, Jan–Nov 2026. Categories overlap.</p>
     </section>
 
-    <section id="direction" class="split">
-      <div class="col-text">
-        <h2>Product direction</h2>
-        <p>The challenge was balancing flexibility with accessibility.</p>
-        <p>A chat-first experience could support complex questions but required users to know what to ask. A traditional dashboard was familiar but couldn't accommodate every firm's reporting needs.</p>
-        <p>Working across Product and Engineering, I advocated for a visual-first approach: customizable dashboards that showed useful information immediately, with AI available to investigate results and create reports.</p>
-        <p>This gave AI a specific purpose. Rather than generating the numbers, AI would reduce the effort needed to explore and organize data that Part3 already held.</p>
-      </div>
-      <div class="col-media">
-        <div class="slot r21"><span>Dashboard → investigate → create</span></div>
+    <section id="discovery" class="one-col">
+      <h2>Customer discovery</h2>
+      <h3>Customers wanted to learn from data across projects.</h3>
+      <div class="quotes">
+        <figure><blockquote>We can see if this is common across 10 projects, we should change something somewhere else.</blockquote><figcaption>Ideation Design Group · Jul 2026</figcaption></figure>
+        <figure><blockquote>We don't want our data in two places. We want it in one place.</blockquote><figcaption>Ken Hogan, Bergmeyer · Nov 2026</figcaption></figure>
       </div>
     </section>
 
-    <section id="custom" class="split">
-      <div class="col-text">
-        <h2>01. Making reporting customizable</h2>
-        <p>The key decision was where customization should begin.</p>
-        <p>An empty dashboard offered flexibility but placed all the work on the customer. Suggested charts provided a starting point, while editable settings allowed customers to adjust the reporting to their needs.</p>
-        <p>The experience was designed to support both customers who wanted a quick overview and those who needed more specific analysis.</p>
-      </div>
-      <div class="col-media">
-        <div class="slot r169"><span>Animation: Populated dashboard → add suggested chart → configure → save view</span></div>
-      </div>
+    <section id="mcp" class="one-col">
+      <h2>MCP usage</h2>
+      <h3>Customers were building the reports we had not provided.</h3>
+      <p>Part3 had already released MCP, which lets firms access Part3 data through external AI tools like Claude. Some used it to create charts our dashboards did not provide.</p>
+      <p>The examples matched reporting needs we had heard repeatedly in customer research.</p>
+      <p><b>What the examples showed.</b> Different firms were asking different questions: review performance, project health, and work still outstanding. One fixed set of reports could not cover them all.</p>
+      <p><b>The product limitation.</b> When we decided which reports to build, we also decided which questions customers could answer. Every new need started the cycle again.</p>
+    </section>
+
+    <section id="direction" class="one-col">
+      <h2>From evidence to direction</h2>
+      <h3>Stop defining every report for customers.</h3>
+      <p>I connected earlier customer research with the reports firms were creating through MCP. Working with the engineer leading MCP, I helped define the shift from predefined reports to configurable reporting in Part3.</p>
+      <p>Rather than build a report for every request, we proposed giving firms control over reporting in Part3. They could answer different questions without waiting for Part3 to build each report.</p>
+    </section>
+
+    <section id="why" class="one-col">
+      <h2>Why reporting mattered</h2>
+      <h3>Different roles needed different answers.</h3>
+      <p><b>On a project: which items are delaying a response?</b> CA leads needed to see overdue items, reviewers, and delays on their projects.</p>
+      <p><b>Across the firm: where is time being lost or saved?</b> Directors needed to compare performance across projects and spot recurring issues.</p>
     </section>
 
     <section id="investigate" class="split">
       <div class="col-text">
-        <h2>02. Moving from insight to investigation</h2>
-        <p>A chart could show that review times were increasing, but it couldn't explain why.</p>
-        <p>Building on our AI strategy discussions, I explored contextual actions that allowed customers to ask questions about a specific chart, examine a breakdown, and open the records behind the results.</p>
-        <p>The key decision was making answers verifiable.</p>
-        <p>AI could help explain patterns and identify where to investigate, but customers needed to see the underlying data before relying on those answers.</p>
-        <p>Rather than moving users into a separate conversation, the experience connected the chart, the question, and the supporting records.</p>
+        <h2>Design decision 01</h2>
+        <h3>Show the dashboard first, then help people investigate.</h3>
+        <p>A conversational interface requires users to know what to ask. CA teams needed to spot overdue work before investigating why, so we led with key metrics.</p>
+        <p>Ask Part3 used the selected chart as context and linked to source records. Using it across Part3 avoided a separate AI workflow for each feature.</p>
       </div>
       <div class="col-media">
         <figure class="shot w-std" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Select chart → ask why → review breakdown → open source records"><source src="/case/construction-data-ai/investigate-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/investigate.mp4" type="video/mp4"></video></figure>
@@ -148,12 +147,9 @@
 
     <section id="create" class="split">
       <div class="col-text">
-        <h2>03. Creating reports through conversation</h2>
-        <p>Not every reporting need could be anticipated through suggested charts. Customers also needed a way to create reports without manually configuring every metric, grouping, and filter.</p>
-        <p>Working within Engineering's charting capabilities, I explored a workflow where customers could describe the report they needed, review the proposed visualization, and add it to their dashboard.</p>
-        <p>The key decision was separating AI-generated configurations from the underlying data.</p>
-        <p>AI could interpret a request and configure a supported chart, but the values would come directly from Part3's data APIs. Customers could review the result before saving it as a reusable view.</p>
-        <p>This made conversational reporting a way to create and customize dashboards, without making AI responsible for the accuracy of the numbers.</p>
+        <h2>Design decision 02</h2>
+        <h3>Give customers control without requiring setup.</h3>
+        <p>Firms and roles needed different reports. Building predefined charts for every request kept Part3 in control and added maintenance work. We provided useful default views, then let users select or create charts through Ask Part3. Flexibility adds complexity, so configuration stayed optional.</p>
       </div>
       <div class="col-media">
         <figure class="shot w-std" style="aspect-ratio:1440/1080"><video autoplay muted loop playsinline preload="metadata" aria-label="Animation: Describe report → review chart preview → confirm → save to dashboard"><source src="/case/construction-data-ai/create-chart-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/construction-data-ai/create-chart.mp4" type="video/mp4"></video></figure>
@@ -161,16 +157,45 @@
       </div>
     </section>
 
+    <section id="custom" class="one-col">
+      <h2>Design decision 03</h2>
+      <h3>Use AI to define the report, not the numbers.</h3>
+      <p>AI could help customers ask for a report in their own words. But a convincing chart is risky if its metric, scope, or data is wrong. We needed to separate the flexibility of the request from the reliability of the result.</p>
+      <p>Our design direction was to use AI to interpret reporting intent, while relying on defined calculations over Part3 records for the figures. The interface also needed to show what the result covered and let users inspect the source.</p>
+      <ul class="points three">
+        <li><b>Interpret</b><p>Clarify the metric, timeframe, and project scope.</p></li>
+        <li><b>Calculate</b><p>Ground figures in Part3 records and defined rules.</p></li>
+        <li><b>Verify</b><p>Expose filters and the records behind a chart.</p></li>
+      </ul>
+    </section>
+
+    <section id="opportunity" class="one-col">
+      <h2>Business opportunity</h2>
+      <h3>Usability, flexibility, and scalability</h3>
+      <p>Some people needed a quick overview. Others had questions our standard reports could not answer. The design had to serve both without making everyone configure their dashboards.</p>
+      <p>Self-serve reporting could reduce one-off requests to CX and engineering. That would leave more time for work customers could not handle themselves. We wanted to validate this benefit after launch.</p>
+      <ul class="points three">
+        <li><b>Usability</b><p>See overdue work and review trends without setup.</p></li>
+        <li><b>Flexibility</b><p>Build reports around each firm's questions.</p></li>
+        <li><b>Scalability</b><p>Meet new reporting needs without building each report.</p></li>
+      </ul>
+    </section>
+
+    <section id="evaluation" class="one-col">
+      <h2>Evaluation</h2>
+      <h3>How we would evaluate the product strategy</h3>
+      <ul class="points">
+        <li><b>Independent use — can firms answer new questions without our help?</b><p>Track repeat reporting and CX requests. If firms still need help, find which questions the product cannot answer.</p></li>
+        <li><b>Defaults vs. control — where do standard views stop being useful?</b><p>Compare default views with custom charts across roles. Low customization may mean the defaults already work.</p></li>
+        <li><b>Trust in answers — can teams verify what a chart is telling them?</b><p>Check whether people open source records when results look wrong. Improve the path from chart to evidence.</p></li>
+        <li><b>Operating leverage — can reporting scale without more one-off work?</b><p>Compare reporting demand with CX and engineering effort. Prioritize recurring gaps over one-off requests.</p></li>
+      </ul>
+    </section>
+
     <section id="impact" class="one-col">
-      <h2>Why it matters</h2>
-      <p>MCP-powered reporting demonstrated how deeper access to construction data could support customer decisions.</p>
-      <div class="cases">
-        <div><h3>Ryder Architecture<span>Turnaround benchmarking</span></h3><p>Ryder used its project data to compare review times against an industry benchmark, demonstrating the value of reporting beyond standard project summaries.</p></div>
-        <div><h3>Parkin Architects<span>Financial visibility</span></h3><p>An MCP-powered dashboard surfaced outstanding pricing that informed the firm's project budget discussions. Parkin also wanted reporting to be more accessible to people across the firm.</p></div>
-        <div><h3>BWA<span>Software consolidation</span></h3><p>A performance benchmark showed BWA's turnaround times were 43% faster than peers. The analysis helped demonstrate the value of Part3 as the firm evaluated consolidating its construction administration software.</p></div>
-      </div>
-      <p>These use cases showed that more accessible reporting could support performance reviews, financial decisions, and software investment.</p>
-      <p>The dashboard direction built on those findings, combining customizable views, source-backed investigation, and conversational reporting. For Part3, it created an opportunity to make advanced analytics useful to more customers and strengthen the platform's value across an entire firm.</p>
+      <h2>Reflection</h2>
+      <h3>The hard part was deciding what Part3 should decide.</h3>
+      <p>With fixed reports, Part3 decided what customers could see. A fully open builder would make everyone configure their own reporting. We chose useful defaults with room to adapt, so firms could answer different questions without starting from scratch.</p>
     </section>
 
     <footer>
