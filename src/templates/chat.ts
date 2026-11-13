@@ -22,8 +22,8 @@ export const markup = (): string => `
       <div id="today">
         <button class="row th on" data-go="top" aria-current="true">Who's Amy?</button>
         <button class="row th" data-q="Project Files">Project Files</button>
-        <button class="row th" data-q="Activation & Growth">Activation &amp; Growth</button>
         <button class="row th" data-q="Insights Builder">Insights Builder</button>
+        <button class="row th" data-q="Activation & Growth">Activation &amp; Growth</button>
         <button class="row th" data-q="Self-Serve Billing">Self-Serve Billing</button>
       </div>
       <div class="sec2">Earlier</div>
@@ -70,8 +70,8 @@ export const markup = (): string => `
       <p class="ans-label pop">Recent work</p>
       <ul class="recent pop">
         <li><a href="#c1">Project Files</a> — 0→1 paid product for construction drawing management</li>
-        <li><a href="#c2">Activation &amp; Growth</a> — Activation strategy and product design</li>
         <li><a href="#c3">Insights Builder</a> — Customizable dashboards and AI-assisted reporting</li>
+        <li><a href="#c2">Activation &amp; Growth</a> — Activation strategy and product design</li>
         <li><a href="#c4">Self-Serve Billing</a> — Self-serve subscription expansion for teams</li>
       </ul>
 
