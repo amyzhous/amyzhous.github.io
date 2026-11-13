@@ -308,3 +308,10 @@
   font-size: 31px;
   letter-spacing: -0.015em;
 }
+
+/* A project without a deck yet is not a link: no hover, no pointer, and
+   the line that would say where it goes says it is not ready instead. */
+.card.rc.soon{cursor:default}
+.card.rc.soon:hover{border-color:transparent}
+.card.rc.soon .rc-btn{color:var(--ink-3)}
+.card.rc.soon:hover .rc-btn{color:var(--ink-3)}
