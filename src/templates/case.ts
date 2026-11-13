@@ -32,6 +32,10 @@ const SHOTS: Record<string, Record<string, string>> = {
     'Animation: Import → Extract → Review → Publish': 'importing',
     'Animation: A-201 Rev 3 → Site Instruction 3.0 → A-201 Rev 4': 'revisions',
     'Detail: drawing revision history': 'revision-trace',
+    'SI-004 revised only 3 of the 150 sheets in the drawing set': 'si-004-sheets',
+    'Server: each revised sheet is renamed, filed and re-merged manually': 'server-folders',
+    'Plain: The drawing set in Part3': 'drawings-grid',
+    'Plain: A drawing and its revision history': 'revision-panel',
   },
   'activation-growth': {
     'Hero: Selected onboarding and project setup experiences': 'hero',
@@ -42,6 +46,13 @@ const SHOTS: Record<string, Record<string, string>> = {
     'Hero: customizable construction analytics dashboard': 'hero',
     'Animation: Select chart → ask why → review breakdown → open source records': 'investigate',
     'Animation: Describe report → review chart preview → confirm → save to dashboard': 'create-chart',
+    "Part3's project dashboard before Insights Builder": 'dashboard-before',
+    'MCP-powered reporting example: firm review performance': 'mcp-review-performance',
+    'MCP-powered reporting example: project health and outstanding work': 'mcp-project-health',
+    'Project lead view': 'role-project-lead',
+    'Director view': 'role-director',
+    'Select and arrange existing charts': 'select-arrange',
+    'Create and refine charts through Ask Part3': 'ask-part3-create',
   },
   'self-serve-billing': {
     'Hero: employee request and billing-admin approval': 'hero',
@@ -137,6 +148,26 @@ const caption = (label: string): string => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
 
+/**
+ * Some deck slides caption their artwork and some do not. A label marked
+ * `Plain:` names the picture for a screen reader without printing a caption
+ * under it, so nothing is written for the page that Amy did not write.
+ */
+const PLAIN = /^Plain:\s*/;
+
+/**
+ * The two pages rebuilt from the decks are wired for stills that have not
+ * been exported yet. A slot whose file is not there is dropped rather than
+ * left on the page as a dashed box: the page shows what exists, and each
+ * still appears on its own as soon as it is converted into public/case/.
+ */
+const AWAITING_STILLS = new Set<Slug>(['project-files', 'construction-data-ai']);
+
+const dropEmptySlots = (html: string, slug: Slug): string =>
+  AWAITING_STILLS.has(slug)
+    ? html.replace(/\s*<div class="slot [^"]*"><span>[^<]*<\/span><\/div>/g, '')
+    : html;
+
 const withShots = (html: string, slug: Slug): string => {
   const map = SHOTS[slug];
   if (!map) return html;
@@ -151,8 +182,8 @@ const withShots = (html: string, slug: Slug): string => {
       const media =
         ext === 'mp4'
           ? video(`/case/${slug}/${name}`, label)
-          : `<img src="/case/${slug}/${name}.${ext}" alt="${esc(label)}" loading="lazy">`;
-      const cap = name === 'hero' ? '' : `<p class="cap">${esc(caption(label))}</p>`;
+          : `<img src="/case/${slug}/${name}.${ext}" alt="${esc(label.replace(PLAIN, ''))}" loading="lazy">`;
+      const cap = name === 'hero' || PLAIN.test(label) ? '' : `<p class="cap">${esc(caption(label))}</p>`;
       const shape = mediaRatio(`public/case/${slug}/${name}.${ext}`);
       return `<figure class="shot${widthClass(shape)}" style="aspect-ratio:${shape}">${media}</figure>${cap}`;
     },
@@ -347,7 +378,7 @@ const assertIntact = (html: string, slug: Slug): string => {
 
 export const render = (slug: Slug): string => `
 <div class="layout">
-${assertIntact(splitColumns(wire(dropKicker(liftHero(withExtras(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug)), slug)), slug)}
+${assertIntact(splitColumns(wire(dropKicker(liftHero(withExtras(dropEmptySlots(withShots(readFileSync(join(DIR, `${slug}.html`), 'utf8'), slug), slug), slug), slug)), slug)), slug)}
 </div>`;
 
 export const head = (slug: Slug): string => {

@@ -9,3 +9,6 @@ dist
 # Original screen recordings. They are the source for `npm run media`;
 # what ships is the encoded copy in public/case/.
 media-src
+# but keep the note saying what goes in there.
+!media-src/stills/
+!media-src/stills/README.md

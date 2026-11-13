@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "resume": "node scripts/print-resumes.mjs",
     "favicon": "node scripts/make-favicon.mjs",
-    "media": "node scripts/compress-media.mjs"
+    "media": "node scripts/compress-media.mjs",
+    "stills": "node scripts/stills.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",
