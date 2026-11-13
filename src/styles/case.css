@@ -10,7 +10,7 @@
 
 :root{
   --bg:#fcfcfa; --ink:#1b1a18; --ink-2:#4a4844; --ink-3:#706d67; --rule:#e8e7e3; --panel:#f2f1ee; --hover:#efeeea;
-  --serif:"Libre Baskerville","Iowan Old Style",Georgia,serif; --sans:Saans,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Libre Baskerville","Iowan Old Style",Georgia,serif; --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light; box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
@@ -40,7 +40,7 @@ a{color:inherit}
   --prose:var(--col-text); /* a section that has no figures */
   --canvas:var(--container); /* the opening image spans the body */
   --body:16px;            /* running text */
-  --body-weight:400;      /* Saans Regular */
+  --body-weight:400;      /* DM Sans Regular */
   --leading:1.6;
   --para-gap:24px;        /* between paragraphs: near one line of leading */
   --section-gap:96px;     /* between sections */
@@ -642,7 +642,9 @@ section.split .col-text p + p{margin-top:28px}
 
 /* The evidence blocks and the figures take the whole column: they are rows
    of cards and pictures, not a paragraph to read across. They start on the
-   same left edge as the prose and simply run further right. */
+   same left edge as the prose and simply run further right. This has to
+   cover the split sections too — a three-up list capped at the reading
+   measure gives 195px columns, which breaks the text into five-word lines. */
 .layout-single section.one-col > .stats,
 .layout-single section.one-col > .quotes,
 .layout-single section.one-col > .tiers,
@@ -650,7 +652,22 @@ section.split .col-text p + p{margin-top:28px}
 .layout-single section.one-col > .features,
 .layout-single section.one-col > .shot,
 .layout-single section.one-col > .explore,
-.layout-single section.one-col > .shot-pair{max-width:none; margin-inline:0}
+.layout-single section.one-col > .shot-pair,
+.layout-single section.split .col-text > .stats,
+.layout-single section.split .col-text > .quotes,
+.layout-single section.split .col-text > .tiers,
+.layout-single section.split .col-text > .cases,
+.layout-single section.split .col-text > .features,
+.layout-single section.split.wide .col-text > .stats,
+.layout-single section.split.wide .col-text > .quotes,
+.layout-single section.split.wide .col-text > .tiers,
+.layout-single section.split.wide .col-text > .cases,
+.layout-single section.split.wide .col-text > .features{max-width:none; margin-inline:0}
+
+/* A label that wraps to two lines would otherwise push its own body text a
+   line below its neighbours'. Holding two lines for every label keeps the
+   bodies on one baseline across the row. */
+.tiers .t-x{min-height:calc(2 * 1.3 * 12.5px)}
 
 /* The section labels are set as small caps in the decks — CONTEXT, DRAWING
    MODEL, DESIGN DECISION 01 — so they read as labels rather than as another

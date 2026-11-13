@@ -50,7 +50,7 @@
   --serif-weight: 400;
   --serif-display: 400;
   /* The chat bundle's sans. Both views run on the same typeface. */
-  --sans: Saans, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --enter: 620ms;
