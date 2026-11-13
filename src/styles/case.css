@@ -238,7 +238,7 @@ section .stats + p{margin-top:var(--para-gap)}
 .cases + p{margin-top:28px}
 
 /* quotes: cards in a row, distinct from body */
-.quotes{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:8px}
+.quotes{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:8px}
 .quotes figure{margin:0; padding:24px 22px 20px; border:0; border-radius:14px; background:var(--panel); display:flex; flex-direction:column; position:relative}
 .quotes figure::before{content:"\201C"; font-family:var(--serif); font-size:56px; line-height:.6; color:var(--ink-3); display:block; height:22px}
 .quotes blockquote{font-size:calc(var(--body) + 1px); line-height:1.45; flex:1}
@@ -590,3 +590,26 @@ section.split .col-text p + p{margin-top:28px}
 .layout-single section.one-col > p + p{margin-top:30px}
 .layout-single section.one-col > h2{margin-top:0}
 .layout-single section.one-col > h2 + p{margin-top:16px !important}
+
+/* One-column sections carry the same label-then-headline pair as the two
+   column ones, so they need the same pairing: the headline sits tight under
+   its label rather than a section's worth of space below it. */
+.layout-single section.one-col > h3{margin-top:52px}
+.layout-single section.one-col > h2 + h3{margin-top:4px !important}
+.layout-single section.one-col > h3 + p{margin-top:16px !important}
+.layout-single section.one-col > h3:first-child{margin-top:0}
+
+/* The evidence blocks earn the full figure width rather than the reading
+   measure: they are rows of cards, not a paragraph to read across. */
+.layout-single section.one-col > .stats,
+.layout-single section.one-col > .points,
+.layout-single section.one-col > .quotes,
+.layout-single section.one-col > .cases,
+.layout-single section.one-col > .features{max-width:var(--figure); margin-inline:auto}
+
+/* Three points go three across, as the decks set them; four stay in the
+   two-by-two the default grid already gives. Without this a set of three
+   leaves its last card alone on a second row. */
+.points.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){ .points.three{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:620px){ .points,.points.three{grid-template-columns:1fr} }
