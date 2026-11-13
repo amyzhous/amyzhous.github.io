@@ -567,13 +567,10 @@ section.split .col-text p + p{margin-top:28px}
 .layout-single section.split .col-media,
 .layout-single section.split.wide .col-media{max-width:var(--col); margin-inline:auto}
 
-/* The opening image is still the one thing wider, but it widens to the
-   right from the same left edge rather than being centred on its own. */
-.layout-single .case-hero{
-  max-width:none;
-  margin-left:max(0px, calc((100% - var(--col)) / 2));
-  margin-right:0;
-}
+/* The opening image is the one thing wider, and it is centred on the same
+   axis as the column beneath it, so it reaches out by the same amount on
+   both sides rather than hanging off one edge. */
+.layout-single .case-hero{max-width:var(--container); margin-inline:auto}
 
 .layout-single section.split .col-text h3,
 .layout-single section.split.wide .col-text h3{font-size:28px; line-height:1.2}
