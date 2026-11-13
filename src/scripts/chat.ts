@@ -13,6 +13,9 @@ import '../styles/chat.css';
 
 (function(){
   const arrow='<svg class="lu-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>';
+  // the Figma deck each project opens. A project with no deck yet keeps
+  // opening its case study page.
+  const DECK={'construction-data-ai':'https://www.figma.com/deck/wxTNEePZiZHBl0scCbZDX1'};
   const cases=[
     {id:'c1',slug:'project-files',n:1,name:"0\u21921 Product Design \u00b7 Part3",title:"Project Files",stat:"$652K+ Annual revenue associated with Project Files \u00b7 58K+ Drawings managed in Part3",
      fig:'<div class="shotfig"><video autoplay muted loop playsinline preload="metadata"><source src="/case/project-files/hero-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="/case/project-files/hero.mp4" type="video/mp4"></video></div>'},
@@ -25,7 +28,9 @@ import '../styles/chat.css';
   ];
   const metrics={c1:[['Drawings managed','58K+'],['Paid product','0→1']],c2:[['Activation baseline','37%'],['Opportunities','3']],c3:[['Direction','Proposed'],['Dashboard','Demonstrated']],c4:[['Firms','44'],['Seat changes','245']]};
   const icons={c1:'<path d="M3 2.5h6.5L13 6v7.5H3z"/><path d="M9.5 2.5V6H13"/>',c2:'<path d="M8 2v2.5M8 11.5V14M2 8h2.5M11.5 8H14"/><circle cx="8" cy="8" r="3"/>',c4:'<path d="M2.5 5.5h11v7h-11z"/><path d="M2.5 8.5h11"/><circle cx="11" cy="10.5" r="1"/>',c3:'<rect x="2.5" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="9" y="2.5" width="4.5" height="4.5" rx="1"/><rect x="2.5" y="9" width="4.5" height="4.5" rx="1"/><rect x="9" y="9" width="4.5" height="4.5" rx="1"/>'};
-  const card=(c,withId,fig=true)=>'<a class="card rc pop"'+(withId?' id="'+c.id+'"':'')+' href="/'+c.slug+'.html">'
+  const card=(c,withId,fig=true)=>'<a class="card rc pop"'+(withId?' id="'+c.id+'"':'')
+    +' href="'+(DECK[c.slug]||'/'+c.slug+'.html')+'"'
+    +(DECK[c.slug]?' target="_blank" rel="noopener"':'')+'>'
     +'<div class="rc-h"><span class="rc-name">'+c.name+'</span></div>'
     +'<h3>'+c.title+'</h3>'
     +(fig?'<div class="fig'+(c.fig.indexOf('shotfig')>-1?' fig-shot':'')+'">'+c.fig+'</div>':'')
